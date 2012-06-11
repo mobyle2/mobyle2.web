@@ -19,6 +19,8 @@ from hashlib import sha1
 from random import randint
 
 
+
+
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
@@ -26,6 +28,8 @@ def main(global_config, **settings):
     config.include(pyramid_beaker)
     config.include('pyramid_mailer')
     
+    config.include("velruse.providers.openid")
+    config.add_openid_login(realm='http://mobyle2:6543')
     
     authentication_policy = AuthTktAuthenticationPolicy('seekrit')
     authorization_policy = ACLAuthorizationPolicy()
@@ -53,8 +57,8 @@ def main(global_config, **settings):
     config.add_subscriber(before_render, BeforeRender)    
     
     config.add_route('main', '/')
-    config.add_route('velruse_endpoint', '/loginendpoint')
-    config.add_route('logout', "/logout")
+    #config.add_route('velruse_endpoint', '/loginendpoint')
+    #config.add_route('logout', "/logout")
                         
     config.add_static_view('static', 'mobyle:static', cache_max_age=3600)
     
