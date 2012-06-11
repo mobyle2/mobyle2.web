@@ -10,6 +10,7 @@
 
 <body>
 <div>
+OpenID login:
 <form action="/login/openid" method='post'>
 <input type="text" name="openid_identifier"/>
 <input type="submit" value="Login with openid" />
