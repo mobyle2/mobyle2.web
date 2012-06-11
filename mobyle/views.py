@@ -4,6 +4,10 @@ from pyramid.view import view_config
 from velruse import login_url
 import json
 
+import requests
+
+from pyramid.httpexceptions import HTTPFound
+
 @view_config(route_name='main', renderer='mobyle:templates/index.mako')
 def my_view(request):
     
@@ -12,9 +16,29 @@ def my_view(request):
     #print velruse.openid.realm
     #print velruse.openid.store
     
-    return {'project':'mobyle'}
+    #retrieve list of programs:
+    
+    programs = request.db.programs.find()    
+    
+    if 'progname' in request.POST:
+        newprogname = request.POST['progname']
+        if newprogname not in programs:
+            request.db.programs.insert({'name': newprogname } , safe=True)
+            return HTTPFound(location='/')
+    
+    if 'platformurl' in request.POST:
+        newplatform = request.POST['platformurl']
+        page = requests.get(newplatform)
+        page = page.json       
+        for elt in page.keys():
+            request.db.programs.insert({'name': elt } , safe=True)
+    
+    
+    return {'project':'mobyle', 'programs': programs}
 
-
+ 
+    
+    
 @view_config(
     context='velruse.AuthenticationComplete',
     renderer='mobyle:templates/result.mako',
