@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 
 from setuptools import setup, find_packages
@@ -10,6 +11,10 @@ requires = [
     'pyramid',
     'pyramid_debugtoolbar',
     'waitress',
+    "pyramid_beaker",
+    "pymongo",
+    "pyramid_mailer",
+    "velruse"
     ]
 
 setup(name='mobyle',
