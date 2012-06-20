@@ -11,4 +11,7 @@ ${ result|n }
 </pre>
 
 </body>
+
+<a href="/">back to home page</a>
+
 </html>
