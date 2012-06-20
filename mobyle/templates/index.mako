@@ -7,8 +7,14 @@
 <title>test</title>
 
 </head>
-
 <body>
+
+You are logged in as: ${userid} <br />
+<a href='/logout'>logout</a> <br />
+
+This <a href='/onlyauthenticated'>view</a> is restricted to authenticated users.
+
+
 <div>
 OpenID login:
 <form action="/login/openid" method='post'>
