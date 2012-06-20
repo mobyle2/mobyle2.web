@@ -14,12 +14,13 @@ requires = [
     "pyramid_beaker",
     "pymongo",
     "pyramid_mailer",
-    "velruse"
+    "velruse>=0.3dev"
     ]
 
 setup(name='mobyle',
       version='0.0',
       description='mobyle',
+      dependency_links = ['https://github.com/bbangert/velruse/tarball/master#egg=velruse-0.3dev'],
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[
         "Programming Language :: Python",

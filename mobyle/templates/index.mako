@@ -1,11 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE HTML>
 <html>
-
 <head>
 <title>test</title>
-
 </head>
 <body>
 
@@ -22,6 +18,33 @@ OpenID login:
 <input type="submit" value="Login with openid" />
 </form>
 </div>
+
+<hr />
+
+Add a program:
+<form action="" method="post">
+<input type='text' name='progname' />
+<input type='submit' value='add program' />
+</form>
+    
+<hr />
+
+import a platform:
+<form action="" method="post">
+<input type='text' name='platformurl' />
+<input type='submit' value='platform!' />
+</form>
+
+<hr />
+
+
+<div>
+Program list:
+%for p in programs:
+    ${p['name']} <br />
+%endfor
+</div>
+
 </body>
 
 

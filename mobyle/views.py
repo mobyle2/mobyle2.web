@@ -9,18 +9,40 @@ from pyramid.response import Response
 from velruse import login_url
 import json
 
+import requests
+
+from pyramid.httpexceptions import HTTPFound
+
 @view_config(route_name='main', renderer='mobyle:templates/index.mako')
 def my_view(request):
     
     print login_url(request, "openid")
     userid = authenticated_userid(request)
-    #from velruse import openid
-    #print velruse.openid.realm
-    #print velruse.openid.store
+
+
+    #retrieve list of programs:
+    programs = request.db.programs.find()    
     
-    return {'project':'mobyle', 'userid': userid}
+    if 'progname' in request.POST:
+        newprogname = request.POST['progname']
+        if newprogname not in programs:
+            request.db.programs.insert({'name': newprogname } , safe=True)
+            return HTTPFound(location='/')
+    
+    if 'platformurl' in request.POST:
+        newplatform = request.POST['platformurl']
+        page = requests.get(newplatform)
+        page = page.json       
+        for elt in page.keys():
+            request.db.programs.insert({'name': elt } , safe=True)
+    
+    
+    return {'project':'mobyle', 'programs': programs, 'userid': userid }
 
 
+ 
+    
+    
 @view_config(
     context='velruse.AuthenticationComplete',
     renderer='mobyle:templates/result.mako',
