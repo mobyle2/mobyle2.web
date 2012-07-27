@@ -58,6 +58,7 @@ def main(global_config, **settings):
     
     config.add_route('main', '/')
     config.add_route('onlyauthenticated', '/onlyauthenticated')
+    config.add_route('login', '/login')    
     config.add_route('logout', '/logout')
     
     #config.add_route('velruse_endpoint', '/loginendpoint')
