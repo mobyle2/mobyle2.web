@@ -59,3 +59,4 @@ http://mobyle2:6543/
 10. Unit tests
 Simply call:
 $ nosetests
+(If nose is not installed on your system: $pip install nose)
