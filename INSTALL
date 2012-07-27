@@ -29,6 +29,9 @@ On ubuntu:
     $virtualenv mobyle2
 This will create the mobyle2 folder, which will contain the Mobyle2 environment.
 
+Note: depending on your virtualenv version, it may be necessary to add the '--no-site-packages' option. 
+This option has no effect in recent relases, so it won't hurt to use it in any cases.
+
 5. Run the activate script
     $cd mobyle2
     $. bin/activate
