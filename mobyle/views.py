@@ -35,7 +35,6 @@ def my_view(request):
     #print login_url(request, "openid")
     userid = authenticated_userid(request)
 
-
     #retrieve list of programs:
     programs = request.db.programs.find()    
     
@@ -67,20 +66,16 @@ def login_complete_view(request):
     context = request.context
     
     context.profile['accounts'][0]["username"]
-    
+
     result = {
         'profile': context.profile,
         'credentials': context.credentials,
     }
     
     username = context.profile['accounts'][0]["username"]
-    
     request.db.login_log.insert({ 'username': username } )
-    
     headers = remember(request, username)
-    
     request.response.headerlist.extend(headers)
-    
     return {
         'result': json.dumps(result, indent=4),
     }
@@ -90,7 +85,7 @@ def onlyauth(request):
     return Response("hello authenticated user")
 
 
-#basic http auth
+#basic http auth (with a form)
 @view_config(route_name="login")
 def login(request):
     if 'username' in request.POST:
@@ -110,5 +105,11 @@ def logout(request):
     request.session.flash("You have logged out")
     return HTTPFound(location='/', headers=headers)
 
+
+
+@view_config(route_name='program_list')
+def program_list(request):
+    progs = request.db.programs.find({'public':True})
+    return [p['name'] for p in progs]
 
 

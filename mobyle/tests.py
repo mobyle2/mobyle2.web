@@ -34,7 +34,14 @@ class LoginTest(unittest.TestCase):
         
         self.assertTrue("auth_tkt" in r.cookies)
         
-    
+    def test_incorrect_login(self):
+        url_login = base_url + "/login"
+        form = self.user
+        form['password'] = 'incorrect_password'
+        r = requests.post(url_login, data=form) #, username="test", password="test")
+        
+        self.assertTrue("auth_tkt" not in r.cookies)
+        self.assertTrue('not logged in' in r.text)
 
 
 class ViewTests(unittest.TestCase):
@@ -45,8 +52,18 @@ class ViewTests(unittest.TestCase):
         db = conn['mobyle2_tests']
         
         self.config.db = db
+        
+        self.public_programs_list = ['foo', 'bar']
+        
+        for p in self.public_programs_list:
+            prog = dict(name=p, public=True)
+            db.programs.insert(prog)
+        
+        self.request = testing.DummyRequest()
+        self.request.db = self.config.db
 
     def tearDown(self):
+        self.config.db.programs.remove()
         testing.tearDown()
 
     def test_my_view(self):
@@ -57,3 +74,21 @@ class ViewTests(unittest.TestCase):
         info = my_view(request)
         self.assertEqual(info['project'], 'mobyle')
 
+
+    def test_public_programs(self):
+        """tests that 'public' programs are found in the list"""
+        from .views import program_list
+       
+        
+        
+        prog_list = program_list(self.request)
+        for p in self.public_programs_list:
+            self.assertTrue(p in prog_list)
+
+        self.assertTrue('baz' not in program_list(self.request))  
+        self.config.db.programs.insert(dict(name="baz", public=True))
+        self.assertTrue('baz' in program_list(self.request))
+        
+    def test_private_programs(self):
+        pass 
+        
