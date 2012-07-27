@@ -26,20 +26,42 @@ I do not know if we should reproduce this, as it may be a source of spam.
  - current method sends back the URL of the repository. Since we will be using 
 a consistent HTTP API, it should not be necessary to provide this as a workaround
 to configuration variability.
- 
+
+Get the information about a particular server
+---------------------------------------------
+
+Same as above, but specifies a server name as a key in the path
+
+GET HTTP://[mobyle2 URL]/servers/server1/
+
+{"url":"[mobyle2 server 1 URL]",
+            "services":["service_1","service_2","service_3"],
+            "active":true}
+
 List the different mobyle2 services
 -----------------------------------
 
+e.g.:
 GET HTTP://[mobyle2 URL]/services/
 
 response should look like:
-{"service_1@server1":{"name":"service1",
+{ "service1::project1::server1":
+		     {"name":"service1",
                       "server":"server_1",
-                      "project":"project_1",
+                      "project":"project",
+                      "type":"program",
+                      "exported":true,
+                      "disabled":false,
+                      "authorized":true},
+  "service2::project1::server1":
+                     {"name":"service2",
+                      "server":"server_1",
+                      "project":"project",
                       "type":"program",
                       "exported":true,
                       "disabled":false,
                       "authorized":true}
+}
 
 Here:
 - "project" is the name of the project to which the service belongs,
@@ -53,3 +75,44 @@ Here:
 - "authorized" (boolean) specifies if the service can be called by the current user (the
   one performing the HTTP request).
 
+Get the information about a particular service
+----------------------------------------------
+
+Same as above, but specifies a service "full name" (service name+project name+server 
+name) as a key in the path.
+
+e.g.:
+GET HTTP://[mobyle2 URL]/services/service1::project1::server1
+
+response:
+{"name":"service1",
+ "server":"server_1",
+ "project":"project",
+ "type":"program",
+ "exported":true,
+ "disabled":false,
+ "authorized":true}
+
+
+List mobyle2 users
+------------------
+
+Lists the users of the server. This should be accessible only to administrators.
+
+GET HTTP://[mobyle2 URL]/users/
+
+response:
+{"herve": {"email":"herve@example@com",
+           "type":"authenticated",
+           "authentication_type":"ldap",
+           "status":"active",
+           "is_admin":true,
+           "groups":["group1","group2"]
+	 },
+ "adrien: {"email":"adrien@gmail.com"
+           "type":"anonymous",
+           "status":"active",
+           "is_admin":false,
+	   "groups":[]
+         }
+}
