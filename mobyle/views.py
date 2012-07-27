@@ -10,8 +10,24 @@ from velruse import login_url
 import json
 
 import requests
+import bcrypt
 
 from pyramid.httpexceptions import HTTPFound
+
+
+def add_user(db, user):
+    """adds a user to the database. Password will be hashed with bcrypt"""
+    hashed = bcrypt.hashpw(user['password'], bcrypt.gensalt())
+    del user['password']
+    user['hashed'] = hashed
+    db.users.insert(user)
+
+def check_user_pw(db, username, password):
+    """checks for plain password vs hashed password in database"""
+    user  = db.users.find_one({'username': username})
+    hashed = bcrypt.hashpw(password, user['hashed'])
+    return hashed == user['hashed']
+
 
 @view_config(route_name='main', renderer='mobyle:templates/index.mako')
 def my_view(request):
@@ -74,18 +90,18 @@ def onlyauth(request):
     return Response("hello authenticated user")
 
 
-#user password login
+#basic http auth
 @view_config(route_name="login")
 def login(request):
     if 'username' in request.POST:
         username = request.POST['username']
         password = request.POST['password']
         
-        if username == "test" and password == "test":
+        if check_user_pw(request.db, username, password):
             print "identification OK"
-            headers = remember(request, "test")
+            headers = remember(request, username)
             return HTTPFound(location="/", headers = headers)
-    return Response("it works")
+    return Response("not logged in")
 
 
 #simply logout

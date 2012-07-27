@@ -14,7 +14,9 @@ requires = [
     "pyramid_beaker",
     "pymongo",
     "pyramid_mailer",
-    "velruse>=0.3dev"
+    "velruse>=0.3dev",
+    "py-bcrypt",
+    
     ]
 
 setup(name='mobyle',
