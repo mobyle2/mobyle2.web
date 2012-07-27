@@ -55,3 +55,7 @@ edit and test it directly.
 9. Connect to your mobyle2 server
 You're done! Go to:
 http://mobyle2:6543/
+
+10. Unit tests
+Simply call:
+$ nosetests
