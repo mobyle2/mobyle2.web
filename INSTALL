@@ -1,0 +1,54 @@
+mobyle2 installation procedure
+==============================
+
+Disclaimer: this document is a work in progress, which is currently only aimed
+at facilitating setup for development purposes.
+
+Development setup
+-----------------
+
+1. Install virtualenv
+**virtualenv** is a tool to create isolated Python environments. It's safer to
+set up your mobyle2 development environment in such a sandbox, to prevent 
+library conflicts with your default Python environment.
+To install virtualenv on ubuntu:
+    $sudo apt-get install virtualenv
+
+2. Install mongodb
+To install mongodb in ubuntu:
+    $sudo apt-get install mongodb
+
+3. Modify the hosts file for velruse
+For authentication to work properly, the current code of mobyle2/velruse 
+forces you to connect to Mobyle in HTTP using the **mobyle2** host name.
+Just add the following line in your '/etc/hosts' file:
+    127.0.0.1       mobyle2
+
+4. Create a mobyle2 environment
+On ubuntu:
+    $virtualenv mobyle2
+This will create the mobyle2 folder, which will contain the Mobyle2 environment.
+
+5. Run the activate script
+    $cd mobyle2
+    $. bin/activate
+
+6. Install velruse
+**Beware**, with the current version of mobyle2, if you install mobyle2 (with
+pip), it will automatically install a version of velruse which comes from pypi
+and is not compatible with mobyle. It is thus mandatory, for now at least, to
+install velruse from bbangert's github repository:
+    $pip install git+https://github.com/bbangert/velruse.git
+
+7. Install mobyle2
+    $pip install -e git+https://github.com/mobyle2/mobyle2b.git#egg=mobyle2b
+Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle2b' folder
+and create automatically a mobyle2b.pth path configuration file, so that you can
+edit and test it directly.
+
+8. Start the server
+    $pserve src/mobyle2b/development.ini
+
+9. Connect to your mobyle2 server
+You're done! Go to:
+http://mobyle2:6543/
