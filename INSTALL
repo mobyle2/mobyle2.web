@@ -50,7 +50,7 @@ and create automatically a mobyle2b.pth path configuration file, so that you can
 edit and test it directly.
 
 8. Start the server
-    $pserve src/mobyle2b/development.ini
+    $pserve --reload src/mobyle2b/development.ini
 
 9. Connect to your mobyle2 server
 You're done! Go to:
