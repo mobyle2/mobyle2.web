@@ -10,15 +10,30 @@ from velruse import login_url
 import json
 
 import requests
+import bcrypt
 
 from pyramid.httpexceptions import HTTPFound
+
+
+def add_user(db, user):
+    """adds a user to the database. Password will be hashed with bcrypt"""
+    hashed = bcrypt.hashpw(user['password'], bcrypt.gensalt())
+    del user['password']
+    user['hashed'] = hashed
+    db.users.insert(user)
+
+def check_user_pw(db, username, password):
+    """checks for plain password vs hashed password in database"""
+    user  = db.users.find_one({'username': username})
+    hashed = bcrypt.hashpw(password, user['hashed'])
+    return hashed == user['hashed']
+
 
 @view_config(route_name='main', renderer='mobyle:templates/index.mako')
 def my_view(request):
     
-    print login_url(request, "openid")
+    #print login_url(request, "openid")
     userid = authenticated_userid(request)
-
 
     #retrieve list of programs:
     programs = request.db.programs.find()    
@@ -51,20 +66,16 @@ def login_complete_view(request):
     context = request.context
     
     context.profile['accounts'][0]["username"]
-    
+
     result = {
         'profile': context.profile,
         'credentials': context.credentials,
     }
     
     username = context.profile['accounts'][0]["username"]
-    
     request.db.login_log.insert({ 'username': username } )
-    
     headers = remember(request, username)
-    
     request.response.headerlist.extend(headers)
-    
     return {
         'result': json.dumps(result, indent=4),
     }
@@ -72,6 +83,19 @@ def login_complete_view(request):
 @view_config(route_name='onlyauthenticated', permission='viewauth')
 def onlyauth(request):
     return Response("hello authenticated user")
+
+
+#basic http auth (with a form)
+@view_config(route_name="login")
+def login(request):
+    if 'username' in request.POST:
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        if check_user_pw(request.db, username, password):
+            headers = remember(request, username)
+            return HTTPFound(location="/", headers = headers)
+    return Response("not logged in")
 
 
 #simply logout
@@ -82,42 +106,10 @@ def logout(request):
     return HTTPFound(location='/', headers=headers)
 
 
-##page called after velruse authentication
-#@view_config(route_name="velruse_endpoint")
-#def endpoint(request):
-    
-    #if 'token' in request.params:
-        #token = request.params['token']
-    
-        #store = MongoDBStore(db="mobyle2")
-        #values = store.retrieve(token)
-        
-        #if values['status'] == 'ok':
-            #print values
-            #identifier = values['profile']['identifier']
-            #print identifier
-            
-            #try:
-                #username = request.db.identifiers.find_one({'id': identifier })['username']
-            #except TypeError:
-                 #if authenticated_userid(request) is not None:
-                      #request.db.identifiers.insert({'id': identifier, 'username': authenticated_userid(request)  })
-                      #request.session.flash('welcome back %s'%authenticated_userid(request))
-                      #return HTTPFound(location='/')
-                 #else:
-                     ##no local account, try to create a new one
-                     #if request.registry.settings['allownewaccount'] == 'True':
-                         #request.session['identifier'] = identifier
-                         #return HTTPFound(location='/newaccount')
-                         
-                
-            
-            #headers = remember(request, username)
-            #request.session.flash("welcome %s"%username)
-            
-            #return HTTPFound(location='/', headers=headers)
-            
-        
-        #print values
-    
-    #return Response("hello")
+
+@view_config(route_name='program_list')
+def program_list(request):
+    progs = request.db.programs.find({'public':True})
+    return [p['name'] for p in progs]
+
+
