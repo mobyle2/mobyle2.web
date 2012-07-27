@@ -98,7 +98,6 @@ def login(request):
         password = request.POST['password']
         
         if check_user_pw(request.db, username, password):
-            print "identification OK"
             headers = remember(request, username)
             return HTTPFound(location="/", headers = headers)
     return Response("not logged in")
