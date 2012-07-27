@@ -1,0 +1,55 @@
+Mobyle2 HTTP API 
+================
+
+Disclaimer: this document is a design document. It is a work in progress, open to suggestions
+and corrections.
+
+This document is aimed at describing the different HTTP methods which should be made available by
+a mobyle2 server.
+
+List the different mobyle2 servers
+----------------------------------
+
+GET HTTP://[mobyle2 URL]/servers/
+
+response should look like:
+{"server1":{"url":"[mobyle2 server 1 URL]",
+            "services":["service_1","service_2","service_3"],
+            "active":true},
+ "server2":{"url":"[mobyle2 server 2 URL]",
+            "services":["service_2","service_4","service_6"],"active":true}
+}
+
+Notes: 
+ - the current method of mobyle (net_servers_list.py) publishes support emails.
+I do not know if we should reproduce this, as it may be a source of spam. 
+ - current method sends back the URL of the repository. Since we will be using 
+a consistent HTTP API, it should not be necessary to provide this as a workaround
+to configuration variability.
+ 
+List the different mobyle2 services
+-----------------------------------
+
+GET HTTP://[mobyle2 URL]/services/
+
+response should look like:
+{"service_1@server1":{"name":"service1",
+                      "server":"server_1",
+                      "project":"project_1",
+                      "type":"program",
+                      "exported":true,
+                      "disabled":false,
+                      "authorized":true}
+
+Here:
+- "project" is the name of the project to which the service belongs,
+  it can be a user-level project or a server-level service. If the service
+  is server-level, "project" key should not be mentionned or specify a reserved
+  word,
+- "type" is the type of the service, "program", "workflow" or "widget",
+- "exported" (boolean) specifies if the service can be called from another server,
+- "disabled" (boolean) specifies if the service has been disabled by the mobyle server
+  administrators, e.g. for maintenance purposes,
+- "authorized" (boolean) specifies if the service can be called by the current user (the
+  one performing the HTTP request).
+
