@@ -12,7 +12,7 @@ Development setup
 set up your mobyle2 development environment in such a sandbox, to prevent 
 library conflicts with your default Python environment.
 To install virtualenv on ubuntu:
-    $sudo apt-get install virtualenv
+    $sudo apt-get install python-virtualenv
 
 2. Install mongodb
 To install mongodb in ubuntu:
