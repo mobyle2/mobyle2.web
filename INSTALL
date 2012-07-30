@@ -83,9 +83,6 @@ edit and test it directly.
 8. Start the server
     $pserve --reload src/mobyle2b/development.ini
 
-Note: launch mongod in another terminal before starting the server
-          $mongod
-
 9. Connect to your mobyle2 server
 You're done! Go to:
 http://mobyle2:6543/
