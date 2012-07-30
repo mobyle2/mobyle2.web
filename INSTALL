@@ -57,6 +57,12 @@ You're done! Go to:
 http://mobyle2:6543/
 
 10. Unit tests
+You first need to install nose in the virtualenv:
+$pip install nose
+Once this is done, bin/activate needs to be re-sourced to update the path:
+$. bin/activate
+**Warning**: to run the tests, please note that you need to start the server. 
+Otherwise, at least the login tests will fail.
 Simply call:
-$ nosetests
+$ nosetests src/mobyle2b
 (If nose is not installed on your system: $pip install nose)
