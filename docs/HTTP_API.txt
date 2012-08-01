@@ -107,23 +107,44 @@ response:
            "authentication_type":"ldap",
            "status":"active",
            "is_admin":true,
-           "groups":["group1","group2"]
+           "groups":["group1","group2"],
+           "projects": ["00000000001","00000000002","00000000003"]
 	 },
  "00000000002": {"email":"adrien@gmail.com",
            "type":"anonymous",
            "status":"active",
            "is_admin":false,
-	   "groups":[]
+	   "groups":[],
+           "projects": ["00000000004"]
          },
  "00000000003": {           "type":"anonymous",
            "status":"suspended",
            "status_message":"you have been suspended because you abuse our resources. please contact us if you wish your account to be reactivated",
            "is_admin":false,
-       "groups":[]
+           "groups":[],
+           "projects": ["00000000005"]
          },
  "00000000004": {           "type":"anonymous",
            "status":"pending",
            "is_admin":false,
-       "groups":[]
+           "groups":[],
+           "projects": ["00000000006"]
          }
 }
+
+Get the information for a particular user
+----------------------------------------------
+
+Same as above, but specifies a user ID. Restricted to the user itself or an administrator.
+
+e.g.:
+GET HTTP://[mobyle2 URL]/users/00000000004
+
+response:
+{ "type":"anonymous",
+  "status":"pending",
+  "is_admin":false,
+  "groups":[],
+  "projects": ["00000000006"]
+}
+
