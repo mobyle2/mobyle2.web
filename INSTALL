@@ -29,8 +29,9 @@ Just add the following line in your '/etc/hosts' file:
 ### Install mobyle2 in virtualenv
 
 1. Create a mobyle2 environment
-On ubuntu:
     $virtualenv mobyle2
+or if you do not have a virtualenv wrapper
+    $python [virtualenv.py full path] mobyle2
 This will create the mobyle2 folder, which will contain the Mobyle2 environment.
 
 Note: depending on your virtualenv version, it may be necessary to add the '--no-site-packages' option.
