@@ -7,22 +7,88 @@ at facilitating setup for development purposes.
 Development setup
 -----------------
 
-1. Install virtualenv
-**virtualenv** is a tool to create isolated Python environments. It's safer to
+This procedure describes the installation of mobyle2 in a virtualenv sandbox for 
+development purposes.
+
+### Install Prerequisites
+Prior to setting up mobyle2, you need to:
+* install virtualenv: **virtualenv** is a tool to create isolated Python environments. It's safer to
 set up your mobyle2 development environment in such a sandbox, to prevent
 library conflicts with your default Python environment.
-To install virtualenv on ubuntu:
+* install mongodb
+
+Distribution-specific notes for the installation of these prerequisites are available at the end of 
+this document (currently Ubuntu and CentOS).
+
+### Modify etc/hosts configuration for velruse authentication library to work
+For authentication to work properly, the current code of mobyle2/velruse
+forces you to connect to Mobyle in HTTP using the **mobyle2** host name.
+Just add the following line in your '/etc/hosts' file:
+    127.0.0.1 mobyle2
+
+### Install mobyle2 in virtualenv
+
+1. Create a mobyle2 environment
+On ubuntu:
+    $virtualenv mobyle2
+This will create the mobyle2 folder, which will contain the Mobyle2 environment.
+
+Note: depending on your virtualenv version, it may be necessary to add the '--no-site-packages' option.
+This option has no effect in recent relases, so it won't hurt to use it in any cases.
+
+2. Run the activate script
+    $cd mobyle2
+    $. bin/activate
+
+3. Install velruse
+**Beware**, with the current version of mobyle2, if you install mobyle2 (with
+pip), it will automatically install a version of velruse which comes from pypi
+and is not compatible with mobyle. It is thus mandatory, for now at least, to
+install velruse from bbangert's github repository:
+    $pip install git+https://github.com/bbangert/velruse.git      
+
+4. Install mobyle2
+    $pip install -e git+https://github.com/mobyle2/mobyle2b.git#egg=mobyle2b
+Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle2b' folder
+and create automatically a mobyle2b.pth path configuration file, so that you can
+edit and test it directly.
+
+5. Start the server
+    $pserve --reload src/mobyle2b/development.ini
+
+. Connect to your mobyle2 server
+You're done! Go to:
+http://mobyle2:6543/
+
+10. Unit tests
+You first need to install nose in the virtualenv:
+$pip install nose
+Once this is done, bin/activate needs to be re-sourced to update the path:
+    $. bin/activate
+**Warning**: to run the tests, please note that you need to start the server.
+Otherwise, at least the login tests will fail.
+Simply call:
+    $nosetests src/mobyle2b
+(If nose is not installed on your system: $pip install nose)
+
+### Ubuntu installation notes
+
+1. Virtualenv
     $sudo apt-get install python-virtualenv
 
-To install virtualenv on CentOS:
-    $easy_install virtualenv
-
-2. Install mongodb
-To install mongodb in ubuntu:
+2. MongoDB
     $sudo apt-get install mongodb
 
+### CentOS
+
+1. Virtualenv
+    $easy_install virtualenv
+
+2. MongoDB
 To install mongodb in CentOS:
-Create a /etc/yum.repos.d/10gen.repo file to hold information about your repository. If you are running a 64-bit system (recommended) place the following configuration in /etc/yum.repos.d/10gen.repo file:
+Create a /etc/yum.repos.d/10gen.repo file to hold information about your repository.
+If you are running a 64-bit system (recommended) place the following configuration in
+/etc/yum.repos.d/10gen.repo file:
 
 [10gen]
 name=10gen Repository
@@ -36,64 +102,17 @@ enabled=1
     $cd /data
     $mkdir db
 
-for more information see: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-redhat-centos-or-fedora-linux/
+for more information see: 
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-redhat-centos-or-fedora-linux/
 
-
-3. Modify the hosts file for velruse
-For authentication to work properly, the current code of mobyle2/velruse
-forces you to connect to Mobyle in HTTP using the **mobyle2** host name.
-Just add the following line in your '/etc/hosts' file:
-    127.0.0.1 mobyle2
-
-4. Create a mobyle2 environment
-On ubuntu:
-    $virtualenv mobyle2
-This will create the mobyle2 folder, which will contain the Mobyle2 environment.
-
-Note: depending on your virtualenv version, it may be necessary to add the '--no-site-packages' option.
-This option has no effect in recent relases, so it won't hurt to use it in any cases.
-
-5. Run the activate script
-    $cd mobyle2
-    $. bin/activate
-
-6. Install velruse
-**Beware**, with the current version of mobyle2, if you install mobyle2 (with
-pip), it will automatically install a version of velruse which comes from pypi
-and is not compatible with mobyle. It is thus mandatory, for now at least, to
-install velruse from bbangert's github repository:
-    $pip install git+https://github.com/bbangert/velruse.git
-
-Note: i) If necessary install git.x86_64 first (CentOS)
+3. Git
     $yum install git.x86_64
-      ii) I had to recompile my Python Interpreter with --with-ssl option before. SSL was not accessible by default in my installation.
+
+4. Python on CentOS
+You may have to recompile your Python Interpreter with --with-ssl option, if SSL support is not 
+available by default in your installation.
     $cd Python-2.7.3
     $./configure --with-ssl 
     $make 
     $su
     $make install
-      
-
-7. Install mobyle2
-    $pip install -e git+https://github.com/mobyle2/mobyle2b.git#egg=mobyle2b
-Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle2b' folder
-and create automatically a mobyle2b.pth path configuration file, so that you can
-edit and test it directly.
-
-8. Start the server
-    $pserve --reload src/mobyle2b/development.ini
-
-9. Connect to your mobyle2 server
-You're done! Go to:
-http://mobyle2:6543/
-
-10. Unit tests
-You first need to install nose in the virtualenv:
-$pip install nose
-Once this is done, bin/activate needs to be re-sourced to update the path:
-$. bin/activate
-**Warning**: to run the tests, please note that you need to start the server.
-Otherwise, at least the login tests will fail.
-Simply call:
-$ nosetests src/mobyle2b
-(If nose is not installed on your system: $pip install nose)
