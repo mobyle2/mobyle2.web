@@ -19,7 +19,7 @@ from hashlib import sha1
 from random import randint
 
 
-
+from mobyle.views import add_user
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -49,7 +49,9 @@ def main(global_config, **settings):
     if db.users.find().count() == 0:
         pwd = sha1("%s"%randint(1,1e99)).hexdigest()
         print 'root user created with password: ', pwd 
-        db.users.insert({'login': 'root', 'admin': True, 'pwd': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root'})
+        user = {'login': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root'}
+        add_user(db, user)
+        
     
     #end initialization
     
@@ -58,7 +60,9 @@ def main(global_config, **settings):
     
     config.add_route('main', '/')
     config.add_route('onlyauthenticated', '/onlyauthenticated')
+    config.add_route('login', '/login')    
     config.add_route('logout', '/logout')
+    config.add_route('program_list', '/programs/list')
     
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
