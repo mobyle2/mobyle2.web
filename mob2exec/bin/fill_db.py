@@ -15,7 +15,7 @@ for job_id in range(0,500):
                       'has_been_notified' : False ,
                       'owner' : 'a_user_space',
                    }
-with open('mobyle2.db', 'w') as f:
+with open('/tmp/mobyle2.db', 'w') as f:
 	cPickle.dump( db , f )
 
 

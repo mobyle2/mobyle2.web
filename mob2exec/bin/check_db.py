@@ -1,6 +1,6 @@
 import cPickle
 
-with open('mobyle2.db') as f:
+with open('/tmp/mobyle2.db') as f:
 	db = cPickle.load(f)
 
 job_ids = db.keys()
