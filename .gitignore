@@ -1,0 +1,23 @@
+######################
+# Logs and databases #
+######################
+*\.log
+
+####################
+# Eclipse metadata #
+####################
+\.project
+\.pydevproject
+\.settings/
+
+#############
+# vim files #
+#############
+*\.swp
+
+##########################
+# Python complied source #
+##########################
+*\.pyc
+*\.pyo
+
