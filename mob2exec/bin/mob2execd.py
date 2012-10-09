@@ -1,14 +1,14 @@
 #! /bin/env python
 # -*- coding: utf-8 -*-
 
-'''
+"""
 Created on Aug 13, 2012
 
 @author: Bertrand Néron
 @contact: bneron@pasteur.fr
 @organization: Institut Pasteur
 @license: GPLv3
-'''
+"""
 
 import os
 import sys
@@ -37,12 +37,12 @@ from lib.execution_engine.db_manager import DBManager
 
 
 class Master(object):
-    '''
+    """
     The master is a daemon that start the JtMonitor and the DBManager process. 
     It also keeps all these processes running. If a child process dies, another one is restarted automatically.
     It start a tcp server in a separate thread which is in charge to recieved log emit by child processes and 
     write them on log files.
-    '''
+    """
    
     def __init__(self , pid_file ):
         """
@@ -87,11 +87,11 @@ class Master(object):
         while self._running:
             self._log.debug( "%s is in while %f"%(self._name , time.time()) )
             if not self.mon.is_alive():
-                self.log.warning( "%s the Monitor is dead I restart one"% self._name)
+                self._log.warning( "%s the Monitor is dead I restart one"% self._name)
                 self.mon = JtMonitor(self.mon_q)
                 self.mon.start()
             if not self.db_mgr.is_alive():
-                self.log.warning( "%s the DBManager is dead I restart one"% self._name)
+                self._log.warning( "%s the DBManager is dead I restart one"% self._name)
                 self.db_mgr = self.create_DBManager( self.jt, self.db_queue )
                 self.db_mgr.start()                
             time.sleep(5)
