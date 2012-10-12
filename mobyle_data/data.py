@@ -2,41 +2,35 @@ import unittest
 import abc
 from abc import ABCMeta
 from abc import abstractmethod
-from MobyleError import MobyleError
+from mobyleError import MobyleError
 
 
 class Data:
     """
     Store and manipulate data. It's composed by two parameters: one data type and one value.
     """
-    
-    # TO BE REMOVED
-    #: keys of all different kind of (simple) data. (EDAM is not yet implemented)
-    DATA_TYPES = ['IntegerDataType', 'StringDataType', 'BooleanDataType', 'FloatDataType',
-                'ChoiceDataType', 'MultipleChoiceDataType', 'AbstractFileDataType', 'AbstractTextDataType',
-                'TextDataType', 'ReportDataType', 'BinaryDataType', 'FilenameDataType']
 
-    def __init__( self , dataType = None, value = None):
+    def __init__( self , data_type = None, value = None):
 	'''
-	@param dataType: the identifier name of the data type
-	@type dataType: string
+	@param data_type: the identifier name of the data type
+	@type data_type: string
 	@param value: the value associated to the dataType
 	@type value: not defined specifically. could be anything.
 	'''
-	if(not isinstance(dataType,DataType)):
-	    msg = "Bad input format! Input data type must be an instance of DataType class"
+	if(not isinstance(data_type, DataType)):
+	    msg = "Programming error! Input data type must be an instance of DataType class"
 	    raise MobyleError , msg 
-        self._dataType = dataType
+        self._data_type = data_type
 	self._value = value 
 
 
     @property
-    def dataType(self):
+    def data_type(self):
         """
-	@return: the dataType of a Data object.
+	@return: the data_type of a Data object.
 	@rtype: string
 	"""
-        return self._dataType
+        return self._data_type
 
 
     @property
@@ -73,30 +67,30 @@ class StringDataType(SimpleDataType):
 
 class StructData(Data):
 
-    def __init__( self, inputDict = None):
-        self._inputStruct = inputDict
+    def __init__( self, input_dict = None):
+        self._input_struct = input_dict
 	
     def __getitem__( self, key):
-        return self._inputStruct[key]._dataType
+        return self._input_struct[key]._data_type
 
 
 class CollectionData():
     
-    def __init__( self, listOfData = None):
-	tempDataType = listOfData[0].dataType.__class__.__name__
-	for data in range( len(listOfData) ):
-	    if(listOfData[data].dataType.__class__.__name__!=tempDataType):
-		msg = "Bad input format! Every entries of the list must have the same data type"
+    def __init__( self, list_of_data = None):
+	temp_data_type = list_of_data[0].data_type.__class__.__name__
+	for data in range( len(list_of_data) ):
+	    if(list_of_data[data].data_type.__class__.__name__!=temp_data_type):
+		msg = "Programming error! Every entries of the list must have the same data type"
 		raise MobyleError , msg 
-        self._dataType = tempDataType
+        self._data_type = temp_data_type
 
     @property
-    def dataType(self):
+    def data_type(self):
         """
-	@return: the dataType of a Data object.
+	@return: the data_type of a Data object.
 	@rtype: string
 	"""
-        return self._dataType
+        return self._data_type
 
 
 
@@ -105,31 +99,31 @@ class CollectionData():
 class TestDataType(unittest.TestCase):
 
     def setUp(self):
-	self.type1 = IntegerDataType()
-	self.type2 = StringDataType()
+	self.type_1 = IntegerDataType()
+	self.type_2 = StringDataType()
 
     def test_check_method(self):
-        self.assertTrue(self.type1.check(4))
+        self.assertTrue(self.type_1.check(4))
 
 class TestData(unittest.TestCase):
 
     def setUp(self):
-	type1 = IntegerDataType()
-	type2 = StringDataType()
-	self.nb_of_it = Data(type1, 3)
-	self.filename = Data(type2, 'toto')
+	type_1 = IntegerDataType()
+	type_2 = StringDataType()
+	self.nb_of_it = Data(type_1, 3)
+	self.filename = Data(type_2, 'toto')
 
-    def test_dataType(self):
-        self.assertEqual(self.nb_of_it.dataType.__class__.__name__, 'IntegerDataType')
+    def test_data_type(self):
+        self.assertEqual(self.nb_of_it.data_type.__class__.__name__, 'IntegerDataType')
 	self.assertEqual(self.filename.value, 'toto')
 
 class TestStructData(unittest.TestCase):
 
     def setUp(self):
-	type1 = IntegerDataType()
-	type2 = StringDataType()
-	nb_of_it = Data(type1, 3)
-	filename = Data(type2, 'toto')
+	type_1 = IntegerDataType()
+	type_2 = StringDataType()
+	nb_of_it = Data(type_1, 3)
+	filename = Data(type_2, 'toto')
 	names = ['nb_it', 'file']
 	data = [nb_of_it,filename]
 	dico = dict(zip(names,data))
@@ -142,67 +136,21 @@ class TestStructData(unittest.TestCase):
 class TestCollectionData(unittest.TestCase):
 
     def setUp(self):
-	data1 = Data(StringDataType(), 'file1')
-	data2 = Data(StringDataType(), 'file2')
-	data3 = Data(StringDataType(), 'file3')
-	data4 = Data(IntegerDataType(), 2)
-	listOfData1 = [data1, data2, data3]
-	listOfData2 = [data1, data2, data3, data4]
-	self.myCollection1 = CollectionData(listOfData1)
+	data_1 = Data(StringDataType(), 'file1')
+	data_2 = Data(StringDataType(), 'file2')
+	data_3 = Data(StringDataType(), 'file3')
+	data_4 = Data(IntegerDataType(), 2)
+	list_of_data_1 = [data_1, data_2, data_3]
+	list_of_data_2 = [data_1, data_2, data_3, data_4]
+	self.my_collection_1 = CollectionData(list_of_data_1)
 
     
     def test_dataType(self):
-        self.assertEqual(self.myCollection1.dataType, 'StringDataType')
+        self.assertEqual(self.my_collection_1.data_type, 'StringDataType')
 
 
 	
 
 if __name__=='__main__':
 	unittest.main()
-        
-	"""
-	print 'Unitary testing'
-	print
-	
-	# Test of DataType class
-	print "DataType class test"
-	type1 = IntegerDataType()
-	type2 = StringDataType()
-	
-	print "Is '4' an interger? ", type1.check(4)
-	print "Remark: return always True"
-	print
-	
-	# Test of Data class
-	print "Data class test"
-	nb_of_it = Data(type1, 3)
-	filename = Data(type2, 'toto')
-	
-	print "Test access to the class attributes!"
-	print "nb_of_it.dataType: " , nb_of_it.dataType
-	print "filename.value: " , filename.value
-	print
-	
-	# Test of StructData class
-	print "StructData class test"
-	names = ['nb_it', 'file']
-	data = [nb_of_it,filename]
-	dico = dict(zip(names,data))
-	
-	structure = StructData(dico)
-	print "structure['file'] " , structure['file']
-	print
-	
-	# Test of CollectionData class
-	print "CollectionData class test"
-	data1 = Data(StringDataType(), 'file1')
-	data2 = Data(StringDataType(), 'file2')
-	data3 = Data(StringDataType(), 'file3')
-	data4 = Data(IntegerDataType(), 2)
 
-	listOfString = [data1, data2, data3]
-	myCollection = CollectionData(listOfString)
-	print "myCollection data type is: ", myCollection.dataType
-	"""
-	
-	
