@@ -1,6 +1,6 @@
-import cPickle
 import sys
 sys.path.append( '/home/bneron/Mobyle/Mobyle2_moteur' )
+import cPickle
 import time 
 
 from  lib.core.status import Status 
@@ -15,9 +15,7 @@ for job_id in range(0,500):
                       'has_been_notified' : False ,
                       'owner' : 'a_user_space',
                    }
-with open('/tmp/mobyle2.db', 'w') as f:
+with open('/tmp/mob2.db', 'w') as f:
 	cPickle.dump( db , f )
-
-
- 
+	
 
