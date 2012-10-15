@@ -14,9 +14,9 @@ _log = logging.getLogger(__name__)
 import abc
 
 class AbstractJobRef(object):
-    '''
+    """
     AbstractJobRef is an abstract class that describes the common interface of JobRef and WorkflowRef
-    '''     
+    """     
     __metaclass__ = abc.ABCMeta
 
     def __init__(self, id , create_time, status, owner ):
@@ -71,7 +71,7 @@ class AbstractJobRef(object):
 class JobRef(AbstractJobRef):
     
     def __init__(self, id , create_time, status, owner ):
-        '''
+        """
         @param id: the identifier of this jobRef
         @type id: string
         @param create_time: the time of job creation
@@ -80,7 +80,7 @@ class JobRef(AbstractJobRef):
         @type status: L{status} instance
         @param owner: "owner" id of the job: either a workflow( local |remote) or a userspace(local|remote)
         @type owner: 
-        '''
+        """
         super(JobRef , self).__init__( id, create_time, status, owner )
         self.end_time = -1
         self.has_been_notified = False
