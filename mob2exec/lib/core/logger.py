@@ -20,13 +20,13 @@ import cPickle
 
     
 class LogRecordStreamHandler(SocketServer.StreamRequestHandler):
-    'Handler for a streaming logging request'
+    """Handler for a streaming logging request"""
 
     def handle(self):
-        '''
+        """
         Handle multiple requests - each expected to be a 4-byte length,
         followed by the LogRecord in pickle format.
-        '''
+        """
         while True:
             chunk = self.connection.recv(4)
             if len(chunk) < 4:
@@ -41,10 +41,12 @@ class LogRecordStreamHandler(SocketServer.StreamRequestHandler):
             
             
     def unPickle(self, data):
+        """
+        deserialize stream in python object
+        """
         return cPickle.loads(data)
 
     def handleLogRecord(self, record):
-        #print "handleLogRecord has been called"
         # if a name is specified, we use the named logger rather than the one
         # implied by the record.
         if self.server.logname is not None:
@@ -52,8 +54,6 @@ class LogRecordStreamHandler(SocketServer.StreamRequestHandler):
         else:
             name = record.name
         logger = logging.getLogger(name)
-        #print "handleLogRecord: logger = ",logger ,"handlers = ", logger.handlers, "name ", logger.name ,"level =",logger.getEffectiveLevel()
-        #print "handleLogRecord: logger.parent = ",logger.parent,"parent.handlers = ", logger.parent.handlers, "parent.name ", logger.parent.name , "parent.level = ",logger.parent.getEffectiveLevel()
 
         # N.B. EVERY record gets logged. This is because Logger.handle
         # is normally called AFTER logger-level filtering. If you want
@@ -76,5 +76,4 @@ class LogRecordSocketReceiver(SocketServer.ThreadingTCPServer):
                  handler = LogRecordStreamHandler):
         SocketServer.ThreadingTCPServer.__init__(self, (host, port), handler)
         self.timeout = 1
-
     

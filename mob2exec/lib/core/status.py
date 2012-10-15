@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Aug 14, 2012
 
 @author: Bertrand Néron
 @contact: bneron@pasteur.fr
 @organization: Institut Pasteur
 @license: GPLv3
-'''
+"""
 
 import logging
 _log = logging.getLogger(__name__)
@@ -16,9 +16,9 @@ from .mobyle_error import MobyleError
 class Status(object):
     """reflect the different steps of a job life"""
     
-    """the system is not able to determaine the status of the job"""
+    """the system is not able to determine the status of the job"""
     UNKNOWN   = 0
-    """the environement of the job is building (working directory creation, building command line, ...)"""
+    """the environment of the job is building (working directory creation, building command line, ...)"""
     BUILDING  = 10
     """the job has been submitted to the execution system to be running"""
     SUBMITTED = 20
@@ -28,7 +28,7 @@ class Status(object):
     RUNNING   = 40
     """the job is completed without error"""
     FINISHED  = 50
-    """un error occured the job is stopped"""
+    """un error occurred the job is stopped"""
     ERROR     = 60
     """the job was stopped by an administrator or the user"""
     KILLED    = 70
