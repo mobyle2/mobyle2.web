@@ -42,7 +42,7 @@ class JobsTableTest(unittest.TestCase):
         
     def test_jobs(self):
         jt = JobsTable()
-        jobs_send = [ JobRef( 'id_%d'%i , time.time(), Status(Status.BUILDING), 'owner') for i in range(0,5) ]
+        jobs_send = [ JobRef( 'id_%d' % i , time.time(), Status(Status.BUILDING), 'owner') for i in range(0, 5) ]
         for j in jobs_send:
             jt.put(j)
         jobs_recieved = jt.jobs()    

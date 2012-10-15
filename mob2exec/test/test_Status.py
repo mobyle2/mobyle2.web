@@ -17,7 +17,6 @@ if ( MOBYLE_HOME ) not in sys.path:
     sys.path.append( MOBYLE_HOME )
     
 import unittest
-import string
 import inspect
 import types
 
@@ -32,7 +31,7 @@ class StatusTest(unittest.TestCase):
         self.status_labels =  [ l[0] for l in self.all_status_tuple ] 
         self.status_string = {}
         for l in self.status_labels: 
-            self.status_string [l] = string.lower(l)
+            self.status_string [l] = l.lower()
             
         self.ended_status = [ Status(c) for c in (Status.FINISHED, Status.ERROR, Status.KILLED) ]
         self.error_status = [ Status(c) for c in (Status.ERROR, Status.KILLED) ]
@@ -41,6 +40,10 @@ class StatusTest(unittest.TestCase):
         self.submittable_status = [ Status(c) for c in [Status.BUILDING] ]
         
     def test_eq(self):
+        """
+        2 Status instance are equals if they have
+         - the same status code 
+        """
         for l1 in self.status_labels:
             s1= Status( getattr( Status, l1 ) )
             for l2 in self.status_labels:
@@ -52,6 +55,9 @@ class StatusTest(unittest.TestCase):
     
 
     def test_is_ended(self):
+        """
+        a status is ended if it cannot evolved anymore (error, killed, finished,...)
+        """
         not_ended = [ s for s in self.all_status if s not in self.ended_status]
         for s in self.ended_status:
             self.assertTrue( s.is_ended() )
