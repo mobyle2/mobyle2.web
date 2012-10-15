@@ -1,14 +1,14 @@
 #! /bin/env python
 # -*- coding: utf-8 -*-
 
-'''
+"""
 Created on Aug 13, 2012
 
 @author: Bertrand Néron
 @contact: bneron@pasteur.fr
 @organization: Institut Pasteur
 @license: GPLv3
-'''
+"""
 
 import os
 import sys
@@ -21,7 +21,7 @@ if not MOBYLE_HOME:
 if MOBYLE_HOME  not in sys.path:
     sys.path.append(MOBYLE_HOME)
 
-import logging
+#import logging
 import logging.config
 from conf.logger import server_log_config
 
@@ -37,12 +37,12 @@ from lib.execution_engine.db_manager import DBManager
 
 
 class Master(object):
-    '''
+    """
     The master is a daemon that start the JtMonitor and the DBManager process. 
     It also keeps all these processes running. If a child process dies, another one is restarted automatically.
     It start a tcp server in a separate thread which is in charge to recieved log emit by child processes and 
     write them on log files.
-    '''
+    """
    
     def __init__(self , pid_file ):
         """
@@ -51,7 +51,7 @@ class Master(object):
         """
         self.pid_file = pid_file
         self.log_receiver = None
-        self.log_server_thre = None
+        self.log_server_thread = None
         self.jt = None
         self.mon_q = None
         self.jt_monitor = None
@@ -59,6 +59,7 @@ class Master(object):
         self.db_mgr = None
         
         self._running = False
+        
         
     def start(self):
         # can only start a process object created by current process
@@ -68,10 +69,14 @@ class Master(object):
         time.sleep(1)
         self._running = True
         setproctitle.setproctitle('mob2_master')
-        self._name = "Master-%d"%os.getpid()
+        self._name = "Master-%d"% os.getpid()
         
         logging.config.dictConfig(server_log_config)
-        self.log_receiver = LogRecordSocketReceiver()
+        try:
+            self.log_receiver = LogRecordSocketReceiver()
+        except Exception ,err:
+            msg = str(err) +" : the port used by logger is already in use. Check if an other mob2exec is not already running"
+            sys.exit(msg)
         self.log_server_thread = threading.Thread(target=self.log_receiver.serve_forever)   
         self.log_server_thread.start()
         self._log = logging.getLogger(__name__)
@@ -87,17 +92,20 @@ class Master(object):
         while self._running:
             self._log.debug( "%s is in while %f"%(self._name , time.time()) )
             if not self.mon.is_alive():
-                self.log.warning( "%s the Monitor is dead I restart one"% self._name)
-                self.mon = JtMonitor(self.mon_q)
+                self._log.warning( "%s the Monitor is dead I restart one" % self._name)
+                self.mon = JtMonitor( self.jt, self.mon_q )
                 self.mon.start()
             if not self.db_mgr.is_alive():
-                self.log.warning( "%s the DBManager is dead I restart one"% self._name)
-                self.db_mgr = self.create_DBManager( self.jt, self.db_queue )
+                self._log.warning( "%s the DBManager is dead I restart one" % self._name)
+                self.db_mgr = DBManager( self.jt, self.db_q )
                 self.db_mgr.start()                
             time.sleep(5)
         self.mon.join()
         
-    def stop(self,signum ,frame):
+    def stop(self, signum, frame):
+        """
+        stop DBmanager, monitor and logger properly before exiting
+        """
         #print self._name," recieved STOP"
         self._running = False
         cmd = 'STOP'
@@ -111,7 +119,7 @@ class Master(object):
         self.log_receiver.shutdown()
         self.log_server_thread.join()    
     
-    def reload_conf(self, signum ,frame):
+    def reload_conf(self, signum, frame):
         print self._name," recieved reload" 
         cmd = 'RELOAD'
         self.mon_q.put(cmd)
@@ -123,9 +131,8 @@ if __name__ == '__main__':
     import signal
     import lockfile.pidlockfile
     import daemon
-    import os.path
     
-    usage="""usage:
+    usage = """usage:
     mob2execd {start|stop|reload} """
     lock_file = '/tmp/mob2.pid'  
     
@@ -137,7 +144,7 @@ if __name__ == '__main__':
         pid = None
         if os.path.exists( lock_file ):
             try:
-                f= file( lock_file , 'r')
+                f = file( lock_file , 'r')
                 pid = int( f.readline() )
                 f.close()
             except Exception:
@@ -148,13 +155,13 @@ if __name__ == '__main__':
         try:    
             os.kill(pid, signum )
         except OSError , err:
-            print >> sys.stderr , "%s (pid= %d) not responding: %s"%(sys.argv[0],pid , err)    
+            print >> sys.stderr , "%s (pid= %d) not responding: %s" % (sys.argv[0], pid , err)    
              
-    cmd =sys.argv[1]
+    cmd = sys.argv[1]
     if cmd == 'start':
         pid = mob2_pid( lock_file )
         if pid:
-            print >> sys.stderr,"%s is already running abort this one (pid=%d)"%(lock_file, pid)
+            print >> sys.stderr,"%s is already running abort this one (pid=%d)" % (lock_file, pid)
             sys.exit(2) 
             
         print "creation du pid_file"
@@ -166,7 +173,7 @@ if __name__ == '__main__':
         stdout = open('/tmp/mob2.stdout' , 'a')
         stderr = open('/tmp/mob2.stderr' , 'a')
         print "creation du context"
-        context = daemon.DaemonContext( pidfile= pid_file, stdout = stdout, stderr = stderr )
+        context = daemon.DaemonContext( pidfile= pid_file, stdout= stdout, stderr= stderr )
         #context = daemon.DaemonContext( pidfile= pid_file )
         ############################## FIN DEBUG ##########################################
         print "configuration du context"
@@ -185,7 +192,7 @@ if __name__ == '__main__':
         if pid:
             communicate( pid , signal.SIGTERM )
         else:
-            print >> sys.stderr , "%s is not running "%sys.argv[0]
+            print >> sys.stderr , "%s is not running " % sys.argv[0]
             sys.exit(3)
     elif cmd == 'reload':
         pid = mob2_pid( lock_file )
