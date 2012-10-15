@@ -35,32 +35,46 @@ class DBManager(multiprocessing.Process):
         @param master_q: a communication queue to listen comunication emit by the L{Master} instance
         @type master_q: L{multiprocessing.Queue} instance
         """
-        super( DBManager , self).__init__()
+        super( DBManager, self).__init__()
         self.master_q = master_q
         self.jobs_table = jobs_table
         self._log = None
         
     def run(self):
-        self._name = "DBManager-%d"%self.pid
+        self._name = "DBManager-%d" % self.pid
         setproctitle.setproctitle('mob2_DBManager')
         logging.config.dictConfig(client_log_config)
         self._log = logging.getLogger( __name__ ) 
         while True :
-            from_master = self.master_q.get( False ) if not self.master_q.empty() else None
+            try:
+                from_master = self.master_q.get( False ) if not self.master_q.empty() else None
+            except IOError:
+                #[Errno 32] Broken pipethe Master does not respond anymore
+                #then the jobsTable is down too
+                break
             if from_master == 'STOP':
+                self.stop()
                 break
             elif from_master == 'RELOAD':
                 self.reload_conf()
-            
-            jobs_to_update = self.jobs_table.jobs()
+            try:
+                jobs_to_update = self.jobs_table.jobs()
+            except IOError:
+                #[Errno 32] Broken pipethe Master does not respond anymore
+                #then the jobsTable is down too
+                break
             with DBConnection() as conn:
                 self.update_jobs( conn , jobs_to_update )
                 new_jobs = self.get_new_jobs( conn )
             for job in new_jobs:
                 self.jobs_table.put( job )
             time.sleep(2)
-          
-                    
+     
+    def stop(self):
+        jobs_to_update = self.jobs_table.jobs()
+        with DBConnection() as conn:
+            self.update_jobs(conn , jobs_to_update)       
+            
     def update_jobs(self , conn , jobs_to_update ):
         """
         synchronize the db with the jobs from the jobs_table
@@ -103,14 +117,13 @@ class DBManager(multiprocessing.Process):
             return entries
         for id_ in range(job_cpt , min(job_cpt + 10 , max_job) ):
             job_cpt = id_
-            job = conn[ id_ ]        
+            try:
+                job = conn[ id_ ]        
+            except KeyError:
+                continue
             entries.append( job )
             job_cpt += 1                            
         self._log.debug( "%s new entries = %s"%(self._name, [ en['id'] for en in entries ] ) )           
-#            if job[ 'id' ] in conn.keys():
-#                print self._name, "!!!! le jobid %s existe deja dans la DB!!!!!!!!" % job[ 'id' ]
-#                continue
-#            conn[job['id'] ] =  job 
         ## fin bouchon ##
         
         active_jobs_id = [ j.id for j in self.jobs_table.jobs() ]
@@ -120,12 +133,6 @@ class DBManager(multiprocessing.Process):
             job_id = entry['id'] 
             if job_id not in active_jobs_id:
                 job = JobRef( entry['id'], entry['create_time'] , Status( Status.BUILDING ), entry['owner'] )
-                #print "#########new job created########" 
-                #print "id = ",job.id  ," type = ", type(job.id)
-                #print "create_time = ",job.create_time  ," type = ", type(job.create_time)
-                #print "status = ",job.status  ," type = ", type(job.status )
-                #print "owner = ",job.owner   ," type = ", type(job.owner)
-                #print "has_been_notified = ",job.has_been_notified  ," type = ", type(job.has_been_notified)
                 new_jobs.append( job )
         self._log.debug( "%s new_jobs = %s"%(self._name, [ j.id for j in new_jobs ]))
         return new_jobs
@@ -150,7 +157,7 @@ import os.path
 class DBConnection(object):
     
     def __init__(self , cnx_params = None):
-        self.cnx_params = { 'path' : '/tmp/mobyle2.db' }
+        self.cnx_params = { 'path' : '/tmp/mob2.db' }
         self.cnx = None
     
     
@@ -183,14 +190,13 @@ class DBConnection(object):
         d = self.open()
         return d
     
-    def __exit__(self, exctype ,exc , tb):
+    def __exit__(self, exctype, exc, tb):
         """
         """
         if tb is None: #no traceback means no error
             self.commit()
             success = True
         else:
-            #log_exception( exc )
             self.rollback()
             success = False
         return success

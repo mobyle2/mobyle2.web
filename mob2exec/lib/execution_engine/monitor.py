@@ -31,18 +31,28 @@ class JtMonitor(multiprocessing.Process):
         self._log = None
         
     def run(self):
-        self._name = "Monitor-%d"%self.pid
+        self._name = "Monitor-%d" % self.pid
         setproctitle.setproctitle('mob2_monitor')
         logging.config.dictConfig(client_log_config)
         self._log = logging.getLogger( __name__ ) 
         while True :
-            from_master = self.master_q.get( False ) if not self.master_q.empty() else None
+            try:
+                from_master = self.master_q.get( False ) if not self.master_q.empty() else None
+            except IOError:
+                #[Errno 32] Broken pipe the Master does not respond anymore
+                self.stop()
+                break
             if from_master == 'STOP':
                 self.stop()
                 break
             elif from_master == 'RELOAD':
                 self.reload_conf()
-            all_jobs= self.table.jobs() 
+            try:
+                all_jobs = self.table.jobs() 
+            except IOError:
+                #[Errno 32] Broken pipe the Master does not respond anymore
+                self.stop()
+                break
             for job in all_jobs:
                 if job.status.is_submittable() :
                     actor = SubmitActor( self.table, job.id  )
@@ -67,6 +77,9 @@ class JtMonitor(multiprocessing.Process):
                     
                     
     def stop(self):
+        """
+        wait for children completion before exiting
+        """
         self._log.debug("recieved STOP")
         for p in self._child_process:
             p.join()
