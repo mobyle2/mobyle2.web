@@ -15,7 +15,6 @@ from conf.logger import client_log_config
 import multiprocessing
 import setproctitle
 
-from ..core.status import Status
         
 class NotificationActor(multiprocessing.Process):
     """
@@ -35,7 +34,7 @@ class NotificationActor(multiprocessing.Process):
         self.job_id = job_id
            
     def run(self):
-        self._name = "NotificationActor-%d"%self.pid
+        self._name = "NotificationActor-%d" % self.pid
         setproctitle.setproctitle('mob2_notification')
         logging.config.dictConfig(client_log_config)
         self._log = logging.getLogger( __name__ ) 
@@ -43,10 +42,10 @@ class NotificationActor(multiprocessing.Process):
         job = self.table.pop(self.job_id )
         if job.status.is_ended() and job.must_be_notified():
             job.has_been_notified = True
-            self._log.debug( "%s notified job %s and put it in table"%( self._name , job.id ) )
+            self._log.debug( "%s notified job %s and put it in table" % ( self._name , job.id ) )
             self.table.put( job )
         else:
-            self._log.debug( "%s job %s must not be notified"%(self._name, job.id) )
-        self._log.debug( "%s exiting"%self._name )
+            self._log.debug( "%s job %s must not be notified" % (self._name, job.id) )
+        self._log.debug( "%s exiting" % self._name )
         
         
