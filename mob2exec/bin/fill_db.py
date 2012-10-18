@@ -1,5 +1,5 @@
 import sys
-sys.path.append( '/home/bneron/Mobyle/Mobyle2_moteur' )
+sys.path.append( '/home/legros/Desktop/mobyle2b/mob2exec' )
 import cPickle
 import time 
 
