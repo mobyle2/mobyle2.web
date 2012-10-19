@@ -21,7 +21,7 @@ class Data:
 	    msg = "Programming error! Input data format must be an instance of DataFormat class"
 	    raise MobyleError , msg 
         self._data_format = data_format.__class__.__name__
-	self._data_type = data_format.is_format_of()
+	self._data_type = data_format.get_data_type()
 	self._value = value 
 
 
@@ -89,8 +89,49 @@ class DataType(object):
 	pass
     
     @abstractmethod
-    def get_format( self ):
+    def get_formats( self ):
         pass
+
+
+class SimpleDataType(DataType):
+
+    def check( self, value ):
+	pass
+    
+    def get_formats( self ):
+	return self._data_format.__class__.__name__
+
+    def get_data_type( self ):
+	return self.__class__.__name__
+
+
+
+class EDAMDataType(DataType):
+	
+    def __init__( self, EDAM_id = None):
+	self._id = EDAM_id
+	self._formats = get_formats( )
+	
+    def check( self, value ):
+        return True
+    
+    def get_formats( self ):
+	# results must be read in a database
+	return formats["PDB", "mol2"]
+
+class IntegerDataType(SimpleDataType):
+	
+    def __init__( self ):
+	self._data_format = IntegerDataFormat()
+	
+    def check( self, value ):
+        return True
+
+class StringDataType(SimpleDataType):
+
+    def check( self, value ):
+        return True
+	
 
 
 #------------------------
@@ -108,66 +149,23 @@ class DataFormat(object):
 	pass
     
     @abstractmethod
-    def is_format_of( self ):
+    def get_data_type( self ):
     	pass
     
 
+class SimpleDataFormat(DataFormat):
 
-
-class SimpleDataType(DataType, DataFormat):
-# Multiple inheritance from DataType and DataFormat classes.
-
-    def check( self, value ):
-	pass
-    
-    def get_format( self ):
-	return self._data_format.__class__.__name__
-
-    def is_format_of( self ):
-	return self.__class__.__name__
-    
     def convert( self, data ):
 	pass
     
     def validate( self, value ):
 	pass
     
-    def is_format_of( self ):
-    	pass
+    def get_data_type( self ):
+	return self.__class__.__name__
 
 
-class EDAMDataType():
-	
-    def __init__( self, EDAM_id = None):
-	self._id = EDAM_id
-	self._formats = get_list_of_formats ( self._id )
-	
-    def get_list_of_formats( self, EDAM_id ):
-	# results must be read in a database
-	return formats["PDB", "mol2"]
-
-class IntegerDataType(SimpleDataType):
-	
-    def __init__( self ):
-	self._data_format = IntegerDataFormat()
-	
-    def check( self, value ):
-        return True
-    
-# TODO: est ce que je dois ajouter ici une methode get_format() ?
-
-class StringDataType(SimpleDataType):
-
-    def check( self, value ):
-        return True
-	
-# TODO: est ce que je dois ajouter ici une methode get_format() ?
-	
-
-
-
-
-class IntegerDataFormat(DataFormat):
+class IntegerDataFormat(SimpleDataFormat):
 	
 # TODO : est ce que je dois coder une methode convert()
     def convert ( self, data ):
@@ -176,7 +174,7 @@ class IntegerDataFormat(DataFormat):
     def validate( self, value ):
         return True
     
-    def is_format_of( self ):
+    def get_data_type( self ):
     	return IntegerDataType().__class__.__name__
     
 class TextDataFormat(DataFormat):
@@ -187,7 +185,7 @@ class TextDataFormat(DataFormat):
     def validate( self, value ):
         return True
     
-    def is_format_of( self ):
+    def get_data_type( self ):
     	return StringDataType().__class__.__name__ # return an instance of the specific associated data type not necessarily StringDataType!
 
 class BinaryDataFormat(DataFormat):
@@ -198,7 +196,7 @@ class BinaryDataFormat(DataFormat):
     def validate( self, value ):
         return True
     
-    def is_format_of( self ):
+    def get_data_type( self ):
     	return 0 # return an instance of the specific associated data type
     
     
@@ -215,8 +213,8 @@ class TestDataType(unittest.TestCase):
     def test_check_method(self):
         self.assertTrue(self.type_1.check(4))
 
-    def test_get_format_method(self):
-        self.assertEqual(self.type_1.get_format(), 'IntegerDataFormat')
+    def test_get_formats_method(self):
+        self.assertEqual(self.type_1.get_formats(), 'IntegerDataFormat')
 
 
 class TestDataFormat(unittest.TestCase):
@@ -233,7 +231,7 @@ class TestDataFormat(unittest.TestCase):
         self.assertTrue(self.format_2.validate(4))
 	
     def test_is_format_of_method(self):
-        self.assertEqual(self.format_2.is_format_of(), 'IntegerDataType')
+        self.assertEqual(self.format_2.get_data_type(), 'IntegerDataType')
 	
 	
 	
