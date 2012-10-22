@@ -13,13 +13,15 @@ Created on Aug 13, 2012
 import os
 import sys
 
-MOBYLE_HOME = None
-if os.environ.has_key('MOBYLE_HOME'):
-    MOBYLE_HOME = os.environ['MOBYLE_HOME']
-if not MOBYLE_HOME:
-    MOBYLE_HOME = os.path.realpath( os.path.dirname( os.path.dirname(os.path.abspath(__file__))  ))
-if MOBYLE_HOME  not in sys.path:
-    sys.path.append(MOBYLE_HOME)
+MOBYLEHOME = None
+if os.environ.has_key('MOBYLEHOME'):
+    MOBYLEHOME = os.environ['MOBYLEHOME']
+if not MOBYLEHOME:
+    sys.exit('MOBYLEHOME must be defined in your environment')
+ 
+if ( os.path.join( MOBYLEHOME, 'mob2exec' ) ) not in sys.path:
+    sys.path.append( os.path.join( MOBYLEHOME, 'mob2exec') )
+
 
 #import logging
 import logging.config
@@ -134,7 +136,8 @@ if __name__ == '__main__':
     
     usage = """usage:
     mob2execd {start|stop|reload} """
-    lock_file = '/tmp/mob2.pid'  
+    from  conf.config import SANDBOX
+    lock_file = os.path.join( SANDOX, 'mob2.pid' )  
     
     if len( sys.argv) != 2:
         print >> sys.stderr , usage
@@ -170,8 +173,8 @@ if __name__ == '__main__':
         
         master = Master( pid_file )
         ############################# DEBUG #################################
-        stdout = open('/tmp/mob2.stdout' , 'a')
-        stderr = open('/tmp/mob2.stderr' , 'a')
+        stdout = open(os.path.join( SANDOX, 'mob2.stdout'), 'a')
+        stderr = open(os.path.join( SANDOX,'/tmp/mob2.stderr'), 'a')
         print "creation du context"
         context = daemon.DaemonContext( pidfile= pid_file, stdout= stdout, stderr= stderr )
         #context = daemon.DaemonContext( pidfile= pid_file )

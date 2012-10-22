@@ -1,9 +1,21 @@
+
+import os 
 import sys
-sys.path.append( '/home/bneron/Mobyle/Mobyle2_moteur' )
+
+MOBYLEHOME = None
+if os.environ.has_key('MOBYLEHOME'):
+	MOBYLEHOME = os.environ['MOBYLEHOME']
+if not MOBYLEHOME:
+	sys.exit('MOBYLEHOME must be defined in your environment')
+
+if ( os.path.join( MOBYLEHOME , 'mob2exec' ) ) not in sys.path:
+	sys.path.append( os.path.join( MOBYLEHOME , 'mob2exec' )  )
+
 import cPickle
 import time 
 import random
 
+from  conf.config import SANDBOX
 from  lib.core.status import Status 
 
 cmdlines={
@@ -45,7 +57,7 @@ for job_id in range(0,500):
                   'owner' : 'a_user_space',
                   }
 	
-with open('/tmp/mob2.db', 'w') as f:
+with open( os.path.join( SANDBOX, 'mob2.db'), 'w') as f:
 	cPickle.dump( db , f )
 	
 
