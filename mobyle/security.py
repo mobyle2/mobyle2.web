@@ -1,10 +1,9 @@
 import time
 
 
-USERS = set(["test", "root"])
-GROUPS = {"test": ["group:admin"], "root": ["group:admin"]}
-
 def groupFinder(userid, request):
-     if userid in USERS:
-        print "returning ",  GROUPS.get(userid, [])
-        return GROUPS.get(userid, [])
+     #try to find user in database:
+     user = request.db.users.find_one({"username": userid})
+     if user is not None:
+        print "returning ",  user['groups']
+        return user['groups']

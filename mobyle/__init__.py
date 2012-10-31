@@ -51,7 +51,7 @@ def main(global_config, **settings):
     if db.users.find().count() == 0:
         pwd = sha1("%s"%randint(1,1e99)).hexdigest()
         print 'root user created with password: ', pwd 
-        user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root'}
+        user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root', 'groups': ['group:admin'] }
         add_user(db, user)
         
     
