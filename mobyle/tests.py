@@ -7,6 +7,8 @@ import requests
 import pymongo
 import copy
 
+import views
+
 
 base_url = "http://localhost:6543"
 
@@ -18,7 +20,12 @@ class LoginTest(unittest.TestCase):
         
         from views import add_user
         
-        self.user = {'username':'test', 'password':'test'}
+        self.user = {
+                      'username':'test',
+                      'password':'test',
+                      'groups': ['group:admin'],
+                      'email': 'test@example.org',
+                    }
         add_user(self.db, copy.deepcopy(self.user))
         
         
@@ -91,4 +98,11 @@ class ViewTests(unittest.TestCase):
         
     def test_private_programs(self):
         pass 
-        
+    
+    def test_user_list(self):
+        user = views.user_list(self.request).values()[0]
+        self.assertTrue('email' in user)
+        self.assertTrue('group:admin' in user['groups'])
+        self.assertTrue(user['type'] == "registered")
+
+    

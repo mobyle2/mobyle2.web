@@ -113,8 +113,19 @@ def program_list(request):
     progs = request.db.programs.find({'public':True})
     return [p['name'] for p in progs]
 
-@view_config(route_name='user_list', request_method='GET', permission="isadmin")
+@view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")
 def user_list(request):
-    return Response("hello users")
+    users = request.db.users.find()
+    ret = {}
+    for u in users:
+       userid = str(u['_id'])
+       ret[userid] = { 
+                       'email': u.get('email', ''),
+                       'username': u.get('username', ''),
+                       'type': u['type'],
+                       'groups': u.get('groups', []),
+                       
+                     } 
+    return ret
     
 

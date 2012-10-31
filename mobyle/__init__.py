@@ -33,7 +33,7 @@ def main(global_config, **settings):
     config.include("velruse.providers.openid")
     config.add_openid_login(realm='http://mobyle2:6543')
     
-    authentication_policy = AuthTktAuthenticationPolicy('seekrit', callback=groupFinder, debug=True)
+    authentication_policy = AuthTktAuthenticationPolicy('seekrit', callback=groupFinder)
     authorization_policy = ACLAuthorizationPolicy()
     
     config.set_authentication_policy(authentication_policy)
@@ -51,7 +51,7 @@ def main(global_config, **settings):
     if db.users.find().count() == 0:
         pwd = sha1("%s"%randint(1,1e99)).hexdigest()
         print 'root user created with password: ', pwd 
-        user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root', 'groups': ['group:admin'] }
+        user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root', 'groups': ['group:admin'], 'type': 'registered' }
         add_user(db, user)
         
     
