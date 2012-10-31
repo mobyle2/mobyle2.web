@@ -25,6 +25,7 @@ def add_user(db, user):
 def check_user_pw(db, username, password):
     """checks for plain password vs hashed password in database"""
     user  = db.users.find_one({'username': username})
+    if not user: return False
     hashed = bcrypt.hashpw(password, user['hashed'])
     return hashed == user['hashed']
 
@@ -82,7 +83,7 @@ def login_complete_view(request):
 
 @view_config(route_name='onlyauthenticated', permission='viewauth')
 def onlyauth(request):
-    return Response("hello authenticated user")
+    return Response("<!DOCTYPE HTML><html><head></head><body>hello authenticated user</body></html>")
 
 
 #basic http auth (with a form)
@@ -107,9 +108,13 @@ def logout(request):
 
 
 
-@view_config(route_name='program_list')
+@view_config(route_name='program_list', renderer="json")
 def program_list(request):
     progs = request.db.programs.find({'public':True})
     return [p['name'] for p in progs]
 
+@view_config(route_name='user_list', request_method='GET', permission="isadmin")
+def user_list(request):
+    return Response("hello users")
+    
 

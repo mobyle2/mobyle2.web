@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from pyramid.config import Configurator
 from mobyle.resources import Root
+from mobyle.security import groupFinder
+
 
 from pyramid.events import subscriber
 from pyramid.events import NewRequest, BeforeRender, NewResponse
@@ -31,7 +33,7 @@ def main(global_config, **settings):
     config.include("velruse.providers.openid")
     config.add_openid_login(realm='http://mobyle2:6543')
     
-    authentication_policy = AuthTktAuthenticationPolicy('seekrit')
+    authentication_policy = AuthTktAuthenticationPolicy('seekrit', callback=groupFinder, debug=True)
     authorization_policy = ACLAuthorizationPolicy()
     
     config.set_authentication_policy(authentication_policy)
@@ -49,7 +51,7 @@ def main(global_config, **settings):
     if db.users.find().count() == 0:
         pwd = sha1("%s"%randint(1,1e99)).hexdigest()
         print 'root user created with password: ', pwd 
-        user = {'login': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root'}
+        user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root'}
         add_user(db, user)
         
     
@@ -63,6 +65,7 @@ def main(global_config, **settings):
     config.add_route('login', '/login')    
     config.add_route('logout', '/logout')
     config.add_route('program_list', '/programs/list')
+    config.add_route('user_list', '/users')
     
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")

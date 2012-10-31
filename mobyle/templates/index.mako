@@ -19,6 +19,15 @@ OpenID login:
 </form>
 </div>
 
+<br />
+Form login:
+<form action="/login" method='post'>
+<input type="text" name="username"/>
+<input type="password" name="password"/>
+<input type="submit" value="Login" />
+</form>
+
+
 <hr />
 
 Add a program:
