@@ -21,3 +21,5 @@
 *\.pyc
 *\.pyo
 
+#eggs
+mobyle.egg-info/
