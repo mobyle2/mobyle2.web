@@ -16,7 +16,7 @@ requires = [
     "pyramid_mailer",
     "velruse>=0.3dev",
     "py-bcrypt",
-    
+    "scss", 
     ]
 
 setup(name='mobyle',
