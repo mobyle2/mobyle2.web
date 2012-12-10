@@ -31,7 +31,7 @@ def main(global_config, **settings):
     config.include('pyramid_mailer')
     
     config.include("velruse.providers.openid")
-    config.add_openid_login(realm='http://mobyle2:6543')
+    config.add_openid_login(realm=settings['site_uri'])
     
     authentication_policy = AuthTktAuthenticationPolicy('seekrit', callback=groupFinder)
     authorization_policy = ACLAuthorizationPolicy()
