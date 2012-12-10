@@ -66,6 +66,8 @@ def main(global_config, **settings):
     config.add_route('logout', '/logout')
     config.add_route('program_list', '/programs/list')
     config.add_route('user_list', '/users')
+
+    config.add_route('about', '/about')
     
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")

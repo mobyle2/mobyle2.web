@@ -127,5 +127,13 @@ def user_list(request):
                        
                      } 
     return ret
+
+
+@view_config(route_name='about', renderer='mobyle:templates/about.mako')
+def about(request):
+        return {
+        }
+
+
     
 
