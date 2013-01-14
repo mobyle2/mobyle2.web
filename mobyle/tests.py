@@ -9,14 +9,14 @@ import copy
 
 import views
 
+from mobyle.common import session
+
 
 base_url = "http://localhost:6543"
 
 class LoginTest(unittest.TestCase):
     
     def setUp(self):
-        conn = pymongo.Connection("mongodb://localhost/", safe=True)
-        self.db = conn['mobyle2_tests']
         
         from views import add_user
         
@@ -26,12 +26,17 @@ class LoginTest(unittest.TestCase):
                       'groups': ['group:admin'],
                       'email': 'test@example.org',
                     }
-        add_user(self.db, copy.deepcopy(self.user))
+        user = session.User()
+        user['email']  = 'test@example.org'
+        user['groups'] = ['group:admin']
+        user['hashed_password'] = 'test'
+        add_user(self.db, user)
         
         
         
     def tearDown(self):
-        self.db.users.remove({'username': 'test'})
+        user = session.User.find_one({'email' : 'test@example.org'})
+        user.delete()
         
     
     def test_login(self):
@@ -55,22 +60,21 @@ class ViewTests(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
         
-        conn = pymongo.Connection("mongodb://localhost/", safe=True)
-        db = conn['mobyle2_tests']
-        
-        self.config.db = db
         
         self.public_programs_list = ['foo', 'bar']
         
         for p in self.public_programs_list:
-            prog = dict(name=p, public=True)
-            db.programs.insert(prog)
+            program = session.Program()
+            program['name'] = p
+            program['public'] = True
+            program.save()
         
         self.request = testing.DummyRequest()
-        self.request.db = self.config.db
 
     def tearDown(self):
-        self.config.db.programs.remove()
+        programs = session.Program.find({})
+        for program in programs:
+            program.delete()
         testing.tearDown()
 
     def test_my_view(self):
@@ -93,7 +97,10 @@ class ViewTests(unittest.TestCase):
             self.assertTrue(p in prog_list)
 
         self.assertTrue('baz' not in program_list(self.request))  
-        self.config.db.programs.insert(dict(name="baz", public=True))
+        program = session.Program()
+        program['baz'] = p
+        program['public'] = True
+        program.save()
         self.assertTrue('baz' in program_list(self.request))
         
     def test_private_programs(self):

@@ -1,9 +1,10 @@
 import time
 
+from mobyle.common import session
 
 def groupFinder(userid, request):
      #try to find user in database:
-     user = request.db.users.find_one({"username": userid})
+     user = session.User.find_one({"username": userid})
      if user is not None:
-        return user.get('groups', [])
+        return user['groups']
 

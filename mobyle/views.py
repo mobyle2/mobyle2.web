@@ -14,19 +14,19 @@ import bcrypt
 
 from pyramid.httpexceptions import HTTPFound
 
+from mobyle.common import session
 
 def add_user(db, user):
     """adds a user to the database. Password will be hashed with bcrypt"""
     hashed = bcrypt.hashpw(user['password'], bcrypt.gensalt())
-    del user['password']
-    user['hashed'] = hashed
-    db.users.insert(user)
+    user['hashed_password'] = hashed
+    user.save()
 
-def check_user_pw(db, username, password):
+def check_user_pw(username, password):
     """checks for plain password vs hashed password in database"""
-    user  = db.users.find_one({'username': username})
+    user  = session.User.find_one({'email': username})
     if not user: return False
-    hashed = bcrypt.hashpw(password, user['hashed'])
+    hashed = bcrypt.hashpw(password, user['hashed_password'])
     return hashed == user['hashed']
 
 
@@ -37,12 +37,14 @@ def my_view(request):
     userid = authenticated_userid(request)
 
     #retrieve list of programs:
-    programs = request.db.programs.find()    
+    programs = session.Program.find()    
     
     if 'progname' in request.POST:
         newprogname = request.POST['progname']
         if newprogname not in programs:
-            request.db.programs.insert({'name': newprogname } , safe=True)
+            program = session.Program()
+            program['name'] = newprogname
+            program.save()
             return HTTPFound(location='/')
     
     if 'platformurl' in request.POST:
@@ -50,14 +52,12 @@ def my_view(request):
         page = requests.get(newplatform)
         page = page.json       
         for elt in page.keys():
-            request.db.programs.insert({'name': elt } , safe=True)
-    
+            program = session.Program()
+            program['name'] = elt
+            program.save()
     
     return {'project':'mobyle', 'programs': programs, 'userid': userid }
 
-
- 
-    
     
 @view_config(
     context='velruse.AuthenticationComplete',
@@ -93,7 +93,7 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         
-        if check_user_pw(request.db, username, password):
+        if check_user_pw(username, password):
             headers = remember(request, username)
             return HTTPFound(location="/", headers = headers)
     return Response("not logged in")
@@ -110,20 +110,20 @@ def logout(request):
 
 @view_config(route_name='program_list', renderer="json")
 def program_list(request):
-    progs = request.db.programs.find({'public':True})
+    progs = session.Program.find({'public':True})
     return [p['name'] for p in progs]
 
 @view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")
 def user_list(request):
-    users = request.db.users.find()
+    users = session.User.find()
     ret = {}
     for u in users:
        userid = str(u['_id'])
        ret[userid] = { 
-                       'email': u.get('email', ''),
-                       'username': u.get('username', ''),
+                       'email': u['email'],
+                       'username': u['email'],
                        'type': u['type'],
-                       'groups': u.get('groups', []),
+                       'groups': u[:groups]),
                        
                      } 
     return ret
@@ -133,7 +133,4 @@ def user_list(request):
 def about(request):
         return {
         }
-
-
-    
 

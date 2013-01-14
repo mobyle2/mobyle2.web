@@ -20,6 +20,10 @@ import pymongo
 from hashlib import sha1
 from random import randint
 
+import mobyle.common.connection
+from mobyle.common import session
+
+from mobyle.common.users import User
 
 from mobyle.views import add_user
 
@@ -40,18 +44,29 @@ def main(global_config, **settings):
     config.set_authorization_policy(authorization_policy)
     
     
-    db_uri = settings['db_uri']
-    conn = pymongo.Connection(db_uri, safe=True)
-    config.registry.settings['db_conn'] = conn
+    #db_uri = settings['db_uri']
+    #conn = pymongo.Connection(db_uri, safe=True)
+    #config.registry.settings['db_conn'] = conn
+
+    mobyle.common.connection.init_mongo(settings['db_conn'])
+
     
     #initialize database when empty:
-    db = conn[config.registry.settings['db_name']]
+    #db = conn[config.registry.settings['db_name']]
     
-    
-    if db.users.find().count() == 0:
+    if session.User.find().count() == 0:    
+    #if db.users.find().count() == 0:
         pwd = sha1("%s"%randint(1,1e99)).hexdigest()
         print 'root user created with password: ', pwd 
-        user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root', 'groups': ['group:admin'], 'type': 'registered' }
+        user = session.User()
+        user['firstname'] = 'root'
+        user['lastname'] = 'root'
+        user['email'] = settings['root_email']
+        user['hashed_password'] = pwd
+        user['admin'] = True
+        user['type'] = 'registered'
+        user['groups'] = [ 'admin' ]
+        #user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root', 'groups': ['group:admin'], 'type': 'registered' }
         add_user(db, user)
         
     
