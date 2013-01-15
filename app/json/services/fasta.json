@@ -1,0 +1,1388 @@
+{
+    "type": "program", 
+    "name": "fasta", 
+    "version": "3.4(t25d6)", 
+    "title": "FASTA", 
+    "description": "<text lang=\"en\">Sequence database search</text> </description>", 
+    "authors": "W. Pearson</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
+        }, 
+        {
+            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://dialign.gobics.de/download/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://faculty.virginia.edu/wrpearson/fasta/"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net", 
+        "http://gzhertz.home.comcast.net/~gzhertz/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://dialign.gobics.de/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://swift.cmbi.ru.nl/gv/dssp/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:formatter", 
+        "phylogeny:tree_analyser", 
+        "sequence:protein:pattern", 
+        "sequence:nucleic:pattern", 
+        "alignment:consensus", 
+        "alignment:structure", 
+        "structure:indexing", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "sequence:edit", 
+        "genetics:detection", 
+        "alignment:multiple", 
+        "alignment:differences", 
+        "sequence:protein:motifs", 
+        "phylogeny:distance", 
+        "phylogeny:distance", 
+        "phylogeny:parsimony", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "phylogeny:display", 
+        "display:tree", 
+        "phylogeny:display", 
+        "display:tree", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple", 
+        "sequence:nucleic:repeats", 
+        "sequence:nucleic:2D_structure", 
+        "structure:2D_structure", 
+        "sequence:nucleic:mutation", 
+        "sequence:protein:composition", 
+        "sequence:edit", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:primers", 
+        "sequence:nucleic:repeats", 
+        "alignment:pairwise:global", 
+        "sequence:nucleic:repeats", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:edit:feature_table", 
+        "sequence:edit", 
+        "sequence:formatter", 
+        "database:search:homology"
+    ], 
+    "command": "fastaRename", 
+    "inputs": {
+        "parameters": {
+            "fasta": {
+                "ismandatory": true, 
+                "prompt": "Fasta program", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "null"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "null", 
+                        "label": "Choose a program"
+                    }, 
+                    {
+                        "value": "fasta", 
+                        "label": "fasta (protein or nucleotide query vs similar db )"
+                    }, 
+                    {
+                        "value": "tfasta", 
+                        "label": "tfasta (protein query vs translated nucleic db)"
+                    }, 
+                    {
+                        "value": "fastx", 
+                        "label": "fastx (translated nucleotide query  vs protein db (frameshifts only only between codons)) "
+                    }, 
+                    {
+                        "value": "tfastx", 
+                        "label": "tfastx (protein query vs translated DNA db (frameshifts only between codons))"
+                    }, 
+                    {
+                        "value": "fasty", 
+                        "label": "fasty (fastx + frameshifts anywhere)"
+                    }, 
+                    {
+                        "value": "tfasty", 
+                        "label": "tfasty (tfastx + frameshifts anywhere)"
+                    }, 
+                    {
+                        "value": "fastf", 
+                        "label": "fastf (mixed peptide seq vs protein db (modified algorithm))"
+                    }, 
+                    {
+                        "value": "tfastf", 
+                        "label": "tfastf (mixed peptide seq vs translated DNA db (modified algorithm))"
+                    }, 
+                    {
+                        "value": "fasts", 
+                        "label": "fasts (several short peptide seq vs protein db (modified algorithm))"
+                    }, 
+                    {
+                        "value": "tfasts", 
+                        "label": "tfasts (several short peptide seq vs translated DNA db (modified algorithm))"
+                    }
+                ], 
+                "format": {
+                    "perl": "\"$value -q\"", 
+                    "python": "str(value) + \" -q\""
+                }, 
+                "comment": "<text lang=\"en\">- fasta: scan a protein or DNA sequence library for similar sequences</text> <text lang=\"en\">- tfasta: compare a protein sequence to a DNA sequence librarSy, translating the DNA sequence library `on-the-fly' to the 3 forward and the 3 reverse frames without frameshifts.</text> <text lang=\"en\">- fastx/fasty: compare a DNA sequence to a protein sequence database, comparing the translated DNA sequence in three frames, with frameshifts. fasty2 allows frameshifts inside codons.</text> <text lang=\"en\">- tfastx/tfasty: compare a protein sequence vs a translated DNA db, with frameshifts. tfasty allows frameshifts inside codons.</text> <text lang=\"en\">- fastf/tfastf: compare an ordered peptide mixture (obtained for example by Edman degradation of a CNBr cleavage) against a protein or translated DNA database.</text> <text lang=\"en\">- fasts/tfasts: compare a set of short peptide fragments (obtained from a mass-spec analysis of a protein) against a protein or translated DNA database.</text> </comment>"
+            }, 
+            "query": {
+                "ismandatory": true, 
+                "prompt": "Query sequence File", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \"+str(value)"
+                }
+            }, 
+            "seqtype": {
+                "ismandatory": true, 
+                "prompt": "Is it a DNA or protein sequence (-n)", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "null"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "null", 
+                        "label": "Choose a biotype"
+                    }, 
+                    {
+                        "value": "DNA", 
+                        "label": "DNA"
+                    }, 
+                    {
+                        "value": "protein", 
+                        "label": "Protein"
+                    }
+                ], 
+                "format": {
+                    "perl": "(defined $value and $fasta =~ /^fasta/ and $value eq \"DNA\") or $fasta =~ /^fast(x|y)/) ? \" -n\" : \"\"", 
+                    "python": "( \"\" , \" -n\" )[ value is not None and value == \"DNA\" and fasta == 'fasta']"
+                }, 
+                "ctrl": {
+                    "perl": "($fasta =~ /^fast(f|s)/ and $seqtype eq \"DNA\") or ($fasta =~ /^fast(x|y)/ and $seqtype eq \"protein\")", 
+                    "python": "(seqtype == \"protein\" and fasta in [\"fasta\", \"fastf\", \"fasts\", \"tfasta\", \"tfastx\", \"tfasty\", \"tfastf\", \"tfasts\"]) or (seqtype == \"DNA\" and fasta in [\"fasta\", \"fastx\", \"fasty\"] ) "
+                }
+            }, 
+            "db": {
+                "name": "db", 
+                "parameters": {
+                    "protein_db": {
+                        "ismandatory": true, 
+                        "prompt": "Protein Database", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "($seqtype eq \"protein\" and $fasta =~ /^fasta/) or $fasta =~ /^fast(x|y|s|f)/", 
+                            "python": "(seqtype == \"protein\" and fasta == \"fasta\") or fasta in [\"fastx\", \"fasty\", \"fastf\", \"fasts\"]"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "format": {
+                            "perl": "$value\"", 
+                            "python": "\" + str(value)"
+                        }, 
+                        "comment": "<text lang=\"en\">Choose a protein db for fasta, fastx, fatsf, fasty or fasts.</text> <text lang=\"en\">Please note that Swissprot usage by and for commercial entities requires a license agreement.</text> </comment>"
+                    }, 
+                    "nucleotid_db": {
+                        "ismandatory": true, 
+                        "prompt": "Nucleotid Database", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": " ($seqtype eq \"DNA\" and $fasta =~ /^fasta/ ) or $fasta =~ /^tfast/ ", 
+                            "python": "(seqtype == \"DNA\" and fasta == \"fasta\") or fasta in [ \"tfasta\", \"tfastx\", \"tfasty\", \"tfastf\", \"tfasts\"] "
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "format": {
+                            "perl": "$value\"", 
+                            "python": "\" + str(value)"
+                        }, 
+                        "comment": "<text lang=\"en\">Choose a nucleotide db for fasta, tfasta, tfastx, tfasty, tfastf or tfasts</text> </comment>"
+                    }, 
+                    "break_long": {
+                        "prompt": "Break long library sequences into blocks (-N)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -N $value\" : \"\"", 
+                            "python": "( \"\" , \" -N \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Break long library sequences into blocks of N residues. Useful for bacterial genomes, which have only one sequence entry. -N 2000 works well for well for bacterial genomes.</text> </comment>"
+                    }
+                }
+            }, 
+            "selectivity_opt": {
+                "name": "selectivity_opt", 
+                "parameters": {
+                    "ktup": {
+                        "prompt": "Sensitivity and speed of the search ", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" $value\":\"\"", 
+                            "python": "(\"\" , \" \" + str(value) )[ value is not None ]"
+                        }, 
+                        "ctrl": {
+                            "perl": "($seqtype eq \"protein\" and ($value == 1 or $value == 2 )) or ($seqtype eq \"DNA\" and ($value == 1 or $value == 2 or $value == 3 or $value == 4 or $value == 5 or $value == 6 )))", 
+                            "python": "(seqtype == \"protein\" and value in [1,2]) or (seqtype == \"DNA\" and value in range(1,7,1))"
+                        }, 
+                        "comment": "<text lang=\"en\">ktup sets the sensitivity and speed of the search. If ktup=2, similar regions in the two sequences being compared are found by looking at pairs of aligned residues; if ktup=1, single aligned amino acids are examined. ktup can be set to 2 or 1 for protein sequences, or from 1 to 6 for DNA sequences. The default if ktup is not specified is 2 for proteins and 6 for DNA. 1ktup=1 should be used for oligonucleotides (DNA query length < 20).</text> </comment>"
+                    }, 
+                    "optcut": {
+                        "prompt": "Threshold for band optimization (FASTA, FASTX). (-c)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -c $value\":\"\"", 
+                            "python": "(\"\" , \" -c \" + str(value) )[ value is not None ]"
+                        }, 
+                        "ctrl": {
+                            "perl": "$fasta =~ /^fasta/ or $fasta =~ /^fastx", 
+                            "python": "fasta in [\"fasta\", \"fastx\"]"
+                        }, 
+                        "comment": "<text lang=\"en\">The threshold value is normally calculated based on sequence length.</text> </comment>"
+                    }, 
+                    "gapinit": {
+                        "prompt": "Penalty for opening a gap (-f)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -f $value\":\"\"", 
+                            "python": "(\"\" , \" -f \" + str(value))[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">The default for fasta with proteins is -12 and -16 for DNA</text> <text lang=\"en\">The default for fastx/fasty/tfastz/tfasty is -15.</text> </comment>"
+                    }, 
+                    "gapext": {
+                        "prompt": "Penalty for gap extension (-g)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -g $value\":\"\"", 
+                            "python": "(\"\" , \" -g \" + str(value))[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">The default for fasta is -2 for proteins and -4 for DNA</text> <text lang=\"en\">The default for fastx/fasty/tfastz/tfasty is -3.</text> </comment>"
+                    }, 
+                    "high_expect": {
+                        "prompt": "Maximal expectation value threshold for displaying scores and alignments (-E)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "10.0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -E $value\":\"\"", 
+                            "python": "(\"\" , \" -E \" + str(value))[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Expectation value limit for displaying scores and alignments. Defaults are 10.0 for FASTA protein searches, 5.0 for translated DNA/protein comparisons, and 2.0 for DNA/DNA searches.</text> </comment>"
+                    }, 
+                    "low_expect": {
+                        "prompt": "Minimal expectation value threshold for displaying scores and alignments (-F)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -F $value\":\"\"", 
+                            "python": "(\"\" , \" -F  \" + str(value))[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Expectation value lower limit for score and alignment display. If value is 1e-6 prevents library sequences with E()-values lower than 1e-6 from being displayed. This allows the use to focus on more distant relationships. </text> <text lang=\"en\">This allow one to skip over close relationships in searches for more distant relationships.</text> </comment>"
+                    }
+                }
+            }, 
+            "score_opt": {
+                "name": "score_opt", 
+                "parameters": {
+                    "scoring_nucleic": {
+                        "name": "scoring_nucleic", 
+                        "precond": {
+                            "perl": "$fasta eq \"fasta\" and seqtype eq \"DNA\"", 
+                            "python": "fasta == \"fasta\" and seqtype == \"DNA\""
+                        }, 
+                        "parameters": {
+                            "nucleotid_match": {
+                                "prompt": "Maximum positive value for a nucleotid match (-r)", 
+                                "type": {
+                                    "datatype_class": "Integer"
+                                }, 
+                                "default_value": [
+                                    "5"
+                                ], 
+                                "ctrl": {
+                                    "perl": "= 0", 
+                                    "python": "= 0"
+                                }
+                            }, 
+                            "nucleotid_mismatch": {
+                                "prompt": "Maximum negative penalty value for a nucleotid mismatch (-r)", 
+                                "type": {
+                                    "datatype_class": "Integer"
+                                }, 
+                                "precond": {
+                                    "perl": "defined $nucleotid_match", 
+                                    "python": "nucleotid_match is not None"
+                                }, 
+                                "default_value": [
+                                    "-4"
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and defined nucleotid_match and ($value != $vdef and $nucleotid_match != 5)) ? \" -r \\\"$nucleotid_match/$value\\\"\" : \"\"", 
+                                    "python": "( \"\" , ' -r \"' + str(nucleotid_match) + '/' + str(value)+ '\"' )[ value is not None and nucleotid_match is not None and (nucleotid_match != 5 and value != vdef) ]"
+                                }, 
+                                "ctrl": {
+                                    "perl": " 0", 
+                                    "python": " 0"
+                                }, 
+                                "comment": "<text lang=\"en\">'+5/-4' are the default values for nucleotid match/mismatch, but '+3/-2' can perform better in some cases.</text> </comment>"
+                            }
+                        }
+                    }, 
+                    "scoring_protein": {
+                        "name": "scoring_protein", 
+                        "precond": {
+                            "perl": "seqtype ne \"DNA\"", 
+                            "python": "seqtype != \"DNA\""
+                        }, 
+                        "parameters": {
+                            "matrix": {
+                                "prompt": "Scoring matrix file (-s)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "BL50"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "BL50", 
+                                        "label": "BLOSUM50"
+                                    }, 
+                                    {
+                                        "value": "BL62", 
+                                        "label": "BLOSUM62"
+                                    }, 
+                                    {
+                                        "value": "BL80", 
+                                        "label": "BLOSUM80"
+                                    }, 
+                                    {
+                                        "value": "P20", 
+                                        "label": "PAM20"
+                                    }, 
+                                    {
+                                        "value": "P40", 
+                                        "label": "PAM40"
+                                    }, 
+                                    {
+                                        "value": "P120", 
+                                        "label": "PAM120"
+                                    }, 
+                                    {
+                                        "value": "P250", 
+                                        "label": "PAM250"
+                                    }, 
+                                    {
+                                        "value": "M10", 
+                                        "label": "MDM_10"
+                                    }, 
+                                    {
+                                        "value": "M20", 
+                                        "label": "MDM_20"
+                                    }, 
+                                    {
+                                        "value": "M40", 
+                                        "label": "MDM_40"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -s $value\" : \"\"", 
+                                    "python": "( \"\" , \" -s  \" + str(value) )[ value is not None and value != vdef]"
+                                }
+                            }, 
+                            "X_penalty": {
+                                "prompt": "Penalty for a match to 'X' (independently of the PAM matrix) (-x)", 
+                                "type": {
+                                    "datatype_class": "Integer"
+                                }, 
+                                "format": {
+                                    "perl": "(defined $value) ? \" -x $value\" : \"\"", 
+                                    "python": "( \"\" , \" -x  \" + str(value) )[ value is not None ]"
+                                }, 
+                                "comment": "<text lang=\"en\">Particularly useful for fast[xy], where termination codons are encoded as 'X'.</text> </comment>"
+                            }
+                        }
+                    }
+                }
+            }, 
+            "frame_transl_opt": {
+                "name": "frame_transl_opt", 
+                "parameters": {
+                    "frameshift": {
+                        "prompt": "Penalty for frameshift between two codons (fast[xy]/tfast[xy]) (-h)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": " ($fasta =~ /fast(x|y)/)", 
+                            "python": "fasta in [\"fastx\", \"fasty\", \"tfastx\", \"tfasty\"] "
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -h $value\":\"\"", 
+                            "python": "(\"\" , \" -h  \" + str(value))[ value is not None ]"
+                        }
+                    }, 
+                    "frameshift_within": {
+                        "prompt": "Penalty for frameshift within a codon (fasty/tfasty) (-j)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "($fasta =~ /fasty/)", 
+                            "python": "fasta in [\"fasty\", \"tfasty\"] "
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -j $value\":\"\"", 
+                            "python": "(\"\" , \" -j  \" + str(value))[ value is not None ]"
+                        }
+                    }, 
+                    "threeframe": {
+                        "prompt": "Search only the three forward frames (-3)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$fasta =~ /^tfast(a|x|y)/", 
+                            "python": "fasta in [\"tfasta\", \"tfastx\", \"tfasty\"]"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -3\":\"\"", 
+                            "python": "(\"\" , \" -3\")[ value ]"
+                        }
+                    }, 
+                    "invert": {
+                        "prompt": "Reverse complement the query sequence (-i)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$fasta =~ /fast(x|y)/", 
+                            "python": "fasta in [\"fastx\", \"tfastx\", \"fasty\", \"tfasty\"] "
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -i\" : \"\"", 
+                            "python": "( \"\" , \" -i\" )[ value ]"
+                        }
+                    }, 
+                    "genetic_code": {
+                        "prompt": "Use genetic code for translation (tfasta/tfast[xy]/fast[xy]) (-t)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$fasta =~ /^tfast/ or $fasta =~ /fast[xy]/", 
+                            "python": "fasta in [ \"tfasta\", \"tfastx\", \"tfasty\", \"tfastf\", \"tfasts\", \"fastx\", \"fasty\" ]"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "1", 
+                                "label": "Standard (1)"
+                            }, 
+                            {
+                                "value": "2", 
+                                "label": "Vertebrate Mitochondrial (1)"
+                            }, 
+                            {
+                                "value": "3", 
+                                "label": "Yeast Mitochondrial (2)"
+                            }, 
+                            {
+                                "value": "4", 
+                                "label": "Mold, Protozoan, Coelenterate Mitochondrial and Mycoplasma/Spiroplasma (3)"
+                            }, 
+                            {
+                                "value": "5", 
+                                "label": "Invertebrate Mitochondrial (4)"
+                            }, 
+                            {
+                                "value": "6", 
+                                "label": "Ciliate Macronuclear and Dasycladacean (5)"
+                            }, 
+                            {
+                                "value": "9", 
+                                "label": "Echinoderm Mitochondrial (6)"
+                            }, 
+                            {
+                                "value": "10", 
+                                "label": "Euplotid Nuclear (7)"
+                            }, 
+                            {
+                                "value": "11", 
+                                "label": "Bacterial (8)"
+                            }, 
+                            {
+                                "value": "12", 
+                                "label": "Alternative Yeast Nuclear (9)"
+                            }, 
+                            {
+                                "value": "13", 
+                                "label": "Ascidian Mitochondrial (10)"
+                            }, 
+                            {
+                                "value": "14", 
+                                "label": "Flatworm Mitochondrial (11)"
+                            }, 
+                            {
+                                "value": "15", 
+                                "label": "Blepharisma Macronuclear (12)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -t $value\" : \"\"", 
+                            "python": "( \"\" , \" -t  \" + str(value) )[ value is not None and value != vdef]"
+                        }
+                    }
+                }
+            }, 
+            "optimize_opt": {
+                "name": "optimize_opt", 
+                "parameters": {
+                    "band": {
+                        "prompt": "Band-width used for optimization (-y)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -y $value\":\"\"", 
+                            "python": "(\"\" , \" -y  \" + str(value))[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Set the band-width used for optimization. -y 16 is the default for protein when ktup=2 and for all DNA alignments. -y 32 is used for protein and ktup=1. For proteins, optimization slows comparison 2-fold and is highly recommended.</text> </comment>"
+                    }, 
+                    "swalig": {
+                        "prompt": "Force Smith-Waterman alignment for DNA (-A)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$fasta =~ /^fasta/ and $seqtype eq \"DNA\"", 
+                            "python": "fasta in [ \"tfasta\", \"fasta\" ] and seqtype == \"DNA\""
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value)? \" -A\":\"\"", 
+                            "python": "(\"\" , \" -A\")[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Force Smith-Waterman alignment for output. Smith-Waterman is the default for protein sequences and FASTX, but not for TFASTA or DNA comparisons with FASTA.</text> </comment>"
+                    }, 
+                    "noopt": {
+                        "prompt": "Turn fasta band optimization off during initial phase (-o)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value)? \" -o\":\"\"", 
+                            "python": "(\"\" , \" -o\")[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Turn off default optimization of all scores greater than OPTCUT. Shirt results by 'initn' scores reduces the accuracy of statistical estimates. This was the behavior of fasta1 versions.</text> </comment>"
+                    }, 
+                    "stat": {
+                        "prompt": "Specify statistical calculation. (-z)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "0", 
+                                "label": "Turn off statistics (0)"
+                            }, 
+                            {
+                                "value": "1", 
+                                "label": "Weigthed regression against the length of the library sequence (1)"
+                            }, 
+                            {
+                                "value": "2", 
+                                "label": "Maximum likelihood estimates of Lambda abd K (2)"
+                            }, 
+                            {
+                                "value": "3", 
+                                "label": "Altschul-Gishas statistical (3)"
+                            }, 
+                            {
+                                "value": "4", 
+                                "label": "Alternate regression method: Variation 1 of 1 (4)"
+                            }, 
+                            {
+                                "value": "5", 
+                                "label": "Alternate regression method: Variation 2 of 1 (5)"
+                            }, 
+                            {
+                                "value": "6", 
+                                "label": "Maximum likelihood estimate based on the method of Mott (6)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": " 0) ? \" -z 1$value\" : ($value ne $vdef) ? \" -z  $value\" : \"\"", 
+                            "python": " 0 and random is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">In general, 1 and 2 are the best methods.</text> </comment>"
+                    }, 
+                    "random": {
+                        "prompt": "Estimate statistical parameters from shuffled copies of each library sequence (-z)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "comment": "<text lang=\"en\">This doubles the time required for a search, but allows accurate statistics to be estimated for libraries comprised of a single protein family.</text> </comment>"
+                    }
+                }
+            }, 
+            "affichage": {
+                "name": "affichage", 
+                "parameters": {
+                    "histogram": {
+                        "prompt": "Turn off histogram display (-H)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value)? \" -H\":\"\"", 
+                            "python": "(\"\" , \" -H\" )[ value ]"
+                        }
+                    }, 
+                    "scores": {
+                        "prompt": "Number of similarity scores to be shown (-b)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "= $high_expect)? \" -b $value\":\"\"", 
+                            "python": "= high_expect]"
+                        }, 
+                        "ctrl": {
+                            "perl": "= $high_expect", 
+                            "python": "= high_expect"
+                        }
+                    }, 
+                    "alns": {
+                        "prompt": "Number of alignments to be shown (-d)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "= $high_expect)? \" -d $value\":\"\"", 
+                            "python": "= high_expect]"
+                        }, 
+                        "ctrl": {
+                            "perl": "= $high_expect", 
+                            "python": "= high_expect"
+                        }
+                    }, 
+                    "html_output": {
+                        "prompt": "HTML output (-m)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value)? \" -m 6\" : \"\" ", 
+                            "python": "( \"\"  , \" -m 6\" )[ value ]"
+                        }
+                    }, 
+                    "markx": {
+                        "prompt": "Alternate display of matches and mismatches in alignments (-m)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "not $html_output", 
+                            "python": "not html_output"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "0", 
+                                "label": "0 [: identities] [. conservative repl] [ non-conserv repl]"
+                            }, 
+                            {
+                                "value": "1", 
+                                "label": "1: [ identities] [x conservative repl] [X non-conserv repl]"
+                            }, 
+                            {
+                                "value": "2", 
+                                "label": "2: [. identities] [res mismatch] - don't display the 2nd seq"
+                            }, 
+                            {
+                                "value": "3", 
+                                "label": "3: writes a file of library sequences in FASTA format"
+                            }, 
+                            {
+                                "value": "4", 
+                                "label": "4: displays a graph of the alignment"
+                            }, 
+                            {
+                                "value": "9", 
+                                "label": "9: 0 + percent identity + coordinates"
+                            }, 
+                            {
+                                "value": "10", 
+                                "label": "10: output more information"
+                            }
+                        ], 
+                        "format": {
+                            "perl": " (defined $value and $value ne $vdef )? \" -m $value\" : \"\" ", 
+                            "python": "( \"\"  , \" -m  \" + str(value) )[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">(MARKX) =0,1,2,3,4. Alternate display of matches and mismatches in alignments.</text> <text lang=\"en\">MARKX=0 uses ':','.',' ', for identities, conservative replacements, and non-conservative replacements, respectively.</text> <text lang=\"en\">MARKX=1 uses ' ','x', and 'X'. </text> <text lang=\"en\">MARKX=2 does not show the second sequence, but uses the second alignment line to display matches with a '.' for identity, or with the mismatched residue for mismatches. MARKX=2 is useful for aligning large numbers of similar sequences.</text> <text lang=\"en\">MARKX=3 writes out a file of library sequences in FASTA format. MARKX=3 should always be used with the 'SHOWALL' (-a) option, but this does not completely ensure that all of the sequences output will be aligned. </text> <text lang=\"en\">MARKX=4 displays a graph of the alignment of the library sequence with respect to the query sequence, so that one can identify the regions of the query sequence that are conserved.</text> </comment>"
+                    }, 
+                    "init1": {
+                        "prompt": "Sequences ranked by the z-score based on the init1 score (-1)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value)? \" -1\":\"\"", 
+                            "python": "(\"\" , \" -1\")[ value ]"
+                        }
+                    }, 
+                    "z_score_out": {
+                        "prompt": "Show normalize score as (-B)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "1", 
+                                "label": "z-score (1)"
+                            }, 
+                            {
+                                "value": "0", 
+                                "label": "bit-score (0)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -B\" : \"\"", 
+                            "python": "( \"\" , \" -B\" )[ value is not None and value != vdef]"
+                        }
+                    }, 
+                    "linlen": {
+                        "prompt": "Output line length for sequence alignments (-w)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "60"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -w $value\":\"\"", 
+                            "python": "(\"\" , \" -w  \" + str(value))[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": "= 200", 
+                            "python": "= 200"
+                        }
+                    }, 
+                    "offsets": {
+                        "prompt": "Start numbering the aligned sequences at position x1 x2 (2 numbers separated by comma) (-X)", 
+                        "type": {
+                            "datatype_class": "String"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -X \\\"$value\\\"\":\"\"", 
+                            "python": "(\"\" , ' -X \"' +  str(value) + '\"')[ value is not None ]"
+                        }, 
+                        "ctrl": {
+                            "perl": "$value ~= /\\d+(,\\d+){1}/ and $value", 
+                            "python": "len (value.split(',')) == 2 and value.split(',')[0] != '' and value.split(',')[1] != '' "
+                        }, 
+                        "comment": "<text lang=\"en\">Causes fasta/lfasta/plfasta to start numbering the aligned sequences starting with offset1 and offset2, rather than 1 and 1. This is particularly useful for showing alignments of promoter regions.</text> </comment>"
+                    }, 
+                    "info": {
+                        "prompt": "Display more information about the library sequence in the alignment (-L)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value)? \" -L\":\"\"", 
+                            "python": "(\"\" , \" -L\")[ value ]"
+                        }
+                    }
+                }
+            }, 
+            "other_opt": {
+                "name": "other_opt", 
+                "parameters": {
+                    "filter": {
+                        "prompt": "Lower case filtering (-S)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -S\" : \"\"", 
+                            "python": "( \"\" , \" -S\" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Treat lower-case characters in the query or library sequence as 'low-complexity' residues. These characters are treated as 'X' during the initial scan, but are treated as normal residues during the final alignment. Sinces statistical significance is calculated from similarity score calculated during library search, low complexity regions will not produce statistical significant matches.</text> <text lang=\"en\">If a significant alignment contains low complexity regions the final score may be higher than the score obtained during the search.</text> </comment>"
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "outfile": {
+                "isstdout": true, 
+                "prompt": "Fasta report", 
+                "type": {
+                    "datatype_class": "FastaTextReport", 
+                    "datatype_superclass": "Report"
+                }, 
+                "filenames": {
+                    "perl": "\"fasta.out\"", 
+                    "python": "\"fasta.out\""
+                }
+            }, 
+            "html_outfile": {
+                "isout": true, 
+                "prompt": "Html output file", 
+                "type": {
+                    "datatype_class": "FastaHtmlReport", 
+                    "datatype_superclass": "Report"
+                }, 
+                "precond": {
+                    "perl": "$html_output", 
+                    "python": "html_output"
+                }, 
+                "format": {
+                    "perl": " fasta.html\"", 
+                    "python": " fasta.html\""
+                }, 
+                "filenames": {
+                    "perl": "\"fasta.html\"", 
+                    "python": "\"fasta.html\""
+                }
+            }
+        }
+    }, 
+    "comment": "<{http://www.w3.org/1999/xhtml}div > Due to an incompatibility between the PHYLIP format and phyml and morePhyml named rules, the using of long identifier in phyml or morePhyml failed. We proposed the following workaround: <{http://www.w3.org/1999/xhtml}ol > <{http://www.w3.org/1999/xhtml}li >use fastaRename to generate an alignment with short ID and a file of ID mapping</{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li >perform your analysis with the alignment with short id</{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li >replace the short IDs in your tree (in NEWICK format) with nw_rename and the file of IDs mapping generated at the step 1.</{http://www.w3.org/1999/xhtml}li> </{http://www.w3.org/1999/xhtml}ol> </{http://www.w3.org/1999/xhtml}div> </comment>"
+}

@@ -1,0 +1,1419 @@
+{
+    "type": "program", 
+    "name": "morePhyML", 
+    "version": "1.0", 
+    "title": "morePhyML", 
+    "description": "<text lang=\"en\">Improving ML tree searching with PhyML 3</text> </description>", 
+    "authors": "Alexis Criscuolo</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
+        }, 
+        {
+            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
+        }, 
+        {
+            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
+        }, 
+        {
+            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "http://emboss.sourceforge.net/</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Castresana, J. (2000). Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17, 540-552</reference>"
+        }, 
+        {
+            "value": "Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Burge, C., Karlin, S. (1997) Prediction of complete gene structures in human genomic DNA. J. Mol. Biol. 268, 78-94.</reference>"
+        }, 
+        {
+            "value": "Burge, C., Karlin, S. (1997) Gene structure, exon prediction, and alternative splicing. (in preparation).</reference>"
+        }, 
+        {
+            "value": "Burge, C. (1997) Identification of genes in human genomic DNA. PhD thesis, Stanford University, Stanford, CA.</reference>"
+        }, 
+        {
+            "value": "Burset, M., Guigo, R. (1996) Evaluation of gene structure prediction programs. Genomics 34, 353-367.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\"> The program sources and Example files are downloadable here. </{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "Vieira-Silva S, Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Soria-Carrasco, V., Talavera, G., Igea, J., and Castresana, J. (2007). The K tree score: quantification of differences in the relative branch length and topology of phylogenetic trees. Bioinformatics 23, 2954-2956.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Barker, D. 2004. LVB: Parsimony and simulated annealing in the search for phylogenetic trees. Bioinformatics, 20, 274-275.</reference>"
+        }, 
+        {
+            "doi": "10.1093/bioinformatics/btq224", 
+            "value": "Katoh, Toh 2010 (Bioinformatics 26:1899-1900) Parallelization of the MAFFT multiple sequence alignment program. (describes the multithread version; Linux only) </reference>"
+        }, 
+        {
+            "doi": "10.1007/978-1-59745-251-9_3", 
+            "value": "Katoh, Asimenos, Toh 2009 (Methods in Molecular Biology 537:39-64) Multiple Alignment of DNA Sequences with MAFFT. In Bioinformatics for DNA Sequence Analysis edited by D. Posada (outlines DNA alignment methods and several tips including group-to-group alignment and rough clustering of a large number of sequences) </reference>"
+        }, 
+        {
+            "doi": "10.1186/1471-2105-9-212", 
+            "value": "Katoh, Toh 2008 (BMC Bioinformatics 9:212) Improved accuracy of multiple ncRNA alignment by incorporating structural information into a MAFFT-based framework. (describes RNA structural alignment methods) </reference>"
+        }, 
+        {
+            "doi": "10.1093/bib/bbn013", 
+            "value": "Katoh, Toh 2008 (Briefings in Bioinformatics 9:286-298) Recent developments in the MAFFT multiple sequence alignment program. (outlines version 6; Fast Breaking Paper in Thomson Reuters' ScienceWatch) </reference>"
+        }, 
+        {
+            "doi": "10.1093/bioinformatics/btl592", 
+            "value": "Katoh, Toh 2007 (Bioinformatics 23:372-374) Errata PartTree: an algorithm to build an approximate tree from a large number of unaligned sequences. (describes the PartTree algorithm) </reference>"
+        }, 
+        {
+            "doi": "10.1093/nar/gki198", 
+            "value": "Katoh, Kuma, Toh, Miyata 2005 (Nucleic Acids Res. 33:511-518) MAFFT version 5: improvement in accuracy of multiple sequence alignment. (describes [ancestral versions of] the G-INS-i, L-INS-i and E-INS-i strategies) </reference>"
+        }, 
+        {
+            "doi": "10.1093/nar/gkf436", 
+            "value": "Katoh, Misawa, Kuma, Miyata 2002 (Nucleic Acids Res. 30:3059-3066) MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. (describes the FFT-NS-1, FFT-NS-2 and FFT-NS-i strategies) </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Nicolas Le Novere (2001), MELTING, computing the melting temperature of nucleic acid duplex. Bioinformatics 17(12), 1226-1227</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "M. Zuker, D.H. Mathews and D.H. Turner Algorithms and Thermodynamics for RNA Secondary Structure Prediction: A Practical Guide in RNA Biochemistry and Biotechnology, J. Barciszewski and B.F.C. Clark, eds., NATO ASI Series, Kluwer Academic Publishers, (1999)</reference>"
+        }, 
+        {
+            "value": "Criscuolo A (2011) morePhyML: improving the phylogenetic tree space exploration with PhyML 3. Molecular Phylogenetics and Evolution.</reference>"
+        }, 
+        {
+            "value": "Guindon S, Dufayard JF, Lefort V, Anisimova M, Hordijk W, Gascuel O (2010) New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0. Syst Biol 59:307-321.</reference>"
+        }, 
+        {
+            "value": "Guindon, S. and Gascuel, O. (2003) A simple, fast and accurate algorithm to estimate large phylogenies by maximum likelihood Syst. Biol., 52, 696-704</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://dialign.gobics.de/download/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://faculty.virginia.edu/wrpearson/fasta/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/golden/", 
+        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/", 
+        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/html4blast/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://molevol.cmima.csic.es/castresana/Ktreedist.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
+        "http://mafft.cbrc.jp/alignment/software/source.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.ebi.ac.uk/~lenov/SOFTWARES/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.bioinfo.rpi.edu/~zukerm/export/", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/morePhyML/"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net", 
+        "http://gzhertz.home.comcast.net/~gzhertz/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://dialign.gobics.de/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://swift.cmbi.ru.nl/gv/dssp/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
+        "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
+        "http://emboss.sourceforge.net", 
+        "http://genes.mit.edu/GENSCANinfo.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://molevol.cmima.csic.es/castresana/Ktreedist.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
+        "http://mafft.cbrc.jp/alignment/software/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.ebi.ac.uk/~lenov/meltinghome.html", 
+        "http://emboss.sourceforge.net", 
+        "http://www.bioinfo.rpi.edu/applications/mfold/"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/featcopy.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/featreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/findkm.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/fitch.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/freak.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzznuc.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzzpro.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzztran.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/garnier.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/gblocks/", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/geecee.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/getorf.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://genome.imim.es/software/gfftools/GFF2PS.html", 
+        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/helixturnhelix.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/hmoment.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/iep.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoalign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/isochore.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/jaspscan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/kitsch.html", 
+        "http://bioweb2.pasteur.fr/docs/ktreedist/", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/lindna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/listor.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
+        "http://mafft.cbrc.jp/alignment/software/about.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/makenucseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/makeprotseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/marscan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/maskfeat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/maskseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/matcher.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/megamerger.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/melting/melting.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/merger.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/mfold/index.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/mix.html", 
+        "http://bioweb2.pasteur.fr/docs/morePhyML/morePhyML_doc.pdf"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:formatter", 
+        "phylogeny:tree_analyser", 
+        "sequence:protein:pattern", 
+        "sequence:nucleic:pattern", 
+        "alignment:consensus", 
+        "alignment:structure", 
+        "structure:indexing", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "sequence:edit", 
+        "genetics:detection", 
+        "alignment:multiple", 
+        "alignment:differences", 
+        "sequence:protein:motifs", 
+        "phylogeny:distance", 
+        "phylogeny:distance", 
+        "phylogeny:parsimony", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "phylogeny:display", 
+        "display:tree", 
+        "phylogeny:display", 
+        "display:tree", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple", 
+        "sequence:nucleic:repeats", 
+        "sequence:nucleic:2D_structure", 
+        "structure:2D_structure", 
+        "sequence:nucleic:mutation", 
+        "sequence:protein:composition", 
+        "sequence:edit", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:primers", 
+        "sequence:nucleic:repeats", 
+        "alignment:pairwise:global", 
+        "sequence:nucleic:repeats", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:edit:feature_table", 
+        "sequence:edit", 
+        "sequence:formatter", 
+        "database:search:homology", 
+        "phylogeny:likelihood", 
+        "sequence:edit", 
+        "sequence:edit", 
+        "database:search:sequence", 
+        "sequence:enzyme:kinetics", 
+        "phylogeny:distance", 
+        "phylogeny:tree_analyser", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple:information", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:gene_finding", 
+        "sequence:nucleic:gene_finding", 
+        "display:feature_table", 
+        "database:search:sequence", 
+        "sequence:nucleic:prediction", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:nucleic:pattern", 
+        "sequence:nucleic:clusters", 
+        "sequence:protein:2D_structure", 
+        "sequence:protein:motifs", 
+        "structure:2D_structure", 
+        "hmm:alignment:multiple", 
+        "alignment:multiple:hmm", 
+        "hmm:building", 
+        "hmm:building", 
+        "hmm:building", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:simulation", 
+        "hmm:statistic", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "database:search:display", 
+        "sequence:protein:composition", 
+        "alignment:multiple:information", 
+        "information", 
+        "sequence:nucleic:composition", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "sequence:nucleic:transcription", 
+        "phylogeny:distance", 
+        "phylogeny:tree_analyser", 
+        "display", 
+        "sequence:edit", 
+        "phylogeny:parsimony", 
+        "Alignment", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:edit", 
+        "sequence:nucleic:gene_finding", 
+        "sequence:nucleic:motifs", 
+        "sequence:edit:feature_table", 
+        "sequence:edit", 
+        "alignment:pairwise:local", 
+        "alignment:consensus", 
+        "sequence:nucleic:composition", 
+        "alignment:consensus", 
+        "sequence:nucleic:2D_structure", 
+        "structure:2D_structure", 
+        "phylogeny:parsimony", 
+        "phylogeny:likelihood"
+    ], 
+    "command": "morePhyML", 
+    "inputs": {
+        "parameters": {
+            "alignment": {
+                "ismandatory": true, 
+                "prompt": "Sequence Alignment", 
+                "type": {
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "PHYLIPI"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\"-i $value\"", 
+                    "python": "\" -i \"+str(value)"
+                }
+            }, 
+            "seqtype": {
+                "prompt": "Data type (-d)", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "nt"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "nt", 
+                        "label": "DNA (nt)"
+                    }, 
+                    {
+                        "value": "aa", 
+                        "label": "Amino-Acids (aa)"
+                    }
+                ], 
+                "format": {
+                    "perl": "(defined $value) ? \" -d $value\" : \"\"", 
+                    "python": "( \"\" , \" -d \" + str(value) )[ value is not None ]"
+                }
+            }, 
+            "control_opt": {
+                "name": "control_opt", 
+                "parameters": {
+                    "ntmodel": {
+                        "prompt": "Nucleotide substitution model (-m)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$seqtype eq \"nt\"", 
+                            "python": "seqtype == \"nt\""
+                        }, 
+                        "default_value": [
+                            "GTR"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "HKY85", 
+                                "label": "HKY85"
+                            }, 
+                            {
+                                "value": "JC69", 
+                                "label": "JC69"
+                            }, 
+                            {
+                                "value": "K80", 
+                                "label": "K80"
+                            }, 
+                            {
+                                "value": "F81", 
+                                "label": "F81"
+                            }, 
+                            {
+                                "value": "F84", 
+                                "label": "F84"
+                            }, 
+                            {
+                                "value": "TN93", 
+                                "label": "TN93"
+                            }, 
+                            {
+                                "value": "GTR", 
+                                "label": "GTR"
+                            }, 
+                            {
+                                "value": "TN93e", 
+                                "label": "TN93e"
+                            }, 
+                            {
+                                "value": "TPM1e", 
+                                "label": "TPM1e"
+                            }, 
+                            {
+                                "value": "TPM1u", 
+                                "label": "TPM1u"
+                            }, 
+                            {
+                                "value": "TPM2e", 
+                                "label": "TPM2e"
+                            }, 
+                            {
+                                "value": "TPM2u", 
+                                "label": "TPM2u"
+                            }, 
+                            {
+                                "value": "TPM3e", 
+                                "label": "TPM3e"
+                            }, 
+                            {
+                                "value": "TPM3u", 
+                                "label": "TPM3u"
+                            }, 
+                            {
+                                "value": "TIM1e", 
+                                "label": "TIM1e"
+                            }, 
+                            {
+                                "value": "TIM1u", 
+                                "label": "TIM1u"
+                            }, 
+                            {
+                                "value": "TIM2e", 
+                                "label": "TIM2e"
+                            }, 
+                            {
+                                "value": "TIM2u", 
+                                "label": "TIM2u"
+                            }, 
+                            {
+                                "value": "TIM3e", 
+                                "label": "TIM3e"
+                            }, 
+                            {
+                                "value": "TIM3u", 
+                                "label": "TIM3u"
+                            }, 
+                            {
+                                "value": "TVMe", 
+                                "label": "TVMe"
+                            }, 
+                            {
+                                "value": "TVMu", 
+                                "label": "TVMu"
+                            }, 
+                            {
+                                "value": "SYM", 
+                                "label": "SYM"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "($value ne $vdef) ? \" -m $value\" : \"\"", 
+                            "python": "(\"\", \" -m \"+str(value))[value != vdef]"
+                        }
+                    }, 
+                    "aamodel": {
+                        "prompt": "Amino-acid substitution model (-m)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$seqtype eq \"aa\"", 
+                            "python": "seqtype == \"aa\""
+                        }, 
+                        "default_value": [
+                            "LG"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "LG", 
+                                "label": "LG"
+                            }, 
+                            {
+                                "value": "WAG", 
+                                "label": "WAG"
+                            }, 
+                            {
+                                "value": "JTT", 
+                                "label": "JTT"
+                            }, 
+                            {
+                                "value": "MtREV", 
+                                "label": "MtREV"
+                            }, 
+                            {
+                                "value": "Dayhoff", 
+                                "label": "Dayhoff"
+                            }, 
+                            {
+                                "value": "DCMut", 
+                                "label": "DCMut"
+                            }, 
+                            {
+                                "value": "RtREV", 
+                                "label": "RtREV"
+                            }, 
+                            {
+                                "value": "CpREV", 
+                                "label": "CpREV"
+                            }, 
+                            {
+                                "value": "VT", 
+                                "label": "VT"
+                            }, 
+                            {
+                                "value": "Blosum62", 
+                                "label": "Blosum62"
+                            }, 
+                            {
+                                "value": "MtMam", 
+                                "label": "MtMam"
+                            }, 
+                            {
+                                "value": "MtArt", 
+                                "label": "MtArt"
+                            }, 
+                            {
+                                "value": "HIVw", 
+                                "label": "HIVw"
+                            }, 
+                            {
+                                "value": "HIVb", 
+                                "label": "HIVb"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "($value ne $vdef) ? \" -m $value\" : \"\"", 
+                            "python": "(\"\", \" -m \"+str(value))[value != vdef]"
+                        }
+                    }, 
+                    "tstvratio1": {
+                        "prompt": "Estimated transition/transversion ratio for DNA sequences? (-t)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$seqtype eq \"nt\"", 
+                            "python": "seqtype == \"nt\""
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -t e\" : \"\"", 
+                            "python": "( \"\"  , \" -t e\")[ value ]"
+                        }
+                    }, 
+                    "tstvratio2": {
+                        "prompt": "User transition/transversion ratio for DNA sequences? (-t)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$seqtype eq \"nt\" and not $tstvratio1", 
+                            "python": "seqtype == \"nt\" and not tstvratio1"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value ) ? \" -t $value\" : \"\"", 
+                            "python": "( \"\"  , \" -t \"+str(value))[ value is not None ]"
+                        }
+                    }, 
+                    "propinvar1": {
+                        "prompt": "Estimated proportion of invariable sites? (-v)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -v e\" : \"\"", 
+                            "python": "( \"\"  , \" -v e\")[ value ]"
+                        }
+                    }, 
+                    "propinvar2": {
+                        "prompt": "User proportion of invariable sites? (-v)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not $propinvar1", 
+                            "python": "not propinvar1"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -v $value\" : \"\"", 
+                            "python": "( \"\"  , \" -v \"+str(value))[value is not None]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 1", 
+                            "python": " 1"
+                        }
+                    }, 
+                    "nbsubstcat": {
+                        "prompt": "Number of relative substitution rate categories (-c)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -c $value\" : \"\"", 
+                            "python": "(\"\", \" -c \"+str(value))[value is not None and value != vdef]"
+                        }
+                    }, 
+                    "gamma1": {
+                        "prompt": "Estimated Gamma distribution parameter? (-a)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -a e\" : \"\"", 
+                            "python": "(\"\", \" -a e\")[value]"
+                        }
+                    }, 
+                    "gamma2": {
+                        "prompt": "User gamma distribution parameter? (-a)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not $gamma1", 
+                            "python": "not gamma1"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -a $value\" : \"\"", 
+                            "python": "(\"\", \" -a \"+str(value))[value is not None]"
+                        }
+                    }, 
+                    "frequencies": {
+                        "prompt": "Equilibrium character frequencies (-f)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "m"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "m", 
+                                "label": "m: equilibrium frequency estimated by ML for nucleotides or defined by the substitution model for amino acids.\n"
+                            }, 
+                            {
+                                "value": "e", 
+                                "label": "e: equilibrium frequency estimated by counting the occurence of each character state in the alignment.\n              "
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value) ? \" -f $value\" : \"\"", 
+                            "python": "(\"\", \" -f \"+str(value))[value is not None]"
+                        }
+                    }, 
+                    "usertreefile": {
+                        "prompt": "Starting tree filename (u)", 
+                        "type": {
+                            "datatype_class": "Tree", 
+                            "data_formats": [
+                                "NEWICK"
+                            ]
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -u $value\" : \"\"", 
+                            "python": "(\"\", \" -u \"+str(value))[value is not None]"
+                        }
+                    }, 
+                    "parsimoniousTree": {
+                        "prompt": "Most parsimonious starting tree (-p)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value) ? \" -p\" : \"\"", 
+                            "python": "(\"\", \" -p\")[value]"
+                        }
+                    }, 
+                    "randomNumber": {
+                        "prompt": "Number of random starting trees to be used (-n)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -n $value\" : \"\"", 
+                            "python": "(\"\", \" -n \" + str(value))[value is not None]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0 "
+                        }
+                    }, 
+                    "tree_swapping": {
+                        "prompt": "First tree swapping (-s)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "SPR"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "SPR", 
+                                "label": "SPR "
+                            }, 
+                            {
+                                "value": "NNI", 
+                                "label": "NNI"
+                            }, 
+                            {
+                                "value": "both", 
+                                "label": "both"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -s $value\" : \"\"", 
+                            "python": "(\"\", \" -s \"+str(value))[value is not None and value !=vdef]"
+                        }
+                    }, 
+                    "branch_support": {
+                        "prompt": "Branch support (-b)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null", 
+                                "label": "SH-like branch support"
+                            }, 
+                            {
+                                "value": "-2", 
+                                "label": "-2: khi2-based parametric support"
+                            }, 
+                            {
+                                "value": "0", 
+                                "label": "0: none support"
+                            }, 
+                            {
+                                "value": "-1", 
+                                "label": "-1: aLRT support"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -b $value\" : \"\"", 
+                            "python": "(\"\", \" -b \"+str(value))[value is not None and value !=vdef]"
+                        }
+                    }, 
+                    "likelihoodCar": {
+                        "prompt": "Write the likelihood for each character (-l)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value) ? \" -l\" : \"\"", 
+                            "python": "(\"\", \" -l\")[value]"
+                        }
+                    }, 
+                    "firstRun": {
+                        "prompt": "Write the results outputed by the first run of phyml (-x)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value) ? \" -x\" : \"\"", 
+                            "python": "(\"\", \" -x\")[value]"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "outfile": {
+                "isout": true, 
+                "prompt": "Output file", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "filenames": {
+                    "perl": "\"*_morephyml_stats.txt\"", 
+                    "python": "\"*_morephyml_stats.txt\""
+                }
+            }, 
+            "outtree": {
+                "isout": true, 
+                "prompt": "Output tree", 
+                "type": {
+                    "datatype_class": "Tree", 
+                    "data_formats": [
+                        "NEWICK"
+                    ]
+                }, 
+                "filenames": {
+                    "perl": "\"*_morephyml_tree.txt\"", 
+                    "python": "\"*_morephyml_tree.txt\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">MIX is a general parsimony program which carries out the Wagner and Camin-Sokal parsimony methods in mixture, where each character can have its method specified separately. The program defaults to carrying out Wagner parsimony.</text> </comment>", 
+    "env": {
+        "name": "MAFFT_BINARIES", 
+        "value": "/usr/lib/mafft/lib/mafft"
+    }
+}

@@ -1,0 +1,801 @@
+{
+    "type": "program", 
+    "name": "BMGE", 
+    "version": "Version 1.0", 
+    "title": "BMGE", 
+    "description": "<text lang=\"en\">Block Mapping and Gathering using Entropy</text> </description>", 
+    "authors": "Alexis Criscuolo and Simonetta Gribaldo</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information"
+    ], 
+    "command": "BMGE", 
+    "inputs": {
+        "parameters": {
+            "input": {
+                "name": "input", 
+                "parameters": {
+                    "infile": {
+                        "ismandatory": true, 
+                        "prompt": "Alignment (-i)", 
+                        "type": {
+                            "biotype": "DNA", 
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "FASTA", 
+                                "PHYLIPS"
+                            ]
+                        }, 
+                        "format": {
+                            "perl": "\" -i $value\"", 
+                            "python": "\" -i \"+str(value)"
+                        }, 
+                        "comment": "<text lang=\"en\">BMGE uses FASTA or PHYLIP sequential format for input. These are plain text files. There is no limit on the length of the alignment. There is also no limit on the length of the label of a sequence (i.e. its FASTA annotation line), although a too long label (e.g. more than 100 letters) will be truncated if the output format is PHYLIP sequential.</text> </comment>"
+                    }, 
+                    "input_type": {
+                        "ismandatory": true, 
+                        "prompt": "Type of sequence (-t)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null", 
+                                "label": "Set the input sequence coding"
+                            }, 
+                            {
+                                "value": "AA", 
+                                "label": "Amino acid"
+                            }, 
+                            {
+                                "value": "DNA", 
+                                "label": "Nucleotide"
+                            }, 
+                            {
+                                "value": "CODON", 
+                                "label": "Codon"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -t $value\" : \"\"", 
+                            "python": "(\"\", \" -t \"+str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Both standard single-letter amino acid and nucleotide alphabets are used by BMGE. When using amino acid sequences, degenerated character states B and Z are understood by BMGE; similarly, degenerated nucleotide characters are also understood. The character state X is understood to be any of the 4 or 20 character states when using as input nucleotide or amino acid sequences, respectively. Dashes (i.e. '-') are understood as gaps, whereas dots (i.e. '.'), as any other single letter that are not inside standard alphabets, are considered as unknown character state (i.e. '?'). Nucleotide sequences can be set as codon ones. In this case, each successive nucleotide character triplet is considered as one codon character.</text> </comment>"
+                    }
+                }
+            }, 
+            "options": {
+                "name": "options", 
+                "parameters": {
+                    "matrixaa": {
+                        "prompt": "Similarity Matrices for amino acid and codon sequences (-m)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$input_type eq 'AA' or $input_type eq 'CODON'", 
+                            "python": "input_type in ['AA', 'CODON']"
+                        }, 
+                        "default_value": [
+                            "BLOSUM62"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "BLOSUM62", 
+                                "label": "BLOSUM62"
+                            }, 
+                            {
+                                "value": "ID", 
+                                "label": "Identity"
+                            }, 
+                            {
+                                "value": "BLOSUM30", 
+                                "label": "BLOSUM30"
+                            }, 
+                            {
+                                "value": "BLOSUM35", 
+                                "label": "BLOSUM35"
+                            }, 
+                            {
+                                "value": "BLOSUM40", 
+                                "label": "BLOSUM40"
+                            }, 
+                            {
+                                "value": "BLOSUM45", 
+                                "label": "BLOSUM45"
+                            }, 
+                            {
+                                "value": "BLOSUM50", 
+                                "label": "BLOSUM50"
+                            }, 
+                            {
+                                "value": "BLOSUM55", 
+                                "label": "BLOSUM55"
+                            }, 
+                            {
+                                "value": "BLOSUM60", 
+                                "label": "BLOSUM60"
+                            }, 
+                            {
+                                "value": "BLOSUM65", 
+                                "label": "BLOSUM65"
+                            }, 
+                            {
+                                "value": "BLOSUM70", 
+                                "label": "BLOSUM70"
+                            }, 
+                            {
+                                "value": "BLOSUM75", 
+                                "label": "BLOSUM75"
+                            }, 
+                            {
+                                "value": "BLOSUM80", 
+                                "label": "BLOSUM80"
+                            }, 
+                            {
+                                "value": "BLOSUM85", 
+                                "label": "BLOSUM85"
+                            }, 
+                            {
+                                "value": "BLOSUM90", 
+                                "label": "BLOSUM90"
+                            }, 
+                            {
+                                "value": "BLOSUM95", 
+                                "label": "BLOSUM95"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -m $value\" : \"\"", 
+                            "python": "(\"\", \" -m \"+str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">For each character, BMGE computes a score mainly determined by the entropy induced by the respective proportion of each residue. To estimate realistic scores that take into account biologically relevant substitution processes, BMGE weights the entropy estimation with substitution matrices.</text> <text lang=\"en\">These option can be used with the 15 estimated BLOSUM matrices. BMGE uses by default the popular BLOSUM62 matrix. The character trimming is progressively more stringent as the BLOSUM index increases (e.g. BLOSUM95); reciprocally, the trimming is progressively more relaxed as the BLOSUM index is lower (e.g. BLOSUM30). In practice, it is recommended to use BLOSUM95 with closely related sequences, and BLOSUM30 with distantly related sequences.</text> <text lang=\"en\">If input sequences are set as codons, BMGE performs a conversion into amino acid sequences (following the universal genetic code) and uses BLOSUM matrices to estimate the entropy-like score for each codon character. So, with option -t set as CODON, one can modify the option -m only with BLOSUM matrices. It is also possible to use the identity matrix with any sequence types.</text> </comment>"
+                    }, 
+                    "matrixan": {
+                        "prompt": "Similarity Matrices for nucleotide sequences (-m)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$input_type eq 'DNA'", 
+                            "python": "input_type in ['DNA']"
+                        }, 
+                        "default_value": [
+                            "DNAPAM100"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "DNAPAM100", 
+                                "label": "DNAPAM100"
+                            }, 
+                            {
+                                "value": "ID", 
+                                "label": "Identity"
+                            }, 
+                            {
+                                "value": "DNAPAM1", 
+                                "label": "DNAPAM1"
+                            }, 
+                            {
+                                "value": "DNAPAM5", 
+                                "label": "DNAPAM5"
+                            }, 
+                            {
+                                "value": "DNAPAM10", 
+                                "label": "DNAPAM10"
+                            }, 
+                            {
+                                "value": "DNAPAM20", 
+                                "label": "DNAPAM20"
+                            }, 
+                            {
+                                "value": "DNAPAM30", 
+                                "label": "DNAPAM30"
+                            }, 
+                            {
+                                "value": "DNAPAM40", 
+                                "label": "DNAPAM40"
+                            }, 
+                            {
+                                "value": "DNAPAM50", 
+                                "label": "DNAPAM50"
+                            }, 
+                            {
+                                "value": "DNAPAM60", 
+                                "label": "DNAPAM60"
+                            }, 
+                            {
+                                "value": "DNAPAM70", 
+                                "label": "DNAPAM70"
+                            }, 
+                            {
+                                "value": "DNAPAM80", 
+                                "label": "DNAPAM80"
+                            }, 
+                            {
+                                "value": "DNAPAM90", 
+                                "label": "DNAPAM90"
+                            }, 
+                            {
+                                "value": "DNAPAM110", 
+                                "label": "DNAPAM110"
+                            }, 
+                            {
+                                "value": "DNAPAM120", 
+                                "label": "DNAPAM120"
+                            }, 
+                            {
+                                "value": "DNAPAM130", 
+                                "label": "DNAPAM130"
+                            }, 
+                            {
+                                "value": "DNAPAM140", 
+                                "label": "DNAPAM140"
+                            }, 
+                            {
+                                "value": "DNAPAM150", 
+                                "label": "DNAPAM150"
+                            }, 
+                            {
+                                "value": "DNAPAM160", 
+                                "label": "DNAPAM160"
+                            }, 
+                            {
+                                "value": "DNAPAM170", 
+                                "label": "DNAPAM170"
+                            }, 
+                            {
+                                "value": "DNAPAM180", 
+                                "label": "DNAPAM180"
+                            }, 
+                            {
+                                "value": "DNAPAM190", 
+                                "label": "DNAPAM190"
+                            }, 
+                            {
+                                "value": "DNAPAM200", 
+                                "label": "DNAPAM200"
+                            }, 
+                            {
+                                "value": "DNAPAM210", 
+                                "label": "DNAPAM210"
+                            }, 
+                            {
+                                "value": "DNAPAM220", 
+                                "label": "DNAPAM220"
+                            }, 
+                            {
+                                "value": "DNAPAM230", 
+                                "label": "DNAPAM230"
+                            }, 
+                            {
+                                "value": "DNAPAM240", 
+                                "label": "DNAPAM240"
+                            }, 
+                            {
+                                "value": "DNAPAM250", 
+                                "label": "DNAPAM250"
+                            }, 
+                            {
+                                "value": "DNAPAM260", 
+                                "label": "DNAPAM260"
+                            }, 
+                            {
+                                "value": "DNAPAM270", 
+                                "label": "DNAPAM270"
+                            }, 
+                            {
+                                "value": "DNAPAM280", 
+                                "label": "DNAPAM280"
+                            }, 
+                            {
+                                "value": "DNAPAM290", 
+                                "label": "DNAPAM290"
+                            }, 
+                            {
+                                "value": "DNAPAM300", 
+                                "label": "DNAPAM300"
+                            }, 
+                            {
+                                "value": "DNAPAM310", 
+                                "label": "DNAPAM310"
+                            }, 
+                            {
+                                "value": "DNAPAM320", 
+                                "label": "DNAPAM320"
+                            }, 
+                            {
+                                "value": "DNAPAM330", 
+                                "label": "DNAPAM330"
+                            }, 
+                            {
+                                "value": "DNAPAM340", 
+                                "label": "DNAPAM340"
+                            }, 
+                            {
+                                "value": "DNAPAM350", 
+                                "label": "DNAPAM350"
+                            }, 
+                            {
+                                "value": "DNAPAM360", 
+                                "label": "DNAPAM360"
+                            }, 
+                            {
+                                "value": "DNAPAM370", 
+                                "label": "DNAPAM370"
+                            }, 
+                            {
+                                "value": "DNAPAM380", 
+                                "label": "DNAPAM380"
+                            }, 
+                            {
+                                "value": "DNAPAM390", 
+                                "label": "DNAPAM390"
+                            }, 
+                            {
+                                "value": "DNAPAM400", 
+                                "label": "DNAPAM400"
+                            }, 
+                            {
+                                "value": "DNAPAM410", 
+                                "label": "DNAPAM410"
+                            }, 
+                            {
+                                "value": "DNAPAM420", 
+                                "label": "DNAPAM420"
+                            }, 
+                            {
+                                "value": "DNAPAM430", 
+                                "label": "DNAPAM430"
+                            }, 
+                            {
+                                "value": "DNAPAM440", 
+                                "label": "DNAPAM440"
+                            }, 
+                            {
+                                "value": "DNAPAM450", 
+                                "label": "DNAPAM450"
+                            }, 
+                            {
+                                "value": "DNAPAM460", 
+                                "label": "DNAPAM460"
+                            }, 
+                            {
+                                "value": "DNAPAM470", 
+                                "label": "DNAPAM470"
+                            }, 
+                            {
+                                "value": "DNAPAM480", 
+                                "label": "DNAPAM480"
+                            }, 
+                            {
+                                "value": "DNAPAM490", 
+                                "label": "DNAPAM490"
+                            }, 
+                            {
+                                "value": "DNAPAM500", 
+                                "label": "DNAPAM500"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -m $value\" : \"\"", 
+                            "python": "(\"\", \" -m \"+str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">For nucleotide input sequences, BMGE uses PAM matrices with a fixed transition/transition ratio. BMGE can be used with all possible PAM matrices, from the most stringent (i.e. DNAPAM1) to highly relaxed ones (e.g. DNAPAM500). By default with nucleotide sequences, BMGE uses the PAM-100 matrix.</text> <text lang=\"en\">It is also possible to use the identity matrix.</text> </comment>"
+                    }, 
+                    "transition": {
+                        "prompt": "Transition/transversion ratio for nucleotide sequences.", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$input_type eq 'DNA' and ($matrixan ne 'DNAPAM100' and  $matrixan ne 'ID' )", 
+                            "python": "input_type in ['DNA'] and (matrixan != 'DNAPAM100' and  matrixan != 'ID' )"
+                        }, 
+                        "default_value": [
+                            "2.0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value) ? \":$value \" : \"\"", 
+                            "python": "(\"\", \":\" +str(value) + \" \")[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">It is possible to indicate a transition/transversion ratio to better define the PAM matrices with nucleotide sequences. By default, BMGE uses a transition/transversion ratio of 2.</text> </comment>"
+                    }, 
+                    "gap_rate_cutoff": {
+                        "prompt": "Gap Rate Cut-off (-g)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "0.2"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -g $value\" : \"\"", 
+                            "python": "(\"\", \" -g \"+str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "ctrl": {
+                            "perl": "= 1", 
+                            "python": "= 1"
+                        }, 
+                        "comment": "<text lang=\"en\">BMGE allows characters containing too many gaps to be removed with this option. By default, BMGE removes all characters with a gap frequency greater than 0.2.</text> </comment>"
+                    }, 
+                    "min_entropy": {
+                        "prompt": "Minimum entropy Score Cut-off (-h)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "0.0"
+                        ], 
+                        "format": {
+                            "perl": " $value)) ? \" -h $value:$max_entropy\" : \"\"", 
+                            "python": " value)  ]"
+                        }, 
+                        "ctrl": {
+                            "perl": "= 1", 
+                            "python": "= 1"
+                        }, 
+                        "comment": "<text lang=\"en\">Following the smoothing operation of the entropy-like score values across characters, BMGE selects characters associated with a score value greater than a fixed threshold. This cut-off is set to 0.0 by default.</text> </comment>"
+                    }, 
+                    "max_entropy": {
+                        "prompt": "Maximum entropy Score Cut-off (-h)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "0.5"
+                        ], 
+                        "precond": {
+                            "perl": "defined $min_entropy", 
+                            "python": "min_entropy is not None"
+                        }, 
+                        "ctrl": {
+                            "perl": " $min_entropy)", 
+                            "python": " min_entropy)"
+                        }, 
+                        "comment": "<text lang=\"en\">Following the smoothing operation of the entropy-like score values across characters, BMGE selects characters associated with a score value below a fixed threshold. This cut-off is set to 0.5 by default.</text> </comment>"
+                    }, 
+                    "minimun_block_size": {
+                        "prompt": "Minimum Block Size (-b)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "5"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -b $value\" : \"\"", 
+                            "python": "(\"\", \" -b \"+str(value) )[value is not None and value!=vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">BMGE only selects regions of size greater than or equal to 5. Use this option to modify this minimum block size parameter.</text> </comment>"
+                    }
+                }
+            }, 
+            "output_option": {
+                "name": "output_option", 
+                "parameters": {
+                    "phylip": {
+                        "prompt": "Output in phylip sequential format (-op)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "defined $infile", 
+                            "python": "infile is not None"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \" -op $infile.phy\" : \"\"", 
+                            "python": "(\"\", \" -op \"+ infile.split('.')[0] + \".phy \")[ value ]"
+                        }
+                    }, 
+                    "phylip_oppp": {
+                        "prompt": "Output in phylip sequential format. Special formating (-oppp)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "defined $infile", 
+                            "python": "infile is not None"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \" -oppp $infile.phyp\" : \"\"", 
+                            "python": "(\"\", \" -oppp \"+ infile.split('.')[0] + \".phyp \")[ value]"
+                        }, 
+                        "comment": "<text lang=\"en\">If input sequences are in FASTA format with NCBI-formatted annotation lines, e.g. >field1|field2|field3|field4| field5 [field6] the options -oppp allow naming sequences by field6_____field4 ; knowing that field4 is generally an accession number, and field6 a taxon name, this option leads to PHYLIP files where each sequence is labelled as a taxon name and an accession number.</text> </comment>"
+                    }, 
+                    "nexus": {
+                        "prompt": "Output in nexus format (-on)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "defined $infile", 
+                            "python": "infile is not None"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \" -on $infile.nex\" : \"\"", 
+                            "python": "(\"\", \" -on \"+ infile.split('.')[0] + \".nex \")[ value ]"
+                        }
+                    }, 
+                    "nexus_onnn": {
+                        "prompt": "Output in nexus format. Special formating (-onnn)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "defined $infile", 
+                            "python": "infile is not None"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \" -onnn $infile.nexn\" : \"\"", 
+                            "python": "(\"\", \" -onnn \"+ infile.split('.')[0] + \".nexn \")[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">If input sequences are in FASTA format with NCBI-formatted annotation lines, e.g. >field1|field2|field3|field4| field5 [field6] the option -onnn allow naming sequences by field6_____field4 ; knowing that field4 is generally an accession number and field6 a taxon name, this option leads to NEXUS files where each sequence is labelled as a taxon name and an accession number.</text> </comment>"
+                    }, 
+                    "fasta": {
+                        "prompt": "Output in fasta format (-of)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "defined $infile", 
+                            "python": "infile is not None"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \" -of $infile.fa\" : \"\"", 
+                            "python": "(\"\", \" -of \"+ infile.split('.')[0] + \".fa \")[ value ]"
+                        }
+                    }, 
+                    "html": {
+                        "prompt": "Output in html format (-oh)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "defined $infile", 
+                            "python": "infile is not None"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \" -oh $infile.html\" : \"\"", 
+                            "python": "(\"\", \" -oh \"+ infile.split('.')[0] + \".html \")[ value ]"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "output_option": {
+                "name": "output_option", 
+                "parameters": {
+                    "phylipout": {
+                        "isout": true, 
+                        "prompt": "Output in phylip sequential format", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "PHYLIPS"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "$phylip", 
+                            "python": "phylip"
+                        }, 
+                        "filenames": {
+                            "perl": "\"$infile.phy\"", 
+                            "python": "infile.split('.')[0] + \".phy\""
+                        }
+                    }, 
+                    "phylipout_oppp": {
+                        "isout": true, 
+                        "prompt": "Output in phylip sequential format", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "PHYLIPS"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "$phylip_oppp", 
+                            "python": "phylip_oppp"
+                        }, 
+                        "filenames": {
+                            "perl": "\"$infile.phyp\"", 
+                            "python": "infile.split('.')[0] + \".phyp\""
+                        }
+                    }, 
+                    "nexusout": {
+                        "isout": true, 
+                        "prompt": "Output in nexus format", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "NEXUS"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "$nexus", 
+                            "python": "nexus"
+                        }, 
+                        "filenames": {
+                            "perl": "\"$infile.nex\"", 
+                            "python": "infile.split('.')[0] + \".nex\""
+                        }
+                    }, 
+                    "nexusout_onnn": {
+                        "isout": true, 
+                        "prompt": "Output in nexus format", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "NEXUS"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "$nexus_onnn", 
+                            "python": "nexus_onnn"
+                        }, 
+                        "filenames": {
+                            "perl": "\"$infile.nexn\"", 
+                            "python": "infile.split('.')[0] + \".nexn\""
+                        }
+                    }, 
+                    "fastaout": {
+                        "isout": true, 
+                        "prompt": "Output in fasta format", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "FASTA"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "$fasta", 
+                            "python": "fasta"
+                        }, 
+                        "filenames": {
+                            "perl": "\"$infile.fa\"", 
+                            "python": "infile.split('.')[0] + \".fa\""
+                        }
+                    }, 
+                    "htmlout": {
+                        "isout": true, 
+                        "prompt": "Output in html format", 
+                        "type": {
+                            "datatype_class": "Report"
+                        }, 
+                        "precond": {
+                            "perl": "$html", 
+                            "python": "html"
+                        }, 
+                        "filenames": {
+                            "perl": "\"$infile.html\"", 
+                            "python": "infile.split('.')[0] + \".html\""
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\"> Extract the Identifier and Data Bank of the hits from the summary of a blast report ( in text format -m 0-6 ) The result is in USA list format. </text> </comment>"
+}

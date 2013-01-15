@@ -1,0 +1,362 @@
+{
+    "type": "program", 
+    "name": "cosa", 
+    "version": "6.3.1", 
+    "title": "cosa", 
+    "description": "<text lang=\"en\">Clustal ouput structural analysis</text> </description>", 
+    "authors": "T. Rose</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net", 
+        "http://gzhertz.home.comcast.net/~gzhertz/", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:formatter", 
+        "phylogeny:tree_analyser", 
+        "sequence:protein:pattern", 
+        "sequence:nucleic:pattern", 
+        "alignment:consensus", 
+        "alignment:structure", 
+        "structure:indexing"
+    ], 
+    "command": "cosa", 
+    "inputs": {
+        "parameters": {
+            "alig": {
+                "ismandatory": true, 
+                "prompt": "Alignment", 
+                "type": {
+                    "biotype": "Protein", 
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "CLUSTAL"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \"+str(value)"
+                }
+            }, 
+            "struct_pos": {
+                "ismandatory": true, 
+                "prompt": "Position in the sequence multialignment of the structure used as reference", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \" + str( value )"
+                }
+            }, 
+            "pdbin": {
+                "ismandatory": true, 
+                "prompt": "PDB entry", 
+                "type": {
+                    "biotype": "Protein", 
+                    "datatype_superclass": "AbstractText", 
+                    "datatype_class": "_3DStructure", 
+                    "data_formats": [
+                        "PDB"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \" + str( value )"
+                }
+            }, 
+            "pdbout": {
+                "prompt": "Name of the output PDB file", 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "default_value": [
+                    "tmp_clustal.pdb"
+                ], 
+                "format": {
+                    "perl": "(defined $value) ? \" $value\" : \"\"", 
+                    "python": "(\"\", \" \" + str( value ) )[ value is not None ]"
+                }
+            }, 
+            "txtout": {
+                "prompt": "Name of the output result file", 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "default_value": [
+                    "tmp_stats.txt"
+                ], 
+                "format": {
+                    "perl": "(defined $value) ? \" $value\" : \"\"", 
+                    "python": "(\"\" , \" \" + str( value ) )[ value is not None ]"
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "default_pdbout": {
+                "isout": true, 
+                "prompt": "PDB with the residue occurrence", 
+                "type": {
+                    "biotype": "Protein", 
+                    "datatype_superclass": "AbstractText", 
+                    "datatype_class": "_3DStructure", 
+                    "data_formats": [
+                        "PDB"
+                    ]
+                }, 
+                "comment": "<text lang=\"en\">PDB file format of the structure used as reference with the residue occurrence in place of B-factor</text> </comment>", 
+                "filenames": {
+                    "perl": "$pdbout", 
+                    "python": "pdbout"
+                }
+            }, 
+            "default_txtout": {
+                "isout": true, 
+                "prompt": "Alignment and statistics", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "comment": "<text lang=\"en\">Vertical sequence alignment and statistics</text> </comment>", 
+                "filenames": {
+                    "perl": "$txtout", 
+                    "python": "txtout"
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">This program gives simple statistics about residue conservation from clustal output files.</text> <text lang=\"en\">There is the possibility to redirect the residue frequency at every position of the protein </text> <text lang=\"en\">sequence in the PDB file corresponding to one of the identified sequences of the multiple alignment.</text> <text lang=\"en\">This frequency or conservation index is put in place of B-factors and allows spectral coloring according to</text> <text lang=\"en\">the index value in most of pdb structure viewers.</text> </comment>"
+}

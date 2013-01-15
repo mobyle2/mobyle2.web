@@ -1,0 +1,1055 @@
+{
+    "type": "program", 
+    "name": "clustalw-multialign", 
+    "version": "6.3.1", 
+    "title": "Clustalw: Multiple alignment", 
+    "description": "<text lang=\"en\">Do full multiple alignment</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple"
+    ], 
+    "command": "clustalw -align ", 
+    "inputs": {
+        "parameters": {
+            "input": {
+                "name": "input", 
+                "parameters": {
+                    "sequences_input": {
+                        "ismaininput": true, 
+                        "ismandatory": true, 
+                        "prompt": "Sequences File ( a file containing several sequences ) (-infile)", 
+                        "precond": {
+                            "perl": "not $alignment_input or ($sequences_input and $alignment_input)", 
+                            "python": "not alignment_input or (sequences_input and alignment_input)"
+                        }, 
+                        "type": {
+                            "datatype_class": "Sequence", 
+                            "data_formats": [
+                                "FASTA", 
+                                "NBRF", 
+                                "EMBL", 
+                                "GCG", 
+                                "GDE", 
+                                "SWISSPROT"
+                            ], 
+                            "card": "2,n"
+                        }, 
+                        "format": {
+                            "perl": "\" -infile=$value\"", 
+                            "python": "\" -infile=\" + str( value )"
+                        }, 
+                        "ctrl": {
+                            "perl": "not $alignment_input", 
+                            "python": "not alignment_input"
+                        }
+                    }, 
+                    "alignment_input": {
+                        "ismaininput": true, 
+                        "ismandatory": true, 
+                        "prompt": "Aligned sequences", 
+                        "precond": {
+                            "perl": "not $sequences_input or ($sequences_input and $alignment_input)", 
+                            "python": "not sequences_input or (sequences_input and alignment_input)"
+                        }, 
+                        "type": {
+                            "biotype": "DNA", 
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "CLUSTAL", 
+                                "FASTA"
+                            ], 
+                            "card": "1"
+                        }, 
+                        "format": {
+                            "perl": "\" -infile=$value\"", 
+                            "python": "\" -infile=\" + str( value )"
+                        }, 
+                        "ctrl": {
+                            "perl": "not $sequences_input", 
+                            "python": "not sequences_input"
+                        }, 
+                        "comment": "<text lang=\"en\"> When the sequences are aligned (all sequences have the same length and at least one sequence has at least one gap)</text> </comment>"
+                    }
+                }
+            }, 
+            "general": {
+                "name": "general", 
+                "parameters": {
+                    "quicktree": {
+                        "ismandatory": true, 
+                        "prompt": "Toggle Slow/Fast pairwise alignments (-quicktree)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "slow"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "slow", 
+                                "label": "Slow"
+                            }, 
+                            {
+                                "value": "fast", 
+                                "label": "Fast"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "($value eq \"fast\") ? \" -quicktree\" : \"\"", 
+                            "python": "( \"\" , \" -quicktree\")[ value == \"fast\"]"
+                        }, 
+                        "comment": "<text lang=\"en\">slow: by dynamic programming (slow but accurate)</text> <text lang=\"en\">fast: method of Wilbur and Lipman (extremely fast but approximate)</text> </comment>"
+                    }, 
+                    "typeseq": {
+                        "prompt": "Protein or DNA (-type)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "auto"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "auto", 
+                                "label": "Automatic"
+                            }, 
+                            {
+                                "value": "protein", 
+                                "label": "Protein"
+                            }, 
+                            {
+                                "value": "dna", 
+                                "label": "DNA"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value) ? \" -type=$value\" : \"\"", 
+                            "python": "(\"\", \" -type=\"+str(value))[value is not None]"
+                        }
+                    }
+                }
+            }, 
+            "multalign": {
+                "name": "multalign", 
+                "parameters": {
+                    "gapopen": {
+                        "prompt": "Gap opening penalty (-gapopen)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "10.00"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -gapopen=$value\" : \"\"", 
+                            "python": "( \"\" , \" -gapopen=\" + str( value ))[ value is not None and value != vdef ]"
+                        }
+                    }, 
+                    "gapext": {
+                        "prompt": "Gap extension penalty (-gapext)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "0.20"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -gapext=$value\" : \"\"", 
+                            "python": "( \"\" , \" -gapext=\" + str( value ))[ value is not None and value != vdef ]"
+                        }
+                    }, 
+                    "endgaps": {
+                        "prompt": "No end gap separation penalty (-endgaps)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -endgaps\" : \"\"", 
+                            "python": "( \"\" ,\" -endgaps\" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">End gap separation treats end gaps just like internal gaps for the purposes of avoiding gaps that are too close (set by GAP SEPARATION DISTANCE above). If you turn this off, end gaps will be ignored for this purpose. This is useful when you wish to align fragments where the end gaps are not biologically meaningful.</text> </comment>"
+                    }, 
+                    "gapdist": {
+                        "prompt": "Gap separation penalty range (-gapdist)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "8"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -gapdist=$value\" : \"\"", 
+                            "python": "( \"\" , \" -gapdist=\" + str( value ))[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Gap separation distance tries to decrease the chances of gaps being too close to each other. Gaps that are less than this distance apart are penalised more than other gaps. This does not prevent close gaps; it makes them less frequent, promoting a block-like appearance of the alignment.</text> </comment>"
+                    }, 
+                    "maxdiv": {
+                        "prompt": "Delay divergent sequences : % ident. for delay (-maxdiv)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "30"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -maxdiv=$value\" : \"\"", 
+                            "python": "( \"\" , \" -maxdiv=\" + str( value ))[ value is not None and value != vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Delays the alignment of the most distantly related sequences until after the most closely related sequences have been aligned. The setting shows the percent identity level required to delay the addition of a sequence; sequences that are less identical than this level to any other sequences will be aligned later.</text> </comment>"
+                    }, 
+                    "newtree": {
+                        "prompt": "File for new guide tree (-newtree)", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -newtree=$value\" : \"\"", 
+                            "python": "( \"\" , \" -newtree=\" + str( value ))[value is not None]"
+                        }
+                    }, 
+                    "usetree": {
+                        "prompt": "File for old guide tree (-usetree)", 
+                        "type": {
+                            "datatype_class": "Tree", 
+                            "data_formats": [
+                                "NEWICK"
+                            ]
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -usetree=$value\" : \"\"", 
+                            "python": "( \"\" ,\" -usetree=\" + str( value ))[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">You can give a previously computed tree (.dnd file) - on the same data</text> </comment>"
+                    }, 
+                    "multalign_prot": {
+                        "name": "multalign_prot", 
+                        "precond": {
+                            "perl": "$typeseq eq \"protein\"", 
+                            "python": "typeseq == \"protein\""
+                        }, 
+                        "parameters": {
+                            "matrix": {
+                                "prompt": "Protein weight matrix (-matrix)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "gonnet"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "gonnet", 
+                                        "label": "Gonnet series"
+                                    }, 
+                                    {
+                                        "value": "blosum", 
+                                        "label": "BLOSUM series"
+                                    }, 
+                                    {
+                                        "value": "pam", 
+                                        "label": "PAM series"
+                                    }, 
+                                    {
+                                        "value": "id", 
+                                        "label": "Identity matrix"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -matrix=$value\" : \"\"", 
+                                    "python": "(\"\", \" -matrix=\"+str(value))[value is not None and value!=vdef]"
+                                }, 
+                                "comment": "<text lang=\"en\">There are three 'in-built' series of weight matrices offered. Each consists of several matrices which work differently at different evolutionary distances. To see the exact details, read the documentation. Crudely, we store several matrices in memory, spanning the full range of amino acid distance (from almost identical sequences to highly divergent ones). For very similar sequences, it is best to use a strict weight matrix which only gives a high score to identities and the most favoured conservative substitutions. For more divergent sequences, it is appropriate to use 'softer' matrices which give a high score to many other frequent substitutions.</text> <text lang=\"en\">BLOSUM (Henikoff). These matrices appear to be the best available for carrying out data base similarity (homology searches). The matrices used are: Blosum80, 62, 40 and 30.</text> <text lang=\"en\">The Gonnet Pam 250 matrix has been reported as the best single matrix for alignment, if you only choose one matrix. Our experience with profile database searches is that the Gonnet series is unambiguously superior to the Blosum series at high divergence. However, we did not get the series to perform systematically better than the Blosum series in Clustal W (communication of the authors).</text> <text lang=\"en\">PAM (Dayhoff). These have been extremely widely used since the late '70s. We use the PAM 120, 160, 250 and 350 matrices.</text> </comment>"
+                            }, 
+                            "negative": {
+                                "prompt": "Negative values in matrix ? (-negative)", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "default_value": [
+                                    "0"
+                                ], 
+                                "format": {
+                                    "perl": "($value) ? \" -negative\" : \"\"", 
+                                    "python": "( \"\" , \" -negative\" )[ value ]"
+                                }
+                            }, 
+                            "pgap": {
+                                "prompt": "Residue specific gaps off (-nopgap)", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ], 
+                                "format": {
+                                    "perl": "($value) ? \" -nopgap\" : \"\"", 
+                                    "python": "( \"\" , \" -nopgap\" )[ value ]"
+                                }, 
+                                "comment": "<text lang=\"en\">Residue specific penalties are amino acid specific gap penalties that reduce or increase the gap opening penalties at each position in the alignment or sequence. As an example, positions that are rich in glycine are more likely to have an adjacent gap than positions that are rich in valine.</text> <text lang=\"en\">Table of residue specific gap modification factors:</text> <text lang=\"en\">A 1.13 M 1.29</text> <text lang=\"en\">C 1.13 N 0.63</text> <text lang=\"en\">D 0.96 P 0.74</text> <text lang=\"en\">E 1.31 Q 1.07</text> <text lang=\"en\">F 1.20 R 0.72</text> <text lang=\"en\">G 0.61 S 0.76</text> <text lang=\"en\">H 1.00 T 0.89</text> <text lang=\"en\">I 1.32 V 1.25</text> <text lang=\"en\">K 0.96 Y 1.00</text> <text lang=\"en\">L 1.21 W 1.23</text> <text lang=\"en\">The values are normalised around a mean value of 1.0 for H. The lower the value, the greater the chance of having an adjacent gap. These are derived from the original table of relative frequencies of gaps adjacent to each residue (12) by subtraction from 2.0.</text> </comment>"
+                            }, 
+                            "hgap": {
+                                "prompt": "Hydrophilic gaps off (-nohgap)", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ], 
+                                "format": {
+                                    "perl": "($value) ? \" -nohgap\" : \"\"", 
+                                    "python": "( \"\" , \" -nohgap\" )[ value ]"
+                                }, 
+                                "comment": "<text lang=\"en\">Hydrophilic gap penalties are used to increase the chances of a gap within a run (5 or more residues) of hydrophilic amino acids; these are likely to be loop or random coil regions where gaps are more common. The residues that are 'considered' to be hydrophilic are set by menu item 3.</text> </comment>"
+                            }, 
+                            "hgapresidues": {
+                                "prompt": "Hydrophilic residues list (-hgapresidues)", 
+                                "type": {
+                                    "datatype_class": "MultipleChoice"
+                                }, 
+                                "default_value": [
+                                    "R", 
+                                    "N", 
+                                    "D", 
+                                    "Q", 
+                                    "E", 
+                                    "G", 
+                                    "K", 
+                                    "P", 
+                                    "S"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "A", 
+                                        "label": "A"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "R"
+                                    }, 
+                                    {
+                                        "value": "N", 
+                                        "label": "N"
+                                    }, 
+                                    {
+                                        "value": "D", 
+                                        "label": "D"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "C"
+                                    }, 
+                                    {
+                                        "value": "Q", 
+                                        "label": "Q"
+                                    }, 
+                                    {
+                                        "value": "E", 
+                                        "label": "E"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "G"
+                                    }, 
+                                    {
+                                        "value": "H", 
+                                        "label": "H"
+                                    }, 
+                                    {
+                                        "value": "I", 
+                                        "label": "I"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "L"
+                                    }, 
+                                    {
+                                        "value": "K", 
+                                        "label": "K"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "M"
+                                    }, 
+                                    {
+                                        "value": "F", 
+                                        "label": "F"
+                                    }, 
+                                    {
+                                        "value": "P", 
+                                        "label": "P"
+                                    }, 
+                                    {
+                                        "value": "S", 
+                                        "label": "S"
+                                    }, 
+                                    {
+                                        "value": "T", 
+                                        "label": "T"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "W"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Y"
+                                    }, 
+                                    {
+                                        "value": "V", 
+                                        "label": "V"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "($value and $value ne $vdef) ? \" -hgapresidues=\\\\\"$value\\\\\"\" : \"\"", 
+                                    "python": "( '' , ' -hgapresidues=\"%s\"' % str(value) )[ value and value != vdef ]"
+                                }
+                            }
+                        }
+                    }, 
+                    "multalign_dna": {
+                        "name": "multalign_dna", 
+                        "precond": {
+                            "perl": "$typeseq eq \"dna\"", 
+                            "python": "typeseq == \"dna\""
+                        }, 
+                        "parameters": {
+                            "dnamatrix": {
+                                "prompt": "DNA weight matrix (-dnamatrix)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "iub"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "iub", 
+                                        "label": "IUB"
+                                    }, 
+                                    {
+                                        "value": "clustalw", 
+                                        "label": "CLUSTALW"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -dnamatrix=$value\" : \"\"", 
+                                    "python": "(\"\", \" -dnamatrix=\" + str(value))[value is not None and value!=vdef]"
+                                }, 
+                                "comment": "<text lang=\"en\">1) IUB. This is the default scoring matrix used by BESTFIT for the comparison of nucleic acid sequences. X's and N's are treated as matches to any IUB ambiguity symbol. All matches score 1.9; all mismatches for IUB symbols score 0.</text> <text lang=\"en\">2) CLUSTALW(1.6). The previous system used by ClustalW, in which matches score 1.0 and mismatches score 0. All matches for IUB symbols also score 0.</text> </comment>"
+                            }, 
+                            "transweight": {
+                                "prompt": "Transitions weight (between 0 and 1) (-transweight)", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "default_value": [
+                                    "0.5"
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef) ? \" -transweight=$value\" : \"\"", 
+                                    "python": "( \"\" , \" -transweight=\" + str( value ) )[ value is not None and value != vdef ]"
+                                }, 
+                                "comment": "<text lang=\"en\">A weight of zero means that the transitions are scored as mismatches; a weight of 1 gives transitions the full match score. For distantly related DNA sequences, the weight should be near to zero; for closely related sequences it can be useful to assign a higher score.</text> </comment>"
+                            }
+                        }
+                    }
+                }
+            }, 
+            "fastpw": {
+                "name": "fastpw", 
+                "precond": {
+                    "perl": "$quicktree eq \"fast\"", 
+                    "python": "quicktree == \"fast\""
+                }, 
+                "parameters": {
+                    "ktuple": {
+                        "prompt": "Word size (-ktuple)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -ktuple=$value\" : \"\"", 
+                            "python": "( \"\" , \" -ktuple=\" + str( value ) )[value is not None and value != vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">K-TUPLE SIZE: This is the size of exactly matching fragment that is used. INCREASE for speed (max= 2 for proteins; 4 for DNA), DECREASE for sensitivity. For longer sequences (e.g. >1000 residues) you may need to increase the default.</text> </comment>"
+                    }, 
+                    "topdiags": {
+                        "prompt": "Number of best diagonals (-topdiags)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "5"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -topdiags=$value\" : \"\"", 
+                            "python": "( \"\" , \" -topdiags=\" + str( value ))[value is not None and value != vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">The number of k-tuple matches on each diagonal (in an imaginary dot-matrix plot) is calculated. Only the best ones (with most matches) are used in the alignment. This parameter specifies how many. Decrease for speed; increase for sensitivity.</text> </comment>"
+                    }, 
+                    "window": {
+                        "prompt": "Window around best diags (-window)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "5"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -window=$value\" : \"\"", 
+                            "python": "( \"\" , \" -window=\" + str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">WINDOW SIZE: This is the number of diagonals around each of the 'best' diagonals that will be used. Decrease for speed; increase for sensitivity</text> </comment>"
+                    }, 
+                    "pairgap": {
+                        "prompt": "Gap penalty (-pairgap)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "3"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pairgap=$value\" : \"\"", 
+                            "python": "( \"\" , \" -pairgap=\" + str( value ))[ value is not None and value != vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">This is a penalty for each gap in the fast alignments. It has little affect on the speed or sensitivity except for extreme values.</text> </comment>"
+                    }, 
+                    "score": {
+                        "prompt": "Percent or absolute score ? (-score)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "percent"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "percent", 
+                                "label": "Percent"
+                            }, 
+                            {
+                                "value": "absolute", 
+                                "label": "Absolute"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -score=$value\" : \"\"", 
+                            "python": "( \"\" , \" -score=\" +str( value ) )[value is not None or value != vdef]"
+                        }
+                    }
+                }
+            }, 
+            "slowpw": {
+                "name": "slowpw", 
+                "precond": {
+                    "perl": "$quicktree eq \"slow\"", 
+                    "python": "quicktree == \"slow\""
+                }, 
+                "parameters": {
+                    "pwgapopen": {
+                        "prompt": "Gap opening penalty (-pwgapopen)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "10.00"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapopen=$value\" : \"\"", 
+                            "python": "( \"\" , \" -pwgapopen=\" + str( value ) )[ value is not None and value != vdef ]"
+                        }
+                    }, 
+                    "pwgapext": {
+                        "prompt": "Gap extension penalty (-pwgapext)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "0.10"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapext=$value\" : \"\"", 
+                            "python": "( \"\" , \" -pwgapext=\" + str( value ) )[ value is not None and value != vdef ]"
+                        }
+                    }, 
+                    "slowpw_prot": {
+                        "name": "slowpw_prot", 
+                        "precond": {
+                            "perl": "$typeseq eq \"protein\"", 
+                            "python": "typeseq == \"protein\""
+                        }, 
+                        "parameters": {
+                            "pwmatrix": {
+                                "prompt": "Protein weight matrix (-pwmatrix)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "gonnet"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "blosum", 
+                                        "label": "BLOSUM30 (Henikoff)"
+                                    }, 
+                                    {
+                                        "value": "gonnet", 
+                                        "label": "Gonnet 250"
+                                    }, 
+                                    {
+                                        "value": "pam", 
+                                        "label": "PAM350 (Dayhoff)"
+                                    }, 
+                                    {
+                                        "value": "id", 
+                                        "label": "Identity matrix"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwmatrix=$value\" : \"\"", 
+                                    "python": "( \"\" , \" -pwmatrix=\" + str(value) )[value is not None and value != vdef ]"
+                                }, 
+                                "comment": "<text lang=\"en\">The scoring table which describes the similarity of each amino acid to each other. For DNA, an identity matrix is used.</text> <text lang=\"en\">BLOSUM (Henikoff). These matrices appear to be the best available for carrying out data base similarity (homology searches). The matrices used are: Blosum80, 62, 40 and 30.</text> <text lang=\"en\">The Gonnet Pam 250 matrix has been reported as the best single matrix for alignment, if you only choose one matrix. Our experience with profile database searches is that the Gonnet series is unambiguously superior to the Blosum series at high divergence. However, we did not get the series to perform systematically better than the Blosum series in Clustal W (communication of the authors).</text> <text lang=\"en\">PAM (Dayhoff). These have been extremely widely used since the late '70s. We use the PAM 120, 160, 250 and 350 matrices.</text> </comment>"
+                            }
+                        }
+                    }, 
+                    "slowpw_dna": {
+                        "name": "slowpw_dna", 
+                        "precond": {
+                            "perl": "$typeseq eq \"dna\"", 
+                            "python": "typeseq == \"dna\""
+                        }, 
+                        "parameters": {
+                            "pwdnamatrix": {
+                                "prompt": "DNA weight matrix (-pwdnamatrix)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "iub"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "iub", 
+                                        "label": "IUB"
+                                    }, 
+                                    {
+                                        "value": "clustalw", 
+                                        "label": "CLUSTALW"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwdnamatrix=$value\" : \"\"", 
+                                    "python": "( \"\" , \" -pwdnamatrix=\" + str(value) )[ value is not None and value != vdef ]"
+                                }, 
+                                "comment": "<text lang=\"en\">For DNA, a single matrix (not a series) is used. Two hard-coded matrices are available:</text> <text lang=\"en\">1) IUB. This is the default scoring matrix used by BESTFIT for the comparison of nucleic acid sequences. X's and N's are treated as matches to any IUB ambiguity symbol. All matches score 1.9; all mismatches for IUB symbols score 0.</text> <text lang=\"en\">2) CLUSTALW(1.6). The previous system used by ClustalW, in which matches score 1.0 and mismatches score 0. All matches for IUB symbols also score 0.</text> </comment>"
+                            }
+                        }
+                    }
+                }
+            }, 
+            "outputparam": {
+                "name": "outputparam", 
+                "parameters": {
+                    "outputformat": {
+                        "prompt": "Output format (-output)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null", 
+                                "label": "CLUSTAL"
+                            }, 
+                            {
+                                "value": "FASTA", 
+                                "label": "FASTA"
+                            }, 
+                            {
+                                "value": "GCG", 
+                                "label": "GCG"
+                            }, 
+                            {
+                                "value": "GDE", 
+                                "label": "GDE"
+                            }, 
+                            {
+                                "value": "PHYLIPI", 
+                                "label": "PHYLIP"
+                            }, 
+                            {
+                                "value": "PIR", 
+                                "label": "PIR"
+                            }, 
+                            {
+                                "value": "NEXUS", 
+                                "label": "NEXUS"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value ) ? \" -output=$value\" : \"\"", 
+                            "python": "( \"\" , \" -output=\" + str( value) )[ value is not None ]"
+                        }
+                    }, 
+                    "seqnos": {
+                        "prompt": "Output sequence numbers in the output file (for clustalw output only) (-seqnos)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "not defined $outputformat", 
+                            "python": "outputformat is None"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -seqnos=on\" : \"\"", 
+                            "python": "( \"\" , \" -seqnos=on\")[ value is not None and value != vdef]"
+                        }
+                    }, 
+                    "outorder": {
+                        "prompt": "Result order (-outorder)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "aligned"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "input", 
+                                "label": "Input"
+                            }, 
+                            {
+                                "value": "aligned", 
+                                "label": "Aligned"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -outorder=$value\" : \"\"", 
+                            "python": "( \"\" , \" -outorder=\" + str(value))[ value is not None and value != vdef ]"
+                        }
+                    }, 
+                    "outfile": {
+                        "prompt": "Sequence alignment file name (-outfile)", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -outfile=$value\" : \"\"", 
+                            "python": "( \"\" , \" -outfile=\" + str( value))[ value is not None ]"
+                        }
+                    }, 
+                    "gde_lower": {
+                        "prompt": "Upper case (for GDE output only) (-case)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$outputformat eq \"GDE\"", 
+                            "python": "outputformat == \"GDE\""
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -case=upper\" : \"\"", 
+                            "python": "( \"\" , \" -case=upper\" )[ value ]"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "multalign": {
+                "name": "multalign", 
+                "parameters": {
+                    "newtreefile": {
+                        "isout": true, 
+                        "prompt": "Output tree", 
+                        "type": {
+                            "datatype_class": "Tree", 
+                            "data_formats": [
+                                "NEWICK"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "defined $newtree", 
+                            "python": "newtree is not None"
+                        }, 
+                        "filenames": {
+                            "perl": "$newtree", 
+                            "python": "newtree"
+                        }
+                    }
+                }
+            }, 
+            "outputparam": {
+                "name": "outputparam", 
+                "parameters": {
+                    "clustalaligfile": {
+                        "isout": true, 
+                        "prompt": "Alignment file", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "CLUSTAL"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "not defined $outputformat", 
+                            "python": "outputformat is None"
+                        }, 
+                        "filenames": {
+                            "perl": "(defined $outfile)? \"$outfile\":\"*.aln\"", 
+                            "python": "(\"*.aln\", str(outfile))[outfile is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">In the conservation line output in the clustal format alignment file, three characters are used:</text> <text lang=\"en\">'*' indicates positions which have a single, fully conserved residue.</text> <text lang=\"en\">':' indicates that one of the following 'strong' groups is fully conserved (STA,NEQK,NHQK,NDEQ,QHRK,MILV,MILF,HY,FYW).</text> <text lang=\"en\">'.' indicates that one of the following 'weaker' groups is fully conserved (CSA,ATV,SAG,STNK,STPA,SGND,SNDEQK,NDEQHK,NEQHRK,FVLIM,HFY).</text> <text lang=\"en\">These are all the positively scoring groups that occur in the Gonnet Pam250 matrix. The strong and weak groups are defined as strong score >0.5 and weak score =<0.5 respectively.</text> </comment>"
+                    }, 
+                    "aligfile": {
+                        "isout": true, 
+                        "prompt": "Alignment file", 
+                        "type": {
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "\n              ", 
+                                "\n            "
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "$outputformat =~ /^(NEXUS|GCG|PHYLIPI|FASTA)$/", 
+                            "python": "outputformat in [ \"FASTA\", \"NEXUS\", \"GCG\", \"PHYLIPI\"]"
+                        }, 
+                        "filenames": {
+                            "perl": "(defined $outfile)? ( $outputformat eq 'GCG' )? ( $outputformat eq 'PHYLIPI' )?\"$outfile\":\"*.msf\" : \"*.phy\" : \"*.nxs\"", 
+                            "python": "{ \"FASTA\":\"*.fasta\", \"NEXUS\": \"*.nxs\", \"PHYLIPI\": \"*.phy\" , 'GCG': '*.msf' }[outputformat ]"
+                        }
+                    }, 
+                    "seqfile": {
+                        "isout": true, 
+                        "prompt": "Sequences file", 
+                        "type": {
+                            "datatype_class": "Sequence"
+                        }, 
+                        "precond": {
+                            "perl": "$outputformat =~ /^(GDE|PIR)$/", 
+                            "python": "outputformat in [ 'GDE', 'PIR' ]"
+                        }, 
+                        "filenames": {
+                            "perl": "(defined $outfile)? ( $outputformat eq 'GDE' )? ( $outputformat eq 'PIR' )?\"$outfile\":\"*.gde\" : \"*.pir\" : \"*.fasta\"", 
+                            "python": "(((\"*.fasta\",\"*.pir\")[outputformat == 'PIR'],\"*.gde\")[outputformat == 'GDE'],str(outfile))[outfile is not None]"
+                        }
+                    }, 
+                    "dndfile": {
+                        "isout": true, 
+                        "prompt": "Tree file", 
+                        "type": {
+                            "datatype_class": "Tree", 
+                            "data_formats": [
+                                "NEWICK"
+                            ]
+                        }, 
+                        "precond": {
+                            "perl": "not defined $newtree", 
+                            "python": "newtree is None"
+                        }, 
+                        "filenames": {
+                            "perl": "\"*.dnd\"", 
+                            "python": "\"*.dnd\""
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\"> Use this interface to add new sequences to an existing alignment.</text> <text lang=\"en\">The profile is converted into a HMM and the un-aligned sequences will be multiply aligned (using the HMM background information) to form a profile; this constructed profile is aligned with the input profile; the columns in each profile (the original one and the one created from the un-aligned sequences) will be kept fixed and the alignment of the two profiles will be written out. The un/aligned sequences must contain at least two sequences.</text> </comment>"
+}

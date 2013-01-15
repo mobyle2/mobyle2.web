@@ -1,0 +1,476 @@
+{
+    "type": "program", 
+    "name": "combat", 
+    "version": "1.0", 
+    "title": "COMBAT", 
+    "description": "<text lang=\"en\">Comparison of coding DNA</text> </description>", 
+    "authors": "Pedersen, Lyngso,Hein</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise"
+    ], 
+    "command": "ComAlign", 
+    "inputs": {
+        "parameters": {
+            "combat": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "precond": {
+                    "perl": "defined $sequence1 and defined $sequence2", 
+                    "python": "sequence1 is not None and sequence2 is not None"
+                }, 
+                "format": {
+                    "perl": " combine sequence combat.aln\"", 
+                    "python": " combine sequence.data combat.aln\""
+                }
+            }, 
+            "sequence1": {
+                "ismandatory": true, 
+                "prompt": "First Sequence", 
+                "type": {
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "format": {
+                    "perl": "inputfile\\n\\\"sequence.data\\\"\\n\"", 
+                    "python": "inputfile\\n\"sequence.data\"\\n'"
+                }, 
+                "comment": "<text lang=\"en\">Sequences must describe an integer number of codon, i.e. the length of sequence must be a multiple of three.</text> </comment>"
+            }, 
+            "sequence2": {
+                "ismandatory": true, 
+                "prompt": "Second Sequence", 
+                "type": {
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "comment": "<text lang=\"en\">Sequences must describe an integer number of codon, i.e. the length of sequence must be a multiple of three.</text> </comment>"
+            }, 
+            "protein_distance_matrix": {
+                "ismandatory": true, 
+                "prompt": "Amino-acid distance matrix", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "Blosum62_distance.m"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "PAM60_distance.m", 
+                        "label": "PAM60"
+                    }, 
+                    {
+                        "value": "PAM120_distance.m", 
+                        "label": "PAM120"
+                    }, 
+                    {
+                        "value": "PAM250_distance.m.m", 
+                        "label": "PAM250"
+                    }, 
+                    {
+                        "value": "PAM350_distance.m", 
+                        "label": "PAM350"
+                    }, 
+                    {
+                        "value": "Blosum30_distance.m", 
+                        "label": "Blosum30"
+                    }, 
+                    {
+                        "value": "Blosum62_distance.m", 
+                        "label": "Blosum62"
+                    }, 
+                    {
+                        "value": "Blosum90_distance.m", 
+                        "label": "Blosum90"
+                    }
+                ], 
+                "format": {
+                    "perl": "$value\\\"\\n\"", 
+                    "python": "\" + str(value) + '\"\\n'"
+                }
+            }, 
+            "nucleotide_distance_matrix": {
+                "ismandatory": true, 
+                "prompt": "Nucleotid distance matrix", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "nucleotide_distance1.m"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "nucleotide_distance1.m", 
+                        "label": "Matrix 1"
+                    }, 
+                    {
+                        "value": "nucleotide_distance2.m", 
+                        "label": "Matrix 2"
+                    }, 
+                    {
+                        "value": "nucleotide_distance3.m", 
+                        "label": "Matrix 3"
+                    }
+                ], 
+                "format": {
+                    "perl": "$value\\\"\\n\"", 
+                    "python": "\" + str(value) + '\"\\n'"
+                }
+            }, 
+            "protein_gap_open": {
+                "ismandatory": true, 
+                "prompt": "Gap open cost for protein", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "default_value": [
+                    "20"
+                ], 
+                "format": {
+                    "perl": "gap functions\\\\nprotein:        $value\"", 
+                    "python": "gap functions\\nprotein:        \" + str(value)"
+                }
+            }, 
+            "protein_gap_ext": {
+                "ismandatory": true, 
+                "prompt": "Gap extension cost for protein", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "default_value": [
+                    "8"
+                ], 
+                "format": {
+                    "perl": "\" + $value*k\\\\n\"", 
+                    "python": "\" + \" + str(value) + \"*k\\n\""
+                }
+            }, 
+            "dna_gap_open": {
+                "ismandatory": true, 
+                "prompt": "Gap open cost for dna", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "default_value": [
+                    "8"
+                ], 
+                "format": {
+                    "perl": "\"dna:        $value\"", 
+                    "python": "\"dna:        \" + str(value)"
+                }
+            }, 
+            "dna_gap_ext": {
+                "ismandatory": true, 
+                "prompt": "Gap extension cost for dna", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "default_value": [
+                    "2"
+                ], 
+                "format": {
+                    "perl": "\" + $value*k\"", 
+                    "python": "\" + \" + str(value) + \"*k\""
+                }
+            }, 
+            "gnuplot_call": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "gnuplot.params\"", 
+                    "python": "gnuplot.params\""
+                }
+            }, 
+            "gnuplot_commands": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"set xtics 12,5.,1000\\nset ytics 12,5.,1000\\nset grid\\nset terminal postscript\\nset output \\\"combat.ps\\\"\\nplot \\\"combat.aln\\\" with lines\\n\"", 
+                    "python": "'set xtics 12,5.,1000\\nset ytics 12,5.,1000\\nset grid\\nset terminal postscript\\nset output \"combat.ps\"\\nplot \"combat.aln\" with lines\\n'"
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "output_aln": {
+                "isout": true, 
+                "prompt": "Output file", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "format": {
+                    "perl": "outputfile\\n\\\"combat.aln\\\"\\n\"", 
+                    "python": "outputfile\\n\"combat.aln\"\\n'"
+                }, 
+                "filenames": {
+                    "perl": "\"combat.aln\"", 
+                    "python": "\"combat.aln\""
+                }
+            }, 
+            "combat_out": {
+                "isstdout": true, 
+                "prompt": "Alignment file", 
+                "type": {
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "filenames": {
+                    "perl": "\"combat.out\"", 
+                    "python": "\"combat.out\""
+                }
+            }, 
+            "distance_files": {
+                "isout": true, 
+                "prompt": "Distance file", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "filenames": {
+                    "perl": "\"distance.out\"", 
+                    "python": "\"distance.out\""
+                }
+            }, 
+            "ps_files": {
+                "isout": true, 
+                "prompt": "Postscript file", 
+                "type": {
+                    "datatype_class": "PostScript", 
+                    "datatype_superclass": "Binary"
+                }, 
+                "filenames": {
+                    "perl": "\"combat.ps\"", 
+                    "python": "\"combat.ps\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\"> Use this interface to add new sequences to an existing alignment.</text> <text lang=\"en\">The profile is converted into a HMM and the un-aligned sequences will be multiply aligned (using the HMM background information) to form a profile; this constructed profile is aligned with the input profile; the columns in each profile (the original one and the one created from the un-aligned sequences) will be kept fixed and the alignment of the two profiles will be written out. The un/aligned sequences must contain at least two sequences.</text> </comment>"
+}

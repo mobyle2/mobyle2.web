@@ -1,0 +1,659 @@
+{
+    "type": "program", 
+    "name": "cap3", 
+    "version": "3", 
+    "title": "CAP3", 
+    "description": "<text lang=\"en\">Contig Assembly Program</text> </description>", 
+    "authors": "Huang, X. and Madan, A. (1999)</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly"
+    ], 
+    "command": "cap3", 
+    "inputs": {
+        "parameters": {
+            "seq": {
+                "ismandatory": true, 
+                "prompt": "File of reads", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ], 
+                    "card": "2,n"
+                }, 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \" + str( value )"
+                }
+            }, 
+            "qual_file": {
+                "prompt": "Quality value file", 
+                "type": {
+                    "datatype_class": "BaseQuality", 
+                    "datatype_superclass": "AbstractText", 
+                    "data_formats": [
+                        "PhrapQuality"
+                    ]
+                }, 
+                "format": {
+                    "perl": "(defined $value?)\"ln -sf $value $seq.qual\" : \"\"", 
+                    "python": " \" %( value , seq ) )[value is not None and value != seq + \".qual\" ]"
+                }, 
+                "comment": "<text lang=\"en\">CAP3 uses the same format of a quality file as Phrap. The sequence file and the corresponding quality file must be arranged in the same order in terms of reads, where for each read, the same name must be used in both files and the number of bases must be equal to the number of quality values. </text> </comment>"
+            }, 
+            "con_file": {
+                "prompt": "Constraint file", 
+                "type": {
+                    "datatype_class": "CapConstraint", 
+                    "datatype_superclass": "AbstractText"
+                }, 
+                "format": {
+                    "perl": "(defined $value?)\"ln -sf $value $seq.con\" : \"\"", 
+                    "python": " \" %( value , seq ) )[value is not None ]"
+                }, 
+                "comment": "<text lang=\"en\">Each line of the constraint file specifies one forward-reverse constraint of the form:</text> <text lang=\"en\">ReadA ReadB MinDistance MaxDistance</text> <text lang=\"en\">where ReadA and ReadB are names of two reads, and MinDistance and MaxDistance are distances (integers) in base pairs. The constraint is satisfied if ReadA in forward orientation occurs in a contig before ReadB in reverse orientation, or ReadB in forward orientation occurs in a contig before ReadA in reverse orientation, and their distance is between MinDistance and MaxDistance. CAP3 works better if a lot more constraints are used.</text> </comment>"
+            }, 
+            "clipping_poor_regions": {
+                "name": "clipping_poor_regions", 
+                "parameters": {
+                    "base_qual_cutoff_clipping": {
+                        "prompt": "Base quality cutoff for clipping (-c)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "12"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -c $value\" : \"\"", 
+                            "python": "( \"\" , \" -c \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 5", 
+                            "python": " 5"
+                        }, 
+                        "comment": "<text lang=\"en\">Default value: 12</text> </comment>"
+                    }, 
+                    "clipping_range": {
+                        "prompt": "Clipping range (-y)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "250"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -y $value\" : \"\"", 
+                            "python": "( \"\" , \" -y \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 5", 
+                            "python": " 5"
+                        }, 
+                        "comment": "<text lang=\"en\">Default value: 250</text> </comment>"
+                    }, 
+                    "good_reads": {
+                        "prompt": "Minimum number of good reads at clip pos (-z)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "3"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -z $value\" : \"\"", 
+                            "python": "( \"\" , \" -z \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }, 
+                        "comment": "<text lang=\"en\">Default value: 3</text> </comment>"
+                    }, 
+                    "clipping_file": {
+                        "prompt": "File for clipping information (-w)", 
+                        "type": {
+                            "datatype_class": "ClippingParameters", 
+                            "datatype_superclass": "AbstractText"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -w $value\" : \"\"", 
+                            "python": "( \"\" , \" -w \"+ str( value ) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">The user may provide specific values for the parameters crange and gdepth or individual reads in a file.</text> <text lang=\"en\">Each line in the file has the following format:</text> <text lang=\"en\">ReadName crange5 gdepth5 crange3 gdepth3</text> <text lang=\"en\">where ReadName is the name of a read, crange5 and gdepth5 are values for the 5' end, and crange3 and gdepth3 are for the 3' end.</text> </comment>"
+                    }
+                }
+            }, 
+            "band_diagonals": {
+                "name": "band_diagonals", 
+                "parameters": {
+                    "band_expansion": {
+                        "prompt": "Band expansion size (-a)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "20"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -a $value\" : \"\"", 
+                            "python": "( \"\" , \" -a \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 10", 
+                            "python": " 10"
+                        }, 
+                        "comment": "<text lang=\"en\">The program determines a minimum band of diagonals for an overlapping alignment between two sequence reads.</text> <text lang=\"en\">The band is expanded by a number of bases specified by the user with option \"-a\".</text> <text lang=\"en\">Default value: 20</text> </comment>"
+                    }
+                }
+            }, 
+            "overlap_score": {
+                "name": "overlap_score", 
+                "parameters": {
+                    "base_qual_cutoff": {
+                        "prompt": "Base quality cutoff for differences (-b)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "20"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"-b $value\" : \"\"", 
+                            "python": "( \"\" , \" -b \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 15", 
+                            "python": " 15"
+                        }
+                    }, 
+                    "max_qscore": {
+                        "prompt": "Maximum qscore sum at differences (-d)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "200"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -d $value\" : \"\"", 
+                            "python": "( \"\" , \" -d \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 20", 
+                            "python": " 20"
+                        }
+                    }
+                }
+            }, 
+            "nb_diff_overlap": {
+                "name": "nb_diff_overlap", 
+                "parameters": {
+                    "clearance": {
+                        "prompt": "Clearance between number of diff (-e)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "30"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -e $value\" : \"\"", 
+                            "python": "( \"\" , \" -e \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 10", 
+                            "python": " 10"
+                        }
+                    }
+                }
+            }, 
+            "sim_score_overlap": {
+                "name": "sim_score_overlap", 
+                "parameters": {
+                    "match_score": {
+                        "prompt": "Match score factor (-m)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "2"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -m $value\" : \"\"", 
+                            "python": "( \"\" , \" -m \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }
+                    }, 
+                    "mismatch_score": {
+                        "prompt": "Mismatch score factor (-n)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "-5"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -n $value\" : \"\"", 
+                            "python": "( \"\" , \" -n \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }
+                    }, 
+                    "gap_penalty": {
+                        "prompt": "Gap penalty factor (-g)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "6"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -g $value\" : \"\"", 
+                            "python": "( \"\" , \" -g \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }
+                    }
+                }
+            }, 
+            "percent_id_overlap": {
+                "name": "percent_id_overlap", 
+                "parameters": {
+                    "overlap_length": {
+                        "prompt": "Overlap length cutoff (-o)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "40"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -o $value\" : \"\"", 
+                            "python": "( \"\" , \" -o \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 20", 
+                            "python": " 20"
+                        }
+                    }, 
+                    "overlap_identity": {
+                        "prompt": "Overlap percent identity cutoff (-p)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "80"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -p $value\" : \"\"", 
+                            "python": "( \"\" , \" -p \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 65", 
+                            "python": " 65"
+                        }
+                    }
+                }
+            }, 
+            "max_len_gaps_overlap": {
+                "name": "max_len_gaps_overlap", 
+                "parameters": {
+                    "max_gap_length": {
+                        "prompt": "Maximum gap length in any overlap (-f)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "20"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -f $value\" : \"\"", 
+                            "python": "( \"\" , \" -f \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 1", 
+                            "python": " 1"
+                        }
+                    }
+                }
+            }, 
+            "overhang_pcent_len_overlap": {
+                "name": "overhang_pcent_len_overlap", 
+                "parameters": {
+                    "max_overhang": {
+                        "prompt": "Maximum overhang percent length (-h)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "20"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -h $value\" : \"\"", 
+                            "python": "( \"\" , \" -h \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 2", 
+                            "python": " 2"
+                        }
+                    }
+                }
+            }, 
+            "overlap_similarity": {
+                "prompt": "Overlap similarity score cutoff (-s)", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "default_value": [
+                    "900"
+                ], 
+                "format": {
+                    "perl": "(defined $value and $value != $vdef) ? \" -s $value\" : \"\"", 
+                    "python": "( \"\" , \" -s \"+ str( value ) )[ value is not None and value != vdef ]"
+                }, 
+                "ctrl": {
+                    "perl": " 400", 
+                    "python": " 400"
+                }
+            }, 
+            "assembly_fwd": {
+                "name": "assembly_fwd", 
+                "parameters": {
+                    "reverse_orientation": {
+                        "prompt": "Reverse orientation value (-r)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -r $value\" : \"\"", 
+                            "python": "( \"\" , \" -r \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": "= 0", 
+                            "python": "= 0"
+                        }
+                    }
+                }
+            }, 
+            "max_num_word_matches": {
+                "name": "max_num_word_matches", 
+                "parameters": {
+                    "word_matches": {
+                        "prompt": "Maximum number of word matches (-t)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "300"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -t $value\" : \"\"", 
+                            "python": "( \"\" , \" -t \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 30", 
+                            "python": " 30"
+                        }
+                    }
+                }
+            }, 
+            "fwd_rev_const": {
+                "name": "fwd_rev_const", 
+                "parameters": {
+                    "min_constraints_corr": {
+                        "prompt": "Minimum number of constraints for correction (-u)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "3"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -u $value\" : \"\"", 
+                            "python": "( \"\" , \" -u \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }
+                    }, 
+                    "min_constraints_linking": {
+                        "prompt": "Minimum number of constraints for linking (-v)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "2"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -v $value\" : \"\"", 
+                            "python": "( \"\" , \" -v \"+ str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "ace": {
+                "isout": true, 
+                "prompt": "Assembly in ace format", 
+                "type": {
+                    "datatype_class": "AceAssembly", 
+                    "datatype_superclass": "AbstractText", 
+                    "data_formats": [
+                        "ACE"
+                    ]
+                }, 
+                "filenames": {
+                    "perl": "\"*.cap.ace\"", 
+                    "python": "\"*.cap.ace\""
+                }
+            }, 
+            "contig": {
+                "isout": true, 
+                "prompt": "Contigs", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Sequence", 
+                    "card": "0,n", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "filenames": {
+                    "perl": "\"*.cap.contigs\"", 
+                    "python": "\"*.cap.contigs\""
+                }
+            }, 
+            "contig_link": {
+                "isout": true, 
+                "prompt": "Contig links", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "filenames": {
+                    "perl": "\"*.cap.contigs.links\"", 
+                    "python": "\"*.cap.contigs.links\""
+                }
+            }, 
+            "contig_qual": {
+                "isout": true, 
+                "prompt": "Quality of contigs", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "filenames": {
+                    "perl": "\"*.cap.contigs.qual\"", 
+                    "python": "\"*.cap.contigs.qual\""
+                }
+            }, 
+            "info": {
+                "isout": true, 
+                "prompt": "Assembly informations", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "filenames": {
+                    "perl": "\"*.cap.info\"", 
+                    "python": "\"*.cap.info\""
+                }
+            }, 
+            "singlet": {
+                "isout": true, 
+                "prompt": "Singlets", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Sequence", 
+                    "card": "0,n"
+                }, 
+                "filenames": {
+                    "perl": "\"*.cap.singlets\"", 
+                    "python": "\"*.cap.singlets\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\"> Extract the Identifier and Data Bank of the hits from the summary of a blast report ( in text format -m 0-6 ) The result is in USA list format. </text> </comment>"
+}

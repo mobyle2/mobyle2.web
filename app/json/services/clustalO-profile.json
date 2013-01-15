@@ -1,0 +1,424 @@
+{
+    "type": "program", 
+    "name": "clustalO-profile", 
+    "version": "6.3.1", 
+    "title": "Clustal-Omega: Profile alignment", 
+    "description": "<text lang=\"en\">Align 2 profiles (alignments)</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple"
+    ], 
+    "command": "clustalo", 
+    "inputs": {
+        "parameters": {
+            "input": {
+                "name": "input", 
+                "parameters": {
+                    "profile1": {
+                        "ismaininput": true, 
+                        "ismandatory": true, 
+                        "prompt": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)", 
+                        "type": {
+                            "biotype": "Protein", 
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "FASTA", 
+                                "CLUSTAL", 
+                                "STOCKHOLM", 
+                                "MSF"
+                            ]
+                        }, 
+                        "format": {
+                            "perl": "\" --profile1=$value\"", 
+                            "python": "\" --profile1=\" + str( value )"
+                        }
+                    }, 
+                    "profile2": {
+                        "ismaininput": true, 
+                        "ismandatory": true, 
+                        "prompt": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)", 
+                        "type": {
+                            "biotype": "Protein", 
+                            "datatype_class": "Alignment", 
+                            "data_formats": [
+                                "FASTA", 
+                                "CLUSTAL", 
+                                "STOCKHOLM", 
+                                "MSF"
+                            ], 
+                            "card": "1"
+                        }, 
+                        "format": {
+                            "perl": "\" --profile2=$value\"", 
+                            "python": "\" --profile2=\" + str( value )"
+                        }
+                    }
+                }
+            }, 
+            "clustering": {
+                "name": "clustering", 
+                "parameters": {
+                    "guidetree_in": {
+                        "prompt": "Guide tree input file (--guidetree-in)", 
+                        "type": {
+                            "datatype_class": "Tree", 
+                            "data_formats": [
+                                "NEWICK"
+                            ]
+                        }, 
+                        "format": {
+                            "perl": "(defined $value )? \" --guidetree-in= $value\" : \"\"", 
+                            "python": "( \"\" , \" --guidetree-in=\"+str(value))[ value is not None ]"
+                        }
+                    }, 
+                    "full": {
+                        "prompt": "Use full distance matrix for guide-tree calculation (slow; mBed is default) (--full)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $full and $ full)? \" --full \": \"\"", 
+                            "python": "( \"\" , \" --full \")[ value is not None and value ]"
+                        }
+                    }, 
+                    "full_iter": {
+                        "prompt": "Use full distance matrix for guide-tree calculation during iteration (mBed is default) (--full-iter)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $full and $ full)? \" --full-iter \": \"\"", 
+                            "python": "( \"\" , \" --full-iter \")[ value is not None and value ]"
+                        }
+                    }
+                }
+            }, 
+            "output_format": {
+                "name": "output_format", 
+                "parameters": {
+                    "output_format": {
+                        "prompt": "alignment output format", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "fasta"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "fasta", 
+                                "label": "fasta"
+                            }, 
+                            {
+                                "value": "clustal", 
+                                "label": "clustal"
+                            }, 
+                            {
+                                "value": "msf", 
+                                "label": "msf"
+                            }, 
+                            {
+                                "value": "phylip", 
+                                "label": "phylip"
+                            }, 
+                            {
+                                "value": "stockholm", 
+                                "label": "stockholm"
+                            }, 
+                            {
+                                "value": "vienna", 
+                                "label": "vienna"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" --outfmt=$value\" : \"\"", 
+                            "python": "( \"\" , \" --outfmt=\" + value )[ value is not None and value != vdef ]"
+                        }
+                    }
+                }
+            }, 
+            "iteration": {
+                "name": "iteration", 
+                "parameters": {
+                    "iterations": {
+                        "prompt": "Number of (combined guide-tree/HMM) iterations (--iter)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" --iter=$value \": \"\"", 
+                            "python": "( \"\" , \" --iter=\"+str(value) )[ value is not None ]"
+                        }
+                    }, 
+                    "max_guidetree_iterations": {
+                        "prompt": "Maximum number guidetree iterations (--max-guidetree-iterations)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" --max-guidetree-iterations=$value \": \"\"", 
+                            "python": "( \"\" , \" --max-guidetree-iterations=\"+str(value) )[ value is not None ]"
+                        }
+                    }, 
+                    "max_hmm_iterations": {
+                        "prompt": "Maximum number of HMM iterations (--max-hmm-iterations)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" --max-hmm-iterations=$value \": \"\"", 
+                            "python": "( \"\" , \" --max-hmm-iterations=\"+str(value) )[ value is not None ]"
+                        }
+                    }
+                }
+            }, 
+            "miscellaneous": {
+                "name": "miscellaneous", 
+                "parameters": {
+                    "auto": {
+                        "prompt": "Set options automatically (might overwrite some of your options) (--auto)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value)? \" --auto \": \"\"", 
+                            "python": "( \"\" , \" --auto \")[value is not None and value]"
+                        }, 
+                        "comment": "<text lang=\"en\">Users may feel unsure which options are appropriate in certain situations even though using ClustalO without any special options should give you the desired results. The --auto flag tries to alleviate this problem and selects accuracy/speed flags according to the number of sequences. For all cases will use mBed and thereby possibly overwrite the --full option. For more than 1,000 sequences the iteration is turned off as the effect of iteration is more noticeable for 'larger' problems. Otherwise iterations are set to 1 if not already set to a higher value by the user. Expert users may want to avoid this flag and exercise more fine tuned control by selecting the appropriate options manually.</text> </comment>"
+                    }, 
+                    "verbosity": {
+                        "ishidden": true, 
+                        "type": {
+                            "datatype_class": "String"
+                        }, 
+                        "format": {
+                            "perl": "\" -v --force --log=clustalO_log\"", 
+                            "python": "\" -v --force --log=clustalO_log\""
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "alignment_output": {
+                "isstdout": true, 
+                "prompt": "Multiple Sequence Alignment", 
+                "type": {
+                    "biotype": "Protein", 
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "\n          ", 
+                        "\n          ", 
+                        "\n          ", 
+                        "\n          ", 
+                        "\n          ", 
+                        "\n          ", 
+                        "\n        "
+                    ]
+                }, 
+                "filenames": {
+                    "perl": "\"clustalO-profile.out\"", 
+                    "python": "\"clustalO-profile.out\""
+                }
+            }, 
+            "logfile": {
+                "isout": true, 
+                "prompt": "Clustal omega log file", 
+                "type": {
+                    "datatype_class": "ClustalOReport", 
+                    "datatype_superclass": "Report"
+                }, 
+                "filenames": {
+                    "perl": "\"clustalO_log\"", 
+                    "python": "\"clustalO_log\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">Use this interface to align two alignments (profiles) together.</text> <text lang=\"en\">The columns in each profile will be kept fixed and the alignment of the two profiles will be written out.</text> </comment>"
+}

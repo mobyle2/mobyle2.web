@@ -1,0 +1,574 @@
+{
+    "type": "program", 
+    "name": "bl2seq", 
+    "version": "6.3.1", 
+    "title": "BL2SEQ", 
+    "description": "<text lang=\"en\">Comparison between two sequences with Blast (NCBI)</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise"
+    ], 
+    "command": "biosed", 
+    "inputs": {
+        "parameters": {
+            "blast_init": {
+                "ishidden": true, 
+                "prompt": "Blast initiation", 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"bl2seq\"", 
+                    "python": "\"bl2seq\""
+                }
+            }, 
+            "bl2seq": {
+                "ismandatory": true, 
+                "prompt": "Blast program (-p)", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "null"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "null", 
+                        "label": "Choose a program"
+                    }, 
+                    {
+                        "value": "blastp", 
+                        "label": "Blastp (protein/protein)"
+                    }, 
+                    {
+                        "value": "blastn", 
+                        "label": "Blastn (nucleotide/nucleotide)"
+                    }, 
+                    {
+                        "value": "blastx", 
+                        "label": "Blastx (translated nucleotide/ protein)"
+                    }, 
+                    {
+                        "value": "tblastn", 
+                        "label": "tBlastn (protein/translated nucleotide)"
+                    }, 
+                    {
+                        "value": "tblastx", 
+                        "label": "tBlastx (translated nucleotide/translated nucleotide)"
+                    }
+                ], 
+                "format": {
+                    "perl": "\" -p $value\"", 
+                    "python": "\" -p \" + str(value)"
+                }, 
+                "comment": "<text lang=\"en\">- Blastp compares amino acid query sequences</text> <text lang=\"en\">- Blastn compares nucleotide query sequences</text> <text lang=\"en\">- tBlastx compares translated a nucleotide sequence and an amino acid sequence</text> <text lang=\"en\">- tBlastn compares an amino acid sequence translated and a nucleotide sequence</text> <text lang=\"en\">- tBlastx compares translated nucleotide sequences</text> </comment>"
+            }, 
+            "first_sequence": {
+                "ismaininput": true, 
+                "ismandatory": true, 
+                "prompt": "First sequence (-i)", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\" -i $value\"", 
+                    "python": "\" -i \" + str( value )"
+                }
+            }, 
+            "first_start_region": {
+                "prompt": "Start of required region in first query sequence (-I)", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "comment": "<text lang=\"en\">Location on query sequence</text> </comment>"
+            }, 
+            "first_end_region": {
+                "prompt": "End of required region in first sequence (-I)", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "precond": {
+                    "perl": "defined $first_start_region", 
+                    "python": "first_start_region is not None"
+                }, 
+                "format": {
+                    "perl": "(defined $value) ? \" -I \\\"$first_start_region $value\\\"\" : \" -I \\\"$first_start_region\\\"\"", 
+                    "python": "( ' -I \"%s \"' % (str(first_start_region)), ' -I \"%s %s\"' % (str(first_start_region), str(value)))[value is not None]"
+                }
+            }, 
+            "second_sequence": {
+                "ismaininput": true, 
+                "ismandatory": true, 
+                "prompt": "Second sequence (-j)", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\" -j $value\"", 
+                    "python": "\" -j \" + str(value)"
+                }
+            }, 
+            "second_start_region": {
+                "prompt": "Start of required region in second sequence (-J)", 
+                "type": {
+                    "datatype_class": "Integer"
+                }
+            }, 
+            "second_end_region": {
+                "prompt": "End of required region in second sequence (-J)", 
+                "type": {
+                    "datatype_class": "Integer"
+                }, 
+                "precond": {
+                    "perl": "defined $second_start_region", 
+                    "python": "second_start_region is not None"
+                }, 
+                "format": {
+                    "perl": "(defined $value) ? \" -J \\\"$second_start_region $value\\\"\" : \" -J \\\"$second_region\\\"\"", 
+                    "python": "( ' -J \"%s \"' % (str(second_start_region)), ' -J \"%s %s\"' % (str(second_start_region), str(value)))[value is not None]"
+                }
+            }, 
+            "scoring_opt": {
+                "name": "scoring_opt", 
+                "parameters": {
+                    "open_a_gap": {
+                        "prompt": "Cost to open a gap (-G)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -G $value\" : \"\"", 
+                            "python": "(\"\" , \" -G \"+str(value) )[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">Default: 5 for blastn; 10 for blastp, blastx and 11 for tblastn</text> </comment>"
+                    }, 
+                    "extend_a_gap": {
+                        "prompt": "Cost to extend a gap (-E)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -E $value\" : \"\"", 
+                            "python": "(\"\" , \" -E \"+str(value) )[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">Default: 2 for blastn; 1 for blastp, blastx and tblastn</text> <text lang=\"en\">Limited values for gap existence and extension are supported for these programs.</text> <text lang=\"en\">Existence -- Extension:</text> <text lang=\"en\">BLOSUM90</text> <text lang=\"en\">9 -- 2, 8 -- 2, 7 -- 2, 6 -- 2</text> <text lang=\"en\">11 -- 1, 10 -- 1, 9 -- 1</text> <text lang=\"en\">BLOSUM80</text> <text lang=\"en\">25 -- 2, 13 -- 2, 9 -- 2, 8 -- 2, 7 -- 2, 6 -- 2</text> <text lang=\"en\">11 -- 1, 10 -- 1, 9 -- 1</text> <text lang=\"en\">BLOSUM62</text> <text lang=\"en\">11 -- 2, 10 -- 2, 9 -- 2, 8 -- 2, 7 -- 2, 6 -- 2</text> <text lang=\"en\">13 -- 1, 12 -- 1, 11 -- 1, 10 -- 1, 9 -- 1</text> <text lang=\"en\">BLOSUM45</text> <text lang=\"en\">13 -- 3, 12 -- 3, 11 -- 3, 10 -- 3</text> <text lang=\"en\">16 -- 2, 15 -- 2, 14 -- 2, 13 -- 2, 12 -- 2</text> <text lang=\"en\">19 -- 1, 18 -- 1, 17 -- 1, 16 -- 1</text> <text lang=\"en\">PAM30</text> <text lang=\"en\">7 -- 2, 6 -- 2, 5 -- 2</text> <text lang=\"en\">10 -- 1, 9 -- 1, 8 -- 1</text> <text lang=\"en\">PAM70</text> <text lang=\"en\">8 -- 2, 7 -- 2, 6 -- 2</text> <text lang=\"en\">11 -- 1, 10 -- 1, 9 -- 1</text> </comment>"
+                    }, 
+                    "scoring_blast": {
+                        "name": "scoring_blast", 
+                        "precond": {
+                            "perl": "$bl2seq ne \"blastn\"", 
+                            "python": "bl2seq != \"blastn\""
+                        }, 
+                        "parameters": {
+                            "matrix": {
+                                "prompt": "Similarity matrix (-M)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "BLOSUM62"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "BLOSUM90", 
+                                        "label": "BLOSUM90"
+                                    }, 
+                                    {
+                                        "value": "BLOSUM80", 
+                                        "label": "BLOSUM80"
+                                    }, 
+                                    {
+                                        "value": "BLOSUM62", 
+                                        "label": "BLOSUM62"
+                                    }, 
+                                    {
+                                        "value": "BLOSUM50", 
+                                        "label": "BLOSUM50"
+                                    }, 
+                                    {
+                                        "value": "BLOSUM45", 
+                                        "label": "BLOSUM45"
+                                    }, 
+                                    {
+                                        "value": "PAM30", 
+                                        "label": "PAM30"
+                                    }, 
+                                    {
+                                        "value": "PAM70", 
+                                        "label": "PAM70"
+                                    }, 
+                                    {
+                                        "value": "PAM250", 
+                                        "label": "PAM250"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -M $value\" : \"\"", 
+                                    "python": "(\"\" , \" -M \"+str(value) )[value is not None and value != vdef]"
+                                }
+                            }
+                        }
+                    }, 
+                    "scoring_blastn": {
+                        "name": "scoring_blastn", 
+                        "precond": {
+                            "perl": "$bl2seq eq \"blastn\"", 
+                            "python": "bl2seq == \"blastn\""
+                        }, 
+                        "parameters": {
+                            "mismatch": {
+                                "prompt": "Penalty for a nucleotide mismatch (-q)", 
+                                "type": {
+                                    "datatype_class": "Integer"
+                                }, 
+                                "default_value": [
+                                    "-3"
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef) ? \" -q $value\" : \"\"", 
+                                    "python": "(\"\" , \" -q \"+str(value) )[value is not None and value != vdef]"
+                                }
+                            }, 
+                            "match": {
+                                "prompt": "Reward for a nucleotide match (-r)", 
+                                "type": {
+                                    "datatype_class": "Integer"
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef) ? \" -r $value\" : \"\"", 
+                                    "python": "(\"\" , \" -r \"+str(value) )[value is not None and value != vdef]"
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 
+            "filter_opt": {
+                "name": "filter_opt", 
+                "parameters": {
+                    "filter": {
+                        "prompt": "Filter or Masking query sequence (DUST with blastn, SEG with others) (-F)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"\" : \" -F F\"", 
+                            "python": "(\" -F F\" , \"\")[ value ]"
+                        }
+                    }, 
+                    "other_filters": {
+                        "prompt": "Filtering options (Filter must be true)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$filter and not defined $other_masking", 
+                            "python": "filter and other_masking is None"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null"
+                            }, 
+                            {
+                                "value": "coil", 
+                                "label": "Coiled-coiled filter (\"C\")"
+                            }, 
+                            {
+                                "value": "seg+coil", 
+                                "label": "Both SEG and coiled-coiled filters (\"C;S\")"
+                            }, 
+                            {
+                                "value": "dust", 
+                                "label": "DUST filter for DNA (\"D\")"
+                            }
+                        ], 
+                        "comment": "<text lang=\"en\">A coiled-coiled filter, based on the work of Lupas et al. (Science, vol 252, pp. 1162-4 (1991)) written by John Kuzio (Wilson et al., J Gen Virol, vol. 76, pp. 2923-32 (1995))</text> </comment>"
+                    }, 
+                    "other_masking": {
+                        "prompt": "Masking options (Filter must be true)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$filter == 1 and not defined $other_filters", 
+                            "python": "filter == 1 and other_filters is None"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null"
+                            }, 
+                            {
+                                "value": "maskSEG", 
+                                "label": "Masking with SEG should only be done during the building of initial words (\"m S\")"
+                            }, 
+                            {
+                                "value": "maskCoil", 
+                                "label": "Masking with coiled-coil should only be done during the building of initial words (\"m D\")"
+                            }, 
+                            {
+                                "value": "maskDust", 
+                                "label": "Masking with DUST should only be done during the building of initial words (\"m C\")"
+                            }, 
+                            {
+                                "value": "lowerMask", 
+                                "label": "Lower-case masking (-U must be true) (\"m\")"
+                            }
+                        ], 
+                        "ctrl": {
+                            "perl": "($value eq 'null' or $value eq 'maskSEG' or $value eq 'maskCoil' or $value eq 'maskDust']) or ($value eq 'lowerMask' and $lower_case)", 
+                            "python": "value in ['null', 'maskSEG', 'maskCoil', 'maskDust'] or (value == 'lowerMask' and lower_case)"
+                        }, 
+                        "comment": "<text lang=\"en\">A coiled-coiled filter, based on the work of Lupas et al. (Science, vol 252, pp. 1162-4 (1991)) written by John Kuzio (Wilson et al., J Gen Virol, vol. 76, pp. 2923-32 (1995)).</text> <text lang=\"en\">It is possible to specify that the masking should only be done during the process of building the initial words .</text> <text lang=\"en\">If the -U option (to mask any lower-case sequence in the input FASTA file) is used and one does not wish any other filtering, but does wish to mask when building the lookup tables then one should specify: -F 'm'</text> </comment>"
+                    }, 
+                    "lower_case": {
+                        "prompt": "Use lower case filtering (-U)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" -U T\" : \"\"", 
+                            "python": "(\"\", \" -U T\")[value]"
+                        }, 
+                        "comment": "<text lang=\"en\">This option specifies that any lower-case letters in the input FASTA file should be masked.</text> </comment>"
+                    }
+                }
+            }, 
+            "selectivity_opt": {
+                "name": "selectivity_opt", 
+                "parameters": {
+                    "Expect": {
+                        "prompt": "Expected value (-e)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "10"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -e $value\" : \"\"", 
+                            "python": "(\"\" , \" -e \"+str(value) )[value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\"> The statistical significance threshold for reporting matches against database sequences; the default value is 10, such that 10 matches are expected to be found merely by chance, according to the stochastic model of Karlin and Altschul (1990). If the statistical significance ascribed to a match is greater than the EXPECT threshold, the match will not be reported. Lower EXPECT thresholds are more stringent, leading to fewer chance matches being reported. Fractional values are acceptable. </text> </comment>"
+                    }, 
+                    "word_size": {
+                        "prompt": "Word Size (-W)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -W $value\" : \"\"", 
+                            "python": "(\"\" , \" -W \"+str(value) )[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">Use words of size N.</text> <text lang=\"en\">Zero invokes default behavior</text> <text lang=\"en\">Default values:</text> <text lang=\"en\">- 11 for blastn</text> <text lang=\"en\">- 3 for others</text> </comment>"
+                    }, 
+                    "dropoff_extent": {
+                        "prompt": "X dropoff value for gapped alignment (-X)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -X $value\" : \"\"", 
+                            "python": "(\"\" , \" -X \"+str(value))[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">This is the value that control the path graph region explored by Blast during a gapped extension (Xg in the NAR paper) (default for blastp is 15).</text> <text lang=\"en\">Default values:</text> <text lang=\"en\">- 30 for blastn</text> <text lang=\"en\">- 0 for tblastx</text> <text lang=\"en\">- 15 for others</text> </comment>"
+                    }, 
+                    "eff_len": {
+                        "prompt": "Effective length of the search space (-Y)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) \" -Y $value\" : \"\"", 
+                            "python": "(\"\" , \" -Y \"+str(value) )[value is not None]"
+                        }, 
+                        "comment": "<text lang=\"en\">Use zero for the real size</text> </comment>"
+                    }, 
+                    "gapped_alig": {
+                        "prompt": "Perform or not gapped alignment (not available with tblastx) (-g)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$bl2seq ne \"tblastx\"", 
+                            "python": "bl2seq != \"tblastx\""
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"\" : \" -g F \"", 
+                            "python": "(\" -g F \" , \"\")[value]"
+                        }
+                    }
+                }
+            }, 
+            "translation_opt": {
+                "name": "translation_opt", 
+                "precond": {
+                    "perl": "$bl2seq =~ /^(blastx|tblast[nx])$/", 
+                    "python": "bl2seq in [ \"blastx\", \"tblastx\", \"tblastn\" ]"
+                }, 
+                "parameters": {
+                    "strand": {
+                        "ismandatory": true, 
+                        "prompt": "Query strand to search against second sequence (for blastx, tblastx or tblastn) (-S)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "3"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "1", 
+                                "label": "Top (1)"
+                            }, 
+                            {
+                                "value": "2", 
+                                "label": "Bottom (2)"
+                            }, 
+                            {
+                                "value": "3", 
+                                "label": "Both (3)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -S $value\" : \"\"", 
+                            "python": "( \"\" , \" -S \" + str(value) )[ value is not None and value!= vdef]"
+                        }
+                    }
+                }
+            }, 
+            "output_opt": {
+                "name": "output_opt", 
+                "parameters": {
+                    "outformat": {
+                        "prompt": "Output format (-D)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "0", 
+                                "label": "Traditional (0)"
+                            }, 
+                            {
+                                "value": "1", 
+                                "label": "Tabulated (1)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \"\" : \"-D $value\"", 
+                            "python": "( \"\" , \" -D \" + str( value ) )[ value is not None and value != vdef]"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {}
+    }, 
+    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+}

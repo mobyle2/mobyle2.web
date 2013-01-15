@@ -1,0 +1,852 @@
+{
+    "type": "program", 
+    "name": "dnadist", 
+    "version": "6.3.1", 
+    "title": "dnadist", 
+    "description": "<text lang=\"en\">Compute distance matrix from nucleotide sequences</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
+        }, 
+        {
+            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://dialign.gobics.de/download/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net", 
+        "http://gzhertz.home.comcast.net/~gzhertz/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://dialign.gobics.de/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:formatter", 
+        "phylogeny:tree_analyser", 
+        "sequence:protein:pattern", 
+        "sequence:nucleic:pattern", 
+        "alignment:consensus", 
+        "alignment:structure", 
+        "structure:indexing", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "sequence:edit", 
+        "genetics:detection", 
+        "alignment:multiple", 
+        "alignment:differences", 
+        "sequence:protein:motifs", 
+        "phylogeny:distance", 
+        "phylogeny:distance"
+    ], 
+    "command": "distmat", 
+    "inputs": {
+        "parameters": {
+            "dnadist": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "dnadist.params\"", 
+                    "python": "dnadist.params\""
+                }
+            }, 
+            "infile": {
+                "ismaininput": true, 
+                "ismandatory": true, 
+                "prompt": "Alignment File", 
+                "type": {
+                    "biotype": "DNA", 
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "PHYLIPI"
+                    ]
+                }, 
+                "format": {
+                    "perl": " \"", 
+                    "python": " \""
+                }, 
+                "ctrl": {
+                    "python": "value not in ( \"infile\" , \"outfile\" )", 
+                    "perl": "$value ne \"infile\" and $value ne \"outfile\""
+                }, 
+                "comment": "<text lang=\"en\">The input file must contained aligned sequences in PHYLIP format obtained by sequence alignment programs.</text> </comment>"
+            }, 
+            "dnadist_opt": {
+                "name": "dnadist_opt", 
+                "parameters": {
+                    "distance": {
+                        "prompt": "Distance (D)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "F84"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "F84", 
+                                "label": "F84"
+                            }, 
+                            {
+                                "value": "K", 
+                                "label": "Kimura 2-parameter"
+                            }, 
+                            {
+                                "value": "JC", 
+                                "label": "Jukes-Cantor"
+                            }, 
+                            {
+                                "value": "LogDet", 
+                                "label": "LogDet"
+                            }, 
+                            {
+                                "value": "Similarity", 
+                                "label": "Similarity table"
+                            }
+                        ]
+                    }, 
+                    "ratio": {
+                        "prompt": "Transition/transversion ratio (T)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$distance eq \"F84\" or $distance eq \"K\"", 
+                            "python": "distance == \"F84\" or distance == \"K\""
+                        }, 
+                        "default_value": [
+                            "2.0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"T\\\\n$value\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"T\\n\"+ str( value )+\"\\n\" )[value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "python": "= 0.0", 
+                            "perl": "= 0.0"
+                        }, 
+                        "comment": "<text lang=\"en\">The T option in this program does not stand for Threshold, but instead is the Transition/transversion option. The user is prompted for a real number greater than 0.0, as the expected ratio of transitions to transversions. Note that this is not the ratio of the first to the second kinds of events, but the resulting expected ratio of transitions to transversions. The exact relationship between these two quantities depends on the frequencies in the base pools. The default value of the T parameter if you do not use the T option is 2.0.</text> </comment>"
+                    }, 
+                    "gamma": {
+                        "prompt": "Gamma distributed rates across sites (G)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$distance eq \"F84\" or $distance eq \"K\" or $distance eq \"JC\"", 
+                            "python": "distance == \"F84\" or distance == \"K\" or distance == \"JC\""
+                        }, 
+                        "default_value": [
+                            "No"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "No", 
+                                "label": "No"
+                            }, 
+                            {
+                                "value": "1", 
+                                "label": "Yes"
+                            }, 
+                            {
+                                "value": "GI", 
+                                "label": "Gamma+Invariant"
+                            }
+                        ]
+                    }, 
+                    "variation_coeff": {
+                        "ismandatory": true, 
+                        "prompt": "Coefficient of variation of substitution rate among sites (must be positive) (if Gamma)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$gamma ne \"No\"", 
+                            "python": "gamma != \"No\""
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \"$value\\\\n\" : \"\"", 
+                            "python": "( \"\" , str( value ) + \"\\n\" )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">In gamma distribution parameters, this is 1/(square root of alpha)</text> </comment>"
+                    }, 
+                    "invariant_sites": {
+                        "ismandatory": true, 
+                        "prompt": "Fraction of invariant sites (if Gamma)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$gamma eq \"GI\"", 
+                            "python": "gamma == \"GI\""
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \"$value\\\\n\" : \"\"", 
+                            "python": "( \"\" , str( value ) + \"\\n\" )[ value is not None ]"
+                        }
+                    }, 
+                    "ACGT_frequencies": {
+                        "name": "ACGT_frequencies", 
+                        "precond": {
+                            "perl": "distance eq \"F84\"", 
+                            "python": "distance == \"F84\""
+                        }, 
+                        "parameters": {
+                            "empirical_frequencies": {
+                                "prompt": "Use empirical base frequencies (F)", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ]
+                            }, 
+                            "A_frequency": {
+                                "ismandatory": true, 
+                                "prompt": "Base frequencies for A", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "not $empirical_frequencies", 
+                                    "python": "not empirical_frequencies"
+                                }, 
+                                "default_value": [
+                                    "0.25"
+                                ], 
+                                "format": {
+                                    "perl": "\"\"", 
+                                    "python": "\"\""
+                                }
+                            }, 
+                            "C_frequency": {
+                                "ismandatory": true, 
+                                "prompt": "Base frequencies for C", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "not $empirical_frequencies", 
+                                    "python": "not empirical_frequencies"
+                                }, 
+                                "default_value": [
+                                    "0.25"
+                                ], 
+                                "format": {
+                                    "perl": "\"\"", 
+                                    "python": "\"\""
+                                }
+                            }, 
+                            "G_frequency": {
+                                "ismandatory": true, 
+                                "prompt": "Base frequencies for G", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "not $empirical_frequencies", 
+                                    "python": "not empirical_frequencies"
+                                }, 
+                                "default_value": [
+                                    "0.25"
+                                ], 
+                                "format": {
+                                    "perl": "\"\"", 
+                                    "python": "\"\""
+                                }
+                            }, 
+                            "T_frequency": {
+                                "ismandatory": true, 
+                                "prompt": "Base frequencies for T/U", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "not $empirical_frequencies", 
+                                    "python": "not empirical_frequencies"
+                                }, 
+                                "default_value": [
+                                    "0.25"
+                                ], 
+                                "format": {
+                                    "perl": "\"\"", 
+                                    "python": "\"\""
+                                }
+                            }, 
+                            "base_frequencies": {
+                                "ishidden": true, 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "not $empirical_frequencies", 
+                                    "python": "not empirical_frequencies"
+                                }, 
+                                "format": {
+                                    "perl": "\"F\\\\n$A_frequency $C_frequency $G_frequency $T_frequency\\\\n\"", 
+                                    "python": "\"F\\n\" + str( A_frequency ) + \" \" + str( C_frequency ) + \" \" + str( G_frequency ) + \" \" + str( T_frequency ) + \"\\n\""
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 
+            "weight_opt": {
+                "name": "weight_opt", 
+                "parameters": {
+                    "weights": {
+                        "prompt": "Use weights for sites (W)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"W\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"W\\n\" )[ value ]"
+                        }
+                    }, 
+                    "weights_file": {
+                        "ismandatory": true, 
+                        "prompt": "Weights file", 
+                        "type": {
+                            "datatype_class": "PhylipWeight", 
+                            "datatype_superclass": "AbstractText"
+                        }, 
+                        "precond": {
+                            "perl": "$weights", 
+                            "python": "weights"
+                        }, 
+                        "format": {
+                            "perl": " \" : \"\"", 
+                            "python": " \" )[ value is not None]"
+                        }, 
+                        "ctrl": {
+                            "python": "value not in ( \"infile\" , \"outfile\" )", 
+                            "perl": "$value ne \"infile\" and $value ne \"outfile\""
+                        }, 
+                        "comment": "<text lang=\"en\">It selects a set of sites to be analyzed, ignoring the others. The sites selected are those with weight 1. The weights in it are a simple string of digits. Blanks in the weightfile are skipped over and ignored, and the weights can continue to a new line.</text> </comment>"
+                    }
+                }
+            }, 
+            "bootstrap": {
+                "name": "bootstrap", 
+                "parameters": {
+                    "seqboot": {
+                        "prompt": "Perform a bootstrap before analysis", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": " \" : \"\"", 
+                            "python": " \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">By selecting this option, the bootstrap will be performed on your sequence file. So you don't need to perform a separated seqboot before.</text> <text lang=\"en\">Don't give an already bootstrapped file to the program, this won't work!</text> </comment>"
+                    }, 
+                    "Method": {
+                        "ismandatory": true, 
+                        "prompt": "Resampling methods (J)", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$seqboot", 
+                            "python": "seqboot"
+                        }, 
+                        "default_value": [
+                            "bootstrap"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "bootstrap", 
+                                "label": "Bootstrap"
+                            }, 
+                            {
+                                "value": "jackknife", 
+                                "label": "Delete-half jackknife"
+                            }, 
+                            {
+                                "value": "permute_species", 
+                                "label": "Permute species for each character"
+                            }, 
+                            {
+                                "value": "permute_char", 
+                                "label": "Permute character order"
+                            }, 
+                            {
+                                "value": "permute_within_species", 
+                                "label": "Permute within species"
+                            }
+                        ], 
+                        "comment": "<text lang=\"en\"> 1. The bootstrap. Bootstrapping was invented by Bradley Efron in 1979, and its use in phylogeny estimation was introduced by me (Felsenstein, 1985b). It involves creating a new data set by sampling N characters randomly with replacement, so that the resulting data set has the same size as the original, but some characters have been left out and others are duplicated. The random variation of the results from analyzing these bootstrapped data sets can be shown statistically to be typical of the variation that you would get from collecting new data sets. The method assumes that the characters evolve independently, an assumption that may not be realistic for many kinds of data. </text> <text lang=\"en\"> 2. Delete-half-jackknifing. This alternative to the bootstrap involves sampling a random half of the characters, and including them in the data but dropping the others. The resulting data sets are half the size of the original, and no characters are duplicated. The random variation from doing this should be very similar to that obtained from the bootstrap. The method is advocated by Wu (1986). </text> <text lang=\"en\"> 3. Permuting species for each characters. This method of resampling (well, OK, it may not be best to call it resampling) was introduced by Archie (1989) and Faith (1990; see also Faith and Cranston, 1991). It involves permuting the columns of the data matrix separately. This produces data matrices that have the same number and kinds of characters but no taxonomic structure. It is used for different purposes than the bootstrap, as it tests not the variation around an estimated tree but the hypothesis that there is no taxonomic structure in the data: if a statistic such as number of steps is significantly smaller in the actual data than it is in replicates that are permuted, then we can argue that there is some taxonomic structure in the data (though perhaps it might be just the presence of aa pair of sibling species). </text> <text lang=\"en\"> 4. Permuting characters order. This simply permutes the order of the characters, the same reordering being applied to all species. For many methods of tree inference this will make no difference to the outcome (unless one has rates of evolution correlated among adjacent sites). It is included as a possible step in carrying out a permutation test of homogeneity of characters (such as the Incongruence Length Difference test). </text> <text lang=\"en\"> 5. Permuting characters separately for each species. This is a method introduced by Steel, Lockhart, and Penny (1993) to permute data so as to destroy all phylogenetic structure, while keeping the base composition of each species the same as before. It shuffles the character order separately for each species. </text> </comment>"
+                    }, 
+                    "seqboot_seed": {
+                        "ismandatory": true, 
+                        "prompt": "Random number seed (must be odd)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "$seqboot", 
+                            "python": "seqboot"
+                        }, 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str( value ) +\"\\n\""
+                        }, 
+                        "ctrl": {
+                            "perl": "= 0 and (($value % 2) != 0)", 
+                            "python": "= 0 and ( ( value % 2 ) != 0 )"
+                        }
+                    }, 
+                    "replicates": {
+                        "ismandatory": true, 
+                        "prompt": "How many replicates", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "$seqboot", 
+                            "python": "seqboot"
+                        }, 
+                        "default_value": [
+                            "100"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"R\\\\n$value\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"R\\n\" + str( value ) + \"\\n\" )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 1", 
+                            "python": " 1"
+                        }
+                    }
+                }
+            }, 
+            "confirm": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"y\\\\n\"", 
+                    "python": "\"y\\n\""
+                }
+            }, 
+            "terminal_type": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"0\\\\n\"", 
+                    "python": "\"0\\n\""
+                }
+            }, 
+            "multiple_dataset": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "precond": {
+                    "perl": " 1 ", 
+                    "python": " 1"
+                }, 
+                "format": {
+                    "perl": "\"M\\\\nD\\\\n$replicates\\\\n\"", 
+                    "python": "\"M\\nD\\n\" + str( replicates ) + str(\"\\n\")"
+                }
+            }, 
+            "seqboot_confirm": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "precond": {
+                    "perl": "$seqboot", 
+                    "python": "seqboot"
+                }, 
+                "format": {
+                    "perl": "\"y\\\\n\"", 
+                    "python": "\"y\\n\""
+                }
+            }, 
+            "seqboot_terminal_type": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "precond": {
+                    "perl": "$seqboot", 
+                    "python": "seqboot"
+                }, 
+                "format": {
+                    "perl": "\"0\\\\n\"", 
+                    "python": "\"0\\n\""
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "outfile": {
+                "isout": true, 
+                "prompt": "Outfile", 
+                "type": {
+                    "datatype_class": "PhylipDistanceMatrix", 
+                    "datatype_superclass": "AbstractText"
+                }, 
+                "format": {
+                    "perl": " mv outfile dnadist.outfile\"", 
+                    "python": " mv outfile dnadist.outfile\""
+                }, 
+                "filenames": {
+                    "perl": "\"dnadist.outfile\"", 
+                    "python": "\"dnadist.outfile\""
+                }
+            }, 
+            "seqboot_out": {
+                "isout": true, 
+                "prompt": "seqboot outfile", 
+                "type": {
+                    "datatype_class": "SetOfAlignment", 
+                    "datatype_superclass": "AbstractText"
+                }, 
+                "precond": {
+                    "perl": "$seqboot", 
+                    "python": "seqboot"
+                }, 
+                "filenames": {
+                    "perl": "\"seqboot.outfile\"", 
+                    "python": "\"seqboot.outfile\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">This program uses nucleotide sequences to compute a distance matrix, under four different models of nucleotide substitution. It can also compute a table of similarity between the nucleotide sequences. The distance for each pair of species estimates the total branch length between the two species, and can be used in the distance matrix programs FITCH, KITSCH or NEIGHBOR.</text> </comment>"
+}

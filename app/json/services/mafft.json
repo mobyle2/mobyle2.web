@@ -1,0 +1,1144 @@
+{
+    "type": "program", 
+    "name": "mafft", 
+    "version": "6.849", 
+    "title": "mafft", 
+    "description": "<text lang=\"en\">Multiple alignment program for amino acid or nucleotide sequences.</text> </description>", 
+    "authors": "Kazutaka Katoh</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
+        }, 
+        {
+            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
+        }, 
+        {
+            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
+        }, 
+        {
+            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "http://emboss.sourceforge.net/</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Castresana, J. (2000). Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17, 540-552</reference>"
+        }, 
+        {
+            "value": "Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Burge, C., Karlin, S. (1997) Prediction of complete gene structures in human genomic DNA. J. Mol. Biol. 268, 78-94.</reference>"
+        }, 
+        {
+            "value": "Burge, C., Karlin, S. (1997) Gene structure, exon prediction, and alternative splicing. (in preparation).</reference>"
+        }, 
+        {
+            "value": "Burge, C. (1997) Identification of genes in human genomic DNA. PhD thesis, Stanford University, Stanford, CA.</reference>"
+        }, 
+        {
+            "value": "Burset, M., Guigo, R. (1996) Evaluation of gene structure prediction programs. Genomics 34, 353-367.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\"> The program sources and Example files are downloadable here. </{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "Vieira-Silva S, Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Soria-Carrasco, V., Talavera, G., Igea, J., and Castresana, J. (2007). The K tree score: quantification of differences in the relative branch length and topology of phylogenetic trees. Bioinformatics 23, 2954-2956.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Barker, D. 2004. LVB: Parsimony and simulated annealing in the search for phylogenetic trees. Bioinformatics, 20, 274-275.</reference>"
+        }, 
+        {
+            "doi": "10.1093/bioinformatics/btq224", 
+            "value": "Katoh, Toh 2010 (Bioinformatics 26:1899-1900) Parallelization of the MAFFT multiple sequence alignment program. (describes the multithread version; Linux only) </reference>"
+        }, 
+        {
+            "doi": "10.1007/978-1-59745-251-9_3", 
+            "value": "Katoh, Asimenos, Toh 2009 (Methods in Molecular Biology 537:39-64) Multiple Alignment of DNA Sequences with MAFFT. In Bioinformatics for DNA Sequence Analysis edited by D. Posada (outlines DNA alignment methods and several tips including group-to-group alignment and rough clustering of a large number of sequences) </reference>"
+        }, 
+        {
+            "doi": "10.1186/1471-2105-9-212", 
+            "value": "Katoh, Toh 2008 (BMC Bioinformatics 9:212) Improved accuracy of multiple ncRNA alignment by incorporating structural information into a MAFFT-based framework. (describes RNA structural alignment methods) </reference>"
+        }, 
+        {
+            "doi": "10.1093/bib/bbn013", 
+            "value": "Katoh, Toh 2008 (Briefings in Bioinformatics 9:286-298) Recent developments in the MAFFT multiple sequence alignment program. (outlines version 6; Fast Breaking Paper in Thomson Reuters' ScienceWatch) </reference>"
+        }, 
+        {
+            "doi": "10.1093/bioinformatics/btl592", 
+            "value": "Katoh, Toh 2007 (Bioinformatics 23:372-374) Errata PartTree: an algorithm to build an approximate tree from a large number of unaligned sequences. (describes the PartTree algorithm) </reference>"
+        }, 
+        {
+            "doi": "10.1093/nar/gki198", 
+            "value": "Katoh, Kuma, Toh, Miyata 2005 (Nucleic Acids Res. 33:511-518) MAFFT version 5: improvement in accuracy of multiple sequence alignment. (describes [ancestral versions of] the G-INS-i, L-INS-i and E-INS-i strategies) </reference>"
+        }, 
+        {
+            "doi": "10.1093/nar/gkf436", 
+            "value": "Katoh, Misawa, Kuma, Miyata 2002 (Nucleic Acids Res. 30:3059-3066) MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. (describes the FFT-NS-1, FFT-NS-2 and FFT-NS-i strategies) </reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://dialign.gobics.de/download/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://faculty.virginia.edu/wrpearson/fasta/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/golden/", 
+        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/", 
+        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/html4blast/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://molevol.cmima.csic.es/castresana/Ktreedist.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
+        "http://mafft.cbrc.jp/alignment/software/source.html"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net", 
+        "http://gzhertz.home.comcast.net/~gzhertz/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://dialign.gobics.de/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://swift.cmbi.ru.nl/gv/dssp/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
+        "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
+        "http://emboss.sourceforge.net", 
+        "http://genes.mit.edu/GENSCANinfo.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://molevol.cmima.csic.es/castresana/Ktreedist.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
+        "http://mafft.cbrc.jp/alignment/software/"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/featcopy.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/featreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/findkm.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/fitch.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/freak.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzznuc.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzzpro.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzztran.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/garnier.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/gblocks/", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/geecee.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/getorf.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://genome.imim.es/software/gfftools/GFF2PS.html", 
+        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/helixturnhelix.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/hmoment.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/iep.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoalign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/isochore.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/jaspscan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/kitsch.html", 
+        "http://bioweb2.pasteur.fr/docs/ktreedist/", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/lindna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/listor.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
+        "http://mafft.cbrc.jp/alignment/software/about.html"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:formatter", 
+        "phylogeny:tree_analyser", 
+        "sequence:protein:pattern", 
+        "sequence:nucleic:pattern", 
+        "alignment:consensus", 
+        "alignment:structure", 
+        "structure:indexing", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "sequence:edit", 
+        "genetics:detection", 
+        "alignment:multiple", 
+        "alignment:differences", 
+        "sequence:protein:motifs", 
+        "phylogeny:distance", 
+        "phylogeny:distance", 
+        "phylogeny:parsimony", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "phylogeny:display", 
+        "display:tree", 
+        "phylogeny:display", 
+        "display:tree", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple", 
+        "sequence:nucleic:repeats", 
+        "sequence:nucleic:2D_structure", 
+        "structure:2D_structure", 
+        "sequence:nucleic:mutation", 
+        "sequence:protein:composition", 
+        "sequence:edit", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:primers", 
+        "sequence:nucleic:repeats", 
+        "alignment:pairwise:global", 
+        "sequence:nucleic:repeats", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:edit:feature_table", 
+        "sequence:edit", 
+        "sequence:formatter", 
+        "database:search:homology", 
+        "phylogeny:likelihood", 
+        "sequence:edit", 
+        "sequence:edit", 
+        "database:search:sequence", 
+        "sequence:enzyme:kinetics", 
+        "phylogeny:distance", 
+        "phylogeny:tree_analyser", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple:information", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:gene_finding", 
+        "sequence:nucleic:gene_finding", 
+        "display:feature_table", 
+        "database:search:sequence", 
+        "sequence:nucleic:prediction", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:nucleic:pattern", 
+        "sequence:nucleic:clusters", 
+        "sequence:protein:2D_structure", 
+        "sequence:protein:motifs", 
+        "structure:2D_structure", 
+        "hmm:alignment:multiple", 
+        "alignment:multiple:hmm", 
+        "hmm:building", 
+        "hmm:building", 
+        "hmm:building", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:simulation", 
+        "hmm:statistic", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "database:search:display", 
+        "sequence:protein:composition", 
+        "alignment:multiple:information", 
+        "information", 
+        "sequence:nucleic:composition", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "sequence:nucleic:transcription", 
+        "phylogeny:distance", 
+        "phylogeny:tree_analyser", 
+        "display", 
+        "sequence:edit", 
+        "phylogeny:parsimony", 
+        "Alignment", 
+        "alignment:multiple"
+    ], 
+    "command": "mafft", 
+    "inputs": {
+        "parameters": {
+            "input_opt": {
+                "name": "input_opt", 
+                "parameters": {
+                    "sequences": {
+                        "ismandatory": true, 
+                        "prompt": "Sequences File ( a file containing several sequences ).", 
+                        "type": {
+                            "datatype_class": "Sequence", 
+                            "data_formats": [
+                                "FASTA"
+                            ]
+                        }, 
+                        "format": {
+                            "perl": "\" $sequences\"", 
+                            "python": "\" \" + str( sequences )"
+                        }
+                    }, 
+                    "seq_type": {
+                        "prompt": "Sequences type", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null", 
+                                "label": "Automatic"
+                            }, 
+                            {
+                                "value": "nuc", 
+                                "label": "Assume the sequences are nucleotide."
+                            }, 
+                            {
+                                "value": "amino", 
+                                "label": "Assume the sequences are amino acid."
+                            }
+                        ]
+                    }, 
+                    "seed": {
+                        "name": "seed", 
+                        "parameters": {
+                            "seed_1": {
+                                "prompt": "Structural alignment 1", 
+                                "type": {
+                                    "datatype_class": "Alignment", 
+                                    "data_formats": [
+                                        "FASTA"
+                                    ]
+                                }, 
+                                "format": {
+                                    "perl": "(defined $value)? \" --seed $value \": \"\"", 
+                                    "python": "( \"\" , \" --seed \"+str(value))[value is not None]"
+                                }, 
+                                "comment": "<text lang=\"en\">These sequences will be aligned with the 'input' sequences above, being used as a constraint. </text> </comment>"
+                            }, 
+                            "seed_2": {
+                                "prompt": "Structural alignment 1", 
+                                "type": {
+                                    "datatype_class": "Alignment", 
+                                    "data_formats": [
+                                        "FASTA"
+                                    ]
+                                }, 
+                                "format": {
+                                    "perl": "(defined $value)? \" --seed $value \": \"\"", 
+                                    "python": "( \"\" , \" --seed \"+str(value))[value is not None]"
+                                }, 
+                                "comment": "<text lang=\"en\">These sequences will be aligned with the 'input' sequences above, being used as a constraint. </text> </comment>"
+                            }, 
+                            "seed_3": {
+                                "prompt": "Structural alignment 1", 
+                                "type": {
+                                    "datatype_class": "Alignment", 
+                                    "data_formats": [
+                                        "FASTA"
+                                    ]
+                                }, 
+                                "format": {
+                                    "perl": "(defined $value)? \" --seed $value \": \"\"", 
+                                    "python": "( \"\" , \" --seed \"+str(value))[value is not None]"
+                                }, 
+                                "comment": "<text lang=\"en\">These sequences will be aligned with the 'input' sequences above, being used as a constraint. </text> </comment>"
+                            }
+                        }
+                    }, 
+                    "anysymbol": {
+                        "prompt": "Allow unusual symbols (Selenocysteine \"U\", Inosine \"i\", non-alphabetical characters, etc.)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( value )? \"\" : \" --anysymbol \"", 
+                            "python": "( \"\" , \" --anysymbol \")[ value ]"
+                        }, 
+                        "comment": "<{http://www.w3.org/1999/xhtml}div > <{http://www.w3.org/1999/xhtml}p >If there are unusual characters (e.g., U as selenocysteine in protein sequence), use the --anysymbol option.</{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p >It accepts any printable characters (U, O, #, $, %, etc.; 0x21-0x7e in the ASCII code), execpt for > (0x3e). They are scored equivalently to X. Gap is - (0x2d), as in the default mode.</{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}div> </comment>"
+                    }
+                }
+            }, 
+            "output_opt": {
+                "name": "output_opt", 
+                "parameters": {
+                    "output_format": {
+                        "prompt": "Output format: ", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "FASTA"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "FASTA", 
+                                "label": "fasta"
+                            }, 
+                            {
+                                "value": "CLUSTAL", 
+                                "label": "clustal"
+                            }, 
+                            {
+                                "value": "PHYLIP", 
+                                "label": "phylip interleaved"
+                            }
+                        ]
+                    }, 
+                    "out_order": {
+                        "prompt": "Output order: ", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "reorder"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "inputorder", 
+                                "label": "Same as input"
+                            }, 
+                            {
+                                "value": "reorder", 
+                                "label": "Aligned"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "( value eq 'reorder')? \" --reorder \" : \"\"", 
+                            "python": "( '' , ' --reorder ' )[ value == 'reorder' ]"
+                        }
+                    }
+                }
+            }, 
+            "advanced_settings ": {
+                "name": "advanced_settings ", 
+                "parameters": {
+                    "strategy": {
+                        "ismandatory": true, 
+                        "prompt": "Strategy:", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "auto"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "auto", 
+                                "label": "Auto (FFT-NS-2, FFT-NS-i or L-INS-i; depends on data size)"
+                            }, 
+                            {
+                                "value": "fftns1", 
+                                "label": "FFT-NS-1 (Very fast; recommended for >2,000 sequences; progressive method)"
+                            }, 
+                            {
+                                "value": "fftns2", 
+                                "label": "FFT-NS-2 (Fast; progressive method)"
+                            }, 
+                            {
+                                "value": "fftnsi2", 
+                                "label": "FFT-NS-i2 (Medium; iterative refinement method, two cycles only)"
+                            }, 
+                            {
+                                "value": "fftnsi1000", 
+                                "label": "FFT-NS-i (Slow; iterative refinement method)"
+                            }, 
+                            {
+                                "value": "einsi", 
+                                "label": "200 sequences with multiple conserved domains and long gaps)"
+                            }, 
+                            {
+                                "value": "linsi", 
+                                "label": "200 sequences with one conserved domain and long gaps)"
+                            }, 
+                            {
+                                "value": "ginsi", 
+                                "label": "200 sequences with global homology)"
+                            }, 
+                            {
+                                "value": "qinsi", 
+                                "label": "1,000 nt)"
+                            }
+                        ], 
+                        "comment": "<{http://www.w3.org/1999/xhtml}div > <{http://www.w3.org/1999/xhtml}h2 >Algorithms and parameters (unfinished)</{http://www.w3.org/1999/xhtml}h2> MAFFT offers various multiple alignment strategies. They are classified into three types, (<{http://www.w3.org/1999/xhtml}b >a</{http://www.w3.org/1999/xhtml}b>) the progressive method, (<{http://www.w3.org/1999/xhtml}b >b</{http://www.w3.org/1999/xhtml}b>) the iterative refinement method with the WSP score, and (<{http://www.w3.org/1999/xhtml}b >c</{http://www.w3.org/1999/xhtml}b>) the iterative refinment method using both the WSP and consistency scores. In general, there is a tradeoff between speed and accuracy. The order of speed is <{http://www.w3.org/1999/xhtml}b >a</{http://www.w3.org/1999/xhtml}b> > <{http://www.w3.org/1999/xhtml}b >b</{http://www.w3.org/1999/xhtml}b> > <{http://www.w3.org/1999/xhtml}b >c</{http://www.w3.org/1999/xhtml}b>, whereas the order of accuracy is <{http://www.w3.org/1999/xhtml}b >a</{http://www.w3.org/1999/xhtml}b> < <{http://www.w3.org/1999/xhtml}b >b</{http://www.w3.org/1999/xhtml}b> < <{http://www.w3.org/1999/xhtml}b >c</{http://www.w3.org/1999/xhtml}b>. The results of benchmarks can be seen <{http://www.w3.org/1999/xhtml}a href=\"http://mafft.cbrc.jp/alignment/software/eval/accuracy.html\">here</{http://www.w3.org/1999/xhtml}a>. The following are the detailed procedures for the major options of MAFFT. <{http://www.w3.org/1999/xhtml}h3 id=\"fftnsx\">(a) FFT-NS-1, FFT-NS-2 \u2014 Progressive methods</{http://www.w3.org/1999/xhtml}h3> <{http://www.w3.org/1999/xhtml}img src=\"http://mafft.cbrc.jp/alignment/software/algorithms/prog.png\" alt=\"prog.png\" width=\"382\" height=\"163\"></{http://www.w3.org/1999/xhtml}img> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> These are simple progressive methods like <{http://www.w3.org/1999/xhtml}a href=\"http://www.ebi.ac.uk/clustalw/\">ClustalW</{http://www.w3.org/1999/xhtml}a>. By using the several new techniques described below, these options can align a large number of sequences (up to \u223c5,000) on a standard desktop computer. The qualities of the resulting alignments are shown <{http://www.w3.org/1999/xhtml}a href=\"http://mafft.cbrc.jp/alignment/software/eval/accuracy.html\">here</{http://www.w3.org/1999/xhtml}a>. The detailed algorithms are described in Katoh et al. (2002). <{http://www.w3.org/1999/xhtml}ul > <{http://www.w3.org/1999/xhtml}li > <{http://www.w3.org/1999/xhtml}b >FFT-NS-1</{http://www.w3.org/1999/xhtml}b><{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b ><{http://www.w3.org/1999/xhtml}tt > mafft --retree 1 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > fftns --retree 1 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> is the simplest progressive option in MAFFT and one of the fastest methods currently available. The procedure is: (1) make a rough distance matrix by counting the number of shared 6-tuples (see below) between every sequence pair, (2) build a guide tree and (3) align the sequences according to the branching order. <{http://www.w3.org/1999/xhtml}p > </{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li > <{http://www.w3.org/1999/xhtml}b >FFT-NS-2</{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > mafft --retree 2 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > fftns <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> The distance matrix used in FFT-NS-1 is very approximate and unreliable. In FFT-NS-2, (4) the guide tree is re-computed from the FFT-NS-1 alignment, and (5) the second progressive alignment is carried out. </{http://www.w3.org/1999/xhtml}li> </{http://www.w3.org/1999/xhtml}ul> The following techniques are used to improve the performance. <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\"> FFT approximation.</{http://www.w3.org/1999/xhtml}span> (Not yet written) See Katoh et al. (2002). </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\"> <{http://www.w3.org/1999/xhtml}i >k</{http://www.w3.org/1999/xhtml}i> -mer counting. </{http://www.w3.org/1999/xhtml}span> To accelerate the initial calculation of the distance matrix, which requires a CPU time of <{http://www.w3.org/1999/xhtml}i >O</{http://www.w3.org/1999/xhtml}i> ( <{http://www.w3.org/1999/xhtml}i >N</{http://www.w3.org/1999/xhtml}i> <{http://www.w3.org/1999/xhtml}sup >2</{http://www.w3.org/1999/xhtml}sup> ) steps, a rough method similar to the 'quicktree' option of ClustalW is adopted, in which the number of <{http://www.w3.org/1999/xhtml}i >k</{http://www.w3.org/1999/xhtml}i> -mers shared by a pair of sequences is counted and regarded as an approximation of the degree of similarity. MAFFT uses the very rapid method proposed by Jones et al. (1992) with a minor modification (Katoh et al. 2002): (1) The 20 amino acids are compressed to 6 alphabets, according to Dayhoff et al. (1978), and (2) MAFFT performs the second progressive alignment (FFT-NS-2) in order to improve the accuracy. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\"> Modified UPGMA.</{http://www.w3.org/1999/xhtml}span> <{http://www.w3.org/1999/xhtml}a href=\"upg.html\">A modified version of UPGMA</{http://www.w3.org/1999/xhtml}a> is used to construct a guide tree, which works well for handling fragment sequences. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">The second progressive alignment.</{http://www.w3.org/1999/xhtml}span> The accuracy of the second progressive alignment (FFT-NS-2) is slightly higher than that of the first progressive alignment (FFT-NS-1) according to the <{http://www.w3.org/1999/xhtml}a href=\"http://mafft.cbrc.jp/alignment/software/eval/accuracy.html\">BAliBASE test</{http://www.w3.org/1999/xhtml}a> , but the amount CPU time required by FFT-NS-2 is approximately two times longer than that by FFT-NS-1. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}h3 >(b) FFT-NS-i, NW-NS-i \u2014 Iterative refinement method</{http://www.w3.org/1999/xhtml}h3> <{http://www.w3.org/1999/xhtml}img src=\"http://mafft.cbrc.jp/alignment/software/algorithms/iter.png\" alt=\"iter.png\" width=\"379\" height=\"200\"></{http://www.w3.org/1999/xhtml}img> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> The accuracy of progressive alignment can be improved by the iterative refinement method (Berger and Munson 1991, Gotoh 1993). A simplified version of <{http://www.w3.org/1999/xhtml}a href=\"\">PRRN</{http://www.w3.org/1999/xhtml}a> is implemented as the FFT-NS-i option of MAFFT. In FFT-NS-i, an initial alignment by FFT-NS-2 is subjected to an iterative refienment process. <{http://www.w3.org/1999/xhtml}ul > <{http://www.w3.org/1999/xhtml}li > <{http://www.w3.org/1999/xhtml}b >FFT-NS-i (max. 1,000 cycles)</{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > mafft --maxiterate 1000 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > fftnsi --maxiterate 1000 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> The iterative refinement is repeated until no more improvement in the WSP score is made or the number of cycles reaches 1,000. <{http://www.w3.org/1999/xhtml}p > </{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li > <{http://www.w3.org/1999/xhtml}b >FFT-NS-i (max. 2 cycles)</{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > mafft --maxiterate 1000 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > fftnsi <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> As most of the quality of improvement is obtained in the early stage of the iteration, this option is also useful (default of the fftnsi script). </{http://www.w3.org/1999/xhtml}li> </{http://www.w3.org/1999/xhtml}ul> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">Objective function.</{http://www.w3.org/1999/xhtml}span> The weighted sum-of-pairs (WSP) score proposed by Gotoh is used. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">Tree-dependent partitioning.</{http://www.w3.org/1999/xhtml}span> (Not yet written) See Hirosawa et al. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">Effect of FFT.</{http://www.w3.org/1999/xhtml}span> To test the effect of the FFT approximation, we also implemented the NW-NS-x options, in which the FFT approximation is disabled, but the other procedures are the same as those in the corresponding FFT-NS-x. There was no significant reduction in the accuracy by introducing the FFT approximation (Katoh et al. 2002). </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}h3 >(c) L-INS-i, E-INS-i, G-INS-i \u2014 Iterative refinement methods using WSP and consistency scores</{http://www.w3.org/1999/xhtml}h3> <{http://www.w3.org/1999/xhtml}img src=\"http://mafft.cbrc.jp/alignment/software/algorithms/cons.png\" alt=\"cons.png\" width=\"366\" height=\"134\"></{http://www.w3.org/1999/xhtml}img> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> In order to obtain more accurate alignments in extremely difficult cases, three new options, L-INS-i, G-INS-i and E-INS-i, have been added to recent versions (v.\u22655) of MAFFT. These options use a new objective function combining the WSP score (Gotoh) explained above and the COFFEE-like score (Notredame et al.), which evaluates the consistency between a multiple alignment and pairwise alignments (Katoh et al. 2005). <{http://www.w3.org/1999/xhtml}p id=\"GLE\"> For pairwise alignment, three different types of algorithms are implemented, global alignment (Needleman-Wunsch), local alignment (Smith-Waterman) with affine gap costs (Gotoh) and local alignment with generalized affine gap costs (Altschul). The differences in the accuracy values among these methods are small for the currently available benchmarks, as shown <{http://www.w3.org/1999/xhtml}a href=\"http://mafft.cbrc.jp/alignment/software/eval/accuracy.html\">here</{http://www.w3.org/1999/xhtml}a> . However, each of them has different characteristics, according to the algorithm in the pairwise alignment stage: </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}ul > <{http://www.w3.org/1999/xhtml}li id=\"einsi\"> <{http://www.w3.org/1999/xhtml}b >E-INS-i</{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > mafft --genafpair --maxiterate 1000 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > einsi <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> is suitable for alignments like this: <{http://www.w3.org/1999/xhtml}pre style=\"background-color: #F0F0F0; border: 0 solid #AAAAAA; font-size: 90%; font-weight: bold;\"> oooooooooXXX------XXXX---------------------------------XXXXXXXXXXX-XXXXXXXXXXXXXXXooooooooooooo ---------XXXXXXXXXXXXXooo------------------------------XXXXXXXXXXXXXXXXXX-XXXXXXXX------------- -----ooooXXXXXX---XXXXooooooooooo----------------------XXXXX----XXXXXXXXXXXXXXXXXXooooooooooooo ---------XXXXX----XXXXoooooooooooooooooooooooooooooooooXXXXX-XXXXXXXXXXXX--XXXXXXX------------- ---------XXXXX----XXXX---------------------------------XXXXX---XXXXXXXXXX--XXXXXXXooooo-------- </{http://www.w3.org/1999/xhtml}pre> where ' <{http://www.w3.org/1999/xhtml}tt >X</{http://www.w3.org/1999/xhtml}tt> 's indicate alignable residues, ' <{http://www.w3.org/1999/xhtml}tt >o</{http://www.w3.org/1999/xhtml}tt> 's indicate unalignable residues and ' <{http://www.w3.org/1999/xhtml}tt >-</{http://www.w3.org/1999/xhtml}tt> 's indicate gaps. Unalignable residues are left unaligned at the pairwise alignment stage, because of the use of the generalized affine gap cost. Therefore E-INS-i is applicable to a difficult problem such as RNA polymerase, which has several conserved motifs embedded in long unalignable regions. As E-INS-i has the minimum assumption of the three methods, this is recommended if the nature of sequences to be aligned is not clear. Note that E-INS-i assumes that the arrangement of the conserved motifs is shared by all sequences. </{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li id=\"linsi\"> <{http://www.w3.org/1999/xhtml}b >L-INS-i</{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > mafft --localpair --maxiterate 1000 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > linsi <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> is suitable to: <{http://www.w3.org/1999/xhtml}pre style=\"background-color: #F0F0F0; border: 0 solid #AAAAAA; font-size: 90%; font-weight: bold;\"> ooooooooooooooooooooooooooooooooXXXXXXXXXXX-XXXXXXXXXXXXXXX------------------ --------------------------------XX-XXXXXXXXXXXXXXX-XXXXXXXXooooooooooo------- ------------------ooooooooooooooXXXXX----XXXXXXXX---XXXXXXXooooooooooo------- --------ooooooooooooooooooooooooXXXXX-XXXXXXXXXX----XXXXXXXoooooooooooooooooo --------------------------------XXXXXXXXXXXXXXXX----XXXXXXX------------------ </{http://www.w3.org/1999/xhtml}pre> L-INS-i can align a set of sequences containing sequences flanking around one alignable domain. Flanking sequences are ignored in the pairwise alignment by the Smith-Waterman algorithm. Note that the input sequences are assumed to have only one alignable domain. In benchmark tests, the ref4 of BAliBASE corresponds to this. The other categories of BAliBASE also correspond to similar situations, because they have flanking sequences. L-INS-i also shows higher accuracy values for a part of SABmark and HOMSTRAD than G-INS-i, but we have not identified the reason for this. </{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li id=\"ginsi\"> <{http://www.w3.org/1999/xhtml}b >G-INS-i</{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > mafft --globalpair --maxiterate 1000 <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> or <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> <{http://www.w3.org/1999/xhtml}b > <{http://www.w3.org/1999/xhtml}tt > ginsi <{http://www.w3.org/1999/xhtml}i >input_file</{http://www.w3.org/1999/xhtml}i> > <{http://www.w3.org/1999/xhtml}i >output_file</{http://www.w3.org/1999/xhtml}i> </{http://www.w3.org/1999/xhtml}tt> </{http://www.w3.org/1999/xhtml}b> <{http://www.w3.org/1999/xhtml}br ></{http://www.w3.org/1999/xhtml}br> is suitable to: <{http://www.w3.org/1999/xhtml}pre style=\"background-color: #F0F0F0; border: 0 solid #AAAAAA; font-size: 90%; font-weight: bold;\"> XXXXXXXXXXX-XXXXXXXXXXXXXXX XX-XXXXXXXXXXXXXXX-XXXXXXXX XXXXX----XXXXXXXX---XXXXXXX XXXXX-XXXXXXXXXX----XXXXXXX XXXXXXXXXXXXXXXX----XXXXXXX </{http://www.w3.org/1999/xhtml}pre> G-INS-i assumes that entire region can be aligned and tries to align them globally using the Needleman-Wunsch algorithm; that is, a set of sequences of one domain must be extracted by truncating flanking sequences. In benchmark tests, SABmark and HOMSTRAD correspond to this. </{http://www.w3.org/1999/xhtml}li> </{http://www.w3.org/1999/xhtml}ul> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">Consistency score.</{http://www.w3.org/1999/xhtml}span> The COFFEE objective function was originally proposed by Notredame et al. (1998), and the extended versions are used in TCoffee and ProbCons. MAFFT also adopts a similar objective function, as described in Katoh et al. (2005). However, the consistency among three sequences (called 'library extension' in TCoffee) is currently not calculated in MAFFT, because the improvement in accuracy by library extension was limited to alignments consisting of a small number (<10) of sequences in our preliminary tests. If library extention is needed, then please use <{http://www.w3.org/1999/xhtml}a href=\"http://igs-server.cnrs-mrs.fr/%7Ecnotred/Projects_home_page/t_coffee_home_page.html\">TCoffee</{http://www.w3.org/1999/xhtml}a> or <{http://www.w3.org/1999/xhtml}a href=\"http://probcons.stanford.edu/\">ProbCons</{http://www.w3.org/1999/xhtml}a>. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">Consistency + WSP.</{http://www.w3.org/1999/xhtml}span> Instead, the WSP score is summed with the consistency score in the objective function of MAFFT. The use of the WSP score has the merit that a pattern of gaps can be incorporated into the objective function. This is probably the reason why MAFFT achieves higher accuracy than ProbCons and TCoffee for alignments consisting of many (\u223c10 - \u223c100) sequences. This suggests that the pattern of gaps within a group to be aligned is important information when aligning two groups of proteins (and evaluating homology between distantly related protein families). </{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}div> </comment>"
+                    }, 
+                    "amino_scm": {
+                        "prompt": "Scoring matrix for amino acid sequences:", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "BLOSUM62"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "BLOSUM30", 
+                                "label": "BLOSUM30"
+                            }, 
+                            {
+                                "value": "BLOSUM45", 
+                                "label": "BLOSUM45"
+                            }, 
+                            {
+                                "value": "BLOSUM62", 
+                                "label": "BLOSUM62"
+                            }, 
+                            {
+                                "value": "BLOSUM80", 
+                                "label": "BLOSUM80"
+                            }, 
+                            {
+                                "value": "JT100", 
+                                "label": "JT100"
+                            }, 
+                            {
+                                "value": "JT200", 
+                                "label": "JT200"
+                            }
+                        ], 
+                        "comment": "<text lang=\"en\">The BLOSUM62 matrix is adopted as a default scoring matrix, because this showed slightly higher accuracy values than the BLOSUM80, 45, JTT200PAM, 100PAM and Gonnet matrices in SABmark tests. </text> </comment>"
+                    }, 
+                    "nuc_scm": {
+                        "prompt": "Scoring matrix for nucleotide sequences:", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "200"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "200", 
+                                "label": "200PAM/ k=2"
+                            }, 
+                            {
+                                "value": "20", 
+                                "label": "20PAM/ k=2"
+                            }, 
+                            {
+                                "value": "1", 
+                                "label": "1PAM/ k=2"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "( defined $value and $value ne $vdef )\" --kimura $value \" : \"\"", 
+                            "python": "( \"\" , \" --kimura \"+str( value ) )[ value is not None and value!= vdef ]"
+                        }, 
+                        "comment": "<{http://www.w3.org/1999/xhtml}div > <{http://www.w3.org/1999/xhtml}p style=\"color: red\">Switch it to '1PAM / \u03ba=2' when aligning closely related DNA sequences.</{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p >The default scoring matrix is derived from Kimura's two-parameter model. The ratio of transitions to transversions is set at 2 by default. Other parameters can be used, but have not yet been tested. </{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}div> </comment>"
+                    }, 
+                    "gap_open_penalty": {
+                        "prompt": "Gap opening penalty (1.0 - 3.0): ", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "1.53"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" --op $value \" : \"\"", 
+                            "python": "( \"\" , \" --op \"+str( value ) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "": " 3.0"
+                        }, 
+                        "comment": "<{http://www.w3.org/1999/xhtml}div > <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\"> Gap penalties for proteins.</{http://www.w3.org/1999/xhtml}span> The default gap penalties for amino acid alignments have been changed in <{http://www.w3.org/1999/xhtml}span style=\"color: red\">v.4.0</{http://www.w3.org/1999/xhtml}span>. Note that the current version of MAFFT returns an entirely different alignment from v.<4.0. In v.4.0, two major gap penalties (--op [gap open penalty] and --ep [offset value, which functions like a gap extension penalty, see the <{http://www.w3.org/1999/xhtml}a href=\"http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html\">mafft3 paper</{http://www.w3.org/1999/xhtml}a> for definition]) were tuned by applying the FFT-NS-2 option to a part of the SABmark benchmark. We adopted the parameter set (--op 1.53 --ep 0.123) optimized for SABmark, because this works better for other benchmark (HOMSTRAD, PREFAB and BAliBASE) tests than the previous one (--ep 2.4 --ep 0.06). Other parameters might work better in other situations. Consistency-based options have more parameters (L-INS-i has four more parameters and E-INS-i has six more parameters). We determined these additional parameters so that the Smith-Waterman alignment function used in L-INS-i returns a local alignment similar to that generated by FASTA, but we have not closely tuned them yet. In our tests using SABmark, the accuracy values can be improved by 2-3% by tuning these parameters, but this improvement may result from overfitting. </{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p > <{http://www.w3.org/1999/xhtml}span style=\"color: #003366; font-size: 100%; font-style: italic; font-weight: bold;\">Gap penalties for RNAs.</{http://www.w3.org/1999/xhtml}span> The default gap penalties for nucleotide alignment have changed in <{http://www.w3.org/1999/xhtml}span class=\"red\"> v.5.6</{http://www.w3.org/1999/xhtml}span>. Note that the current version of MAFFT returns an entirely different alignment from v.<5.6. In the former versions (v.<5.6), the default gap penalties for nucleotide alignments were set at the same values as those for amino acid alignments. According to <{http://www.w3.org/1999/xhtml}a href=\"http://projects.binf.ku.dk/pgardner/bralibase/\">BRAliBASE</{http://www.w3.org/1999/xhtml}a> , these penalties result in very bad alignments for RNAs. The newer versions (v.\u22655.6) use a different penalties for nucleotide alignment; the penalty values are set to three times larger than those for amino acids. This is not yet the optimal value for BRAliBASE. The BRAliBASE score can be improved by closely tuning the penalty values, but we have not adopted the optimized penalties, because we are not sure whether they are applicable to a wide range of problems. </{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}div> </comment>"
+                    }, 
+                    "offset": {
+                        "prompt": "Offset value (0.0 - 1.0):", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "default_value": [
+                            "0.0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" --ep $value \" : \"\"", 
+                            "python": "( \"\" , \" --ep \"+str( value ) )[ value is not None and value != 0.123 ]"
+                        }, 
+                        "ctrl": {
+                            "": " 1.0"
+                        }, 
+                        "comment": "<{http://www.w3.org/1999/xhtml}div > <{http://www.w3.org/1999/xhtml}p style=\"color: red\">If long gaps are not expected, set it as 0.1 or larger value.</{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}div> </comment>"
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "result": {
+                "isstdout": true, 
+                "prompt": "Alignment file", 
+                "type": {
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "\n          ", 
+                        "\n        "
+                    ]
+                }, 
+                "filenames": {
+                    "perl": "\"mafft.out\"", 
+                    "python": "\"mafft.out\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">This program carries out the Fitch-Margoliash and Least Squares methods, plus a variety of others of the same family, with the assumption that all tip species are contemporaneous, and that there is an evolutionary clock (in effect, a molecular clock). This means that branches of the tree cannot be of arbitrary length, but are constrained so that the total length from the root of the tree to any species is the same.</text> </comment>", 
+    "env": {
+        "name": "MAFFT_BINARIES", 
+        "value": "/usr/lib/mafft/lib/mafft"
+    }
+}

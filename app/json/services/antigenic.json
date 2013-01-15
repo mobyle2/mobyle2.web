@@ -1,0 +1,233 @@
+{
+    "type": "program", 
+    "name": "antigenic", 
+    "version": "6.3.1", 
+    "title": "antigenic", 
+    "description": "<text lang=\"en\">Finds antigenic sites in proteins</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs"
+    ], 
+    "command": "antigenic", 
+    "inputs": {
+        "parameters": {
+            "e_input": {
+                "name": "e_input", 
+                "parameters": {
+                    "e_sequence": {
+                        "ismandatory": true, 
+                        "prompt": "sequence option", 
+                        "type": {
+                            "biotype": "Protein", 
+                            "datatype_class": "Sequence", 
+                            "data_formats": [
+                                "EMBL", 
+                                "FASTA", 
+                                "GCG", 
+                                "GENBANK", 
+                                "NBRF", 
+                                "PIR", 
+                                "RAW", 
+                                "SWISSPROT", 
+                                "GFF"
+                            ], 
+                            "card": "1,n"
+                        }, 
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        }
+                    }
+                }
+            }, 
+            "e_required": {
+                "name": "e_required", 
+                "parameters": {
+                    "e_minlen": {
+                        "ismandatory": true, 
+                        "prompt": "Minimum length of antigenic region (value from 1 to 50)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "6"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -minlen=\" + str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "ctrl": {
+                            "python": "= 50"
+                        }
+                    }
+                }
+            }, 
+            "e_output": {
+                "name": "e_output", 
+                "parameters": {
+                    "e_outfile": {
+                        "prompt": "Name of the report file", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "default_value": [
+                            "antigenic.report"
+                        ], 
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        }
+                    }, 
+                    "e_rformat_outfile": {
+                        "prompt": "Choose the report output format", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "MOTIF"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "DASGFF", 
+                                "label": "Dasgff"
+                            }, 
+                            {
+                                "value": "DBMOTIF", 
+                                "label": "Dbmotif"
+                            }, 
+                            {
+                                "value": "DIFFSEQ", 
+                                "label": "Diffseq"
+                            }, 
+                            {
+                                "value": "EMBL", 
+                                "label": "Embl"
+                            }, 
+                            {
+                                "value": "EXCEL", 
+                                "label": "Excel"
+                            }, 
+                            {
+                                "value": "FEATTABLE", 
+                                "label": "Feattable"
+                            }, 
+                            {
+                                "value": "GENBANK", 
+                                "label": "Genbank"
+                            }, 
+                            {
+                                "value": "GFF", 
+                                "label": "Gff"
+                            }, 
+                            {
+                                "value": "LISTFILE", 
+                                "label": "Listfile"
+                            }, 
+                            {
+                                "value": "MOTIF", 
+                                "label": "Motif"
+                            }, 
+                            {
+                                "value": "NAMETABLE", 
+                                "label": "Nametable"
+                            }, 
+                            {
+                                "value": "PIR", 
+                                "label": "Pir"
+                            }, 
+                            {
+                                "value": "REGIONS", 
+                                "label": "Regions"
+                            }, 
+                            {
+                                "value": "SEQTABLE", 
+                                "label": "Seqtable"
+                            }, 
+                            {
+                                "value": "SIMPLE", 
+                                "label": "Simple"
+                            }, 
+                            {
+                                "value": "SRS", 
+                                "label": "Srs"
+                            }, 
+                            {
+                                "value": "SWISS", 
+                                "label": "Swiss"
+                            }, 
+                            {
+                                "value": "TABLE", 
+                                "label": "Table"
+                            }, 
+                            {
+                                "value": "TAGSEQ", 
+                                "label": "Tagseq"
+                            }
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -rformat=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }
+                }
+            }, 
+            "auto": {
+                "ishidden": true, 
+                "prompt": "Turn off any prompting", 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "python": "\" -auto -stdout\""
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "e_output": {
+                "name": "e_output", 
+                "parameters": {
+                    "e_outfile_out": {
+                        "isout": true, 
+                        "prompt": "outfile_out option", 
+                        "type": {
+                            "datatype_class": "Text", 
+                            "data_formats": [
+                                "\n              ", 
+                                "\n            "
+                            ]
+                        }, 
+                        "precond": {
+                            "python": "e_rformat_outfile in ['DASGFF', 'DBMOTIF', 'DIFFSEQ', 'EMBL', 'EXCEL', 'FEATTABLE', 'GENBANK', 'GFF', 'LISTFILE', 'MOTIF', 'NAMETABLE', 'PIR', 'REGIONS', 'SEQTABLE', 'SIMPLE', 'SRS', 'SWISS', 'TABLE', 'TAGSEQ']"
+                        }, 
+                        "filenames": {
+                            "python": "e_outfile"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+}

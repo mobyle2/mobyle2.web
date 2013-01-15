@@ -1,0 +1,357 @@
+{
+    "type": "program", 
+    "name": "abiview", 
+    "version": "6.3.1", 
+    "title": "abiview", 
+    "description": "<text lang=\"en\">Display the trace in an ABI sequencer file</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display"
+    ], 
+    "command": "abiview", 
+    "inputs": {
+        "parameters": {
+            "e_input": {
+                "name": "e_input", 
+                "parameters": {
+                    "e_infile": {
+                        "ismandatory": true, 
+                        "prompt": "Abi sequencing trace file", 
+                        "type": {
+                            "datatype_class": "Binary"
+                        }, 
+                        "format": {
+                            "python": "(\"\", \" -infile=\" + str(value))[value is not None]"
+                        }
+                    }
+                }
+            }, 
+            "e_output": {
+                "name": "e_output", 
+                "parameters": {
+                    "e_outseq": {
+                        "prompt": "Name of the output sequence file (e_outseq)", 
+                        "type": {
+                            "biotype": "DNA", 
+                            "datatype_class": "Filename"
+                        }, 
+                        "default_value": [
+                            "abiview.e_outseq"
+                        ], 
+                        "format": {
+                            "python": "(\"\" , \" -outseq=\" + str(value))[value is not None]"
+                        }
+                    }, 
+                    "e_osformat_outseq": {
+                        "prompt": "Choose the sequence output format", 
+                        "type": {
+                            "biotype": "DNA", 
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "FASTA"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "EMBL", 
+                                "label": "Embl"
+                            }, 
+                            {
+                                "value": "FASTA", 
+                                "label": "Fasta"
+                            }, 
+                            {
+                                "value": "GCG", 
+                                "label": "Gcg"
+                            }, 
+                            {
+                                "value": "GENBANK", 
+                                "label": "Genbank"
+                            }, 
+                            {
+                                "value": "NBRF", 
+                                "label": "Nbrf"
+                            }, 
+                            {
+                                "value": "PIR", 
+                                "label": "Pir"
+                            }, 
+                            {
+                                "value": "RAW", 
+                                "label": "Raw"
+                            }, 
+                            {
+                                "value": "SWISSPROT", 
+                                "label": "Swissprot"
+                            }, 
+                            {
+                                "value": "GFF", 
+                                "label": "Gff"
+                            }
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -osformat=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }, 
+                    "e_graph": {
+                        "ismandatory": true, 
+                        "prompt": "Choose the e_graph output format", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "png"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "png", 
+                                "label": "Png"
+                            }, 
+                            {
+                                "value": "gif", 
+                                "label": "Gif"
+                            }, 
+                            {
+                                "value": "cps", 
+                                "label": "Cps"
+                            }, 
+                            {
+                                "value": "ps", 
+                                "label": "Ps"
+                            }, 
+                            {
+                                "value": "meta", 
+                                "label": "Meta"
+                            }, 
+                            {
+                                "value": "data", 
+                                "label": "Data"
+                            }
+                        ], 
+                        "format": {
+                            "python": "(\" -graph=\" + str(vdef), \" -graph=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }, 
+                    "xy_goutfile": {
+                        "prompt": "Name of the output graph", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "default_value": [
+                            "abiview_xygraph"
+                        ], 
+                        "format": {
+                            "python": "(\"\" , \" -goutfile=\" + str(value))[value is not None]"
+                        }
+                    }, 
+                    "e_startbase": {
+                        "prompt": "First base to report or display (value greater than or equal to 0)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -startbase=\" + str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "ctrl": {
+                            "python": "= 0"
+                        }
+                    }, 
+                    "e_endbase": {
+                        "prompt": "Last base to report or display", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -endbase=\" + str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Last sequence base to report or display. If the default is set to zero then the value of this is taken as the maximum number of bases.</text> </comment>"
+                    }, 
+                    "e_separate": {
+                        "prompt": "Separate the trace graphs for the 4 bases", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -separate\")[ bool(value) ]"
+                        }
+                    }, 
+                    "e_yticks": {
+                        "prompt": "Display y-axis ticks", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -yticks\")[ bool(value) ]"
+                        }
+                    }, 
+                    "e_sequence": {
+                        "prompt": "Display the sequence on the graph", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "python": "(\" -nosequence\", \"\")[ bool(value) ]"
+                        }
+                    }, 
+                    "e_window": {
+                        "prompt": "Sequence display window size", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "40"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -window=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }, 
+                    "e_bases": {
+                        "prompt": "Base graphs to be displayed", 
+                        "type": {
+                            "datatype_class": "String"
+                        }, 
+                        "default_value": [
+                            "GATC"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -bases=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }
+                }
+            }, 
+            "auto": {
+                "ishidden": true, 
+                "prompt": "Turn off any prompting", 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "python": "\" -auto -stdout\""
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "e_output": {
+                "name": "e_output", 
+                "parameters": {
+                    "e_outseq_out": {
+                        "isout": true, 
+                        "prompt": "outseq_out option", 
+                        "type": {
+                            "biotype": "DNA", 
+                            "datatype_class": "Sequence", 
+                            "data_formats": [
+                                "\n              ", 
+                                "\n            "
+                            ]
+                        }, 
+                        "filenames": {
+                            "python": "e_outseq"
+                        }
+                    }, 
+                    "xy_outgraph_png": {
+                        "isout": true, 
+                        "prompt": "Graph file", 
+                        "type": {
+                            "datatype_class": "Picture", 
+                            "datatype_superclass": "Binary"
+                        }, 
+                        "precond": {
+                            "python": "e_graph == \"png\""
+                        }, 
+                        "filenames": {
+                            "python": "\"*.png\""
+                        }
+                    }, 
+                    "xy_outgraph_gif": {
+                        "isout": true, 
+                        "prompt": "Graph file", 
+                        "type": {
+                            "datatype_class": "Picture", 
+                            "datatype_superclass": "Binary"
+                        }, 
+                        "precond": {
+                            "python": "e_graph == \"gif\""
+                        }, 
+                        "filenames": {
+                            "python": "\"*.gif\""
+                        }
+                    }, 
+                    "xy_outgraph_ps": {
+                        "isout": true, 
+                        "prompt": "Graph file", 
+                        "type": {
+                            "datatype_class": "PostScript", 
+                            "datatype_superclass": "Binary"
+                        }, 
+                        "precond": {
+                            "python": "e_graph == \"ps\" or e_graph == \"cps\""
+                        }, 
+                        "filenames": {
+                            "python": "\"*.ps\""
+                        }
+                    }, 
+                    "xy_outgraph_meta": {
+                        "isout": true, 
+                        "prompt": "Graph file", 
+                        "type": {
+                            "datatype_class": "Picture", 
+                            "datatype_superclass": "Binary"
+                        }, 
+                        "precond": {
+                            "python": "e_graph == \"meta\""
+                        }, 
+                        "filenames": {
+                            "python": "\"*.meta\""
+                        }
+                    }, 
+                    "xy_outgraph_data": {
+                        "isout": true, 
+                        "prompt": "Graph file", 
+                        "type": {
+                            "datatype_class": "Text"
+                        }, 
+                        "precond": {
+                            "python": "e_graph == \"data\""
+                        }, 
+                        "filenames": {
+                            "python": "\"*.dat\""
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

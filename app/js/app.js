@@ -6,5 +6,5 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/services', {templateUrl: 'partials/services.html', controller: ServicesCtrl});
     $routeProvider.when('/data', {templateUrl: 'partials/data.html', controller: DataCtrl});
-    $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.otherwise({redirectTo: '/services'});
   }]);

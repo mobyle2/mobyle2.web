@@ -1,0 +1,1464 @@
+{
+    "type": "program", 
+    "name": "boxshade", 
+    "version": "3.31", 
+    "title": "BOXSHADE", 
+    "description": "<text lang=\"en\">printouts from multiple-aligned protein or DNA sequences</text> </description>", 
+    "authors": "Hofmann, Baron</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display"
+    ], 
+    "command": "BMGE", 
+    "inputs": {
+        "parameters": {
+            "boxshade": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "boxshade.params\"", 
+                    "python": "boxshade.params\""
+                }
+            }, 
+            "alignment": {
+                "ismandatory": true, 
+                "prompt": "Alignment File", 
+                "type": {
+                    "datatype_class": "Alignment", 
+                    "data_formats": [
+                        "CLUSTAL"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\"$value\\\\n\"", 
+                    "python": "str(value) + \"\\n\""
+                }
+            }, 
+            "input_format": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"2\\\\n\"", 
+                    "python": "\"2\\n\""
+                }
+            }, 
+            "output_params": {
+                "name": "output_params", 
+                "parameters": {
+                    "output_format": {
+                        "ismandatory": true, 
+                        "prompt": "Output format", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "e"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "1", 
+                                "label": "POSTSCRIPT (1)"
+                            }, 
+                            {
+                                "value": "2", 
+                                "label": "Encapsulated POSTSCRIPT (2)"
+                            }, 
+                            {
+                                "value": "3", 
+                                "label": "HPGL (3)"
+                            }, 
+                            {
+                                "value": "4", 
+                                "label": "RTF (Rich Text Format) (4)"
+                            }, 
+                            {
+                                "value": "6", 
+                                "label": "ANSI-screen (PC-version) (6)"
+                            }, 
+                            {
+                                "value": "7", 
+                                "label": "VT100-screen (DEC-version) (7)"
+                            }, 
+                            {
+                                "value": "8", 
+                                "label": "ReGIS-screen (25 lines each) (8)"
+                            }, 
+                            {
+                                "value": "9", 
+                                "label": "ReGIS-file (without breaks) (9)"
+                            }, 
+                            {
+                                "value": "a", 
+                                "label": "LJ250-printer file (a)"
+                            }, 
+                            {
+                                "value": "c", 
+                                "label": "FIG file (for XFIG) (c)"
+                            }, 
+                            {
+                                "value": "d", 
+                                "label": "PICT file (d)"
+                            }, 
+                            {
+                                "value": "e", 
+                                "label": "HTML (e)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str(value) + \"\\n\""
+                        }
+                    }, 
+                    "print_name": {
+                        "prompt": "Should sequence name be printed", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }, 
+                    "ruler": {
+                        "prompt": "Display ruler line", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }, 
+                    "print_position": {
+                        "ishidden": true, 
+                        "prompt": "Should position numbers be printed?", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "not $ruler", 
+                            "python": "not ruler"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }, 
+                    "sequence_characters": {
+                        "prompt": "How many sequence characters per line", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "60"
+                        ], 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str( value ) + \"\\n\""
+                        }, 
+                        "ctrl": {
+                            "perl": "= 254", 
+                            "python": "= 254"
+                        }
+                    }, 
+                    "lines": {
+                        "prompt": "How many lines between two sequence blocks", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str(value) + \"\\n\""
+                        }, 
+                        "ctrl": {
+                            "perl": " 0", 
+                            "python": " 0"
+                        }
+                    }, 
+                    "character_size": {
+                        "prompt": "Character size in Points (except for HTML and ASCII output formats)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "$output_format !~ /^[89be]$/", 
+                            "python": "output_format not in [\"8\",\"9\",\"b\",\"e\"]"
+                        }, 
+                        "default_value": [
+                            "10"
+                        ], 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str(value) + \"\\n\""
+                        }
+                    }, 
+                    "save_shading": {
+                        "ismandatory": true, 
+                        "prompt": "Save Shading/Text", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "$output_format eq \"d\"", 
+                            "python": "output_format == \"d\""
+                        }, 
+                        "default_value": [
+                            "T"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "S", 
+                                "label": "Save shading (S)"
+                            }, 
+                            {
+                                "value": "T", 
+                                "label": "Save Shading+Text (T)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str(value) + \"\\n\""
+                        }
+                    }, 
+                    "rotate": {
+                        "prompt": "Rotate plot", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$output_format eq \"1\" or $output_format eq \"3\" or $output_format eq \"d\"", 
+                            "python": "output_format == \"1\" or output_format == \"3\" or output_format == \"d\""
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }
+                }
+            }, 
+            "sequence_params": {
+                "name": "sequence_params", 
+                "parameters": {
+                    "label_similar": {
+                        "prompt": "Special label for similar residues", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }, 
+                    "label_identical": {
+                        "prompt": "Special label for identical residues in all sequences", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }, 
+                    "consensus": {
+                        "prompt": "Display consensus line", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n .*\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n .*\\n\" )[ value ]"
+                        }
+                    }, 
+                    "threshold": {
+                        "prompt": "Identity threshold", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$output_format ne \"b\"", 
+                            "python": "output_format != \"b\""
+                        }, 
+                        "default_value": [
+                            "0.50"
+                        ], 
+                        "format": {
+                            "perl": "\"$value\\\\n\"", 
+                            "python": "str(value) + \"\\n\""
+                        }, 
+                        "ctrl": {
+                            "perl": "= 1", 
+                            "python": "= 1"
+                        }, 
+                        "comment": "<text lang=\"en\">The threshold is the fraction of residues that must be identical or similar for shading to occur.</text> </comment>"
+                    }, 
+                    "letters": {
+                        "name": "letters", 
+                        "parameters": {
+                            "different_background": {
+                                "ismandatory": true, 
+                                "prompt": "Background for different residues", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "precond": {
+                                    "perl": "$output_format ne \"b\"", 
+                                    "python": "output_format != \"b\""
+                                }, 
+                                "default_value": [
+                                    "W"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 (darkest)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "different_foreground": {
+                                "ismandatory": true, 
+                                "prompt": "Foreground for different residues (lowercase choices mean lowercase letters in the sequence)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "B"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "b", 
+                                        "label": "Black (b)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "w", 
+                                        "label": "White (w)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 = darkest"
+                                    }, 
+                                    {
+                                        "value": "5", 
+                                        "label": "Gray value: 5 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "6", 
+                                        "label": "Gray value: 6 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "7", 
+                                        "label": "Gray value: 7 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "8", 
+                                        "label": "Gray value: 8 = darkest (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "r", 
+                                        "label": "Red (r)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "g", 
+                                        "label": "Green (g)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "l", 
+                                        "label": "Blue (l)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "y", 
+                                        "label": "Yellow (y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "m", 
+                                        "label": "Magenta (m)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }, 
+                                    {
+                                        "value": "c", 
+                                        "label": "Cyan (c)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "identical_background": {
+                                "ismandatory": true, 
+                                "prompt": "Background for identical residues", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "precond": {
+                                    "perl": "$output_format ne \"b\"", 
+                                    "python": "output_format != \"b\""
+                                }, 
+                                "default_value": [
+                                    "B"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 (darkest)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "identical_foreground": {
+                                "ismandatory": true, 
+                                "prompt": "Foreground for identical residues (lowercase choices mean lowercase letters in the sequence)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "default_value": [
+                                    "W"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "b", 
+                                        "label": "Black (b)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "w", 
+                                        "label": "White (w)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 = darkest"
+                                    }, 
+                                    {
+                                        "value": "5", 
+                                        "label": "Gray value: 5 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "6", 
+                                        "label": "Gray value: 6 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "7", 
+                                        "label": "Gray value: 7 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "8", 
+                                        "label": "Gray value: 8 = darkest (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "r", 
+                                        "label": "Red (r)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "g", 
+                                        "label": "Green (g)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "l", 
+                                        "label": "Blue (l)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "y", 
+                                        "label": "Yellow (y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "m", 
+                                        "label": "Magenta (m)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }, 
+                                    {
+                                        "value": "c", 
+                                        "label": "Cyan (c)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "similar_background": {
+                                "ismandatory": true, 
+                                "prompt": "Background for similar residues", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "precond": {
+                                    "perl": "$label_similar and $output_format ne \"b\"", 
+                                    "python": "label_similar and output_format != \"b\""
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 (darkest)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "similar_foreground": {
+                                "ismandatory": true, 
+                                "prompt": "Foreground for similar residues (lowercase choices mean lowercase letters in the sequence)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "precond": {
+                                    "perl": "$label_similar", 
+                                    "python": "label_similar"
+                                }, 
+                                "default_value": [
+                                    "B"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "b", 
+                                        "label": "Black (b)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "w", 
+                                        "label": "White (w)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 = darkest"
+                                    }, 
+                                    {
+                                        "value": "5", 
+                                        "label": "Gray value: 5 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "6", 
+                                        "label": "Gray value: 6 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "7", 
+                                        "label": "Gray value: 7 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "8", 
+                                        "label": "Gray value: 8 = darkest (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "r", 
+                                        "label": "Red (r)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "g", 
+                                        "label": "Green (g)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "l", 
+                                        "label": "Blue (l)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "y", 
+                                        "label": "Yellow (y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "m", 
+                                        "label": "Magenta (m)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }, 
+                                    {
+                                        "value": "c", 
+                                        "label": "Cyan (c)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "conserved_background": {
+                                "ismandatory": true, 
+                                "prompt": "Background for conserved residues (if special label for identical residues)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "precond": {
+                                    "perl": "label_identical and output_format ne \"b\"", 
+                                    "python": "label_identical and output_format != \"b\""
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 (darkest)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }, 
+                            "conserved_foreground": {
+                                "ismandatory": true, 
+                                "prompt": "Foreground for conserved residues (lowercase choices mean lowercase letters in the sequence)", 
+                                "type": {
+                                    "datatype_class": "Choice"
+                                }, 
+                                "precond": {
+                                    "perl": "$label_identical", 
+                                    "python": "label_identical"
+                                }, 
+                                "default_value": [
+                                    "B"
+                                ], 
+                                "authorized_values": [
+                                    {
+                                        "value": "B", 
+                                        "label": "Black (B)"
+                                    }, 
+                                    {
+                                        "value": "b", 
+                                        "label": "Black (b)"
+                                    }, 
+                                    {
+                                        "value": "W", 
+                                        "label": "White (W)"
+                                    }, 
+                                    {
+                                        "value": "w", 
+                                        "label": "White (w)"
+                                    }, 
+                                    {
+                                        "value": "1", 
+                                        "label": "Gray value: 1"
+                                    }, 
+                                    {
+                                        "value": "2", 
+                                        "label": "Gray value: 2"
+                                    }, 
+                                    {
+                                        "value": "3", 
+                                        "label": "Gray value: 3"
+                                    }, 
+                                    {
+                                        "value": "4", 
+                                        "label": "Gray value: 4 = darkest"
+                                    }, 
+                                    {
+                                        "value": "5", 
+                                        "label": "Gray value: 5 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "6", 
+                                        "label": "Gray value: 6 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "7", 
+                                        "label": "Gray value: 7 (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "8", 
+                                        "label": "Gray value: 8 = darkest (lowercase)"
+                                    }, 
+                                    {
+                                        "value": "R", 
+                                        "label": "Red (R)"
+                                    }, 
+                                    {
+                                        "value": "r", 
+                                        "label": "Red (r)"
+                                    }, 
+                                    {
+                                        "value": "G", 
+                                        "label": "Green (G)"
+                                    }, 
+                                    {
+                                        "value": "g", 
+                                        "label": "Green (g)"
+                                    }, 
+                                    {
+                                        "value": "L", 
+                                        "label": "Blue (L)"
+                                    }, 
+                                    {
+                                        "value": "l", 
+                                        "label": "Blue (l)"
+                                    }, 
+                                    {
+                                        "value": "Y", 
+                                        "label": "Yellow (Y)"
+                                    }, 
+                                    {
+                                        "value": "y", 
+                                        "label": "Yellow (y)"
+                                    }, 
+                                    {
+                                        "value": "M", 
+                                        "label": "Magenta (M)"
+                                    }, 
+                                    {
+                                        "value": "m", 
+                                        "label": "Magenta (m)"
+                                    }, 
+                                    {
+                                        "value": "C", 
+                                        "label": "Cyan (C)"
+                                    }, 
+                                    {
+                                        "value": "c", 
+                                        "label": "Cyan (c)"
+                                    }
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }
+                            }
+                        }
+                    }, 
+                    "single_comparison": {
+                        "name": "single_comparison", 
+                        "parameters": {
+                            "single": {
+                                "prompt": "Similarity to a single sequence", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "precond": {
+                                    "perl": "$output_format ne \"b\"", 
+                                    "python": "output_format != \"b\""
+                                }, 
+                                "default_value": [
+                                    "0"
+                                ], 
+                                "format": {
+                                    "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                                    "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                                }
+                            }, 
+                            "seq_no": {
+                                "ismandatory": true, 
+                                "prompt": "Which sequence (give its number)", 
+                                "type": {
+                                    "datatype_class": "Integer"
+                                }, 
+                                "precond": {
+                                    "perl": "$single", 
+                                    "python": "single"
+                                }, 
+                                "default_value": [
+                                    "1"
+                                ], 
+                                "format": {
+                                    "perl": "\"$value\\\\n\"", 
+                                    "python": "str(value) + \"\\n\""
+                                }, 
+                                "ctrl": {
+                                    "perl": "= 0", 
+                                    "python": "= 0"
+                                }
+                            }, 
+                            "hide": {
+                                "prompt": "Hide this sequence", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "precond": {
+                                    "perl": "$single", 
+                                    "python": "single"
+                                }, 
+                                "default_value": [
+                                    "0"
+                                ], 
+                                "format": {
+                                    "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                                    "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                                }
+                            }, 
+                            "show_normal": {
+                                "prompt": "Show this sequence in all-normal rendition", 
+                                "type": {
+                                    "datatype_class": "Boolean"
+                                }, 
+                                "precond": {
+                                    "perl": "$single", 
+                                    "python": "single"
+                                }, 
+                                "default_value": [
+                                    "0"
+                                ], 
+                                "format": {
+                                    "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                                    "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                                }
+                            }
+                        }
+                    }, 
+                    "matrix": {
+                        "prompt": "Create identity / similarity matrix", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"", 
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        }
+                    }
+                }
+            }, 
+            "outfileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$output_format ne \"1\" and $output_format ne \"e\" and $output_format ne \"2\" and $output_format ne \"d\" and $output_format ne \"c\" and $output_format ne \"4\"", 
+                    "python": "output_format != \"1\" and output_format != \"e\" and output_format != \"2\" and output_format != \"d\" and output_format != \"c\" and output_format != \"4\""
+                }, 
+                "format": {
+                    "perl": "\"boxshade.result\\\\n\"", 
+                    "python": "\"boxshade.result\\n\""
+                }
+            }, 
+            "psFileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"1\" or $output_format eq \"2\"", 
+                    "python": "output_format == \"1\" or output_format == \"2\""
+                }, 
+                "format": {
+                    "perl": "\"boxshade.ps\\\\n\"", 
+                    "python": "\"boxshade.ps\\n\""
+                }
+            }, 
+            "htmlFileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"e\"", 
+                    "python": "output_format == \"e\""
+                }, 
+                "format": {
+                    "perl": "\"boxshade.html\\\\n\"", 
+                    "python": "\"boxshade.html\\n\""
+                }
+            }, 
+            "rtfFileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"4\"", 
+                    "python": "output_format == \"4\""
+                }, 
+                "format": {
+                    "perl": "\"boxshade.rtf\\\\n\"", 
+                    "python": "\"boxshade.rtf\\n\""
+                }
+            }, 
+            "figFileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"c\"", 
+                    "python": "output_format == \"c\""
+                }, 
+                "format": {
+                    "perl": "\"boxshade.fig\\\\n\"", 
+                    "python": "\"boxshade.fig\\n\""
+                }
+            }, 
+            "pictFileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"d\"", 
+                    "python": "output_format == \"d\""
+                }, 
+                "format": {
+                    "perl": "\"boxshade.pict\\\\n\"", 
+                    "python": "\"boxshade.pict\\n\""
+                }
+            }, 
+            "matrixFileName": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "Filename"
+                }, 
+                "precond": {
+                    "perl": "$matrix", 
+                    "python": "matrix"
+                }, 
+                "format": {
+                    "perl": "\"boxshade.matrix\\\\n\"", 
+                    "python": "\"boxshade.matrix\\n\""
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "outFile": {
+                "isout": true, 
+                "prompt": "Output file", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "precond": {
+                    "perl": "$output_format ne \"1\" and $output_format ne \"e\" and $output_format ne \"2\" and $output_format ne \"d\" and $output_format ne \"c\" and $output_format ne \"4\"", 
+                    "python": "output_format != \"1\" and output_format != \"e\" and output_format != \"2\" and output_format != \"d\" and output_format != \"c\" and output_format != \"4\""
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.result\"", 
+                    "python": "\"boxshade.result\""
+                }
+            }, 
+            "psFile": {
+                "isout": true, 
+                "prompt": "Postscript output file", 
+                "type": {
+                    "datatype_class": "PostScript", 
+                    "datatype_superclass": "Binary"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"1\" or $output_format eq \"2\"", 
+                    "python": "output_format == \"1\" or output_format == \"2\""
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.ps\"", 
+                    "python": "\"boxshade.ps\""
+                }
+            }, 
+            "htmlFile": {
+                "isout": true, 
+                "prompt": "Html output file", 
+                "type": {
+                    "datatype_class": "BoxshadeHtmlReport", 
+                    "datatype_superclass": "Report"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"e\"", 
+                    "python": "output_format == \"e\""
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.html\"", 
+                    "python": "\"boxshade.html\""
+                }
+            }, 
+            "rtfFile": {
+                "isout": true, 
+                "prompt": "Rich text format output file", 
+                "type": {
+                    "datatype_class": "BoxshadeRtfReport", 
+                    "datatype_superclass": "Report"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"4\"", 
+                    "python": "output_format == \"4\""
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.rtf\"", 
+                    "python": "\"boxshade.rtf\""
+                }
+            }, 
+            "figFile": {
+                "isout": true, 
+                "prompt": "Xfig output file", 
+                "type": {
+                    "datatype_class": "BoxshadeXfigReport", 
+                    "datatype_superclass": "Report"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"c\"", 
+                    "python": "output_format == \"c\""
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.fig\"", 
+                    "python": "\"boxshade.fig\""
+                }
+            }, 
+            "pictFile": {
+                "isout": true, 
+                "prompt": "Picture in pict format", 
+                "type": {
+                    "datatype_class": "Picture", 
+                    "datatype_superclass": "Binary"
+                }, 
+                "precond": {
+                    "perl": "$output_format eq \"d\"", 
+                    "python": "output_format == \"d\""
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.pict\"", 
+                    "python": "\"boxshade.pict\""
+                }
+            }, 
+            "matrixFile": {
+                "isout": true, 
+                "prompt": "Output matrix", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "precond": {
+                    "perl": "$matrix", 
+                    "python": "matrix"
+                }, 
+                "filenames": {
+                    "perl": "\"boxshade.matrix\"", 
+                    "python": "\"boxshade.matrix\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\"> Extract the Identifier and Data Bank of the hits from the summary of a blast report ( in text format -m 0-6 ) The result is in USA list format. </text> </comment>"
+}

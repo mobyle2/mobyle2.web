@@ -1,0 +1,599 @@
+{
+    "type": "program", 
+    "name": "clique", 
+    "version": "6.3.1", 
+    "title": "clique", 
+    "description": "<text lang=\"en\">Compatibility Program</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others"
+    ], 
+    "command": "cirdna", 
+    "inputs": {
+        "parameters": {
+            "clique": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": " clique.params\"", 
+                    "python": " clique.params\""
+                }
+            }, 
+            "infile": {
+                "ismaininput": true, 
+                "ismandatory": true, 
+                "prompt": "Input File", 
+                "type": {
+                    "datatype_class": "PhylipDiscreteCharMatrix", 
+                    "datatype_superclass": "AbstractText"
+                }, 
+                "precond": {
+                    "perl": "$infile ne \"infile\"", 
+                    "python": "infile != \"infile\""
+                }, 
+                "format": {
+                    "perl": " \"", 
+                    "python": " \""
+                }
+            }, 
+            "clique_opt": {
+                "name": "clique_opt", 
+                "parameters": {
+                    "use_ancestral_state": {
+                        "prompt": "Use ancestral states in input file (A)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"A\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"A\\n\" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\"> There should also be, in the input file after the numbers of species and characters, an A on the first line of the file. There must also be, before the character data, a line or lines giving the ancestral states for each character. It will look like the data for a species (the ancestor). It must start with the letter A in the first column. There then follow enough characters or blanks to complete the full length of a species name (e. g. ANCESTOR). Then the states which are ancestral for the individual characters follow. These may be 0, 1 or ?, the latter indicating that the ancestral state is unknown. </text> <text lang=\"en\">Examples:</text> <text lang=\"en\">ANCESTOR 0010011</text> </comment>"
+                    }, 
+                    "spec_min_clique_size": {
+                        "prompt": "Specify minimum clique size? (C)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"C\\\\n$min_clique_size\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"C\\n\"+ str( min_clique_size ) + \"\\n\")[ value ]"
+                        }
+                    }, 
+                    "min_clique_size": {
+                        "ismandatory": true, 
+                        "prompt": "Minimum clique size", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "$spec_min_clique_size", 
+                            "python": "spec_min_clique_size"
+                        }, 
+                        "format": {
+                            "perl": "\"\"", 
+                            "python": "\"\""
+                        }, 
+                        "ctrl": {
+                            "perl": "= 0", 
+                            "python": "= 0 "
+                        }, 
+                        "comment": "<text lang=\"en\">This option indicates that you wish to specify a minimum clique size and print out all cliques (and their associated trees) greater than or equal to than that size.</text> </comment>"
+                    }
+                }
+            }, 
+            "bootstrap": {
+                "name": "bootstrap", 
+                "parameters": {
+                    "multiple_dataset": {
+                        "prompt": "Analyze multiple data sets (M)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "not $multiple_dataweights", 
+                            "python": "not multiple_dataweights"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"M\\\\nD\\\\n$datasets_number\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"M\\nD\\n\"+ str( datasets_number ) +\"\\n\" )[ value ]"
+                        }
+                    }, 
+                    "datasets_number": {
+                        "ismandatory": true, 
+                        "prompt": "How many data sets (D)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "$multiple_dataset", 
+                            "python": "multiple_dataset"
+                        }, 
+                        "format": {
+                            "perl": "\"\"", 
+                            "python": "\"\""
+                        }, 
+                        "ctrl": {
+                            "perl": "= 1000", 
+                            "python": "= 1000 )"
+                        }
+                    }, 
+                    "consense": {
+                        "prompt": "Compute a consensus tree", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "$multiple_dataset and $print_treefile", 
+                            "python": "multiple_dataset and print_treefile"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": " mv outfile consense.outfile\" : \"\"", 
+                            "python": " mv outfile consense.outfile\" )[ value ]"
+                        }
+                    }
+                }
+            }, 
+            "weigths": {
+                "name": "weigths", 
+                "parameters": {
+                    "site_weigthed": {
+                        "prompt": "Sites weighted? (W)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "( $value ) ? \"W\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"W\\n\" )[ value ]"
+                        }
+                    }, 
+                    "multiple_dataweights": {
+                        "prompt": "Analyze multiple data Weigths (M)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "not $multiple_dataset", 
+                            "python": "not multiple_dataset"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"M\\\\nW\\\\n$dataweights_number\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"M\\nW\\n\"+ str( dataweights_number ) +\"\\n\" )[ value ]"
+                        }
+                    }, 
+                    "dataweights_number": {
+                        "ismandatory": true, 
+                        "prompt": "How many sets of weights?", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "precond": {
+                            "perl": "$multiple_dataweights", 
+                            "python": "multiple_dataweights"
+                        }, 
+                        "format": {
+                            "perl": "\"\"", 
+                            "python": "\"\""
+                        }, 
+                        "ctrl": {
+                            "perl": "= 1000", 
+                            "python": "= 1000 )"
+                        }
+                    }, 
+                    "weigth_file": {
+                        "ismandatory": true, 
+                        "prompt": "Weight file", 
+                        "type": {
+                            "datatype_class": "PhylipWeight", 
+                            "datatype_superclass": "AbstractText"
+                        }, 
+                        "precond": {
+                            "perl": "$site_weigthed or $multiple_dataweights", 
+                            "python": "site_weigthed or multiple_dataweights"
+                        }, 
+                        "format": {
+                            "perl": " \"", 
+                            "python": " \""
+                        }
+                    }
+                }
+            }, 
+            "output": {
+                "name": "output", 
+                "parameters": {
+                    "print_matrix": {
+                        "prompt": "Print out compatibility matrix (3)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"3\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"3\\n\" )[ value ]"
+                        }
+                    }, 
+                    "print_tree": {
+                        "prompt": "Print out tree (4)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"\" : \"4\\\\n\"", 
+                            "python": "( \"4\\n\" , \"\" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Tells the program to print a semi-graphical picture of the tree in the outfile.</text> </comment>"
+                    }, 
+                    "print_treefile": {
+                        "prompt": "Write out trees onto tree file (5)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"\" : \"5\\\\n\"", 
+                            "python": "( \"5\\n\" , \"\" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Tells the program to save the tree in a treefile (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).</text> </comment>"
+                    }, 
+                    "printdata": {
+                        "prompt": "Print out the data at start of run (1)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \"1\\\\n\" : \"\"", 
+                            "python": "( \"\" , \"1\\n\" )[ value ]"
+                        }
+                    }
+                }
+            }, 
+            "other_options": {
+                "name": "other_options", 
+                "parameters": {
+                    "outgroup": {
+                        "prompt": "Outgroup root (O)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "1"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"O\\\\n$value\\\\n\" : \"\"", 
+                            "python": "(\"\" , \"O\\\\n%s\\\\n\" % str(value) )[ value is not None and value != vdef ]"
+                        }, 
+                        "ctrl": {
+                            "perl": " 0 ", 
+                            "python": " 0 "
+                        }
+                    }
+                }
+            }, 
+            "confirm": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"Y\\\\n\"", 
+                    "python": "\"Y\\n\""
+                }
+            }, 
+            "terminal_type": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "perl": "\"0\\\\n\"", 
+                    "python": "\"0\\n\""
+                }
+            }, 
+            "consense_confirm": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "precond": {
+                    "perl": "$consense", 
+                    "python": "consense"
+                }, 
+                "format": {
+                    "perl": "\"Y\\\\n\"", 
+                    "python": "\"Y\\n\""
+                }
+            }, 
+            "consense_terminal_type": {
+                "ishidden": true, 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "precond": {
+                    "perl": "$consense", 
+                    "python": "consense"
+                }, 
+                "format": {
+                    "perl": "\"T\\\\n\"", 
+                    "python": "\"T\\n\""
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "outfile": {
+                "isout": true, 
+                "prompt": "Output file", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "format": {
+                    "perl": " mv outfile clique.outfile\"", 
+                    "python": " mv outfile clique.outfile\""
+                }, 
+                "filenames": {
+                    "perl": "\"clique.outfile\"", 
+                    "python": "\"clique.outfile\""
+                }
+            }, 
+            "treefile": {
+                "isout": true, 
+                "prompt": "Output tree", 
+                "type": {
+                    "datatype_class": "Tree", 
+                    "data_formats": [
+                        "NEWICK"
+                    ]
+                }, 
+                "precond": {
+                    "perl": "$print_treefile", 
+                    "python": "print_treefile"
+                }, 
+                "format": {
+                    "perl": " mv outtree clique.outtree\"", 
+                    "python": " mv outtree clique.outtree\""
+                }, 
+                "filenames": {
+                    "perl": "\"clique.outtree\"", 
+                    "python": "\"clique.outtree\""
+                }
+            }, 
+            "consense_outfile": {
+                "isout": true, 
+                "prompt": "Consense output file", 
+                "type": {
+                    "datatype_class": "Text"
+                }, 
+                "precond": {
+                    "perl": "$consense", 
+                    "python": "consense"
+                }, 
+                "filenames": {
+                    "perl": "\"consense.outfile\"", 
+                    "python": "\"consense.outfile\""
+                }
+            }, 
+            "consense_treefile": {
+                "isout": true, 
+                "prompt": "Consense output tree", 
+                "type": {
+                    "datatype_class": "Tree", 
+                    "data_formats": [
+                        "NEWICK"
+                    ]
+                }, 
+                "precond": {
+                    "perl": "$consense", 
+                    "python": "consense"
+                }, 
+                "filenames": {
+                    "perl": "\"consense.outtree\"", 
+                    "python": "\"consense.outtree\""
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">This program uses the compatibility method for unrooted two-state characters to obtain the largest cliques of characters and the trees which they suggest.</text> </comment>"
+}

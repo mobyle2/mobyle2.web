@@ -3,12 +3,19 @@
 /* Controllers */
 
 
-function ServicesCtrl($scope) {
-    $scope.list = ['cat','echo','sleep'];
+function ServicesCtrl($scope,$http) {
+    $http({
+        url: "json/listing.json",
+        method: "GET"
+    }).success(function(data, status, headers, config) {
+        $scope.services = data['services'];
+    }).error(function(data, status, headers, config) {
+        $scope.status = status;
+    });
 }
-ServicesCtrl.$inject = [$scope];
+//ServicesCtrl.$inject = [$scope];
 
 
 function DataCtrl() {
 }
-DataCtrl.$inject = [];
+//DataCtrl.$inject = [];

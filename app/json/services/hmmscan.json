@@ -1,0 +1,1209 @@
+{
+    "type": "program", 
+    "name": "hmmscan", 
+    "version": "6.3.1", 
+    "title": "HMMSCAN", 
+    "description": "<text lang=\"en\">Search sequence(s) against pfam a profile HMM database</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+        }, 
+        {
+            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
+        }, 
+        {
+            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
+        }, 
+        {
+            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
+        }, 
+        {
+            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
+        }, 
+        {
+            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
+        }, 
+        {
+            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "http://emboss.sourceforge.net/</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Castresana, J. (2000). Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17, 540-552</reference>"
+        }, 
+        {
+            "value": "Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Burge, C., Karlin, S. (1997) Prediction of complete gene structures in human genomic DNA. J. Mol. Biol. 268, 78-94.</reference>"
+        }, 
+        {
+            "value": "Burge, C., Karlin, S. (1997) Gene structure, exon prediction, and alternative splicing. (in preparation).</reference>"
+        }, 
+        {
+            "value": "Burge, C. (1997) Identification of genes in human genomic DNA. PhD thesis, Stanford University, Stanford, CA.</reference>"
+        }, 
+        {
+            "value": "Burset, M., Guigo, R. (1996) Evaluation of gene structure prediction programs. Genomics 34, 353-367.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "<{http://www.w3.org/1999/xhtml}a href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\"> The program sources and Example files are downloadable here. </{http://www.w3.org/1999/xhtml}a> </reference>"
+        }, 
+        {
+            "value": "Vieira-Silva S, Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download", 
+        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://seq.cs.iastate.edu/cap3.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://sourceforge.net/projects/codonw/files/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://dialign.gobics.de/download/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://faculty.virginia.edu/wrpearson/fasta/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/golden/", 
+        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/", 
+        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net", 
+        "https://projets.pasteur.fr/projects/show/blast2usa", 
+        "http://www.ch.embnet.org/software/BOX_form.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://seq.cs.iastate.edu/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://codonw.sourceforge.net/", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
+        "http://www.daimi.au.dk/~cstorm/combat/", 
+        "http://emboss.sourceforge.net", 
+        "http://gzhertz.home.comcast.net/~gzhertz/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://dialign.gobics.de/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://swift.cmbi.ru.nl/gv/dssp/", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
+        "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
+        "http://emboss.sourceforge.net", 
+        "http://genes.mit.edu/GENSCANinfo.html", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
+        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://codonw.sourceforge.net/Readme.html", 
+        "http://codonw.sourceforge.net/Tutorial.html", 
+        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/featcopy.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/featreport.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/findkm.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/fitch.html", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/freak.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzznuc.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzzpro.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzztran.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/garnier.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/gblocks/", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/geecee.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/getorf.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://genome.imim.es/software/gfftools/GFF2PS.html", 
+        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/helixturnhelix.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit", 
+        "alignment:pairwise", 
+        "database:search:filter", 
+        "database:search:homology", 
+        "database:search:display", 
+        "database:search:filter", 
+        "database:search:display", 
+        "database:search:homology", 
+        "alignment:multiple:information", 
+        "alignment:multiple:display", 
+        "sequence:nucleic:composition", 
+        "sequence:nucleic:codon_usage", 
+        "assembly:assembly", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:enzyme:analysis", 
+        "sequence:nucleic:restriction", 
+        "display:nucleic:restriction", 
+        "display", 
+        "phylogeny:others", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "alignment:multiple", 
+        "sequence:nucleic:codon_usage", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "Bio-Imaging", 
+        "sequence:nucleic:edit", 
+        "sequence:nucleic:codon_usage", 
+        "alignment:multiple", 
+        "alignment:pairwise", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:formatter", 
+        "phylogeny:tree_analyser", 
+        "sequence:protein:pattern", 
+        "sequence:nucleic:pattern", 
+        "alignment:consensus", 
+        "alignment:structure", 
+        "structure:indexing", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:nucleic:composition", 
+        "sequence:edit", 
+        "genetics:detection", 
+        "alignment:multiple", 
+        "alignment:differences", 
+        "sequence:protein:motifs", 
+        "phylogeny:distance", 
+        "phylogeny:distance", 
+        "phylogeny:parsimony", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "alignment:pairwise:dot_plots", 
+        "phylogeny:display", 
+        "display:tree", 
+        "phylogeny:display", 
+        "display:tree", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple", 
+        "sequence:nucleic:repeats", 
+        "sequence:nucleic:2D_structure", 
+        "structure:2D_structure", 
+        "sequence:nucleic:mutation", 
+        "sequence:protein:composition", 
+        "sequence:edit", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:primers", 
+        "sequence:nucleic:repeats", 
+        "alignment:pairwise:global", 
+        "sequence:nucleic:repeats", 
+        "alignment:multiple", 
+        "sequence:edit", 
+        "sequence:edit:feature_table", 
+        "sequence:edit", 
+        "sequence:formatter", 
+        "database:search:homology", 
+        "phylogeny:likelihood", 
+        "sequence:edit", 
+        "sequence:edit", 
+        "database:search:sequence", 
+        "sequence:enzyme:kinetics", 
+        "phylogeny:distance", 
+        "phylogeny:tree_analyser", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:motifs", 
+        "sequence:protein:motifs", 
+        "sequence:protein:2D_structure", 
+        "structure:2D_structure", 
+        "alignment:multiple:information", 
+        "sequence:nucleic:cpg_islands", 
+        "sequence:nucleic:gene_finding", 
+        "sequence:nucleic:gene_finding", 
+        "display:feature_table", 
+        "database:search:sequence", 
+        "sequence:nucleic:prediction", 
+        "sequence:nucleic:codon_usage", 
+        "sequence:nucleic:pattern", 
+        "sequence:nucleic:clusters", 
+        "sequence:protein:2D_structure", 
+        "sequence:protein:motifs", 
+        "structure:2D_structure", 
+        "hmm:alignment:multiple", 
+        "alignment:multiple:hmm", 
+        "hmm:building", 
+        "hmm:building", 
+        "hmm:building", 
+        "hmm:database:search", 
+        "database:search:hmm", 
+        "hmm:database:search", 
+        "database:search:hmm"
+    ], 
+    "command": "hmmscan", 
+    "inputs": {
+        "parameters": {
+            "seqfile": {
+                "ismandatory": true, 
+                "prompt": "Sequence file", 
+                "type": {
+                    "datatype_class": "Sequence", 
+                    "data_formats": [
+                        "FASTA"
+                    ]
+                }, 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \"+str(value)"
+                }
+            }, 
+            "HMMDB": {
+                "prompt": "HMM database", 
+                "type": {
+                    "datatype_class": "Choice"
+                }, 
+                "default_value": [
+                    "Pfam-A.hmm"
+                ], 
+                "authorized_values": [
+                    {
+                        "value": "Pfam-A.hmm", 
+                        "label": "Pfam-A"
+                    }, 
+                    {
+                        "value": "Pfam-B.hmm", 
+                        "label": "Pfam-B"
+                    }
+                ], 
+                "format": {
+                    "perl": "\" $value\"", 
+                    "python": "\" \"+str(value)"
+                }
+            }, 
+            "thresholds_report": {
+                "name": "thresholds_report", 
+                "parameters": {
+                    "E_value_cutoff": {
+                        "prompt": "E_value cutoff (-E)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not defined $Bit_cutoff and $model_specific ne '--cut_ga' and $model_specific ne '--cut_nc'", 
+                            "python": "Bit_cutoff is None and model_specific != '--cut_ga' and model_specific != '--cut_nc'"
+                        }, 
+                        "default_value": [
+                            "10.0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -E $value\" : \"\"", 
+                            "python": "( \"\" , \" -E \" + str(value) )[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">In the per-target output, report target profiles with an E-value of <= value. The default is 10.0, meaning that on average, about 10 false positives will be reported per query, so you can see the top of the 'noise' and decide for yourself if it's really noise.</text> </comment>"
+                    }, 
+                    "Bit_cutoff": {
+                        "prompt": "Bit score cutoff (-T)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$E_value_cutoff == 10.0 and $model_specific ne '--cut_ga' and $model_specific ne '--cut_nc'", 
+                            "python": "E_value_cutoff == 10.0 and model_specific != '--cut_ga' and model_specific != '--cut_nc'"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value)? \" -T $value\" : \"\"", 
+                            "python": "( \"\" , \" -T \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Instead of thresholding per-profile output on E-value, instead report target profiles with a bit score of >= value.</text> </comment>"
+                    }, 
+                    "domE": {
+                        "prompt": "E-value cutoff for the per-domain ranked hit list (--domE)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not defined $domT and $model_specific ne '--cut_ga' and $model_specific ne '--cut_nc'", 
+                            "python": "domT is None and model_specific != '--cut_ga' and model_specific != '--cut_nc'"
+                        }, 
+                        "default_value": [
+                            "10.0"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --domE $value\" : \"\"", 
+                            "python": "( \"\" , \" --domE \" + str(value) )[ value is not None and value !=vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">In the per-domain output, for target profiles that have already satisfied the perprofile reporting threshold, report individual domains with a conditional E-value of <= value. The default is 10.0. A 'conditional' E-value means the expected number of additional false positive domains in the smaller search space of those comparisons that already satisfied the per-profile reporting threshold (and thus must have at least one homologous domain already).</text> </comment>"
+                    }, 
+                    "domT": {
+                        "prompt": "Bit score cutoff for the per-domain ranked hit list  (--domT)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "$domE == 10.0 and $model_specific ne '--cut_ga' and $model_specific ne '--cut_nc'", 
+                            "python": "domE == 10.0 and model_specific != '--cut_ga' and model_specific != '--cut_nc'"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" --domT $value\" : \"\"", 
+                            "python": "( \"\" , \" --domT \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Instead of thresholding per-domain output on E-value, instead report domains with a bit score of >= value.</text> </comment>"
+                    }, 
+                    "thresholds_inclusion": {
+                        "name": "thresholds_inclusion", 
+                        "parameters": {
+                            "incE": {
+                                "prompt": "Include sequences lower than this E-value threshold (--incE)", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "not defined $incT and $model_specific ne '--cut_ga' ", 
+                                    "python": "incT is None and model_specific != '--cut_ga' "
+                                }, 
+                                "default_value": [
+                                    "0.01"
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and value != vdef) ? \" --incE $value\" : \"\"", 
+                                    "python": "( \"\" , \" --incE \" + str(value) )[ value is not None and value != vdef]"
+                                }, 
+                                "comment": "<text lang=\"en\">Use an E-value of <= value as the per-target inclusion threshold. The default is 0.01, meaning that on average, about 1 false positive would be expected in every 100 searches with different query sequences.</text> </comment>"
+                            }, 
+                            "incdomE": {
+                                "prompt": "Include domains lower than this E-value threshold  (--incdomE)", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "defined $incdomT and not defined model_specific", 
+                                    "python": "incdomT is not None and model_specific is None"
+                                }, 
+                                "default_value": [
+                                    "0.01"
+                                ], 
+                                "format": {
+                                    "perl": "(defined $value and value != vdef) ? \" --incdomE $value\" : \"\"", 
+                                    "python": "( \"\" , \" --incdomE \" + str(value) )[ value is not None and value != vdef]"
+                                }, 
+                                "comment": "<text lang=\"en\">Use a conditional E-value of <= value as the per-domain inclusion threshold, in targets that have already satisfied the overall per-target inclusion threshold. The default is 0.01.</text> </comment>"
+                            }, 
+                            "incT": {
+                                "prompt": "Include sequences upper than this score threshold  (--incT)", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "$incE == 0.01 and $model_specific ne '--cut_ga'", 
+                                    "python": "incE == 0.01 and model_specific != '--cut_ga'"
+                                }, 
+                                "format": {
+                                    "perl": "(defined $value) ? \" --incT $value\" : \"\"", 
+                                    "python": "( \"\" , \" --incT \" + str(value) )[ value is not None ]"
+                                }, 
+                                "comment": "<text lang=\"en\">Instead of using E-values for setting the inclusion threshold, instead use a bit score of >= the value as the per-target inclusion threshold. It would be unusual to use bit score thresholds with hmmscan, because you don't expect a single score threshold to work for different profiles; different profiles have slightly different expected score distributions.</text> </comment>"
+                            }, 
+                            "incdomT": {
+                                "prompt": "Include domans upper than this score threshold  (--incdomT)", 
+                                "type": {
+                                    "datatype_class": "Float"
+                                }, 
+                                "precond": {
+                                    "perl": "$incdomE == 0.01 and not defined $model_specific ", 
+                                    "python": "incdomE == 0.01 and model_specific is None"
+                                }, 
+                                "format": {
+                                    "perl": "(defined $value) ? \" --incdomT $value\" : \"\"", 
+                                    "python": "( \"\" , \" --incdomT \" + str(value) )[ value is not None ]"
+                                }, 
+                                "comment": "<text lang=\"en\">Instead of using E-values, instead use a bit score of >= value as the per-domain inclusion threshold. As with --incT above, it would be unusual to use a single bit score threshold in hmmscan.</text> </comment>"
+                            }
+                        }
+                    }, 
+                    "model_specific": {
+                        "prompt": "Options for model-specific thresholding", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "precond": {
+                            "perl": "not defined $Bit_cutoff and not $E_value_cutoff == 10.0 and not defined $incdomT and  $incdomE == 0.01", 
+                            "python": "not Bit_cutoff and E_value_cutoff == 10.0 and incdomT is None and incdomE == 0.01"
+                        }, 
+                        "default_value": [
+                            "null"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "null", 
+                                "label": "No profile"
+                            }, 
+                            {
+                                "value": "--cut_ga", 
+                                "label": "use profile's GA gathering cutoffs (cut_ga)"
+                            }, 
+                            {
+                                "value": "--cut_nc", 
+                                "label": "use profile's NC noise cutoffs (cut_nc)"
+                            }, 
+                            {
+                                "value": "--cut_tc", 
+                                "label": "use profile's TC trusted cutoffs (cut_tc)"
+                            }
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" $value\" : \"\"", 
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Curated profile databases may define specific bit score thresholds for each profile, superseding any thresholding based on statistical significance alone. To use these options, the profile must contain the appropriate (GA, TC, and/or NC) optional score threshold annotation; this is picked up by hmmbuild from Stockholm format alignment files. Each thresholding option has two scores: the per-sequence threshold x1 value and the per-domain threshold x2 value. These act as if -T x1 --incT x1 --domT x2 --incdomT x2 has been applied specifically using each model's curated thresholds.</text> <text lang=\"en\">cut ga: Use the GA (gathering) bit scores in the model to set per-sequence (GA1) and per-domain (GA2) reporting and inclusion thresholds. GA thresholds are generally considered to be the reliable curated thresholds defining family membership; for example, in Pfam, these thresholds define what gets included in Pfam Full alignments based on searches with Pfam Seed models.</text> <text lang=\"en\">cut_nc: Use the NC (noise cutoff) bit score thresholds in the model to set per-sequence (NC1) and per-domain (NC2) reporting and inclusion thresholds. NC thresholds are generally considered to be the score of the highest-scoring known false positive.</text> <text lang=\"en\">cut_tc: Use the NC (trusted cutoff) bit score thresholds in the model to set per-sequence (TC1) and per-domain (TC2) reporting and inclusion thresholds. TC thresholds are generally considered to be the score of the lowest-scoring known true positive that is above all known false positives.</text> </comment>"
+                    }
+                }
+            }, 
+            "acceleration": {
+                "name": "acceleration", 
+                "parameters": {
+                    "max": {
+                        "prompt": "Turn all heuristic filters off (less speed, more power) (--max)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" --max\" : \"\"", 
+                            "python": "( \"\" , \" --max \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Turn off all filters, including the bias filter, and run full Forward/Backward postprocessing on every target. This increases sensitivity somewhat, at a large cost in speed.</text> </comment>"
+                    }, 
+                    "F1": {
+                        "prompt": "Stage 1 (MSV) threshold", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not max", 
+                            "python": "not max"
+                        }, 
+                        "default_value": [
+                            "0.02"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef ) ? \" --F1 $value\" : \"\"", 
+                            "python": "( \"\" , \" --F1 \" + str(value) )[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Set the P-value threshold for the MSV filter step. The default is 0.02, meaning that roughly 2% of the highest scoring nonhomologous targets are expected to pass the filter.</text> </comment>"
+                    }, 
+                    "F2": {
+                        "prompt": "Stage 1 (Vit) threshold", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not max", 
+                            "python": "not max"
+                        }, 
+                        "default_value": [
+                            "0.001"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef ) ? \" --F2 $value\" : \"\"", 
+                            "python": "( \"\" , \" --F2 \" + str(value) )[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Set the P-value threshold for the Viterbi filter step. The default is 0.001.</text> </comment>"
+                    }, 
+                    "F3": {
+                        "prompt": "Stage 1 (Fwd) threshold", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "precond": {
+                            "perl": "not max", 
+                            "python": "not max"
+                        }, 
+                        "default_value": [
+                            "0.00001"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef ) ? \" --F3 $value\" : \"\"", 
+                            "python": "( \"\" , \" --F3 \" + str(value) )[ value is not None and value != vdef]"
+                        }, 
+                        "comment": "<text lang=\"en\">Set the P-value threshold for the Forward filter step. The default is 1e-5.</text> </comment>"
+                    }, 
+                    "nobias": {
+                        "prompt": "Turn off composition bias filter (--nobias)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "not max", 
+                            "python": "not max"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" --nobias\" : \"\"", 
+                            "python": "( \"\" , \" --nobias \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Turn off the bias filter. This increases sensitivity somewhat, but can come at a high cost in speed, especially if the query has biased residue composition (such as a repetitive sequence region, or if it is a membrane protein with large regions of hydrophobicity). Without the bias filter, too many sequences may pass the filter with biased queries, leading to slower than expected performance as the computationally intensive Forward/Backward algorithms shoulder an abnormally heavy load.</text> </comment>"
+                    }
+                }
+            }, 
+            "expert": {
+                "name": "expert", 
+                "parameters": {
+                    "nonull2": {
+                        "prompt": "Turn off biased composition score corrections (--nonull2)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" --nonull2\" : \"\"", 
+                            "python": "( \"\" , \" --nonull2 \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Turn off the 'null2' score corrections for biased composition.</text> </comment>"
+                    }, 
+                    "E_value_calculation": {
+                        "prompt": "Control of E_value calculation (-Z)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" -Z $value\" : \"\"", 
+                            "python": "( \"\" , \" -Z \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Assert that the total number of targets in your searches is the value, for the purposes of per-sequence E-value calculations, rather than the actual number of targets seen.</text> </comment>"
+                    }, 
+                    "domZ": {
+                        "prompt": "Set Z score of significant sequences, for domain E-value calculation  (--domZ)", 
+                        "type": {
+                            "datatype_class": "Float"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" --domZ $value\" : \"\"", 
+                            "python": "( \"\" , \" --domZ \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Assert that the total number of targets in your searches is the value, for the purposes of per-domain conditional E-value calculations, rather than the number of targets that passed the reporting thresholds.</text> </comment>"
+                    }, 
+                    "seed": {
+                        "prompt": "Set RNG seed number (--seed)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "42"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --seed $value \" : \"\"", 
+                            "python": "( \"\" , \" --seed \" + str(value) )[ value is not None and value !=vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Set the random number seed to value. Some steps in postprocessing require Monte Carlo simulation. The default is to use a fixed seed (42), so that results are exactly reproducible. Any other positive integer will give different (but also reproducible) results. A choice of 0 uses a 'randomly chosen' seed.</text> </comment>", 
+                        "ctrl": {
+                            "perl": "= $value", 
+                            "python": "= value"
+                        }
+                    }
+                }
+            }, 
+            "controlOutput": {
+                "name": "controlOutput", 
+                "parameters": {
+                    "outfile_name": {
+                        "prompt": "Name of the sequence(s) file (-o)", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value ) ? \" -o $value\" : \"\"", 
+                            "python": "( \" \" , \" -o \" + str(value) )[ value is not None ]"
+                        }
+                    }, 
+                    "perseqfile_name": {
+                        "prompt": "File name of parseable table of per-sequence hits (--tblout)", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" --tblout $value\" : \"\"", 
+                            "python": "( \"\" , \" --tblout \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Save a simple tabular (space-delimited) file summarizing the 'per-target' output, with one data line per homologous target model found</text> </comment>"
+                    }, 
+                    "perdomfile_name": {
+                        "prompt": "File name of parseable table of per-domain hits (--domtblout)", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "format": {
+                            "perl": "(defined $value) ? \" --domtblout $value\" : \"\"", 
+                            "python": "( \"\" , \" --domtblout \" + str(value) )[ value is not None ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Save a simple tabular (space-delimited) file summarizing the 'per-domain' output, with one data line per homologous domain detected in a query sequence for each homologous model.</text> </comment>"
+                    }, 
+                    "acc": {
+                        "prompt": "Prefer accessions over names in output", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" --acc \" : \"\"", 
+                            "python": "( \"\" , \" --acc \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Use accessions instead of names in the main output, where available for profiles and/or sequences</text> </comment>"
+                    }, 
+                    "noali": {
+                        "prompt": "Don't output alignments, so output is smaller", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" --noali \" : \"\"", 
+                            "python": "( \"\" , \" --noali \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Omit the alignment section from the main output. This can greatly reduce the output volume.</text> </comment>"
+                    }, 
+                    "notextw": {
+                        "prompt": "Unlimit ASCII text output line width (--notextw)", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "precond": {
+                            "perl": "textw == 120", 
+                            "python": "textw == 120"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "perl": "($value) ? \" --notextw \" : \"\"", 
+                            "python": "( \"\" , \" --notextw \" )[ value ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Unlimit the length of each line in the main output. The default is a limit of 120 characters per line, which helps in displaying the output cleanly on terminals and in editors, but can truncate target profile description lines.</text> </comment>"
+                    }, 
+                    "textw": {
+                        "prompt": "Set max width of ASCII text output lines (--textw)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "120"
+                        ], 
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --textw $value \" : \"\"", 
+                            "python": "( \"\" , \" --textw \" + str(value) )[ value is not None and value !=vdef ]"
+                        }, 
+                        "comment": "<text lang=\"en\">Set the main output's line length limit to value> characters per line. The default is 120.</text> </comment>"
+                    }
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "controlOutput": {
+                "name": "controlOutput", 
+                "parameters": {
+                    "output_file_name": {
+                        "isout": true, 
+                        "prompt": "Output file", 
+                        "type": {
+                            "datatype_class": "Text"
+                        }, 
+                        "precond": {
+                            "perl": "defined $outfile_name", 
+                            "python": "outfile_name is not None"
+                        }, 
+                        "filenames": {
+                            "perl": "$outfile_name", 
+                            "python": "str(outfile_name)"
+                        }
+                    }, 
+                    "output_perseqfile_name": {
+                        "isout": true, 
+                        "prompt": "Output parseable table of per-sequence hits", 
+                        "type": {
+                            "datatype_class": "Text"
+                        }, 
+                        "precond": {
+                            "perl": "$perseqfile_name", 
+                            "python": "perseqfile_name"
+                        }, 
+                        "filenames": {
+                            "perl": "$perseqfile_name", 
+                            "python": "str(perseqfile_name)"
+                        }
+                    }, 
+                    "output_perdomfile_name": {
+                        "isout": true, 
+                        "prompt": "Output parseable table of per-domain hits", 
+                        "type": {
+                            "datatype_class": "Text"
+                        }, 
+                        "precond": {
+                            "perl": "$perdomfile_name", 
+                            "python": "perdomfile_name"
+                        }, 
+                        "filenames": {
+                            "perl": "$perdomfile_name", 
+                            "python": "str(perdomfile_name)"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "comment": "<text lang=\"en\">hmmscan reads sequence(s) from seqfile and compares it against all the HMMs in pfam database looking for significantly similar sequence matches. The output consists of three sections: a ranked list of the best scoring HMMs, a list of the best scoring domains in order of their occurrence in the sequence, and alignments for all the best scoring domains. A sequence score may be higher than a domain score for the same sequence if there is more than one domain in the sequence; the sequence score takes into account all the domains. All sequences scoring above the -E and -T cutoffs are shown in the first list, then every domain found in this list is shown in the second list of domain hits. If desired, E-value and score thresholds may also be applied to the domain list using the --domE and --domT options. </text> </comment>"
+}

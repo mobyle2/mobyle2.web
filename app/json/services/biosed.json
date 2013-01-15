@@ -1,0 +1,283 @@
+{
+    "type": "program", 
+    "name": "biosed", 
+    "version": "6.3.1", 
+    "title": "biosed", 
+    "description": "<text lang=\"en\">Replace or delete sequence sections</text> </description>", 
+    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
+    "references": [
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
+        }, 
+        {
+            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }, 
+        {
+            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+        }, 
+        {
+            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+        }
+    ], 
+    "sourcelinks": [
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net/download", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net/download"
+    ], 
+    "homepagelinks": [
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://emboss.sourceforge.net", 
+        "http://www.stat.wisc.edu/~larget/", 
+        "http://emboss.sourceforge.net", 
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
+        "http://emboss.sourceforge.net"
+    ], 
+    "doclinks": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
+        "http://emboss.sourceforge.net/docs/themes", 
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+        "http://emboss.sourceforge.net/docs/themes"
+    ], 
+    "mobyle_cats": [
+        "display", 
+        "alignment:formatter", 
+        "sequence:protein:motifs", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "sequence:nucleic:translation", 
+        "sequence:protein:composition", 
+        "phylogeny:bayesian", 
+        "sequence:nucleic:composition", 
+        "sequence:protein:composition", 
+        "phylogeny:distance", 
+        "sequence:edit"
+    ], 
+    "command": "biosed", 
+    "inputs": {
+        "parameters": {
+            "e_input": {
+                "name": "e_input", 
+                "parameters": {
+                    "e_sequence": {
+                        "ismandatory": true, 
+                        "prompt": "sequence option", 
+                        "type": {
+                            "datatype_class": "Sequence", 
+                            "data_formats": [
+                                "EMBL", 
+                                "FASTA", 
+                                "GCG", 
+                                "GENBANK", 
+                                "NBRF", 
+                                "PIR", 
+                                "RAW", 
+                                "SWISSPROT", 
+                                "GFF"
+                            ], 
+                            "card": "1,n"
+                        }, 
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        }
+                    }
+                }
+            }, 
+            "e_required": {
+                "name": "e_required", 
+                "parameters": {
+                    "e_targetregion": {
+                        "ismandatory": true, 
+                        "prompt": "Sequence section to match", 
+                        "type": {
+                            "datatype_class": "String"
+                        }, 
+                        "default_value": [
+                            "N"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -targetregion=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }, 
+                    "e_delete": {
+                        "prompt": "Delete the target sequence sections", 
+                        "type": {
+                            "datatype_class": "Boolean"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -delete\")[ bool(value) ]"
+                        }
+                    }, 
+                    "e_replace": {
+                        "prompt": "Replacement sequence section", 
+                        "type": {
+                            "datatype_class": "String"
+                        }, 
+                        "precond": {
+                            "python": "not e_delete"
+                        }, 
+                        "default_value": [
+                            "A"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -replace=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }
+                }
+            }, 
+            "e_additional": {
+                "name": "e_additional", 
+                "parameters": {
+                    "e_position": {
+                        "prompt": "Sequence position to match (value greater than or equal to 0)", 
+                        "type": {
+                            "datatype_class": "Integer"
+                        }, 
+                        "default_value": [
+                            "0"
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -position=\" + str(value))[value is not None and value!=vdef]"
+                        }, 
+                        "ctrl": {
+                            "python": "= 0"
+                        }
+                    }
+                }
+            }, 
+            "e_output": {
+                "name": "e_output", 
+                "parameters": {
+                    "e_outseq": {
+                        "prompt": "Name of the output sequence file (e_outseq)", 
+                        "type": {
+                            "datatype_class": "Filename"
+                        }, 
+                        "default_value": [
+                            "biosed.e_outseq"
+                        ], 
+                        "format": {
+                            "python": "(\"\" , \" -outseq=\" + str(value))[value is not None]"
+                        }
+                    }, 
+                    "e_osformat_outseq": {
+                        "prompt": "Choose the sequence output format", 
+                        "type": {
+                            "datatype_class": "Choice"
+                        }, 
+                        "default_value": [
+                            "FASTA"
+                        ], 
+                        "authorized_values": [
+                            {
+                                "value": "EMBL", 
+                                "label": "Embl"
+                            }, 
+                            {
+                                "value": "FASTA", 
+                                "label": "Fasta"
+                            }, 
+                            {
+                                "value": "GCG", 
+                                "label": "Gcg"
+                            }, 
+                            {
+                                "value": "GENBANK", 
+                                "label": "Genbank"
+                            }, 
+                            {
+                                "value": "NBRF", 
+                                "label": "Nbrf"
+                            }, 
+                            {
+                                "value": "PIR", 
+                                "label": "Pir"
+                            }, 
+                            {
+                                "value": "RAW", 
+                                "label": "Raw"
+                            }, 
+                            {
+                                "value": "SWISSPROT", 
+                                "label": "Swissprot"
+                            }, 
+                            {
+                                "value": "GFF", 
+                                "label": "Gff"
+                            }
+                        ], 
+                        "format": {
+                            "python": "(\"\", \" -osformat=\" + str(value))[value is not None and value!=vdef]"
+                        }
+                    }
+                }
+            }, 
+            "auto": {
+                "ishidden": true, 
+                "prompt": "Turn off any prompting", 
+                "type": {
+                    "datatype_class": "String"
+                }, 
+                "format": {
+                    "python": "\" -auto -stdout\""
+                }
+            }
+        }
+    }, 
+    "outputs": {
+        "parameters": {
+            "e_output": {
+                "name": "e_output", 
+                "parameters": {
+                    "e_outseq_out": {
+                        "isout": true, 
+                        "prompt": "outseq_out option", 
+                        "type": {
+                            "datatype_class": "Sequence", 
+                            "data_formats": [
+                                "\n              ", 
+                                "\n            "
+                            ]
+                        }, 
+                        "filenames": {
+                            "python": "e_outseq"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+}
