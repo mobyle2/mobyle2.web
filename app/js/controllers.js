@@ -15,6 +15,16 @@ function ServicesCtrl($scope,$http) {
 }
 //ServicesCtrl.$inject = [$scope];
 
+function ServiceDetailCtrl($scope,$http,$routeParams){
+    $http({
+        url: "json/services/"+$routeParams.serviceId+".json",
+        method: "GET"
+    }).success(function(data, status, headers, config) {
+        $scope.service = data;
+    }).error(function(data, status, headers, config) {
+        $scope.status = status;
+    });
+}
 
 function DataCtrl() {
 }
