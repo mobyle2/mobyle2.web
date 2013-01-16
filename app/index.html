@@ -6,12 +6,18 @@
   <link rel="stylesheet" href="css/app.css"/>
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"></head>
 <body>
-  <ul class="menu">
-    <li><a href="#/services">services</a></li>
-    <li><a href="#/data">data</a></li>
-  </ul>
-
-  <div ng-view></div>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li><a href="#/services">services</a></li>
+        <li><a href="#/data">data</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 40px;">
+    <div class="span12" ng-view>
+    </div>
+  </div>
 
   <div>awa v<span app-version></span></div>
 
