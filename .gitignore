@@ -26,3 +26,6 @@ mobyle.egg-info/
 
 # CSS from SCSS
 mobyle/static/mobyle.css
+
+#tests
+.coverage

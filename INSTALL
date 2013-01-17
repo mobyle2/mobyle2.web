@@ -50,6 +50,7 @@ install velruse from bbangert's github repository:
 
 4. Install mobyle2
     $pip install -e git+https://github.com/mobyle2/mobyle2.lib.git#egg=mobyle.lib
+    $pip install -r src/mobyle.lib/requirements.txt
     $pip install -e git+https://github.com/mobyle2/mobyle2.web.git#egg=mobyle.web
 Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle2b' folder
 and create automatically a mobyle2b.pth path configuration file, so that you can
