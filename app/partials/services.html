@@ -1,6 +1,6 @@
 <div>
 <h2>{{list.length}} Services</h2>
 <ul>
-  <li ng-repeat="s in services"><a href="#/services/{{s}}">{{s}}</a></li>
+  <li ng-repeat="s in services|orderBy:'name'"><a href="#/services/{{s.name}}">{{s.name}}</a></li>
 </ul>
 </div>
