@@ -16,9 +16,9 @@ from pyramid.httpexceptions import HTTPFound
 
 from mobyle.common import session
 
-def add_user(db, user):
+def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
-    hashed = bcrypt.hashpw(user['password'], bcrypt.gensalt())
+    hashed = bcrypt.hashpw(user['hashed_password'], bcrypt.gensalt())
     user['hashed_password'] = hashed
     user.save()
 
@@ -27,10 +27,10 @@ def check_user_pw(username, password):
     user  = session.User.find_one({'email': username})
     if not user: return False
     hashed = bcrypt.hashpw(password, user['hashed_password'])
-    return hashed == user['hashed']
+    return hashed == user['hashed_password']
 
 
-@view_config(route_name='main', renderer='mobyle:templates/index.mako')
+@view_config(route_name='main', renderer='mobyle.web:templates/index.mako')
 def my_view(request):
     
     #print login_url(request, "openid")
@@ -61,7 +61,7 @@ def my_view(request):
     
 @view_config(
     context='velruse.AuthenticationComplete',
-    renderer='mobyle:templates/result.mako',
+    renderer='mobyle.web:templates/result.mako',
 )
 def login_complete_view(request):
     context = request.context
@@ -123,13 +123,13 @@ def user_list(request):
                        'email': u['email'],
                        'username': u['email'],
                        'type': u['type'],
-                       'groups': u[:groups]),
+                       'groups': [u'group:admin'],
                        
                      } 
     return ret
 
 
-@view_config(route_name='about', renderer='mobyle:templates/about.mako')
+@view_config(route_name='about', renderer='mobyle.web:templates/about.mako')
 def about(request):
         return {
         }

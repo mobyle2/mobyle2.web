@@ -1,5 +1,6 @@
 import time
 
+import mobyle.common
 from mobyle.common import session
 
 def groupFinder(userid, request):
