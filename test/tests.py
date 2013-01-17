@@ -7,7 +7,6 @@ import pymongo
 import copy
 import os
 
-#from mobyle_portal import views
 
 from mobyle.common import session
 
@@ -20,7 +19,7 @@ class LoginTest(unittest.TestCase):
 	    from webtest import TestApp
 	    self.testapp = TestApp("config:development.ini", relative_to="./")
 
-	    from mobyle_portal.views import add_user
+	    from mobyle.web.views import add_user
 
 	    self.user = {
 			'username':'test@example.org',
@@ -79,7 +78,7 @@ class ViewTests(unittest.TestCase):
             testing.tearDown()
 
     def test_my_view(self):
-	    from mobyle_portal.views import my_view
+	    from mobyle.web.views import my_view
 	    request = testing.DummyRequest()
 
             info = my_view(request)
@@ -88,7 +87,7 @@ class ViewTests(unittest.TestCase):
 
     def test_public_programs(self):
         """tests that 'public' programs are found in the list"""
-        from mobyle_portal.views import program_list
+        from mobyle.web.views import program_list
 
 
 
@@ -107,7 +106,7 @@ class ViewTests(unittest.TestCase):
         pass
 
     def test_user_list(self):
-        from mobyle_portal import views
+        from mobyle.web import views
         user = views.user_list(self.request).values()[0]
         self.assertTrue('email' in user)
         self.assertTrue('group:admin' in user['groups'])
