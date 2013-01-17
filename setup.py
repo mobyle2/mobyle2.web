@@ -19,9 +19,9 @@ requires = [
     "scss", 
     ]
 
-setup(name='mobyle',
+setup(name='mobyle.web',
       version='0.0',
-      description='mobyle',
+      description='mobyle web portal',
       dependency_links = ['https://github.com/bbangert/velruse/tarball/master#egg=velruse-0.3dev'],
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[
@@ -39,10 +39,10 @@ setup(name='mobyle',
       zip_safe=False,
       install_requires=requires,
       tests_require=requires,
-      test_suite="mobyle",
+      test_suite="test",
       entry_points = """\
       [paste.app_factory]
-      main = mobyle:main
+      main = mobyle.web:main
       """,
       )
 
