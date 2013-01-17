@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+services: mongodb
+# Apply only on main branches
+branches:
+  except:
+    - /^feature.*$/
+# command to install dependencies
+install:
+  - "pip install paste pastedeploy pastescript py-bcrypt mongokit"
+  - "pip install git+https://github.com/bbangert/velruse.git"
+  - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
+# command to run tests
+script: nosetests
+
+
