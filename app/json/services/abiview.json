@@ -30,7 +30,8 @@
                 "name": "e_input", 
                 "parameters": {
                     "e_infile": {
-                        "ismandatory": true, 
+                        "ismandatory": true,
+                        "issimple":true, 
                         "prompt": "Abi sequencing trace file", 
                         "type": {
                             "datatype_class": "Binary"
