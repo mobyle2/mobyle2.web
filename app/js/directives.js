@@ -29,3 +29,32 @@ directive('activeLink', ['$location', function(location) {
 
     };
 }]);
+
+
+angular.module('myApp.directives', [])
+  .directive('toggle', function(){
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: '<input type="button" value="{{text}}" />',
+      // The linking function will add behavior to the template
+      link: function(scope, element, attrs) {
+        // on/off state
+        scope.on = (attrs.state=='true');
+        scope.trigger = attrs.ngModel;
+        // Clicking on title should open/close the zippy
+        element.bind('click', toggle);
+        // Toggle the closed/opened state
+        function updateText(){
+          scope.text = scope.on ? attrs.textwhenon : attrs.textwhenoff;
+        }
+        function toggle() {
+          scope.on = !scope.on;
+          updateText();
+        }
+        // initialize the zippy
+        updateText();
+      }
+    }
+  });
