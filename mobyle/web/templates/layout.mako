@@ -8,7 +8,7 @@
   <meta name="author" content="Mobyle team">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/static/favicon.ico">
-  <link rel="stylesheet" href="/static/mobyle.css">
+  <link rel="stylesheet" href="/static/css/mobyle.css">
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" media="screen">
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
 </head>
