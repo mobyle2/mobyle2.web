@@ -1,8 +1,8 @@
 <div>
 
 <script type="text/ng-template" id="menu_item_renderer.html">
-  <div id="{{name}}" ng-show="!para.ishidden">
-    <b>{{para.prompt}}</b>
+  <div id="{{name}}" ng-show="!para.ishidden && (show_advanced || para.issimple || para.parameters)">
+    <b>{{para.prompt || para.name}}</b>
     <div ng-repeat="(name, para) in para.parameters" ng-include="'menu_item_renderer.html'"></div>
   </div>
 </script>
@@ -10,6 +10,8 @@
 <h2>{{service.title}} {{service.version}}</h2>
 <h3>{{service.description}}</h3>
   <form>
+    <input type="button" ng-click="show_advanced=true;" value="All parameters" ng-hide="show_advanced"/>
+    <input type="button" ng-click="show_advanced=false;" value="Only simple parameters" ng-hide="!show_advanced"/>
     <div ng-repeat="(name, para) in service.inputs.parameters" ng-include="'menu_item_renderer.html'">
     </div>
   </form>
