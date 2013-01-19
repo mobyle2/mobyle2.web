@@ -10,7 +10,7 @@
 <h2>{{service.title}} {{service.version}}</h2>
 <h3>{{service.description}}</h3>
   <form>
-    <toggle state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced"></toggle>
+    <toggle state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn"></toggle>
     <div ng-repeat="(name, para) in service.inputs.parameters" ng-include="'menu_item_renderer.html'">
     </div>
   </form>
