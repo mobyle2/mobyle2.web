@@ -8,8 +8,8 @@ angular.module('myApp.directives', []).
     };
   }]);
 
-angular.module('myApp.directives', []).
-directive('activeLink', ['$location', function(location) {
+angular.module('myApp.directives').
+  directive('activeLink', ['$location', function(location) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs, controller) {
@@ -30,8 +30,7 @@ directive('activeLink', ['$location', function(location) {
     };
 }]);
 
-
-angular.module('myApp.directives', [])
+angular.module('myApp.directives')
   .directive('toggle', function(){
     return {
       restrict: 'E',
