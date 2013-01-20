@@ -5,14 +5,15 @@
 
 function ServicesCtrl($scope,$http) {
     $http({
-        url: "json/listing.json",
+        url: "json/enriched_listing.json",
         method: "GET"
     }).success(function(data, status, headers, config) {
-        $scope.services = data['services'].map(
-            function(name){
-                return {'name':name};
-            }
-        );
+        //$scope.services = data['services'].map(
+        //    function(name){
+        //        return {'name':name};
+        //    }
+        //);
+        $scope.services = data.services;
     }).error(function(data, status, headers, config) {
         $scope.status = status;
     });
