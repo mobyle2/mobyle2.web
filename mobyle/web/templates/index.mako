@@ -1,14 +1,14 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>test</title>
-</head>
-<body>
+<%inherit file="layout.mako"/>
+
+<h2>Authentication</h2>
 
 You are logged in as: ${userid} <br />
 <a href='/logout'>logout</a> <br />
 
 This <a href='/onlyauthenticated'>view</a> is restricted to authenticated users.
+
+<h2>Admin dashboard</h2>
+Admin dashboard is available <a href='/admin'>here</a> (no authentication for the moment)
 
 
 <div>
@@ -54,7 +54,3 @@ Program list:
 %endfor
 </div>
 
-</body>
-
-
-</html>
