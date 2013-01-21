@@ -7,11 +7,14 @@ import pymongo
 import copy
 import os
 
-
+import mobyle.common
 from mobyle.common import session
 
 
 base_url = "http://localhost:6543"
+
+import mobyle.common.connection
+mobyle.common.connection.init_mongo("mongodb://localhost/")
 
 class LoginTest(unittest.TestCase):
 
@@ -27,7 +30,7 @@ class LoginTest(unittest.TestCase):
 			'groups': ['group:admin'],
 			'email': 'test@example.org',
 	    }
-            self.mongouser = session.User()
+            self.mongouser = mobyle.common.session.User()
 	    self.mongouser['email']  = 'test@example.org'
 	    self.mongouser['groups'] = ['group:admin']
 	    self.mongouser['hashed_password'] = 'test'
@@ -36,7 +39,7 @@ class LoginTest(unittest.TestCase):
 
 
 	def tearDown(self):
-	    user = session.User.find_one({'email' : 'test@example.org'})
+	    user = mobyle.common.session.User.find_one({'email' : 'test@example.org'})
             user.delete()
 
 
@@ -64,7 +67,7 @@ class ViewTests(unittest.TestCase):
 	    self.public_programs_list = ['foo', 'bar']
 
 	    for p in self.public_programs_list:
-                program = session.Program()
+                program = mobyle.common.session.Program()
 	        program['name'] = p
 	        program['public'] = True
                 program.save()
@@ -72,7 +75,7 @@ class ViewTests(unittest.TestCase):
             self.request = testing.DummyRequest()
 
     def tearDown(self):
-	    programs = session.Program.find({})
+	    programs = mobyle.common.session.Program.find({})
 	    for program in programs:
 	        program.delete()
             testing.tearDown()
@@ -96,7 +99,7 @@ class ViewTests(unittest.TestCase):
             self.assertTrue(p in prog_list)
 
         self.assertTrue('baz' not in program_list(self.request))
-        program = session.Program()
+        program = mobyle.common.session.Program()
         program['name'] = 'baz'
         program['public'] = True
         program.save()
