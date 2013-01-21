@@ -60,6 +60,8 @@ def main(global_config, **settings):
 
 
     from mobyle.common.users import User
+
+    session = mobyle.common.session
     
     if session.User.find().count() == 0:    
     #if db.users.find().count() == 0:
