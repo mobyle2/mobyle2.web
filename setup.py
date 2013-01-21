@@ -24,7 +24,7 @@ setup(name='mobyle.web',
       version='0.0',
       description='mobyle web portal',
       dependency_links = ['https://github.com/bbangert/velruse/tarball/master#egg=velruse-0.3dev'],
-      long_description=README.md + '\n\n' +  CHANGES,
+      long_description=README + '\n\n' +  CHANGES,
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Pylons",
