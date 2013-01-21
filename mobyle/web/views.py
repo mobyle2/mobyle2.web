@@ -14,6 +14,7 @@ import bcrypt
 
 from pyramid.httpexceptions import HTTPFound
 
+import mobyle.common
 from mobyle.common import session
 
 def add_user(user):
@@ -24,7 +25,7 @@ def add_user(user):
 
 def check_user_pw(username, password):
     """checks for plain password vs hashed password in database"""
-    user  = session.User.find_one({'email': username})
+    user  = mobyle.common.session.User.find_one({'email': username})
     if not user: return False
     hashed = bcrypt.hashpw(password, user['hashed_password'])
     return hashed == user['hashed_password']
@@ -37,12 +38,12 @@ def my_view(request):
     userid = authenticated_userid(request)
 
     #retrieve list of programs:
-    programs = session.Program.find()    
+    programs = mobyle.common.session.Program.find()    
     
     if 'progname' in request.POST:
         newprogname = request.POST['progname']
         if newprogname not in programs:
-            program = session.Program()
+            program = mobyle.common.session.Program()
             program['name'] = newprogname
             program.save()
             return HTTPFound(location='/')
@@ -52,7 +53,7 @@ def my_view(request):
         page = requests.get(newplatform)
         page = page.json       
         for elt in page.keys():
-            program = session.Program()
+            program = mobyle.common.session.Program()
             program['name'] = elt
             program.save()
     
@@ -110,12 +111,12 @@ def logout(request):
 
 @view_config(route_name='program_list', renderer="json")
 def program_list(request):
-    progs = session.Program.find({'public':True})
+    progs = mobyle.common.session.Program.find({'public':True})
     return [p['name'] for p in progs]
 
 @view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")
 def user_list(request):
-    users = session.User.find()
+    users = mobyle.common.session.User.find()
     ret = {}
     for u in users:
        userid = str(u['_id'])
