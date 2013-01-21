@@ -5,7 +5,7 @@ from mobyle.common import session
 
 def groupFinder(userid, request):
      #try to find user in database:
-     user = mobyle.common.session.User.find_one({"username": userid})
+     user = mobyle.common.session.User.find_one({"email": userid})
      if user is not None:
         return user['groups']
 
