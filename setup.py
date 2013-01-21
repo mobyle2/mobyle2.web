@@ -4,7 +4,7 @@ import os
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.txt')).read()
+README = open(os.path.join(here, 'README.md')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
 requires = [
@@ -16,14 +16,15 @@ requires = [
     "pyramid_mailer",
     "velruse>=0.3dev",
     "py-bcrypt",
-    "scss", 
+    "scss",
+    "mf"
     ]
 
 setup(name='mobyle.web',
       version='0.0',
       description='mobyle web portal',
       dependency_links = ['https://github.com/bbangert/velruse/tarball/master#egg=velruse-0.3dev'],
-      long_description=README + '\n\n' +  CHANGES,
+      long_description=README.md + '\n\n' +  CHANGES,
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Pylons",
