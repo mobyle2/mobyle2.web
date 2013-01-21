@@ -52,12 +52,12 @@ install velruse from bbangert's github repository:
     $pip install -e git+https://github.com/mobyle2/mobyle2.lib.git#egg=mobyle.lib
     $pip install -r src/mobyle.lib/requirements.txt
     $pip install -e git+https://github.com/mobyle2/mobyle2.web.git#egg=mobyle.web
-Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle2b' folder
-and create automatically a mobyle2b.pth path configuration file, so that you can
+Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle.web' folder
+and create automatically a mobyle.web.pth path configuration file, so that you can
 edit and test it directly.
 
 5. Start the server
-    $pserve --reload src/mobyle2b/development.ini
+    $pserve --reload src/mobyle2.web/development.ini
 
 . Connect to your mobyle2 server
 You're done! Go to:
@@ -71,7 +71,7 @@ Once this is done, bin/activate needs to be re-sourced to update the path:
 **Warning**: to run the tests, please note that you need to start the server.
 Otherwise, at least the login tests will fail.
 Simply call:
-    $nosetests src/mobyle2b
+    $python /usr/bin/nosetests src/mobyle2.web
 (If nose is not installed on your system: $pip install nose)
 
 ### Ubuntu installation notes
