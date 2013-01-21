@@ -10,7 +10,9 @@
   <link rel="shortcut icon" href="/static/favicon.ico">
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" media="screen">
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="/static/css/mf.css">
   <script src="/static/js/jquery-1.8.3.min.js"></script>
+  <script src="/static/js/mf.js"></script>
 </head>
 
 <body>

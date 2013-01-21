@@ -26,6 +26,8 @@ from mobyle.common.config import Config
 
 from mobyle.web.views import add_user
 
+from mf.dashboard import Dashboard
+
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
@@ -95,6 +97,17 @@ def main(global_config, **settings):
     config.add_static_view('static', 'mobyle.web:static', cache_max_age=3600)
     
     config.scan()
+
+    Dashboard.set_connection(session)
+    from mobyle.common.users import User
+    from mobyle.common.program import Program
+    from mobyle.common.mobyleConfig import MobyleConfig
+    from mobyle.common.job import Job
+    from mobyle.common.project import Project 
+    dconfig = Dashboard.get_config()
+    dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
+    Dashboard.add_dashboard([MobyleConfig,User,Project,Job,Program],config)
+
     
     return config.make_wsgi_app()
 
