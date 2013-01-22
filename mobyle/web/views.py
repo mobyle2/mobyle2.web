@@ -37,15 +37,15 @@ def my_view(request):
     #print login_url(request, "openid")
     userid = authenticated_userid(request)
 
-    #retrieve list of programs:
-    programs = mobyle.common.session.Program.find()    
+    #retrieve list of services:
+    services = mobyle.common.session.Service.find()    
     
-    if 'progname' in request.POST:
-        newprogname = request.POST['progname']
-        if newprogname not in programs:
-            program = mobyle.common.session.Program()
-            program['name'] = newprogname
-            program.save()
+    if 'service_name' in request.POST:
+        new_service_name = request.POST['service_name']
+        if new_service_name not in services:
+            service = mobyle.common.session.Service()
+            service['name'] = new_service_name
+            service.save()
             return HTTPFound(location='/')
     
     if 'platformurl' in request.POST:
@@ -53,11 +53,11 @@ def my_view(request):
         page = requests.get(newplatform)
         page = page.json       
         for elt in page.keys():
-            program = mobyle.common.session.Program()
-            program['name'] = elt
-            program.save()
+            service = mobyle.common.session.Service()
+            service['name'] = elt
+            service.save()
     
-    return {'project':'mobyle', 'programs': programs, 'userid': userid }
+    return {'project':'mobyle', 'services': services, 'userid': userid }
 
     
 @view_config(
@@ -109,10 +109,10 @@ def logout(request):
 
 
 
-@view_config(route_name='program_list', renderer="json")
-def program_list(request):
-    progs = mobyle.common.session.Program.find({'public':True})
-    return [p['name'] for p in progs]
+@view_config(route_name='services_list', renderer="json")
+def services_list(request):
+    services = mobyle.common.session.Service.find({'public':True})
+    return [s['name'] for s in services]
 
 @view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")
 def user_list(request):
