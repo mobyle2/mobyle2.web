@@ -11,12 +11,12 @@ angular.module('myApp.filters', []).
         var o = angular.copy(s[i]);
         for (var j = 0; j < f.length; j++){
           if(o[f[j]].indexOf(q)!==-1){
-            o[f[j]]=o[f[j]].replace(q,'<b>'+q+'</b>','g');
+            o[f[j]+'Hl']=o[f[j]].replace(q,'<strong>'+q+'</strong>','g');
             o['found']=true;
           }
         }
         if(o['found']) out.push(o);
-      }      
+      }
       return out;
     }
   });
