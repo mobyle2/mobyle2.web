@@ -1,7 +1,7 @@
 <div>
 <h2>{{services.length}} Services</h2>
 <div>
-      Simple search: <input ng-model="query">
+      Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query" ng-model="query">
 </div>
 <ul>
   <li ng-repeat="s in services | searchServices:query | orderBy:'name'"><a href="#/services/{{s.name}}" title="{{s.description}}"><span ng-bind-html="s.name"/> - <span ng-bind-html="s.title"/></a></li>
