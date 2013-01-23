@@ -14,3 +14,6 @@ GNU GPL v3
 # Credits
 
 Mobyle is a product developped by the Pasteur Institute and external collaborators.
+
+
+Statistics maps and javascript from http://jvectormap.com/download/, copyright: Kirill Lebedev
