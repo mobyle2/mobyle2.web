@@ -17,7 +17,7 @@ requires = [
     "velruse>=0.3dev",
     "py-bcrypt",
     "scss",
-    "mf>=0.1.8"
+    "mf>=0.1.9"
     ]
 
 setup(name='mobyle.web',
