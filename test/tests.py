@@ -63,21 +63,34 @@ class LoginTest(unittest.TestCase):
 
 class ViewTests(unittest.TestCase):
     def setUp(self):
-	    self.config = testing.setUp()
-	    self.public_programs_list = ['foo', 'bar']
+	self.config = testing.setUp()
+	self.public_programs_list = ['foo', 'bar']
 
-	    for p in self.public_programs_list:
-                program = mobyle.common.session.Program()
-	        program['name'] = p
-	        program['public'] = True
-                program.save()
+	for p in self.public_programs_list:
+            program = mobyle.common.session.Program()
+	    program['name'] = p
+	    program['public'] = True
+            program.save()
 
-            self.request = testing.DummyRequest()
+        self.request = testing.DummyRequest()
+
+        from mobyle.web.views import add_user
+
+        mongouser = mobyle.common.session.User()
+        mongouser['email']  = 'test@example.org'
+        mongouser['groups'] = ['group:admin']
+        mongouser['hashed_password'] = 'test'
+        mongouser['type'] = 'registered'
+        add_user(mongouser)
+
 
     def tearDown(self):
 	    programs = mobyle.common.session.Program.find({})
 	    for program in programs:
 	        program.delete()
+            users = mobyle.common.session.User.find({})
+            for user in users:
+                user.delete()
             testing.tearDown()
 
     def test_my_view(self):
@@ -110,9 +123,14 @@ class ViewTests(unittest.TestCase):
 
     def test_user_list(self):
         from mobyle.web import views
-        user = views.user_list(self.request).values()[0]
+
+        users = views.user_list(self.request).values()
+        for user in users:
+            print "#####"+str(user)
+        user = users[0]
         self.assertTrue('email' in user)
         self.assertTrue('group:admin' in user['groups'])
         self.assertTrue(user['type'] == "registered")
+
 
 
