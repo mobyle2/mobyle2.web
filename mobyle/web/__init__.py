@@ -57,30 +57,6 @@ def main(global_config, **settings):
     mobyle.common.connection.init_mongo(settings['db_uri'])
 
     
-
-
-    from mobyle.common.users import User
-
-    session = mobyle.common.session
-    
-    if session.User.find().count() == 0:    
-    #if db.users.find().count() == 0:
-        pwd = sha1("%s"%randint(1,1e99)).hexdigest()
-        print 'root user created with password: ', pwd 
-        user = session.User()
-        user['first_name'] = 'root'
-        user['last_name'] = 'root'
-        user['email'] = settings['root_email']
-        user['hashed_password'] = pwd
-        user['admin'] = True
-        user['type'] = 'registered'
-        user['groups'] = [ 'admin' ]
-        #user = {'username': 'root', 'admin': True, 'password': pwd , 'email': settings['root_email'], 'firstname': 'root', 'lastname':'root', 'groups': ['group:admin'], 'type': 'registered' }
-        add_user(user)
-        
-    
-    #end initialization
-    
     config.add_subscriber(add_mongo_db, NewRequest)
     config.add_subscriber(before_render, BeforeRender)    
     

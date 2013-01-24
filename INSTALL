@@ -59,6 +59,11 @@ edit and test it directly.
 5. Start the server
     $pserve --reload src/mobyle2.web/development.ini
 
+
+6. Initialize the database
+
+    python src/mobyle2.web/db/seed.py  --config src/mobyle2.web/development.ini
+
 . Connect to your mobyle2 server
 You're done! Go to:
 http://mobyle2:6543/
