@@ -125,8 +125,6 @@ class ViewTests(unittest.TestCase):
         from mobyle.web import views
 
         users = views.user_list(self.request).values()
-        for user in users:
-            print "#####"+str(user)
         user = users[0]
         self.assertTrue('email' in user)
         self.assertTrue('group:admin' in user['groups'])
