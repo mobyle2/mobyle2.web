@@ -20,7 +20,10 @@
 <body>
 <ul class="nav nav-tabs">
   <li class="active">
-    <a href="#" id="dashboard" class="dashboard-item">&lt;&lt; Dashboard</a>
+    <a href="/admin" id="dashboard" class="dashboard-item">&lt;&lt; Dashboard</a>
+  </li>
+  <li>
+    <a href="/admin/stats" class="dashboard-item">Statistics </a>
   </li>
 </ul>
 
