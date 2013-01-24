@@ -111,6 +111,10 @@ def main(global_config, **settings):
     Dashboard.add_dashboard([MobyleConfig,User,Project,Job,Program],config)
 
     config.add_route('statistics', '/admin/stats')
+    config.add_route('statistics_map', '/admin/stats/map')
+    config.add_route('statistics_usage', '/admin/stats/usage')
+    config.add_route('statistics_user', '/admin/stats/user')
+
 
     
     return config.make_wsgi_app()

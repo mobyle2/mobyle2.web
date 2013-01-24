@@ -1,0 +1,17 @@
+.menubar {
+  background-color: #eee;
+  height: 100%;
+}
+
+.menubar ul li {
+  margin: 5px;
+  padding: 10px;
+}
+
+
+#worldmap {
+  margin: 80px;
+  height: 600px;
+  width: 800px;
+}
+
