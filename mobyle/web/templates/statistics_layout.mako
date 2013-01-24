@@ -38,13 +38,13 @@
 
   <div id="page">
    <div class="row">
-    <div class="span2 menubar">
-      <ul class="nav">
-        <li><a href="/admin/stats/map">World map</a></li>
-        <li><a href="/admin/stats/usage?type=0">Hourly usage</a></li>
-        <li><a href="/admin/stats/usage?type=1">Daily usage</a></li>
-        <li><a href="/admin/stats/usage?type=2">Monthly usage</a></li>
-        <li><a href="/admin/stats/user">Users</a></li>
+    <div class="span2 menubar bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav affix">
+        <li><a href="/admin/stats/map"><i class="icon-chevron-right"></i> World map</a></li>
+        <li><a href="/admin/stats/usage?type=0"><i class="icon-chevron-right"></i> Hourly usage</a></li>
+        <li><a href="/admin/stats/usage?type=1"><i class="icon-chevron-right"></i> Daily usage</a></li>
+        <li><a href="/admin/stats/usage?type=2"><i class="icon-chevron-right"></i> Monthly usage</a></li>
+        <li><a href="/admin/stats/user"><i class="icon-chevron-right"></i> Users</a></li>
     </div>
     <div class="span10">
     ${next.body()}
