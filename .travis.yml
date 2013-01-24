@@ -12,7 +12,8 @@ install:
   - "pip install pyramid pyramid_debugtoolbar waitress pyramid_beaker pymongo pyramid_mailer py-bcrypt scss webtest mf"
   - "pip install git+https://github.com/bbangert/velruse.git"
   - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
-  - python setup.py -q install
+  - "python setup.py -q install"
+  - "python db/seed.py  --config development.ini"
 # command to run tests
 script: nosetests
 
