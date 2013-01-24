@@ -3,6 +3,16 @@
   height: 100%;
 }
 
+.bs-docs-sidenav {
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-right: -6px;
+}
+
 .menubar ul li {
   margin: 5px;
   padding: 10px;
