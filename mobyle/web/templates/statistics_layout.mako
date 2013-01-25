@@ -11,18 +11,24 @@
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" media="screen">
   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css">
   <script src="/static/js/jquery-1.8.3.min.js"></script>
+  <script src="/static/js/jquery-ui-1.8.15.min.js"></script>
+  <link rel="stylesheet" href="/static/css/jquery-ui-1.8.15.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="/static/css/jquery-jvectormap-1.2.2.css" type="text/css" media="screen"/>
   <script src="/static/js/jquery-jvectormap-1.2.2.min.js"></script>
   <script src="/static/js/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="/static/js/d3.min.js"></script> 
+  <script src="/static/js/d3.layout.min.js"></script> 
+  <script src="/static/js/rickshaw.min.js"></script> 
+  <link rel="stylesheet" href="/static/css/rickshaw.min.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="/static/css/statistics.css" type="text/css" media="screen"/>
 </head>
 
 <body>
 <ul class="nav nav-tabs">
-  <li class="active">
+  <li>
     <a href="/admin" id="dashboard" class="dashboard-item">&lt;&lt; Dashboard</a>
   </li>
-  <li>
+  <li class="active">
     <a href="/admin/stats" class="dashboard-item">Statistics </a>
   </li>
 </ul>

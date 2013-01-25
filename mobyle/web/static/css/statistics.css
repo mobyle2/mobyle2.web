@@ -25,3 +25,23 @@
   width: 800px;
 }
 
+
+#slider {
+        position relative;
+        left: 40px;
+        margin-top: 10px;
+}
+
+#chart_container {
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+}
+#chart {
+        position: relative;
+        left: 40px;
+}
+#y_axis {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
