@@ -7,6 +7,7 @@ from pyramid.renderers import render_to_response
 from pyramid.response import Response
 
 import json
+import time
 
 import requests
 
@@ -15,6 +16,7 @@ from pyramid.httpexceptions import HTTPFound
 import mobyle.common
 from mobyle.common import session
 from mobyle.common.config import Config
+from mobyle.common.program import Program
 
 from mobyle.common.stats.stat import HourlyStatistic,DailyStatistic,MonthlyStatistic
 
@@ -22,7 +24,22 @@ from bson.code import Code
 
 @view_config(route_name='statistics_usage', renderer='mobyle.web:templates/statistics_usage.mako')
 def stats_usage(request):
-    return  { }
+    type = 2
+    try:
+        type = int(request.params.getone('type'))
+    except Exception:
+        type = 2
+    if type == 0:
+        result = mobyle.common.session.HourlyStatistic.find()
+        gtype = 'hour'
+    if type == 1:
+        result = mobyle.common.session.DailyStatistic.find()
+        gtype = 'day'
+    if type == 2:
+        result = mobyle.common.session.MonthlyStatistic.find()
+        gtype = 'month'
+
+    return  { 'usages' : result, 'type' : gtype }
 
 
 @view_config(route_name='statistics_user', renderer='mobyle.web:templates/statistics_user.mako')
@@ -56,7 +73,8 @@ def stats(request):
         result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, "jobusage")
     if type == 2:
         result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "jobusage")
-    return  { 'jobs' : result}
+    programs = mobyle.common.session.Program.find().count()
+    return  { 'jobs' : result, 'programs' : programs}
 
 
 @view_config(route_name='statistics_map', renderer='mobyle.web:templates/statistics_map.mako')
