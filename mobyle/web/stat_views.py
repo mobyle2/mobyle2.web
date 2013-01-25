@@ -24,7 +24,7 @@ from mobyle.common.stats.stat import HourlyStatistic,DailyStatistic,MonthlyStati
 from bson.code import Code
 
 import datetime
-from datetime import datetime
+from datetime import datetime, timedelta
 
 @view_config(route_name='statistics_usage_json', renderer='json')
 def stats_usage_json(request):
@@ -75,7 +75,8 @@ def stats_usage(request):
     except Exception:
         type = 2
     if type == 0:
-        result = mobyle.common.session.HourlyStatistic.find()
+        # Last 24  hours only
+        result = mobyle.common.session.HourlyStatistic.find({ 'timestamp' : { '$gte' : datetime.today()-timedelta(days=1) }})
         gtype = 'hour'
     if type == 1:
         result = mobyle.common.session.DailyStatistic.find()
