@@ -119,8 +119,8 @@ def stats(request):
         result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, "jobusage")
     if type == 2:
         result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "jobusage")
-    programs = mobyle.common.session.Program.find().count()
-    return  { 'jobs' : result, 'programs' : programs}
+    programs = mobyle.common.session[Config.config().get('app:main','db_name')].programs.count()
+    return  { 'jobs' : result, 'programs' : programs }
 
 
 @view_config(route_name='statistics_map', renderer='mobyle.web:templates/statistics_map.mako')
