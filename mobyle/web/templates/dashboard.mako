@@ -7,6 +7,7 @@
   % for object in objects:
   <li><a href="#" class="dashboard-item" id="${object}">${object}s</a></li>
   % endfor
+  <li><a href="/admin/stats">Statistics</a></li>
 </ul>
 <div id="mf-flash" class="mf-flash"></div>
 
