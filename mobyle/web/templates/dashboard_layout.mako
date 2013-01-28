@@ -53,15 +53,11 @@
   <script>
     $(document).ready(function(){
       var options = { resGetPath: '/static/locales/__lng__/__ns__.json', fallbackLng: false, load: 'current', debug: true  };
-      $.i18n.init(options);
-      $.each($("label"), function() {
-          translated = $.t($(this).text());
+      $.i18n.init(options, function() {
+      $.each($("label,.mf-sort,.dashboard-item"), function() {
+          translated = $.t($(this).text().toLowerCase());
           $(this).text(translated);
       });
-      $.each($(".dashboard-item"), function() {
-          translated = $.t($(this).text());
-          console.log(translated);
-          $(this).text(translated);
       });
     });
   </script>

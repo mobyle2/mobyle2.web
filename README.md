@@ -21,3 +21,4 @@ JQuery, http://jquery.com/, MIT license
 Rickshaw, http://code.shutterstock.com/rickshaw/, MIT license 
 Twitter bootstrap, http://twitter.github.com/bootstrap/index.html, Apache License v2.0, Glyphicons Free under CC BY 3.0.
 D3, http://d3js.org/, BSD license
+i18next, https://github.com/jamuhl/i18next, MIT license
