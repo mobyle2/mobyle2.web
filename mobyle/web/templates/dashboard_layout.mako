@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/static/css/mf.css">
   <script src="/static/js/jquery-1.8.3.min.js"></script>
   <script src="/static/js/mf.js"></script>
+  <script src="/static/js/i18next-1.5.10.min.js"></script>
 </head>
 
 <body>
@@ -21,8 +22,16 @@
     <a href="#" id="dashboard" class="dashboard-item">Dashboard</a>
   </li>
   % for object in objects:
-  <li><a href="#" class="dashboard-item" id="${object}">${object}s</a></li>
+  <li><a href="#" class="dashboard-item" id="${object}" data-i18n="${object}">${object}s</a></li>
   % endfor
+  <li class="dropdown"><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Services<i class="caret"></i></a>
+      <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">Programs</a></li>
+          <li><a tabindex="-1" href="#">Viewers</a></li>
+          <li><a tabindex="-1" href="#">Workflows</a></li>
+      </ul>
+  </li>
+
   <li><a href="/admin/stats">Statistics</a></li>
 </ul>
 
@@ -43,6 +52,17 @@
   <script src="/static/bootstrap/js/bootstrap.min.js"></script>  
   <script>
     $(document).ready(function(){
+      var options = { resGetPath: '/static/locales/__lng__/__ns__.json', fallbackLng: false, load: 'current', debug: true  };
+      $.i18n.init(options);
+      $.each($("label"), function() {
+          translated = $.t($(this).text());
+          $(this).text(translated);
+      });
+      $.each($(".dashboard-item"), function() {
+          translated = $.t($(this).text());
+          console.log(translated);
+          $(this).text(translated);
+      });
     });
   </script>
 </body>
