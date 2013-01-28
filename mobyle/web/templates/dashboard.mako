@@ -1,14 +1,5 @@
 <%inherit file="dashboard_layout.mako"/>
 
-<ul class="nav nav-tabs">
-  <li class="active">
-    <a href="#" id="dashboard" class="dashboard-item">Dashboard</a>
-  </li>
-  % for object in objects:
-  <li><a href="#" class="dashboard-item" id="${object}">${object}s</a></li>
-  % endfor
-  <li><a href="/admin/stats">Statistics</a></li>
-</ul>
 <div id="mf-flash" class="mf-flash"></div>
 
 <div id="dashboard" class="mf-dashboard mf-list">
