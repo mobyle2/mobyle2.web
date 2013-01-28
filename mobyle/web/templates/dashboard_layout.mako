@@ -52,7 +52,7 @@
   <script src="/static/bootstrap/js/bootstrap.min.js"></script>  
   <script>
     $(document).ready(function(){
-      var options = { resGetPath: '/static/locales/__lng__/__ns__.json', fallbackLng: false, load: 'current', debug: true  };
+      var options = { resGetPath: '/static/locales/__lng__/__ns__.json', fallbackLng: false, load: 'current', debug: false  };
       $.i18n.init(options, function() {
       $.each($("label,.mf-sort,.dashboard-item"), function() {
           translated = $.t($(this).text().toLowerCase());
