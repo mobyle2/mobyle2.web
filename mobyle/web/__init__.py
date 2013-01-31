@@ -86,6 +86,13 @@ def main(global_config, **settings):
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
     Dashboard.add_dashboard([MobyleConfig,User,Project,Job,Program],config)
 
+    config.add_route('statistics', '/admin/stats')
+    config.add_route('statistics_map', '/admin/stats/map')
+    config.add_route('statistics_usage', '/admin/stats/usage')
+    config.add_route('statistics_usage_json', '/admin/stats/usage.json')
+    config.add_route('statistics_user', '/admin/stats/user')
+
+
     
     return config.make_wsgi_app()
 

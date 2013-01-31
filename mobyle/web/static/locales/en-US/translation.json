@@ -1,0 +1,34 @@
+{
+   "dashboard": "Dashboard",
+
+
+    "_id": "Identifier",
+    "date_creation": "Creation date",
+    "name" : "Name",
+
+    "mobyleconfigs": "Configuration",
+
+    "auth_mod": "Authorization mode",
+    "datadir":  "Data directory",
+    "rootdir":  "Root directory",
+    "apikey": "API Key",
+
+
+    "users": "Users",
+    "admin": "Administrator rights",
+    "email": "E-mail",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "hashed_password": "Crypted password",
+    "type": "Type",
+
+    "projects":  "Projects",
+    "data_ids": "Data identifiers",
+    "job_ids": "Job identifiers",
+    "owner": "Owner",
+
+    "jobs": "Jobs",
+
+    "programs": "Programs",
+    "public": "Public"
+}
