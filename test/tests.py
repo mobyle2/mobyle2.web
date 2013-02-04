@@ -7,7 +7,11 @@ import pymongo
 import copy
 import os
 
+
 import mobyle.common
+
+mobyle.common.config.Config("development.ini")
+
 from mobyle.common import session
 
 
@@ -15,13 +19,13 @@ base_url = "http://localhost:6543"
 
 import mobyle.common.connection
 mobyle.common.connection.init_mongo("mongodb://localhost/")
+from mobyle.common.stats.stat import Statistic,HourlyStatistic,DailyStatistic,MonthlyStatistic
 
 class LoginTest(unittest.TestCase):
 
 	def setUp(self):
 	    from webtest import TestApp
 	    self.testapp = TestApp("config:development.ini", relative_to="./")
-
 	    from mobyle.web.views import add_user
 
 	    self.user = {
@@ -83,6 +87,16 @@ class ViewTests(unittest.TestCase):
         mongouser['type'] = 'registered'
         add_user(mongouser)
 
+    def clear_stats(self):
+            stats = mobyle.common.session.HourlyStatistic.find({})
+            for stat in stats:
+                stat.delete()
+            stats = mobyle.common.session.DailyStatistic.find({})
+            for stat in stats:
+                stat.delete()
+            stats = mobyle.common.session.MonthlyStatistic.find({})
+            for stat in stats:
+                stat.delete()
 
     def tearDown(self):
 	    programs = mobyle.common.session.Program.find({})
@@ -91,7 +105,11 @@ class ViewTests(unittest.TestCase):
             users = mobyle.common.session.User.find({})
             for user in users:
                 user.delete()
+
+            self.clear_stats()
+
             testing.tearDown()
+
 
     def test_my_view(self):
 	    from mobyle.web.views import my_view
@@ -130,5 +148,14 @@ class ViewTests(unittest.TestCase):
         self.assertTrue('group:admin' in user['groups'])
         self.assertTrue(user['type'] == "registered")
 
+    def test_stats(self):
+        from mobyle.web import stat_views
+        self.clear_stats()
+        mystats = stat_views.stats(self.request).values()
+        self.assertTrue(mystats[0].count()==0)
+        newstat  = Statistic()
+        newstat.add('test','95.30.242.238')
+        mystats = stat_views.stats(self.request).values()
+        self.assertTrue(mystats[0].count()==1)
 
 
