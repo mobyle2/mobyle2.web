@@ -6,7 +6,7 @@
 $(function(){
 
   var gdpData = {
-  % for location in locations.find():
+  % for location in locations['results']:
     "${location['_id']}": ${location['value']},
   % endfor
   };

@@ -6,8 +6,10 @@
 <%
  i = 0
  total = 0
+ jobs['results'] = sorted(jobs['results'], key=lambda k: k['value'], reverse=True)
+
 %>
-% for job in jobs.find().sort("value",-1):
+% for job in jobs['results']:
     % if i<10:
     <% total += job['value'] %>
     <tr><td>${job['_id']}</td><td>${job['value']}</td></tr>
