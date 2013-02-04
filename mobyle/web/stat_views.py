@@ -26,6 +26,9 @@ from bson.code import Code
 import datetime
 from datetime import datetime, timedelta
 
+import logging
+log = logging.getLogger(__name__)
+
 @view_config(route_name='statistics_usage_json', renderer='json')
 def stats_usage_json(request):
     type = 'month'
@@ -113,12 +116,15 @@ def stats(request):
                "  return total;"
                "}")
     result = {}
-    if type == 0:
-        result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, "jobusage")
-    if type == 1:
-        result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, "jobusage")
-    if type == 2:
-        result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "jobusage")
+    try:
+        if type == 0:
+            result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, "jobusage")
+        if type == 1:
+            result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, "jobusage")
+        if type == 2:
+            result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "jobusage")
+    except Exception as e:
+        log.error("Could not exec mapreduce on stats: "+e.strerror) 
     programs = mobyle.common.session[Config.config().get('app:main','db_name')].programs.count()
     return  { 'jobs' : result, 'programs' : programs }
 
@@ -144,12 +150,15 @@ def stats_map(request):
                "  return total;"
                "}")
     result = {}
-    if type == 0:
-        result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, "worlddistribution")
-    if type == 1:
-        result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, "worlddistribution")
-    if type == 2:
-        result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "worlddistribution")
+    try:
+        if type == 0:
+            result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, "worlddistribution")
+        if type == 1:
+            result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, "worlddistribution")
+        if type == 2:
+            result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "worlddistribution")
+    except Exception as e:
+        log.error("Could not exec mapreduce on stats: "+e.strerror)
     return  { 'locations' : result}
 
 
