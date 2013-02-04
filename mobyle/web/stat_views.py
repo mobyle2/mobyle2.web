@@ -124,7 +124,7 @@ def stats(request):
         if type == 2:
             result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "jobusage")
     except Exception as e:
-        log.error("Could not exec mapreduce on stats: "+e.strerror) 
+        log.error("Could not exec mapreduce on stats: "+str(e)) 
     programs = mobyle.common.session[Config.config().get('app:main','db_name')].programs.count()
     return  { 'jobs' : result, 'programs' : programs }
 
@@ -158,7 +158,7 @@ def stats_map(request):
         if type == 2:
             result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, "worlddistribution")
     except Exception as e:
-        log.error("Could not exec mapreduce on stats: "+e.strerror)
+        log.error("Could not exec mapreduce on stats: "+str(e))
     return  { 'locations' : result}
 
 
