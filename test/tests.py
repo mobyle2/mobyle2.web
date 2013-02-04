@@ -152,7 +152,7 @@ class ViewTests(unittest.TestCase):
         from mobyle.web import stat_views
         self.clear_stats()
         mystats = stat_views.stats(self.request).values()
-        self.assertTrue(mystats[0].count()==0)
+        self.assertTrue((mystats[0] is None) or (mystats[0].count()==0))
         newstat  = Statistic()
         newstat.add('test','95.30.242.238')
         mystats = stat_views.stats(self.request).values()
