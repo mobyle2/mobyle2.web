@@ -48,3 +48,9 @@ if mobyle.common.session.User.find({ 'first_name' : 'root' }).count() == 0:
     user['hashed_password'] = hashed
     user.save()
 
+from mobyle.common.mobyleConfig import MobyleConfig
+#Create default config
+if mobyle.common.session.MobyleConfig.find().count() == 0:
+    cf = mobyle.common.session.MobyleConfig()
+    cf.save()
+
