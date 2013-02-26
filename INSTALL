@@ -42,11 +42,8 @@ This option has no effect in recent relases, so it won't hurt to use it in any c
     $. bin/activate
 
 3. Install velruse
-**Beware**, with the current version of mobyle2, if you install mobyle2 (with
-pip), it will automatically install a version of velruse which comes from pypi
-and is not compatible with mobyle. It is thus mandatory, for now at least, to
-install velruse from bbangert's github repository:
-    $pip install git+https://github.com/bbangert/velruse.git      
+
+    $pip install velruse
 
 4. Install mobyle2
     $pip install -e git+https://github.com/mobyle2/mf-pyramid.git#egg=mf
