@@ -32,7 +32,7 @@ def check_user_pw(username, password):
 
 
 @view_config(route_name='main', renderer='mobyle.web:templates/index.mako')
-def my_view(request):
+def main_page(request):
     
     #print login_url(request, "openid")
     userid = authenticated_userid(request)

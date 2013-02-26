@@ -111,11 +111,11 @@ class ViewTests(unittest.TestCase):
             testing.tearDown()
 
 
-    def test_my_view(self):
-	    from mobyle.web.views import my_view
+    def test_main_page(self):
+	    from mobyle.web.views import main_page
 	    request = testing.DummyRequest()
 
-            info = my_view(request)
+            info = main_page(request)
             self.assertEqual(info['project'], 'mobyle')
 
 
