@@ -102,15 +102,16 @@ def main(global_config, **settings):
 
     Dashboard.set_connection(session)
     from mobyle.common.users import User
-    from mobyle.common.service import Package, Service, Program
+    from mobyle.common.service import Package, Service, Program, Workflow, Widget
     from mobyle.common.mobyleConfig import MobyleConfig
     from mobyle.common.job import Job
     from mobyle.common.project import Project 
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
-    Dashboard.add_dashboard([MobyleConfig, User, Project, Job, Package, Service, Program],config)
+    Dashboard.add_dashboard([MobyleConfig, User, Project, Job, Package, Service, Program, Workflow, Widget],config)
+    service = Service()
+    service.set_display_fields(['name', 'version', 'title', 'description'])
 
-    
     return config.make_wsgi_app()
 
 
