@@ -16,6 +16,7 @@ requires = [
     "pyramid_mailer",
     "velruse>=0.3dev",
     "py-bcrypt",
+    "pyparsing<2.0",
     "scss",
     "mf>=0.1.9",
     "uuid"
