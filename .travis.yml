@@ -9,7 +9,7 @@ branches:
 # command to install dependencies with mobyle2.lib on develop
 install:
   - "pip install paste pastedeploy pastescript py-bcrypt mongokit"
-  - "pip install pyparsing<2.0"
+  - "pip install 'pyparsing<2.0'"
   - "pip install pyramid pyramid_debugtoolbar waitress pyramid_beaker pymongo pyramid_mailer py-bcrypt scss webtest mf pygeoip"
   - "pip install git+https://github.com/bbangert/velruse.git"
   - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
