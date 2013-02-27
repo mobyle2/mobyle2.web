@@ -64,7 +64,7 @@ def main(global_config, **settings):
     config.add_route('onlyauthenticated', '/onlyauthenticated')
     config.add_route('login', '/login')    
     config.add_route('logout', '/logout')
-    config.add_route('program_list', '/programs/list')
+    config.add_route('services_list', '/services/list')
     config.add_route('user_list', '/users')
 
     config.add_route('about', '/about')
@@ -78,13 +78,15 @@ def main(global_config, **settings):
 
     Dashboard.set_connection(mobyle.common.session)
     from mobyle.common.users import User
-    from mobyle.common.program import Program
+    from mobyle.common.service import Package, Service, Program, Workflow, Widget
     from mobyle.common.mobyleConfig import MobyleConfig
     from mobyle.common.job import Job
     from mobyle.common.project import Project 
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
-    Dashboard.add_dashboard([MobyleConfig,User,Project,Job,Program],config)
+    Dashboard.add_dashboard([MobyleConfig, User, Project, Job, Package, Service, Program, Workflow, Widget],config)
+    service = Service()
+    service.set_display_fields(['name', 'version', 'title', 'description'])
 
     config.add_route('statistics', '/admin/stats')
     config.add_route('statistics_map', '/admin/stats/map')

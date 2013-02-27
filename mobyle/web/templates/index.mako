@@ -34,10 +34,10 @@ Form login:
 <hr />
 <div class="row">
 <div class="offset1">
-Add a program:
+Add a service:
 <form action="" method="post">
-<input type='text' name='progname' />
-<input type='submit' value='add program' />
+<input type='text' name='service_name' />
+<input type='submit' value='add service' />
 </form>
 </div>
 </div>
@@ -51,9 +51,9 @@ import a platform:
 </div></div>
 <hr />
 <div class="row"><div class="offset1">
-Program list:
-%for p in programs:
-    ${p['name']} <br />
+Services list:
+%for s in services:
+    ${s['name']} <br />
 %endfor
 </div>/<div>
 
