@@ -18,7 +18,8 @@ requires = [
     "py-bcrypt",
     "scss",
     "mf>=0.1.9",
-    "uuid"
+    "uuid",
+    "pygeoip",
     ]
 
 setup(name='mobyle.web',
