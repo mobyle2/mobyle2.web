@@ -85,8 +85,8 @@ def main(global_config, **settings):
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
     Dashboard.add_dashboard([MobyleConfig, User, Project, Job, Package, Service, Program, Workflow, Widget],config)
-    service = Service()
-    service.set_display_fields(['name', 'version', 'title', 'description'])
+    for klass in [Service, Program, Workflow, Widget]:
+        klass.set_display_fields(['name', 'version', 'title', 'description'])
 
     config.add_route('statistics', '/admin/stats')
     config.add_route('statistics_map', '/admin/stats/map')
