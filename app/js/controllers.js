@@ -5,7 +5,7 @@
 
 function ServicesCtrl($scope,$http) {
     $http({
-        url: "json/enriched_listing.json",
+        url: "json/listing.json",
         method: "GET"
     }).success(function(data, status, headers, config) {
         //$scope.services = data['services'].map(

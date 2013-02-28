@@ -11,4 +11,4 @@ for filename in glob.glob('services/*.json'):
              'description':sdetail.get('description'),\
              'references':sdetail.get('references')}
     elisting.get('services').append(descr)
-json.dump(elisting,open('enriched_listing.json','w'))
+json.dump(elisting,open('listing.json','w'))
