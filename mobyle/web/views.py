@@ -111,7 +111,7 @@ def logout(request):
 
 @view_config(route_name='services_list', renderer="json")
 def services_list(request):
-    services = mobyle.common.session.Service.find({'public':True})
+    services = mobyle.common.session.Service.find()
     return [s['name'] for s in services]
 
 @view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")

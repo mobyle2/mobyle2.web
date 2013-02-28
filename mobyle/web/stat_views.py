@@ -17,7 +17,7 @@ from pyramid.httpexceptions import HTTPFound
 import mobyle.common
 from mobyle.common import session
 from mobyle.common.config import Config
-from mobyle.common.program import Program
+from mobyle.common.service import Program
 
 from mobyle.common.stats.stat import HourlyStatistic,DailyStatistic,MonthlyStatistic
 

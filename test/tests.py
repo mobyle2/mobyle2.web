@@ -123,8 +123,7 @@ class ViewTests(unittest.TestCase):
         from mobyle.web.views import program_list
 
 
-
-        prog_list = program_list(self.request)
+        prog_list = services_list(self.request)
         for p in self.public_programs_list:
             self.assertTrue(p in prog_list)
 
