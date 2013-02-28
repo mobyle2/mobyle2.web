@@ -1,587 +1,404 @@
 {
-    "type": "program", 
-    "name": "distmat", 
-    "version": "6.3.1", 
-    "title": "distmat", 
-    "description": "<text lang=\"en\">Create a distance matrix from a multiple sequence alignment</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "phylogeny:distance",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": "distmat"
+    },
+    "comment": null,
+    "description": "Create a distance matrix from a multiple sequence alignment",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html",
         "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance"
-    ], 
-    "command": "distmat", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "e_input": {
-                "name": "e_input", 
-                "parameters": {
-                    "e_sequence": {
-                        "ismandatory": true, 
-                        "prompt": "sequence option", 
-                        "type": {
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
-                                "FASTA", 
-                                "MSF", 
-                                "PAIR", 
-                                "MARKX0", 
-                                "MARKX1", 
-                                "MARKX2", 
-                                "MARKX3", 
-                                "MARKX10", 
-                                "SRS", 
-                                "SRSPAIR", 
-                                "SCORE", 
-                                "UNKNOWN", 
-                                "MULTIPLE", 
-                                "SIMPLE", 
-                                "MATCH"
-                            ], 
-                            "card": "1,n"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "File containing a sequence alignment.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">File containing a sequence alignment.</text> </comment>"
-                    }
-                }
-            }, 
-            "e_required": {
-                "name": "e_required", 
-                "parameters": {
-                    "e_nucmethod": {
-                        "prompt": "Multiple substitution correction methods for nucleotides", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "Uncorrected"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Jukes-cantor"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Kimura"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "Tamura"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "Tajima-nei"
-                            }, 
-                            {
-                                "value": "5", 
-                                "label": "Jin-nei gamma"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA",
+                                "MSF",
+                                "PAIR",
+                                "MARKX0",
+                                "MARKX1",
+                                "MARKX2",
+                                "MARKX3",
+                                "MARKX10",
+                                "SRS",
+                                "SRSPAIR",
+                                "SCORE",
+                                "UNKNOWN",
+                                "MULTIPLE",
+                                "SIMPLE",
+                                "MATCH"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Multiple substitution correction methods for nucleotides.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -nucmethod=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Multiple substitution correction methods for nucleotides.</text> </comment>"
-                    }, 
-                    "e_protmethod": {
-                        "prompt": "Multiple substitution correction methods for proteins", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_nucmethod",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Multiple substitution correction methods for nucleotides",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "Uncorrected"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Jukes-cantor"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Kimura protein"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Multiple substitution correction methods for proteins.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -protmethod=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Multiple substitution correction methods for proteins.</text> </comment>"
-                    }
-                }
-            }, 
-            "e_additional": {
-                "name": "e_additional", 
-                "parameters": {
-                    "e_ambiguous": {
-                        "prompt": "Use the ambiguous codes in the calculation.", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_protmethod",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Multiple substitution correction methods for proteins",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_required",
+                "precond": null,
+                "prompt": "Required section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "Option to use the ambiguous codes in the calculation of the Jukes-Cantor method or if the sequences are proteins.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -ambiguous\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Option to use the ambiguous codes in the calculation of the Jukes-Cantor method or if the sequences are proteins.</text> </comment>"
-                    }, 
-                    "e_gapweight": {
-                        "prompt": "Weight given to gaps", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_ambiguous",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use the ambiguous codes in the calculation.",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0."
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Option to weight gaps in the uncorrected (nucleotide) and Jukes-Cantor distance methods.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -gapweight=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Option to weight gaps in the uncorrected (nucleotide) and Jukes-Cantor distance methods.</text> </comment>"
-                    }, 
-                    "e_position": {
-                        "prompt": "Base position to analyse", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gapweight",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Weight given to gaps",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "123"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "Choose base positions to analyse in each codon i.e. 123 (all bases), 12 (the first two bases), 1, 2, or 3 individual  bases.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -position=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Choose base positions to analyse in each codon i.e. 123 (all bases), 12 (the first two bases), 1, 2, or 3 individual bases.</text> </comment>"
-                    }, 
-                    "e_calculatea": {
-                        "prompt": "Calculate the nucleotide jin-nei parameter 'a'", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_position",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Base position to analyse",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": "This will force the calculation of parameter 'a' in the Jin-Nei Gamma distance calculation, otherwise the default is 1.0  (see -parametera option).",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -calculatea\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This will force the calculation of parameter 'a' in the Jin-Nei Gamma distance calculation, otherwise the default is 1.0 (see -parametera option).</text> </comment>"
-                    }, 
-                    "e_parametera": {
-                        "prompt": "Nucleotide jin-nei parameter 'a'", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_calculatea",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Calculate the nucleotide jin-nei parameter 'a'",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "1.0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": "User defined parameter 'a' to be use in the Jin-Nei Gamma distance calculation. The suggested value to be used is 1.0 (Jin  et al.) and this is the default.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -parametera=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">User defined parameter 'a' to be use in the Jin-Nei Gamma distance calculation. The suggested value to be used is 1.0 (Jin et al.) and this is the default.</text> </comment>"
-                    }
-                }
-            }, 
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile": {
-                        "prompt": "Name of the output file (e_outfile)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_parametera",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Nucleotide jin-nei parameter 'a'",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Filename"
-                        }, 
-                        "default_value": [
-                            "distmat.e_outfile"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "auto": {
-                "ishidden": true, 
-                "prompt": "Turn off any prompting", 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
                     "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "distmat",
     "outputs": {
-        "parameters": {
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile_out": {
-                        "isout": true, 
-                        "prompt": "outfile_out option", 
-                        "type": {
-                            "datatype_class": "EmbossDistanceMatrix", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
                             "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "EmbossDistanceMatrix",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\">Divide-and-Conquer Multiple Sequence Alignment (DCA) is a program for producing fast, high quality simultaneous multiple sequence alignments of amino acid, RNA, or DNA sequences. The program is based on the DCA algorithm, a heuristic approach to sum-of-pairs (SP) optimal alignment that has been developed at the FSPM over the years 1995-97.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "distmat",
+    "type": "program",
+    "version": null
 }

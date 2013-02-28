@@ -1,424 +1,475 @@
 {
-    "type": "program", 
-    "name": "clustalO-profile", 
-    "version": "6.3.1", 
-    "title": "Clustal-Omega: Profile alignment", 
-    "description": "<text lang=\"en\">Align 2 profiles (alignments)</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple"
-    ], 
-    "command": "clustalo", 
+    ],
+    "command": {
+        "path": null,
+        "value": "clustalo"
+    },
+    "comment": "Use this interface to align two alignments (profiles) together.The columns in each profile will be kept\n    fixed and the alignment of the two profiles will be written\n    out.",
+    "description": "Align 2 profiles (alignments)",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "input": {
-                "name": "input", 
-                "parameters": {
-                    "profile1": {
-                        "ismaininput": true, 
-                        "ismandatory": true, 
-                        "prompt": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)", 
-                        "type": {
-                            "biotype": "Protein", 
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
-                                "FASTA", 
-                                "CLUSTAL", 
-                                "STOCKHOLM", 
-                                "MSF"
-                            ]
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\" --profile1=$value\"", 
+                            "perl": "\" --profile1=$value\"",
                             "python": "\" --profile1=\" + str( value )"
-                        }
-                    }, 
-                    "profile2": {
-                        "ismaininput": true, 
-                        "ismandatory": true, 
-                        "prompt": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "profile1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)",
+                        "simple": null,
                         "type": {
-                            "biotype": "Protein", 
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
-                                "FASTA", 
-                                "CLUSTAL", 
-                                "STOCKHOLM", 
-                                "MSF"
-                            ], 
-                            "card": "1"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA",
+                                "CLUSTAL",
+                                "STOCKHOLM"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\" --profile2=$value\"", 
+                            "perl": "\" --profile2=$value\"",
                             "python": "\" --profile2=\" + str( value )"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "profile2",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": "1",
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA",
+                                "CLUSTAL",
+                                "STOCKHOLM"
+                            ]
                         }
                     }
-                }
-            }, 
-            "clustering": {
-                "name": "clustering", 
-                "parameters": {
-                    "guidetree_in": {
-                        "prompt": "Guide tree input file (--guidetree-in)", 
+                ],
+                "comment": "the columns in each profile will be kept\n    fixed and the alignment of the two profiles will be written\n    out.Use this option to align two alignments (profiles) together.",
+                "name": "input",
+                "precond": null,
+                "prompt": "Data Input"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value )? \" --guidetree-in= $value\" : \"\"",
+                            "python": "( \"\" , \" --guidetree-in=\"+str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "guidetree_in",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Guide tree input file (--guidetree-in)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
                                 "NEWICK"
                             ]
-                        }, 
-                        "format": {
-                            "perl": "(defined $value )? \" --guidetree-in= $value\" : \"\"", 
-                            "python": "( \"\" , \" --guidetree-in=\"+str(value))[ value is not None ]"
                         }
-                    }, 
-                    "full": {
-                        "prompt": "Use full distance matrix for guide-tree calculation (slow; mBed is default) (--full)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $full and $ full)? \" --full \": \"\"", 
+                            "perl": "(defined $full and $ full)? \" --full \": \"\"",
                             "python": "( \"\" , \" --full \")[ value is not None and value ]"
-                        }
-                    }, 
-                    "full_iter": {
-                        "prompt": "Use full distance matrix for guide-tree calculation during iteration (mBed is default) (--full-iter)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "full",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use full distance matrix for guide-tree calculation (slow; mBed is default) (--full)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $full and $ full)? \" --full-iter \": \"\"", 
+                            "perl": "(defined $full and $ full)? \" --full-iter \": \"\"",
                             "python": "( \"\" , \" --full-iter \")[ value is not None and value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "full_iter",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use full distance matrix for guide-tree calculation during iteration (mBed is default) (--full-iter)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "output_format": {
-                "name": "output_format", 
-                "parameters": {
-                    "output_format": {
-                        "prompt": "alignment output format", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "fasta"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "fasta", 
-                                "label": "fasta"
-                            }, 
-                            {
-                                "value": "clustal", 
-                                "label": "clustal"
-                            }, 
-                            {
-                                "value": "msf", 
-                                "label": "msf"
-                            }, 
-                            {
-                                "value": "phylip", 
-                                "label": "phylip"
-                            }, 
-                            {
-                                "value": "stockholm", 
-                                "label": "stockholm"
-                            }, 
-                            {
-                                "value": "vienna", 
-                                "label": "vienna"
-                            }
-                        ], 
+                ],
+                "comment": "In order to produce a multiple alignment Clustal-Omega requires a\n          guide tree which defines the order in which sequences/profiles are\n          aligned. A guide tree in turn is constructed, based on a distance\n          matrix. Conventionally, this distance matrix is comprised of all the\n          pair-wise distances of the sequences. The distance measure\n          Clustal-Omega uses for pair-wise distances of un-aligned sequences is\n          the k-tuple measure [4], which was also implemented in Clustal 1.83\n          and ClustalW2\n          [5,6]. If the sequences inputted via -i are aligned\n          Clustal-Omega uses the Kimura-corrected pairwise aligned identities\n          [7]. The computational effort (time/memory) to calculate and store a\n          full distance matrix grows quadratically with the number of sequences.\n          Clustal-Omega can improve this scalability to N*log(N) by employing a\n          fast clustering algorithm called mBed [2]; this option is\n          automatically invoked (default). If a full distance matrix evaluation\n          is desired, then the --full flag has to\n          be set. The mBed mode\n          calculates a reduced set of pair-wise distances. These distances are\n          used in a k-means algorithm, that clusters at most 100 sequences. For\n          each cluster a full distance matrix is calculated. No full distance\n          matrix (of all input sequences) is calculated in mBed mode. If there\n          are less than 100 sequences in the input, then in effect a full\n          distance matrix is calculated in mBed mode, however, no distance\n          matrix can be outputted (see below).Clustal-Omega uses Muscle's [8] fast UPGMA implementation to construct\n          its guide trees from the distance matrix. By default, the distance\n          matrix is used internally to construct the guide tree and is then\n          discarded. By specifying --distmat-out the internal distance matrix\n          can be written to file. This is only possible in --full mode. The\n          guide trees by default are used internally to guide the multiple\n          alignment and are then discarded. By specifying the --guidetree-out\n          option these\n          internal guide trees can be written out to\n          file. Conversely, the distance calculation and/or guide tree building\n          stage can be skipped, by reading in a pre-calculated distance matrix\n          and/or pre-calculated guide tree. These options are invoked by\n          specifying the --distmat-in and/or --guidetree-in flags,\n          respectively. However, distance matrix reading is disabled in the\n          current version. By default, distance matrix and guide tree files are\n          not over-written, if a file with the specified name already\n          exists. In\n          this case Clustal-Omega aborts during the command-line processing\n          stage. In mBed mode a full distance matrix cannot\n          be outputted, distance matrix output is only possible in --full mode.\n          mBed or --full distance mode do not affect the ability to write out\n          guide-trees.Guide trees can be iterated to refine the alignment (see section\n          ITERATION). Clustal-Omega takes the alignment, that was produced\n          initially and constructs a new distance matrix from this alignment.\n          The distance measure used at this stage is the Kimura distance [7]. By\n          default, Clustal-Omega constructs a reduced distance matrix at this\n          stage using the mBed algorithm, which will then be used to create an\n          improved (iterated) new guide tree. To turn off mBed-like clustering\n          at this\n          stage the --full-iter flag has to be set. While Kimura\n          distances in general are much faster to calculate than k-tuple\n          distances, time and memory requirements still scale quadratically with\n          the number of sequences and --full-iter clustering should only be\n          considered for smaller cases ( << 10,000 sequences).[2] Blackshields G, Sievers F, Shi W, Wilm A, Higgins DG. Sequence\n          embedding for fast construction of guide trees for multiple\n          sequence alignment. Algorithms Mol Biol. 2010 May 14;5:21.[4] Wilbur and Lipman, 1983; PMID 6572363[5] Thompson JD, Higgins DG, Gibson TJ. (1994). CLUSTAL W: improving\n          the sensitivity of progressive multiple sequence alignment through\n          sequence weighting, position-specific gap penalties and weight\n          matrix choice. Nucleic Acids Res., 22, 4673-4680.[6] Larkin MA, Blackshields G, Brown NP, Chenna R, McGettigan PA,\n          McWilliam H, Valentin F, Wallace IM, Wilm A, Lopez R, Thompson JD,\n          Gibson TJ, Higgins DG. (2007). Clustal W and Clustal X version\n          2.0. Bioinformatics, 23, 2947-2948.[7] Kimura M (1980). \"A simple method for estimating evolutionary\n          rates of base substitutions through comparative studies of\n          nucleotide sequences\". Journal of Molecular Evolution 16: 111\u2013120.",
+                "name": "clustering",
+                "precond": null,
+                "prompt": "Clustering"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef)? \" --outfmt=$value\" : \"\"", 
+                            "perl": "(defined $value and $value ne $vdef)? \" --outfmt=$value\" : \"\"",
                             "python": "( \"\" , \" --outfmt=\" + value )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_format",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "alignment output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "iteration": {
-                "name": "iteration", 
-                "parameters": {
-                    "iterations": {
-                        "prompt": "Number of (combined guide-tree/HMM) iterations (--iter)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                ],
+                "comment": null,
+                "name": "output_format",
+                "precond": null,
+                "prompt": "Alignment Output"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value)? \" --iter=$value \": \"\"", 
+                            "perl": "(defined $value)? \" --iter=$value \": \"\"",
                             "python": "( \"\" , \" --iter=\"+str(value) )[ value is not None ]"
-                        }
-                    }, 
-                    "max_guidetree_iterations": {
-                        "prompt": "Maximum number guidetree iterations (--max-guidetree-iterations)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "iterations",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of (combined guide-tree/HMM) iterations (--iter)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value)? \" --max-guidetree-iterations=$value \": \"\"", 
+                            "perl": "(defined $value)? \" --max-guidetree-iterations=$value \": \"\"",
                             "python": "( \"\" , \" --max-guidetree-iterations=\"+str(value) )[ value is not None ]"
-                        }
-                    }, 
-                    "max_hmm_iterations": {
-                        "prompt": "Maximum number of HMM iterations (--max-hmm-iterations)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max_guidetree_iterations",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number guidetree iterations (--max-guidetree-iterations)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value)? \" --max-hmm-iterations=$value \": \"\"", 
+                            "perl": "(defined $value)? \" --max-hmm-iterations=$value \": \"\"",
                             "python": "( \"\" , \" --max-hmm-iterations=\"+str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max_hmm_iterations",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of HMM iterations (--max-hmm-iterations)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "miscellaneous": {
-                "name": "miscellaneous", 
-                "parameters": {
-                    "auto": {
-                        "prompt": "Set options automatically (might overwrite some of your options) (--auto)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": "By default, Clustal-Omega calculates (or reads in) a guide tree and\n          performs a multiple alignment in the order specified by this guide\n          tree. This alignment is then outputted. Clustal-Omega can 'iterate'\n          its guide tree. The hope is that the (Kimura) distances, that can be\n          derived from the initial alignment, will give rise to a better guide\n          tree, and by extension, to a better alignment.A similar rationale applies to HMM-iteration. MSAs in general are very\n          'vulnerable' at their early stages. Sequences that are aligned at an\n          early stage remain fixed for the rest of the MSA. Another way of\n          putting this is: 'once a gap, always a gap'. This behaviour can be\n          mitigated by HMM iteration. An initial alignment is created and turned\n          into a HMM. This HMM can help in a new round of MSA to 'anticipate'\n          where residues should align. This is using the HMM as an External\n          Profile and carrying out iterative EPA. In practice, individual\n          sequences and profiles are aligned to the External HMM, derived after\n          the initial alignment. Pseudo-count information is then transferred to\n          the (internal) HMM, corresponding to the individual\n          sequence/profile. The now somewhat 'softened' sequences/profiles are\n          then in turn aligned in the order specified by the guide\n          tree. Pseudo-count transfer is reduced with the size of the\n          profile. Individual sequences attain the greatest\n          pseudo-count\n          transfer, larger profiles less so. Pseudo-count transfer to profiles\n          larger than, say, 10 is negligible. The effect of HMM iteration is\n          more pronounced in larger test sets (that is, with more sequences).Both, HMM- and guide tree-iteration come at a cost of increasing the\n          run-time. One round of guide tree iteration adds on (roughly) the time\n          it took to construct the initial alignment. If, for example, the\n          initial alignment took 1min, then it will take (roughly) 2min to\n          iterate the guide tree once, 3min to iterate the guide tree twice, and\n          so on. HMM-iteration is more costly, as each round of iteration adds\n          three times the time required for the alignment stage. For example, if\n          the initial alignment took 1min, then each additional round of HMM\n          iteration will add on 3min; so 4 iterations will take 13min\n          (=1min+4*3min). The factor of 3 stems from the fact that at every\n          stage both intermediate profiles have to be aligned with the\n          background HMM, and finally the (softened) HMMs have to be aligned as\n          well. All times are quoted for single processors.By default, guide tree iteration and HMM-iteration are coupled. This\n          means, at each iteration step both, guide tree and HMM, are\n          re-calculated. This is invoked by setting the --iter flag. For\n          example, if --iter=1, then first an initial alignment is produced\n          (without external HMM background information and using k-tuple\n          distances to calculate the guide tree). This initial alignment is then\n          used to re-calculate a new guide tree (using Kimura distances) and to\n          create a HMM. The new\n          guide tree and the HMM are then used to produce\n          a new MSA.Iteration of guide tree and HMM can be de-coupled. This means that the\n          number of guide tree iterations and HMM iterations can be\n          different. This can be done by combining the --iter flag with the\n          --max-guidetree-iterations and/or the --max-hmm-iterations flag. The\n          number of guide tree iterations is the minimum of --iter and\n          --max-guidetree-iterations, while the number of HMM iterations is the\n          minimum of --iter and --max-hmm-iterations. If, for example, HMM\n          iteration should be\n          performed 5 times but guide tree iteration should\n          be performed only 3 times, then one should set --iter=5 and\n          --max-guidetree-iterations=3. All three flags can be specified at the\n          same time (however, this makes no sense). It is not sufficient just to\n          specify --max-guidetree-iterations and --max-hmm-iterations but not\n          --iter. If any iteration is desired --iter has to be set.",
+                "name": "iteration",
+                "precond": null,
+                "prompt": "Iteration"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Users may feel unsure which options are appropriate in certain\n              situations even though using ClustalO without any special options\n              should give you the desired results. The --auto flag tries to\n              alleviate this problem and selects accuracy/speed flags according to\n              the number of sequences. For all cases will use mBed and thereby\n              possibly overwrite the --full option. For more than 1,000 sequences\n              the iteration is turned off as the effect of iteration is more\n              noticeable for 'larger'\n              problems. Otherwise iterations are set to 1 if\n              not already set to a higher value by the user. Expert users may want\n              to avoid this flag and exercise more fine tuned control by selecting\n              the appropriate options manually.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value)? \" --auto \": \"\"", 
+                            "perl": "(defined $value and $value)? \" --auto \": \"\"",
                             "python": "( \"\" , \" --auto \")[value is not None and value]"
-                        }, 
-                        "comment": "<text lang=\"en\">Users may feel unsure which options are appropriate in certain situations even though using ClustalO without any special options should give you the desired results. The --auto flag tries to alleviate this problem and selects accuracy/speed flags according to the number of sequences. For all cases will use mBed and thereby possibly overwrite the --full option. For more than 1,000 sequences the iteration is turned off as the effect of iteration is more noticeable for 'larger' problems. Otherwise iterations are set to 1 if not already set to a higher value by the user. Expert users may want to avoid this flag and exercise more fine tuned control by selecting the appropriate options manually.</text> </comment>"
-                    }, 
-                    "verbosity": {
-                        "ishidden": true, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "auto",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Set options automatically (might overwrite some of your options) (--auto)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "100",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\" -v --force --log=clustalO_log\"", 
+                            "perl": "\" -v --force --log=clustalO_log\"",
                             "python": "\" -v --force --log=clustalO_log\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "verbosity",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "miscellaneous",
+                "precond": null,
+                "prompt": "Miscellaneous"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "clustalO-profile",
     "outputs": {
-        "parameters": {
-            "alignment_output": {
-                "isstdout": true, 
-                "prompt": "Multiple Sequence Alignment", 
-                "type": {
-                    "biotype": "Protein", 
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
-                        "\n          ", 
-                        "\n          ", 
-                        "\n          ", 
-                        "\n          ", 
-                        "\n          ", 
-                        "\n          ", 
-                        "\n        "
-                    ]
-                }, 
+        "children": [
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"clustalO-profile.out\"", 
+                    "perl": "\"clustalO-profile.out\"",
                     "python": "\"clustalO-profile.out\""
-                }
-            }, 
-            "logfile": {
-                "isout": true, 
-                "prompt": "Clustal omega log file", 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "alignment_output",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "Multiple Sequence Alignment",
+                "simple": null,
                 "type": {
-                    "datatype_class": "ClustalOReport", 
-                    "datatype_superclass": "Report"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        {
+                            "#children": [
+                                "FASTA"
+                            ],
+                            "#tag": "test",
+                            "@eq": "fa",
+                            "@param": "output_format"
+                        }
+                    ]
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"clustalO_log\"", 
+                    "perl": "\"clustalO_log\"",
                     "python": "\"clustalO_log\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "logfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Clustal omega log file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "ClustalOReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\">Use this interface to align two alignments (profiles) together.</text> <text lang=\"en\">The columns in each profile will be kept fixed and the alignment of the two profiles will be written out.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "Clustal-Omega: Profile alignment",
+    "type": "program",
+    "version": null
 }

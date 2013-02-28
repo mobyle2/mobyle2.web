@@ -1,1497 +1,1972 @@
 {
-    "type": "program", 
-    "name": "eprimer3", 
-    "version": "6.3.1", 
-    "title": "eprimer3", 
-    "description": "<text lang=\"en\">Picks PCR primers and hybridization oligos</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "sequence:nucleic:primers",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://swift.cmbi.ru.nl/gv/dssp/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": "eprimer3"
+    },
+    "comment": null,
+    "description": "Picks PCR primers and hybridization oligos",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html",
         "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "phylogeny:display", 
-        "display:tree", 
-        "phylogeny:display", 
-        "display:tree", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple", 
-        "sequence:nucleic:repeats", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:composition", 
-        "sequence:edit", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:primers"
-    ], 
-    "command": "eprimer3", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "e_input": {
-                "name": "e_input", 
-                "parameters": {
-                    "e_sequence": {
-                        "ismandatory": true, 
-                        "prompt": "sequence option", 
-                        "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "EMBL", 
-                                "FASTA", 
-                                "GCG", 
-                                "GENBANK", 
-                                "NBRF", 
-                                "PIR", 
-                                "RAW", 
-                                "SWISSPROT", 
-                                "GFF"
-                            ], 
-                            "card": "1,n"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "The sequence from which to choose primers. The sequence must be presented 5' to 3'",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">The sequence from which to choose primers. The sequence must be presented 5' to 3'</text> </comment>"
-                    }, 
-                    "e_primer": {
-                        "prompt": "Pick pcr primer(s)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Tell EPrimer3 to pick primer(s)",
+                        "ctrl": null,
                         "format": {
                             "python": "(\" -noprimer\", \"\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tell EPrimer3 to pick primer(s)</text> </comment>"
-                    }, 
-                    "e_task": {
-                        "prompt": "Task", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_primer",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pick pcr primer(s)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "precond": {
-                            "python": "e_primer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "1", 
-                                "label": "Pick pcr primers"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Pick forward primer only"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "Pick reverse primer only"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "No primers needed"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Tell EPrimer3 what task to perform. Legal values are 1: 'Pick PCR primers', 2: 'Pick forward primer only', 3: 'Pick  reverse primer only', 4: 'No primers needed'.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -task=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tell EPrimer3 what task to perform. Legal values are 1: 'Pick PCR primers', 2: 'Pick forward primer only', 3: 'Pick reverse primer only', 4: 'No primers needed'.</text> </comment>"
-                    }, 
-                    "e_hybridprobe": {
-                        "prompt": "Pick hybridization probe", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_task",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "e_primer"
+                        },
+                        "prompt": "Task",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "An 'internal oligo' is intended to be used as a hybridization probe (hyb probe) to detect the PCR product after  amplification.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -hybridprobe\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">An 'internal oligo' is intended to be used as a hybridization probe (hyb probe) to detect the PCR product after amplification.</text> </comment>"
-                    }, 
-                    "e_mishyblibraryfile": {
-                        "prompt": "Primer3 internal oligo mishybridizing library file (optional)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_hybridprobe",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pick hybridization probe",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Primer3Mishybridizing", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
-                        "precond": {
-                            "python": "e_hybridprobe"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Similar to MISPRIMING-LIBRARY, except that the event we seek to avoid is hybridization of the internal oligo to sequences  in this library rather than priming from them. \n  The file must be in (a slightly restricted) FASTA format (W. B.  Pearson and D.J. Lipman, PNAS 85:8 pp 2444-2448 [1988]); we  briefly discuss the organization of this file below. If this  parameter is specified then EPrimer3 locally aligns each candidate  oligo against each library sequence and rejects those primers for  which the local alignment score times a specified weight (see  below) exceeds INTERNAL-OLIGO-MAX-MISHYB. (The maximum value of  the weight is arbitrarily set to 12.0.) \n  Each sequence entry in the FASTA-format file must begin with an  'id line' that starts with '>'. The contents of the id line is  'slightly restricted' in that EPrimer3 parses everything after any  optional asterisk ('*') as a floating point number to use as the  weight mentioned above. If the id line contains no asterisk then  the weight defaults to 1.0. The alignment scoring system used is  the same as for calculating complementarity among oligos (e.g.  SELF-ANY). The remainder of an entry contains the sequence as  lines following the id line up until a line starting with '>' or  the end of the file. Whitespace and newlines are ignored.  Characters 'A', 'T', 'G', 'C', 'a', 't', 'g', 'c' are retained and  any other character is converted to 'N' (with the consequence  that any IUB / IUPAC codes for ambiguous bases are converted to  'N'). There are no restrictions on line length. \n  An empty value for this parameter indicates that no library should  be used.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -mishyblibraryfile=\" + str(value))[value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">Similar to MISPRIMING-LIBRARY, except that the event we seek to avoid is hybridization of the internal oligo to sequences in this library rather than priming from them. The file must be in (a slightly restricted) FASTA format (W. B. Pearson and D.J. Lipman, PNAS 85:8 pp 2444-2448 [1988]); we briefly discuss the organization of this file below. If this parameter is specified then EPrimer3 locally aligns each candidate oligo against each library sequence and rejects those primers for which the local alignment score times a specified weight (see below) exceeds INTERNAL-OLIGO-MAX-MISHYB. (The maximum value of the weight is arbitrarily set to 12.0.) Each sequence entry in the FASTA-format file must begin with an 'id line' that starts with '>'. The contents of the id line is 'slightly restricted' in that EPrimer3 parses everything after any optional asterisk ('*') as a floating point number to use as the weight mentioned above. If the id line contains no asterisk then the weight defaults to 1.0. The alignment scoring system used is the same as for calculating complementarity among oligos (e.g. SELF-ANY). The remainder of an entry contains the sequence as lines following the id line up until a line starting with '>' or the end of the file. Whitespace and newlines are ignored. Characters 'A', 'T', 'G', 'C', 'a', 't', 'g', 'c' are retained and any other character is converted to 'N' (with the consequence that any IUB / IUPAC codes for ambiguous bases are converted to 'N'). There are no restrictions on line length. An empty value for this parameter indicates that no library should be used.</text> </comment>"
-                    }, 
-                    "e_mispriminglibraryfile": {
-                        "prompt": "Primer3 mispriming library file (optional)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mishyblibraryfile",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "e_hybridprobe"
+                        },
+                        "prompt": "Primer3 internal oligo mishybridizing library file (optional)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Primer3Mispriming", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Primer3Mishybridizing",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "The name of a file containing a nucleotide sequence library of sequences to avoid amplifying (for example repetitive  sequences, or possibly the sequences of genes in a gene family  that should not be amplified.) The file must be in (a slightly  restricted) FASTA format (W. B. Pearson and D.J. Lipman, PNAS 85:8  pp 2444-2448 [1988]); we briefly discuss the organization of this  file below. If this parameter is specified then EPrimer3 locally  aligns each candidate primer against each library sequence and  rejects those primers for which the local alignment score times a  specified weight (see below) exceeds MAX-MISPRIMING. (The maximum  value of the weight is arbitrarily set to 100.0.) \n  Each sequence entry in the FASTA-format file must begin with an  'id line' that starts with '>'. The contents of the id line is  'slightly restricted' in that EPrimer3 parses everything after any  optional asterisk ('*') as a floating point number to use as the  weight mentioned above. If the id line contains no asterisk then  the weight defaults to 1.0. The alignment scoring system used is  the same as for calculating complementarity among oligos (e.g.  SELF-ANY). The remainder of an entry contains the sequence as  lines following the id line up until a line starting with '>' or  the end of the file. Whitespace and newlines are ignored.  Characters 'A', 'T', 'G', 'C', 'a', 't', 'g', 'c' are retained and  any other character is converted to 'N' (with the consequence  that any IUB / IUPAC codes for ambiguous bases are converted to  'N'). There are no restrictions on line length. \n  An empty value for this parameter indicates that no repeat library  should be used.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -mispriminglibraryfile=\" + str(value))[value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">The name of a file containing a nucleotide sequence library of sequences to avoid amplifying (for example repetitive sequences, or possibly the sequences of genes in a gene family that should not be amplified.) The file must be in (a slightly restricted) FASTA format (W. B. Pearson and D.J. Lipman, PNAS 85:8 pp 2444-2448 [1988]); we briefly discuss the organization of this file below. If this parameter is specified then EPrimer3 locally aligns each candidate primer against each library sequence and rejects those primers for which the local alignment score times a specified weight (see below) exceeds MAX-MISPRIMING. (The maximum value of the weight is arbitrarily set to 100.0.) Each sequence entry in the FASTA-format file must begin with an 'id line' that starts with '>'. The contents of the id line is 'slightly restricted' in that EPrimer3 parses everything after any optional asterisk ('*') as a floating point number to use as the weight mentioned above. If the id line contains no asterisk then the weight defaults to 1.0. The alignment scoring system used is the same as for calculating complementarity among oligos (e.g. SELF-ANY). The remainder of an entry contains the sequence as lines following the id line up until a line starting with '>' or the end of the file. Whitespace and newlines are ignored. Characters 'A', 'T', 'G', 'C', 'a', 't', 'g', 'c' are retained and any other character is converted to 'N' (with the consequence that any IUB / IUPAC codes for ambiguous bases are converted to 'N'). There are no restrictions on line length. An empty value for this parameter indicates that no repeat library should be used.</text> </comment>"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mispriminglibraryfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Primer3 mispriming library file (optional)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Primer3Mispriming",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
-            }, 
-            "e_additional": {
-                "name": "e_additional", 
-                "parameters": {
-                    "e_programsection": {
-                        "name": "e_programsection", 
-                        "parameters": {
-                            "e_numreturn": {
-                                "prompt": "Number of results to return (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
-                                "default_value": [
-                                    "5"
-                                ], 
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "argpos": "7",
+                                "command": false,
+                                "comment": "The maximum number of primer pairs to return. Primer pairs returned are sorted by their 'quality', in other words by  the value of the objective function (where a lower number  indicates a better primer pair). Caution: setting this parameter  to a large value will increase running time.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -numreturn=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum number of primer pairs to return. Primer pairs returned are sorted by their 'quality', in other words by the value of the objective function (where a lower number indicates a better primer pair). Caution: setting this parameter to a large value will increase running time.</text> </comment>"
-                            }
-                        }
-                    }, 
-                    "e_seqoptsection": {
-                        "name": "e_seqoptsection", 
-                        "parameters": {
-                            "e_includedregion": {
-                                "prompt": "Included region(s)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_numreturn",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Number of results to return (value greater than or equal to 0)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_programsection",
+                        "precond": null,
+                        "prompt": "Program options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "8",
+                                "command": false,
+                                "comment": "A sub-region of the given sequence in which to pick primers. For example, often the first dozen or so bases of a  sequence are vector, and should be excluded from consideration.  The value for this parameter has the form \n  (start),(end) \n  where (start) is the index of the first base to consider, and  (end) is the last in the primer-picking region.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -includedregion=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">A sub-region of the given sequence in which to pick primers. For example, often the first dozen or so bases of a sequence are vector, and should be excluded from consideration. The value for this parameter has the form (start),(end) where (start) is the index of the first base to consider, and (end) is the last in the primer-picking region.</text> </comment>"
-                            }, 
-                            "e_targetregion": {
-                                "prompt": "Target region(s)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_includedregion",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Included region(s)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "9",
+                                "command": false,
+                                "comment": "If one or more Targets is specified then a legal primer pair must flank at least one of them. A Target might be a simple  sequence repeat site (for example a CA repeat) or a  single-base-pair polymorphism. The value should be a  space-separated list of \n  (start),(end) \n  pairs where (start) is the index of the first base of a Target,  and (end) is the last \n  E.g. 50,51 requires primers to surround the 2 bases at positions  50 and 51.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -targetregion=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">If one or more Targets is specified then a legal primer pair must flank at least one of them. A Target might be a simple sequence repeat site (for example a CA repeat) or a single-base-pair polymorphism. The value should be a space-separated list of (start),(end) pairs where (start) is the index of the first base of a Target, and (end) is the last E.g. 50,51 requires primers to surround the 2 bases at positions 50 and 51.</text> </comment>"
-                            }, 
-                            "e_excludedregion": {
-                                "prompt": "Excluded region(s)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_targetregion",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Target region(s)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "10",
+                                "command": false,
+                                "comment": "Primer oligos may not overlap any region specified in this tag. The associated value must be a space-separated list of  \n  (start),(end) \n  pairs where (start) is the index of the first base of the  excluded region, and and (end) is the last. This tag is useful  for tasks such as excluding regions of low sequence quality or  for excluding regions containing repetitive elements such as  ALUs or LINEs. \n  E.g. 401,407 68,70 forbids selection of primers in the 7 bases  starting at 401 and the 3 bases at 68.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -excludedregion=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">Primer oligos may not overlap any region specified in this tag. The associated value must be a space-separated list of (start),(end) pairs where (start) is the index of the first base of the excluded region, and and (end) is the last. This tag is useful for tasks such as excluding regions of low sequence quality or for excluding regions containing repetitive elements such as ALUs or LINEs. E.g. 401,407 68,70 forbids selection of primers in the 7 bases starting at 401 and the 3 bases at 68.</text> </comment>"
-                            }, 
-                            "e_forwardinput": {
-                                "prompt": "Forward input primer sequence to check", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_excludedregion",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Excluded region(s)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "11",
+                                "command": false,
+                                "comment": "The sequence of a forward primer to check and around which to design reverse primers and optional internal oligos.  Must be a substring of SEQUENCE.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -forwardinput=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">The sequence of a forward primer to check and around which to design reverse primers and optional internal oligos. Must be a substring of SEQUENCE.</text> </comment>"
-                            }, 
-                            "e_reverseinput": {
-                                "prompt": "Reverse input primer sequence to check", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_forwardinput",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Forward input primer sequence to check",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "12",
+                                "command": false,
+                                "comment": "The sequence of a reverse primer to check and around which to design forward primers and optional internal oligos.  Must be a substring of the reverse strand of SEQUENCE.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -reverseinput=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">The sequence of a reverse primer to check and around which to design forward primers and optional internal oligos. Must be a substring of the reverse strand of SEQUENCE.</text> </comment>"
-                            }
-                        }
-                    }, 
-                    "e_primersection": {
-                        "name": "e_primersection", 
-                        "parameters": {
-                            "e_gcclamp": {
-                                "prompt": "Gc clamp (value greater than or equal to 0)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_reverseinput",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Reverse input primer sequence to check",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Integer"
-                                }, 
-                                "precond": {
-                                    "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_seqoptsection",
+                        "precond": null,
+                        "prompt": "Sequence options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "13",
+                                "command": false,
+                                "comment": "Require the specified number of consecutive Gs and Cs at the 3' end of both the forward and reverse primer. (This  parameter has no effect on the internal oligo if one is  requested.)",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -gcclamp=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">Require the specified number of consecutive Gs and Cs at the 3' end of both the forward and reverse primer. (This parameter has no effect on the internal oligo if one is requested.)</text> </comment>"
-                            }, 
-                            "e_osize": {
-                                "prompt": "Primer optimum size (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_gcclamp",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "20"
-                                ], 
+                                },
+                                "prompt": "Gc clamp (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "14",
+                                "command": false,
+                                "comment": "Optimum length (in bases) of a primer oligo. EPrimer3 will attempt to pick primers close to this length.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -osize=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">Optimum length (in bases) of a primer oligo. EPrimer3 will attempt to pick primers close to this length.</text> </comment>"
-                            }, 
-                            "e_minsize": {
-                                "prompt": "Primer minimum size (value greater than or equal to 1)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_osize",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "18"
-                                ], 
+                                },
+                                "prompt": "Primer optimum size (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "15",
+                                "command": false,
+                                "comment": "Minimum acceptable length of a primer. Must be greater than 0 and less than or equal to MAX-SIZE.",
+                                "ctrl": {
+                                    "python": "value >= 1"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -minsize=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 1"
-                                }, 
-                                "comment": "<text lang=\"en\">Minimum acceptable length of a primer. Must be greater than 0 and less than or equal to MAX-SIZE.</text> </comment>"
-                            }, 
-                            "e_maxsize": {
-                                "prompt": "Primer maximum size (value less than or equal to 35)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_minsize",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "27"
-                                ], 
+                                },
+                                "prompt": "Primer minimum size (value greater than or equal to 1)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "16",
+                                "command": false,
+                                "comment": "Maximum acceptable length (in bases) of a primer. Currently this parameter cannot be larger than 35. This limit is  governed by the maximum oligo size for which EPrimer3's  melting-temperature is valid.",
+                                "ctrl": {
+                                    "python": "value <= 35"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -maxsize=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 35"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum acceptable length (in bases) of a primer. Currently this parameter cannot be larger than 35. This limit is governed by the maximum oligo size for which EPrimer3's melting-temperature is valid.</text> </comment>"
-                            }, 
-                            "e_otm": {
-                                "prompt": "Primer optimum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_maxsize",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "60.0"
-                                ], 
+                                },
+                                "prompt": "Primer maximum size (value less than or equal to 35)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "17",
+                                "command": false,
+                                "comment": "Optimum melting temperature(Celsius) for a primer oligo. EPrimer3 will try to pick primers with melting temperatures are  close to this temperature. The oligo melting temperature formula  in EPrimer3 is that given in Rychlik, Spencer and Rhoads,  Nucleic Acids Research, vol 18, num 21, pp 6409-6412 and  Breslauer, Frank, Bloecker and Marky, Proc. Natl. Acad. Sci. USA,  vol 83, pp 3746-3750. Please refer to the former paper for  background discussion.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -otm=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Optimum melting temperature(Celsius) for a primer oligo. EPrimer3 will try to pick primers with melting temperatures are close to this temperature. The oligo melting temperature formula in EPrimer3 is that given in Rychlik, Spencer and Rhoads, Nucleic Acids Research, vol 18, num 21, pp 6409-6412 and Breslauer, Frank, Bloecker and Marky, Proc. Natl. Acad. Sci. USA, vol 83, pp 3746-3750. Please refer to the former paper for background discussion.</text> </comment>"
-                            }, 
-                            "e_mintm": {
-                                "prompt": "Primer minimum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_otm",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "57.0"
-                                ], 
+                                },
+                                "prompt": "Primer optimum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "18",
+                                "command": false,
+                                "comment": "Minimum acceptable melting temperature(Celsius) for a primer oligo.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -mintm=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Minimum acceptable melting temperature(Celsius) for a primer oligo.</text> </comment>"
-                            }, 
-                            "e_maxtm": {
-                                "prompt": "Primer maximum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_mintm",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "63.0"
-                                ], 
+                                },
+                                "prompt": "Primer minimum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "19",
+                                "command": false,
+                                "comment": "Maximum acceptable melting temperature(Celsius) for a primer oligo.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -maxtm=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum acceptable melting temperature(Celsius) for a primer oligo.</text> </comment>"
-                            }, 
-                            "e_maxdifftm": {
-                                "prompt": "Maximum difference in tm of primers", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_maxtm",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "100.0"
-                                ], 
+                                },
+                                "prompt": "Primer maximum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "20",
+                                "command": false,
+                                "comment": "Maximum acceptable (unsigned) difference between the melting temperatures of the forward and reverse primers.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -maxdifftm=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum acceptable (unsigned) difference between the melting temperatures of the forward and reverse primers.</text> </comment>"
-                            }, 
-                            "e_ogcpercent": {
-                                "prompt": "Primer optimum gc percent", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_maxdifftm",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "50.0"
-                                ], 
+                                },
+                                "prompt": "Maximum difference in tm of primers",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "21",
+                                "command": false,
+                                "comment": "Primer optimum GC percent.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ogcpercent=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Primer optimum GC percent.</text> </comment>"
-                            }, 
-                            "e_mingc": {
-                                "prompt": "Primer minimum gc percent", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ogcpercent",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "20.0"
-                                ], 
+                                },
+                                "prompt": "Primer optimum gc percent",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "22",
+                                "command": false,
+                                "comment": "Minimum allowable percentage of Gs and Cs in any primer.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -mingc=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Minimum allowable percentage of Gs and Cs in any primer.</text> </comment>"
-                            }, 
-                            "e_maxgc": {
-                                "prompt": "Primer maximum gc percent", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_mingc",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "80.0"
-                                ], 
+                                },
+                                "prompt": "Primer minimum gc percent",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "23",
+                                "command": false,
+                                "comment": "Maximum allowable percentage of Gs and Cs in any primer generated by Primer.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -maxgc=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum allowable percentage of Gs and Cs in any primer generated by Primer.</text> </comment>"
-                            }, 
-                            "e_saltconc": {
-                                "prompt": "Salt concentration (mm)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_maxgc",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "50.0"
-                                ], 
+                                },
+                                "prompt": "Primer maximum gc percent",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "24",
+                                "command": false,
+                                "comment": "The millimolar concentration of salt (usually KCl) in the PCR. EPrimer3 uses this argument to calculate oligo melting  temperatures.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -saltconc=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The millimolar concentration of salt (usually KCl) in the PCR. EPrimer3 uses this argument to calculate oligo melting temperatures.</text> </comment>"
-                            }, 
-                            "e_dnaconc": {
-                                "prompt": "Dna concentration (nm)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_saltconc",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "50.0"
-                                ], 
+                                },
+                                "prompt": "Salt concentration (mm)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "25",
+                                "command": false,
+                                "comment": "The nanomolar concentration of annealing oligos in the PCR. EPrimer3 uses this argument to calculate oligo melting  temperatures. The default (50nM) works well with the standard  protocol used at the Whitehead/MIT Center for Genome  Research--0.5 microliters of 20 micromolar concentration for  each primer oligo in a 20 microliter reaction with 10 nanograms  template, 0.025 units/microliter Taq polymerase in 0.1 mM each  dNTP, 1.5mM MgCl2, 50mM KCl, 10mM Tris-HCL (pH 9.3) using 35  cycles with an annealing temperature of 56 degrees Celsius. This  parameter corresponds to 'c' in Rychlik, Spencer and Rhoads'  equation (ii) (Nucleic Acids Research, vol 18, num 21) where a  suitable value (for a lower initial concentration of template)  is 'empirically determined'. The value of this parameter is less  than the actual concentration of oligos in the reaction because  it is the concentration of annealing oligos, which in turn  depends on the amount of template (including PCR product) in a  given cycle. This concentration increases a great deal during a  PCR; fortunately PCR seems quite robust for a variety of oligo  melting temperatures. \n  See ADVICE FOR PICKING PRIMERS.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -dnaconc=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The nanomolar concentration of annealing oligos in the PCR. EPrimer3 uses this argument to calculate oligo melting temperatures. The default (50nM) works well with the standard protocol used at the Whitehead/MIT Center for Genome Research--0.5 microliters of 20 micromolar concentration for each primer oligo in a 20 microliter reaction with 10 nanograms template, 0.025 units/microliter Taq polymerase in 0.1 mM each dNTP, 1.5mM MgCl2, 50mM KCl, 10mM Tris-HCL (pH 9.3) using 35 cycles with an annealing temperature of 56 degrees Celsius. This parameter corresponds to 'c' in Rychlik, Spencer and Rhoads' equation (ii) (Nucleic Acids Research, vol 18, num 21) where a suitable value (for a lower initial concentration of template) is 'empirically determined'. The value of this parameter is less than the actual concentration of oligos in the reaction because it is the concentration of annealing oligos, which in turn depends on the amount of template (including PCR product) in a given cycle. This concentration increases a great deal during a PCR; fortunately PCR seems quite robust for a variety of oligo melting temperatures. See ADVICE FOR PICKING PRIMERS.</text> </comment>"
-                            }, 
-                            "e_maxpolyx": {
-                                "prompt": "Maximum polynucleotide repeat (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_dnaconc",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "5"
-                                ], 
+                                },
+                                "prompt": "Dna concentration (nm)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "26",
+                                "command": false,
+                                "comment": "The maximum allowable length of a mononucleotide repeat in a primer, for example AAAAAA.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -maxpolyx=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum allowable length of a mononucleotide repeat in a primer, for example AAAAAA.</text> </comment>"
-                            }
-                        }
-                    }, 
-                    "e_productsection": {
-                        "name": "e_productsection", 
-                        "parameters": {
-                            "e_psizeopt": {
-                                "prompt": "Product optimum size (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_maxpolyx",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "200"
-                                ], 
+                                },
+                                "prompt": "Maximum polynucleotide repeat (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_primersection",
+                        "precond": null,
+                        "prompt": "Primer options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "27",
+                                "command": false,
+                                "comment": "The optimum size for the PCR product. 0 indicates that there is no optimum product size.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -psizeopt=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">The optimum size for the PCR product. 0 indicates that there is no optimum product size.</text> </comment>"
-                            }, 
-                            "e_prange": {
-                                "prompt": "Product size range", 
-                                "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_psizeopt",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "100-300"
-                                ], 
+                                },
+                                "prompt": "Product optimum size (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "28",
+                                "command": false,
+                                "comment": "The associated values specify the lengths of the product that the user wants the primers to create, and is a space  separated list of elements of the form \n  (x)-(y) \n  where an (x)-(y) pair is a legal range of lengths for the  product. For example, if one wants PCR products to be between  100 to 150 bases (inclusive) then one would set this parameter  to 100-150. If one desires PCR products in either the range from  100 to 150 bases or in the range from 200 to 250 bases then one  would set this parameter to 100-150 200-250. \n  EPrimer3 favors ranges to the left side of the parameter string.  EPrimer3 will return legal primers pairs in the first range  regardless the value of the objective function for these pairs.  Only if there are an insufficient number of primers in the first  range will EPrimer3 return primers in a subsequent range.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -prange=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The associated values specify the lengths of the product that the user wants the primers to create, and is a space separated list of elements of the form (x)-(y) where an (x)-(y) pair is a legal range of lengths for the product. For example, if one wants PCR products to be between 100 to 150 bases (inclusive) then one would set this parameter to 100-150. If one desires PCR products in either the range from 100 to 150 bases or in the range from 200 to 250 bases then one would set this parameter to 100-150 200-250. EPrimer3 favors ranges to the left side of the parameter string. EPrimer3 will return legal primers pairs in the first range regardless the value of the objective function for these pairs. Only if there are an insufficient number of primers in the first range will EPrimer3 return primers in a subsequent range.</text> </comment>"
-                            }, 
-                            "e_ptmopt": {
-                                "prompt": "Product optimum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_prange",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "0.0"
-                                ], 
+                                },
+                                "prompt": "Product size range",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "29",
+                                "command": false,
+                                "comment": "The optimum melting temperature for the PCR product. 0 indicates that there is no optimum temperature.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ptmopt=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The optimum melting temperature for the PCR product. 0 indicates that there is no optimum temperature.</text> </comment>"
-                            }, 
-                            "e_ptmmin": {
-                                "prompt": "Product minimum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ptmopt",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "-1000000.0"
-                                ], 
+                                },
+                                "prompt": "Product optimum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "30",
+                                "command": false,
+                                "comment": "The minimum allowed melting temperature of the amplicon. Please see the documentation on the maximum melting temperature  of the product for details.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ptmmin=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The minimum allowed melting temperature of the amplicon. Please see the documentation on the maximum melting temperature of the product for details.</text> </comment>"
-                            }, 
-                            "e_ptmmax": {
-                                "prompt": "Product maximum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ptmmin",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_primer"
-                                }, 
-                                "default_value": [
-                                    "1000000.0"
-                                ], 
+                                },
+                                "prompt": "Product minimum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "31",
+                                "command": false,
+                                "comment": "The maximum allowed melting temperature of the amplicon. Product Tm is calculated using the formula from Bolton and  McCarthy, PNAS 84:1390 (1962) as presented in Sambrook, Fritsch  and Maniatis, Molecular Cloning, p 11.46 (1989, CSHL Press). \n  Tm = 81.5 + 16.6(log10([Na+])) + .41*(%GC) - 600/length \n  Where [Na+} is the molar sodium concentration, (%GC) is the  percent of Gs and Cs in the sequence, and length is the length  of the sequence. \n  A similar formula is used by the prime primer selection program  in GCG, which instead uses 675.0/length in  the last term (after F. Baldino, Jr, M.-F. Chesselet, and M.E.  Lewis, Methods in Enzymology 168:766 (1989) eqn (1) on page 766  without the mismatch and formamide terms). The formulas here and  in Baldino et al. assume Na+ rather than K+. According to J.G.  Wetmur, Critical Reviews in BioChem. and Mol. Bio. 26:227 (1991)  50 mM K+ should be equivalent in these formulae to .2 M Na+.  EPrimer3 uses the same salt concentration value for calculating  both the primer melting temperature and the oligo melting  temperature. If you are planning to use the PCR product for  hybridization later this behavior will not give you the Tm under  hybridization conditions.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ptmmax=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum allowed melting temperature of the amplicon. Product Tm is calculated using the formula from Bolton and McCarthy, PNAS 84:1390 (1962) as presented in Sambrook, Fritsch and Maniatis, Molecular Cloning, p 11.46 (1989, CSHL Press). Tm = 81.5 + 16.6(log10([Na+])) + .41*(%GC) - 600/length Where [Na+} is the molar sodium concentration, (%GC) is the percent of Gs and Cs in the sequence, and length is the length of the sequence. A similar formula is used by the prime primer selection program in GCG, which instead uses 675.0/length in the last term (after F. Baldino, Jr, M.-F. Chesselet, and M.E. Lewis, Methods in Enzymology 168:766 (1989) eqn (1) on page 766 without the mismatch and formamide terms). The formulas here and in Baldino et al. assume Na+ rather than K+. According to J.G. Wetmur, Critical Reviews in BioChem. and Mol. Bio. 26:227 (1991) 50 mM K+ should be equivalent in these formulae to .2 M Na+. EPrimer3 uses the same salt concentration value for calculating both the primer melting temperature and the oligo melting temperature. If you are planning to use the PCR product for hybridization later this behavior will not give you the Tm under hybridization conditions.</text> </comment>"
-                            }
-                        }
-                    }, 
-                    "e_oligosinput": {
-                        "name": "e_oligosinput", 
-                        "parameters": {
-                            "e_oexcludedregion": {
-                                "prompt": "Internal oligo excluded region", 
-                                "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ptmmax",
+                                "paramfile": null,
                                 "precond": {
-                                    "python": "e_hybridprobe"
-                                }, 
+                                    "python": "e_primer"
+                                },
+                                "prompt": "Product maximum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_productsection",
+                        "precond": null,
+                        "prompt": "Product options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "32",
+                                "command": false,
+                                "comment": "Middle oligos may not overlap any region specified by this tag. The associated value must be a space-separated list of  \n  (start),(end) \n  pairs, where (start) is the index of the first base of an  excluded region, and (end) is the last. Often one would make  Target regions excluded regions for internal oligos.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -oexcludedregion=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">Middle oligos may not overlap any region specified by this tag. The associated value must be a space-separated list of (start),(end) pairs, where (start) is the index of the first base of an excluded region, and (end) is the last. Often one would make Target regions excluded regions for internal oligos.</text> </comment>"
-                            }, 
-                            "e_oligoinput": {
-                                "prompt": "Internal oligo input sequence (if any)", 
-                                "type": {
-                                    "datatype_class": "String"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_oexcludedregion",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
+                                },
+                                "prompt": "Internal oligo excluded region",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "33",
+                                "command": false,
+                                "comment": "The sequence of an internal oligo to check and around which to design forward and reverse primers. Must be a substring  of SEQUENCE.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -oligoinput=\" + str(value))[value is not None]"
-                                }, 
-                                "comment": "<text lang=\"en\">The sequence of an internal oligo to check and around which to design forward and reverse primers. Must be a substring of SEQUENCE.</text> </comment>"
-                            }
-                        }
-                    }, 
-                    "e_oligosection": {
-                        "name": "e_oligosection", 
-                        "parameters": {
-                            "e_osizeopt": {
-                                "prompt": "Internal oligo optimum size (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_oligoinput",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "20"
-                                ], 
+                                },
+                                "prompt": "Internal oligo input sequence (if any)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_oligosinput",
+                        "precond": null,
+                        "prompt": "Internal oligo input"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "34",
+                                "command": false,
+                                "comment": "Optimum length (in bases) of an internal oligo. EPrimer3 will attempt to pick primers close to this length.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -osizeopt=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">Optimum length (in bases) of an internal oligo. EPrimer3 will attempt to pick primers close to this length.</text> </comment>"
-                            }, 
-                            "e_ominsize": {
-                                "prompt": "Internal oligo minimum size (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_osizeopt",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "18"
-                                ], 
+                                },
+                                "prompt": "Internal oligo optimum size (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "35",
+                                "command": false,
+                                "comment": "Minimum acceptable length of an internal oligo. Must be greater than 0 and less than or equal to  INTERNAL-OLIGO-MAX-SIZE.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -ominsize=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">Minimum acceptable length of an internal oligo. Must be greater than 0 and less than or equal to INTERNAL-OLIGO-MAX-SIZE.</text> </comment>"
-                            }, 
-                            "e_omaxsize": {
-                                "prompt": "Internal oligo maximum size (value less than or equal to 35)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ominsize",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "27"
-                                ], 
+                                },
+                                "prompt": "Internal oligo minimum size (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "36",
+                                "command": false,
+                                "comment": "Maximum acceptable length (in bases) of an internal oligo. Currently this parameter cannot be larger than 35. This  limit is governed by maximum oligo size for which EPrimer3's  melting-temperature is valid.",
+                                "ctrl": {
+                                    "python": "value <= 35"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -omaxsize=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 35"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum acceptable length (in bases) of an internal oligo. Currently this parameter cannot be larger than 35. This limit is governed by maximum oligo size for which EPrimer3's melting-temperature is valid.</text> </comment>"
-                            }, 
-                            "e_otmopt": {
-                                "prompt": "Internal oligo optimum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_omaxsize",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "60.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo maximum size (value less than or equal to 35)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "37",
+                                "command": false,
+                                "comment": "Optimum melting temperature (Celsius) for an internal oligo. EPrimer3 will try to pick oligos with melting  temperatures that are close to this temperature. The oligo  melting temperature formula in EPrimer3 is that given in  Rychlik, Spencer and Rhoads, Nucleic Acids Research, vol 18, num  21, pp 6409-6412 and Breslauer, Frank, Bloecker and Marky, Proc.  Natl. Acad. Sci. USA, vol 83, pp 3746-3750. Please refer to the  former paper for background discussion.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -otmopt=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Optimum melting temperature (Celsius) for an internal oligo. EPrimer3 will try to pick oligos with melting temperatures that are close to this temperature. The oligo melting temperature formula in EPrimer3 is that given in Rychlik, Spencer and Rhoads, Nucleic Acids Research, vol 18, num 21, pp 6409-6412 and Breslauer, Frank, Bloecker and Marky, Proc. Natl. Acad. Sci. USA, vol 83, pp 3746-3750. Please refer to the former paper for background discussion.</text> </comment>"
-                            }, 
-                            "e_otmmin": {
-                                "prompt": "Internal oligo minimum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_otmopt",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "57.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo optimum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "38",
+                                "command": false,
+                                "comment": "Minimum acceptable melting temperature(Celsius) for an internal oligo.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -otmmin=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Minimum acceptable melting temperature(Celsius) for an internal oligo.</text> </comment>"
-                            }, 
-                            "e_otmmax": {
-                                "prompt": "Internal oligo maximum tm", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_otmmin",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "63.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo minimum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "39",
+                                "command": false,
+                                "comment": "Maximum acceptable melting temperature (Celsius) for an internal oligo.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -otmmax=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum acceptable melting temperature (Celsius) for an internal oligo.</text> </comment>"
-                            }, 
-                            "e_ogcopt": {
-                                "prompt": "Internal oligo optimum gc percent", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_otmmax",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "50.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo maximum tm",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "40",
+                                "command": false,
+                                "comment": "Internal oligo optimum GC percent.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ogcopt=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Internal oligo optimum GC percent.</text> </comment>"
-                            }, 
-                            "e_ogcmin": {
-                                "prompt": "Internal oligo minimum gc", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ogcopt",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "20.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo optimum gc percent",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "41",
+                                "command": false,
+                                "comment": "Minimum allowable percentage of Gs and Cs in an internal oligo.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ogcmin=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Minimum allowable percentage of Gs and Cs in an internal oligo.</text> </comment>"
-                            }, 
-                            "e_ogcmax": {
-                                "prompt": "Internal oligo maximum gc", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ogcmin",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "80.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo minimum gc",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "42",
+                                "command": false,
+                                "comment": "Maximum allowable percentage of Gs and Cs in any internal oligo generated by Primer.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -ogcmax=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">Maximum allowable percentage of Gs and Cs in any internal oligo generated by Primer.</text> </comment>"
-                            }, 
-                            "e_osaltconc": {
-                                "prompt": "Internal oligo salt concentration (mm)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_ogcmax",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "50.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo maximum gc",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "43",
+                                "command": false,
+                                "comment": "The millimolar concentration of salt (usually KCl) in the hybridization. EPrimer3 uses this argument to calculate  internal oligo melting temperatures.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -osaltconc=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The millimolar concentration of salt (usually KCl) in the hybridization. EPrimer3 uses this argument to calculate internal oligo melting temperatures.</text> </comment>"
-                            }, 
-                            "e_odnaconc": {
-                                "prompt": "Internal oligo dna concentration (nm)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_osaltconc",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "50.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo salt concentration (mm)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "44",
+                                "command": false,
+                                "comment": "The nanomolar concentration of annealing internal oligo in the hybridization.",
+                                "ctrl": null,
                                 "format": {
                                     "python": "(\"\", \" -odnaconc=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "comment": "<text lang=\"en\">The nanomolar concentration of annealing internal oligo in the hybridization.</text> </comment>"
-                            }, 
-                            "e_oanyself": {
-                                "prompt": "Internal oligo maximum self complementarity (value less than or equal to 9999.99)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_odnaconc",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "12.00"
-                                ], 
+                                },
+                                "prompt": "Internal oligo dna concentration (nm)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "45",
+                                "command": false,
+                                "comment": "The maximum allowable local alignment score when testing an internal oligo for (local) self-complementarity. Local  self-complementarity is taken to predict the tendency of oligos  to anneal to themselves The scoring system gives 1.00 for  complementary bases, -0.25 for a match of any base (or N) with  an N, -1.00 for a mismatch, and -2.00 for a gap. Only  single-base-pair gaps are allowed. For example, the alignment \n  5' ATCGNA 3' \n  || | | \n  3' TA-CGT 5' \n  is allowed (and yields a score of 1.75), but the alignment \n  5' ATCCGNA 3' \n  || | | \n  3' TA--CGT 5' \n  is not considered. Scores are non-negative, and a score of 0.00  indicates that there is no reasonable local alignment between  two oligos.",
+                                "ctrl": {
+                                    "python": "value <= 9999.99"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -oanyself=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 9999.99"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum allowable local alignment score when testing an internal oligo for (local) self-complementarity. Local self-complementarity is taken to predict the tendency of oligos to anneal to themselves The scoring system gives 1.00 for complementary bases, -0.25 for a match of any base (or N) with an N, -1.00 for a mismatch, and -2.00 for a gap. Only single-base-pair gaps are allowed. For example, the alignment 5' ATCGNA 3' || | | 3' TA-CGT 5' is allowed (and yields a score of 1.75), but the alignment 5' ATCCGNA 3' || | | 3' TA--CGT 5' is not considered. Scores are non-negative, and a score of 0.00 indicates that there is no reasonable local alignment between two oligos.</text> </comment>"
-                            }, 
-                            "e_oendself": {
-                                "prompt": "Internal oligo maximum 3' self complementarity (value less than or equal to 9999.99)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_oanyself",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "12.00"
-                                ], 
+                                },
+                                "prompt": "Internal oligo maximum self complementarity (value less than or equal to 9999.99)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "46",
+                                "command": false,
+                                "comment": "The maximum allowable 3'-anchored global alignment score when testing a single oligo for self-complementarity. \n  The scoring system is as for the Maximum Complementarity  argument. In the examples above the scores are 7.00 and 6.00  respectively. Scores are non-negative, and a score of 0.00  indicates that there is no reasonable 3'-anchored global  alignment between two oligos. In order to estimate 3'-anchored  global alignments for candidate oligos, Primer assumes that the  sequence from which to choose oligos is presented 5' to 3'. \n  INTERNAL-OLIGO-SELF-END is meaningless when applied to internal  oligos used for hybridization-based detection, since  primer-dimer will not occur. We recommend that  INTERNAL-OLIGO-SELF-END be set at least as high as  INTERNAL-OLIGO-SELF-ANY.",
+                                "ctrl": {
+                                    "python": "value <= 9999.99"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -oendself=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 9999.99"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum allowable 3'-anchored global alignment score when testing a single oligo for self-complementarity. The scoring system is as for the Maximum Complementarity argument. In the examples above the scores are 7.00 and 6.00 respectively. Scores are non-negative, and a score of 0.00 indicates that there is no reasonable 3'-anchored global alignment between two oligos. In order to estimate 3'-anchored global alignments for candidate oligos, Primer assumes that the sequence from which to choose oligos is presented 5' to 3'. INTERNAL-OLIGO-SELF-END is meaningless when applied to internal oligos used for hybridization-based detection, since primer-dimer will not occur. We recommend that INTERNAL-OLIGO-SELF-END be set at least as high as INTERNAL-OLIGO-SELF-ANY.</text> </comment>"
-                            }, 
-                            "e_opolyxmax": {
-                                "prompt": "Internal oligo maximum polynucleotide repeat (value greater than or equal to 0)", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_oendself",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "5"
-                                ], 
+                                },
+                                "prompt": "Internal oligo maximum 3' self complementarity (value less than or equal to 9999.99)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "47",
+                                "command": false,
+                                "comment": "The maximum allowable length of an internal oligo mononucleotide repeat, for example AAAAAA.",
+                                "ctrl": {
+                                    "python": "value >= 0"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -opolyxmax=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 0"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum allowable length of an internal oligo mononucleotide repeat, for example AAAAAA.</text> </comment>"
-                            }, 
-                            "e_omishybmax": {
-                                "prompt": "Internal oligo maximum mishybridization (value less than or equal to 9999.99)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_opolyxmax",
+                                "paramfile": null,
                                 "precond": {
                                     "python": "e_hybridprobe"
-                                }, 
-                                "default_value": [
-                                    "12.0"
-                                ], 
+                                },
+                                "prompt": "Internal oligo maximum polynucleotide repeat (value greater than or equal to 0)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "48",
+                                "command": false,
+                                "comment": "Similar to MAX-MISPRIMING except that this parameter applies to the similarity of candidate internal oligos to the  library specified in INTERNAL-OLIGO-MISHYB-LIBRARY.",
+                                "ctrl": {
+                                    "python": "value <= 9999.99"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -omishybmax=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 9999.99"
-                                }, 
-                                "comment": "<text lang=\"en\">Similar to MAX-MISPRIMING except that this parameter applies to the similarity of candidate internal oligos to the library specified in INTERNAL-OLIGO-MISHYB-LIBRARY.</text> </comment>"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_omishybmax",
+                                "paramfile": null,
+                                "precond": {
+                                    "python": "e_hybridprobe"
+                                },
+                                "prompt": "Internal oligo maximum mishybridization (value less than or equal to 9999.99)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
                             }
-                        }
+                        ],
+                        "comment": null,
+                        "name": "e_oligosection",
+                        "precond": null,
+                        "prompt": "Internal oligo options"
                     }
-                }
-            }, 
-            "e_advanced": {
-                "name": "e_advanced", 
-                "parameters": {
-                    "e_explainflag": {
-                        "prompt": "Explain flag", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "49",
+                        "command": false,
+                        "comment": "If this flag is true, produce LEFT-EXPLAIN, RIGHT-EXPLAIN, and INTERNAL-OLIGO-EXPLAIN output tags, which are intended to  provide information on the number of oligos and primer pairs that  EPrimer3 examined, and statistics on the number discarded for  various reasons.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -explainflag\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">If this flag is true, produce LEFT-EXPLAIN, RIGHT-EXPLAIN, and INTERNAL-OLIGO-EXPLAIN output tags, which are intended to provide information on the number of oligos and primer pairs that EPrimer3 examined, and statistics on the number discarded for various reasons.</text> </comment>"
-                    }, 
-                    "e_fileflag": {
-                        "prompt": "Create results files for each sequence", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_explainflag",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Explain flag",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "50",
+                        "command": false,
+                        "comment": "If the associated value is true, then EPrimer3 creates two output files for each input SEQUENCE. File (sequence-id).for lists  all acceptable forward primers for (sequence-id), and  (sequence-id).rev lists all acceptable reverse primers for  (sequence-id), where (sequence-id) is the value of the SEQUENCE-ID  tag (which must be supplied). In addition, if the input tag TASK  is 1 or 4, EPrimer3 produces a file (sequence-id).int, which lists  all acceptable internal oligos.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -fileflag\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">If the associated value is true, then EPrimer3 creates two output files for each input SEQUENCE. File (sequence-id).for lists all acceptable forward primers for (sequence-id), and (sequence-id).rev lists all acceptable reverse primers for (sequence-id), where (sequence-id) is the value of the SEQUENCE-ID tag (which must be supplied). In addition, if the input tag TASK is 1 or 4, EPrimer3 produces a file (sequence-id).int, which lists all acceptable internal oligos.</text> </comment>"
-                    }, 
-                    "e_firstbaseindex": {
-                        "prompt": "First base index", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_fileflag",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Create results files for each sequence",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "51",
+                        "command": false,
+                        "comment": "This parameter is the index of the first base in the input sequence. For input and output using 1-based indexing (such as  that used in GenBank and to which many users are accustomed) set  this parameter to 1. For input and output using 0-based indexing  set this parameter to 0. (This parameter also affects the indexes  in the contents of the files produced when the primer file flag is  set.)",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -firstbaseindex=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">This parameter is the index of the first base in the input sequence. For input and output using 1-based indexing (such as that used in GenBank and to which many users are accustomed) set this parameter to 1. For input and output using 0-based indexing set this parameter to 0. (This parameter also affects the indexes in the contents of the files produced when the primer file flag is set.)</text> </comment>"
-                    }, 
-                    "e_pickanyway": {
-                        "prompt": "Pick anyway", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_firstbaseindex",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "First base index",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "52",
+                        "command": false,
+                        "comment": "If true pick a primer pair even if LEFT-INPUT, RIGHT-INPUT, or INTERNAL-OLIGO-INPUT violates specific constraints.",
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -pickanyway\")[ bool(value) ]"
-                        }, 
-                        "comment": "<text lang=\"en\">If true pick a primer pair even if LEFT-INPUT, RIGHT-INPUT, or INTERNAL-OLIGO-INPUT violates specific constraints.</text> </comment>"
-                    }, 
-                    "e_maxmispriming": {
-                        "prompt": "Primer maximum mispriming (value less than or equal to 9999.99)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_pickanyway",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pick anyway",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "12.00"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "53",
+                        "command": false,
+                        "comment": "The maximum allowed weighted similarity with any sequence in MISPRIMING-LIBRARY.",
+                        "ctrl": {
+                            "python": "value <= 9999.99"
+                        },
                         "format": {
                             "python": "(\"\", \" -maxmispriming=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "ctrl": {
-                            "python": "= 9999.99"
-                        }, 
-                        "comment": "<text lang=\"en\">The maximum allowed weighted similarity with any sequence in MISPRIMING-LIBRARY.</text> </comment>"
-                    }, 
-                    "e_pairmaxmispriming": {
-                        "prompt": "Primer pair maximum mispriming (value less than or equal to 9999.99)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_maxmispriming",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Primer maximum mispriming (value less than or equal to 9999.99)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "24.00"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "54",
+                        "command": false,
+                        "comment": "The maximum allowed sum of weighted similarities of a primer pair (one similarity for each primer) with any single  sequence in MISPRIMING-LIBRARY.",
+                        "ctrl": {
+                            "python": "value <= 9999.99"
+                        },
                         "format": {
                             "python": "(\"\", \" -pairmaxmispriming=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "ctrl": {
-                            "python": "= 9999.99"
-                        }, 
-                        "comment": "<text lang=\"en\">The maximum allowed sum of weighted similarities of a primer pair (one similarity for each primer) with any single sequence in MISPRIMING-LIBRARY.</text> </comment>"
-                    }, 
-                    "e_numnsaccepted": {
-                        "prompt": "Maximum ns accepted in a primer (value greater than or equal to 0)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_pairmaxmispriming",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Primer pair maximum mispriming (value less than or equal to 9999.99)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "55",
+                        "command": false,
+                        "comment": "Maximum number of unknown bases (N) allowable in any primer.",
+                        "ctrl": {
+                            "python": "value >= 0"
+                        },
                         "format": {
                             "python": "(\"\", \" -numnsaccepted=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "ctrl": {
-                            "python": "= 0"
-                        }, 
-                        "comment": "<text lang=\"en\">Maximum number of unknown bases (N) allowable in any primer.</text> </comment>"
-                    }, 
-                    "e_selfany": {
-                        "prompt": "Maximum self complementarity (value from 0.00 to 9999.99)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_numnsaccepted",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum ns accepted in a primer (value greater than or equal to 0)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "8.00"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "56",
+                        "command": false,
+                        "comment": "The maximum allowable local alignment score when testing a single primer for (local) self-complementarity and the maximum  allowable local alignment score when testing for complementarity  between forward and reverse primers. Local self-complementarity is  taken to predict the tendency of primers to anneal to each other  without necessarily causing self-priming in the PCR. The scoring  system gives 1.00 for complementary bases, -0.25 for a match of  any base (or N) with an N, -1.00 for a mismatch, and -2.00 for a  gap. Only single-base-pair gaps are allowed. For example, the  alignment \n  5' ATCGNA 3' \n  ...|| | | \n  3' TA-CGT 5' \n  is allowed (and yields a score of 1.75), but the alignment \n  5' ATCCGNA 3' \n  ...|| | | \n  3' TA--CGT 5' \n  is not considered. Scores are non-negative, and a score of 0.00  indicates that there is no reasonable local alignment between two  oligos.",
+                        "ctrl": {
+                            "python": "value >= 0.00"
+                        },
                         "format": {
                             "python": "(\"\", \" -selfany=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "ctrl": {
-                            "python": "= 9999.99"
-                        }, 
-                        "comment": "<text lang=\"en\">The maximum allowable local alignment score when testing a single primer for (local) self-complementarity and the maximum allowable local alignment score when testing for complementarity between forward and reverse primers. Local self-complementarity is taken to predict the tendency of primers to anneal to each other without necessarily causing self-priming in the PCR. The scoring system gives 1.00 for complementary bases, -0.25 for a match of any base (or N) with an N, -1.00 for a mismatch, and -2.00 for a gap. Only single-base-pair gaps are allowed. For example, the alignment 5' ATCGNA 3' ...|| | | 3' TA-CGT 5' is allowed (and yields a score of 1.75), but the alignment 5' ATCCGNA 3' ...|| | | 3' TA--CGT 5' is not considered. Scores are non-negative, and a score of 0.00 indicates that there is no reasonable local alignment between two oligos.</text> </comment>"
-                    }, 
-                    "e_selfend": {
-                        "prompt": "Maximum 3' self complementarity (value greater than or equal to 0.00)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_selfany",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum self complementarity (value from 0.00 to 9999.99)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "3.00"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "57",
+                        "command": false,
+                        "comment": "The maximum allowable 3'-anchored global alignment score when testing a single primer for self-complementarity, and the  maximum allowable 3'-anchored global alignment score when testing  for complementarity between forward and reverse primers. The  3'-anchored global alignment score is taken to predict the  likelihood of PCR-priming primer-dimers, for example \n  5' ATGCCCTAGCTTCCGGATG 3' \n  .............||| ||||| \n  ..........3' AAGTCCTACATTTAGCCTAGT 5' \n  or \n  5' AGGCTATGGGCCTCGCGA 3' \n  ...............|||||| \n  ............3' AGCGCTCCGGGTATCGGA 5' \n  The scoring system is as for the Maximum Complementarity argument.  In the examples above the scores are 7.00 and 6.00 respectively.  Scores are non-negative, and a score of 0.00 indicates that there  is no reasonable 3'-anchored global alignment between two oligos.  In order to estimate 3'-anchored global alignments for candidate  primers and primer pairs, Primer assumes that the sequence from  which to choose primers is presented 5' to 3'. It is nonsensical  to provide a larger value for this parameter than for the Maximum  (local) Complementarity parameter because the score of a local  alignment will always be at least as great as the score of a  global alignment.",
+                        "ctrl": {
+                            "python": "value >= 0.00"
+                        },
                         "format": {
                             "python": "(\"\", \" -selfend=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "ctrl": {
-                            "python": "= 0.00"
-                        }, 
-                        "comment": "<text lang=\"en\">The maximum allowable 3'-anchored global alignment score when testing a single primer for self-complementarity, and the maximum allowable 3'-anchored global alignment score when testing for complementarity between forward and reverse primers. The 3'-anchored global alignment score is taken to predict the likelihood of PCR-priming primer-dimers, for example 5' ATGCCCTAGCTTCCGGATG 3' .............||| ||||| ..........3' AAGTCCTACATTTAGCCTAGT 5' or 5' AGGCTATGGGCCTCGCGA 3' ...............|||||| ............3' AGCGCTCCGGGTATCGGA 5' The scoring system is as for the Maximum Complementarity argument. In the examples above the scores are 7.00 and 6.00 respectively. Scores are non-negative, and a score of 0.00 indicates that there is no reasonable 3'-anchored global alignment between two oligos. In order to estimate 3'-anchored global alignments for candidate primers and primer pairs, Primer assumes that the sequence from which to choose primers is presented 5' to 3'. It is nonsensical to provide a larger value for this parameter than for the Maximum (local) Complementarity parameter because the score of a local alignment will always be at least as great as the score of a global alignment.</text> </comment>"
-                    }, 
-                    "e_primerweights": {
-                        "name": "e_primerweights", 
-                        "parameters": {
-                            "e_maxendstability": {
-                                "prompt": "Maximum 3' end stability (value less than or equal to 999.9999)", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }, 
-                                "default_value": [
-                                    "9.0"
-                                ], 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_selfend",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum 3' self complementarity (value greater than or equal to 0.00)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "58",
+                                "command": false,
+                                "comment": "The maximum stability for the five 3' bases of a forward or reverse primer. Bigger numbers mean more stable 3' ends. The  value is the maximum delta G for duplex disruption for the five  3' bases as calculated using the nearest neighbor parameters  published in Breslauer, Frank, Bloecker and Marky, Proc. Natl.  Acad. Sci. USA, vol 83, pp 3746-3750. EPrimer3 uses a completely  permissive default value for backward compatibility (which we  may change in the next release). Rychlik recommends a maximum  value of 9 (Wojciech Rychlik, 'Selection of Primers for  Polymerase Chain Reaction' in BA White, Ed., 'Methods in  Molecular Biology, Vol. 15: PCR Protocols: Current Methods and  Applications', 1993, pp 31-40, Humana Press, Totowa NJ).",
+                                "ctrl": {
+                                    "python": "value <= 999.9999"
+                                },
                                 "format": {
                                     "python": "(\"\", \" -maxendstability=\" + str(value))[value is not None and value!=vdef]"
-                                }, 
-                                "ctrl": {
-                                    "python": "= 999.9999"
-                                }, 
-                                "comment": "<text lang=\"en\">The maximum stability for the five 3' bases of a forward or reverse primer. Bigger numbers mean more stable 3' ends. The value is the maximum delta G for duplex disruption for the five 3' bases as calculated using the nearest neighbor parameters published in Breslauer, Frank, Bloecker and Marky, Proc. Natl. Acad. Sci. USA, vol 83, pp 3746-3750. EPrimer3 uses a completely permissive default value for backward compatibility (which we may change in the next release). Rychlik recommends a maximum value of 9 (Wojciech Rychlik, 'Selection of Primers for Polymerase Chain Reaction' in BA White, Ed., 'Methods in Molecular Biology, Vol. 15: PCR Protocols: Current Methods and Applications', 1993, pp 31-40, Humana Press, Totowa NJ).</text> </comment>"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_maxendstability",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Maximum 3' end stability (value less than or equal to 999.9999)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
                             }
-                        }
+                        ],
+                        "comment": null,
+                        "name": "e_primerweights",
+                        "precond": null,
+                        "prompt": "Primer penalty weights"
                     }
-                }
-            }, 
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile": {
-                        "prompt": "Name of the output file (e_outfile)", 
-                        "type": {
-                            "datatype_class": "Filename"
-                        }, 
-                        "default_value": [
-                            "eprimer3.e_outfile"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "59",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "auto": {
-                "ishidden": true, 
-                "prompt": "Turn off any prompting", 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "60",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
                     "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "eprimer3",
     "outputs": {
-        "parameters": {
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile_out": {
-                        "isout": true, 
-                        "prompt": "outfile_out option", 
-                        "type": {
-                            "datatype_class": "Primer3Report", 
-                            "datatype_superclass": "Report"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
                             "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Primer3Report",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div > <{http://www.w3.org/1999/xhtml}p >This software and its underlying principle are covered by copyright laws and by the international patent application WO/2006/046132.</{http://www.w3.org/1999/xhtml}p> <{http://www.w3.org/1999/xhtml}p >Their use are exclusively authorized for academic purpose. Academic users are kindly requested to cite this source when referring to said software. For any use other than academic, please contact <{http://www.w3.org/1999/xhtml}a href=\"mailto:christian.mally@pasteur.fr\">Christian Mally</{http://www.w3.org/1999/xhtml}a> at the Technology Transfer Service of the Pasteur Institute.</{http://www.w3.org/1999/xhtml}p> </{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "eprimer3",
+    "type": "program",
+    "version": null
 }

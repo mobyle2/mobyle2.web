@@ -1,79 +1,130 @@
 {
-    "type": "program", 
-    "name": "align_reorder", 
-    "version": "6.3.1", 
-    "title": "alignment entries reordering", 
-    "description": "<text lang=\"en\">Reorders the entries of an MSA</text> </description>", 
-    "authors": "N\u00e9ron, B.</authors>", 
-    "references": [
+    "authors": "N\u00e9ron, B.",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "alignment:formatter",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter"
-    ], 
-    "command": "align_reorder", 
+    ],
+    "command": {
+        "path": null,
+        "value": "align_reorder"
+    },
+    "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\">This tool reorders the entries of an MSA according to a reference set of sequences.</html:div>",
+    "description": "Reorders the entries of an MSA",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "fasta_align": {
-                "ismandatory": true, 
-                "prompt": "alignment", 
-                "type": {
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
-                        "FASTA"
-                    ]
-                }, 
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" -a $value\"", 
+                    "perl": "\" -a $value\"",
                     "python": "\" -a \" + str( value )"
-                }
-            }, 
-            "fasta_sequences": {
-                "ismandatory": true, 
-                "prompt": "sequences", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "fasta_align",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "alignment",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" -s $value\"", 
+                    "perl": "\" -s $value\"",
                     "python": "\" -s \" + str( value )"
-                }
-            }
-        }
-    }, 
-    "outputs": {
-        "parameters": {
-            "reordered_alignment": {
-                "isstdout": true, 
-                "prompt": "reordered alignment", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "fasta_sequences",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "sequences",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
-                "filenames": {
-                    "perl": "\"align_reorder.out\"", 
-                    "python": "\"align_reorder.out\""
                 }
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "align_reorder",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"align_reorder.out\"",
+                    "python": "\"align_reorder.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "reordered_alignment",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "reordered alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "alignment entries reordering",
+    "type": "program",
+    "version": null
 }

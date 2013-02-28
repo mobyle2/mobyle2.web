@@ -1,272 +1,268 @@
 {
-    "type": "program", 
-    "name": "backtranambig", 
-    "version": "6.3.1", 
-    "title": "backtranambig", 
-    "description": "<text lang=\"en\">Back-translate a protein sequence to ambiguous nucleotide sequence</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
+            "classification": "sequence:nucleic:translation",
+            "type": "mobyle1"
+        },
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "sequence:protein:composition",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": "backtranambig"
+    },
+    "comment": null,
+    "description": "Back-translate a protein sequence to ambiguous nucleotide sequence",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html",
         "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition"
-    ], 
-    "command": "backtranambig", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "e_input": {
-                "name": "e_input", 
-                "parameters": {
-                    "e_sequence": {
-                        "ismandatory": true, 
-                        "prompt": "sequence option", 
-                        "type": {
-                            "biotype": "Protein", 
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "EMBL", 
-                                "FASTA", 
-                                "GCG", 
-                                "GENBANK", 
-                                "NBRF", 
-                                "PIR", 
-                                "RAW", 
-                                "SWISSPROT", 
-                                "GFF"
-                            ], 
-                            "card": "1,n"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
                         }
                     }
-                }
-            }, 
-            "e_additional": {
-                "name": "e_additional", 
-                "parameters": {
-                    "e_table": {
-                        "prompt": "Genetic codes", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "Standard"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Standard (with alternative initiation codons)"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Vertebrate mitochondrial"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "Yeast mitochondrial"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "Mold, protozoan, coelenterate mitochondrial and  mycoplasma/spiroplasma"
-                            }, 
-                            {
-                                "value": "5", 
-                                "label": "Invertebrate mitochondrial"
-                            }, 
-                            {
-                                "value": "6", 
-                                "label": "Ciliate  macronuclear and dasycladacean"
-                            }, 
-                            {
-                                "value": "9", 
-                                "label": "Echinoderm mitochondrial"
-                            }, 
-                            {
-                                "value": "10", 
-                                "label": "Euplotid nuclear"
-                            }, 
-                            {
-                                "value": "11", 
-                                "label": "Bacterial"
-                            }, 
-                            {
-                                "value": "12", 
-                                "label": "Alternative yeast nuclear"
-                            }, 
-                            {
-                                "value": "13", 
-                                "label": "Ascidian mitochondrial"
-                            }, 
-                            {
-                                "value": "14", 
-                                "label": "Flatworm mitochondrial"
-                            }, 
-                            {
-                                "value": "15", 
-                                "label": "Blepharisma macronuclear"
-                            }, 
-                            {
-                                "value": "16", 
-                                "label": "Chlorophycean mitochondrial"
-                            }, 
-                            {
-                                "value": "21", 
-                                "label": "Trematode mitochondrial"
-                            }, 
-                            {
-                                "value": "22", 
-                                "label": "Scenedesmus obliquus"
-                            }, 
-                            {
-                                "value": "23", 
-                                "label": "Thraustochytrium mitochondrial"
-                            }
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -table=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_table",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Genetic codes",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile": {
-                        "prompt": "Name of the output file (e_outfile)", 
-                        "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Filename"
-                        }, 
-                        "default_value": [
-                            "backtranambig.e_outfile"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
-                        }
-                    }, 
-                    "e_osformat_outfile": {
-                        "prompt": "Choose the sequence output format", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
                         "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "FASTA"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "EMBL", 
-                                "label": "Embl"
-                            }, 
-                            {
-                                "value": "FASTA", 
-                                "label": "Fasta"
-                            }, 
-                            {
-                                "value": "GCG", 
-                                "label": "Gcg"
-                            }, 
-                            {
-                                "value": "GENBANK", 
-                                "label": "Genbank"
-                            }, 
-                            {
-                                "value": "NBRF", 
-                                "label": "Nbrf"
-                            }, 
-                            {
-                                "value": "PIR", 
-                                "label": "Pir"
-                            }, 
-                            {
-                                "value": "RAW", 
-                                "label": "Raw"
-                            }, 
-                            {
-                                "value": "SWISSPROT", 
-                                "label": "Swissprot"
-                            }, 
-                            {
-                                "value": "GFF", 
-                                "label": "Gff"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -osformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_osformat_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the sequence output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "auto": {
-                "ishidden": true, 
-                "prompt": "Turn off any prompting", 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "5",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
                     "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "backtranambig",
     "outputs": {
-        "parameters": {
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile_out": {
-                        "isout": true, 
-                        "prompt": "outfile_out option", 
-                        "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "\n              ", 
-                                "\n            "
-                            ]
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
                             "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_osformat_outfile"
+                                }
+                            ]
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "backtranambig",
+    "type": "program",
+    "version": null
 }

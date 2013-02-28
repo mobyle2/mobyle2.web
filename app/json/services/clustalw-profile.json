@@ -1,864 +1,1127 @@
 {
-    "type": "program", 
-    "name": "clustalw-profile", 
-    "version": "6.3.1", 
-    "title": "Clustalw: Profile alignments", 
-    "description": "<text lang=\"en\">Merge two alignments by profile alignment</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple"
-    ], 
-    "command": "clustalw -profile ", 
+    ],
+    "command": {
+        "path": null,
+        "value": "clustalw -profile"
+    },
+    "comment": null,
+    "description": "Merge two alignments by profile alignment",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "profile": {
-                "name": "profile", 
-                "parameters": {
-                    "profile1": {
-                        "ismaininput": true, 
-                        "ismandatory": true, 
-                        "prompt": "Profile 1 ", 
-                        "type": {
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
-                                "CLUSTAL"
-                            ]
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \" -profile1=$value\" : \"\"", 
+                            "perl": "(defined $value) ? \" -profile1=$value\" : \"\"",
                             "python": "( \"\" , \" -profile1=\" + str( value ) )[value is not None]"
-                        }
-                    }, 
-                    "profile2": {
-                        "ismaininput": true, 
-                        "ismandatory": true, 
-                        "prompt": "Profile 2 ", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "profile1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Profile 1",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
                                 "CLUSTAL"
                             ]
-                        }, 
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \" -profile2=$value\" : \"\"", 
+                            "perl": "(defined $value) ? \" -profile2=$value\" : \"\"",
                             "python": "( \"\" , \" -profile2=\" + str( value ) )[value is not None]"
-                        }
-                    }, 
-                    "usetree1": {
-                        "prompt": "File for old guide tree for profile1 (-usetree1)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "profile2",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Profile 2",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
-                                "NEWICK"
-                            ]
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \" -usetree1=$value\" : \"\"", 
-                            "python": "( \"\" , \" -usetree1=\" + str( value ))[value is not None]"
-                        }
-                    }, 
-                    "usetree2": {
-                        "prompt": "File for old guide tree for profile2 (-usetree2)", 
-                        "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
-                                "NEWICK"
-                            ]
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \" -usetree2=$value\" : \"\"", 
-                            "python": "( \"\" , \" -usetree2=\" + str( value ))[value is not None]"
-                        }
-                    }
-                }
-            }, 
-            "general_settings": {
-                "name": "general_settings", 
-                "parameters": {
-                    "typeseq": {
-                        "prompt": "Protein or DNA (-type)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "auto"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "auto", 
-                                "label": "Automatic"
-                            }, 
-                            {
-                                "value": "protein", 
-                                "label": "Protein"
-                            }, 
-                            {
-                                "value": "dna", 
-                                "label": "DNA"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "(defined $value) ? \" -type=$value\" : \"\"", 
-                            "python": "(\"\", \" -type=\"+str(value))[value is not None]"
-                        }
-                    }, 
-                    "quicktree": {
-                        "prompt": "Toggle Slow/Fast pairwise alignments (-quicktree)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "slow"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "slow", 
-                                "label": "Slow"
-                            }, 
-                            {
-                                "value": "fast", 
-                                "label": "Fast"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "($value eq \"fast\") ? \" -quicktree\" : \"\"", 
-                            "python": "( \"\" , \" -quicktree\")[ value == \"fast\"]"
-                        }, 
-                        "comment": "<text lang=\"en\">slow: by dynamic programming (slow but accurate)</text> <text lang=\"en\">fast: method of Wilbur and Lipman (extremely fast but approximate)</text> </comment>"
-                    }
-                }
-            }, 
-            "fastpw": {
-                "name": "fastpw", 
-                "precond": {
-                    "perl": "$quicktree eq \"fast\"", 
-                    "python": "quicktree == \"fast\""
-                }, 
-                "parameters": {
-                    "ktuple": {
-                        "prompt": "Word size (-ktuple)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -ktuple=$value\" : \"\"", 
-                            "python": "( \"\" , \" -ktuple=\" + str( value ) )[value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">K-TUPLE SIZE: This is the size of exactly matching fragment that is used. INCREASE for speed (max= 2 for proteins; 4 for DNA), DECREASE for sensitivity. For longer sequences (e.g. >1000 residues) you may need to increase the default.</text> </comment>"
-                    }, 
-                    "topdiags": {
-                        "prompt": "Number of best diagonals (-topdiags)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "5"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -topdiags=$value\" : \"\"", 
-                            "python": "( \"\" , \" -topdiags=\" + str( value ))[value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">The number of k-tuple matches on each diagonal (in an imaginary dot-matrix plot) is calculated. Only the best ones (with most matches) are used in the alignment. This parameter specifies how many. Decrease for speed; increase for sensitivity.</text> </comment>"
-                    }, 
-                    "window": {
-                        "prompt": "Window around best diags (-window)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "5"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -window=$value\" : \"\"", 
-                            "python": "( \"\" , \" -window=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">WINDOW SIZE: This is the number of diagonals around each of the 'best' diagonals that will be used. Decrease for speed; increase for sensitivity</text> </comment>"
-                    }, 
-                    "pairgap": {
-                        "prompt": "Gap penalty (-pairgap)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "3"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -pairgap=$value\" : \"\"", 
-                            "python": "( \"\" , \" -pairgap=\" + str( value ))[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This is a penalty for each gap in the fast alignments. It has little affect on the speed or sensitivity except for extreme values.</text> </comment>"
-                    }, 
-                    "score": {
-                        "prompt": "Percent or absolute score ? (-score)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "percent"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "percent", 
-                                "label": "Percent"
-                            }, 
-                            {
-                                "value": "absolute", 
-                                "label": "Absolute"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -score=$value\" : \"\"", 
-                            "python": "( \"\" , \" -score=\" +str( value ) )[value is not None and value !=vdef]"
-                        }
-                    }
-                }
-            }, 
-            "slowpw": {
-                "name": "slowpw", 
-                "precond": {
-                    "perl": "$quicktree eq \"slow\"", 
-                    "python": "quicktree == \"slow\""
-                }, 
-                "parameters": {
-                    "pwgapopen": {
-                        "prompt": "Gap opening penalty (-pwgapopen)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "10.00"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapopen=$value\" : \"\"", 
-                            "python": "( \"\" , \" -pwgapopen=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }
-                    }, 
-                    "pwgapext": {
-                        "prompt": "Gap extension penalty (-pwgapext)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.10"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapext=$value\" : \"\"", 
-                            "python": "( \"\" , \" -pwgapext=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }
-                    }, 
-                    "slowpw_prot": {
-                        "name": "slowpw_prot", 
-                        "precond": {
-                            "perl": "$typeseq eq \"protein\"", 
-                            "python": "typeseq == \"protein\""
-                        }, 
-                        "parameters": {
-                            "pwmatrix": {
-                                "prompt": "Protein weight matrix (-pwmatrix)", 
-                                "type": {
-                                    "datatype_class": "Choice"
-                                }, 
-                                "default_value": [
-                                    "gonnet"
-                                ], 
-                                "authorized_values": [
-                                    {
-                                        "value": "blosum", 
-                                        "label": "BLOSUM30 (Henikoff)"
-                                    }, 
-                                    {
-                                        "value": "gonnet", 
-                                        "label": "Gonnet 250"
-                                    }, 
-                                    {
-                                        "value": "pam", 
-                                        "label": "PAM350 (Dayhoff)"
-                                    }, 
-                                    {
-                                        "value": "id", 
-                                        "label": "Identity matrix"
-                                    }
-                                ], 
-                                "format": {
-                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwmatrix=$value\" : \"\"", 
-                                    "python": "( \"\" , \" -pwmatrix=\" + str(value) )[value is not None and value != vdef ]"
-                                }, 
-                                "comment": "<text lang=\"en\">The scoring table which describes the similarity of each amino acid to each other. For DNA, an identity matrix is used.</text> <text lang=\"en\">BLOSUM (Henikoff). These matrices appear to be the best available for carrying out data base similarity (homology searches). The matrices used are: Blosum80, 62, 40 and 30.</text> <text lang=\"en\">The Gonnet Pam 250 matrix has been reported as the best single matrix for alignment, if you only choose one matrix. Our experience with profile database searches is that the Gonnet series is unambiguously superior to the Blosum series at high divergence. However, we did not get the series to perform systematically better than the Blosum series in Clustal W (communication of the authors).</text> <text lang=\"en\">PAM (Dayhoff). These have been extremely widely used since the late '70s. We use the PAM 120, 160, 250 and 350 matrices.</text> </comment>"
-                            }
-                        }
-                    }, 
-                    "slowpw_dna": {
-                        "name": "slowpw_dna", 
-                        "precond": {
-                            "perl": "$typeseq eq \"dna\"", 
-                            "python": "typeseq == \"dna\""
-                        }, 
-                        "parameters": {
-                            "pwdnamatrix": {
-                                "prompt": "DNA weight matrix (-pwdnamatrix)", 
-                                "type": {
-                                    "datatype_class": "Choice"
-                                }, 
-                                "default_value": [
-                                    "iub"
-                                ], 
-                                "authorized_values": [
-                                    {
-                                        "value": "iub", 
-                                        "label": "IUB"
-                                    }, 
-                                    {
-                                        "value": "clustalw", 
-                                        "label": "CLUSTALW"
-                                    }
-                                ], 
-                                "format": {
-                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwdnamatrix=$value\" : \"\"", 
-                                    "python": "( \"\" , \" -pwdnamatrix=\" + str(value) )[ value is not None and value != vdef ]"
-                                }, 
-                                "comment": "<text lang=\"en\">For DNA, a single matrix (not a series) is used. Two hard-coded matrices are available:</text> <text lang=\"en\">1) IUB. This is the default scoring matrix used by BESTFIT for the comparison of nucleic acid sequences. X's and N's are treated as matches to any IUB ambiguity symbol. All matches score 1.9; all mismatches for IUB symbols score 0.</text> <text lang=\"en\">2) CLUSTALW(1.6). The previous system used by ClustalW, in which matches score 1.0 and mismatches score 0. All matches for IUB symbols also score 0.</text> </comment>"
-                            }
-                        }
-                    }
-                }
-            }, 
-            "structure": {
-                "name": "structure", 
-                "parameters": {
-                    "nosecstr1": {
-                        "prompt": "Do not use secondary structure-gap penalty mask for profile 1 (-nosecstr1)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \" -nosecstr1\" : \"\"", 
-                            "python": "( \"\" , \" -nosecstr1\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option controls whether the input secondary structure information or gap penalty masks will be used.</text> </comment>"
-                    }, 
-                    "nosecstr2": {
-                        "prompt": "Do not use secondary structure-gap penalty mask for profile 2 (-nosecstr2)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \" -nosecstr2\" : \"\"", 
-                            "python": "( \"\" , \" -nosecstr2\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option controls whether the input secondary structure information or gap penalty masks will be used.</text> </comment>"
-                    }, 
-                    "helixgap": {
-                        "prompt": "Helix gap penalty (-helixgap)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "4"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -helixgap=$value\" : \"\"", 
-                            "python": "( \"\" , \" -helixgap=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option provides the value for raising the gap penalty at core Alpha Helical (A) residues. In CLUSTAL format, capital residues denote the A and B core structure notation. The basic gap penalties are multiplied by the amount specified.</text> </comment>"
-                    }, 
-                    "strandgap": {
-                        "prompt": "Strand gap penalty (-strandgap)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "4"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -strandgap=$value\" : \"\"", 
-                            "python": "( \"\" , \" -strandgap=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option provides the value for raising the gap penalty at Beta Strand (B) residues. In CLUSTAL format, capital residues denote the A and B core structure notation. The basic gap penalties are multiplied by the amount specified.</text> </comment>"
-                    }, 
-                    "loopgap": {
-                        "prompt": "Loop gap penalty (-loopgap)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -loopgap=$value\" : \"\"", 
-                            "python": "( \"\" , \" -loopgap=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option provides the value for the gap penalty in Loops. By default this penalty is not raised. In CLUSTAL format, loops are specified by . in the secondary structure notation.</text> </comment>"
-                    }, 
-                    "terminalgap": {
-                        "prompt": "Secondary structure terminal penalty (-terminalgap)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "2"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -terminalgap=$value\" : \"\"", 
-                            "python": "( \"\" , \" -terminalgap=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option provides the value for setting the gap penalty at the ends of secondary structures. Ends of secondary structures are observed to grow and-or shrink in related structures. Therefore by default these are given intermediate values, lower than the core penalties. All secondary structure read in as lower case in CLUSTAL format gets the reduced terminal penalty.</text> </comment>"
-                    }, 
-                    "helixendin": {
-                        "prompt": "Helix terminal positions:  number of residues inside helix to be treated as terminal (-helixendin)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "3"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -helixendin=$value\" : \"\"", 
-                            "python": "( \"\" , \" -helixendin=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option (together with the -helixendin) specify the range of structure termini for the intermediate penalties. In the alignment output, these are indicated as lower case. For Alpha Helices, by default, the range spans the end helical turn.</text> </comment>"
-                    }, 
-                    "helixendout": {
-                        "prompt": "Helix terminal positions: number of residues outside helix to be treated as terminal (-helixendout)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -helixendout=$value\" : \"\"", 
-                            "python": "( \"\" , \" -helixendout=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option (together with the -helixendin) specify the range of structure termini for the intermediate penalties. In the alignment output, these are indicated as lower case. For Alpha Helices, by default, the range spans the end helical turn.</text> </comment>"
-                    }, 
-                    "strandendin": {
-                        "prompt": "Strand terminal positions: number of residues inside strand to be treated as terminal (-strandendin)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -strandendin=$value\" : \"\"", 
-                            "python": "( \"\" , \" -strandendin=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option (together with the -strandendout option) specify the range of structure termini for the intermediate penalties. In the alignment output, these are indicated as lower case. For Beta Strands, the default range spans the end residue and the adjacent loop residue, since sequence conservation often extends beyond the actual H-bonded Beta Strand.</text> </comment>"
-                    }, 
-                    "strandendout": {
-                        "prompt": "Strand terminal positions: number of residues outside strand to be treated as terminal (-strandendout)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -strandendout=$value\" : \"\"", 
-                            "python": "( \"\" , \" -strandendout=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option (together with the -strandendin option) specify the range of structure termini for the intermediate penalties. In the alignment output, these are indicated as lower case. For Beta Strands, the default range spans the end residue and the adjacent loop residue, since sequence conservation often extends beyond the actual H-bonded Beta Strand.</text> </comment>"
-                    }, 
-                    "secstrout": {
-                        "prompt": "Output in alignment (-secstrout)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "STRUCTURE"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "STRUCTURE", 
-                                "label": "Secondary Structure"
-                            }, 
-                            {
-                                "value": "MASK", 
-                                "label": "Gap Penalty Mask"
-                            }, 
-                            {
-                                "value": "BOTH", 
-                                "label": "Structure and Penalty Mask"
-                            }, 
-                            {
-                                "value": "NONE", 
-                                "label": "None"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -secstrout=$value\" : \"\"", 
-                            "python": "( \"\" , \" -secstrout=\" + str( value ) )[ value is not None and value != vdef ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option lets you choose whether or not to include the masks in the CLUSTAL W output alignments. Showing both is useful for understanding how the masks work. The secondary structure information is itself very useful in judging the alignment quality and in seeing how residue conservation patterns vary with secondary structure.</text> </comment>"
-                    }
-                }
-            }, 
-            "outputparam": {
-                "name": "outputparam", 
-                "parameters": {
-                    "outputformat": {
-                        "prompt": "Output format (-output)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "null"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "null", 
-                                "label": "CLUSTAL"
-                            }, 
-                            {
-                                "value": "GCG", 
-                                "label": "GCG"
-                            }, 
-                            {
-                                "value": "GDE", 
-                                "label": "GDE"
-                            }, 
-                            {
-                                "value": "PHYLIPI", 
-                                "label": "PHYLIP"
-                            }, 
-                            {
-                                "value": "NEXUS", 
-                                "label": "NEXUS"
-                            }, 
-                            {
-                                "value": "PIR", 
-                                "label": "PIR"
-                            }, 
-                            {
-                                "value": "FASTA", 
-                                "label": "FASTA"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -output=$value\" : \"\"", 
-                            "python": "( \"\" , \" -output=\" + str( value) )[ value is not None and value != vdef ]"
-                        }
-                    }, 
-                    "seqnos": {
-                        "prompt": "Output sequence numbers in the output file (for clustalw output only) (-seqnos)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "precond": {
-                            "perl": "not defined $outputformat", 
-                            "python": "outputformat is None"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -seqnos=on\" : \"\"", 
-                            "python": "( \"\" , \" -seqnos=on\")[ value is not None and value != vdef]"
-                        }
-                    }, 
-                    "outorder": {
-                        "prompt": "Result order (-outorder)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "aligned"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "input", 
-                                "label": "Input"
-                            }, 
-                            {
-                                "value": "aligned", 
-                                "label": "Aligned"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -outorder=$value\" : \"\"", 
-                            "python": "( \"\" , \" -outorder=\" + str(value))[ value is not None and value != vdef ]"
-                        }
-                    }, 
-                    "outfile": {
-                        "prompt": "Sequence alignment file name (-outfile)", 
-                        "type": {
-                            "datatype_class": "Filename"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value and $value ne $vdef ) ? \" -outfile=$value\" : \"\"", 
-                            "python": "( \"\" , \" -outfile=\" + str( value))[ value is not None ]"
-                        }
-                    }
-                }
-            }
-        }
-    }, 
-    "outputs": {
-        "parameters": {
-            "outputparam": {
-                "name": "outputparam", 
-                "parameters": {
-                    "aligfile": {
-                        "isout": true, 
-                        "prompt": "Alignment file", 
-                        "type": {
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
-                                "\n              ", 
-                                "\n            "
-                            ]
-                        }, 
-                        "precond": {
-                            "perl": "$outputformat =~ /^(NEXUS|GCG|PHYLIPI)$/", 
-                            "python": "outputformat in [ \"NEXUS\", \"GCG\", \"PHYLIPI\"]"
-                        }, 
-                        "filenames": {
-                            "perl": "(defined $outfile)? ( $outputformat eq 'GCG' )? ( $outputformat eq 'PHYLIPI' )?\"$outfile\":\"*.msf\" : \"*.phy\" : \"*.nxs\"", 
-                            "python": "(((\"*.nxs\",\"*.phy\")[outputformat == 'PHYLIPI'],\"*.msf\")[outputformat == 'GCG'],str(outfile))[outfile is not None]"
-                        }
-                    }, 
-                    "clustalaligfile": {
-                        "isout": true, 
-                        "prompt": "Alignment file", 
-                        "type": {
-                            "datatype_class": "Alignment", 
-                            "data_formats": [
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
                                 "CLUSTAL"
                             ]
-                        }, 
-                        "precond": {
-                            "perl": "not defined $outputformat", 
-                            "python": "outputformat is None"
-                        }, 
-                        "filenames": {
-                            "perl": "(defined $outfile)? \"$outfile\":\"*.aln\"", 
-                            "python": "(\"*.aln\", str(outfile))[outfile is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">In the conservation line output in the clustal format alignment file, three characters are used:</text> <text lang=\"en\">'*' indicates positions which have a single, fully conserved residue.</text> <text lang=\"en\">':' indicates that one of the following 'strong' groups is fully conserved (STA,NEQK,NHQK,NDEQ,QHRK,MILV,MILF,HY,FYW).</text> <text lang=\"en\">'.' indicates that one of the following 'weaker' groups is fully conserved (CSA,ATV,SAG,STNK,STPA,SGND,SNDEQK,NDEQHK,NEQHRK,FVLIM,HFY).</text> <text lang=\"en\">These are all the positively scoring groups that occur in the Gonnet Pam250 matrix. The strong and weak groups are defined as strong score >0.5 and weak score =<0.5 respectively.</text> </comment>"
-                    }, 
-                    "seqfile": {
-                        "isout": true, 
-                        "prompt": "Sequences file", 
-                        "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "\n              ", 
-                                "\n            "
-                            ], 
-                            "card": "2,n"
-                        }, 
-                        "precond": {
-                            "perl": "$outputformat =~ /^(GDE|PIR|FASTA)$/", 
-                            "python": "outputformat in [ 'GDE', 'PIR', 'FASTA' ]"
-                        }, 
-                        "filenames": {
-                            "perl": "(defined $outfile)? ( $outputformat eq 'GDE' )? ( $outputformat eq 'PIR' )?\"$outfile\":\"*.gde\" : \"*.pir\" : \"*.fasta\"", 
-                            "python": "(((\"*.fasta\",\"*.pir\")[outputformat == 'PIR'],\"*.gde\")[outputformat == 'GDE'],str(outfile))[outfile is not None]"
                         }
-                    }, 
-                    "dndfile": {
-                        "isout": true, 
-                        "prompt": "Tree file", 
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -usetree1=$value\" : \"\"",
+                            "python": "( \"\" , \" -usetree1=\" + str( value ))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "usetree1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "File for old guide tree for profile1 (-usetree1)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
-                                "NEWICK"
-                            ]
-                        }, 
-                        "filenames": {
-                            "perl": "\"*.dnd\"", 
-                            "python": "\"*.dnd\""
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -usetree2=$value\" : \"\"",
+                            "python": "( \"\" , \" -usetree2=\" + str( value ))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "usetree2",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "File for old guide tree for profile2 (-usetree2)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": "By PROFILE ALIGNMENT, we mean alignment using\n\t    existing alignments. Profile alignments allow you to store\n\t    alignments of your favorite sequences and add new sequences to\n\t    them in small bunches at a time.  (e.g. an alignment output\n\t    file from CLUSTAL W). One or both sets of input sequences may\n\t    include secondary structure assignments or gap penalty masks to\n\t    guide the alignment.Merge 2 alignments by profile alignment",
+                "name": "profile",
+                "precond": null,
+                "prompt": "Profile Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -type=$value\" : \"\"",
+                            "python": "(\"\", \" -type=\"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "typeseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Protein or DNA (-type)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "slow: by dynamic programming (slow but accurate)fast: method of Wilbur and Lipman (extremely fast but approximate)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value eq \"fast\") ? \" -quicktree\" : \"\"",
+                            "python": "( \"\" , \" -quicktree\")[ value == \"fast\"]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "quicktree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Toggle Slow/Fast pairwise alignments (-quicktree)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "general_settings",
+                "precond": null,
+                "prompt": "General settings"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "K-TUPLE SIZE: This is the size of exactly matching fragment that is used. INCREASE for speed (max= 2 for proteins; 4 for DNA), DECREASE for sensitivity. For longer sequences (e.g. >1000 residues) you may need to increase the default.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -ktuple=$value\" : \"\"",
+                            "python": "( \"\" , \" -ktuple=\" + str( value ) )[value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ktuple",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Word size (-ktuple)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "The number of k-tuple matches on each\n\t\tdiagonal (in an imaginary dot-matrix plot) is\n\t\tcalculated. Only the best ones (with most matches) are used\n\t\tin the alignment. This parameter specifies how\n\t\tmany. Decrease for speed; increase for sensitivity.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -topdiags=$value\" : \"\"",
+                            "python": "( \"\" , \" -topdiags=\" + str( value ))[value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "topdiags",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of best diagonals (-topdiags)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "WINDOW SIZE: This is the number of\n\t\tdiagonals around each of the 'best' diagonals that will be\n\t\tused. Decrease for speed; increase for sensitivity",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -window=$value\" : \"\"",
+                            "python": "( \"\" , \" -window=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "window",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Window around best diags (-window)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "This is a penalty for each gap in the fast\n\t\talignments. It has little affect on the speed or\n\t\tsensitivity except for extreme values.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pairgap=$value\" : \"\"",
+                            "python": "( \"\" , \" -pairgap=\" + str( value ))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pairgap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap penalty (-pairgap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -score=$value\" : \"\"",
+                            "python": "( \"\" , \" -score=\" +str( value ) )[value is not None and value !=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "score",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Percent or absolute score ? (-score)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "These similarity scores are calculated from fast,\n\t  approximate, global alignments, which are controlled by 4\n\t  parameters. 2 techniques are used to make these alignments very\n\t  fast: 1) only exactly matching fragments (k-tuples) are\n\t  considered; 2) only the 'best' diagonals (the ones with most\n\t  k-tuple matches) are used.",
+                "name": "fastpw",
+                "precond": {
+                    "perl": "$quicktree eq \"fast\"",
+                    "python": "quicktree == \"fast\""
+                },
+                "prompt": "Fast Pairwise Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapopen=$value\" : \"\"",
+                            "python": "( \"\" , \" -pwgapopen=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pwgapopen",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap opening penalty (-pwgapopen)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapext=$value\" : \"\"",
+                            "python": "( \"\" , \" -pwgapext=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pwgapext",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap extension penalty (-pwgapext)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "The scoring table which describes the\n\t\tsimilarity of each amino acid to each other. For DNA, an\n\t\tidentity matrix is used.BLOSUM (Henikoff). These matrices appear to\n\t\tbe the best available for carrying out data base similarity\n\t\t(homology searches). The matrices used are: Blosum80, 62,\n\t\t40 and 30.The Gonnet Pam 250 matrix has been reported\n\t\tas the best single matrix for alignment, if you only choose\n\t\tone matrix. Our experience with profile database searches\n\t\tis that the Gonnet series is unambiguously superior to the\n\t\tBlosum series at high divergence. However, we did not get\n\t\tthe series to perform systematically better than the Blosum\n\t\tseries in Clustal W (communication of the authors).PAM (Dayhoff). These have been extremely\n\t\twidely used since the late '70s. We use the PAM 120, 160,\n\t\t250 and 350 matrices.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwmatrix=$value\" : \"\"",
+                                    "python": "( \"\" , \" -pwmatrix=\" + str(value) )[value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pwmatrix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Protein weight matrix (-pwmatrix)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "slowpw_prot",
+                        "precond": {
+                            "perl": "$typeseq eq \"protein\"",
+                            "python": "typeseq == \"protein\""
+                        },
+                        "prompt": "Protein parameters"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "For DNA, a single matrix (not a series) is\n\t\tused. Two hard-coded matrices are available:1) IUB. This is the default scoring matrix\n\t\tused by BESTFIT for the comparison of nucleic acid\n\t\tsequences. X's and N's are treated as matches to any IUB\n\t\tambiguity symbol. All matches score 1.9; all mismatches for\n\t\tIUB symbols score 0.2) CLUSTALW(1.6). The previous system used\n\t\tby ClustalW, in which matches score 1.0 and mismatches\n\t\tscore 0. All matches for IUB symbols also score 0.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwdnamatrix=$value\" : \"\"",
+                                    "python": "( \"\" , \" -pwdnamatrix=\" + str(value) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pwdnamatrix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "DNA weight matrix (-pwdnamatrix)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "slowpw_dna",
+                        "precond": {
+                            "perl": "$typeseq eq \"dna\"",
+                            "python": "typeseq == \"dna\""
+                        },
+                        "prompt": "DNA parameters"
+                    }
+                ],
+                "comment": "These parameters do not have any affect on the\n\t  speed of the alignments. They are used to give initial alignments\n\t  which are then rescored to give percent identity scores. These %\n\t  scores are the ones which are displayed on the screen. The scores\n\t  are converted to distances for the trees.",
+                "name": "slowpw",
+                "precond": {
+                    "perl": "$quicktree eq \"slow\"",
+                    "python": "quicktree == \"slow\""
+                },
+                "prompt": "Slow Pairwise Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "This option controls whether the input secondary structure information or gap penalty masks will be used.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -nosecstr1\" : \"\"",
+                            "python": "( \"\" , \" -nosecstr1\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nosecstr1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not use secondary structure-gap penalty mask for profile 1 (-nosecstr1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option controls whether the input secondary structure information or gap penalty masks will be used.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -nosecstr2\" : \"\"",
+                            "python": "( \"\" , \" -nosecstr2\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nosecstr2",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not use secondary structure-gap penalty mask for profile 2 (-nosecstr2)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option provides the value for raising\n\t\tthe gap penalty at core Alpha Helical (A) residues. In\n\t\tCLUSTAL format, capital residues denote the A and B core\n\t\tstructure notation. The basic gap penalties are multiplied\n\t\tby the amount specified.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -helixgap=$value\" : \"\"",
+                            "python": "( \"\" , \" -helixgap=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "helixgap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Helix gap penalty (-helixgap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option provides the value for raising\n\t\tthe gap penalty at Beta Strand (B) residues. In CLUSTAL\n\t\tformat, capital residues denote the A and B core structure\n\t\tnotation. The basic gap penalties are multiplied by the\n\t\tamount specified.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -strandgap=$value\" : \"\"",
+                            "python": "( \"\" , \" -strandgap=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "strandgap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Strand gap penalty (-strandgap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option provides the value for the gap\n\t\tpenalty in Loops. By default this penalty is not raised. In\n\t\tCLUSTAL format, loops are specified by . in the secondary\n\t\tstructure notation.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -loopgap=$value\" : \"\"",
+                            "python": "( \"\" , \" -loopgap=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "loopgap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Loop gap penalty (-loopgap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option provides the value for setting\n\t\tthe gap penalty at the ends of secondary structures. Ends\n\t\tof secondary structures are observed to grow and-or shrink\n\t\tin related structures. Therefore by default these are given\n\t\tintermediate values, lower than the core penalties. All\n\t\tsecondary structure read in as lower case in CLUSTAL format\n\t\tgets the reduced terminal penalty.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -terminalgap=$value\" : \"\"",
+                            "python": "( \"\" , \" -terminalgap=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "terminalgap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Secondary structure terminal penalty (-terminalgap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option (together with the -helixendin)\n\t\tspecify the range of structure termini for the intermediate\n\t\tpenalties. In the alignment output, these are indicated as\n\t\tlower case. For Alpha Helices, by default, the range spans\n\t\tthe end helical turn.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -helixendin=$value\" : \"\"",
+                            "python": "( \"\" , \" -helixendin=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "helixendin",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Helix terminal positions:  number of residues inside helix to be treated as terminal (-helixendin)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option (together with the -helixendin)\n\t\tspecify the range of structure termini for the intermediate\n\t\tpenalties. In the alignment output, these are indicated as\n\t\tlower case. For Alpha Helices, by default, the range spans\n\t\tthe end helical turn.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -helixendout=$value\" : \"\"",
+                            "python": "( \"\" , \" -helixendout=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "helixendout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Helix terminal positions: number of residues outside helix to be treated as terminal (-helixendout)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option (together with the\n\t\t-strandendout option) specify the range of structure\n\t\ttermini for the intermediate penalties. In the alignment\n\t\toutput, these are indicated as lower case. For Beta\n\t\tStrands, the default range spans the end residue and the\n\t\tadjacent loop residue, since sequence conservation often\n\t\textends beyond the actual H-bonded Beta Strand.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -strandendin=$value\" : \"\"",
+                            "python": "( \"\" , \" -strandendin=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "strandendin",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Strand terminal positions: number of residues inside strand to be treated as terminal (-strandendin)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option (together with the -strandendin\n\t\toption) specify the range of structure termini for the\n\t\tintermediate penalties. In the alignment output, these are\n\t\tindicated as lower case. For Beta Strands, the default\n\t\trange spans the end residue and the adjacent loop residue,\n\t\tsince sequence conservation often extends beyond the actual\n\t\tH-bonded Beta Strand.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -strandendout=$value\" : \"\"",
+                            "python": "( \"\" , \" -strandendout=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "strandendout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Strand terminal positions: number of residues outside strand to be treated as terminal (-strandendout)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option lets you choose whether or not\n\t\tto include the masks in the CLUSTAL W output\n\t\talignments. Showing both is useful for understanding how\n\t\tthe masks work. The secondary structure information is\n\t\titself very useful in judging the alignment quality and in\n\t\tseeing how residue conservation patterns vary with\n\t\tsecondary structure.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -secstrout=$value\" : \"\"",
+                            "python": "( \"\" , \" -secstrout=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "secstrout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output in alignment (-secstrout)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "These options, when doing a profile alignment,\n\t  allow you to set 2D structure parameters. If a solved structure\n\t  is available, it can be used to guide the alignment by raising\n\t  gap penalties within secondary structure elements, so that gaps\n\t  will preferentially be inserted into unstructured surface\n\t  loops. Alternatively, a user-specified gap penalty mask can be\n\t  supplied directly.A gap penalty mask is a series of numbers between\n\t  1 and 9, one per position in the alignment. Each number specifies\n\t  how much the gap opening penalty is to be raised at that position\n\t  (raised by multiplying the basic gap opening penalty by the\n\t  number) i.e. a mask figure of 1 at a position means no change in\n\t  gap opening penalty; a figure of 4 means that the gap opening\n\t  penalty is four times greater at that position, making gaps 4\n\t  times harder to open.Gap penalty masks is to be supplied with the\n\t  input sequences. The masks work by raising gap penalties in\n\t  specified regions (typically secondary structure elements) so\n\t  that gaps are preferentially opened in the less well conserved\n\t  regions (typically surface loops).CLUSTAL W can read the masks from SWISS-PROT,\n\t  CLUSTAL or GDE format input files. For many 3-D protein\n\t  structures, secondary structure information is recorded in the\n\t  feature tables of SWISS-PROT database entries. You should always\n\t  check that the assignments are correct - some are quite\n\t  inaccurate. CLUSTAL W looks for SWISS-PROT HELIX and STRAND\n\t  assignments e.g.FT   HELIX       100    115FT   HELIX       100    115The structure and penalty masks can also be read from CLUSTAL alignment format as comment lines beginning !SS_ or GM_ e.g.!SS_HBA_HUMA    ..aaaAAAAAAAAAAaaa.aaaAAAAAAAAAAaaaaaaAaaa.........aaaAAAAAA!GM_HBA_HUMA    112224444444444222122244444444442222224222111111111222444444HBA_HUMA        VLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKNote that the mask itself is a set of numbers between 1 and 9 each of which is assigned to the residue(s) in the same column below. In GDE flat file format, the masks are specified as text and the names must begin with SS_ or GM_. Either a structure or penalty mask or both may be used. If both are included in an alignment, the user will be asked which is to be used.",
+                "name": "structure",
+                "precond": null,
+                "prompt": "Structure Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -output=$value\" : \"\"",
+                            "python": "( \"\" , \" -output=\" + str( value) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outputformat",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output format (-output)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -seqnos=on\" : \"\"",
+                            "python": "( \"\" , \" -seqnos=on\")[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqnos",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined $outputformat",
+                            "python": "outputformat is None"
+                        },
+                        "prompt": "Output sequence numbers in the output file (for clustalw output only) (-seqnos)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -outorder=$value\" : \"\"",
+                            "python": "( \"\" , \" -outorder=\" + str(value))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outorder",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Result order (-outorder)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef ) ? \" -outfile=$value\" : \"\"",
+                            "python": "( \"\" , \" -outfile=\" + str( value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sequence alignment file name (-outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "outputparam",
+                "precond": null,
+                "prompt": "Output parameters"
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\"> Use this interface to add new sequences to an existing alignment.</text> <text lang=\"en\">The profile is converted into a HMM and the un-aligned sequences will be multiply aligned (using the HMM background information) to form a profile; this constructed profile is aligned with the input profile; the columns in each profile (the original one and the one created from the un-aligned sequences) will be kept fixed and the alignment of the two profiles will be written out. The un/aligned sequences must contain at least two sequences.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "clustalw-profile",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "(defined $outfile)? ( $outputformat eq 'GCG' )? ( $outputformat eq 'PHYLIPI' )?\"$outfile\":\"*.msf\" : \"*.phy\" : \"*.nxs\"",
+                            "python": "(((\"*.nxs\",\"*.phy\")[outputformat == 'PHYLIPI'],\"*.msf\")[outputformat == 'GCG'],str(outfile))[outfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "aligfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$outputformat =~ /^(NEXUS|GCG|PHYLIPI)$/",
+                            "python": "outputformat in [ \"NEXUS\", \"GCG\", \"PHYLIPI\"]"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "outputformat"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "comment": "In the conservation line output in the clustal format alignment file, three characters are used:'*' indicates positions which have a single, fully conserved residue.':' indicates that one of the following 'strong' groups is fully conserved (STA,NEQK,NHQK,NDEQ,QHRK,MILV,MILF,HY,FYW).'.' indicates that one of the following 'weaker' groups is fully conserved (CSA,ATV,SAG,STNK,STPA,SGND,SNDEQK,NDEQHK,NEQHRK,FVLIM,HFY).These are all the positively scoring groups that occur in the Gonnet Pam250\nmatrix. The strong and weak groups are defined as strong score >0.5 and weak\nscore =<0.5 respectively.",
+                        "filenames": {
+                            "perl": "(defined $outfile)? \"$outfile\":\"*.aln\"",
+                            "python": "(\"*.aln\", str(outfile))[outfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "clustalaligfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "not defined $outputformat",
+                            "python": "outputformat is None"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "CLUSTAL"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "(defined $outfile)? ( $outputformat eq 'GDE' )? ( $outputformat eq 'PIR' )?\"$outfile\":\"*.gde\" : \"*.pir\" : \"*.fasta\"",
+                            "python": "(((\"*.fasta\",\"*.pir\")[outputformat == 'PIR'],\"*.gde\")[outputformat == 'GDE'],str(outfile))[outfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "seqfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$outputformat =~ /^(GDE|PIR|FASTA)$/",
+                            "python": "outputformat in [ 'GDE', 'PIR', 'FASTA' ]"
+                        },
+                        "prompt": "Sequences file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "2,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "outputformat"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.dnd\"",
+                            "python": "\"*.dnd\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "dndfile",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "Tree file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEWICK"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "outputparam",
+                "precond": null,
+                "prompt": "Output parameters"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "Clustalw: Profile alignments",
+    "type": "program",
+    "version": null
 }

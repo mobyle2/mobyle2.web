@@ -1,123 +1,130 @@
 {
-    "type": "program", 
-    "name": "bigorf_extract", 
-    "version": "1.0", 
-    "title": "bigorf_extract", 
-    "description": "<text lang=\"en\">extract sequences with the largest ORF from a sequence translated with EMBOSS transseq and checktrans</text> </description>", 
-    "authors": "E. Deveaud</authors>", 
-    "references": [
+    "authors": "E. Deveaud",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "sequence:protein:composition",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition"
-    ], 
-    "command": "bigorf_extract.py", 
+    ],
+    "command": {
+        "path": null,
+        "value": "bigorf_extract.py"
+    },
+    "comment": null,
+    "description": "extract sequences with the largest ORF from a sequence translated with EMBOSS transseq and checktrans",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "protein_sequences": {
-                "prompt": "Protein sequences to filter", 
-                "type": {
-                    "biotype": "Protein", 
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
-                        "FASTA"
-                    ]
-                }, 
-                "comment": "<text lang=\"en\">This is where you should enter the list of candidate ORFs for each gene</text> </comment>", 
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": "This is where you should enter the list of candidate ORFs for each gene",
+                "ctrl": null,
                 "format": {
                     "python": "\" \" + value"
-                }
-            }, 
-            "characters_to_strip": {
-                "prompt": "Integer", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "protein_sequences",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Protein sequences to filter",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Integer"
-                }, 
-                "comment": "<text lang=\"en\">Number of characters that should be stripped. Default value is 4 because transseq adds 2 characters (_[frame index]) and checktrans another 2 (_[candidate index])</text> </comment>", 
-                "format": {
-                    "python": "\" -s %d\" % value"
-                }, 
-                "default_value": [
-                    "4"
-                ]
-            }
-        }
-    }, 
-    "outputs": {
-        "parameters": {
-            "protein_sequence_out": {
-                "isstdout": true, 
-                "prompt": "Sequence", 
-                "type": {
-                    "biotype": "Protein", 
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
-                "filenames": {
-                    "perl": "\"bigorf_extract.out\"", 
-                    "python": "\"bigorf_extract.out\""
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Number of characters that should be stripped. Default value is 4 because transseq adds 2 characters (_[frame index]) and checktrans another 2 (_[candidate index])",
+                "ctrl": null,
+                "format": {
+                    "python": "\" -s %d\" % value"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "characters_to_strip",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Integer",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "bigorf_extract",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"bigorf_extract.out\"",
+                    "python": "\"bigorf_extract.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "protein_sequence_out",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "bigorf_extract",
+    "type": "program",
+    "version": "1.0"
 }

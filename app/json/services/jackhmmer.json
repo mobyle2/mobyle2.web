@@ -1,1991 +1,1883 @@
 {
-    "type": "program", 
-    "name": "jackhmmer", 
-    "version": "6.3.1", 
-    "title": "JACKHMMER", 
-    "description": "<text lang=\"en\">Iteratively search protein sequence(s) against a protein database</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
-        }, 
-        {
-            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
-        }, 
-        {
-            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "http://emboss.sourceforge.net/</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Castresana, J. (2000). Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17, 540-552</reference>"
-        }, 
-        {
-            "value": "Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Burge, C., Karlin, S. (1997) Prediction of complete gene structures in human genomic DNA. J. Mol. Biol. 268, 78-94.</reference>"
-        }, 
-        {
-            "value": "Burge, C., Karlin, S. (1997) Gene structure, exon prediction, and alternative splicing. (in preparation).</reference>"
-        }, 
-        {
-            "value": "Burge, C. (1997) Identification of genes in human genomic DNA. PhD thesis, Stanford University, Stanford, CA.</reference>"
-        }, 
-        {
-            "value": "Burset, M., Guigo, R. (1996) Evaluation of gene structure prediction programs. Genomics 34, 353-367.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\"> The program sources and Example files are downloadable here. </{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "Vieira-Silva S, Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "hmm:database:search",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "database:search:hmm",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://faculty.virginia.edu/wrpearson/fasta/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/golden/", 
-        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/", 
-        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/html4blast/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://swift.cmbi.ru.nl/gv/dssp/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
-        "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
-        "http://emboss.sourceforge.net", 
-        "http://genes.mit.edu/GENSCANinfo.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/featcopy.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/featreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/findkm.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/fitch.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/freak.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzznuc.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzzpro.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzztran.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/garnier.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/gblocks/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/geecee.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/getorf.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://genome.imim.es/software/gfftools/GFF2PS.html", 
-        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/helixturnhelix.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/hmoment.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/iep.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/isochore.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "phylogeny:display", 
-        "display:tree", 
-        "phylogeny:display", 
-        "display:tree", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple", 
-        "sequence:nucleic:repeats", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:composition", 
-        "sequence:edit", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:primers", 
-        "sequence:nucleic:repeats", 
-        "alignment:pairwise:global", 
-        "sequence:nucleic:repeats", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:edit:feature_table", 
-        "sequence:edit", 
-        "sequence:formatter", 
-        "database:search:homology", 
-        "phylogeny:likelihood", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "database:search:sequence", 
-        "sequence:enzyme:kinetics", 
-        "phylogeny:distance", 
-        "phylogeny:tree_analyser", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple:information", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:gene_finding", 
-        "display:feature_table", 
-        "database:search:sequence", 
-        "sequence:nucleic:prediction", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:nucleic:pattern", 
-        "sequence:nucleic:clusters", 
-        "sequence:protein:2D_structure", 
-        "sequence:protein:motifs", 
-        "structure:2D_structure", 
-        "hmm:alignment:multiple", 
-        "alignment:multiple:hmm", 
-        "hmm:building", 
-        "hmm:building", 
-        "hmm:building", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:simulation", 
-        "hmm:statistic", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "database:search:display", 
-        "sequence:protein:composition", 
-        "alignment:multiple:information", 
-        "information", 
-        "sequence:nucleic:composition", 
-        "hmm:database:search", 
-        "database:search:hmm"
-    ], 
-    "command": "jackhmmer", 
+    ],
+    "command": {
+        "path": null,
+        "value": "jackhmmer"
+    },
+    "comment": null,
+    "description": "Iteratively search protein sequence(s) against a protein database",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "qsequence": {
-                "ismandatory": true, 
-                "prompt": "Query sequence(s)", 
+        "children": [
+            {
+                "argpos": "13",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "qsequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Query sequence(s)",
+                "simple": null,
                 "type": {
-                    "biotype": "Protein", 
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
-                "format": {
-                    "perl": "\" $value\"", 
-                    "python": "\" \"+str(value)"
                 }
-            }, 
-            "db": {
-                "ismandatory": true, 
-                "prompt": "Choose a protein sequence database", 
-                "type": {
-                    "datatype_class": "Choice"
-                }, 
-                "default_value": [
-                    "null"
-                ], 
-                "authorized_values": [
-                    {
-                        "value": "null", 
-                        "label": "Choose a database"
-                    }
-                ], 
+            },
+            {
+                "argpos": "14",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" $value\"", 
+                    "perl": "\" $value\"",
                     "python": "\" \"+str(value)"
-                }
-            }, 
-            "n_it": {
-                "prompt": "Maximum number of iterations (-N)", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "db",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Choose a protein sequence database",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Integer"
-                }, 
-                "default_value": [
-                    "5"
-                ], 
-                "format": {
-                    "perl": "($value != $vdef) ? \" -N $value\" :\"\"", 
-                    "python": "(\"\", \" -N \" + str(value)) [ value != vdef]"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Set the maximum number of iterations (default is 5). If =1, the result\nis equivalent to a phmmer search.",
                 "ctrl": {
-                    "perl": "$value", 
-                    "python": " value"
-                }, 
-                "comment": "<text lang=\"en\">Set the maximum number of iterations (default is 5). If =1, the result is equivalent to a phmmer search.</text> </comment>"
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "outfile": {
-                        "prompt": "Direct output to file (-o)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                    "perl": "0 <$value",
+                    "python": "0 < value"
+                },
+                "format": {
+                    "perl": "($value != $vdef) ? \" -N $value\" :\"\"",
+                    "python": "(\"\", \" -N \" + str(value)) [ value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "n_it",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Maximum number of iterations (-N)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Direct the main \"human-readable\" output to a file instead of the default stdout.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" -o jackmmer.output\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" -o jackmmer.output\" : \"\"",
                             "python": "(\"\", \" -o jackhmmer.output\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Direct the main \"human-readable\" output to a file instead of the default stdout.</text> </comment>"
-                    }, 
-                    "aligfile": {
-                        "prompt": "Save multiple alignment of hits to file (-A)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Direct output to file (-o)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "After the final iteration, save an annotated multiple alignment of all hits satisfying\ninclusion thresholds (also including the original query) to a file (Stockholm format).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" -A jackhmmer.align\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" -A jackhmmer.align\" : \"\"",
                             "python": "(\"\", \" -A jackhmmer.align\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">After the final iteration, save an annotated multiple alignment of all hits satisfying inclusion thresholds (also including the original query) to a file (Stockholm format).</text> </comment>"
-                    }, 
-                    "seqtab": {
-                        "prompt": "Save parseable table of per-sequence hits to file (--tblout)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "aligfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save multiple alignment of hits to file (-A)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "After the final iteration, save a tabular summary of top sequence hits to a file in a\nreadily parseable, columnar, whitespace-delimited format.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "$value != $vdef) ? \" --tblout jackhmmer.tblout\" : \"\"", 
+                            "perl": "$value != $vdef) ? \" --tblout jackhmmer.tblout\" : \"\"",
                             "python": "(\"\", \" --tblout jackhmmer.tblout\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">After the final iteration, save a tabular summary of top sequence hits to a file in a readily parseable, columnar, whitespace-delimited format.</text> </comment>"
-                    }, 
-                    "domaintab": {
-                        "prompt": "Save parseable table of per-domain hits to file (--domtblout)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqtab",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save parseable table of per-sequence hits to file (--tblout)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "After the final iteration, save a tabular summary of top domain hits to a file in a\nreadily parseable, columnar, whitespace-delimited format.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --domtblout jackhmmer.domtblout\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --domtblout jackhmmer.domtblout\" : \"\"",
                             "python": "(\"\", \" --domtblout jackhmmer.domtblout\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">After the final iteration, save a tabular summary of top domain hits to a file in a readily parseable, columnar, whitespace-delimited format.</text> </comment>"
-                    }, 
-                    "chkhmm": {
-                        "prompt": "Save HMM checkpoints (--chkhmm)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "domaintab",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save parseable table of per-domain hits to file (--domtblout)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "At the start of each iteration, checkpoint the query HMM, saving it to a file named\nphmmer-n.hmm where n is the iteration number (from 1..N).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --chkhmm jackhmmer\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --chkhmm jackhmmer\" : \"\"",
                             "python": "(\"\", \" --chkhmm jackhmmer\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">At the start of each iteration, checkpoint the query HMM, saving it to a file named phmmer-n.hmm where n is the iteration number (from 1..N).</text> </comment>"
-                    }, 
-                    "chkali": {
-                        "prompt": "Save alignment checkpoints (--chkali)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "chkhmm",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save HMM checkpoints (--chkhmm)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "At the end of each iteration, checkpoint an alignment of all domains satisfying\ninclusion thresholds (e.g. what will become the query HMM for the next iteration),\nsaving it to a file named phmmer-n.sto in Stockholm format, where n is the iteration number (from 1..N).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --chkali jackhmmer\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --chkali jackhmmer\" : \"\"",
                             "python": "(\"\", \" --chkali jackhmmer\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">At the end of each iteration, checkpoint an alignment of all domains satisfying inclusion thresholds (e.g. what will become the query HMM for the next iteration), saving it to a file named phmmer-n.sto in Stockholm format, where n is the iteration number (from 1..N).</text> </comment>"
-                    }, 
-                    "acc": {
-                        "ishidden": true, 
-                        "prompt": "Prefer accessions over names in output (--acc)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "chkali",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save alignment checkpoints (--chkali)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use accessions instead of names in the main output, where available for profiles and/or sequences.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --acc\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --acc\" : \"\"",
                             "python": "(\"\", \" --acc\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Use accessions instead of names in the main output, where available for profiles and/or sequences.</text> </comment>"
-                    }, 
-                    "noali": {
-                        "prompt": "Don't output alignments, so output is smaller (--noali)", 
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "acc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Prefer accessions over names in output (--acc)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Omit the alignment section from the main output. This can greatly reduce the output volume.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --noali\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --noali\" : \"\"",
                             "python": "(\"\", \" --noali\") [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Omit the alignment section from the main output. This can greatly reduce the output volume.</text> </comment>"
-                    }, 
-                    "notextw": {
-                        "prompt": "Unlimit ASCII text output line width (--notextw)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noali",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Don't output alignments, so output is smaller (--noali)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Unlimit the length of each line in the main output. The default is a limit of 120\ncharacters per line, which helps in displaying the output cleanly on terminals and\nin editors, but can truncate target profile description lines.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --notextw\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --notextw\" : \"\"",
                             "python": "(\"\", \" --notextw\" ) [ value  != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Unlimit the length of each line in the main output. The default is a limit of 120 characters per line, which helps in displaying the output cleanly on terminals and in editors, but can truncate target profile description lines.</text> </comment>"
-                    }, 
-                    "textw": {
-                        "prompt": "Max width of ASCII text output lines (--textw)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "notextw",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Unlimit ASCII text output line width (--notextw)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "120"
-                        ], 
-                        "precond": {
-                            "perl": "$notextw == 0", 
-                            "python": "notextw == 0"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "120 <=$value",
+                            "python": "120 <=value"
+                        },
                         "format": {
-                            "perl": "($value != $vdef) ? \" --textw $value\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --textw $value\" : \"\"",
                             "python": "(\"\", \" --textw \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "=$value", 
-                            "python": "=value"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "textw",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$notextw == 0",
+                            "python": "notextw == 0"
+                        },
+                        "prompt": "Max width of ASCII text output lines (--textw)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "scoringsys": {
-                "name": "scoringsys", 
-                "parameters": {
-                    "popen": {
-                        "prompt": "Gap open probability (--popen)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.02"
-                        ], 
+                ],
+                "comment": "By default, output for each iteration appears on stdout in a somewhat human readable, somewhat parseable\nformat. These options allow redirecting that output or saving additional kinds of output to files, including\ncheckpoint files for each iteration.",
+                "name": "output",
+                "precond": null,
+                "prompt": "Directing output"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the gap open probability for a single sequence query model. This probability has to be >= 0 and <0.5. Default value = 0.02.",
+                        "ctrl": {
+                            "perl": "0 <= $value <0.5",
+                            "python": "0 <= value <0.5"
+                        },
                         "format": {
-                            "perl": "($value != $vdef) ? \" --popen $value\" : \"\"", 
+                            "perl": "($value != $vdef) ? \" --popen $value\" : \"\"",
                             "python": "(\"\", \" --popen \" + str(value)) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "0.5", 
-                            "python": "0.5"
-                        }, 
-                        "comment": "<text lang=\"en\">Set the gap open probability for a single sequence query model. This probability has to be >= 0 and <0.5. Default value = 0.02.</text> </comment>"
-                    }, 
-                    "pextend": {
-                        "prompt": "Gap extend probability (--pextend)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "popen",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap open probability (--popen)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.4"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --pextend $value\" : \"\"", 
-                            "python": "(\"\", \" --pextend \" + str(value)) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "1", 
-                            "python": "1"
-                        }, 
-                        "comment": "<text lang=\"en\">Set the gap extend probability for a single sequence query model. This probability has to be >= 0 and <1. Default value: 0.4.</text> </comment>"
-                    }, 
-                    "matrix": {
-                        "prompt": "Substitution score matrix (--mxfile)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "BLOSUM62"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "BLOSUM62", 
-                                "label": "BLOSUM62"
-                            }, 
-                            {
-                                "value": "BLOSUM30", 
-                                "label": "BLOSUM30"
-                            }, 
-                            {
-                                "value": "BLOSUM35", 
-                                "label": "BLOSUM35"
-                            }, 
-                            {
-                                "value": "BLOSUM40", 
-                                "label": "BLOSUM40"
-                            }, 
-                            {
-                                "value": "BLOSUM45", 
-                                "label": "BLOSUM45"
-                            }, 
-                            {
-                                "value": "BLOSUM50", 
-                                "label": "BLOSUM50"
-                            }, 
-                            {
-                                "value": "BLOSUM55", 
-                                "label": "BLOSUM55"
-                            }, 
-                            {
-                                "value": "BLOSUM60", 
-                                "label": "BLOSUM60"
-                            }, 
-                            {
-                                "value": "BLOSUM65", 
-                                "label": "BLOSUM65"
-                            }, 
-                            {
-                                "value": "BLOSUM70", 
-                                "label": "BLOSUM70"
-                            }, 
-                            {
-                                "value": "BLOSUM75", 
-                                "label": "BLOSUM75"
-                            }, 
-                            {
-                                "value": "BLOSUM80", 
-                                "label": "BLOSUM80"
-                            }, 
-                            {
-                                "value": "BLOSUM85", 
-                                "label": "BLOSUM85"
-                            }, 
-                            {
-                                "value": "BLOSUM90", 
-                                "label": "BLOSUM90"
-                            }, 
-                            {
-                                "value": "PAM10", 
-                                "label": "PAM10"
-                            }, 
-                            {
-                                "value": "PAM20", 
-                                "label": "PAM20"
-                            }, 
-                            {
-                                "value": "PAM30", 
-                                "label": "PAM30"
-                            }, 
-                            {
-                                "value": "PAM40", 
-                                "label": "PAM40"
-                            }, 
-                            {
-                                "value": "PAM50", 
-                                "label": "PAM50"
-                            }, 
-                            {
-                                "value": "PAM60", 
-                                "label": "PAM60"
-                            }, 
-                            {
-                                "value": "PAM70", 
-                                "label": "PAM70"
-                            }, 
-                            {
-                                "value": "PAM80", 
-                                "label": "PAM80"
-                            }, 
-                            {
-                                "value": "PAM90", 
-                                "label": "PAM90"
-                            }, 
-                            {
-                                "value": "PAM100", 
-                                "label": "PAM100"
-                            }, 
-                            {
-                                "value": "PAM110", 
-                                "label": "PAM110"
-                            }, 
-                            {
-                                "value": "PAM120", 
-                                "label": "PAM120"
-                            }, 
-                            {
-                                "value": "PAM130", 
-                                "label": "PAM130"
-                            }, 
-                            {
-                                "value": "PAM140", 
-                                "label": "PAM140"
-                            }, 
-                            {
-                                "value": "PAM150", 
-                                "label": "PAM150"
-                            }, 
-                            {
-                                "value": "PAM160", 
-                                "label": "PAM160"
-                            }, 
-                            {
-                                "value": "PAM170", 
-                                "label": "PAM170"
-                            }, 
-                            {
-                                "value": "PAM180", 
-                                "label": "PAM180"
-                            }, 
-                            {
-                                "value": "PAM190", 
-                                "label": "PAM190"
-                            }, 
-                            {
-                                "value": "PAM200", 
-                                "label": "PAM200"
-                            }, 
-                            {
-                                "value": "PAM210", 
-                                "label": "PAM210"
-                            }, 
-                            {
-                                "value": "PAM220", 
-                                "label": "PAM220"
-                            }, 
-                            {
-                                "value": "PAM230", 
-                                "label": "PAM230"
-                            }, 
-                            {
-                                "value": "PAM240", 
-                                "label": "PAM240"
-                            }, 
-                            {
-                                "value": "PAM250", 
-                                "label": "PAM250"
-                            }, 
-                            {
-                                "value": "PAM260", 
-                                "label": "PAM260"
-                            }, 
-                            {
-                                "value": "PAM270", 
-                                "label": "PAM270"
-                            }, 
-                            {
-                                "value": "PAM280", 
-                                "label": "PAM280"
-                            }, 
-                            {
-                                "value": "PAM290", 
-                                "label": "PAM290"
-                            }, 
-                            {
-                                "value": "PAM300", 
-                                "label": "PAM300"
-                            }, 
-                            {
-                                "value": "PAM310", 
-                                "label": "PAM310"
-                            }, 
-                            {
-                                "value": "PAM320", 
-                                "label": "PAM320"
-                            }, 
-                            {
-                                "value": "PAM330", 
-                                "label": "PAM330"
-                            }, 
-                            {
-                                "value": "PAM340", 
-                                "label": "PAM340"
-                            }, 
-                            {
-                                "value": "PAM350", 
-                                "label": "PAM350"
-                            }, 
-                            {
-                                "value": "PAM360", 
-                                "label": "PAM360"
-                            }, 
-                            {
-                                "value": "PAM370", 
-                                "label": "PAM370"
-                            }, 
-                            {
-                                "value": "PAM380", 
-                                "label": "PAM380"
-                            }, 
-                            {
-                                "value": "PAM390", 
-                                "label": "PAM390"
-                            }, 
-                            {
-                                "value": "PAM400", 
-                                "label": "PAM400"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --mxfile $value\" : \"\"", 
-                            "python": "(\"\", \" --mxfile \" + str(value)) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">To obtain residue alignment probabilities from a substitution matrix. The default score matrix is BLOSUM62</text> </comment>"
-                    }
-                }
-            }, 
-            "report": {
-                "name": "report", 
-                "parameters": {
-                    "e_threshold": {
-                        "prompt": "Thresholds for Sequences:  E-value (-E)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "10.0"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" -E $value\" : \"\"", 
-                            "python": "(\"\", \" -E \" + str(value)) [ value != vdef]"
-                        }, 
-                        "precond": {
-                            "perl": "$s_threshold is None", 
-                            "python": "s_threshold is None"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Report sequences <= this E-value threshold in per-sequence output. [Default value: 10].</text> </comment>"
-                    }, 
-                    "s_threshold": {
-                        "prompt": "Score (-T)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "format": {
-                            "perl": "($value) ? \" -T $value\" : \"\"", 
-                            "python": "(\"\", \" -T \" + str(value)) [ value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Use a bit score threshold for per-sequence output instead of an E-value threshold (any setting of -E is ignored). Report sequences with a bit score of >= this score threshold in output. By default this option is unset.</text> </comment>"
-                    }, 
-                    "d_e_threshold": {
-                        "prompt": "Thresholds for Domains: E-value (--domE)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "10.0"
-                        ], 
-                        "precond": {
-                            "perl": "$d_s_threshold is None", 
-                            "python": "d_s_threshold is None"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" --domE $value\" : \"\"", 
-                            "python": "(\"\", \" --domE \" + str(value)) [ value is not None and value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Report domains with conditional E-values < or = this E-value threshold in per-domain output, in addition to the top-scoring domain per significant sequence hit.[Default value: 10]</text> </comment>"
-                    }, 
-                    "d_s_threshold": {
-                        "prompt": "Score (--domT)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "format": {
-                            "perl": "($value) ? \" --domT $value\" : \"\"", 
-                            "python": "(\"\", \" --domT \" + str(value)) [ value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Use a bit score threshold for per-domain output instead of an E-value threshold (any setting of --domE is ignored). Report domains with a bit score of >= this score threshold in per-domain output, in addition to the top-scoring domain per significant sequence hit. By default this option is unset.</text> </comment>"
-                    }
-                }
-            }, 
-            "inclusion_A": {
-                "name": "inclusion_A", 
-                "parameters": {
-                    "a_e_threshold": {
-                        "prompt": "Thresholds for Sequences:  E-value (--incE)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.001"
-                        ], 
-                        "precond": {
-                            "perl": "$a_s_threshold is None", 
-                            "python": "a_s_threshold is None"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" --incE $value\" : \"\"", 
-                            "python": "(\"\", \" --incE \" + str(value)) [ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Include sequences with E-values <= this E-value threshold in subsequent iteration or final alignment output (-A option). The default is 0.001.</text> </comment>"
-                    }, 
-                    "a_s_threshold": {
-                        "prompt": "Score (--incT)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "format": {
-                            "perl": "($value) ? \" --incT $value\" : \"\"", 
-                            "python": "(\"\", \" --incT \" + str(value)) [ value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">Use a bit score threshold for per-sequence inclusion instead of an E-value threshold (any setting of --incE is ignored). Include sequences with a bit score of >= this score threshold. By default this option is unset.</text> </comment>"
-                    }, 
-                    "a_d_e_threshold": {
-                        "prompt": "Thresholds for Domains: E-value (--incdomE)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.001"
-                        ], 
-                        "precond": {
-                            "perl": "$a_d_s_threshold is None", 
-                            "python": "a_d_s_threshold is None"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" --incdomE $value\" : \"\"", 
-                            "python": "(\"\", \" --incdomE \" + str(value)) [ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Include domains with conditional E-values <= this E-value threshold in subsequent iteration or final alignment output (-A option), in addition to the top-scoring domain per significant sequence hit. The default is 0.001.</text> </comment>"
-                    }, 
-                    "a_d_s_threshold": {
-                        "prompt": "Score (--incdomT)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "format": {
-                            "perl": "($value) ? \" --incdomT $value\" : \"\"", 
-                            "python": "(\"\", \" --incdomT \" + str(value)) [ value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">Use a bit score threshold for per-domain inclusion instead of an E-value threshold (any setting of --incdomE is ignored). Include domains with a bit score of > = this score threshold. By default this option is unset.</text> </comment>"
-                    }
-                }
-            }, 
-            "heuristic": {
-                "name": "heuristic", 
-                "parameters": {
-                    "max": {
-                        "prompt": "Turn all heuristic filters off (less speed, more power) (--max)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --max\" : \"\"", 
-                            "python": "(\"\", \" --max\") [ value  != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Maximum sensitivity. Turn off all filters, including the bias filter, and run full Forward/ Backward postprocessing on every target. This increases sensitivity slightly, at a large cost in speed.</text> </comment>"
-                    }, 
-                    "F1": {
-                        "prompt": "Stage 1 (MSV) threshold: (--F1)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.02"
-                        ], 
-                        "precond": {
-                            "perl": "$max==0", 
-                            "python": "max==0"
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --F1 $value\" : \"\"", 
-                            "python": "(\"\", \" --F1 \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">First filter threshold; set the P-value threshold for the MSV filter step. The default is 0.02, meaning that roughly 2% of the highest scoring non-homologous targets are expected to pass the filter.</text> </comment>"
-                    }, 
-                    "F2": {
-                        "prompt": "Stage 2 (Vit) threshold: (--F2)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.001"
-                        ], 
-                        "precond": {
-                            "perl": "$max==0", 
-                            "python": "max==0"
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --F2 $value\" : \"\"", 
-                            "python": "(\"\", \" --F2 \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Second filter threshold; set the P-value threshold for the Viterbi filter step. The default is 0.001.</text> </comment>"
-                    }, 
-                    "F3": {
-                        "prompt": "Stage 3 (Fwd) threshold: (--F3)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.00001"
-                        ], 
-                        "precond": {
-                            "perl": "$max==0", 
-                            "python": "max==0"
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --F3 $value\" : \"\"", 
-                            "python": "(\"\", \" --F3 \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Third filter threshold; set the P-value threshold for the Forward filter step. The default is 1e-5.</text> </comment>"
-                    }, 
-                    "nobias": {
-                        "prompt": "Turn off composition bias filter (--nobias)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "precond": {
-                            "perl": "$max==0", 
-                            "python": "max==0"
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --nobias\" : \"\"", 
-                            "python": "(\"\", \" --nobias\" ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Turn off the bias filter increases sensitivity somewhat, but can come at a high cost in speed, especially if the query has biased residue composition (such as a repetitive sequence region, or if it is a membrane protein with large regions of hydrophobicity).</text> <text lang=\"en\">Without the bias filter, too many sequences may pass the filter with biased queries, leading to slower than expected performance as the computationally intensive Forward/Backward algorithms shoulder an abnormally heavy load.</text> </comment>"
-                    }
-                }
-            }, 
-            "model_constr": {
-                "name": "model_constr", 
-                "parameters": {
-                    "fast": {
-                        "prompt": "Quickly and heuristically determine the architecture of the model (--fast)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --fast\" : \"\"", 
-                            "python": "(\"\", \" --fast\" ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Define consensus columns as those that have a fraction >= symfrac of residues as consensus/opposed to gaps. (See below for the --symfrac option.) This option may have undesirable effects in jackhmmer, because a profile could iteratively walk in sequence space away from your original query, leaving few or no consensus columns corresponding to its residues.</text> </comment>"
-                    }, 
-                    "symfrac": {
-                        "prompt": "Symbol fraction controlling --fast construction (--symfrac)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "precond": {
-                            "perl": "$fast==1", 
-                            "python": "fast==1"
-                        }, 
-                        "default_value": [
-                            "0.5"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --symfrac $value\" : \"\"", 
-                            "python": "(\"\", \" --symfrac \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "=1", 
-                            "python": "=1"
-                        }, 
-                        "comment": "<text lang=\"en\">Define the residue fraction threshold necessary to define a consensus column when using the --fast option. The default is 0.5. The symbol fraction in each column is calculated after taking relative sequence weighting into account, and ignoring gap characters corresponding to ends of sequence fragments (as opposed to internal insertions/deletions).</text> <text lang=\"en\">- Setting this to 1.0 means that every alignment column will be assigned as consensus, which may be useful in some cases.</text> <text lang=\"en\">- Setting it to 0.0 is a bad idea, because no columns will be assigned as consensus, and you will get a model of zero length.</text> </comment>"
-                    }, 
-                    "fragthresh": {
-                        "prompt": "Threshold to tag sequence as a fragment (--fragthresh)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.5"
-                        ], 
-                        "precond": {
-                            "perl": "$fast==1", 
-                            "python": "fast==1"
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --fragthresh $value\" : \"\"", 
-                            "python": "(\"\", \" --fragthresh \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "=1", 
-                            "python": "=1"
-                        }, 
-                        "comment": "<text lang=\"en\">We only want to count terminal gaps as deletions if the aligned sequence is known to be full-length, not if it is a fragment (for instance, because only part of it was sequenced). HMMER uses a simple rule to infer fragments: if the sequence length is less than a fraction threshold times the mean sequence length of all the sequences in the alignment, then the sequence is handled as a fragment. The default is 0.5.</text> </comment>"
-                    }
-                }
-            }, 
-            "w_option": {
-                "name": "w_option", 
-                "parameters": {
-                    "wmodel": {
-                        "prompt": "Relative weights in models", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "wpb"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "wpb", 
-                                "label": "Henikoff position-based weights (--wpb)"
-                            }, 
-                            {
-                                "value": "wgsc", 
-                                "label": "Gerstein/Sonnhammer/Chothia tree weights (--wgsc)"
-                            }, 
-                            {
-                                "value": "wblosum", 
-                                "label": "Henikoff simple filter weights (--wblosum)"
-                            }, 
-                            {
-                                "value": "wnone", 
-                                "label": "Don't do any relative weighting (--wnone)"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --$value\" : \"\"", 
-                            "python": "(\"\", \" --\" + str(value) ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">These option controls which ad hoc sequence weighting algorithm gets used:</text> <text lang=\"en\">- Use the Henikoff position-based sequence weighting scheme [Henikoff and Henikoff, J. Mol. Biol. 243:574, 1994]. This is the default.</text> <text lang=\"en\">- Use the Gerstein/Sonnhammer/Chothia weighting algorithm [Gerstein et al, J. Mol. Biol. 235:1067, 1994].</text> <text lang=\"en\">- Use the same clustering scheme that was used to weight data in calculating BLOSUM subsitution matrices [Henikoff and Henikoff, Proc. Natl. Acad. Sci 89:10915,1992]. Sequences are single-linkage clustered at an identity threshold (default 0.62; see --wid option) and within each cluster of c sequences, each sequence gets relative weight 1/c.</text> <text lang=\"en\">- No relative weights. All sequences are assigned uniform weight.</text> </comment>"
-                    }, 
-                    "wid": {
-                        "prompt": "Set identity cutoff in case of Henikoff simple filter weights (--wblosum) selection (--wid)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "precond": {
-                            "perl": "wmodel eq \"wblosum\"", 
-                            "python": "wmodel == \"wblosum\""
-                        }, 
-                        "default_value": [
-                            "0.62"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --wid $value\" : \"\"", 
-                            "python": "(\"\", \" --wid \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "=1", 
-                            "python": "=1"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the identity threshold used by single-linkage clustering when using --wblosum. Invalid with any other weighting scheme. Default is 0.62.</text> </comment>"
-                    }, 
-                    "seqnum_model": {
-                        "prompt": "Effective sequence number in models", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "eent"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "eent", 
-                                "label": "Adjust effective sequence number to achieve relative entropy target (--eent)"
-                            }, 
-                            {
-                                "value": "eclust", 
-                                "label": "Effective sequence number is the number of single linkage clusters (--eclust)"
-                            }, 
-                            {
-                                "value": "enone", 
-                                "label": "No effective sequence number weighting: just use nseq (--enone)"
-                            }
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --$value\" : \"\"", 
-                            "python": "(\"\", \" --\" + str(value) ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Choice between:</text> <text lang=\"en\">- eent: Adjust effective sequence number to achieve a specific relative entropy per position (see --ere). This is the default. This method reduces the effective sequence number to reduce the information content (relative entropy, or average expected score on true homologs) per consensus position.</text> <text lang=\"en\">- eclust: Set effective sequence number to the number of single-linkage clusters at a specific identity threshold (see --eid). This option is not recommended; it is for experiments evaluating how much better --eent is.</text> <text lang=\"en\">- enone: Turn off effective sequence number determination and just use the actual number of sequences. One reason you might want to do this is to try to maximize the relative entropy/position of your model, which may be useful for short models.</text> </comment>"
-                    }, 
-                    "eff_snum": {
-                        "prompt": "Effective sequence number for all model (--eset)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "seqnum_model ne \"enone\"", 
-                            "python": "seqnum_model != \"enone\""
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --eset $value\" : \"\"", 
-                            "python": "(\"\", \" --eset \" + str(value) ) [ value != vdef]"
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
-                    }, 
-                    "ere": {
-                        "prompt": "Minimum relative entropy/position target for --eent (--ere)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "precond": {
-                            "perl": "$seqnum_model eq \"eent\" and not $eff_snum", 
-                            "python": "seqnum_model == \"eent\" and not eff_snum"
-                        }, 
-                        "format": {
-                            "perl": "($value) ? \" --ere $value\" : \"\"", 
-                            "python": "(\"\", \" --ere \" + str(value) ) [ value is not None]"
-                        }, 
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the gap extend probability for a single sequence query model. This probability has to be >= 0 and <1. Default value: 0.4.",
                         "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Set the minimum relative entropy/position target. Requires --eent. Default depends on the sequence alphabet; for protein sequences, it is 0.59 bits/position.</text> </comment>"
-                    }, 
-                    "esigma": {
-                        "prompt": "Sigma parameter for --eent (--esigma)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "precond": {
-                            "perl": "$seqnum_model eq \"eent\" and not $eff_snum", 
-                            "python": "seqnum_model == \"eent\" and not eff_snum"
-                        }, 
-                        "default_value": [
-                            "45.0"
-                        ], 
+                            "perl": "0 <= $value <1",
+                            "python": "0 <= value <1"
+                        },
                         "format": {
-                            "perl": "(defined $value and $value!=$vdef) ? \" --esigma $value\" : \"\"", 
-                            "python": "( \"\" , \" --esigma \" + str(value) )[ value is not None and value !=vdef ]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the minimum relative entropy contributed by an entire model alignment, over its whole length. This has the effect of making short models have higher relative entropy per position than --ere alone would give. The default is 45.0 bits.</text> </comment>"
-                    }, 
-                    "eid": {
-                        "prompt": "Fractional Identity cutoff for --eclust (--eid)", 
+                            "perl": "($value != $vdef) ? \" --pextend $value\" : \"\"",
+                            "python": "(\"\", \" --pextend \" + str(value)) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pextend",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap extend probability (--pextend)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "precond": {
-                            "perl": "$seqnum_model eq \"eclust\" and not $eff_snum", 
-                            "python": "seqnum_model == \"eclust\" and not eff_snum"
-                        }, 
-                        "default_value": [
-                            "0.62"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "To obtain residue alignment probabilities from a substitution matrix. The default score matrix is BLOSUM62",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --eid $value\" : \"\"", 
-                            "python": "(\"\", \" --eid \" + str(value) ) [ value != vdef ]"
-                        }, 
-                        "ctrl": {
-                            "perl": "=1", 
-                            "python": "=1"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the fractional pairwise identity cutoff used by single linkage clustering with the --eclust option. The default is 0.62.</text> </comment>"
+                            "perl": "($value != $vdef) ? \" --mxfile $value\" : \"\"",
+                            "python": "(\"\", \" --mxfile \" + str(value)) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matrix",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Substitution score matrix (--mxfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
-            }, 
-            "MSV": {
-                "name": "MSV", 
-                "parameters": {
-                    "eml": {
-                        "prompt": "Length of sequences (--EmL)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "200"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --EmL $value\" : \"\"", 
-                            "python": "(\"\", \" --EmL \" + str(value) ) [ value != vdef]"
-                        }, 
+                ],
+                "comment": "By default, the first iteration uses a search model constructed from a single query sequence. This model\nis constructed using a standard 20x20 substitution matrix for residue probabilities, and two additional parameters\nfor position-independent gap open and gap extend probabilities. These options allow the default\nsingle-sequence scoring parameters to be changed.",
+                "name": "scoringsys",
+                "precond": null,
+                "prompt": "Controlling single sequence scoring in first iteration"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Report sequences <= this E-value threshold in per-sequence output. [Default value: 10].",
                         "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the sequence length in simulation that estimates the location parameter mu for MSV filter E-values. Default is 200.</text> </comment>"
-                    }, 
-                    "emn": {
-                        "prompt": "Number of sequences (--EmN)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "200"
-                        ], 
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
                         "format": {
-                            "perl": "($value != $vdef) ? \" --EmN $value\" : \"\"", 
-                            "python": "(\"\", \" --EmN \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the number of sequences in simulation that estimates the location parameter mu for MSV filter E-values. Default is 200.</text> </comment>"
-                    }
-                }
-            }, 
-            "Ecalibration2": {
-                "name": "Ecalibration2", 
-                "parameters": {
-                    "evl": {
-                        "prompt": "Length of sequences (--EvL)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "200"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --EvL $value\" : \"\"", 
-                            "python": "(\"\", \" --EvL \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the sequence length in simulation that estimates the location parameter mu for Viterbi filter E-values. Default is 200.</text> </comment>"
-                    }, 
-                    "evn": {
-                        "prompt": "Number of sequences (--EvN)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "200"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --EvN $value\" : \"\"", 
-                            "python": "(\"\", \" --EvN \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the number of sequences in simulation that estimates the location parameter mu for Viterbi filter E-values. Default is 200.</text> </comment>"
-                    }
-                }
-            }, 
-            "Ecalibration3": {
-                "name": "Ecalibration3", 
-                "parameters": {
-                    "efl": {
-                        "prompt": "Length of sequences (--EfL)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "100"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --EfL $value\" : \"\"", 
-                            "python": "(\"\", \" --EfL \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the sequence length in simulation that estimates the location parameter tau for Forward E-values. Default is 100.</text> </comment>"
-                    }, 
-                    "efn": {
-                        "prompt": "Number of sequences (--EfN)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "200"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --EfN $value\" : \"\"", 
-                            "python": "(\"\", \" --EfN \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the number of sequences in simulation that estimates the location parameter tau for Forward E-values. Default is 200.</text> </comment>"
-                    }, 
-                    "eft": {
-                        "prompt": "Tail mass (--Eft)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.04"
-                        ], 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --Eft $value\" : \"\"", 
-                            "python": "(\"\", \" --Eft \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Sets the tail mass fraction to fit in the simulation that estimates the location parameter tau for Forward evalues. Default is 0.04.</text> </comment>"
-                    }
-                }
-            }, 
-            "other": {
-                "name": "other", 
-                "parameters": {
-                    "nonull": {
-                        "prompt": "Turn off biased composition score corrections (--nonull2)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "perl": "($value != $vdef) ? \" -E $value\" : \"\"",
+                            "python": "(\"\", \" -E \" + str(value)) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_threshold",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "$max==0", 
+                            "perl": "$s_threshold is None",
+                            "python": "s_threshold is None"
+                        },
+                        "prompt": "Thresholds for Sequences:  E-value (-E)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use a bit score threshold for per-sequence output instead of an E-value threshold\n(any setting of -E is ignored). Report sequences with a bit score of >= this score threshold in output. By\ndefault this option is unset.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value) ? \" -T $value\" : \"\"",
+                            "python": "(\"\", \" -T \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "s_threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Score (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Report domains with conditional E-values < or = this E-value threshold in per-domain output, in addition\nto the top-scoring domain per significant sequence hit.[Default value: 10]",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --domE $value\" : \"\"",
+                            "python": "(\"\", \" --domE \" + str(value)) [ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "d_e_threshold",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$d_s_threshold is None",
+                            "python": "d_s_threshold is None"
+                        },
+                        "prompt": "Thresholds for Domains: E-value (--domE)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use a bit score threshold for per-domain output instead of an E-value threshold\n(any setting of --domE is ignored). Report domains with a bit score of >= this score threshold in per-domain output,\nin addition to the top-scoring domain per significant sequence hit. By default this option is unset.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value) ? \" --domT $value\" : \"\"",
+                            "python": "(\"\", \" --domT \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "d_s_threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Score (--domT)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "\"Reporting\" thresholds control which hits are reported in output files (the main output, --tblout, and --\ndomtblout). In each iteration, sequence hits and domain hits are ranked by statistical significance (E-value) and output is\ngenerated in two sections called \"per-target\" and \"per-domain\" output.The following options allow you to change the default E-value reporting thresholds, or to use bit score thresholds instead.",
+                "name": "report",
+                "precond": null,
+                "prompt": "Controlling significance thresholds for reporting"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Include sequences with E-values <= this E-value threshold in subsequent iteration or final alignment\noutput (-A option). The default is 0.001.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --incE $value\" : \"\"",
+                            "python": "(\"\", \" --incE \" + str(value)) [ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "a_e_threshold",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$a_s_threshold is None",
+                            "python": "a_s_threshold is None"
+                        },
+                        "prompt": "Thresholds for Sequences:  E-value (--incE)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use a bit score threshold for per-sequence inclusion instead of an E-value threshold\n(any setting of --incE is ignored). Include sequences with a bit score of >= this score threshold. By default this option is unset.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" --incT $value\" : \"\"",
+                            "python": "(\"\", \" --incT \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "a_s_threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Score (--incT)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Include domains with conditional E-values <= this E-value threshold in subsequent iteration or final\nalignment output (-A option), in addition to the top-scoring domain per significant sequence hit. The default is 0.001.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --incdomE $value\" : \"\"",
+                            "python": "(\"\", \" --incdomE \" + str(value)) [ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "a_d_e_threshold",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$a_d_s_threshold is None",
+                            "python": "a_d_s_threshold is None"
+                        },
+                        "prompt": "Thresholds for Domains: E-value (--incdomE)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use a bit score threshold for per-domain inclusion instead of an E-value threshold\n(any setting of --incdomE is ignored). Include domains with a bit score of > = this score threshold. By default this option is unset.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" --incdomT $value\" : \"\"",
+                            "python": "(\"\", \" --incdomT \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "a_d_s_threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Score (--incdomT)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Inclusion thresholds control which hits are included in the final multiple alignment (if the -A option is used) \nand which hits actually get used in the next iteration.",
+                "name": "inclusion_A",
+                "precond": null,
+                "prompt": "Controlling significance thresholds for inclusion in next round"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Maximum sensitivity. Turn off all filters, including the bias filter, and run full Forward/\nBackward postprocessing on every target. This increases sensitivity slightly, at a large cost in speed.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --max\" : \"\"",
+                            "python": "(\"\", \" --max\") [ value  != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Turn all heuristic filters off (less speed, more power) (--max)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "First filter threshold; set the P-value threshold for the MSV filter step. The default is\n0.02, meaning that roughly 2% of the highest scoring non-homologous targets are expected to pass the filter.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --F1 $value\" : \"\"",
+                            "python": "(\"\", \" --F1 \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "F1",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$max==0",
                             "python": "max==0"
-                        }, 
-                        "format": {
-                            "perl": "($value != $vdef) ? \" --nonull2\" : \"\"", 
-                            "python": "(\"\", \" --nonull2\" ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Turn off the \"null2\" score corrections for biased composition.</text> </comment>"
-                    }, 
-                    "z": {
-                        "prompt": "Number of comparisons done, for E-value calculation (-Z)", 
+                        },
+                        "prompt": "Stage 1 (MSV) threshold: (--F1)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Second filter threshold; set the P-value threshold for the Viterbi filter step. The\ndefault is 0.001.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -Z $value\" : \"\"", 
-                            "python": "(\"\", \" -Z \" + str(value)) [ value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Assert that the total number of targets in your searches is this number, for the purposes of per-sequence E-value calculations, rather than the actual number of targets seen.</text> </comment>"
-                    }, 
-                    "d_z": {
-                        "prompt": "Number of significant sequences, for domain E-value calculation (--domZ)", 
+                            "perl": "($value != $vdef) ? \" --F2 $value\" : \"\"",
+                            "python": "(\"\", \" --F2 \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "F2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$max==0",
+                            "python": "max==0"
+                        },
+                        "prompt": "Stage 2 (Vit) threshold: (--F2)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Third filter threshold; set the P-value threshold for the Forward filter step. The\ndefault is 1e-5.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" --domZ $value\" : \"\"", 
-                            "python": "(\"\", \" --domZ \" + str(value)) [ value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "$value", 
-                            "python": " value"
-                        }, 
-                        "comment": "<text lang=\"en\">Assert that the total number of targets in your searches is this number, for the purposes of per-domain conditional E-value calculations, rather than the number of targets that passed the reporting thresholds.</text> </comment>"
-                    }, 
-                    "seed": {
-                        "prompt": "Set Random Number Generator seed to (--seed)", 
+                            "perl": "($value != $vdef) ? \" --F3 $value\" : \"\"",
+                            "python": "(\"\", \" --F3 \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "F3",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$max==0",
+                            "python": "max==0"
+                        },
+                        "prompt": "Stage 3 (Fwd) threshold: (--F3)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "42"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Turn off the bias filter increases sensitivity somewhat, but can come at a\nhigh cost in speed, especially if the query has biased residue composition (such as a repetitive sequence region, \nor if it is a membrane protein with large regions of hydrophobicity).Without the bias filter, too many sequences may pass the filter\nwith biased queries, leading to slower than expected performance as the computationally\nintensive Forward/Backward algorithms shoulder an abnormally heavy load.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value != $vdef) ? \" --seed $value\" : \"\"", 
-                            "python": "(\"\", \" --seed \" + str(value) ) [ value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Seed the random number generator with this, an integer >= 0. The default seed is 42.</text> <text lang=\"en\">If >0, any stochastic simulations will be reproducible; the same command will give the same results.</text> <text lang=\"en\"> If = 0, the random number generator is seeded arbitrarily, and stochastic simulations will vary from run to run of the same command.</text> </comment>"
+                            "perl": "($value != $vdef) ? \" --nobias\" : \"\"",
+                            "python": "(\"\", \" --nobias\" ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nobias",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$max==0",
+                            "python": "max==0"
+                        },
+                        "prompt": "Turn off composition bias filter (--nobias)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
+                ],
+                "comment": "HMMER3 searches are accelerated in a three-step filter pipeline:- the MSV filter (the fastest and most approximate),- the Viterbi filter,- and the Forward filter (full Forward scoring algorithm, slowest but most accurate),+ There is also a \"bias filter\" step between MSV and Viterbi.Targets that pass all the steps in the acceleration pipeline are then subjected to \"postprocessing\" (domain identification\nand scoring using the Forward/Backward algorithm).Essentially the only free parameters that control\nHMMER's heuristic filters are the P-value thresholds controlling the expected fraction of non-homologous\nsequences that pass the filters.- Setting the default thresholds higher will pass a higher proportion of non-homologous\nsequence, increasing sensitivity at the expense of speed,- Setting lower P-value thresholds will pass a smaller proportion, decreasing \nsensitivity and increasing speed,- Setting a filter's P-value threshold to 1.0 means it will passing all sequences, and effectively disables the filter.Changing filter thresholds only removes or includes targets from consideration; it does not alter bit\nscores, E-values, or alignments, all of which are determined solely in \"postprocessing\".",
+                "name": "heuristic",
+                "precond": null,
+                "prompt": "Controlling acceleration heuristics"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Define consensus columns as those that have a fraction >= symfrac of residues\nas consensus/opposed to gaps. (See below for the --symfrac option.) This option may have undesirable effects in jackhmmer, \nbecause a profile could iteratively walk in sequence space away from your original query, leaving few or no consensus\ncolumns corresponding to its residues.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --fast\" : \"\"",
+                            "python": "(\"\", \" --fast\" ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fast",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Quickly and heuristically determine the architecture of the model (--fast)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Define the residue fraction threshold necessary to define a consensus column\nwhen using the --fast option. The default is 0.5. The symbol fraction in each column is calculated after taking \nrelative sequence weighting into account, and ignoring gap characters corresponding to ends of sequence fragments (as opposed\nto internal insertions/deletions).- Setting this to 1.0 means that every alignment column\nwill be assigned as consensus, which may be useful in some cases.- Setting it to 0.0 is a bad idea, because no columns will be assigned as consensus, and\nyou will get a model of zero length.",
+                        "ctrl": {
+                            "perl": "0 <=$value <=1",
+                            "python": "0 < value <=1"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --symfrac $value\" : \"\"",
+                            "python": "(\"\", \" --symfrac \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "symfrac",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$fast==1",
+                            "python": "fast==1"
+                        },
+                        "prompt": "Symbol fraction controlling --fast construction (--symfrac)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "We only want to count terminal gaps as deletions if the aligned sequence is known\nto be full-length, not if it is a fragment (for instance, because only part of it was sequenced). \nHMMER uses a simple rule to infer fragments: if the sequence length is less than a fraction threshold times the mean \nsequence length of all the sequences in the alignment, then the sequence is handled as a fragment. The default is 0.5.",
+                        "ctrl": {
+                            "perl": "0 <=$value <=1",
+                            "python": "0 < value <=1"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --fragthresh $value\" : \"\"",
+                            "python": "(\"\", \" --fragthresh \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fragthresh",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$fast==1",
+                            "python": "fast==1"
+                        },
+                        "prompt": "Threshold to tag sequence as a fragment (--fragthresh)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "These options control how consensus columns are defined in multiple alignments when building profiles. By\ndefault, jackhmmer always includes your original query sequence in the alignment result at every iteration,\nand consensus positions are defined by that query sequence: that is, a default jackhmmer profile is always\nthe same length as your original query, at every iteration.",
+                "name": "model_constr",
+                "precond": null,
+                "prompt": "Controlling profile construction (later iteration)"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "These option controls which ad hoc sequence weighting algorithm gets used:- Use the Henikoff position-based sequence weighting scheme [Henikoff and Henikoff,\nJ. Mol. Biol. 243:574, 1994]. This is the default.- Use the Gerstein/Sonnhammer/Chothia weighting algorithm [Gerstein et al, J. Mol.\nBiol. 235:1067, 1994].- Use the same clustering scheme that was used to weight data in calculating BLOSUM\nsubsitution matrices [Henikoff and Henikoff, Proc. Natl. Acad. Sci 89:10915,1992]. Sequences are single-linkage clustered \nat an identity threshold (default 0.62; see --wid option) and within each cluster of c sequences, each sequence gets relative\nweight 1/c.- No relative weights. All sequences are assigned uniform weight.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --$value\" : \"\"",
+                            "python": "(\"\", \" --\" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "wmodel",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Relative weights in models",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the identity threshold used by single-linkage clustering when using --wblosum.\nInvalid with any other weighting scheme. Default is 0.62.",
+                        "ctrl": {
+                            "perl": "0 <=$value <=1",
+                            "python": "0 < value <=1"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --wid $value\" : \"\"",
+                            "python": "(\"\", \" --wid \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "wid",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "wmodel eq \"wblosum\"",
+                            "python": "wmodel == \"wblosum\""
+                        },
+                        "prompt": "Set identity cutoff in case of Henikoff simple filter weights (--wblosum) selection (--wid)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Choice between:- eent: Adjust effective sequence number to achieve a specific relative entropy per position\n(see --ere). This is the default. This method reduces the effective sequence number to reduce the information content \n(relative entropy, or average expected score on true homologs) per consensus position.- eclust: Set effective sequence number to the number of single-linkage clusters at a specific\nidentity threshold (see --eid). This option is not recommended; it is for experiments evaluating how much better --eent is.- enone: Turn off effective sequence number determination and just use the actual number\nof sequences. One reason you might want to do this is to try to maximize the relative entropy/position of your model, \nwhich may be useful for short models.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --$value\" : \"\"",
+                            "python": "(\"\", \" --\" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqnum_model",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Effective sequence number in models",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --eset $value\" : \"\"",
+                            "python": "(\"\", \" --eset \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eff_snum",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "seqnum_model ne \"enone\"",
+                            "python": "seqnum_model != \"enone\""
+                        },
+                        "prompt": "Effective sequence number for all model (--eset)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the minimum relative entropy/position target. Requires --eent. Default\ndepends on the sequence alphabet; for protein sequences, it is 0.59 bits/position.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value) ? \" --ere $value\" : \"\"",
+                            "python": "(\"\", \" --ere \" + str(value) ) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ere",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqnum_model eq \"eent\" and not $eff_snum",
+                            "python": "seqnum_model == \"eent\" and not eff_snum"
+                        },
+                        "prompt": "Minimum relative entropy/position target for --eent (--ere)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the minimum relative entropy contributed by an entire model alignment, over\nits whole length. This has the effect of making short models have higher relative entropy per position \nthan --ere alone would give. The default is 45.0 bits.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value!=$vdef) ? \" --esigma $value\" : \"\"",
+                            "python": "( \"\" , \" --esigma \" + str(value) )[ value is not None and value !=vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "esigma",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqnum_model eq \"eent\" and not $eff_snum",
+                            "python": "seqnum_model == \"eent\" and not eff_snum"
+                        },
+                        "prompt": "Sigma parameter for --eent (--esigma)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the fractional pairwise identity cutoff used by single linkage clustering with the\n--eclust option. The default is 0.62.",
+                        "ctrl": {
+                            "perl": "0 <=$value <=1",
+                            "python": "0 <= value <=1"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --eid $value\" : \"\"",
+                            "python": "(\"\", \" --eid \" + str(value) ) [ value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eid",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqnum_model eq \"eclust\" and not $eff_snum",
+                            "python": "seqnum_model == \"eclust\" and not eff_snum"
+                        },
+                        "prompt": "Fractional Identity cutoff for --eclust (--eid)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Whenever a profile is built from a multiple alignment, HMMER uses an ad hoc sequence weighting algorithm\nto downweight closely related sequences and upweight distantly related ones. This has the effect of making\nmodels less biased by uneven phylogenetic representation.After relative weights are determined, they are normalized to sum to a total effective sequence number\n(eff_nseq). This number may be the actual number of sequences in the alignment, but it is almost always smaller than that.",
+                "name": "w_option",
+                "precond": null,
+                "prompt": "Controlling relative weights and effective sequence number in models after first iteration"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the sequence length in simulation that estimates the location parameter mu\n    for MSV filter E-values. Default is 200.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --EmL $value\" : \"\"",
+                            "python": "(\"\", \" --EmL \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eml",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Length of sequences (--EmL)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the number of sequences in simulation that estimates the location parameter\nmu for MSV filter E-values. Default is 200.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --EmN $value\" : \"\"",
+                            "python": "(\"\", \" --EmN \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "emn",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of sequences (--EmN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Estimating the location parameters for the expected score distributions for MSV filter scores, Viterbi filter\nscores, and Forward scores requires three short random sequence simulations.",
+                "name": "MSV",
+                "precond": null,
+                "prompt": "Controlling E-value calibration for Stage 1 - MSV Gumbel mu fit"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the sequence length in simulation that estimates the location parameter mu\nfor Viterbi filter E-values. Default is 200.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --EvL $value\" : \"\"",
+                            "python": "(\"\", \" --EvL \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "evl",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Length of sequences (--EvL)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the number of sequences in simulation that estimates the location parameter\nmu for Viterbi filter E-values. Default is 200.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --EvN $value\" : \"\"",
+                            "python": "(\"\", \" --EvN \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "evn",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of sequences (--EvN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Estimating the location parameters for the expected score distributions for MSV filter scores, Viterbi filter\n  scores, and Forward scores requires three short random sequence simulations.",
+                "name": "Ecalibration2",
+                "precond": null,
+                "prompt": "Controlling E-value calibration for Stage 2 - Viterbi Gumbel mu fit"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the sequence length in simulation that estimates the location parameter tau\nfor Forward E-values. Default is 100.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --EfL $value\" : \"\"",
+                            "python": "(\"\", \" --EfL \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "efl",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Length of sequences (--EfL)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the number of sequences in simulation that estimates the location parameter\ntau for Forward E-values. Default is 200.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --EfN $value\" : \"\"",
+                            "python": "(\"\", \" --EfN \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "efn",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of sequences (--EfN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the tail mass fraction to fit in the simulation that estimates the location parameter\n  tau for Forward evalues. Default is 0.04.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --Eft $value\" : \"\"",
+                            "python": "(\"\", \" --Eft \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eft",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Tail mass (--Eft)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Estimating the location parameters for the expected score distributions for MSV filter scores, Viterbi filter\n  scores, and Forward scores requires three short random sequence simulations.",
+                "name": "Ecalibration3",
+                "precond": null,
+                "prompt": "Controlling E-value calibration for Stage 3 - Forward exponential tail tau fit"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Turn off the \"null2\" score corrections for biased composition.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --nonull2\" : \"\"",
+                            "python": "(\"\", \" --nonull2\" ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nonull",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$max==0",
+                            "python": "max==0"
+                        },
+                        "prompt": "Turn off biased composition score corrections (--nonull2)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Assert that the total number of targets in your searches is this number, for the purposes of\n  per-sequence E-value calculations, rather than the actual number of targets seen.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value) ? \" -Z $value\" : \"\"",
+                            "python": "(\"\", \" -Z \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "z",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of comparisons done, for E-value calculation (-Z)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Assert that the total number of targets in your searches is this number, for the purposes\n  of per-domain conditional E-value calculations, rather than the number of targets that passed the reporting thresholds.",
+                        "ctrl": {
+                            "perl": "0 <$value",
+                            "python": "0 < value"
+                        },
+                        "format": {
+                            "perl": "($value) ? \" --domZ $value\" : \"\"",
+                            "python": "(\"\", \" --domZ \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "d_z",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of significant sequences, for domain E-value calculation (--domZ)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Seed the random number generator with this, an integer >= 0. The default seed is 42.If >0, any stochastic simulations will be reproducible; the same command will give the\n  same results.If = 0, the random number generator is seeded arbitrarily, and\n  stochastic simulations will vary from run to run of the same command.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value != $vdef) ? \" --seed $value\" : \"\"",
+                            "python": "(\"\", \" --seed \" + str(value) ) [ value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seed",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Set Random Number Generator seed to (--seed)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "other",
+                "precond": null,
+                "prompt": "Expert options"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "jackhmmer",
     "outputs": {
-        "parameters": {
-            "out_file": {
-                "isout": true, 
-                "prompt": "Output file", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
-                "precond": {
-                    "perl": "$outfile==1", 
-                    "python": "outfile==1"
-                }, 
+        "children": [
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "*.output", 
+                    "perl": "*.output",
                     "python": "\"*.output\""
-                }
-            }, 
-            "ali_file": {
-                "isout": true, 
-                "prompt": "Alignment file", 
-                "type": {
-                    "biotype": "Protein", 
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
-                        "STOCKHOLM"
-                    ]
-                }, 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "out_file",
+                "output_type": "file",
                 "precond": {
-                    "perl": "$aligfile==1", 
-                    "python": "aligfile==1"
-                }, 
+                    "perl": "$outfile==1",
+                    "python": "outfile==1"
+                },
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "*.align", 
+                    "perl": "*.align",
                     "python": "\"*.align\""
-                }
-            }, 
-            "seq_file": {
-                "isout": true, 
-                "prompt": "Parseable table of per-sequence hits", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "ali_file",
+                "output_type": "file",
                 "precond": {
-                    "perl": "$seqtab==1", 
-                    "python": "seqtab==1"
-                }, 
-                "filenames": {
-                    "perl": "*.tblout", 
-                    "python": "\"*.tblout\""
-                }
-            }, 
-            "dom_file": {
-                "isout": true, 
-                "prompt": "Parseable table of per-domain hits", 
+                    "perl": "$aligfile==1",
+                    "python": "aligfile==1"
+                },
+                "prompt": "Alignment file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Text"
-                }, 
-                "precond": {
-                    "perl": "$domaintab==1", 
-                    "python": "domaintab==1"
-                }, 
-                "filenames": {
-                    "perl": "*.domtblout", 
-                    "python": "\"*.domtblout\""
-                }
-            }, 
-            "chkhmm_file": {
-                "isout": true, 
-                "prompt": "HMM checkpoints files", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
-                "precond": {
-                    "perl": "$chkhmm==1", 
-                    "python": "chkhmm==1"
-                }, 
-                "filenames": {
-                    "perl": "*.hmm", 
-                    "python": "\"*.hmm\""
-                }
-            }, 
-            "chkali_file": {
-                "isout": true, 
-                "prompt": "Alignment checkpoints files", 
-                "type": {
-                    "biotype": "Protein", 
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "STOCKHOLM"
                     ]
-                }, 
-                "precond": {
-                    "perl": "$chkali==1", 
-                    "python": "chkali==1"
-                }, 
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "*.sto", 
+                    "perl": "*.tblout",
+                    "python": "\"*.tblout\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "seq_file",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$seqtab==1",
+                    "python": "seqtab==1"
+                },
+                "prompt": "Parseable table of per-sequence hits",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "*.domtblout",
+                    "python": "\"*.domtblout\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "dom_file",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$domaintab==1",
+                    "python": "domaintab==1"
+                },
+                "prompt": "Parseable table of per-domain hits",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "*.hmm",
+                    "python": "\"*.hmm\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "chkhmm_file",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$chkhmm==1",
+                    "python": "chkhmm==1"
+                },
+                "prompt": "HMM checkpoints files",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "*.sto",
                     "python": "\"*.sto\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "chkali_file",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$chkali==1",
+                    "python": "chkali==1"
+                },
+                "prompt": "Alignment checkpoints files",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "STOCKHOLM"
+                    ]
                 }
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\">hmmsearch reads an HMM from hmmfile and searches seqfile for significantly similar sequence matches.</text> <text lang=\"en\">hmmsearch may take minutes or even hours to run, depending on the size of the sequence database.</text> <text lang=\"en\">The output consists of four sections: a ranked list of the best scoring sequences, a ranked list of the best scoring domains, alignments for all the best scoring domains, and a histogram of the scores. sequence score may be higher than a domain score for the same sequence if there is more than domain in the sequence; the sequence score takes into account all the domains. All sequences scoring above the -E and -T cutoffs are shown in the first list, then every domain found in this list is shown in the second list of domain hits. If desired, E-value and bit score thresholds may also be applied to the domain list using the --domE and --domT options.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "JACKHMMER",
+    "type": "program",
+    "version": null
 }

@@ -1,1214 +1,907 @@
 {
-    "type": "program", 
-    "name": "kitsch", 
-    "version": "6.3.1", 
-    "title": "kitsch", 
-    "description": "<text lang=\"en\">Fitch-Margoliash and Least Squares Methods with Evolutionary Clock</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
-        }, 
-        {
-            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
-        }, 
-        {
-            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "http://emboss.sourceforge.net/</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Castresana, J. (2000). Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17, 540-552</reference>"
-        }, 
-        {
-            "value": "Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Burge, C., Karlin, S. (1997) Prediction of complete gene structures in human genomic DNA. J. Mol. Biol. 268, 78-94.</reference>"
-        }, 
-        {
-            "value": "Burge, C., Karlin, S. (1997) Gene structure, exon prediction, and alternative splicing. (in preparation).</reference>"
-        }, 
-        {
-            "value": "Burge, C. (1997) Identification of genes in human genomic DNA. PhD thesis, Stanford University, Stanford, CA.</reference>"
-        }, 
-        {
-            "value": "Burset, M., Guigo, R. (1996) Evaluation of gene structure prediction programs. Genomics 34, 353-367.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\"> The program sources and Example files are downloadable here. </{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "Vieira-Silva S, Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "phylogeny:distance",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://faculty.virginia.edu/wrpearson/fasta/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/golden/", 
-        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/", 
-        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/html4blast/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://swift.cmbi.ru.nl/gv/dssp/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
-        "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
-        "http://emboss.sourceforge.net", 
-        "http://genes.mit.edu/GENSCANinfo.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/featcopy.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/featreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/findkm.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/fitch.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/freak.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzznuc.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzzpro.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzztran.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/garnier.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/gblocks/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/geecee.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/getorf.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://genome.imim.es/software/gfftools/GFF2PS.html", 
-        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/helixturnhelix.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/hmoment.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/iep.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/isochore.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/jaspscan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "This program carries out the Fitch-Margoliash\n\tand Least Squares methods, plus a variety of others of the\n\tsame family, with the assumption that all tip species are\n\tcontemporaneous, and that there is an evolutionary clock (in\n\teffect, a molecular clock). This means that branches of the\n\ttree cannot be of arbitrary length, but are constrained so\n\tthat the total length from the root of the tree to any species\n\tis the same.",
+    "description": "Fitch-Margoliash and Least Squares Methods with Evolutionary Clock",
+    "documentation_links": [
         "http://bioweb2.pasteur.fr/docs/phylip/doc/kitsch.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "phylogeny:display", 
-        "display:tree", 
-        "phylogeny:display", 
-        "display:tree", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple", 
-        "sequence:nucleic:repeats", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:composition", 
-        "sequence:edit", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:primers", 
-        "sequence:nucleic:repeats", 
-        "alignment:pairwise:global", 
-        "sequence:nucleic:repeats", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:edit:feature_table", 
-        "sequence:edit", 
-        "sequence:formatter", 
-        "database:search:homology", 
-        "phylogeny:likelihood", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "database:search:sequence", 
-        "sequence:enzyme:kinetics", 
-        "phylogeny:distance", 
-        "phylogeny:tree_analyser", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple:information", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:gene_finding", 
-        "display:feature_table", 
-        "database:search:sequence", 
-        "sequence:nucleic:prediction", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:nucleic:pattern", 
-        "sequence:nucleic:clusters", 
-        "sequence:protein:2D_structure", 
-        "sequence:protein:motifs", 
-        "structure:2D_structure", 
-        "hmm:alignment:multiple", 
-        "alignment:multiple:hmm", 
-        "hmm:building", 
-        "hmm:building", 
-        "hmm:building", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:simulation", 
-        "hmm:statistic", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "database:search:display", 
-        "sequence:protein:composition", 
-        "alignment:multiple:information", 
-        "information", 
-        "sequence:nucleic:composition", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "sequence:nucleic:transcription", 
-        "phylogeny:distance"
-    ], 
-    "command": "jaspscan", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "kitsch": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "kitsch.params\"", 
-                    "python": "kitsch.params\""
-                }
-            }, 
-            "infile": {
-                "ismaininput": true, 
-                "ismandatory": true, 
-                "prompt": "Distances matrix File", 
+                    "perl": "\"kitsch <kitsch.params\"",
+                    "python": "\"kitsch <kitsch.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "kitsch",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "PhylipDistanceMatrix", 
-                    "datatype_superclass": "AbstractText"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-5",
+                "command": false,
+                "comment": "Give a file containing a distance matrix\n\t  obtained by distance matrix programs like prodist or\n\t  dnadist",
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $infile infile && \"",
+                    "python": "\"ln -s \" + str(infile) + \" infile && \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
                 "precond": {
-                    "perl": "$infile ne \"infile\"", 
+                    "perl": "$infile ne \"infile\"",
                     "python": "infile != \"infile\""
-                }, 
-                "format": {
-                    "perl": " \"", 
-                    "python": " \""
-                }, 
-                "comment": "<text lang=\"en\">Give a file containing a distance matrix obtained by distance matrix programs like prodist or dnadist</text> </comment>"
-            }, 
-            "fitch_options": {
-                "name": "fitch_options", 
-                "parameters": {
-                    "Method": {
-                        "prompt": "Program method (D)", 
+                },
+                "prompt": "Distances matrix File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PhylipDistanceMatrix",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Method",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Program method (D)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "F"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "F", 
-                                "label": "Fitch-Margoliash"
-                            }, 
-                            {
-                                "value": "M", 
-                                "label": "Minimum Evolution"
-                            }
-                        ]
-                    }, 
-                    "negative_branch": {
-                        "prompt": "Negative branch lengths allowed (-)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"-\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"-\\\\n\" : \"\"",
                             "python": "( \"\" , \"-\\n\")[ value ]"
-                        }
-                    }, 
-                    "power": {
-                        "prompt": "Power (P)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "negative_branch",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Negative branch lengths allowed (-)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "2.0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "For the Fitch-Margoliash method, which is the default method with this program, P is 2.0. For the Cavalli-Sforza and Edwards least squares method it should be set to 0 (so that the denominator is always 1). An intermediate method is also available in which P is 1.0, and any other value of P, such as 4.0 or -2.3, can also be used. This generates a whole family of methods.Please read the documentation (man distance).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \"P\\\\n$value\\\\n\" : \"\"", 
+                            "perl": "(defined $value and $value != $vdef) ? \"P\\\\n$value\\\\n\" : \"\"",
                             "python": "( \"\" , \"P\\n\" +str( value ) +\"\\n\")[ value is not None and vdef != value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">For the Fitch-Margoliash method, which is the default method with this program, P is 2.0. For the Cavalli-Sforza and Edwards least squares method it should be set to 0 (so that the denominator is always 1). An intermediate method is also available in which P is 1.0, and any other value of P, such as 4.0 or -2.3, can also be used. This generates a whole family of methods.</text> <text lang=\"en\">Please read the documentation (man distance).</text> </comment>"
-                    }
-                }
-            }, 
-            "jumble_options": {
-                "name": "jumble_options", 
-                "parameters": {
-                    "jumble": {
-                        "prompt": "Randomize (jumble) input order (J)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "power",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Power (P)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "precond": {
-                            "perl": "not $user_tree", 
-                            "python": "not user_tree"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "fitch_options",
+                "precond": null,
+                "prompt": "Fitch options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"J\\\\n$jumble_seed\\\\n$jumble_number\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"J\\\\n$jumble_seed\\\\n$jumble_number\\\\n\" : \"\"",
                             "python": "( \"\" , \"J\\n\" + str( jumble_seed ) + \"\\n\"+str( jumble_number )+ \"\\n\")[ value ]"
-                        }
-                    }, 
-                    "jumble_seed": {
-                        "ismandatory": true, 
-                        "prompt": "Random number seed (must be odd)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "jumble",
+                        "paramfile": "kitsch.params",
                         "precond": {
-                            "perl": "$jumble", 
-                            "python": "jumble"
-                        }, 
-                        "format": {
-                            "perl": "\"\"", 
-                            "python": "\"\""
-                        }, 
+                            "perl": "not $user_tree",
+                            "python": "not user_tree"
+                        },
+                        "prompt": "Randomize (jumble) input order (J)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": null,
                         "ctrl": {
-                            "perl": "= 0 and ($value % 2) != 0", 
-                            "python": "= 0 and (value % 2) != 0"
-                        }
-                    }, 
-                    "jumble_number": {
-                        "prompt": "Number of times to jumble", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "$jumble", 
-                            "python": "jumble"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                            "perl": "$value >= 0 and ($value % 2) != 0",
+                            "python": "value >= 0 and (value % 2) != 0"
+                        },
                         "format": {
-                            "perl": "\"\"", 
+                            "perl": "\"\"",
                             "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "jumble_seed",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$jumble",
+                            "python": "jumble"
+                        },
+                        "prompt": "Random number seed (must be odd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "jumble_number",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$jumble",
+                            "python": "jumble"
+                        },
+                        "prompt": "Number of times to jumble",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "bootstrap": {
-                "name": "bootstrap", 
-                "parameters": {
-                    "multiple": {
-                        "prompt": "Analyze multiple data sets (M)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "jumble_options",
+                "precond": null,
+                "prompt": "Randomize options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"M\\\\n$numtiple_number\\\\n$multiple_seed\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"M\\\\n$numtiple_number\\\\n$multiple_seed\\\\n\" : \"\"",
                             "python": "( \"\" , \"M\\n\"+str(multiple_number)+\"\\n\"+str(multiple_seed)+\"\\n\")[ value ]"
-                        }
-                    }, 
-                    "multiple_number": {
-                        "ismandatory": true, 
-                        "prompt": "How many data sets", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "multiple",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Analyze multiple data sets (M)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "$multiple", 
-                            "python": "multiple"
-                        }, 
-                        "format": {
-                            "perl": "\"\"", 
-                            "python": "\"\""
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
                         "ctrl": {
-                            "perl": "= 1000", 
-                            "python": "= 1000"
-                        }
-                    }, 
-                    "multiple_seed": {
-                        "ismandatory": true, 
-                        "prompt": "Random number seed (must be odd)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "$multiple", 
-                            "python": "multiple"
-                        }, 
+                            "perl": "$value <= 1000",
+                            "python": "value <= 1000"
+                        },
                         "format": {
-                            "perl": "\"\"", 
+                            "perl": "\"\"",
                             "python": "\"\""
-                        }, 
-                        "ctrl": {
-                            "perl": "= 0 and ($value % 2) != 0", 
-                            "python": "= 0 and (value % 2) != 0"
-                        }
-                    }, 
-                    "consense": {
-                        "prompt": "Compute a consensus tree", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "multiple_number",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "$multiple and $print_treefile", 
+                            "perl": "$multiple",
+                            "python": "multiple"
+                        },
+                        "prompt": "How many data sets",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value >= 0 and ($value % 2) != 0",
+                            "python": "value >= 0 and (value % 2) != 0"
+                        },
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "multiple_seed",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$multiple",
+                            "python": "multiple"
+                        },
+                        "prompt": "Random number seed (must be odd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" && cp infile kitsch.infile &&  cp kitsch.outtree intree && consense <consense.params && mv outtree consense.outtree && mv outfile consense.outfile\" : \"\"",
+                            "python": "(\"\" , \" && cp infile kitsch.infile &&  cp kitsch.outtree intree && consense <consense.params && mv outtree consense.outtree && mv outfile consense.outfile\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "consense",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$multiple and $print_treefile",
                             "python": "multiple and print_treefile"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": " mv outfile consense.outfile\" : \"\"", 
-                            "python": " mv outfile consense.outfile\" )[ value ]"
+                        },
+                        "prompt": "Compute a consensus tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "consense_confirm": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
-                "precond": {
-                    "perl": "$consense", 
-                    "python": "consense"
-                }, 
+                ],
+                "comment": null,
+                "name": "bootstrap",
+                "precond": null,
+                "prompt": "Bootstrap options"
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"Y\\\\n\"", 
+                    "perl": "\"Y\\\\n\"",
                     "python": "\"Y\\n\""
-                }
-            }, 
-            "consense_terminal_type": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_confirm",
+                "paramfile": "consense.params",
                 "precond": {
-                    "perl": "$consense", 
+                    "perl": "$consense",
                     "python": "consense"
-                }, 
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"T\\\\n\"", 
+                    "perl": "\"T\\\\n\"",
                     "python": "\"T\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_terminal_type",
+                "paramfile": "consense.params",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
-            }, 
-            "user_tree_opt": {
-                "name": "user_tree_opt", 
-                "parameters": {
-                    "user_tree": {
-                        "prompt": "Use User tree (default: No, search for best tree) (U)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \"U\\\\n\" : \"\"", 
-                            "python": "( \"\" , \"U\\n\" )[ value ]"
-                        }, 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "The U (User Tree) option requires a bifurcating tree, unlike FITCH, which requires an unrooted tree with a trifurcation at its base.If a tree with a trifurcation at the base is by mistake fed into the U option of KITSCH then some of its species (the entire rightmost furc, in fact) will be ignored and too small a tree read in. This should result in an error message and the program should stop.It is important to understand the difference between the User Tree formats for KITSCH and FITCH. You may want to use RETREE to convert a user tree that is suitable for FITCH into one suitable for KITSCH or vice versa.",
                         "ctrl": {
-                            "perl": "not ( $user_tree and $jumble )", 
+                            "perl": "not ( $user_tree and $jumble )",
                             "python": "not ( user_tree and jumble )"
-                        }, 
-                        "comment": "<text lang=\"en\">The U (User Tree) option requires a bifurcating tree, unlike FITCH, which requires an unrooted tree with a trifurcation at its base.</text> <text lang=\"en\">If a tree with a trifurcation at the base is by mistake fed into the U option of KITSCH then some of its species (the entire rightmost furc, in fact) will be ignored and too small a tree read in. This should result in an error message and the program should stop.</text> <text lang=\"en\">It is important to understand the difference between the User Tree formats for KITSCH and FITCH. You may want to use RETREE to convert a user tree that is suitable for FITCH into one suitable for KITSCH or vice versa.</text> </comment>"
-                    }, 
-                    "tree_file": {
-                        "ismandatory": true, 
-                        "prompt": "User Tree file", 
+                        },
+                        "format": {
+                            "perl": "($value) ? \"U\\\\n\" : \"\"",
+                            "python": "( \"\" , \"U\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "user_tree",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Use User tree (default: No, search for best tree) (U)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
-                                "NEWICK"
-                            ]
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": "Note that the User Trees (used by option U) must be rooted trees (with a bifurcation at their base). If you take a user tree from FITCH and try to evaluate it in KITSCH, it must first be rooted. This can be done using RETREE",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"cat $tree_file >> intree && \" : \"\"",
+                            "python": "( \"\" , \"cat \"+ str( value ) +\" >> intree && \" ) [ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "tree_file",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "$user_tree", 
+                            "perl": "$user_tree",
                             "python": "user_tree"
-                        }, 
-                        "format": {
-                            "perl": " \" : \"\"", 
-                            "python": " \" ) [ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Note that the User Trees (used by option U) must be rooted trees (with a bifurcation at their base). If you take a user tree from FITCH and try to evaluate it in KITSCH, it must first be rooted. This can be done using RETREE</text> </comment>"
-                    }
-                }
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "print_tree": {
-                        "prompt": "Print out tree (3)", 
+                        },
+                        "prompt": "User Tree file",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \"\" : \"3\\\\n\"", 
-                            "python": "( \"3\\n\" ,\"\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tells the program to print a semi-graphical picture of the tree in the outfile.</text> </comment>"
-                    }, 
-                    "print_treefile": {
-                        "prompt": "Write out trees onto tree file (4)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \"\" : \"4\\\\n\"", 
-                            "python": "( \"4\\n\" , \"\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tells the program to save the tree in a treefile (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).</text> </comment>"
-                    }, 
-                    "printdata": {
-                        "prompt": "Print out the data at start of run (1)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value)? \"1\\\\n\" : \"\"", 
-                            "python": "(\"\", \"1\\n\" )[ value ]"
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "other_options": {
-                "name": "other_options", 
-                "parameters": {
-                    "triangular": {
-                        "prompt": "Matrix format", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "square"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "square", 
-                                "label": "Square"
-                            }, 
-                            {
-                                "value": "lower", 
-                                "label": "Lower-triangular (L)"
-                            }, 
-                            {
-                                "value": "upper", 
-                                "label": "Upper-triangular (R)"
-                            }
-                        ]
-                    }, 
-                    "subreplicates": {
-                        "prompt": "Subreplicates (S)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "user_tree_opt",
+                "precond": null,
+                "prompt": "User tree options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to print a semi-graphical picture of the tree in the outfile.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"S\\\\n\" : \"\"", 
-                            "python": "( \"\" , \"S\\n\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">If the S (subreplication) option is in effect, the above degrees of freedom must be modified by noting that N is not n(n-1)/2 but is the sum of the numbers of replicates of all cells in the distance matrix read in, which may be either square or triangular. A further explanation of the statistical test of the clock is given in a paper of mine (Felsenstein, 1986).</text> </comment>"
+                            "perl": "($value) ? \"\" : \"3\\\\n\"",
+                            "python": "( \"3\\n\" ,\"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_tree",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Print out tree (3)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to save the tree in a treefile (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \"4\\\\n\"",
+                            "python": "( \"4\\n\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_treefile",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Write out trees onto tree file (4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \"1\\\\n\" : \"\"",
+                            "python": "(\"\", \"1\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "printdata",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Print out the data at start of run (1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
-            }, 
-            "confirm": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "triangular",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Matrix format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "If the S (subreplication) option is in effect, the above degrees of freedom must be modified by noting that N is not n(n-1)/2 but is the sum of the numbers of replicates of all cells in the distance matrix read in, which may be either square or triangular. A further explanation of the statistical test of the clock is given in a paper of mine (Felsenstein, 1986).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"S\\\\n\" : \"\"",
+                            "python": "( \"\" , \"S\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "subreplicates",
+                        "paramfile": "kitsch.params",
+                        "precond": null,
+                        "prompt": "Subreplicates (S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "other_options",
+                "precond": null,
+                "prompt": "Other options"
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"Y\\\\n\"", 
+                    "perl": "\"Y\\\\n\"",
                     "python": "\"Y\\n\""
-                }
-            }, 
-            "terminal_type": {
-                "ishidden": true, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "confirm",
+                "paramfile": "kitsch.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "String"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"0\\\\n\"", 
+                    "perl": "\"0\\\\n\"",
                     "python": "\"0\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "terminal_type",
+                "paramfile": "kitsch.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "kitsch",
     "outputs": {
-        "parameters": {
-            "consense_outfile": {
-                "isout": true, 
-                "prompt": "Consense output file", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
-                "precond": {
-                    "perl": "$consense", 
-                    "python": "consense"
-                }, 
+        "children": [
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"consense.outfile\"", 
+                    "perl": "\"consense.outfile\"",
                     "python": "\"consense.outfile\""
-                }
-            }, 
-            "consense_treefile": {
-                "isout": true, 
-                "prompt": "Consense tree file", 
-                "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
-                        "NEWICK"
-                    ]
-                }, 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "consense_outfile",
+                "output_type": "file",
                 "precond": {
-                    "perl": "$consense", 
+                    "perl": "$consense",
                     "python": "consense"
-                }, 
+                },
+                "prompt": "Consense output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"consense.outtree\"", 
+                    "perl": "\"consense.outtree\"",
                     "python": "\"consense.outtree\""
-                }
-            }, 
-            "outfile": {
-                "isout": true, 
-                "prompt": "Kitsch output file", 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "consense_treefile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": "Consense tree file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Text"
-                }, 
-                "format": {
-                    "perl": " mv outfile kitsch.outfile\"", 
-                    "python": " mv outfile kitsch.outfile\""
-                }, 
-                "filenames": {
-                    "perl": "\"kitsch.outfile\"", 
-                    "python": "\"kitsch.outfile\""
-                }
-            }, 
-            "treefile": {
-                "isout": true, 
-                "prompt": "Kitch tree file", 
-                "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "NEWICK"
                     ]
-                }, 
-                "precond": {
-                    "perl": "$print_treefile", 
-                    "python": "print_treefile"
-                }, 
-                "format": {
-                    "perl": " mv outtree kitsch.outtree\"", 
-                    "python": " mv outtree kitsch.outtree\""
-                }, 
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"kitsch.outtree\"", 
+                    "perl": "\"kitsch.outfile\"",
+                    "python": "\"kitsch.outfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Kitsch output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"kitsch.outtree\"",
                     "python": "\"kitsch.outtree\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$print_treefile",
+                    "python": "print_treefile"
+                },
+                "prompt": "Kitch tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
                 }
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\">This program carries out the Fitch-Margoliash and Least Squares methods, plus a variety of others of the same family, with the assumption that all tip species are contemporaneous, and that there is an evolutionary clock (in effect, a molecular clock). This means that branches of the tree cannot be of arbitrary length, but are constrained so that the total length from the root of the tree to any species is the same.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "kitsch",
+    "type": "program",
+    "version": null
 }

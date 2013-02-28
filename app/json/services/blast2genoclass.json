@@ -1,557 +1,844 @@
 {
-    "type": "program", 
-    "name": "blast2genoclass", 
-    "version": "1.0", 
-    "title": "blast2genoclass", 
-    "description": "<text lang=\"en\">One-line description of Blast program filtering</text> </description>", 
-    "authors": "C. Maufrais</authors>", 
-    "references": [
+    "authors": "C. Maufrais",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "database:search:filter",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter"
-    ], 
-    "command": "blast2genoclass", 
+    ],
+    "command": {
+        "path": null,
+        "value": "blast2genoclass"
+    },
+    "comment": null,
+    "description": "One-line description of Blast program filtering",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "infile": {
-                "ismandatory": true, 
-                "prompt": "Blast output file", 
-                "type": {
-                    "datatype_class": "BlastTextReport", 
-                    "datatype_superclass": "Report"
-                }, 
+        "children": [
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" -i $value\"", 
+                    "perl": "\" -i $value\"",
                     "python": "\" -i \" + str(value)"
-                }
-            }, 
-            "blastfilter": {
-                "prompt": "Filter the one-line description of Blast program with:", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Blast output file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Choice"
-                }, 
-                "default_value": [
-                    "Null"
-                ], 
-                "authorized_values": [
-                    {
-                        "value": "Null"
-                    }, 
-                    {
-                        "value": "M", 
-                        "label": "best e-value"
-                    }, 
-                    {
-                        "value": "F", 
-                        "label": "most frequent description"
-                    }
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BlastTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "($value ne vdef) ? \" -$value\" : \"\"", 
+                    "perl": "($value ne vdef) ? \" -$value\" : \"\"",
                     "python": "(\"\", \" -\" + str(value))[value != vdef]"
-                }
-            }, 
-            "nbofhit": {
-                "prompt": "Number of hsp to consider (-x)", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "blastfilter",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Filter the one-line description of Blast program with:",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Integer"
-                }, 
-                "default_value": [
-                    "10"
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": "0: all hsp",
+                "ctrl": null,
                 "format": {
-                    "perl": "(defined $value) ? \" -x $value\" : \"\"", 
+                    "perl": "(defined $value) ? \" -x $value\" : \"\"",
                     "python": "(\"\", \" -x \" + str(value) )[value is not None and value != vdef]"
-                }, 
-                "comment": "<text lang=\"en\">0: all hsp </text> </comment>"
-            }, 
-            "genomic_name": {
-                "prompt": "Filter the one-line description of Blast program with user name (-p)", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "nbofhit",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Number of hsp to consider (-x)",
+                "simple": null,
                 "type": {
-                    "datatype_class": "String"
-                }, 
-                "format": {
-                    "perl": "(defined $value) ? \" -p $value\" : \"\"", 
-                    "python": "(\"\", \" -p \" + str(value).replace(' ','_') )[value is not None]"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
                 "ctrl": {
-                    "perl": "(defined $blastfilter and (not defined $genomic_name)) or (defined $genomic_name and (not defined $blastfilter))", 
-                    "python": "(blastfilter is not None and (genomic_name is None)) or (genomic_name is not None and (blastfilter is None)) "
-                }
-            }, 
-            "taxonomic_name": {
-                "ismandatory": true, 
-                "prompt": "Filter the hit of Blast with Taxonomic hierarchy name (-n)", 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                    "perl": "(defined $blastfilter and (not defined $genomic_name)) or (defined $genomic_name and (not defined $blastfilter))",
+                    "python": "(blastfilter is not None and (genomic_name is None)) or (genomic_name is not None and (blastfilter is None))"
+                },
                 "format": {
-                    "perl": "(defined $value) ? \" -n $value\" : \"\"", 
+                    "perl": "(defined $value) ? \" -p $value\" : \"\"",
+                    "python": "(\"\", \" -p \" + str(value).replace(' ','_') )[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "genomic_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Filter the one-line description of Blast program with user name (-p)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -n $value\" : \"\"",
                     "python": "(\"\", \" -n \" + str(value).replace(' ','_') )[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "taxonomic_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Filter the hit of Blast with Taxonomic hierarchy name (-n)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "verboseall": {
-                        "prompt": "Report detailed results matching \"Description filter option\" for all blast (-v)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "In \"res4individualBlast.txt\" file, for all input blast, are details:For all matching \"Description filter option\":- query name, (query letter): percentage of matching descriptionand for all corresponding hits:- Database sequence's species, accession number and letters- Hsp description",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -v\" : \"\"", 
+                            "perl": "($value)? \" -v\" : \"\"",
                             "python": "(\"\" , \" -v\") [value]"
-                        }, 
-                        "comment": "<text lang=\"en\">In \"res4individualBlast.txt\" file, for all input blast, are details: </text> <text lang=\"en\">For all matching \"Description filter option\":</text> <text lang=\"en\">- query name, (query letter): percentage of matching description</text> <text lang=\"en\">and for all corresponding hits:</text> <text lang=\"en\">- Database sequence's species, accession number and letters</text> <text lang=\"en\">- Hsp description</text> </comment>"
-                    }, 
-                    "verbose": {
-                        "prompt": "Detailed report for database sequence(s) matching \"Description filter option\" (-V)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "verboseall",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report detailed results matching \"Description filter option\" for all blast (-v)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "In \"res4allBlast.txt\" file, for the best database sequence(s), are details:For database sequence matching \"Description filter option\":- Database sequence's species, accession number, letters and description- Number of query matching this sequence.- Query name, (letters)and for all corresponding hsp:- Hsp description",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -V\" : \"\"", 
+                            "perl": "($value)? \" -V\" : \"\"",
                             "python": "(\"\" , \" -V\") [value]"
-                        }, 
-                        "comment": "<text lang=\"en\">In \"res4allBlast.txt\" file, for the best database sequence(s), are details: </text> <text lang=\"en\">For database sequence matching \"Description filter option\":</text> <text lang=\"en\">- Database sequence's species, accession number, letters and description</text> <text lang=\"en\">- Number of query matching this sequence.</text> <text lang=\"en\">- Query name, (letters)</text> <text lang=\"en\">and for all corresponding hsp:</text> <text lang=\"en\">- Hsp description</text> </comment>"
-                    }, 
-                    "option": {
-                        "prompt": "Hsp(s) selection (-m)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "verbose",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Detailed report for database sequence(s) matching \"Description filter option\" (-V)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "All hsps"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Only compatible hsps"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Simple overlaps are possible"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "Global overlaps on database sequence(s) are possible"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value ne vdef) ? \" -m $value\" : \"\"", 
+                            "perl": "($value ne vdef) ? \" -m $value\" : \"\"",
                             "python": "(\"\", \" -m \" + str(value))[value != vdef]"
-                        }
-                    }, 
-                    "align": {
-                        "prompt": "Produce alignment: database sequence matching \"Description filter option\" vs queries (-a)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "option",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Hsp(s) selection (-m)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "hsps blast and database sequence reference alignment: hsp merged in pairwise alignment"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "hsps blast and database sequence reference alignment: hsp in multiple alignment"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "hsps blast and database sequence reference alignment: hsp in multiple alignment and consensus"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "part of queries (hsp) and database sequence reference alignment: queries merged in pairwise alignment"
-                            }, 
-                            {
-                                "value": "5", 
-                                "label": "part of queries (hsp) and database sequence reference alignment: queries in multiple alignment"
-                            }, 
-                            {
-                                "value": "6", 
-                                "label": "part of queries (hsp) and database sequence reference alignment: queries in multiple alignment and consensus"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "For 1,2,3 hsps alignments (Sbjt and Query) are re-aligned on the reference sequence extract from database.For 4,5,6 part of queries corresponding to hsps are re-aligned on the reference sequence extract from database.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value  ne vdef)? \" -a $value\" : \"\"", 
+                            "perl": "($value  ne vdef)? \" -a $value\" : \"\"",
                             "python": "(\"\" , \" -a \" +str(value)) [value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">For 1,2,3 hsps alignments (Sbjt and Query) are re-aligned on the reference sequence extract from database.</text> <text lang=\"en\">For 4,5,6 part of queries corresponding to hsps are re-aligned on the reference sequence extract from database.</text> </comment>"
-                    }, 
-                    "picture": {
-                        "prompt": "Produce graphical alignment summary images: database sequence matching \"Description filter option\" vs queries (-g)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "align",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Produce alignment: database sequence matching \"Description filter option\" vs queries (-a)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -g\" : \"\"", 
+                            "perl": "($value)? \" -g\" : \"\"",
                             "python": "(\"\" , \" -g\") [value]"
-                        }
-                    }, 
-                    "blastout": {
-                        "prompt": "Blast output file(s) sort/split by specific taxonomic hierarchy (-b)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "picture",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Produce graphical alignment summary images: database sequence matching \"Description filter option\" vs queries (-g)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -b\" : \"\"", 
+                            "perl": "($value)? \" -b\" : \"\"",
                             "python": "(\"\" , \" -b\") [value]"
-                        }
-                    }, 
-                    "hspSeq": {
-                        "prompt": "Extract Hsp(s) fragment from Query sequence(s) (-Q)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "blastout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Blast output file(s) sort/split by specific taxonomic hierarchy (-b)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -Q\" : \"\"", 
+                            "perl": "($value)? \" -Q\" : \"\"",
                             "python": "(\"\" , \" -Q\") [value]"
-                        }
-                    }, 
-                    "queryout": {
-                        "prompt": "Query name write in file(s) sort/split by specific taxonomic hierarchy (-q)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "hspSeq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Extract Hsp(s) fragment from Query sequence(s) (-Q)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -q\" : \"\"", 
+                            "perl": "($value)? \" -q\" : \"\"",
                             "python": "(\"\" , \" -q\") [value]"
-                        }
-                    }, 
-                    "besthitseq": {
-                        "prompt": "Report database sequence(s) matching option in fasta file (-s)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "queryout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Query name write in file(s) sort/split by specific taxonomic hierarchy (-q)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -s\" : \"\"", 
+                            "perl": "($value)? \" -s\" : \"\"",
                             "python": "(\"\" , \" -s\") [value]"
-                        }
-                    }, 
-                    "fastaExtract": {
-                        "prompt": "Extraction of fasta sequences.", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "besthitseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report database sequence(s) matching option in fasta file (-s)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Extract fasta sequence, matching specified taxonomic filter, from file containing query sequences witch are used to made blast.",
                         "ctrl": {
-                            "perl": "$fastaExtract == 1 and $queryout == 1 and defined $query_seq", 
+                            "perl": "$fastaExtract == 1 and $queryout == 1 and defined $query_seq",
                             "python": "(fastaExtract and (queryout and query_seq is not None)) or (not fastaExtract)"
-                        }, 
-                        "comment": "<text lang=\"en\">Extract fasta sequence, matching specified taxonomic filter, from file containing query sequences witch are used to made blast.</text> </comment>"
-                    }, 
-                    "query_seq": {
-                        "prompt": "Query sequences witch are used to made blast.", 
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fastaExtract",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Extraction of fasta sequences.",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "FASTA"
-                            ], 
-                            "card": "1,n"
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
-                    }, 
-                    "query_seq_run1": {
-                        "ishidden": true, 
-                        "prompt": "Query sequences witch are used to made blast.", 
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "query_seq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Query sequences witch are used to made blast.",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
                                 "FASTA"
-                            ], 
-                            "card": "1,n"
-                        }, 
-                        "precond": {
-                            "perl": "defined $hspSeq and defined $query_seq", 
-                            "python": "hspSeq and query_seq"
-                        }, 
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value)? \" -f $query_seq\": \"\"", 
+                            "perl": "(defined $value)? \" -f $query_seq\": \"\"",
                             "python": "(\"\",\" -f \"+ str(query_seq)) [query_seq is not None]"
-                        }
-                    }, 
-                    "query_seq_run2": {
-                        "ishidden": true, 
-                        "prompt": "Query sequences witch are used to made blast.", 
-                        "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "FASTA"
-                            ], 
-                            "card": "1,n"
-                        }, 
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "query_seq_run1",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "defined $fastaExtract and defined $queryout and defined $query_seq", 
-                            "python": "fastaExtract and queryout and query_seq"
-                        }, 
+                            "perl": "defined $hspSeq and defined $query_seq",
+                            "python": "hspSeq and query_seq"
+                        },
+                        "prompt": "Query sequences witch are used to made blast.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "100",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " extractfasta -i $query_seq *.qry\": \"\"", 
-                            "python": " extractfasta -i \"+ str(query_seq) + \" *.qry\") [query_seq is not None]"
+                            "perl": "(defined $value)? \" && extractfasta -i $query_seq *.qry\": \"\"",
+                            "python": "(\"\",\" && extractfasta -i \"+ str(query_seq) + \" *.qry\") [query_seq is not None]"
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "query_seq_run2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $fastaExtract and defined $queryout and defined $query_seq",
+                            "python": "fastaExtract and queryout and query_seq"
+                        },
+                        "prompt": "Query sequences witch are used to made blast.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "blast2genoclass",
     "outputs": {
-        "parameters": {
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "outfile": {
-                        "isstdout": true, 
-                        "prompt": "Output file", 
-                        "type": {
-                            "datatype_class": "Blast2taxoclassReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"blast2genoclass.out\"", 
+                            "perl": "\"blast2genoclass.out\"",
                             "python": "\"blast2genoclass.out\""
-                        }
-                    }, 
-                    "pictureout": {
-                        "isout": true, 
-                        "prompt": "Graphical output", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "stdout",
+                        "precond": null,
+                        "prompt": "Output file",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Picture", 
-                            "datatype_superclass": "Binary"
-                        }, 
-                        "precond": {
-                            "perl": "defined $picture", 
-                            "python": "picture"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Blast2taxoclassReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.png\"", 
+                            "perl": "\"*.png\"",
                             "python": "\"*.png\""
-                        }
-                    }, 
-                    "alignout": {
-                        "isout": true, 
-                        "prompt": "Alignment", 
-                        "type": {
-                            "datatype_class": "GenoClasAln", 
-                            "datatype_superclass": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "pictureout",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $align", 
-                            "python": "align"
-                        }, 
+                            "perl": "defined $picture",
+                            "python": "picture"
+                        },
+                        "prompt": "Graphical output",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.aln\"", 
+                            "perl": "\"*.aln\"",
                             "python": "\"*.aln\""
-                        }
-                    }, 
-                    "verboseoutall": {
-                        "isout": true, 
-                        "prompt": "Verbose output file for all blast", 
-                        "type": {
-                            "datatype_class": "VerboseReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "alignout",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $verboseall", 
-                            "python": "verboseall"
-                        }, 
+                            "perl": "defined $align",
+                            "python": "align"
+                        },
+                        "prompt": "Alignment",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "GenoClasAln",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"res4individualBlast.txt\"", 
+                            "perl": "\"res4individualBlast.txt\"",
                             "python": "\"res4individualBlast.txt\""
-                        }
-                    }, 
-                    "verboseout": {
-                        "isout": true, 
-                        "prompt": "Verbose output file for database sequence(s)", 
-                        "type": {
-                            "datatype_class": "VerboseReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "verboseoutall",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $verbose", 
-                            "python": "verbose"
-                        }, 
+                            "perl": "defined $verboseall",
+                            "python": "verboseall"
+                        },
+                        "prompt": "Verbose output file for all blast",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "VerboseReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"res4allBlast.txt\"", 
+                            "perl": "\"res4allBlast.txt\"",
                             "python": "\"res4allBlast.txt\""
-                        }
-                    }, 
-                    "blastoutfile": {
-                        "isout": true, 
-                        "prompt": "Blast output file(s)", 
-                        "type": {
-                            "datatype_class": "BlastTextReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "verboseout",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $blastout", 
-                            "python": "blastout"
-                        }, 
+                            "perl": "defined $verbose",
+                            "python": "verbose"
+                        },
+                        "prompt": "Verbose output file for database sequence(s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "VerboseReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.blast\"", 
+                            "perl": "\"*.blast\"",
                             "python": "\"*.blast\""
-                        }
-                    }, 
-                    "queryoutfile": {
-                        "isout": true, 
-                        "prompt": "Query name file", 
-                        "type": {
-                            "datatype_class": "QueryNameReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "blastoutfile",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $queryout", 
-                            "python": "queryout"
-                        }, 
+                            "perl": "defined $blastout",
+                            "python": "blastout"
+                        },
+                        "prompt": "Blast output file(s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "BlastTextReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.qry\"", 
+                            "perl": "\"*.qry\"",
                             "python": "\"*.qry\""
-                        }
-                    }, 
-                    "besthitseqfile": {
-                        "isout": true, 
-                        "prompt": "Database sequence(s) fasta file", 
-                        "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "FASTA"
-                            ]
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "queryoutfile",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $besthitseq", 
-                            "python": "besthitseq"
-                        }, 
+                            "perl": "defined $queryout",
+                            "python": "queryout"
+                        },
+                        "prompt": "Query name file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "QueryNameReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.dbfasta\"", 
+                            "perl": "\"*.dbfasta\"",
                             "python": "\"*.dbfasta\""
-                        }
-                    }, 
-                    "fastafile": {
-                        "isout": true, 
-                        "prompt": "Fasta file", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "besthitseqfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $besthitseq",
+                            "python": "besthitseq"
+                        },
+                        "prompt": "Database sequence(s) fasta file",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
                                 "FASTA"
                             ]
-                        }, 
-                        "precond": {
-                            "perl": "defined $fastaExtract  or defined $hspSeq", 
-                            "python": "fastaExtract or hspSeq"
-                        }, 
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.fasta\"", 
+                            "perl": "\"*.fasta\"",
                             "python": "\"*.fasta\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "fastafile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $fastaExtract  or defined $hspSeq",
+                            "python": "fastaExtract or hspSeq"
+                        },
+                        "prompt": "Fasta file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "blast2genoclass",
+    "type": "program",
+    "version": "1.0"
 }

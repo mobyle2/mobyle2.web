@@ -1,283 +1,352 @@
 {
-    "type": "program", 
-    "name": "biosed", 
-    "version": "6.3.1", 
-    "title": "biosed", 
-    "description": "<text lang=\"en\">Replace or delete sequence sections</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "sequence:edit",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": "biosed"
+    },
+    "comment": null,
+    "description": "Replace or delete sequence sections",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html",
         "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit"
-    ], 
-    "command": "biosed", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "e_input": {
-                "name": "e_input", 
-                "parameters": {
-                    "e_sequence": {
-                        "ismandatory": true, 
-                        "prompt": "sequence option", 
-                        "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "EMBL", 
-                                "FASTA", 
-                                "GCG", 
-                                "GENBANK", 
-                                "NBRF", 
-                                "PIR", 
-                                "RAW", 
-                                "SWISSPROT", 
-                                "GFF"
-                            ], 
-                            "card": "1,n"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
                         }
                     }
-                }
-            }, 
-            "e_required": {
-                "name": "e_required", 
-                "parameters": {
-                    "e_targetregion": {
-                        "ismandatory": true, 
-                        "prompt": "Sequence section to match", 
-                        "type": {
-                            "datatype_class": "String"
-                        }, 
-                        "default_value": [
-                            "N"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -targetregion=\" + str(value))[value is not None and value!=vdef]"
-                        }
-                    }, 
-                    "e_delete": {
-                        "prompt": "Delete the target sequence sections", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_targetregion",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sequence section to match",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -delete\")[ bool(value) ]"
-                        }
-                    }, 
-                    "e_replace": {
-                        "prompt": "Replacement sequence section", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_delete",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Delete the target sequence sections",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
-                        "precond": {
-                            "python": "not e_delete"
-                        }, 
-                        "default_value": [
-                            "A"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -replace=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_replace",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_delete"
+                        },
+                        "prompt": "Replacement sequence section",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "e_additional": {
-                "name": "e_additional", 
-                "parameters": {
-                    "e_position": {
-                        "prompt": "Sequence position to match (value greater than or equal to 0)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_required",
+                "precond": null,
+                "prompt": "Required section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 0"
+                        },
                         "format": {
                             "python": "(\"\", \" -position=\" + str(value))[value is not None and value!=vdef]"
-                        }, 
-                        "ctrl": {
-                            "python": "= 0"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_position",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sequence position to match (value greater than or equal to 0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outseq": {
-                        "prompt": "Name of the output sequence file (e_outseq)", 
-                        "type": {
-                            "datatype_class": "Filename"
-                        }, 
-                        "default_value": [
-                            "biosed.e_outseq"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\" , \" -outseq=\" + str(value))[value is not None]"
-                        }
-                    }, 
-                    "e_osformat_outseq": {
-                        "prompt": "Choose the sequence output format", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output sequence file (e_outseq)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "FASTA"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "EMBL", 
-                                "label": "Embl"
-                            }, 
-                            {
-                                "value": "FASTA", 
-                                "label": "Fasta"
-                            }, 
-                            {
-                                "value": "GCG", 
-                                "label": "Gcg"
-                            }, 
-                            {
-                                "value": "GENBANK", 
-                                "label": "Genbank"
-                            }, 
-                            {
-                                "value": "NBRF", 
-                                "label": "Nbrf"
-                            }, 
-                            {
-                                "value": "PIR", 
-                                "label": "Pir"
-                            }, 
-                            {
-                                "value": "RAW", 
-                                "label": "Raw"
-                            }, 
-                            {
-                                "value": "SWISSPROT", 
-                                "label": "Swissprot"
-                            }, 
-                            {
-                                "value": "GFF", 
-                                "label": "Gff"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -osformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_osformat_outseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the sequence output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "auto": {
-                "ishidden": true, 
-                "prompt": "Turn off any prompting", 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "8",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
                     "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "biosed",
     "outputs": {
-        "parameters": {
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outseq_out": {
-                        "isout": true, 
-                        "prompt": "outseq_out option", 
-                        "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "\n              ", 
-                                "\n            "
-                            ]
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
                             "python": "e_outseq"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outseq_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outseq_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_osformat_outseq"
+                                }
+                            ]
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "biosed",
+    "type": "program",
+    "version": null
 }

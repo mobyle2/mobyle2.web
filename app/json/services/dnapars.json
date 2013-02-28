@@ -1,1009 +1,1246 @@
 {
-    "type": "program", 
-    "name": "dnapars", 
-    "version": "6.3.1", 
-    "title": "dnapars", 
-    "description": "<text lang=\"en\">DNA Parsimony Program</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "phylogeny:parsimony",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "This   program  carries  out   unrooted  parsimony (analogous to Wagner trees) (Eck and Dayhoff, 1966; Kluge and Farris, 1969) on DNA sequences.  The method of Fitch (1971) is used to count the number of changes of base needed on a given tree.",
+    "description": "DNA Parsimony Program",
+    "documentation_links": [
         "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony"
-    ], 
-    "command": "distmat", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "dnapars": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "dnapars.params\"", 
-                    "python": "dnapars.params\""
-                }
-            }, 
-            "infile": {
-                "ismaininput": true, 
-                "ismandatory": true, 
-                "prompt": "Alignment File (infile)", 
+                    "perl": "\"dnapars <dnapars.params\"",
+                    "python": "\"dnapars <dnapars.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "dnapars",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "biotype": "DNA", 
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": "The input file must contained aligned sequences in PHYLIP format obtained by sequence alignment programs.",
+                "ctrl": {
+                    "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\"",
+                    "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\"  , \"intree\")"
+                },
+                "format": {
+                    "perl": "\"ln -s $infile infile && \"",
+                    "python": "\"ln -s \" + str( infile ) + \" infile && \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": {
+                    "perl": "$infile ne \"infile\"",
+                    "python": "infile != \"infile\""
+                },
+                "prompt": "Alignment File (infile)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "PHYLIPI"
                     ]
-                }, 
-                "precond": {
-                    "perl": "$infile ne \"infile\"", 
-                    "python": "infile != \"infile\""
-                }, 
-                "format": {
-                    "perl": " \"", 
-                    "python": " \""
-                }, 
-                "ctrl": {
-                    "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\"  , \"intree\")", 
-                    "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\""
-                }, 
-                "comment": "<text lang=\"en\">The input file must contained aligned sequences in PHYLIP format obtained by sequence alignment programs.</text> </comment>"
-            }, 
-            "dnapars_opt": {
-                "name": "dnapars_opt", 
-                "parameters": {
-                    "use_threshold": {
-                        "prompt": "Use Threshold parsimony (T)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"T\\\\n$threshold\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"T\\\\n$threshold\\\\n\" : \"\"",
                             "python": "( \"\" , \"T\\n\" + str( threshold ) + \"\\n\" )[ value ]"
-                        }
-                    }, 
-                    "threshold": {
-                        "ismandatory": true, 
-                        "prompt": "Value for threshold parsimony", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "use_threshold",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use Threshold parsimony (T)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Thresholds less than or equal to 1.0 do not have any meaning and should not be used: they will result in a tree dependent only on the input order of species and not at all on the data",
+                        "ctrl": {
+                            "perl": "$threshold > 1",
+                            "python": "threshold > 1"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "threshold",
+                        "paramfile": "dnapars.params",
                         "precond": {
-                            "perl": "$use_threshold", 
+                            "perl": "$use_threshold",
                             "python": "use_threshold"
-                        }, 
-                        "ctrl": {
-                            "perl": " 1", 
-                            "python": " 1"
-                        }, 
-                        "comment": "<text lang=\"en\">Thresholds less than or equal to 1.0 do not have any meaning and should not be used: they will result in a tree dependent only on the input order of species and not at all on the data</text> </comment>"
-                    }, 
-                    "use_transversion": {
-                        "prompt": "Use Transversion parsimony (N)", 
+                        },
+                        "prompt": "Value for threshold parsimony",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"N\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"N\\\\n\" : \"\"",
                             "python": "( \"\" , \"N\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "use_transversion",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use Transversion parsimony (N)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "bootstrap": {
-                "name": "bootstrap", 
-                "parameters": {
-                    "seqboot": {
-                        "prompt": "Perform a bootstrap before analysis", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": " \" : \"\"", 
-                            "python": " \" )[ value ]"
-                        }, 
+                ],
+                "comment": null,
+                "name": "dnapars_opt",
+                "precond": null,
+                "prompt": "Parsimony options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "-5",
+                        "command": false,
+                        "comment": "By selecting this option, the bootstrap will be performed on your sequence file. So you don't need to perform a separated seqboot before.Don't give an already bootstrapped file to the program, this won't work!You can't use \"Randomize options\" and \"Bootstrap options\" at the same time.",
                         "ctrl": {
-                            "perl": "not( $seqboot and $jumble)", 
+                            "perl": "not( $seqboot and $jumble)",
                             "python": "not( seqboot and jumble)"
-                        }, 
-                        "comment": "<text lang=\"en\">By selecting this option, the bootstrap will be performed on your sequence file. So you don't need to perform a separated seqboot before.</text> <text lang=\"en\">Don't give an already bootstrapped file to the program, this won't work!</text> <text lang=\"en\">You can't use \"Randomize options\" and \"Bootstrap options\" at the same time.</text> </comment>"
-                    }, 
-                    "Method": {
-                        "ismandatory": true, 
-                        "prompt": "Resampling methods (J)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "precond": {
-                            "perl": "$seqboot", 
-                            "python": "seqboot"
-                        }, 
-                        "default_value": [
-                            "bootstrap"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "bootstrap", 
-                                "label": "Bootstrap"
-                            }, 
-                            {
-                                "value": "jackknife", 
-                                "label": "Delete-half jackknife"
-                            }, 
-                            {
-                                "value": "permute_species", 
-                                "label": "Permute species for each character"
-                            }, 
-                            {
-                                "value": "permute_char", 
-                                "label": "Permute character order"
-                            }, 
-                            {
-                                "value": "permute_within_species", 
-                                "label": "Permute within species"
-                            }
-                        ], 
-                        "comment": "<text lang=\"en\"> 1. The bootstrap. Bootstrapping was invented by Bradley Efron in 1979, and its use in phylogeny estimation was introduced by me (Felsenstein, 1985b). It involves creating a new data set by sampling N characters randomly with replacement, so that the resulting data set has the same size as the original, but some characters have been left out and others are duplicated. The random variation of the results from analyzing these bootstrapped data sets can be shown statistically to be typical of the variation that you would get from collecting new data sets. The method assumes that the characters evolve independently, an assumption that may not be realistic for many kinds of data. </text> <text lang=\"en\"> 2. Delete-half-jackknifing. This alternative to the bootstrap involves sampling a random half of the characters, and including them in the data but dropping the others. The resulting data sets are half the size of the original, and no characters are duplicated. The random variation from doing this should be very similar to that obtained from the bootstrap. The method is advocated by Wu (1986). </text> <text lang=\"en\"> 3. Permuting species for each characters. This method of resampling (well, OK, it may not be best to call it resampling) was introduced by Archie (1989) and Faith (1990; see also Faith and Cranston, 1991). It involves permuting the columns of the data matrix separately. This produces data matrices that have the same number and kinds of characters but no taxonomic structure. It is used for different purposes than the bootstrap, as it tests not the variation around an estimated tree but the hypothesis that there is no taxonomic structure in the data: if a statistic such as number of steps is significantly smaller in the actual data than it is in replicates that are permuted, then we can argue that there is some taxonomic structure in the data (though perhaps it might be just the presence of aa pair of sibling species). </text> <text lang=\"en\"> 4. Permuting characters order. This simply permutes the order of the characters, the same reordering being applied to all species. For many methods of tree inference this will make no difference to the outcome (unless one has rates of evolution correlated among adjacent sites). It is included as a possible step in carrying out a permutation test of homogeneity of characters (such as the Incongruence Length Difference test). </text> <text lang=\"en\"> 5. Permuting characters separately for each species. This is a method introduced by Steel, Lockhart, and Penny (1993) to permute data so as to destroy all phylogenetic structure, while keeping the base composition of each species the same as before. It shuffles the character order separately for each species. </text> </comment>"
-                    }, 
-                    "replicates": {
-                        "prompt": "How many replicates (R)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "$seqboot", 
-                            "python": "seqboot"
-                        }, 
-                        "default_value": [
-                            "100"
-                        ], 
+                        },
                         "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \"R\\\\n$value\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"seqboot <seqboot.params && mv outfile seqboot.outfile && rm infile  && ln -s seqboot.outfile infile && \" : \"\"",
+                            "python": "( \"\" , \"seqboot <seqboot.params && mv outfile seqboot.outfile && rm infile  && ln -s seqboot.outfile infile && \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqboot",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Perform a bootstrap before analysis",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "1. The bootstrap. Bootstrapping was invented by Bradley Efron in 1979, and its use in phylogeny estimation was introduced by me (Felsenstein, 1985b). It involves creating a new data set by sampling N characters randomly with replacement, so that the resulting data set has the same size as the original, but some characters have been left out and others are duplicated. The random variation of the results from analyzing these bootstrapped data sets can be shown statistically to be\n              typical of the variation that you would get from collecting new data sets. The method assumes that the characters evolve independently, an assumption that may not be realistic for many kinds of data.2. Delete-half-jackknifing. This alternative to the bootstrap involves sampling a random half of the characters, and including them in the data but dropping the others. The resulting data sets are half the size of the original, and no characters are duplicated. The random variation from doing this should be very similar to that obtained from the bootstrap. The method is advocated by Wu (1986).3. Permuting species for each characters. This method of resampling (well, OK, it may not be best to call it resampling) was introduced by Archie (1989) and Faith (1990; see also Faith and Cranston, 1991). It involves permuting the columns of the data matrix separately. This produces data matrices that have the same number and kinds of characters but no taxonomic structure. It is used for different purposes than the bootstrap, as it tests not the variation around an estimated tree but the hypothesis that there is no taxonomic structure in the data: if a statistic such as number of steps is significantly smaller in the actual data than it is in replicates that are permuted, then we can argue that there is some taxonomic structure in the data (though perhaps it might be just the presence of aa pair of sibling species).4. Permuting characters order. This simply permutes the order of the characters, the same reordering being applied to all species. For many methods of tree inference this will make no difference to the outcome (unless one has rates of evolution correlated among adjacent sites). It is included as a possible step in carrying out a permutation test of homogeneity of characters (such as the Incongruence Length Difference test).5. Permuting characters separately for each species. This is a method introduced by Steel, Lockhart, and Penny (1993) to permute data so as to destroy all phylogenetic structure, while keeping the base composition of each species the same as before. It shuffles the character order separately for each species.",
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "Method",
+                        "paramfile": "seqboot.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": "Resampling methods (J)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$replicates <= 1000",
+                            "python": "replicates <= 1000"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"R\\\\n$value\\\\n\" : \"\"",
                             "python": "( \"\" , \"R\\n\" + str( value ) +\"\\n\" )[ value is not None and value != vdef ]"
-                        }, 
-                        "ctrl": {
-                            "perl": " 1", 
-                            "python": " 1"
-                        }
-                    }, 
-                    "seqboot_seed": {
-                        "ismandatory": true, 
-                        "prompt": "Random number seed (must be odd)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "replicates",
+                        "paramfile": "seqboot.params",
                         "precond": {
-                            "perl": "$seqboot", 
+                            "perl": "$seqboot",
                             "python": "seqboot"
-                        }, 
+                        },
+                        "prompt": "How many replicates (R)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1010",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value > 0 and (($value % 2) != 0)",
+                            "python": "value > 0 and (( value % 2 ) != 0 )"
+                        },
                         "format": {
-                            "perl": "\"$value\\\\n\"", 
+                            "perl": "\"$value\\\\n\"",
                             "python": "str( value ) + \"\\n\""
-                        }, 
-                        "ctrl": {
-                            "perl": " 0 and (($value % 2) != 0)", 
-                            "python": " 0 and (( value % 2 ) != 0 )"
-                        }
-                    }, 
-                    "seqboot_times2jumble": {
-                        "prompt": "Number of times to jumble", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "seqboot_seed",
+                        "paramfile": "seqboot.params",
                         "precond": {
-                            "perl": "$seqboot", 
+                            "perl": "$seqboot",
                             "python": "seqboot"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "ctrl": {
-                            "perl": "= 100000", 
-                            "python": "= 100000"
-                        }
-                    }, 
-                    "multiple_dataset": {
-                        "ishidden": true, 
+                        },
+                        "prompt": "Random number seed (must be odd)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "($seqboot_times2jumble * (defined $replicates) ? $replicates : 1) <= 100000",
+                            "python": "seqboot_times2jumble * ( 1 , replicates)[replicates is not None] <= 100000"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqboot_times2jumble",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "$seqboot", 
+                            "perl": "$seqboot",
                             "python": "seqboot"
-                        }, 
+                        },
+                        "prompt": "Number of times to jumble",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\"M\\\\nD\\\\n$replicates\\\\n$seqboot_seed\\\\n$times2jumble\\\\n\"", 
+                            "perl": "\"M\\\\nD\\\\n$replicates\\\\n$seqboot_seed\\\\n$times2jumble\\\\n\"",
                             "python": "\"M\\nD\\n\" + str( replicates ) + \"\\n\" + str(seqboot_seed) + \"\\n\"+ str( seqboot_times2jumble ) + \"\\n\""
-                        }
-                    }, 
-                    "bootconfirm": {
-                        "ishidden": true, 
-                        "type": {
-                            "datatype_class": "String"
-                        }, 
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "multiple_dataset",
+                        "paramfile": "dnapars.params",
                         "precond": {
-                            "perl": "$seqboot", 
+                            "perl": "$seqboot",
                             "python": "seqboot"
-                        }, 
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1000",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\"Y\\\\n\"", 
+                            "perl": "\"Y\\\\n\"",
                             "python": "\"Y\\n\""
-                        }
-                    }, 
-                    "bootterminal_type": {
-                        "ishidden": true, 
-                        "type": {
-                            "datatype_class": "String"
-                        }, 
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bootconfirm",
+                        "paramfile": "seqboot.params",
                         "precond": {
-                            "perl": "$seqboot", 
+                            "perl": "$seqboot",
                             "python": "seqboot"
-                        }, 
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\"0\\\\n\"", 
+                            "perl": "\"0\\\\n\"",
                             "python": "\"0\\n\""
-                        }
-                    }, 
-                    "consense": {
-                        "prompt": "Compute a consensus tree", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bootterminal_type",
+                        "paramfile": "seqboot.params",
                         "precond": {
-                            "perl": "$seqboot and $print_treefile", 
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "100",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" && cp infile dnapars.infile &&  cp dnapars.outtree intree && consense <consense.params && mv outtree consense.outtree && mv outfile consense.outfile\" : \"\"",
+                            "python": "( \"\" , \" && cp infile dnapars.infile && cp dnapars.outtree intree && consense <consense.params && mv outtree consense.outtree && mv outfile consense.outfile\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "consense",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqboot and $print_treefile",
                             "python": "seqboot and print_treefile"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": " mv outfile consense.outfile\" : \"\"", 
-                            "python": " mv outfile consense.outfile\" )[ value ]"
+                        },
+                        "prompt": "Compute a consensus tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "jumble_opt": {
-                "name": "jumble_opt", 
-                "parameters": {
-                    "jumble": {
-                        "prompt": "Randomize (jumble) input order (J)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value and not $seqboot )? \"J\\\\n$jumble_seed\\\\n$jumble_times\\\\n\" : \"\"", 
-                            "python": "( \"\" , \"J\\n\" + str( jumble_seed ) + \"\\n\" + str( jumble_times ) +\"\\n\" )[ value and not seqboot ]"
-                        }, 
+                ],
+                "comment": null,
+                "name": "bootstrap",
+                "precond": null,
+                "prompt": "Bootstrap options ( multiple dataset )"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
                         "ctrl": {
-                            "perl": "not( $jumble and $seqboot)", 
+                            "perl": "not( $jumble and $seqboot)",
                             "python": "not (jumble and seqboot)"
-                        }
-                    }, 
-                    "jumble_seed": {
-                        "ismandatory": true, 
-                        "prompt": "Random number seed for jumble (must be odd)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "$jumble", 
-                            "python": "jumble"
-                        }, 
-                        "ctrl": {
-                            "perl": " 0 and (($value % 2) != 0))", 
-                            "python": " 0 and ((value % 2) != 0))"
-                        }
-                    }, 
-                    "jumble_times": {
-                        "ismandatory": true, 
-                        "prompt": "Number of times to jumble", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "$jumble", 
-                            "python": "jumble"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ]
-                    }
-                }
-            }, 
-            "user_tree_opt": {
-                "name": "user_tree_opt", 
-                "parameters": {
-                    "user_tree": {
-                        "prompt": "Use User tree (default: no, search for best tree) (U)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                        },
                         "format": {
-                            "perl": "($value)? \"U\\\\n\" : \"\"", 
-                            "python": "( \"\" , \"U\\n\" )[ value ]"
-                        }, 
-                        "ctrl": {
-                            "perl": "not ( $user_tree and $jumble )", 
-                            "python": "not ( user_tree and jumble )"
-                        }, 
-                        "comment": "<text lang=\"en\">To give your tree to the program, you must normally put it in the alignment file, after the sequences, preceded by a line indicating how many trees you give.</text> <text lang=\"en\">Here, this will be automatically appended: just give a treefile and the number of trees in it.</text> </comment>"
-                    }, 
-                    "tree_file": {
-                        "ismandatory": true, 
-                        "prompt": "User Tree file", 
+                            "perl": "($value and not $seqboot )? \"J\\\\n$jumble_seed\\\\n$jumble_times\\\\n\" : \"\"",
+                            "python": "( \"\" , \"J\\n\" + str( jumble_seed ) + \"\\n\" + str( jumble_times ) +\"\\n\" )[ value and not seqboot ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "jumble",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Randomize (jumble) input order (J)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "defined $value and ($value > 0 and (($value % 2) != 0))",
+                            "python": "value is not None and (value > 0 and ((value % 2) != 0))"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "jumble_seed",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$jumble",
+                            "python": "jumble"
+                        },
+                        "prompt": "Random number seed for jumble (must be odd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "jumble_times",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$jumble",
+                            "python": "jumble"
+                        },
+                        "prompt": "Number of times to jumble",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Use these options only if you have only one data set",
+                "name": "jumble_opt",
+                "precond": null,
+                "prompt": "Randomize options ( one dataset )"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "To give your tree to the program, you must normally put it in the alignment file, after the sequences, preceded by a line indicating how many trees you give.Here, this will be automatically appended: just give a treefile and the number of trees in it.",
+                        "ctrl": {
+                            "perl": "not ( $user_tree and $seqboot )",
+                            "python": "not ( user_tree and seqboot )"
+                        },
+                        "format": {
+                            "perl": "($value)? \"U\\\\n\" : \"\"",
+                            "python": "( \"\" , \"U\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "user_tree",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use User tree (default: no, search for best tree) (U)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": "Give a tree whenever the infile does not already contain the tree.",
+                        "ctrl": {
+                            "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\"",
+                            "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\" ,\"intree\" )"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \"ln -s $tree_file intree; \" : \"\"",
+                            "python": "( \"\" , \"ln -s \" + str( tree_file ) + \" intree; \" )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "tree_file",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$user_tree",
+                            "python": "user_tree"
+                        },
+                        "prompt": "User Tree file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
                                 "NEWICK"
                             ]
-                        }, 
-                        "precond": {
-                            "perl": "$user_tree", 
-                            "python": "user_tree"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \"ln -s $tree_file intree; \" : \"\"", 
-                            "python": "( \"\" , \"ln -s \" + str( tree_file ) + \" intree; \" )[ value is not None ]"
-                        }, 
-                        "ctrl": {
-                            "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\" ,\"intree\" )", 
-                            "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\""
-                        }, 
-                        "comment": "<text lang=\"en\">Give a tree whenever the infile does not already contain the tree.</text> </comment>"
+                        }
                     }
-                }
-            }, 
-            "weight_opt": {
-                "name": "weight_opt", 
-                "parameters": {
-                    "weights": {
-                        "prompt": "Use weights for sites (W)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "user_tree_opt",
+                "precond": null,
+                "prompt": "User tree options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"W\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"W\\\\n\" : \"\"",
                             "python": "( \"\" , \"W\\n\" )[ value ]"
-                        }
-                    }, 
-                    "weights_file": {
-                        "ismandatory": true, 
-                        "prompt": "Weights file", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "weights",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use weights for sites (W)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "PhylipWeight", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
-                        "precond": {
-                            "perl": "$weights", 
-                            "python": "weights"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\"",
+                            "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\" ,\"intree\" )"
+                        },
                         "format": {
-                            "perl": "(defined $value) ? \"ln -s $weights_file weights; \" : \"\"", 
+                            "perl": "(defined $value) ? \"ln -s $weights_file weights; \" : \"\"",
                             "python": "( \"\" , \"ln -s \" + str( weights_file ) + \" weights; \" )[ value is not None ]"
-                        }, 
-                        "ctrl": {
-                            "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\" ,\"intree\" )", 
-                            "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "weights_file",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$weights",
+                            "python": "weights"
+                        },
+                        "prompt": "Weights file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PhylipWeight",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "print_tree": {
-                        "prompt": "Print out tree (3)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                ],
+                "comment": null,
+                "name": "weight_opt",
+                "precond": null,
+                "prompt": "Weight options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to print a semi-graphical picture of the tree in the outfile.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"\" : \"3\\\\n\"", 
+                            "perl": "($value) ? \"\" : \"3\\\\n\"",
                             "python": "( \"3\\n\" , \"\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tells the program to print a semi-graphical picture of the tree in the outfile.</text> </comment>"
-                    }, 
-                    "print_steps": {
-                        "prompt": "Print out steps in each site (4)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_tree",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print out tree (3)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"4\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"4\\\\n\" : \"\"",
                             "python": "( \"\" , \"4\\n\" )[ value ]"
-                        }
-                    }, 
-                    "print_sequences": {
-                        "prompt": "Print sequences at all nodes of tree (5)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_steps",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print out steps in each site (4)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"5\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"5\\\\n\" : \"\"",
                             "python": "( \"\" , \"5\\n\" )[ value ]"
-                        }
-                    }, 
-                    "print_treefile": {
-                        "prompt": "Write out trees onto tree file (6)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_sequences",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print sequences at all nodes of tree (5)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to save the tree in a tree file (outtree) (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"\" : \"6\\\\n\"", 
+                            "perl": "($value) ? \"\" : \"6\\\\n\"",
                             "python": "( \"6\\n\" , \"\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tells the program to save the tree in a tree file (outtree) (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).</text> </comment>"
-                    }, 
-                    "printdata": {
-                        "prompt": "Print out the data at start of run (1)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_treefile",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Write out trees onto tree file (6)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"1\\\\n\" : \"\"", 
+                            "perl": "($value) ? \"1\\\\n\" : \"\"",
                             "python": "( \"\" , \"1\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "printdata",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print out the data at start of run (1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "other_options": {
-                "name": "other_options", 
-                "parameters": {
-                    "outgroup": {
-                        "prompt": "Outgroup species (J)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \"O\\\\n$value\\\\n\" : \"\"", 
-                            "python": "( \"\" , \"O\\n\" + str( value ) + \"\\n\" )[ value is not None and value != vdef ]"
-                        }, 
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "The O (Outgroup) option specifies which species is to have the root of the tree be on the line leading to it.For example, if the outgroup is a species \"Mouse\" then the root of the tree will be placed in the middle of the branch which is connected to this species, with Mouse branching off on one side of the root and the lineage leading to the rest of the tree on the other.This option is toggle on by choosing the number of the outgroup (the species being taken in the numerical order that they occur in the input file).Outgroup-rooting will not be attempted  if it is a user-defined tree, despite your invoking the option.When it is used, the tree as printed out is still listed as being an unrooted tree, though the outgroup is connected to the bottommost node so that it is easy to visually convert the tree into rooted form.",
                         "ctrl": {
-                            "perl": " 0", 
-                            "python": " 0"
-                        }, 
-                        "comment": "<text lang=\"en\">The O (Outgroup) option specifies which species is to have the root of the tree be on the line leading to it.</text> <text lang=\"en\">For example, if the outgroup is a species \"Mouse\" then the root of the tree will be placed in the middle of the branch which is connected to this species, with Mouse branching off on one side of the root and the lineage leading to the rest of the tree on the other.</text> <text lang=\"en\">This option is toggle on by choosing the number of the outgroup (the species being taken in the numerical order that they occur in the input file).</text> <text lang=\"en\">Outgroup-rooting will not be attempted if it is a user-defined tree, despite your invoking the option.</text> <text lang=\"en\">When it is used, the tree as printed out is still listed as being an unrooted tree, though the outgroup is connected to the bottommost node so that it is easy to visually convert the tree into rooted form.</text> </comment>"
+                            "perl": "defined $value and $value > 0",
+                            "python": "value is not None and value > 0"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"O\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"O\\n\" + str( value ) + \"\\n\" )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outgroup",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Outgroup species (J)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
-            }, 
-            "confirm": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "other_options",
+                "precond": null,
+                "prompt": "Other options"
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"Y\\\\n\"", 
+                    "perl": "\"Y\\\\n\"",
                     "python": "\"Y\\n\""
-                }
-            }, 
-            "terminal_type": {
-                "ishidden": true, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "confirm",
+                "paramfile": "dnapars.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "String"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"0\\\\n\"", 
+                    "perl": "\"0\\\\n\"",
                     "python": "\"0\\n\""
-                }
-            }, 
-            "consense_confirm": {
-                "ishidden": true, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "terminal_type",
+                "paramfile": "dnapars.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "String"
-                }, 
-                "precond": {
-                    "perl": "$consense", 
-                    "python": "consense"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"Y\\\\n\"", 
+                    "perl": "\"Y\\\\n\"",
                     "python": "\"Y\\n\""
-                }
-            }, 
-            "consense_terminal_type": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_confirm",
+                "paramfile": "consense.params",
                 "precond": {
-                    "perl": "$consense", 
+                    "perl": "$consense",
                     "python": "consense"
-                }, 
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"T\\\\n\"", 
+                    "perl": "\"T\\\\n\"",
                     "python": "\"T\\n\""
-                }
-            }, 
-            "consense_outgroup": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_terminal_type",
+                "paramfile": "consense.params",
                 "precond": {
-                    "perl": " 1", 
-                    "python": " 1"
-                }, 
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"O\\\\n$outgroup\\\\n\"", 
+                    "perl": "\"O\\\\n$outgroup\\\\n\"",
                     "python": "\"O\\n\" + str( outgroup ) + \"\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_outgroup",
+                "paramfile": "consense.params",
+                "precond": {
+                    "perl": "$consense and $outgroup and $outgroup > 1",
+                    "python": "consense and outgroup and outgroup > 1"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "dnapars",
     "outputs": {
-        "parameters": {
-            "outfile": {
-                "isout": true, 
-                "prompt": "Outfile", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
-                "format": {
-                    "perl": " mv outfile dnapars.outfile\"", 
-                    "python": " mv outfile dnapars.outfile\""
-                }, 
+        "children": [
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "dnapars.outfile", 
+                    "perl": "dnapars.outfile",
                     "python": "'dnapars.outfile'"
-                }
-            }, 
-            "treefile": {
-                "isout": true, 
-                "prompt": "Tree file", 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Outfile",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
-                        "NEWICK"
-                    ]
-                }, 
-                "precond": {
-                    "perl": "$print_treefile", 
-                    "python": "print_treefile"
-                }, 
-                "format": {
-                    "perl": " mv outtree dnapars.outtree\" ", 
-                    "python": " mv outtree dnapars.outtree\""
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "dnapars.outtree", 
+                    "perl": "dnapars.outtree",
                     "python": "'dnapars.outtree'"
-                }
-            }, 
-            "seqboot_out": {
-                "isout": true, 
-                "prompt": "seqboot outfile", 
-                "type": {
-                    "datatype_class": "SetOfAlignment", 
-                    "datatype_superclass": "AbstractText"
-                }, 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefile",
+                "output_type": "file",
                 "precond": {
-                    "perl": "$seqboot", 
-                    "python": "seqboot"
-                }, 
-                "filenames": {
-                    "perl": "\"seqboot.outfile\"", 
-                    "python": "\"seqboot.outfile\""
-                }
-            }, 
-            "consense_outfile": {
-                "isout": true, 
-                "prompt": "Consense outfile", 
+                    "perl": "$print_treefile",
+                    "python": "print_treefile"
+                },
+                "prompt": "Tree file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Text"
-                }, 
-                "precond": {
-                    "perl": "$consense", 
-                    "python": "consense"
-                }, 
-                "filenames": {
-                    "perl": "\"consense.outfile\"", 
-                    "python": "\"consense.outfile\""
-                }
-            }, 
-            "consense_treefile": {
-                "isout": true, 
-                "prompt": "Consense tree file", 
-                "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "NEWICK"
                     ]
-                }, 
-                "precond": {
-                    "perl": "$consense", 
-                    "python": "consense"
-                }, 
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"consense.outtree\"", 
+                    "perl": "\"seqboot.outfile\"",
+                    "python": "\"seqboot.outfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "seqboot_out",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$seqboot",
+                    "python": "seqboot"
+                },
+                "prompt": "seqboot outfile",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "SetOfAlignment",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"consense.outfile\"",
+                    "python": "\"consense.outfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "consense_outfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": "Consense outfile",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"consense.outtree\"",
                     "python": "\"consense.outtree\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "consense_treefile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": "Consense tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
                 }
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\">This program carries out unrooted parsimony (analogous to Wagner trees) (Eck and Dayhoff, 1966; Kluge and Farris, 1969) on DNA sequences. The method of Fitch (1971) is used to count the number of changes of base needed on a given tree.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "dnapars",
+    "type": "program",
+    "version": null
 }

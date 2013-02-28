@@ -1,636 +1,579 @@
 {
-    "type": "program", 
-    "name": "dialign", 
-    "version": "2.2.1", 
-    "title": "DIALIGN", 
-    "description": "<text lang=\"en\">DNA and protein sequence alignment based on segment-to-segment comparison</text> </description>", 
-    "authors": "Morgenstern, Dress, Werner</authors>", 
-    "references": [
+    "authors": "Morgenstern, Dress, Werner",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
+    ],
+    "command": {
+        "path": null,
+        "value": "dialign"
+    },
+    "comment": null,
+    "description": "DNA and protein sequence alignment based on segment-to-segment comparison",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
         "http://dialign.gobics.de/"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple"
-    ], 
-    "command": "dialign", 
+    ],
     "inputs": {
-        "parameters": {
-            "sequence": {
-                "ismandatory": true, 
-                "prompt": "Sequences", 
-                "type": {
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
-                        "FASTA"
-                    ], 
-                    "card": "2,n"
-                }, 
+        "children": [
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" $value\"", 
+                    "perl": "\" $value\"",
                     "python": "\" \" + str(value)"
-                }
-            }, 
-            "protein_dna": {
-                "ismandatory": true, 
-                "prompt": "Nucleic acid or protein alignment (-n)", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequences",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Choice"
-                }, 
-                "default_value": [
-                    "p"
-                ], 
-                "authorized_values": [
-                    {
-                        "value": "p", 
-                        "label": "Protein (p)"
-                    }, 
-                    {
-                        "value": "n", 
-                        "label": "Nucleic (n)"
-                    }
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": "2,n",
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "(defined $value and $value ne $vdef) ? \" -n\" : \"\"", 
+                    "perl": "(defined $value and $value ne $vdef) ? \" -n\" : \"\"",
                     "python": "( \"\"  , \" -n\" )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "protein_dna",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Nucleic acid or protein alignment (-n)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
-            }, 
-            "dialign_opt": {
-                "name": "dialign_opt", 
-                "parameters": {
-                    "threshold": {
-                        "prompt": "Threshold (-thr)", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.0"
-                        ], 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -thr $value\" : \"\"", 
+                            "perl": "(defined $value and $value != $vdef) ? \" -thr $value\" : \"\"",
                             "python": "( \"\"  , \" -thr \" + str(value) )[ value is not None and value != vdef]"
-                        }
-                    }, 
-                    "cluster": {
-                        "prompt": "Clustering type used to construct sequence tree", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Threshold (-thr)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "null"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "null", 
-                                "label": "UPGMA"
-                            }, 
-                            {
-                                "value": "max_link", 
-                                "label": "Maximum linkage (-max_link)"
-                            }, 
-                            {
-                                "value": "min_link", 
-                                "label": "Minimum linkage (-min_link)"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "\"maximum or minimum linkage\" clustering used to construct sequence tree (instead of UPGMA).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -$value\" : \"\"", 
+                            "perl": "(defined $value and $value ne $vdef) ? \" -$value\" : \"\"",
                             "python": "( \"\"  , \" -\" +str(value) )[ value is not None and value !=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">\"maximum or minimum linkage\" clustering used to construct sequence tree (instead of UPGMA).</text> </comment>"
-                    }, 
-                    "iterative": {
-                        "prompt": "Iterative scoring scheme (-it)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cluster",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Clustering type used to construct sequence tree",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "iterative scoring scheme (fragment scores are based on\n                 conditional probabilities given the previously aligned\n                 fragments. I.e. the probability of a fragment -- and\n                 therefore its score -- is not based on the probability\n                 of random occurrence in the input sequences but rather on\n                 the probability of occurrence between those fragments\n                 that have already been accepted in previous iteration\n                 steps).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -it\" : \"\"", 
+                            "perl": "($value) ? \" -it\" : \"\"",
                             "python": "( \"\"  , \" -it\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">iterative scoring scheme (fragment scores are based on conditional probabilities given the previously aligned fragments. I.e. the probability of a fragment -- and therefore its score -- is not based on the probability of random occurrence in the input sequences but rather on the probability of occurrence between those fragments that have already been accepted in previous iteration steps).</text> </comment>"
-                    }, 
-                    "overlap": {
-                        "prompt": "Overlap weights (-iw)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "iterative",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Iterative scoring scheme (-it)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "overlap weights switched off (by default,\n                 overlap weights are used if up to 35 sequences are\n                 aligned). This option speeds up the alignment but may lead\n                 to reduced alignment quality.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -iw\" : \"\"", 
+                            "perl": "($value) ? \" -iw\" : \"\"",
                             "python": "( \"\"  , \" -iw\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">overlap weights switched off (by default, overlap weights are used if up to 35 sequences are aligned). This option speeds up the alignment but may lead to reduced alignment quality.</text> </comment>"
-                    }, 
-                    "dna_opt": {
-                        "name": "dna_opt", 
-                        "precond": {
-                            "perl": "$protein_dna eq \"n\"", 
-                            "python": "protein_dna == \"n\""
-                        }, 
-                        "parameters": {
-                            "translation": {
-                                "prompt": "Translation of nucleotide diagonals into peptide diagonals (-nt)", 
-                                "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "overlap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Overlap weights (-iw)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Input sequences are nucleic acid sequences and `nucleic acid segments' are translated to `peptide segments'.",
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -nt\" : \"\"", 
+                                    "perl": "($value) ? \" -nt\" : \"\"",
                                     "python": "( \"\"  , \" -nt\" )[ value ]"
-                                }, 
-                                "comment": "<text lang=\"en\">Input sequences are nucleic acid sequences and `nucleic acid segments' are translated to `peptide segments'.</text> </comment>"
-                            }, 
-                            "translation_strand": {
-                                "prompt": "Strand to looked at Watson and Crick strands (-cs)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "translation",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Translation of nucleotide diagonals into peptide diagonals (-nt)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "precond": {
-                                    "perl": "$translation or $mix", 
-                                    "python": "translation or mix"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "If segments are translated, not only the `Watson strand' but also the `Crick strand' is looked at",
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -cs\" : \"\"", 
+                                    "perl": "($value) ? \" -cs\" : \"\"",
                                     "python": "( \"\"  , \" -cs\" )[ value ]"
-                                }, 
-                                "comment": "<text lang=\"en\">If segments are translated, not only the `Watson strand' but also the `Crick strand' is looked at</text> </comment>"
-                            }, 
-                            "mix": {
-                                "prompt": "Mixed alignments (-ma)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "translation_strand",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$translation or $mix",
+                                    "python": "translation or mix"
+                                },
+                                "prompt": "Strand to looked at Watson and Crick strands (-cs)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "`mixed alignments' consisting of P-fragments and N-fragments if nucleic acid sequences are aligned.",
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -ma\" : \"\"", 
+                                    "perl": "($value) ? \" -ma\" : \"\"",
                                     "python": "( \"\"  , \" -ma\" )[ value ]"
-                                }, 
-                                "comment": "<text lang=\"en\">`mixed alignments' consisting of P-fragments and N-fragments if nucleic acid sequences are aligned.</text> </comment>"
-                            }, 
-                            "speed": {
-                                "prompt": "Dna alignment speed up (-ds)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "mix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Mixed alignments (-ma)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Non-translated nucleic acid fragments are taken\n                 into account only if they start with at least two matches.\n                 Speeds up DNA alignment at the expense of sensitivity.",
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -ds\" : \"\"", 
+                                    "perl": "($value) ? \" -ds\" : \"\"",
                                     "python": "( \"\"  , \" -ds\" )[ value ]"
-                                }, 
-                                "comment": "<text lang=\"en\">Non-translated nucleic acid fragments are taken into account only if they start with at least two matches. Speeds up DNA alignment at the expense of sensitivity.</text> </comment>"
-                            }, 
-                            "long_genomic": {
-                                "prompt": "Long genomic sequences (-lgs)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "speed",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Dna alignment speed up (-ds)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "precond": {
-                                    "perl": "not $long_genomic_pep", 
-                                    "python": "not long_genomic_pep"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "combines the following options:\n                 -ma, -it, -thr 2, -lmax 30, -smin 8, -nta, -ff,\n                 -fop, -ff, -cs, -ds, -pst",
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -lgs\" : \"\"", 
+                                    "perl": "($value) ? \" -lgs\" : \"\"",
                                     "python": "( \"\"  , \" -lgs\" )[ value ]"
-                                }, 
-                                "comment": "<text lang=\"en\">combines the following options: -ma, -it, -thr 2, -lmax 30, -smin 8, -nta, -ff, -fop, -ff, -cs, -ds, -pst</text> </comment>"
-                            }, 
-                            "long_genomic_pep": {
-                                "prompt": "Long genomic sequences (-lfs_t)", 
-                                "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "long_genomic",
+                                "paramfile": null,
                                 "precond": {
-                                    "perl": "not $long_genomic", 
-                                    "python": "not long_genomic"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "perl": "not $long_genomic_pep",
+                                    "python": "not long_genomic_pep"
+                                },
+                                "prompt": "Long genomic sequences (-lgs)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Like \"-lgs\" but with all segment pairs assessed at the  peptide level (rather than 'mixed alignments' as with the\"-lgs\" option). Therefore faster than -lgs but not very sensitive for non-coding regions.",
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -lgs_t\" : \"\"", 
+                                    "perl": "($value) ? \" -lgs_t\" : \"\"",
                                     "python": "( \"\"  , \" -lgs_t\" )[ value ]"
-                                }, 
-                                "comment": "<text lang=\"en\"> Like \"-lgs\" but with all segment pairs assessed at the peptide level (rather than 'mixed alignments' as with the\"-lgs\" option). Therefore faster than -lgs but not very sensitive for non-coding regions.</text> </comment>"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "long_genomic_pep",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "not $long_genomic",
+                                    "python": "not long_genomic"
+                                },
+                                "prompt": "Long genomic sequences (-lfs_t)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
                             }
+                        ],
+                        "comment": null,
+                        "name": "dna_opt",
+                        "precond": {
+                            "perl": "$protein_dna eq \"n\"",
+                            "python": "protein_dna == \"n\""
+                        },
+                        "prompt": "DNA options"
+                    }
+                ],
+                "comment": null,
+                "name": "dialign_opt",
+                "precond": null,
+                "prompt": "Others options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The number of `*' characters below the alignment reflects the degree of local similarity among sequences. More precisely: They represent the sum of `weights' of diagonals connecting residues at the respective position.By default, no stars are used but numbers between 0 and 9, instead.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -stars $value\" : \"\"",
+                            "python": "( \"\"  , \" -stars \" + str(value) )[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max_simil",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of * characters representing degree similarity (-stars)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "residues not belonging to selected fragments are replaced by `*' characters in output alignment (rather than being printed in lower-case characters)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -mask\" : \"\"",
+                            "python": "( \"\"  , \" -mask\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "mask",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Mask not aligned residues (-mask)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Be aware that only upper-case letters are regarded to be aligned in fasta output file.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -fa\" : \"\"",
+                            "python": "( \"\"  , \" -fa\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fasta",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment in fasta format (-fa)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "output_options": {
-                "name": "output_options", 
-                "parameters": {
-                    "max_simil": {
-                        "prompt": "Maximum number of * characters representing degree similarity (-stars)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \" -stars $value\" : \"\"", 
-                            "python": "( \"\"  , \" -stars \" + str(value) )[ value is not None]"
-                        }, 
-                        "comment": "<text lang=\"en\">The number of `*' characters below the alignment reflects the degree of local similarity among sequences. More precisely: They represent the sum of `weights' of diagonals connecting residues at the respective position.</text> <text lang=\"en\">By default, no stars are used but numbers between 0 and 9, instead.</text> </comment>"
-                    }, 
-                    "mask": {
-                        "prompt": "Mask not aligned residues (-mask)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \" -mask\" : \"\"", 
-                            "python": "( \"\"  , \" -mask\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">residues not belonging to selected fragments are replaced by `*' characters in output alignment (rather than being printed in lower-case characters)</text> </comment>"
-                    }, 
-                    "fasta": {
-                        "prompt": "Alignment in fasta format (-fa)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \" -fa\" : \"\"", 
-                            "python": "( \"\"  , \" -fa\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Be aware that only upper-case letters are regarded to be aligned in fasta output file.</text> </comment>"
-                    }
-                }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "dialign",
     "outputs": {
-        "parameters": {
-            "ali": {
-                "isout": true, 
-                "prompt": "Output file", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
+        "children": [
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"*.cw\"", 
+                    "perl": "\"*.cw\"",
                     "python": "\"*.cw\""
-                }
-            }, 
-            "fasta_alignment": {
-                "isout": true, 
-                "prompt": "fasta alignment file", 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "ali",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.fa\"",
+                    "python": "\"*.fa\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "fasta_alignment",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$fasta",
+                    "python": "fasta"
+                },
+                "prompt": "fasta alignment file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "Fasta"
                     ]
-                }, 
-                "precond": {
-                    "perl": "$fasta", 
-                    "python": "fasta"
-                }, 
-                "filenames": {
-                    "perl": "\"*.fa\"", 
-                    "python": "\"*.fa\""
                 }
             }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.",
+            "url": null
         }
-    }, 
-    "comment": "<text lang=\"en\">Divide-and-Conquer Multiple Sequence Alignment (DCA) is a program for producing fast, high quality simultaneous multiple sequence alignments of amino acid, RNA, or DNA sequences. The program is based on the DCA algorithm, a heuristic approach to sum-of-pairs (SP) optimal alignment that has been developed at the FSPM over the years 1995-97.</text> </comment>"
+    ],
+    "source_links": [
+        "http://dialign.gobics.de/download/"
+    ],
+    "title": "DIALIGN",
+    "type": "program",
+    "version": "2.2.1"
 }

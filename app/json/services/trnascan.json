@@ -1,2444 +1,1094 @@
 {
-    "type": "program", 
-    "name": "trnascan", 
-    "version": "1.23", 
-    "title": "tRNAscan-SE", 
-    "description": "<text lang=\"en\">Detection of transfer RNA genes</text> </description>", 
-    "authors": "T. Lowe, S. Eddy</authors>", 
-    "references": [
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
-        }, 
-        {
-            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
-        }, 
-        {
-            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "http://emboss.sourceforge.net/</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Castresana, J. (2000). Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17, 540-552</reference>"
-        }, 
-        {
-            "value": "Talavera, G., and Castresana, J. (2007). Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments. Systematic Biology 56, 564-577</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Burge, C., Karlin, S. (1997) Prediction of complete gene structures in human genomic DNA. J. Mol. Biol. 268, 78-94.</reference>"
-        }, 
-        {
-            "value": "Burge, C., Karlin, S. (1997) Gene structure, exon prediction, and alternative splicing. (in preparation).</reference>"
-        }, 
-        {
-            "value": "Burge, C. (1997) Identification of genes in human genomic DNA. PhD thesis, Stanford University, Stanford, CA.</reference>"
-        }, 
-        {
-            "value": "Burset, M., Guigo, R. (1996) Evaluation of gene structure prediction programs. Genomics 34, 353-367.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\"> The program sources and Example files are downloadable here. </{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "Vieira-Silva S, Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Soria-Carrasco, V., Talavera, G., Igea, J., and Castresana, J. (2007). The K tree score: quantification of differences in the relative branch length and topology of phylogenetic trees. Bioinformatics 23, 2954-2956.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Barker, D. 2004. LVB: Parsimony and simulated annealing in the search for phylogenetic trees. Bioinformatics, 20, 274-275.</reference>"
-        }, 
-        {
-            "doi": "10.1093/bioinformatics/btq224", 
-            "value": "Katoh, Toh 2010 (Bioinformatics 26:1899-1900) Parallelization of the MAFFT multiple sequence alignment program. (describes the multithread version; Linux only) </reference>"
-        }, 
-        {
-            "doi": "10.1007/978-1-59745-251-9_3", 
-            "value": "Katoh, Asimenos, Toh 2009 (Methods in Molecular Biology 537:39-64) Multiple Alignment of DNA Sequences with MAFFT. In Bioinformatics for DNA Sequence Analysis edited by D. Posada (outlines DNA alignment methods and several tips including group-to-group alignment and rough clustering of a large number of sequences) </reference>"
-        }, 
-        {
-            "doi": "10.1186/1471-2105-9-212", 
-            "value": "Katoh, Toh 2008 (BMC Bioinformatics 9:212) Improved accuracy of multiple ncRNA alignment by incorporating structural information into a MAFFT-based framework. (describes RNA structural alignment methods) </reference>"
-        }, 
-        {
-            "doi": "10.1093/bib/bbn013", 
-            "value": "Katoh, Toh 2008 (Briefings in Bioinformatics 9:286-298) Recent developments in the MAFFT multiple sequence alignment program. (outlines version 6; Fast Breaking Paper in Thomson Reuters' ScienceWatch) </reference>"
-        }, 
-        {
-            "doi": "10.1093/bioinformatics/btl592", 
-            "value": "Katoh, Toh 2007 (Bioinformatics 23:372-374) Errata PartTree: an algorithm to build an approximate tree from a large number of unaligned sequences. (describes the PartTree algorithm) </reference>"
-        }, 
-        {
-            "doi": "10.1093/nar/gki198", 
-            "value": "Katoh, Kuma, Toh, Miyata 2005 (Nucleic Acids Res. 33:511-518) MAFFT version 5: improvement in accuracy of multiple sequence alignment. (describes [ancestral versions of] the G-INS-i, L-INS-i and E-INS-i strategies) </reference>"
-        }, 
-        {
-            "doi": "10.1093/nar/gkf436", 
-            "value": "Katoh, Misawa, Kuma, Miyata 2002 (Nucleic Acids Res. 30:3059-3066) MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform. (describes the FFT-NS-1, FFT-NS-2 and FFT-NS-i strategies) </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Nicolas Le Novere (2001), MELTING, computing the melting temperature of nucleic acid duplex. Bioinformatics 17(12), 1226-1227</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "M. Zuker, D.H. Mathews and D.H. Turner Algorithms and Thermodynamics for RNA Secondary Structure Prediction: A Practical Guide in RNA Biochemistry and Biotechnology, J. Barciszewski and B.F.C. Clark, eds., NATO ASI Series, Kluwer Academic Publishers, (1999)</reference>"
-        }, 
-        {
-            "value": "Criscuolo A (2011) morePhyML: improving the phylogenetic tree space exploration with PhyML 3. Molecular Phylogenetics and Evolution.</reference>"
-        }, 
-        {
-            "value": "Guindon S, Dufayard JF, Lefort V, Anisimova M, Hordijk W, Gascuel O (2010) New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0. Syst Biol 59:307-321.</reference>"
-        }, 
-        {
-            "value": "Guindon, S. and Gascuel, O. (2003) A simple, fast and accurate algorithm to estimate large phylogenies by maximum likelihood Syst. Biol., 52, 696-704</reference>"
-        }, 
-        {
-            "value": "R. Kolpakov, G. Kucherov, Finding maximal repetitions in a word in linear time, 1999 Symposium on Foundations of Computer Science (FOCS), New-York (USA), pp. 596-604, IEEE Computer Society</reference>"
-        }, 
-        {
-            "value": "R. Kolpakov, G. Kucherov, Finding Approximate Repetitions under Hamming Distance, 9-th European Symposium on Algorithms (ESA), Aarhus (Denmark), Lecture Notes in Computer Science, vol. 2161, pp 170-181.</reference>"
-        }, 
-        {
-            "doi": "doi:10.1093/bioinformatics/btq338", 
-            "value": "Yongchao Liu, Bertil Schmidt and Douglas L. Maskell (Bioinformatics 2010 26(16): 1958-1964) MSAProbs: multiple sequence alignment based on pair hidden Markov models and partition function posterior probabilities. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "doi": "10.1093/nar/gkh340", 
-            "value": "Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-97.</reference>"
-        }, 
-        {
-            "value": "Brown, N.P., Leroy C., Sander C. (1998). MView: A Web compatible database search or multiple alignment viewer. Bioinformatics. 14(4):380-381.</reference>"
-        }, 
-        {
-            "value": "Brown, N.P., Leroy C., Sander C. (1998). MView: A Web compatible database search or multiple alignment viewer. Bioinformatics. 14(4):380-381.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "The role of the proteasome in generating cytotoxic T cell epitopes: Insights obtained from improved predictions of proteasomal cleavage. M. Nielsen, C. Lundegaard, S. Brunak, O. Lund, and C. Kesmir. Immunogenetics., 57(1-2):33-41, 2005. </reference>"
-        }, 
-        {
-            "value": "Prediction of N-glycosylation sites in human proteins. R. Gupta, E. Jung and S. Brunak. In preparation, 2004. </reference>"
-        }, 
-        {
-            "value": "Prediction, conservation analysis and structural characterization of mammalian mucin-type O-glycosylation sites. K. Julenius, A. Moelgaard, R. Gupta and S. Brunak. Glycobiology, 15:153-164, 2005. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Bucher P, Karplus K, Moeri N and Hofmann, K. (1996). A flexible motif search technique based on generalized profiles. Comput. Chem. 20:3-24.</reference>"
-        }, 
-        {
-            "value": "R. Baeza-Yates and G. Gonnet, Communications of the ACM 35(1992), pp. 74-82.</reference>"
-        }, 
-        {
-            "value": "S. Wu and U. Manber, Communications of the ACM 35(1992), pp. 83-91.</reference>"
-        }, 
-        {
-            "value": "Guindon, S. and Gascuel, O. (2003) A simple, fast and accurate algorithm to estimate large phylogenies by maximum likelihood Syst. Biol., 52, 696-704</reference>"
-        }, 
-        {
-            "value": "R. D. Smith and T. F. Smith. Pattern-induced multi-sequence alignment (PIMA) algorithm employing secondary structure-dependent gap penalties for use in comparative modelling. protein Engineering, vol5, number 1, pp 35-41, 1992</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Frishman, D. and Argos, P. (1996) Incorporation of long-distance interactions into a secondary structure prediction algorithm. Protein Engineering, 9, 133-142.</reference>"
-        }, 
-        {
-            "value": "Frishman, D. and Argos, P. (1997) 75% accuracy in protein secondary structure prediction. Proteins, 27, 329-335.</reference>"
-        }, 
-        {
-            "value": "Frishman,D and Argos,P. (1995) Knowledge-based secondary structure assignment. Proteins: structure, function and genetics, 23, 566-579.</reference>"
-        }, 
-        {
-            "value": "Kabsch,W. and Sander,C. (1983) Dictionary of protein secondary structure: pattern recognition of hydrogen-bonded and geometrical features. Biopolymers, 22: 2577-2637.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "P. Li, K. C. Kupfer, C. J. Davies, D. Burbee, G. A. Evans, and H. R. Garner. PRIMO: A primer design program that applies base quality statistics for automated large-scale DNA sequencing. Genomics 40:476-485 (1997).</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "A program for detecting the sorting signals of proteins and predicting their subcellular localization, trends Biochem. Sci., in press, 1999.</reference>"
-        }, 
-        {
-            "value": "Strimmer, K., and A. von Haeseler. 1996. Quartet puzzling:A quartet maximum likelihood method for reconstructing tree topologies. Mol. Biol. Evol. 13: 964-969.</reference>"
-        }, 
-        {
-            "value": "Kevin Howe, Alex Bateman and Richard Durbin (2002). QuickTree: building huge Neighbour-Joining trees of protein sequences. Bioinformatics 18(11):1546-1547.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Todd J. Treangen, Aaron E. Darling, Guillaume Achaz, Mark A. Ragan, Xavier Messeguer, Eduardo P.C. Rocha, \"A Novel Heuristic for Local Multiple Alignment of Interspersed DNA Repeats,\" IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 6, no. 2, pp. 180-189 </reference>"
-        }, 
-        {
-            "value": "A method for fast database search for all k-nucleotide repeats, by Gary Benson and Michael S. Waterman, Nucleic Acids Research (1994) Vol. 22, No. 22, pp 4828-4836.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "D.H. Mathews, J. Sabina, M. Zuker and H. Turner \"Expanded Sequence Dependence of Thermodynamic Parameters Provides Robust Prediction of RNA Secondary Structure\" JMB, 288, pp 911-940, 1999</reference>"
-        }, 
-        {
-            "value": "vo L. Hofacker, Martin Fekete, and Peter F. Stadler \"Secondary Structure Prediction for Aligned RNA Sequences\" J.Mol.Biol. 319: 1059-1066 (2002).</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "S.H.Bernhart, Ch. Flamm, P.F. Stadler, I.L. Hofacker Partition Function and Base Pairing Probabilities of RNA Heterodimers Algorithms Mol. Biol. (2006)</reference>"
-        }, 
-        {
-            "value": "D.H. Mathews, J. Sabina, M. Zuker and H. Turner \"Expanded Sequence Dependence of Thermodynamic Parameters Provides Robust Prediction of RNA Secondary Structure\" JMB, 288, pp 911-940, 1999</reference>"
-        }, 
-        {
-            "value": "Shapiro B A, (1988) An algorithm for comparing multiple RNA secondary structures, CABIOS 4, 381-393 Shapiro B A, Zhang K (1990) Comparing multiple RNA secondary structures using tree comparison, CABIOS 6, 309-318</reference>"
-        }, 
-        {
-            "value": "Fontana W, Konings D A M, Stadler P F, Schuster P, (1993) Statistics of RNA secondary structures, Biopolymers 33, 1389-1404 I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125, 167-188</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "A. Walter, D Turner, J Kim, M Lyttle, P Muller, D Mathews, M Zuker Coaxial stacking of helices enhances binding of oligoribonucleotides. PNAS, 91, pp 9218-9222, 1994</reference>"
-        }, 
-        {
-            "value": "M. Zuker, P. Stiegler (1981) Optimal computer folding of large RNA sequences using thermodynamic and auxiliary information, Nucl Acid Res 9: 133-148</reference>"
-        }, 
-        {
-            "value": "J.S. McCaskill (1990) The equilibrium partition function and base pair binding probabilities for RNA secondary structures, Biopolymers 29: 11051119 D.H. Turner N. Sugimoto and S.M. Freier (1988) RNA structure prediction, Ann Rev Biophys Biophys Chem 17: 167-192</reference>"
-        }, 
-        {
-            "value": "D. Adams (1979) The hitchhiker's guide to the galaxy, Pan Books, London</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "J.S. McCaskill (1990) The equilibrium partition function and base pair binding probabilities for RNA secondary structures, Biopolymers 29: 11051119 D. Adams (1979) The hitchhiker's guide to the galaxy, Pan Books, London</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "A. Walter, D Turner, J Kim, M Lyttle, P Muller, D Mathews, M Zuker Coaxial stacking of helices enhances binding of oligoribonucleotides. PNAS, 91, pp 9218-9222, 1994</reference>"
-        }, 
-        {
-            "value": "M. Zuker, P. Stiegler (1981) Optimal computer folding of large RNA sequences using thermodynamic and auxiliary information, Nucl Acid Res 9: 133-148</reference>"
-        }, 
-        {
-            "value": "J.S. McCaskill (1990) The equilibrium partition function and base pair binding probabilities for RNA secondary structures, Biopolymers 29: 11051119 D.H. Turner N. Sugimoto and S.M. Freier (1988) RNA structure prediction, Ann Rev Biophys Biophys Chem 17: 167-192</reference>"
-        }, 
-        {
-            "value": "D. Adams (1979) The hitchhiker's guide to the galaxy, Pan Books, London</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, B. Priwitzer, and P.F. Stadler \"Prediction of Locally Stable RNA Secondary Structures for Genome-Wide Surveys\" Bioinformatics, 20, 186-190 (2004)</reference>"
-        }, 
-        {
-            "value": "Bonhoeffer S, McCaskill J S, Stadler P F, Schuster P, (1993) RNA multistructure landscapes, Euro Biophys J:22,13-24</reference>"
-        }, 
-        {
-            "value": "S. H. Bernhart, I.L. Hofacker, and P.F. Stadler (2006) \"Local Base Pairing Probabilities in Large RNAs\" Bioinformatics 22: 614-615</reference>"
-        }, 
-        {
-            "value": "A.F. Bompfunewerer, R. Backofen, S.H. Bernhart, J. Hertel, I.L. Hofacker, P.F. Stadler, S. Will (2007) \"Variations on {RNA} Folding and Alignment: Lessons from Benasque\" J. Math. Biol.</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "A. Walter, D Turner, J Kim, M Lyttle, P Muller, D Mathews, M Zuker Coaxial stacking of helices enhances binding of oligoribonucleotides. PNAS, 91, pp 9218-9222, 1994</reference>"
-        }, 
-        {
-            "value": "M. Zuker, P. Stiegler (1981) Optimal computer folding of large RNA sequences using thermodynamic and auxiliary information, Nucl Acid Res 9: 133-148</reference>"
-        }, 
-        {
-            "value": "J.S. McCaskill (1990) The equilibrium partition function and base pair binding probabilities for RNA secondary structures, Biopolymers 29: 11051119 D.H. Turner N. Sugimoto and S.M. Freier (1988) RNA structure prediction, Ann Rev Biophys Biophys Chem 17: 167-192</reference>"
-        }, 
-        {
-            "value": "D. Adams (1979) The hitchhiker's guide to the galaxy, Pan Books, London</reference>"
-        }, 
-        {
-            "value": "S. Wuchty, W. Fontana, I. L. Hofacker and P. Schuster Complete Suboptimal Folding of RNA and the Stability of Secondary Structures, Biopolymers, 49, 145-165 (1999)</reference>"
-        }, 
-        {
-            "value": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188</reference>"
-        }, 
-        {
-            "value": "S.H.Bernhart, Ch. Flamm, P.F. Stadler, I.L. Hofacker Partition Function and Base Pairing Probabilities of RNA Heterodimers Algorithms Mol. Biol. (2006)</reference>"
-        }, 
-        {
-            "value": "D.H. Mathews, J. Sabina, M. Zuker and H. Turner \"Expanded Sequence Dependence of Thermodynamic Parameters Provides Robust Prediction of RNA Secondary Structure\" JMB, 288, pp 911-940, 1999</reference>"
-        }, 
-        {
-            "value": "Brendel, V., Bucher, P., Nourbakhsh, I., Blaisdell, B.E., Karlin, S. (1992) Methods and algorithms for statistical analysis of protein sequences. Proc. Natl. Acad. Sci. USA 89: 2002-2006.</reference>"
-        }, 
-        {
-            "value": "Genomewide identification of cis regulatory motifs and modules underlying gene coregulation using statistics and phylogeny, National Academy of Sciences of the United States of America. August 17, 2010 vol. 107 no. 33 14615-14620</reference>"
-        }, 
-        {
-            "value": "Rambaut, A. and Grassly, N. C. (1996) Seq-Gen: An application for the Monte Carlo simulation of DNA sequence evolution along phylogenetic trees. Comput. Appl. Biosci.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "doi": "10.1038/nmeth.1701", 
-            "value": "SignalP 4.0: discriminating signal peptides from transmembrane regions Thomas Nordahl Petersen, S\u00f8ren Brunak, Gunnar von Heijne & Henrik Nielsen Nature Methods, 8:785-786, 2011 </reference>"
-        }, 
-        {
-            "value": "Improved prediction of signal peptides: SignalP 3.0. Jannick Dyrl\u00f8v Bendtsen, Henrik Nielsen, Gunnar von Heijne and S\u00f8ren Brunak. J. Mol. Biol., 340:783-795, 2004. </reference>"
-        }, 
-        {
-            "value": "Identification of prokaryotic and eukaryotic signal peptides and prediction of their cleavage sites. Henrik Nielsen, Jacob Engelbrecht, S\u00f8ren Brunak and Gunnar von Heijne. Protein Engineering, 10:1-6, 1997. </reference>"
-        }, 
-        {
-            "value": "Prediction of signal peptides and signal anchors by a hidden Markov model. Henrik Nielsen and Anders Krogh. Proceedings of the Sixth International Conference on Intelligent Systems for Molecular Biology (ISMB 6), AAAI Press, Menlo Park, California, pp. 122-130, 1998. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Marsan L, Sagot MF (2001). Algorithms for extracting structured motifs using a suffix-tree with application to promoter and regulatory site consensus identification. J. of Computational Biology, 7:345-360.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Predicting subcellular localization of proteins based on their N-terminal amino acid sequence. Olof Emanuelsson, Henrik Nielsen, S\u00f8ren Brunak and Gunnar von Heijne. J. Mol. Biol., 300: 1005-1016, 2000. </reference>"
-        }, 
-        {
-            "value": "Identification of prokaryotic and eukaryotic signal peptides and prediction of their cleavage sites. Henrik Nielsen, Jacob Engelbrecht, S\u00f8ren Brunak and Gunnar von Heijne. Protein Engineering, 10:1-6, 1997. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Andrew Rambaut, 2000. Estimating the rate of molecular evolution: Incorporating non-contemporaneous sequences into maximum likelihood phylogenies. Bioinformatics.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "</reference>"
-        }, 
-        {
-            "value": "</reference>"
-        }, 
-        {
-            "value": "von Heijne, G. (1992) Membrane Protein Structure Prediction: Hydrophobicity Analysis and the 'Positive Inside' Rule. J.Mol.Biol. 225, 487-494.</reference>"
-        }, 
-        {
-            "value": "Claros, M.G., and von Heijne, G. (1994) TopPred II: An Improved Software For Membrane Protein Structure Predictions. CABIOS 10, 685-686.</reference>"
-        }, 
-        {
-            "value": "Deveaud and Schuerer (Institut Pasteur) new implementation of the original toppred program, based on G. von Heijne algorithm.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Hein, J.: Unified approach to alignment and phylogenies. Meth. Enzymol. 183:626-645 (1990).</reference>"
-        }, 
-        {
-            "value": "Hein, J.: A new method that simultaneously aligns and reconstruct ancestral sequences for any number of homologous sequences, when the phylogeny is given. Mol. Biol. Evol. 6:649-668 (1989).</reference>"
-        }, 
-        {
-            "value": "Hein, J.: A tree reconstruction method that is economical in the number of pairwise comparisons used. Mol. Biol. Evol. 6:669-684 (1989).</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Fichant, G.A. and Burks, C. (1991) Identifying potential tRNA genes in genomic DNA sequences, J. Mol. Biol., 220, 659-671.</reference>"
-        }, 
-        {
-            "value": "Eddy, S.R. and Durbin, R. (1994) RNA sequence analysis using covariance models, Nucl. Acids Res., 22, 2079-2088.</reference>"
-        }, 
-        {
-            "value": "Pavesi, A., Conterio, F., Bolchi, A., Dieci, G., Ottonello, S. (1994) Identification of new eukaryotic tRNA genes in genomic DNA databases by a multistep weight matrix analysis of trnascriptional control regions, Nucl. Acids Res., 22, 1247-1256.</reference>"
-        }, 
-        {
-            "value": "Lowe, T.M. and Eddy, S.R. (1997) tRNAscan-SE: A program for improved detection of transfer RNA genes in genomic sequence, Nucl. Acids Res., 25, 955-964.</reference>"
+    "authors": "T. Lowe, S. Eddy",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:pattern",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://faculty.virginia.edu/wrpearson/fasta/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/golden/", 
-        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/", 
-        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/html4blast/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://molevol.cmima.csic.es/castresana/Ktreedist.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
-        "http://mafft.cbrc.jp/alignment/software/source.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.ebi.ac.uk/~lenov/SOFTWARES/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.bioinfo.rpi.edu/~zukerm/export/", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/morePhyML/", 
-        "http://bioinfo.lifl.fr/mreps/", 
-        "http://sourceforge.net/projects/msaprobs/files/MSAProbs-0.9.4.tar.gz/download", 
-        "ftp://fastlink.nih.gov/pub/msa/msa.tar.Z", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sonnhammer.sbc.su.se/download/software/MSPcrunch+Blixem/", 
-        "http://www.drive5.com/muscle/downloads.htm", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netchop", 
-        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netNglyc", 
-        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netNglyc", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.isrec.isb-sib.ch/ftp-server/pftools/", 
-        "http://code.google.com/p/phyml", 
-        "ftp://ftp.ebi.ac.uk/pub/software/unix/pima/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.ebi.ac.uk/pub/software/unix/pratt/", 
-        "ftp://ftp.ebi.ac.uk/pub/software/unix/predator/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/prose/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.tree-puzzle.de/", 
-        "http://www.sanger.ac.uk/Software/analysis/quicktree/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://wwwabi.snv.jussieu.fr/public/Repeatoire/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.mcs.anl.gov/pub/Genomics/PatScan/", 
-        "http://tree.bio.ed.ac.uk/download.html?name=seqgen", 
-        "&", 
-        "version=v1.3.2", 
-        "&", 
-        "id=41", 
-        "&", 
-        "num=1", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/sig/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www-igm.univ-mlv.fr/~marsan/smile_english.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/tacg/files/", 
-        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?targetp", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?tmhmm", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/toppred/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://selab.janelia.org/pub/software/tRNAscan-SE/"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://swift.cmbi.ru.nl/gv/dssp/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
-        "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://molevol.cmima.csic.es/castresana/Gblocks.html", 
-        "http://emboss.sourceforge.net", 
-        "http://genes.mit.edu/GENSCANinfo.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://molevol.cmima.csic.es/castresana/Ktreedist.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
-        "http://mafft.cbrc.jp/alignment/software/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.ebi.ac.uk/~lenov/meltinghome.html", 
-        "http://emboss.sourceforge.net", 
-        "http://www.bioinfo.rpi.edu/applications/mfold/", 
-        "http://bioinfo.lifl.fr/mreps/", 
-        "http://sourceforge.net/projects/msaprobs/", 
-        "http://www.ncbi.nlm.nih.gov/CBBresearch/Schaffer/msa.html", 
-        "http://emboss.sourceforge.net", 
-        "http://sonnhammer.sbc.su.se/MSPcrunch.html", 
-        "http://www.drive5.com/muscle/", 
-        "http://bio-mview.sourceforge.net/", 
-        "http://bio-mview.sourceforge.net/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://pbil.univ-lyon1.fr/software/njplot.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://code.google.com/p/phyml", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.ii.uib.no/~inge/Pratt.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://psort.hgc.jp/", 
-        "http://www.tree-puzzle.de/", 
-        "http://www.sanger.ac.uk/Software/analysis/quicktree/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://wwwabi.snv.jussieu.fr/public/Repeatoire/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://tree.bio.ed.ac.uk/software/seqgen/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www-igm.univ-mlv.fr/~marsan/smile_english.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://tacg.sourceforge.net/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
+    ],
+    "command": {
+        "path": null,
+        "value": "tRNAscan-SE"
+    },
+    "comment": "tRNAscan-SE identifies transfer RNA genes in genomic DNA or RNA sequences.  It combines the specificity of the Cove probabilistic RNA prediction package (Eddy & Durbin, 1994) with the speed and sensitivity of tRNAscan 1.3 (Fichant & Burks, 1991) plus an implementation of an algorithm described by Pavesi and colleagues\n(1994) which searches for eukaryotic pol III tRNA promoters (our implementation referred to as EufindtRNA).  tRNAscan and EufindtRNA are used as first-pass prefilters to identify \"candidate\" tRNA regions of the sequence.  These subsequences are then passed to Cove for further analysis, and output if Cove confirms the initial tRNA prediction.",
+    "description": "Detection of transfer RNA genes",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
         "http://selab.janelia.org/software.html#trnascan"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/featcopy.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/featreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/findkm.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/fitch.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/freak.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzznuc.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzzpro.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/fuzztran.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/garnier.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/gblocks/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/geecee.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/getorf.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://genome.imim.es/software/gfftools/GFF2PS.html", 
-        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/helixturnhelix.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/hmoment.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/iep.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/isochore.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/jaspscan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/kitsch.html", 
-        "http://bioweb2.pasteur.fr/docs/ktreedist/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/lindna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/listor.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://biology.st-andrews.ac.uk/cegg/lvb.htm", 
-        "http://mafft.cbrc.jp/alignment/software/about.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/makenucseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/makeprotseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/marscan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/maskfeat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/maskseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/matcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/megamerger.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/melting/melting.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/merger.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/mfold/index.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/mix.html", 
-        "http://bioweb2.pasteur.fr/docs/morePhyML/morePhyML_doc.pdf", 
-        "http://bioinfo.lifl.fr/mreps/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/msbar.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/mspcrunch/MSPcrunch2.pdf", 
-        "http://www.drive5.com/muscle/", 
-        "http://bioweb2.pasteur.fr/docs/mview/index.html", 
-        "http://bioweb2.pasteur.fr/docs/mview/index.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/mwfilter.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/needleall.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/needle.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/neighbor.html", 
-        "http://www.cbs.dtu.dk/services/NetChop/", 
-        "http://www.cbs.dtu.dk/services/NetNGlyc/", 
-        "http://www.cbs.dtu.dk/services/NetOGlyc/", 
-        "http://www.cbs.dtu.dk/databases/OGLYCBASE/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/newcpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/newcpgseek.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/newseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/notseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/nthseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/octanol.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/oddcomp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/palindrome.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/pars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pasteseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/patmatdb.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/patmatmotifs.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepcoil.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepinfo.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepnet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepstats.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepwheel.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepwindowall.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pepwindow.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phyml/phyml_manual_2008.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/plotcon.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/plotorf.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/polydot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/preg.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/prettyplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/prettyseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/primersearch.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/profit.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/prophecy.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/prophet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/protdist.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/protpars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/pscan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/psort/index.html", 
-        "http://bioweb2.pasteur.fr/docs/puzzle/tree-puzzle.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/recoder.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/redata.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/remap.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/repeatoire/Repeatoire_UserGuide.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/restover.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/restrict.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/revseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.tbi.univie.ac.at/RNA/RNAalifold.html", 
-        "http://www.tbi.univie.ac.at/RNA/RNAcofold.html", 
-        "http://www.tbi.univie.ac.at/RNA/RNAeval.html", 
-        "http://www.tbi.univie.ac.at/RNA/RNAfold.html", 
-        "http://bioweb2.pasteur.fr/gensoft/sequence/nucleic/2D_structure.html#ViennaRNa", 
-        "http://bioweb2.pasteur.fr/gensoft/sequence/nucleic/2D_structure.html#ViennaRNa", 
-        "http://bioweb2.pasteur.fr/docs/scan_for_matches/scan_for_matches.txt", 
-        "http://bioweb2.pasteur.fr/docs/seq-gen/index.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqmatchall.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqretsetall.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqretsplit.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/seqret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/showalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/showfeat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/showorf.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/showpep.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/showseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/shuffleseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/sigcleave.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.cbs.dtu.dk/services/SignalP/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/silent.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/sirna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/sixpack.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/skipseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/splitter.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/squizz/seqfmt.html", 
-        "http://bioweb2.pasteur.fr/docs/squizz/alifmt.html", 
-        "http://bioweb2.pasteur.fr/docs/squizz/seqfmt.html", 
-        "http://bioweb2.pasteur.fr/docs/squizz/alifmt.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/stretcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/stssearch.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/supermatcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/syco.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/tacg/tacg4.0.main.html", 
-        "http://www.cbs.dtu.dk/services/TargetP/", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/tcode.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/textsearch.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/tfscan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/tipdate/TipDate.v1.2.Manual.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/tmap.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.cbs.dtu.dk/services/TMHMM//", 
-        "http://bioweb2.pasteur.fr/docs/toppred/toppred.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/tranalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/transeq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/trimest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/trimseq.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "phylogeny:display", 
-        "display:tree", 
-        "phylogeny:display", 
-        "display:tree", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple", 
-        "sequence:nucleic:repeats", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:composition", 
-        "sequence:edit", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:primers", 
-        "sequence:nucleic:repeats", 
-        "alignment:pairwise:global", 
-        "sequence:nucleic:repeats", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:edit:feature_table", 
-        "sequence:edit", 
-        "sequence:formatter", 
-        "database:search:homology", 
-        "phylogeny:likelihood", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "database:search:sequence", 
-        "sequence:enzyme:kinetics", 
-        "phylogeny:distance", 
-        "phylogeny:tree_analyser", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple:information", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:gene_finding", 
-        "display:feature_table", 
-        "database:search:sequence", 
-        "sequence:nucleic:prediction", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:nucleic:pattern", 
-        "sequence:nucleic:clusters", 
-        "sequence:protein:2D_structure", 
-        "sequence:protein:motifs", 
-        "structure:2D_structure", 
-        "hmm:alignment:multiple", 
-        "alignment:multiple:hmm", 
-        "hmm:building", 
-        "hmm:building", 
-        "hmm:building", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "hmm:simulation", 
-        "hmm:statistic", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "database:search:display", 
-        "sequence:protein:composition", 
-        "alignment:multiple:information", 
-        "information", 
-        "sequence:nucleic:composition", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "sequence:nucleic:transcription", 
-        "phylogeny:distance", 
-        "phylogeny:tree_analyser", 
-        "display", 
-        "sequence:edit", 
-        "phylogeny:parsimony", 
-        "Alignment", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:motifs", 
-        "sequence:edit:feature_table", 
-        "sequence:edit", 
-        "alignment:pairwise:local", 
-        "alignment:consensus", 
-        "sequence:nucleic:composition", 
-        "alignment:consensus", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "phylogeny:parsimony", 
-        "phylogeny:likelihood", 
-        "sequence:nucleic:repeats", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:mutation", 
-        "database:search:display", 
-        "alignment:multiple", 
-        "alignment:multiple:display", 
-        "display:alignment:multiple", 
-        "database:search:display", 
-        "display:database:search", 
-        "sequence:protein:composition", 
-        "alignment:pairwise:global", 
-        "alignment:pairwise:global", 
-        "phylogeny:distance", 
-        "sequence:protein:motifs", 
-        "sequence:protein:pattern", 
-        "sequence:protein:profiles", 
-        "sequence:protein:motifs", 
-        "sequence:protein:pattern", 
-        "sequence:protein:profiles", 
-        "sequence:protein:motifs", 
-        "sequence:protein:pattern", 
-        "sequence:protein:profiles", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "phylogeny:display", 
-        "display:tree", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "phylogeny:others", 
-        "phylogeny:others", 
-        "sequence:protein:composition", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:repeats", 
-        "phylogeny:parsimony", 
-        "sequence:edit", 
-        "sequence:protein:motifs", 
-        "sequence:protein:motifs", 
-        "structure:3D_structure", 
-        "structure:3D_structure", 
-        "sequence:protein:2D_structure", 
-        "sequence:protein:motifs", 
-        "structure:2D_structure", 
-        "sequence:protein:composition", 
-        "display:protein:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:protein:composition", 
-        "display:protein:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:pattern", 
-        "sequence:protein:pattern", 
-        "database:search:homology", 
-        "database:search:pattern", 
-        "hmm:database:search", 
-        "database:search:hmm", 
-        "phylogeny:likelihood", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:translation", 
-        "alignment:pairwise:dot_plots", 
-        "sequence:protein:pattern", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:protein:motifs", 
-        "alignment:multiple:display", 
-        "display:nucleic:translation", 
-        "sequence:nucleic:primers", 
-        "sequence:nucleic:primers", 
-        "sequence:nucleic:profiles", 
-        "sequence:protein:profiles", 
-        "sequence:nucleic:profiles", 
-        "sequence:protein:profiles", 
-        "sequence:nucleic:profiles", 
-        "sequence:protein:profiles", 
-        "sequence:protein:pattern", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony", 
-        "sequence:protein:motifs", 
-        "database:search:homology", 
-        "database:search:pattern", 
-        "sequence:protein:composition", 
-        "phylogeny:likelihood", 
-        "phylogeny:distance", 
-        "phylogeny:tree_analyser", 
-        "sequence:nucleic:restriction", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display:nucleic:translation", 
-        "sequence:nucleic:repeats", 
-        "sequence:nucleic:pattern", 
-        "sequence:nucleic:restriction", 
-        "sequence:nucleic:restriction", 
-        "sequence:edit", 
-        "alignment:multiple:display", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:2D_structure", 
-        "sequence:protein:composition", 
-        "protein:data:processing", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "sequence:nucleic:regulation", 
-        "genetics:detection", 
-        "phylogeny:likelihood", 
-        "alignment:pairwise:local", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "alignment:multiple:display", 
-        "display:feature_table", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:translation", 
-        "display", 
-        "display:nucleic:restriction", 
-        "display:nucleic:translation", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:mutation", 
-        "sequence:protein:motifs", 
-        "sequence:protein:motifs", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:restriction", 
-        "sequence:nucleic:composition", 
-        "display:nucleic:gene_finding", 
-        "display:nucleic:translation", 
-        "sequence:edit", 
-        "sequence:nucleic:pattern", 
-        "sequence:protein:pattern", 
-        "sequence:edit", 
-        "alignment:formatter", 
-        "sequence:formatter", 
-        "alignment:formatter", 
-        "sequence:formatter", 
-        "alignment:pairwise:global", 
-        "sequence:nucleic:primers", 
-        "alignment:pairwise:local", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:nucleic:gene_finding", 
-        "sequence:nucleic:pattern", 
-        "sequence:protein:localization", 
-        "sequence:nucleic:gene_finding", 
-        "display:information", 
-        "sequence:nucleic:transcription", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple", 
-        "sequence:nucleic:translation", 
-        "alignment:pairwise", 
-        "phylogeny:parsimony", 
-        "sequence:edit", 
-        "sequence:edit", 
-        "sequence:nucleic:pattern"
-    ], 
-    "command": "tRNAscan-SE", 
+    ],
     "inputs": {
-        "parameters": {
-            "sequence": {
-                "ismandatory": true, 
-                "prompt": "Sequence File", 
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence File",
+                "simple": null,
                 "type": {
-                    "biotype": "DNA", 
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
-                "format": {
-                    "perl": "\" $value\"", 
-                    "python": "\" \"+str(value)"
                 }
-            }, 
-            "search_options": {
-                "name": "search_options", 
-                "parameters": {
-                    "prokaryotic": {
-                        "prompt": "Improve detection of prokaryotic tRNAs (-P)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This parameter loosens the search parameters for EufindtRNA to improve detection of prokaryotic tRNAs. Use this option when scanning prokaryotic sequences or both eukaryotic and prokaryotic sequences in the same sequence file. This option also disables pseudogene checking automatically since criteria for pseudogene checking were developed for eukaryotic pseudogenes.Use of this mode with prokaryotic sequences will also improve bounds prediction of the 3' end (the terminal CCA triplet).",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -P\":\"\"", 
+                            "perl": "($value) ? \" -P\":\"\"",
                             "python": "(\"\" , \" -P\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This parameter loosens the search parameters for EufindtRNA to improve detection of prokaryotic tRNAs. Use this option when scanning prokaryotic sequences or both eukaryotic and prokaryotic sequences in the same sequence file. This option also disables pseudogene checking automatically since criteria for pseudogene checking were developed for eukaryotic pseudogenes.</text> <text lang=\"en\">Use of this mode with prokaryotic sequences will also improve bounds prediction of the 3' end (the terminal CCA triplet).</text> </comment>"
-                    }, 
-                    "archeal": {
-                        "prompt": "Select archeal-specific covariance model (-A)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "prokaryotic",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Improve detection of prokaryotic tRNAs (-P)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option selects an archaeal-specific covariance model for tRNA analysis, as well as slightly loosening the EufindtRNA search cutoffs.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -A\" : \"\"", 
+                            "perl": "($value) ? \" -A\" : \"\"",
                             "python": "( \"\" , \" -A\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option selects an archaeal-specific covariance model for tRNA analysis, as well as slightly loosening the EufindtRNA search cutoffs.</text> </comment>"
-                    }, 
-                    "organellar": {
-                        "prompt": "Bypasses the fast first-pass scanners that are poor at detecting organellar tRNAs (-O)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "archeal",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select archeal-specific covariance model (-A)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This parameter bypasses the fast first-pass scanners that are poor at detecting organellar tRNAs and runs Cove analysis only. Since true organellar tRNAs have been found to have Cove scores between 15 and 20 bits, the search cutoff is lowered from 20 to 15 bits. Also, pseudogene checking is disabled since it is only applicable to eukaryotic cytoplasmic tRNA pseudogenes. Since Cove-only mode is used, searches will be very slow (see -C option below) relative to the default mode.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -O\":\"\"", 
+                            "perl": "($value) ? \" -O\":\"\"",
                             "python": "(\"\" , \" -O\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This parameter bypasses the fast first-pass scanners that are poor at detecting organellar tRNAs and runs Cove analysis only. Since true organellar tRNAs have been found to have Cove scores between 15 and 20 bits, the search cutoff is lowered from 20 to 15 bits. Also, pseudogene checking is disabled since it is only applicable to eukaryotic cytoplasmic tRNA pseudogenes. Since Cove-only mode is used, searches will be very slow (see -C option below) relative to the default mode.</text> </comment>"
-                    }, 
-                    "general": {
-                        "prompt": "General covariance model trained on all three phylogenetic domains (-G)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "organellar",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Bypasses the fast first-pass scanners that are poor at detecting organellar tRNAs (-O)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option selects the general tRNA covariance model that was trained on tRNAs from all three phylogenetic domains (archaea, bacteria, & eukarya). This mode can be used when analyzing a mixed collection of sequences from more than one phylogenetic domain, with only slight loss of sensitivity and selectivity.The original publication describing this program and tRNAscan-SE version 1.0 used this general tRNA model exclusively.  If you wish to compare scores to those found in the paper or scans using v1.0, use this option.  Use of this option is compatible with all other search mode options described in this section.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -G\" : \"\"", 
+                            "perl": "($value) ? \" -G\" : \"\"",
                             "python": "( \"\" , \" -G\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option selects the general tRNA covariance model that was trained on tRNAs from all three phylogenetic domains (archaea, bacteria, & eukarya). This mode can be used when analyzing a mixed collection of sequences from more than one phylogenetic domain, with only slight loss of sensitivity and selectivity.</text> <text lang=\"en\">The original publication describing this program and tRNAscan-SE version 1.0 used this general tRNA model exclusively. If you wish to compare scores to those found in the paper or scans using v1.0, use this option. Use of this option is compatible with all other search mode options described in this section.</text> </comment>"
-                    }, 
-                    "cove_only": {
-                        "prompt": "Analyze sequences using Cove only (-C)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "general",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "General covariance model trained on all three phylogenetic domains (-G)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Directs tRNAscan-SE to analyze sequences using Cove analysis only. This option allows a slightly more sensitive search than the default tRNAscan + EufindtRNA -> Cove mode, but is much slower (by approx. 250 to 3,000 fold). Output format and other program defaults are otherwise identical to the normal analysis.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -C\":\"\"", 
+                            "perl": "($value) ? \" -C\":\"\"",
                             "python": "(\"\" , \" -C\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Directs tRNAscan-SE to analyze sequences using Cove analysis only. This option allows a slightly more sensitive search than the default tRNAscan + EufindtRNA -> Cove mode, but is much slower (by approx. 250 to 3,000 fold). Output format and other program defaults are otherwise identical to the normal analysis.</text> </comment>"
-                    }, 
-                    "breakdown": {
-                        "prompt": "Show both primary and secondary structure components to covariance model bit score (-H)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cove_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Analyze sequences using Cove only (-C)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Since tRNA pseudogenes often have one very low component (good secondary structure but poor primary sequence similarity to the tRNA model, or vice versa), this information may be useful in deciding whether a low-scoring tRNA is likely to be a pseudogene.  The heuristic pseudogene detection filter uses this information to flag possible pseudogenes -- use this option to see why a hit is marked as a possible pseudogene.  The user may wish to examine score breakdowns from known tRNAs in the organism of interest to get a frame of reference.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -H\" : \"\"", 
+                            "perl": "($value) ? \" -H\" : \"\"",
                             "python": "( \"\" , \" -H\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Since tRNA pseudogenes often have one very low component (good secondary structure but poor primary sequence similarity to the tRNA model, or vice versa), this information may be useful in deciding whether a low-scoring tRNA is likely to be a pseudogene. The heuristic pseudogene detection filter uses this information to flag possible pseudogenes -- use this option to see why a hit is marked as a possible pseudogene. The user may wish to examine score breakdowns from known tRNAs in the organism of interest to get a frame of reference.</text> </comment>"
-                    }, 
-                    "disable_checking": {
-                        "prompt": "Disable pseudogene checking (-D)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "breakdown",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show both primary and secondary structure components to covariance model bit score (-H)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This will slightly speed the program and may be necessary for non-eukaryotic sequences that are flagged as possible pseudogenes but are known to be functional tRNAs.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -D\":\"\"", 
+                            "perl": "($value) ? \" -D\":\"\"",
                             "python": "(\"\" , \" -D\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This will slightly speed the program and may be necessary for non-eukaryotic sequences that are flagged as possible pseudogenes but are known to be functional tRNAs.</text> </comment>"
-                    }
-                }
-            }, 
-            "special_options": {
-                "name": "special_options", 
-                "parameters": {
-                    "trnascan_only": {
-                        "prompt": "Use tRNAscan only to analyze sequences (-T)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "disable_checking",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Disable pseudogene checking (-D)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "search_options",
+                "precond": null,
+                "prompt": "Search Mode options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Directs tRNAscan-SE to use only tRNAscan to analyze sequences. This mode will default to using 'strict' parameters with tRNAscan analysis (similar to tRNAscan version 1.3 operation). This mode of operation is faster (3-5 times faster than default mode analysis), but will result in approximately 0.2 to 0.6 false positive tRNAs per Mbp, decreased sensitivity, and less reliable prediction of anticodons, tRNA isotype, and introns.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -T\":\"\"", 
+                            "perl": "($value) ? \" -T\":\"\"",
                             "python": "(\"\" , \" -T\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Directs tRNAscan-SE to use only tRNAscan to analyze sequences. This mode will default to using 'strict' parameters with tRNAscan analysis (similar to tRNAscan version 1.3 operation). This mode of operation is faster (3-5 times faster than default mode analysis), but will result in approximately 0.2 to 0.6 false positive tRNAs per Mbp, decreased sensitivity, and less reliable prediction of anticodons, tRNA isotype, and introns.</text> </comment>"
-                    }, 
-                    "eufindtrna_only": {
-                        "prompt": "Use EufindtRNA only to search for tRNAs (-E)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trnascan_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use tRNAscan only to analyze sequences (-T)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Since Cove is not being used as a secondary filter to remove false positives, this run mode defaults to 'Normal' parameters which more closely approximates the sensitivity and selectivity of the original algorithm describe by Pavesi and colleagues (see the option -e for a description of the various run modes).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -E\":\"\"", 
+                            "perl": "($value) ? \" -E\":\"\"",
                             "python": "(\"\" , \" -E\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Since Cove is not being used as a secondary filter to remove false positives, this run mode defaults to 'Normal' parameters which more closely approximates the sensitivity and selectivity of the original algorithm describe by Pavesi and colleagues (see the option -e for a description of the various run modes).</text> </comment>"
-                    }, 
-                    "trnascan_mode": {
-                        "prompt": "Strict or relaxed tRNAscan mode (-t)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eufindtrna_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use EufindtRNA only to search for tRNAs (-E)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "S"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "S", 
-                                "label": "Strict (S)"
-                            }, 
-                            {
-                                "value": "R", 
-                                "label": "Relaxed (R)"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Relaxed parameters may give very slightly increased search sensitivity, but increase search time by 20-40 fold.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -t $value\":\"\"", 
+                            "perl": "(defined $value and $value ne $vdef) ? \" -t $value\":\"\"",
                             "python": "(\"\" , \" -t \"+ str(value))[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Relaxed parameters may give very slightly increased search sensitivity, but increase search time by 20-40 fold.</text> </comment>"
-                    }, 
-                    "eufindtrna_mode": {
-                        "prompt": "EufindtRNA mode (-e)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trnascan_mode",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Strict or relaxed tRNAscan mode (-t)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "S"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "S", 
-                                "label": "Strict (S)"
-                            }, 
-                            {
-                                "value": "R", 
-                                "label": "Relaxed (R)"
-                            }, 
-                            {
-                                "value": "N", 
-                                "label": "Normal (N)"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Explicitly set EufindtRNA params, where <mode>= R, N, or S (relaxed, normal, or strict). The 'relaxed' mode is used for EufindtRNA when using tRNAscan-SE in default mode. With relaxed parameters, tRNAs that lack pol III poly-T terminators are not penalized, increasing search sensitivity, but decreasing selectivity. When Cove analysis is being used as a secondary filter for false positives (as in tRNAscan-SE's default mode), overall selectivity is not decreased.Using 'normal' parameters with EufindtRNA does incorporate a log odds score for the distance between the B box and the first poly-T terminator, but does not disqualify tRNAs that do not have a terminator signal within 60 nucleotides. This mode is used by default when Cove analysis is not being used as a secondary false positive filter.Using 'strict' parameters with EufindtRNA also incorporates a log odds score for the distance between the B box and the first poly-T terminator, but _rejects_ tRNAs that do not have such a signal within 60 nucleotides of the end of the B box. This mode most closely approximates the originally published search algorithm (3); sensitivity is reduced relative to using 'relaxed' and 'normal' modes, but selectivity is increased which is important if no secondary filter, such as Cove analysis, is being used to remove false positives. This mode will miss most prokaryotic tRNAs since the poly-T terminator signal is a feature specific to eukaryotic tRNAs genes (always use 'relaxed' mode for scanning prokaryotic sequences for tRNAs).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \" -e $value\":\"\"", 
+                            "perl": "(defined $value) ? \" -e $value\":\"\"",
                             "python": "(\"\" , \" -e \"+ str(value))[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Explicitly set EufindtRNA params, where <mode>= R, N, or S (relaxed, normal, or strict). The 'relaxed' mode is used for EufindtRNA when using tRNAscan-SE in default mode. With relaxed parameters, tRNAs that lack pol III poly-T terminators are not penalized, increasing search sensitivity, but decreasing selectivity. When Cove analysis is being used as a secondary filter for false positives (as in tRNAscan-SE's default mode), overall selectivity is not decreased.</text> <text lang=\"en\">Using 'normal' parameters with EufindtRNA does incorporate a log odds score for the distance between the B box and the first poly-T terminator, but does not disqualify tRNAs that do not have a terminator signal within 60 nucleotides. This mode is used by default when Cove analysis is not being used as a secondary false positive filter.</text> <text lang=\"en\">Using 'strict' parameters with EufindtRNA also incorporates a log odds score for the distance between the B box and the first poly-T terminator, but _rejects_ tRNAs that do not have such a signal within 60 nucleotides of the end of the B box. This mode most closely approximates the originally published search algorithm (3); sensitivity is reduced relative to using 'relaxed' and 'normal' modes, but selectivity is increased which is important if no secondary filter, such as Cove analysis, is being used to remove false positives. This mode will miss most prokaryotic tRNAs since the poly-T terminator signal is a feature specific to eukaryotic tRNAs genes (always use 'relaxed' mode for scanning prokaryotic sequences for tRNAs).</text> </comment>"
-                    }, 
-                    "save_first_pass": {
-                        "prompt": "Save first pass results (-r)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eufindtrna_mode",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "EufindtRNA mode (-e)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Save tabular, formatted output results from tRNAscan and/or EufindtRNA first pass scans. The format is similar to the final tabular output format, except no Cove score is available at this point in the search (if EufindtRNA has detected the tRNA, the negative log likelihood score is given). Also, the sequence ID number and source sequence length appear in the columns where intron bounds are shown in final output. This option may be useful for examining false positive tRNAs predicted by first-pass scans that have been filtered out by Cove analysis.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -r\\\\#\":\"\"", 
+                            "perl": "($value) ? \" -r\\\\#\":\"\"",
                             "python": "(\"\" , \" -r#\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Save tabular, formatted output results from tRNAscan and/or EufindtRNA first pass scans. The format is similar to the final tabular output format, except no Cove score is available at this point in the search (if EufindtRNA has detected the tRNA, the negative log likelihood score is given). Also, the sequence ID number and source sequence length appear in the columns where intron bounds are shown in final output. This option may be useful for examining false positive tRNAs predicted by first-pass scans that have been filtered out by Cove analysis.</text> </comment>"
-                    }, 
-                    "previous_first_pass_result": {
-                        "prompt": "Use a previous first pass result tabular file (-u)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "save_first_pass",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save first pass results (-r)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "TrnaScanFirstPassResult", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
-                        "precond": {
-                            "perl": "$matching or $start", 
-                            "python": "matching and  start"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option allows the user to re-generate results from regions identified to have tRNAs by a previous tRNAscan-SE run. Either a regular tabular result file, or output saved with the -r option may be used as the specified <file>. This option is particularly useful for generating either secondary structure output (-f option) or ACeDB output (-a option) without having to re-scan entire sequences. Alternatively, if the -r option is used to generate the previous results file, tRNAscan-SE will pick up at the stage of Cove-confirmation of tRNAs and output final tRNA predictons as with a normal run.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " (defined $value) ? \" -u $value\":\"\"", 
+                            "perl": "(defined $value) ? \" -u $value\":\"\"",
                             "python": "(\"\" , \" -u \"+ str(value))[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option allows the user to re-generate results from regions identified to have tRNAs by a previous tRNAscan-SE run. Either a regular tabular result file, or output saved with the -r option may be used as the specified <file>. This option is particularly useful for generating either secondary structure output (-f option) or ACeDB output (-a option) without having to re-scan entire sequences. Alternatively, if the -r option is used to generate the previous results file, tRNAscan-SE will pick up at the stage of Cove-confirmation of tRNAs and output final tRNA predictons as with a normal run.</text> </comment>"
-                    }, 
-                    "false_positives": {
-                        "prompt": "Save false positives (-F)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": " ($value) ? \" -F\\\\#\":\"\"", 
-                            "python": "(\"\" , \" -F#\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Save first-pass candidate tRNAs that were then found to be false positives by Cove analysis. This option saves candidate tRNAs found by either tRNAscan and/or EufindtRNA that were then rejected by Cove analysis as being false positives. tRNAs are saved in the FASTA sequence format.</text> </comment>"
-                    }
-                }
-            }, 
-            "specify_options": {
-                "name": "specify_options", 
-                "parameters": {
-                    "cutoff": {
-                        "prompt": "Cove cutoff score for reporting tRNAs (-X)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "20"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -X $value\":\"\"", 
-                            "python": "(\"\" , \" -X \"+ str(value))[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option allows the user to specify a different Cove score threshold for reporting tRNAs. It is not recommended that novice users change this cutoff, as a lower cutoff score will increase the number of pseudogenes and other false positives found by tRNAscan-SE (especially when used with the 'Cove only' scan mode). Conversely, a higher cutoff than 20.0 bits will likely cause true tRNAs to be missed by tRNAscan (numerous 'real' tRNAs have been found just above the 20.0 cutoff). Knowledgable users may wish to experiment with this parameter to find very unusual tRNAs or pseudogenes beyond the normal range of detection with the preceding caveats in mind.</text> </comment>"
-                    }, 
-                    "Length": {
-                        "prompt": "Max length of tRNA intron+variable region (-L)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "116"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value !=$vdef) ? \" -L $value\":\"\"", 
-                            "python": "(\"\" , \" -L \"+ str(value))[ value is not None and value !=vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">Set max length of tRNA intron+variable region (default=116bp). The default maximum tRNA length for tRNAscan-SE is 192 bp, but this limit can be increased with this option to allow searches with no practical limit on tRNA length. In the first phase of tRNAscan-SE, EufindtRNA searches for A and B boxes of <length> maximum distance apart, and passes only the 5' and 3' tRNA ends to covariance model analysis for confirmation (removing the bulk of long intervening sequences). tRNAs containing group I and II introns have been detected by setting this parameter to over 800 bp. Caution: group I or II introns in tRNAs tend to occur in positions other than the canonical position of protein-spliced introns, so tRNAscan-SE mispredicts the intron bounds and anticodon sequence for these cases. tRNA bound predictions, however, have been found to be reliable in these same tRNAs.</text> </comment>"
-                    }, 
-                    "add_to_both_ends": {
-                        "prompt": "Number of nucleotids to add to both ends during first-pass (-z)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "7"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -z $value\" : \"\"", 
-                            "python": "( \"\" , \" -z \"+ str(value) )[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">By default, tRNAscan-SE adds 7 nucleotides to both ends of tRNA predictions when first-pass tRNA predictions are passed to covariance model (CM) analysis. CM analysis generally trims these bounds back down, but on occasion, allows prediction of an otherwise truncated first-pass tRNA prediction.</text> </comment>"
-                    }, 
-                    "genetic": {
-                        "prompt": "Genetic code (-g)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "previous_first_pass_result",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "not $trnascan_only and not $eufindtrna_only", 
-                            "python": "not trnascan_only and not eufindtrna_only "
-                        }, 
-                        "default_value": [
-                            "Standard"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "Standard", 
-                                "label": "Standard"
-                            }, 
-                            {
-                                "value": "gcode.cilnuc", 
-                                "label": " Hexamita Nuclear"
-                            }, 
-                            {
-                                "value": "gcode.echdmito", 
-                                "label": "Echinoderm mitochondrial"
-                            }, 
-                            {
-                                "value": "gcode.invmito", 
-                                "label": "Invertebrate mitochondrial"
-                            }, 
-                            {
-                                "value": "gcode.othmito", 
-                                "label": " Coelenterate mitochondrial"
-                            }, 
-                            {
-                                "value": "gcode.vertmito", 
-                                "label": "Vertebrate mitochondrial"
-                            }, 
-                            {
-                                "value": "gcode.ystmito", 
-                                "label": "Yeast mitochondrial"
-                            }
-                        ], 
+                            "perl": "$matching or $start",
+                            "python": "matching and  start"
+                        },
+                        "prompt": "Use a previous first pass result tabular file (-u)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "TrnaScanFirstPassResult",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Save first-pass candidate tRNAs that were then found to be false positives by Cove analysis. This option saves candidate tRNAs found by either tRNAscan and/or EufindtRNA that were then rejected by Cove analysis as being false positives. tRNAs are saved in the FASTA sequence format.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -g $value\":\"\"", 
+                            "perl": "($value) ? \" -F\\\\#\":\"\"",
+                            "python": "(\"\" , \" -F#\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "false_positives",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save false positives (-F)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "special_options",
+                "precond": null,
+                "prompt": "Special options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option allows the user to specify a different Cove score threshold for reporting tRNAs. It is not recommended that novice users change this cutoff, as a lower cutoff score will increase the number of pseudogenes and other false positives found by tRNAscan-SE (especially when used with the 'Cove only' scan mode). Conversely, a higher cutoff than 20.0 bits will likely cause true tRNAs to be missed by tRNAscan (numerous 'real' tRNAs have been found just above the 20.0 cutoff). Knowledgable users may wish to experiment with this parameter to find very unusual tRNAs or pseudogenes beyond the normal range of detection with the preceding caveats in mind.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -X $value\":\"\"",
+                            "python": "(\"\" , \" -X \"+ str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cutoff",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Cove cutoff score for reporting tRNAs (-X)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set max length of tRNA intron+variable region (default=116bp). The default maximum tRNA length for tRNAscan-SE is 192 bp, but this limit can be increased with this option to allow searches with no practical limit on tRNA length. In the first phase of tRNAscan-SE, EufindtRNA searches for A and B boxes of <length> maximum distance apart, and passes only the 5' and 3' tRNA ends to covariance model analysis for confirmation (removing the bulk of long intervening sequences). tRNAs containing group I and II introns have been detected by setting this parameter to over 800 bp. Caution: group I or II introns in tRNAs tend to occur in positions other than the canonical position of protein-spliced introns, so tRNAscan-SE mispredicts the intron bounds and anticodon sequence for these cases. tRNA bound predictions, however, have been found to be reliable in these same tRNAs.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value !=$vdef) ? \" -L $value\":\"\"",
+                            "python": "(\"\" , \" -L \"+ str(value))[ value is not None and value !=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Length",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Max length of tRNA intron+variable region (-L)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "By default, tRNAscan-SE adds 7 nucleotides to both ends of tRNA predictions when first-pass tRNA predictions are passed to covariance model (CM) analysis.  CM analysis generally trims these bounds back down, but on occasion, allows prediction of an otherwise truncated first-pass tRNA prediction.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -z $value\" : \"\"",
+                            "python": "( \"\" , \" -z \"+ str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "add_to_both_ends",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of nucleotids to add to both ends during first-pass (-z)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option does not have any effect when using the -T or -E options -- you must be running in default or Cove only analysis mode.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -g $value\":\"\"",
                             "python": "(\"\" , \" -g \"+ str(value))[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option does not have any effect when using the -T or -E options -- you must be running in default or Cove only analysis mode.</text> </comment>"
-                    }, 
-                    "covariante": {
-                        "prompt": "Specify an alternate covariance model (-c)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "genetic",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $trnascan_only and not $eufindtrna_only",
+                            "python": "not trnascan_only and not eufindtrna_only"
+                        },
+                        "prompt": "Genetic code (-g)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Text"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " (defined $value) ? \" -c $value\":\"\"", 
+                            "perl": "(defined $value) ? \" -c $value\":\"\"",
                             "python": "(\"\" , \" -c \" + str(value))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "covariante",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Specify an alternate covariance model (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "misc_options": {
-                "name": "misc_options", 
-                "parameters": {
-                    "matching": {
-                        "prompt": "Search only sequences with names matching this string (-n)", 
-                        "type": {
-                            "datatype_class": "String"
-                        }, 
+                ],
+                "comment": null,
+                "name": "specify_options",
+                "precond": null,
+                "prompt": "Specify Alternate Cutoffs / Data Files options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Search only sequences with names matching this string. Only those sequences with names (first non-white space word after '>' symbol on FASTA name/description line) matching this string are analyzed for tRNAs.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " (defined $value) ? \" -n $value\":\"\"", 
-                            "python": "(\"\" , \" -n \"+ str(value))[ value is not None] "
-                        }, 
-                        "comment": "<text lang=\"en\">Search only sequences with names matching this string. Only those sequences with names (first non-white space word after '>' symbol on FASTA name/description line) matching this string are analyzed for tRNAs.</text> </comment>"
-                    }, 
-                    "start": {
-                        "prompt": "Start search at first sequence with name matching this string (-s)", 
+                            "perl": "(defined $value) ? \" -n $value\":\"\"",
+                            "python": "(\"\" , \" -n \"+ str(value))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matching",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Search only sequences with names matching this string (-n)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Start search at first sequence with name matching <EXPR> string and continue to end of input sequence file(s). This may be useful for re-starting crashed/aborted runs at the point where the previous run stopped. (If same names for output file(s) are used, program will ask if files should be over-written or appended to -- choose append and run will successfully be restarted where it left off).",
+                        "ctrl": null,
                         "format": {
-                            "perl": " (defined $value) ? \" -s $value\":\"\"", 
+                            "perl": "(defined $value) ? \" -s $value\":\"\"",
                             "python": "(\"\" , \" -s \"+ str(value))[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Start search at first sequence with name matching <EXPR> string and continue to end of input sequence file(s). This may be useful for re-starting crashed/aborted runs at the point where the previous run stopped. (If same names for output file(s) are used, program will ask if files should be over-written or appended to -- choose append and run will successfully be restarted where it left off).</text> </comment>"
-                    }
-                }
-            }, 
-            "output_options": {
-                "name": "output_options", 
-                "parameters": {
-                    "secondary_structure": {
-                        "prompt": "Save secondary structure results file (-f)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "start",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Start search at first sequence with name matching this string (-s)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "misc_options",
+                "precond": null,
+                "prompt": "Misc options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Save final results and Cove tRNA secondary structure predictions. This output format makes visual inspection of individual tRNA predictions easier since the tRNA sequence is displayed along with the predicted tRNA base pairings.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -f\\\\#\":\"\"", 
+                            "perl": "($value) ? \" -f\\\\#\":\"\"",
                             "python": "(\"\" , \" -f#\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Save final results and Cove tRNA secondary structure predictions. This output format makes visual inspection of individual tRNA predictions easier since the tRNA sequence is displayed along with the predicted tRNA base pairings.</text> </comment>"
-                    }, 
-                    "acedb": {
-                        "prompt": "Output final results in ACeDB format instead of the default tabular format (-a)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "secondary_structure",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save secondary structure results file (-f)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -a\":\"\"", 
+                            "perl": "($value) ? \" -a\":\"\"",
                             "python": "(\"\" , \" -a\")[ value ]"
-                        }
-                    }, 
-                    "statistics": {
-                        "prompt": "Save statistics summary for run (-m)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "acedb",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output final results in ACeDB format instead of the default tabular format (-a)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option directs tRNAscan-SE to write a brief summary to a file which contains the run options selected as well as statistics on the number of tRNAs detected at each phase of the search, search speed, and other bits of information. See Manual documentation for explanation of each statistic.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -m\\\\#\":\"\"", 
+                            "perl": "($value) ? \" -m\\\\#\":\"\"",
                             "python": "(\"\" , \" -m#\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option directs tRNAscan-SE to write a brief summary to a file which contains the run options selected as well as statistics on the number of tRNAs detected at each phase of the search, search speed, and other bits of information. See Manual documentation for explanation of each statistic.</text> </comment>"
-                    }, 
-                    "progress": {
-                        "prompt": "Display program progress (-d)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "statistics",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save statistics summary for run (-m)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Messages indicating which phase of the tRNA search are printed to standard output. If final results are also being sent to standard output, some of these messages will be suppressed so as to not interrupt display of the results.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -d\":\"\"", 
+                            "perl": "($value) ? \" -d\":\"\"",
                             "python": "(\"\" , \" -d\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Messages indicating which phase of the tRNA search are printed to standard output. If final results are also being sent to standard output, some of these messages will be suppressed so as to not interrupt display of the results.</text> </comment>"
-                    }, 
-                    "log": {
-                        "prompt": "Save log of program progress (-l)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "progress",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display program progress (-d)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -l\\\\#\":\"\"", 
+                            "perl": "($value) ? \" -l\\\\#\":\"\"",
                             "python": "(\"\" , \" -l#\")[ value ]"
-                        }
-                    }, 
-                    "quiet": {
-                        "prompt": "Quiet mode (-q)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "log",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save log of program progress (-l)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The credits & run option selections normally printed to standard error at the beginning of each run are suppressed.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -q\":\"\"", 
+                            "perl": "($value) ? \" -q\":\"\"",
                             "python": "(\"\" , \" -q\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">The credits & run option selections normally printed to standard error at the beginning of each run are suppressed.</text> </comment>"
-                    }, 
-                    "brief": {
-                        "prompt": "Use brief output format (-b)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "quiet",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Quiet mode (-q)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This eliminates column headers that appear by default when writing results in tabular output format. Useful if results are to be parsed or piped to another program.",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -b\":\"\"", 
+                            "perl": "($value) ? \" -b\":\"\"",
                             "python": "(\"\" , \" -b\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This eliminates column headers that appear by default when writing results in tabular output format. Useful if results are to be parsed or piped to another program.</text> </comment>"
-                    }, 
-                    "trna_codon": {
-                        "prompt": "Output a tRNA's corresponding codon in place of its anticodon (-N)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "brief",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use brief output format (-b)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value) ? \" -N\":\"\"", 
+                            "perl": "($value) ? \" -N\":\"\"",
                             "python": "(\"\" , \" -N\")[ value ]"
-                        }
-                    }, 
-                    "label": {
-                        "prompt": "Use prefix for all default output file names (-p)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trna_codon",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output a tRNA's corresponding codon in place of its anticodon (-N)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Filename"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " (defined $value) ? \" -p $value\":\"\"", 
+                            "perl": "(defined $value) ? \" -p $value\":\"\"",
                             "python": "(\"\" , \" -p \"+str(value))[ value is not None ]"
-                        }
-                    }, 
-                    "scanners": {
-                        "prompt": "Displays which of the first-pass scanners detected the tRNA being output (-y)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use prefix for all default output file names (-p)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "'Ts', 'Eu', or 'Bo' will appear in the last column of Tabular output, indicating that either tRNAscan 1.4, EufindtRNA, or both scanners detected the tRNA, respectively.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -y\":\"\"", 
+                            "perl": "($value) ? \" -y\":\"\"",
                             "python": "(\"\" , \" -y\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">'Ts', 'Eu', or 'Bo' will appear in the last column of Tabular output, indicating that either tRNAscan 1.4, EufindtRNA, or both scanners detected the tRNA, respectively.</text> </comment>"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "scanners",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Displays which of the first-pass scanners detected the tRNA being output (-y)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "trnascan",
     "outputs": {
-        "parameters": {
-            "results": {
-                "isout": true, 
-                "prompt": "Results files", 
-                "type": {
-                    "datatype_class": "Text"
-                }, 
+        "children": [
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"*.fpos\"", 
+                    "perl": "\"*.fpos\"",
                     "python": "\"*.fpos\""
-                }
-            }, 
-            "first_pass_scan_results": {
-                "isout": true, 
-                "prompt": "First pass scan result", 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Results files",
+                "simple": null,
                 "type": {
-                    "datatype_class": "TrnaScanFirstPassResult", 
-                    "datatype_superclass": "AbstractText"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"*.fpass.out\"", 
+                    "perl": "\"*.fpass.out\"",
                     "python": "\"*.fpass.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "first_pass_scan_results",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "First pass scan result",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "TrnaScanFirstPassResult",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Fichant, G.A. and Burks, C. (1991) Identifying potential tRNA genes in genomic DNA sequences, J. Mol. Biol., 220, 659-671.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Eddy, S.R. and Durbin, R. (1994) RNA sequence analysis using covariance models, Nucl. Acids Res., 22, 2079-2088.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Pavesi, A., Conterio, F., Bolchi, A., Dieci, G., Ottonello, S. (1994) Identification of new eukaryotic tRNA genes in genomic DNA databases by a multistep weight matrix analysis of trnascriptional control regions, Nucl. Acids Res., 22, 1247-1256.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Lowe, T.M. and Eddy, S.R. (1997) tRNAscan-SE: A program for improved detection of transfer RNA genes in genomic sequence, Nucl. Acids Res., 25, 955-964.",
+            "url": null
         }
-    }, 
-    "comment": "<text lang=\"en\">tRNAscan-SE identifies transfer RNA genes in genomic DNA or RNA sequences. It combines the specificity of the Cove probabilistic RNA prediction package (Eddy & Durbin, 1994) with the speed and sensitivity of tRNAscan 1.3 (Fichant & Burks, 1991) plus an implementation of an algorithm described by Pavesi and colleagues (1994) which searches for eukaryotic pol III tRNA promoters (our implementation referred to as EufindtRNA). tRNAscan and EufindtRNA are used as first-pass prefilters to identify \"candidate\" tRNA regions of the sequence. These subsequences are then passed to Cove for further analysis, and output if Cove confirms the initial tRNA prediction. </text> </comment>", 
-    "env": {
-        "name": "MAFFT_BINARIES", 
-        "value": "/usr/lib/mafft/lib/mafft"
-    }
+    ],
+    "source_links": [
+        "ftp://selab.janelia.org/pub/software/tRNAscan-SE/"
+    ],
+    "title": "tRNAscan-SE",
+    "type": "program",
+    "version": "1.23"
 }

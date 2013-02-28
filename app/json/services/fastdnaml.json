@@ -1,1056 +1,1133 @@
 {
-    "type": "program", 
-    "name": "fastdnaml", 
-    "version": "1.2.2", 
-    "title": "fastDNAml", 
-    "description": "<text lang=\"en\">Construction of phylogenetic trees of DNA sequences using maximum likelihood</text> </description>", 
-    "authors": "Olsen, Matsuda, Hagstrom, Overbeek</authors>", 
-    "references": [
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Kabsch,W. and Sander,C. (1983) Biopolymers 22, 2577-2637.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "<{http://www.w3.org/1999/xhtml}a href=\"http://dx.doi.org/10.1371%2Fjournal.pgen.1000256\" target=\"_blank\">Cambray G, Mazel D 2008 Synonymous Genes Explore Different Evolutionary Landscapes. PLoS Genetics 4(11): e1000256 doi:10.1371/journal.pgen.1000256</{http://www.w3.org/1999/xhtml}a> </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1999) Flexible sequence similarity searching with the FASTA3 program package. Methods in Molecular Biology</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson and D. J. Lipman (1988), Improved Tools for Biological Sequence Analysis, PNAS 85:2444-2448</reference>"
-        }, 
-        {
-            "value": "W. R. Pearson (1998) Empirical statistical estimates for sequence similarity searches. In J. Mol. Biol. 276:71-84</reference>"
-        }, 
-        {
-            "value": "Pearson, W. R. (1996) Effective protein sequence comparison. In Meth. Enz., R. F. Doolittle, ed. (San Diego: Academic Press) 266:227-258</reference>"
-        }, 
-        {
-            "value": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.</reference>"
-        }, 
-        {
-            "value": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.</reference>"
+    "authors": "Olsen, Matsuda, Hagstrom, Overbeek",
+    "classifications": [
+        {
+            "classification": "phylogeny:likelihood",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://dialign.gobics.de/download/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "ftp://ftp.cmbi.ru.nl/pub/molbio/software/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://faculty.virginia.edu/wrpearson/fasta/"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://bibiserv.techfak.uni-bielefeld.de/dca/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://dialign.gobics.de/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://swift.cmbi.ru.nl/gv/dssp/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://fasta.bioch.virginia.edu/fasta_www2/fasta_list2.shtml", 
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Construction of phylogenetic trees of DNA sequences using maximum likelihood",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
         "http://iubio.bio.indiana.edu/soft/molbio/evolve/fastdnaml/fastDNAml.html"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/degapseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/density.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/descseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/diffseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/digest.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/distmat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnadist.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotmatcher.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dotpath.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dottup.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawgram.html", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dreg.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/edialign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/einverted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/emowse.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/entret.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/eprimer3.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/equicktandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/etandem.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractalign.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractfeat.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/extractseq.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "sequence:edit", 
-        "genetics:detection", 
-        "alignment:multiple", 
-        "alignment:differences", 
-        "sequence:protein:motifs", 
-        "phylogeny:distance", 
-        "phylogeny:distance", 
-        "phylogeny:parsimony", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "alignment:pairwise:dot_plots", 
-        "phylogeny:display", 
-        "display:tree", 
-        "phylogeny:display", 
-        "display:tree", 
-        "sequence:nucleic:motifs", 
-        "sequence:protein:2D_structure", 
-        "structure:2D_structure", 
-        "alignment:multiple", 
-        "sequence:nucleic:repeats", 
-        "sequence:nucleic:2D_structure", 
-        "structure:2D_structure", 
-        "sequence:nucleic:mutation", 
-        "sequence:protein:composition", 
-        "sequence:edit", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:primers", 
-        "sequence:nucleic:repeats", 
-        "alignment:pairwise:global", 
-        "sequence:nucleic:repeats", 
-        "alignment:multiple", 
-        "sequence:edit", 
-        "sequence:edit:feature_table", 
-        "sequence:edit", 
-        "sequence:formatter", 
-        "database:search:homology", 
-        "phylogeny:likelihood"
-    ], 
-    "command": "fastaRename", 
+    ],
     "inputs": {
-        "parameters": {
-            "fastdnaml": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+        "children": [
+            {
+                "argpos": "1000",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": " $infile.tmp;\" : \"fastDNAml\"", 
-                    "python": " %s.tmp;\" % infile )[bootstrap]"
-                }
-            }, 
-            "clean_tmp": {
-                "ishidden": true, 
+                    "perl": "($bootstrap) ? \"cat > $infile.tmp;\" : \"fastDNAml\"",
+                    "python": "(\"fastDNAml\", \"cat > %s.tmp;\" % infile )[bootstrap]"
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "fastdnaml",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "String"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": " clean_checkpoints\"", 
-                    "python": " clean_checkpoints\""
-                }
-            }, 
-            "infile": {
-                "ismandatory": true, 
-                "prompt": "Sequence Alignment File", 
+                    "perl": "\" && clean_checkpoints\"",
+                    "python": "\" && clean_checkpoints\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "clean_tmp",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "biotype": "DNA", 
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "The input to fastDNAml is similar to that used by DNAML (and the other PHYLIP programs). At least 3 sequences are required.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\"cat $value | \"",
+                    "python": "\"cat \" + str(value) + \" | \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence Alignment File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "PHYLIPI"
                     ]
-                }, 
-                "format": {
-                    "perl": "\"cat $value | \"", 
-                    "python": "\"cat \" + str(value) + \" | \""
-                }, 
-                "comment": "<text lang=\"en\">The input to fastDNAml is similar to that used by DNAML (and the other PHYLIP programs). At least 3 sequences are required.</text> </comment>"
-            }, 
-            "inputopt": {
-                "name": "inputopt", 
-                "parameters": {
-                    "frequencies": {
-                        "prompt": "Use empirical base frequencies derived from the sequence data ?", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(not $value and not ($fA and $fC and $fG and $fT )) ? \"\": \"frequencies $fA $fC $fG $fT | \"", 
+                            "perl": "(not $value and not ($fA and $fC and $fG and $fT )) ? \"\": \"frequencies $fA $fC $fG $fT | \"",
                             "python": "( \"\" ,\"frequencies %s %s %s %s | \" % (str(fA), str(fC), str(fG), str(fT)) )[ not ( value and fA is None and fC is None and fG is None and fT is None) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "frequencies",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use empirical base frequencies derived from the sequence data ?",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
-                    }, 
-                    "user_frequencies": {
-                        "name": "user_frequencies", 
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "fA",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "A frequency",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "fC",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "C frequency",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "fG",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "G frequency",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "fT",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "T frequency",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "user_frequencies",
                         "precond": {
-                            "perl": "not $frequencies", 
+                            "perl": "not $frequencies",
                             "python": "not frequencies"
-                        }, 
-                        "parameters": {
-                            "fA": {
-                                "ismandatory": true, 
-                                "prompt": "A frequency", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }
-                            }, 
-                            "fC": {
-                                "ismandatory": true, 
-                                "prompt": "C frequency", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }
-                            }, 
-                            "fG": {
-                                "ismandatory": true, 
-                                "prompt": "G frequency", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }
-                            }, 
-                            "fT": {
-                                "ismandatory": true, 
-                                "prompt": "T frequency", 
-                                "type": {
-                                    "datatype_class": "Float"
-                                }
-                            }
-                        }
-                    }, 
-                    "transition": {
-                        "prompt": "Transition/transversion ratio", 
-                        "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "2.0"
-                        ], 
+                        },
+                        "prompt": "User bases frequencies (instead of empirical frequencies)"
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "This option can be used before a global or treefile option with auxiliary data.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value!=$vdef) ? \" transition $value | \" : \"\"", 
+                            "perl": "(defined $value and $value!=$vdef) ? \" transition $value | \" : \"\"",
                             "python": "( \"\" , \" transition \" + str(value) + \" | \" )[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option can be used before a global or treefile option with auxiliary data.</text> </comment>"
-                    }, 
-                    "jumble": {
-                        "prompt": "Randomize input order of sequences (jumble)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "transition",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Transition/transversion ratio",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "precond": {
-                            "perl": "not $bootstrap", 
-                            "python": "not bootstrap"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "Note that fastDNAml explores a very small number of alternative tree topologies relative to a typical parsimony program. There is a very real chance that the search procedure will not find the tree topology with the highest likelihood. Altering the order of taxon addition and comparing the trees found is a fairly efficient method for testing convergence. Typically, it would be nice to find the same best tree at least twice (if not three times), as opposed to simply performing some\n              fixed number of jumbles and hoping that at least one of them will be the optimum.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"jumble | \" : \"\"", 
+                            "perl": "($value) ? \"jumble | \" : \"\"",
                             "python": "( \"\" , \"jumble | \" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\"> Note that fastDNAml explores a very small number of alternative tree topologies relative to a typical parsimony program. There is a very real chance that the search procedure will not find the tree topology with the highest likelihood. Altering the order of taxon addition and comparing the trees found is a fairly efficient method for testing convergence. Typically, it would be nice to find the same best tree at least twice (if not three times), as opposed to simply performing some fixed number of jumbles and hoping that at least one of them will be the optimum. </text> </comment>"
-                    }, 
-                    "global_opp": {
-                        "prompt": "Global rearrangements", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "jumble",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "defined $transition or $bootstrap or $jumble", 
-                            "python": "transition is not None or bootstrap or jumble"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \" global \" : \"\"", 
-                            "python": "( \"\" , \" global \")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">The G (global) option has been generalized to permit crossing any number of branches during tree rearrangements. In addition, it is possible to modify the extent of rearrangement explored during the sequential addition phase of tree building.</text> <text lang=\"en\">The G U (global and user tree) option combination instructs the program to find the best of the user trees, and then look for rearrangements that are better still.</text> <text lang=\"en\">If a rearrangement distance is specified, the input must contain a transition option.</text> <text lang=\"en\">The Global option can be used to force branch swapping on user trees, (combination of Global and User Tree(s) options).</text> </comment>"
-                    }, 
-                    "final_arrgt": {
-                        "prompt": "Number of branches to cross in rearrangements of the completed tree", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "(defined $transition or $bootstrap or $jumble) and $global_opp", 
-                            "python": "(transition is not None or bootstrap or jumble) and global_opp"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \" $final_arrgt \" : \"\"", 
-                            "python": "( \"\" , \" %s \" % str(final_arrgt))[ value is not None]"
-                        }
-                    }, 
-                    "partial_arrgt": {
-                        "prompt": "Number of branches to cross in testing rearrangements during the sequential addition phase of tree inference", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "(defined $transition  or $bootstrap or $jumble) and $global_opp", 
-                            "python": "(transition is not None or bootstrap or jumble) and global_opp"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \"$partial_arrgt \" : \"\"", 
-                            "python": "( \"\" , \" %s \" % str(partial_arrgt))[ value is not None]"
-                        }
-                    }, 
-                    "pipe_arrgt": {
-                        "ishidden": true, 
-                        "prompt": "Number of branches to cross in testing rearrangements during the sequential addition phase of tree inference", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "precond": {
-                            "perl": "(defined $transition  or $bootstrap or $jumble) and $global_opp", 
-                            "python": "(transition is not None or bootstrap or jumble) and global_opp"
-                        }, 
-                        "format": {
-                            "perl": "\" | \"", 
-                            "python": "\" | \""
-                        }
-                    }, 
-                    "quickadd": {
-                        "prompt": "Decreases the time in initially placing a new sequence in the growing tree (quickadd)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value)? \"quickadd | \" : \"\"", 
-                            "python": "( \"\" , \" quickadd | \" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">This option greatly decreases the time in initially placing a new sequence in the growing tree (but does not change the time required to subsequently test rearrangements). The overall time savings seems to be about 30%, based on a very limited number of test cases. Its downside, if any, is unknown. This will probably become default program behavior in the near future.</text> <text lang=\"en\">If the analysis is run with a global option of 'G 0 0', so that no rearrangements are permitted, the tree is build very approximately, but very quickly. This may be of greatest interest if the question is, 'Where does this one new sequence fit into this known tree?' The known tree is provided with the restart option, below.</text> <text lang=\"en\">PHYLIP DNAML does not include anything comparable to the quickadd option.</text> </comment>"
-                    }, 
-                    "outgroup": {
-                        "prompt": "Use the specified sequence number as outgroup", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \"outgroup $value | \" : \"\"", 
-                            "python": "( \"\" , \"outgroup \" + str(value) + \" | \" )[ value is not None ]"
-                        }
-                    }
-                }
-            }, 
-            "treeopt": {
-                "name": "treeopt", 
-                "precond": {
-                    "perl": "not $bootstrap", 
-                    "python": "not bootstrap"
-                }, 
-                "parameters": {
-                    "user_tree": {
-                        "prompt": "User tree - tree(s) file", 
-                        "type": {
-                            "datatype_class": "Tree", 
-                            "data_formats": [
-                                "NEWICK"
-                            ]
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \"usertree $value |\" : \"\"", 
-                            "python": "( \"\" , \" usertree %s |\" % str(value) )[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">The trees must be in Newick format, and terminated with a semicolon. (The program also accepts a pseudo_newick format, which is a valid prolog fact.)</text> <text lang=\"en\">The tree reader in this program is more powerful than that in PHYLIP 3.3. In particular, material enclosed in square brackets, [ like this ], is ignored as comments; taxa names can be wrapped in single quotation marks to support the inclusion of characters that would otherwise end the name (i.e., '(', ')', ':', ';', '[', ']', ',' and ' '); names of internal nodes are properly ignored; and exponential notation (such as 1.0E-6) for branch lengths is supported.</text> </comment>"
-                    }, 
-                    "user_lengths": {
-                        "prompt": "User trees to be read with branch lengths", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "precond": {
-                            "perl": "not $bootstrap", 
+                            "perl": "not $bootstrap",
                             "python": "not bootstrap"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \"userlengths |\" : \"\"", 
-                            "python": "( \"\" , \"userlengths |\" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Causes user trees to be read with branch lengths (and it is an error to omit any of them). Without the L option, branch lengths in user trees are not required, and are ignored if present.</text> </comment>"
-                    }
-                }
-            }, 
-            "boot": {
-                "name": "boot", 
-                "parameters": {
-                    "bootstrap": {
-                        "prompt": "Generates a re-sample of the input data (bootstrap)", 
+                        },
+                        "prompt": "Randomize input order of sequences (jumble)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": "The G (global) option has been generalized to permit crossing any number of branches during tree rearrangements. In addition, it is possible to modify the extent of rearrangement explored during the sequential addition phase of tree building.The G U (global and user tree) option combination instructs the program to find the best of the user trees, and then look for rearrangements that are better still.If a rearrangement distance is specified, the input must contain a transition option.The Global option can be used to force branch swapping on user trees, (combination of Global and User Tree(s) options).",
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" fastdnaml \" : \"\"", 
-                            "python": "( \"\" , \" fastdnaml \" )[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Tree files will be summarized in one '.tree' file as well as output files in one '.out' file</text> </comment>"
-                    }, 
-                    "bootopt": {
-                        "name": "bootopt", 
+                            "perl": "($value) ? \" global \" : \"\"",
+                            "python": "( \"\" , \" global \")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "global_opp",
+                        "paramfile": null,
                         "precond": {
-                            "perl": "$bootstrap", 
-                            "python": "bootstrap"
-                        }, 
-                        "parameters": {
-                            "nboots": {
-                                "prompt": "Number of different bootstrap samples", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
-                                "default_value": [
-                                    "1"
-                                ], 
-                                "format": {
-                                    "perl": "(defined $value and $value != $vdef) ? \" -boots $value\" : \"\"", 
-                                    "python": "( \"\" , \" -boots \" + str(value) )[ value is not None and value != vdef]"
-                                }, 
+                            "perl": "defined $transition or $bootstrap or $jumble",
+                            "python": "transition is not None or bootstrap or jumble"
+                        },
+                        "prompt": "Global rearrangements",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" $final_arrgt \" : \"\"",
+                            "python": "( \"\" , \" %s \" % str(final_arrgt))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "final_arrgt",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "(defined $transition or $bootstrap or $jumble) and $global_opp",
+                            "python": "(transition is not None or bootstrap or jumble) and global_opp"
+                        },
+                        "prompt": "Number of branches to cross in rearrangements of the completed tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"$partial_arrgt \" : \"\"",
+                            "python": "( \"\" , \" %s \" % str(partial_arrgt))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "partial_arrgt",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "(defined $transition  or $bootstrap or $jumble) and $global_opp",
+                            "python": "(transition is not None or bootstrap or jumble) and global_opp"
+                        },
+                        "prompt": "Number of branches to cross in testing rearrangements during the sequential addition phase of tree inference",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" | \"",
+                            "python": "\" | \""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pipe_arrgt",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "(defined $transition  or $bootstrap or $jumble) and $global_opp",
+                            "python": "(transition is not None or bootstrap or jumble) and global_opp"
+                        },
+                        "prompt": "Number of branches to cross in testing rearrangements during the sequential addition phase of tree inference",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "This option greatly decreases the time in initially placing a new sequence in the growing tree (but does not change the time required to subsequently test rearrangements). The overall time savings seems to be about 30%, based on a very limited number of test cases. Its downside, if any, is unknown. This will probably become default program behavior in the near future.If the analysis is run with a global option of 'G 0 0', so that no rearrangements are permitted, the tree is build very approximately, but very quickly. This may be of greatest interest if the question is, 'Where does this one new sequence fit into this known tree?' The known tree is provided with the restart option, below.PHYLIP DNAML does not include anything comparable to the quickadd option.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \"quickadd | \" : \"\"",
+                            "python": "( \"\" , \" quickadd | \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "quickadd",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Decreases the time in initially placing a new sequence in the growing tree (quickadd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"outgroup $value | \" : \"\"",
+                            "python": "( \"\" , \"outgroup \" + str(value) + \" | \" )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outgroup",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use the specified sequence number as outgroup",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "inputopt",
+                "precond": null,
+                "prompt": "Input Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "The trees must be in Newick format, and terminated with a semicolon. (The program also accepts a pseudo_newick format, which is a valid prolog fact.)The tree reader in this program is more powerful than that in PHYLIP 3.3. In particular, material enclosed in square brackets, [ like this ], is ignored as comments; taxa names can be wrapped in single quotation marks to support the inclusion of characters that would otherwise end the name (i.e., '(', ')', ':', ';', '[', ']', ',' and ' '); names of internal nodes are properly ignored; and exponential notation (such as 1.0E-6) for branch lengths is supported.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"usertree $value |\" : \"\"",
+                            "python": "( \"\" , \" usertree %s |\" % str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "user_tree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "User tree - tree(s) file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Causes user trees to be read with branch lengths (and it is an error to omit any of them). Without the L option, branch lengths in user trees are not required, and are ignored if present.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"userlengths |\" : \"\"",
+                            "python": "( \"\" , \"userlengths |\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "user_lengths",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $bootstrap",
+                            "python": "not bootstrap"
+                        },
+                        "prompt": "User trees to be read with branch lengths",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "This options allows you to enter your own trees and instructs the program to evaluate them.",
+                "name": "treeopt",
+                "precond": {
+                    "perl": "not $bootstrap",
+                    "python": "not bootstrap"
+                },
+                "prompt": "User input Tree Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1001",
+                        "command": false,
+                        "comment": "Tree files will be summarized in one '.tree' file as well as output files in one '.out' file",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" fastdnaml \" : \"\"",
+                            "python": "( \"\" , \" fastdnaml \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bootstrap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Generates a re-sample of the input data (bootstrap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "1002",
+                                "command": false,
+                                "comment": null,
                                 "ctrl": {
-                                    "perl": "= 1000", 
-                                    "python": "= 1000"
-                                }
-                            }, 
-                            "bootstrap_seed": {
-                                "prompt": "Random number seed for first bootstrap", 
-                                "type": {
-                                    "datatype_class": "Integer"
-                                }, 
+                                    "perl": "$value <= 1000",
+                                    "python": "value <= 1000"
+                                },
                                 "format": {
-                                    "perl": "(defined $value) ? \" -seed $value\" : \"\"", 
+                                    "perl": "(defined $value and $value != $vdef) ? \" -boots $value\" : \"\"",
+                                    "python": "( \"\" , \" -boots \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "nboots",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Number of different bootstrap samples",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "1002",
+                                "command": false,
+                                "comment": "Warning: For a given random number seed, the sample will always be the same.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value) ? \" -seed $value\" : \"\"",
                                     "python": "( \"\" , \" -seed \" + str(value) )[ value is not None ]"
-                                }, 
-                                "comment": "<text lang=\"en\">Warning: For a given random number seed, the sample will always be the same.</text> </comment>"
-                            }, 
-                            "bootstrap_maxjumble": {
-                                "prompt": "Maximum attempts at replicating inferred tree (max jumble)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "bootstrap_seed",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Random number seed for first bootstrap",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Integer"
-                                }, 
-                                "precond": {
-                                    "perl": "$bootstrap", 
-                                    "python": "bootstrap"
-                                }, 
-                                "default_value": [
-                                    "10"
-                                ], 
-                                "format": {
-                                    "perl": "(defined $value and $value != $vdef) ? \" -jumble $value\" : \"\"", 
-                                    "python": "( \"\" , \" -jumble \" + str(value) )[ value is not None and value != vdef]"
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
                                 }
-                            }, 
-                            "in_bootfile": {
-                                "ishidden": true, 
-                                "type": {
-                                    "datatype_class": "String"
-                                }, 
+                            },
+                            {
+                                "argpos": "1002",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "\" $infile.tmp\"", 
+                                    "perl": "(defined $value and $value != $vdef) ? \" -jumble $value\" : \"\"",
+                                    "python": "( \"\" , \" -jumble \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "bootstrap_maxjumble",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$bootstrap",
+                                    "python": "bootstrap"
+                                },
+                                "prompt": "Maximum attempts at replicating inferred tree (max jumble)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "1003",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\" $infile.tmp\"",
                                     "python": "\" %s.tmp\" % str(infile)"
+                                },
+                                "hidden": true,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "in_bootfile",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": null,
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
                                 }
                             }
-                        }
+                        ],
+                        "comment": null,
+                        "name": "bootopt",
+                        "precond": {
+                            "perl": "$bootstrap",
+                            "python": "bootstrap"
+                        },
+                        "prompt": "Bootstrap options"
                     }
-                }
-            }, 
-            "output_opt": {
-                "name": "output_opt", 
-                "parameters": {
-                    "outfile": {
-                        "prompt": "Output File", 
-                        "type": {
-                            "datatype_class": "Filename"
-                        }, 
-                        "precond": {
-                            "perl": "not $bootstrap", 
-                            "python": "not bootstrap"
-                        }, 
+                ],
+                "comment": null,
+                "name": "boot",
+                "precond": null,
+                "prompt": "Bootstrap"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1010",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " $outfile\" : \"\"", 
-                            "python": " \" + str(outfile) )[ value is not None ]"
+                            "perl": "(defined $value and $value ne $vdef) ? \" > $outfile\" : \"\"",
+                            "python": "( \"\" , \" > \" + str(outfile) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $bootstrap",
+                            "python": "not bootstrap"
+                        },
+                        "prompt": "Output File",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
-                    }, 
-                    "treefile": {
-                        "prompt": "Save tree in treefile", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "precond": {
-                            "perl": "not $bootstrap", 
-                            "python": "not bootstrap"
-                        }, 
-                        "default_value": [
-                            "1"
-                        ], 
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"\" : \"treefile | \"", 
+                            "perl": "($value) ? \"\" : \"treefile | \"",
                             "python": "( \"treefile | \", \"\" )[ value ]"
-                        }
-                    }, 
-                    "printdata": {
-                        "prompt": "Print the input alignment at start of run (printdata)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "treefile",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $bootstrap",
+                            "python": "not bootstrap"
+                        },
+                        "prompt": "Save tree in treefile",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \"printdata | \" : \"\"", 
+                            "perl": "($value) ? \"printdata | \" : \"\"",
                             "python": "( \"\" , \"printdata | \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "printdata",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Print the input alignment at start of run (printdata)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "categopt": {
-                "name": "categopt", 
-                "parameters": {
-                    "categories": {
-                        "prompt": "Rate categories file (user-specified)", 
-                        "type": {
-                            "datatype_class": "PhylipCategoriesRates", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
+                ],
+                "comment": null,
+                "name": "output_opt",
+                "precond": null,
+                "prompt": "Output and Results Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "The data must have the format specified for PHYLIP dnaml 3.3. The first line must be the letter C, followed by the number of categories (a number in the range 1 through 35), and then a blank-separated list of the rates for each category. (The list can take more than one line; the program reads until it finds the specified number of rate values.) The next line should be the word Categories followed by one rate category character per sequence position. The categories 1 - 35 are\n              represented by the series 1, 2, 3, ..., 8, 9, A, B, C, ..., Y, Z. These latter data can be on one or more lines. For example:C 12 0.0625 0.125 0.25 0.5 1 2 4 8 16 32 64 128Categories 5111136343678975AAA8949995566778888889AAAAAA9239898629AAAAA9Category 'numbers' are ordered: 1, 2, 3, ..., 9, A, B, ..., Y, Z. Category zero (undefined rate) is permitted at sites with a zero in a user-supplied weighting mask.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \"categories $value |\" : \"\"", 
+                            "perl": "(defined $value) ? \"categories $value |\" : \"\"",
                             "python": "( \"\" , \"categories \"+ str(value) + \" |\" )[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\"> The data must have the format specified for PHYLIP dnaml 3.3. The first line must be the letter C, followed by the number of categories (a number in the range 1 through 35), and then a blank-separated list of the rates for each category. (The list can take more than one line; the program reads until it finds the specified number of rate values.) The next line should be the word Categories followed by one rate category character per sequence position. The categories 1 - 35 are represented by the series 1, 2, 3, ..., 8, 9, A, B, C, ..., Y, Z. These latter data can be on one or more lines. For example: </text> <text lang=\"en\">C 12 0.0625 0.125 0.25 0.5 1 2 4 8 16 32 64 128</text> <text lang=\"en\">Categories 5111136343678975AAA8949995566778888889AAAAAA9239898629AAAAA9</text> <text lang=\"en\">Category 'numbers' are ordered: 1, 2, 3, ..., 9, A, B, ..., Y, Z. Category zero (undefined rate) is permitted at sites with a zero in a user-supplied weighting mask.</text> </comment>"
-                    }, 
-                    "weights": {
-                        "prompt": "Weights file (user-specified column weighting information)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "categories",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Rate categories file (user-specified)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "PhylipWeight", 
-                            "datatype_superclass": "AbstractText"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PhylipCategoriesRates",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "example:Weights 111111111111001100000100011111100000000000000110000110000000In case of bootstrap, only positions that have nonzero weights are used in computing the bootstrap sample.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \"weights $value |\" : \"\"", 
+                            "perl": "(defined $value) ? \"weights $value |\" : \"\"",
                             "python": "( \"\" , \"weights \" + str(value) + \" |\" )[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">example:</text> <text lang=\"en\">Weights 111111111111001100000100011111100000000000000110000110000000</text> <text lang=\"en\">In case of bootstrap, only positions that have nonzero weights are used in computing the bootstrap sample.</text> </comment>"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "weights",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Weights file (user-specified column weighting information)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PhylipWeight",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "categopt",
+                "precond": null,
+                "prompt": "Categories and Weights Options"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "fastdnaml",
     "outputs": {
-        "parameters": {
-            "output_opt": {
-                "name": "output_opt", 
-                "parameters": {
-                    "outputfile": {
-                        "isstdout": true, 
-                        "prompt": "Output(s) file", 
-                        "type": {
-                            "datatype_class": "Report"
-                        }, 
-                        "precond": {
-                            "perl": "not $bootstrap and not defined $outfile", 
-                            "python": "not bootstrap and outfile is None"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"fastdnaml.out\"", 
+                            "perl": "\"fastdnaml.out\"",
                             "python": "\"fastdnaml.out\""
-                        }
-                    }, 
-                    "outputfile_name": {
-                        "isout": true, 
-                        "prompt": "Output(s) file", 
-                        "type": {
-                            "datatype_class": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outputfile",
+                        "output_type": "stdout",
                         "precond": {
-                            "perl": "not $bootstrap and defined $outfile", 
-                            "python": "not bootstrap and outfile is not None"
-                        }, 
+                            "perl": "not $bootstrap and not defined $outfile",
+                            "python": "not bootstrap and outfile is None"
+                        },
+                        "prompt": "Output(s) file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Report",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"$outfile\"", 
+                            "perl": "\"$outfile\"",
                             "python": "str(outfile)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outputfile_name",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "not $bootstrap and defined $outfile",
+                            "python": "not bootstrap and outfile is not None"
+                        },
+                        "prompt": "Output(s) file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Report",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "treefiles": {
-                "isout": true, 
-                "prompt": "Tree file", 
-                "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
-                        "NEWICK"
-                    ]
-                }, 
-                "precond": {
-                    "perl": "not $bootstrap", 
-                    "python": "not bootstrap"
-                }, 
+                ],
+                "comment": null,
+                "name": "output_opt",
+                "precond": null,
+                "prompt": "Output and Results Options"
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"_treefile.[0-9]*\"", 
+                    "perl": "\"_treefile.[0-9]*\"",
                     "python": "\"_treefile.[0-9]*\""
-                }
-            }, 
-            "bootstrap_report": {
-                "isout": true, 
-                "prompt": "Bootstrap output report", 
-                "type": {
-                    "datatype_class": "Report"
-                }, 
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefiles",
+                "output_type": "file",
                 "precond": {
-                    "perl": "$bootstrap", 
-                    "python": "bootstrap"
-                }, 
-                "filenames": {
-                    "perl": "\"$infile.tmp.out\"", 
-                    "python": "\"%s.tmp.out\" % str(infile)"
-                }
-            }, 
-            "bootstrap_tree": {
-                "isout": true, 
-                "prompt": "Bootstrap tree file", 
+                    "perl": "not $bootstrap",
+                    "python": "not bootstrap"
+                },
+                "prompt": "Tree file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "NEWICK"
                     ]
-                }, 
-                "precond": {
-                    "perl": "$bootstrap", 
-                    "python": "bootstrap"
-                }, 
-                "filenames": {
-                    "perl": "\"$infile.tmp.tree\"", 
-                    "python": "\"%s.tmp.tree\" % str(infile)"
                 }
-            }, 
-            "bootstrap_aln": {
-                "isout": true, 
-                "prompt": "Bootstrap alignment file", 
-                "type": {
-                    "datatype_class": "Alignment"
-                }, 
-                "precond": {
-                    "perl": "$bootstrap", 
-                    "python": "bootstrap"
-                }, 
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"$infile.tmp\"", 
+                    "perl": "\"$infile.tmp.out\"",
+                    "python": "\"%s.tmp.out\" % str(infile)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "bootstrap_report",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$bootstrap",
+                    "python": "bootstrap"
+                },
+                "prompt": "Bootstrap output report",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Report",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"$infile.tmp.tree\"",
+                    "python": "\"%s.tmp.tree\" % str(infile)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "bootstrap_tree",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$bootstrap",
+                    "python": "bootstrap"
+                },
+                "prompt": "Bootstrap tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"$infile.tmp\"",
                     "python": "\"%s.tmp\" % str(infile)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "bootstrap_aln",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$bootstrap",
+                    "python": "bootstrap"
+                },
+                "prompt": "Bootstrap alignment file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R. 1994. fastDNAml: A tool for construction of phylogenetic trees of DNA sequences using maximum likelihood. Comput. Appl. Biosci. 10: 41-48.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Felsenstein, J. 1981. Evolutionary trees from DNA sequences: A maximum likelihood approach. J. Mol. Evol. 17: 368-376.",
+            "url": null
         }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div > Due to an incompatibility between the PHYLIP format and phyml and morePhyml named rules, the using of long identifier in phyml or morePhyml failed. We proposed the following workaround: <{http://www.w3.org/1999/xhtml}ol > <{http://www.w3.org/1999/xhtml}li >use fastaRename to generate an alignment with short ID and a file of ID mapping</{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li >perform your analysis with the alignment with short id</{http://www.w3.org/1999/xhtml}li> <{http://www.w3.org/1999/xhtml}li >replace the short IDs in your tree (in NEWICK format) with nw_rename and the file of IDs mapping generated at the step 1.</{http://www.w3.org/1999/xhtml}li> </{http://www.w3.org/1999/xhtml}ol> </{http://www.w3.org/1999/xhtml}div> </comment>"
+    ],
+    "source_links": [],
+    "title": "fastDNAml",
+    "type": "program",
+    "version": "1.2.2"
 }

@@ -1,127 +1,136 @@
 {
-    "type": "program", 
-    "name": "bionj", 
-    "version": "1.0", 
-    "title": "BIONJ", 
-    "description": "<text lang=\"en\">Neighbor Joining algorithm improved for molecular sequences</text> </description>", 
-    "authors": "O. Gascuel</authors>", 
-    "references": [
+    "authors": "O. Gascuel",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
+            "classification": "phylogeny:distance",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
+    ],
+    "command": {
+        "path": null,
+        "value": "bionj"
+    },
+    "comment": null,
+    "description": "Neighbor Joining algorithm improved for molecular sequences",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
         "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance"
-    ], 
-    "command": "bionj", 
+    ],
     "inputs": {
-        "parameters": {
-            "infile": {
-                "ismandatory": true, 
-                "prompt": "Distances matrix File", 
-                "type": {
-                    "datatype_class": "PhylipDistanceMatrix", 
-                    "datatype_superclass": "AbstractText"
-                }, 
+        "children": [
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Enter a matrix in Phylip format.This algorithm is adapted to evolutive\n\t  distances calculated from molecular data sequences (O. Gascuel,\n\t  1997, MBE 14(7), 685-695).If only one data matrix is given, then BIONJ\n\t    returns one tree. When the input file contains several matrices\n\t    given one after the other, as obtained when combining PHYLIP's\n\t    SEQBOOT and DNADIST to perform a bootstrap, BIONJ returns the\n\t    same number of trees, written one after the other in the output\n\t    file; this file may be given to PHYLIP's CONSENSE to obtain the\n\t    bootstrap tree.",
+                "ctrl": null,
                 "format": {
-                    "perl": "\" $value\"", 
+                    "perl": "\" $value\"",
                     "python": "\" \"+str(value)"
-                }, 
-                "comment": "<text lang=\"en\">Enter a matrix in Phylip format.</text> <text lang=\"en\">This algorithm is adapted to evolutive distances calculated from molecular data sequences (O. Gascuel, 1997, MBE 14(7), 685-695).</text> <text lang=\"en\">If only one data matrix is given, then BIONJ returns one tree. When the input file contains several matrices given one after the other, as obtained when combining PHYLIP's SEQBOOT and DNADIST to perform a bootstrap, BIONJ returns the same number of trees, written one after the other in the output file; this file may be given to PHYLIP's CONSENSE to obtain the bootstrap tree.</text> </comment>"
-            }, 
-            "treefile_name": {
-                "prompt": "Name of Tree File ", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Distances matrix File",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Filename"
-                }, 
-                "default_value": [
-                    "treefile"
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PhylipDistanceMatrix",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" $value\"", 
+                    "perl": "\" $value\"",
                     "python": "\" \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "treefile_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Name of Tree File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "bionj",
     "outputs": {
-        "parameters": {
-            "treefile": {
-                "isout": true, 
-                "prompt": "Tree File", 
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "$treefile_name",
+                    "python": "str(treefile_name)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Tree File",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Tree", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "NEWICK"
                     ]
-                }, 
-                "filenames": {
-                    "perl": "$treefile_name", 
-                    "python": "str(treefile_name)"
                 }
             }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695",
+            "url": null
         }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+    ],
+    "source_links": [
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/"
+    ],
+    "title": "BIONJ",
+    "type": "program",
+    "version": null
 }

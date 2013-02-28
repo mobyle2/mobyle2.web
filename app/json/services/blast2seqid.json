@@ -1,159 +1,167 @@
 {
-    "type": "program", 
-    "name": "blast2seqid", 
-    "version": "1.0", 
-    "title": "blast2seqid", 
-    "description": "<text lang=\"en\">Extract sequence Ids from blast hits (in USA format)</text> </description>", 
-    "authors": "Bertrand N\u00e9ron</authors>", 
-    "references": [
+    "authors": "Bertrand N\u00e9ron",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+            "classification": "database:search:display",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
+    ],
+    "command": {
+        "path": null,
+        "value": "blast2usa"
+    },
+    "comment": "Extract the Identifier and Data Bank of the hits\n                    from the summary of a blast report ( in text format -m 0-6 ) \n                    The result is in USA list format.",
+    "description": "Extract sequence Ids from blast hits (in USA format)",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
         "https://projets.pasteur.fr/projects/show/blast2usa"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display"
-    ], 
-    "command": "blast2usa", 
+    ],
     "inputs": {
-        "parameters": {
-            "infile": {
-                "ismandatory": true, 
-                "prompt": "BLAST text report", 
-                "type": {
-                    "datatype_class": "BlastTextReport", 
-                    "datatype_superclass": "Report"
-                }, 
+        "children": [
+            {
+                "argpos": "40",
+                "command": false,
+                "comment": "A blast output in pairwise format ( option -m 0 default ).",
+                "ctrl": null,
                 "format": {
-                    "perl": "\" $value\"", 
+                    "perl": "\" $value\"",
                     "python": "\" \"+str(value)"
-                }, 
-                "comment": "<text lang=\"en\"> A blast output in pairwise format ( option -m 0 default ). </text> </comment>"
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "From": {
-                        "prompt": "ignore the hits until the hit n (integer)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "BLAST text report",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BlastTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \" --from $value\" : \"\"", 
+                            "perl": "(defined $value) ? \" --from $value\" : \"\"",
                             "python": "( \"\" , \" --from \" + str(value) )[value is not None]"
-                        }
-                    }, 
-                    "To": {
-                        "prompt": "ignore the hits after the hit n (integer)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "From",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "ignore the hits until the hit n (integer)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value) ? \" --to $value\" : \"\"", 
+                            "perl": "(defined $value) ? \" --to $value\" : \"\"",
                             "python": "( \"\" , \" --to \" + str(value) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "To",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "ignore the hits after the hit n (integer)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "blast2seqid",
     "outputs": {
-        "parameters": {
-            "id_list": {
-                "isstdout": true, 
-                "prompt": "hits identifier", 
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"blast2seqid.out\"",
+                    "python": "\"blast2seqid.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "id_list",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "hits identifier",
+                "simple": null,
                 "type": {
-                    "datatype_class": "GenesId", 
-                    "datatype_superclass": "AbstractText", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "GenesId",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "USAList"
                     ]
-                }, 
-                "filenames": {
-                    "perl": "\"blast2seqid.out\"", 
-                    "python": "\"blast2seqid.out\""
                 }
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\"> Extract the Identifier and Data Bank of the hits from the summary of a blast report ( in text format -m 0-6 ) The result is in USA list format. </text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "https://projets.pasteur.fr/projects/list_files/blast2usa"
+    ],
+    "title": "blast2seqid",
+    "type": "program",
+    "version": "1.0"
 }

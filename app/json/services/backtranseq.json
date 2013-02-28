@@ -1,1200 +1,260 @@
 {
-    "type": "program", 
-    "name": "backtranseq", 
-    "version": "6.3.1", 
-    "title": "backtranseq", 
-    "description": "<text lang=\"en\">Back-translate a protein sequence to a nucleotide sequence</text> </description>", 
-    "authors": "Rice,P. Longden,I. and Bleasby, A.</authors>", 
-    "references": [
+    "authors": null,
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
+            "classification": "sequence:nucleic:translation",
+            "type": "mobyle1"
+        },
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "sequence:protein:composition",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": "backtranseq"
+    },
+    "comment": null,
+    "description": "Back-translate a protein sequence to a nucleotide sequence",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html",
         "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition"
-    ], 
-    "command": "backtranseq", 
+    ],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "e_input": {
-                "name": "e_input", 
-                "parameters": {
-                    "e_sequence": {
-                        "ismandatory": true, 
-                        "prompt": "sequence option", 
-                        "type": {
-                            "biotype": "Protein", 
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "EMBL", 
-                                "FASTA", 
-                                "GCG", 
-                                "GENBANK", 
-                                "NBRF", 
-                                "PIR", 
-                                "RAW", 
-                                "SWISSPROT", 
-                                "GFF"
-                            ], 
-                            "card": "1,n"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
-                        }
-                    }, 
-                    "e_cfile": {
-                        "prompt": "cfile option", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "Ehuman.cut"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "Eacc.cut", 
-                                "label": "Eacc.cut"
-                            }, 
-                            {
-                                "value": "Eacica.cut", 
-                                "label": "Eacica.cut"
-                            }, 
-                            {
-                                "value": "Eadenovirus5.cut", 
-                                "label": "Eadenovirus5.cut"
-                            }, 
-                            {
-                                "value": "Eadenovirus7.cut", 
-                                "label": "Eadenovirus7.cut"
-                            }, 
-                            {
-                                "value": "Eagrtu.cut", 
-                                "label": "Eagrtu.cut"
-                            }, 
-                            {
-                                "value": "Eaidlav.cut", 
-                                "label": "Eaidlav.cut"
-                            }, 
-                            {
-                                "value": "Eanasp.cut", 
-                                "label": "Eanasp.cut"
-                            }, 
-                            {
-                                "value": "Eani.cut", 
-                                "label": "Eani.cut"
-                            }, 
-                            {
-                                "value": "Eani_h.cut", 
-                                "label": "Eani_h.cut"
-                            }, 
-                            {
-                                "value": "Eanidmit.cut", 
-                                "label": "Eanidmit.cut"
-                            }, 
-                            {
-                                "value": "Earath.cut", 
-                                "label": "Earath.cut"
-                            }, 
-                            {
-                                "value": "Easn.cut", 
-                                "label": "Easn.cut"
-                            }, 
-                            {
-                                "value": "Eath.cut", 
-                                "label": "Eath.cut"
-                            }, 
-                            {
-                                "value": "Eatu.cut", 
-                                "label": "Eatu.cut"
-                            }, 
-                            {
-                                "value": "Eavi.cut", 
-                                "label": "Eavi.cut"
-                            }, 
-                            {
-                                "value": "Eazovi.cut", 
-                                "label": "Eazovi.cut"
-                            }, 
-                            {
-                                "value": "Ebacme.cut", 
-                                "label": "Ebacme.cut"
-                            }, 
-                            {
-                                "value": "Ebacst.cut", 
-                                "label": "Ebacst.cut"
-                            }, 
-                            {
-                                "value": "Ebacsu.cut", 
-                                "label": "Ebacsu.cut"
-                            }, 
-                            {
-                                "value": "Ebacsu_high.cut", 
-                                "label": "Ebacsu_high.cut"
-                            }, 
-                            {
-                                "value": "Ebja.cut", 
-                                "label": "Ebja.cut"
-                            }, 
-                            {
-                                "value": "Ebly.cut", 
-                                "label": "Ebly.cut"
-                            }, 
-                            {
-                                "value": "Ebme.cut", 
-                                "label": "Ebme.cut"
-                            }, 
-                            {
-                                "value": "Ebmo.cut", 
-                                "label": "Ebmo.cut"
-                            }, 
-                            {
-                                "value": "Ebna.cut", 
-                                "label": "Ebna.cut"
-                            }, 
-                            {
-                                "value": "Ebommo.cut", 
-                                "label": "Ebommo.cut"
-                            }, 
-                            {
-                                "value": "Ebov.cut", 
-                                "label": "Ebov.cut"
-                            }, 
-                            {
-                                "value": "Ebovin.cut", 
-                                "label": "Ebovin.cut"
-                            }, 
-                            {
-                                "value": "Ebovsp.cut", 
-                                "label": "Ebovsp.cut"
-                            }, 
-                            {
-                                "value": "Ebpphx.cut", 
-                                "label": "Ebpphx.cut"
-                            }, 
-                            {
-                                "value": "Ebraja.cut", 
-                                "label": "Ebraja.cut"
-                            }, 
-                            {
-                                "value": "Ebrana.cut", 
-                                "label": "Ebrana.cut"
-                            }, 
-                            {
-                                "value": "Ebrare.cut", 
-                                "label": "Ebrare.cut"
-                            }, 
-                            {
-                                "value": "Ebst.cut", 
-                                "label": "Ebst.cut"
-                            }, 
-                            {
-                                "value": "Ebsu.cut", 
-                                "label": "Ebsu.cut"
-                            }, 
-                            {
-                                "value": "Ebsu_h.cut", 
-                                "label": "Ebsu_h.cut"
-                            }, 
-                            {
-                                "value": "Ecac.cut", 
-                                "label": "Ecac.cut"
-                            }, 
-                            {
-                                "value": "Ecaeel.cut", 
-                                "label": "Ecaeel.cut"
-                            }, 
-                            {
-                                "value": "Ecal.cut", 
-                                "label": "Ecal.cut"
-                            }, 
-                            {
-                                "value": "Ecanal.cut", 
-                                "label": "Ecanal.cut"
-                            }, 
-                            {
-                                "value": "Ecanfa.cut", 
-                                "label": "Ecanfa.cut"
-                            }, 
-                            {
-                                "value": "Ecaucr.cut", 
-                                "label": "Ecaucr.cut"
-                            }, 
-                            {
-                                "value": "Eccr.cut", 
-                                "label": "Eccr.cut"
-                            }, 
-                            {
-                                "value": "Ecel.cut", 
-                                "label": "Ecel.cut"
-                            }, 
-                            {
-                                "value": "Echi.cut", 
-                                "label": "Echi.cut"
-                            }, 
-                            {
-                                "value": "Echick.cut", 
-                                "label": "Echick.cut"
-                            }, 
-                            {
-                                "value": "Echicken.cut", 
-                                "label": "Echicken.cut"
-                            }, 
-                            {
-                                "value": "Echisp.cut", 
-                                "label": "Echisp.cut"
-                            }, 
-                            {
-                                "value": "Echk.cut", 
-                                "label": "Echk.cut"
-                            }, 
-                            {
-                                "value": "Echlre.cut", 
-                                "label": "Echlre.cut"
-                            }, 
-                            {
-                                "value": "Echltr.cut", 
-                                "label": "Echltr.cut"
-                            }, 
-                            {
-                                "value": "Echmp.cut", 
-                                "label": "Echmp.cut"
-                            }, 
-                            {
-                                "value": "Echnt.cut", 
-                                "label": "Echnt.cut"
-                            }, 
-                            {
-                                "value": "Echos.cut", 
-                                "label": "Echos.cut"
-                            }, 
-                            {
-                                "value": "Echzm.cut", 
-                                "label": "Echzm.cut"
-                            }, 
-                            {
-                                "value": "Echzmrubp.cut", 
-                                "label": "Echzmrubp.cut"
-                            }, 
-                            {
-                                "value": "Ecloab.cut", 
-                                "label": "Ecloab.cut"
-                            }, 
-                            {
-                                "value": "Ecpx.cut", 
-                                "label": "Ecpx.cut"
-                            }, 
-                            {
-                                "value": "Ecre.cut", 
-                                "label": "Ecre.cut"
-                            }, 
-                            {
-                                "value": "Ecrigr.cut", 
-                                "label": "Ecrigr.cut"
-                            }, 
-                            {
-                                "value": "Ecrisp.cut", 
-                                "label": "Ecrisp.cut"
-                            }, 
-                            {
-                                "value": "Ectr.cut", 
-                                "label": "Ectr.cut"
-                            }, 
-                            {
-                                "value": "Ecyapa.cut", 
-                                "label": "Ecyapa.cut"
-                            }, 
-                            {
-                                "value": "Edayhoff.cut", 
-                                "label": "Edayhoff.cut"
-                            }, 
-                            {
-                                "value": "Eddi.cut", 
-                                "label": "Eddi.cut"
-                            }, 
-                            {
-                                "value": "Eddi_h.cut", 
-                                "label": "Eddi_h.cut"
-                            }, 
-                            {
-                                "value": "Edicdi.cut", 
-                                "label": "Edicdi.cut"
-                            }, 
-                            {
-                                "value": "Edicdi_high.cut", 
-                                "label": "Edicdi_high.cut"
-                            }, 
-                            {
-                                "value": "Edog.cut", 
-                                "label": "Edog.cut"
-                            }, 
-                            {
-                                "value": "Edro.cut", 
-                                "label": "Edro.cut"
-                            }, 
-                            {
-                                "value": "Edro_h.cut", 
-                                "label": "Edro_h.cut"
-                            }, 
-                            {
-                                "value": "Edrome.cut", 
-                                "label": "Edrome.cut"
-                            }, 
-                            {
-                                "value": "Edrome_high.cut", 
-                                "label": "Edrome_high.cut"
-                            }, 
-                            {
-                                "value": "Edrosophila.cut", 
-                                "label": "Edrosophila.cut"
-                            }, 
-                            {
-                                "value": "Eeca.cut", 
-                                "label": "Eeca.cut"
-                            }, 
-                            {
-                                "value": "Eeco.cut", 
-                                "label": "Eeco.cut"
-                            }, 
-                            {
-                                "value": "Eeco_h.cut", 
-                                "label": "Eeco_h.cut"
-                            }, 
-                            {
-                                "value": "Eecoli.cut", 
-                                "label": "Eecoli.cut"
-                            }, 
-                            {
-                                "value": "Eecoli_high.cut", 
-                                "label": "Eecoli_high.cut"
-                            }, 
-                            {
-                                "value": "Eemeni.cut", 
-                                "label": "Eemeni.cut"
-                            }, 
-                            {
-                                "value": "Eemeni_high.cut", 
-                                "label": "Eemeni_high.cut"
-                            }, 
-                            {
-                                "value": "Eemeni_mit.cut", 
-                                "label": "Eemeni_mit.cut"
-                            }, 
-                            {
-                                "value": "Eerwct.cut", 
-                                "label": "Eerwct.cut"
-                            }, 
-                            {
-                                "value": "Ef1.cut", 
-                                "label": "Ef1.cut"
-                            }, 
-                            {
-                                "value": "Efish.cut", 
-                                "label": "Efish.cut"
-                            }, 
-                            {
-                                "value": "Efmdvpolyp.cut", 
-                                "label": "Efmdvpolyp.cut"
-                            }, 
-                            {
-                                "value": "Ehaein.cut", 
-                                "label": "Ehaein.cut"
-                            }, 
-                            {
-                                "value": "Ehalma.cut", 
-                                "label": "Ehalma.cut"
-                            }, 
-                            {
-                                "value": "Ehalsa.cut", 
-                                "label": "Ehalsa.cut"
-                            }, 
-                            {
-                                "value": "Eham.cut", 
-                                "label": "Eham.cut"
-                            }, 
-                            {
-                                "value": "Ehha.cut", 
-                                "label": "Ehha.cut"
-                            }, 
-                            {
-                                "value": "Ehin.cut", 
-                                "label": "Ehin.cut"
-                            }, 
-                            {
-                                "value": "Ehma.cut", 
-                                "label": "Ehma.cut"
-                            }, 
-                            {
-                                "value": "Ehorvu.cut", 
-                                "label": "Ehorvu.cut"
-                            }, 
-                            {
-                                "value": "Ehum.cut", 
-                                "label": "Ehum.cut"
-                            }, 
-                            {
-                                "value": "Ehuman.cut", 
-                                "label": "Ehuman.cut"
-                            }, 
-                            {
-                                "value": "Ekla.cut", 
-                                "label": "Ekla.cut"
-                            }, 
-                            {
-                                "value": "Eklepn.cut", 
-                                "label": "Eklepn.cut"
-                            }, 
-                            {
-                                "value": "Eklula.cut", 
-                                "label": "Eklula.cut"
-                            }, 
-                            {
-                                "value": "Ekpn.cut", 
-                                "label": "Ekpn.cut"
-                            }, 
-                            {
-                                "value": "Elacdl.cut", 
-                                "label": "Elacdl.cut"
-                            }, 
-                            {
-                                "value": "Ella.cut", 
-                                "label": "Ella.cut"
-                            }, 
-                            {
-                                "value": "Elyces.cut", 
-                                "label": "Elyces.cut"
-                            }, 
-                            {
-                                "value": "Emac.cut", 
-                                "label": "Emac.cut"
-                            }, 
-                            {
-                                "value": "Emacfa.cut", 
-                                "label": "Emacfa.cut"
-                            }, 
-                            {
-                                "value": "Emaize.cut", 
-                                "label": "Emaize.cut"
-                            }, 
-                            {
-                                "value": "Emaize_chl.cut", 
-                                "label": "Emaize_chl.cut"
-                            }, 
-                            {
-                                "value": "Emam_h.cut", 
-                                "label": "Emam_h.cut"
-                            }, 
-                            {
-                                "value": "Emammal_high.cut", 
-                                "label": "Emammal_high.cut"
-                            }, 
-                            {
-                                "value": "Emanse.cut", 
-                                "label": "Emanse.cut"
-                            }, 
-                            {
-                                "value": "Emarpo_chl.cut", 
-                                "label": "Emarpo_chl.cut"
-                            }, 
-                            {
-                                "value": "Emedsa.cut", 
-                                "label": "Emedsa.cut"
-                            }, 
-                            {
-                                "value": "Emetth.cut", 
-                                "label": "Emetth.cut"
-                            }, 
-                            {
-                                "value": "Emixlg.cut", 
-                                "label": "Emixlg.cut"
-                            }, 
-                            {
-                                "value": "Emouse.cut", 
-                                "label": "Emouse.cut"
-                            }, 
-                            {
-                                "value": "Emsa.cut", 
-                                "label": "Emsa.cut"
-                            }, 
-                            {
-                                "value": "Emse.cut", 
-                                "label": "Emse.cut"
-                            }, 
-                            {
-                                "value": "Emta.cut", 
-                                "label": "Emta.cut"
-                            }, 
-                            {
-                                "value": "Emtu.cut", 
-                                "label": "Emtu.cut"
-                            }, 
-                            {
-                                "value": "Emus.cut", 
-                                "label": "Emus.cut"
-                            }, 
-                            {
-                                "value": "Emussp.cut", 
-                                "label": "Emussp.cut"
-                            }, 
-                            {
-                                "value": "Emva.cut", 
-                                "label": "Emva.cut"
-                            }, 
-                            {
-                                "value": "Emyctu.cut", 
-                                "label": "Emyctu.cut"
-                            }, 
-                            {
-                                "value": "Emze.cut", 
-                                "label": "Emze.cut"
-                            }, 
-                            {
-                                "value": "Emzecp.cut", 
-                                "label": "Emzecp.cut"
-                            }, 
-                            {
-                                "value": "Encr.cut", 
-                                "label": "Encr.cut"
-                            }, 
-                            {
-                                "value": "Eneigo.cut", 
-                                "label": "Eneigo.cut"
-                            }, 
-                            {
-                                "value": "Eneu.cut", 
-                                "label": "Eneu.cut"
-                            }, 
-                            {
-                                "value": "Eneucr.cut", 
-                                "label": "Eneucr.cut"
-                            }, 
-                            {
-                                "value": "Engo.cut", 
-                                "label": "Engo.cut"
-                            }, 
-                            {
-                                "value": "Eoncmy.cut", 
-                                "label": "Eoncmy.cut"
-                            }, 
-                            {
-                                "value": "Eoncsp.cut", 
-                                "label": "Eoncsp.cut"
-                            }, 
-                            {
-                                "value": "Eorysa.cut", 
-                                "label": "Eorysa.cut"
-                            }, 
-                            {
-                                "value": "Eorysa_chl.cut", 
-                                "label": "Eorysa_chl.cut"
-                            }, 
-                            {
-                                "value": "Epae.cut", 
-                                "label": "Epae.cut"
-                            }, 
-                            {
-                                "value": "Epea.cut", 
-                                "label": "Epea.cut"
-                            }, 
-                            {
-                                "value": "Epet.cut", 
-                                "label": "Epet.cut"
-                            }, 
-                            {
-                                "value": "Epethy.cut", 
-                                "label": "Epethy.cut"
-                            }, 
-                            {
-                                "value": "Epfa.cut", 
-                                "label": "Epfa.cut"
-                            }, 
-                            {
-                                "value": "Ephavu.cut", 
-                                "label": "Ephavu.cut"
-                            }, 
-                            {
-                                "value": "Ephix174.cut", 
-                                "label": "Ephix174.cut"
-                            }, 
-                            {
-                                "value": "Ephv.cut", 
-                                "label": "Ephv.cut"
-                            }, 
-                            {
-                                "value": "Ephy.cut", 
-                                "label": "Ephy.cut"
-                            }, 
-                            {
-                                "value": "Epig.cut", 
-                                "label": "Epig.cut"
-                            }, 
-                            {
-                                "value": "Eplafa.cut", 
-                                "label": "Eplafa.cut"
-                            }, 
-                            {
-                                "value": "Epolyomaa2.cut", 
-                                "label": "Epolyomaa2.cut"
-                            }, 
-                            {
-                                "value": "Epombe.cut", 
-                                "label": "Epombe.cut"
-                            }, 
-                            {
-                                "value": "Epombecai.cut", 
-                                "label": "Epombecai.cut"
-                            }, 
-                            {
-                                "value": "Epot.cut", 
-                                "label": "Epot.cut"
-                            }, 
-                            {
-                                "value": "Eppu.cut", 
-                                "label": "Eppu.cut"
-                            }, 
-                            {
-                                "value": "Eprovu.cut", 
-                                "label": "Eprovu.cut"
-                            }, 
-                            {
-                                "value": "Epse.cut", 
-                                "label": "Epse.cut"
-                            }, 
-                            {
-                                "value": "Epseae.cut", 
-                                "label": "Epseae.cut"
-                            }, 
-                            {
-                                "value": "Epsepu.cut", 
-                                "label": "Epsepu.cut"
-                            }, 
-                            {
-                                "value": "Epsesm.cut", 
-                                "label": "Epsesm.cut"
-                            }, 
-                            {
-                                "value": "Epsy.cut", 
-                                "label": "Epsy.cut"
-                            }, 
-                            {
-                                "value": "Epvu.cut", 
-                                "label": "Epvu.cut"
-                            }, 
-                            {
-                                "value": "Erab.cut", 
-                                "label": "Erab.cut"
-                            }, 
-                            {
-                                "value": "Erabbit.cut", 
-                                "label": "Erabbit.cut"
-                            }, 
-                            {
-                                "value": "Erabit.cut", 
-                                "label": "Erabit.cut"
-                            }, 
-                            {
-                                "value": "Erabsp.cut", 
-                                "label": "Erabsp.cut"
-                            }, 
-                            {
-                                "value": "Erat.cut", 
-                                "label": "Erat.cut"
-                            }, 
-                            {
-                                "value": "Eratsp.cut", 
-                                "label": "Eratsp.cut"
-                            }, 
-                            {
-                                "value": "Erca.cut", 
-                                "label": "Erca.cut"
-                            }, 
-                            {
-                                "value": "Erhile.cut", 
-                                "label": "Erhile.cut"
-                            }, 
-                            {
-                                "value": "Erhime.cut", 
-                                "label": "Erhime.cut"
-                            }, 
-                            {
-                                "value": "Erhm.cut", 
-                                "label": "Erhm.cut"
-                            }, 
-                            {
-                                "value": "Erhoca.cut", 
-                                "label": "Erhoca.cut"
-                            }, 
-                            {
-                                "value": "Erhosh.cut", 
-                                "label": "Erhosh.cut"
-                            }, 
-                            {
-                                "value": "Eric.cut", 
-                                "label": "Eric.cut"
-                            }, 
-                            {
-                                "value": "Erle.cut", 
-                                "label": "Erle.cut"
-                            }, 
-                            {
-                                "value": "Erme.cut", 
-                                "label": "Erme.cut"
-                            }, 
-                            {
-                                "value": "Ersp.cut", 
-                                "label": "Ersp.cut"
-                            }, 
-                            {
-                                "value": "Esalsa.cut", 
-                                "label": "Esalsa.cut"
-                            }, 
-                            {
-                                "value": "Esalsp.cut", 
-                                "label": "Esalsp.cut"
-                            }, 
-                            {
-                                "value": "Esalty.cut", 
-                                "label": "Esalty.cut"
-                            }, 
-                            {
-                                "value": "Esau.cut", 
-                                "label": "Esau.cut"
-                            }, 
-                            {
-                                "value": "Eschma.cut", 
-                                "label": "Eschma.cut"
-                            }, 
-                            {
-                                "value": "Eschpo.cut", 
-                                "label": "Eschpo.cut"
-                            }, 
-                            {
-                                "value": "Eschpo_cai.cut", 
-                                "label": "Eschpo_cai.cut"
-                            }, 
-                            {
-                                "value": "Eschpo_high.cut", 
-                                "label": "Eschpo_high.cut"
-                            }, 
-                            {
-                                "value": "Esco.cut", 
-                                "label": "Esco.cut"
-                            }, 
-                            {
-                                "value": "Eserma.cut", 
-                                "label": "Eserma.cut"
-                            }, 
-                            {
-                                "value": "Esgi.cut", 
-                                "label": "Esgi.cut"
-                            }, 
-                            {
-                                "value": "Esheep.cut", 
-                                "label": "Esheep.cut"
-                            }, 
-                            {
-                                "value": "Eshp.cut", 
-                                "label": "Eshp.cut"
-                            }, 
-                            {
-                                "value": "Eshpsp.cut", 
-                                "label": "Eshpsp.cut"
-                            }, 
-                            {
-                                "value": "Esli.cut", 
-                                "label": "Esli.cut"
-                            }, 
-                            {
-                                "value": "Eslm.cut", 
-                                "label": "Eslm.cut"
-                            }, 
-                            {
-                                "value": "Esma.cut", 
-                                "label": "Esma.cut"
-                            }, 
-                            {
-                                "value": "Esmi.cut", 
-                                "label": "Esmi.cut"
-                            }, 
-                            {
-                                "value": "Esmu.cut", 
-                                "label": "Esmu.cut"
-                            }, 
-                            {
-                                "value": "Esoltu.cut", 
-                                "label": "Esoltu.cut"
-                            }, 
-                            {
-                                "value": "Esoy.cut", 
-                                "label": "Esoy.cut"
-                            }, 
-                            {
-                                "value": "Esoybn.cut", 
-                                "label": "Esoybn.cut"
-                            }, 
-                            {
-                                "value": "Espi.cut", 
-                                "label": "Espi.cut"
-                            }, 
-                            {
-                                "value": "Espiol.cut", 
-                                "label": "Espiol.cut"
-                            }, 
-                            {
-                                "value": "Espn.cut", 
-                                "label": "Espn.cut"
-                            }, 
-                            {
-                                "value": "Espo.cut", 
-                                "label": "Espo.cut"
-                            }, 
-                            {
-                                "value": "Espo_h.cut", 
-                                "label": "Espo_h.cut"
-                            }, 
-                            {
-                                "value": "Espu.cut", 
-                                "label": "Espu.cut"
-                            }, 
-                            {
-                                "value": "Esta.cut", 
-                                "label": "Esta.cut"
-                            }, 
-                            {
-                                "value": "Estaau.cut", 
-                                "label": "Estaau.cut"
-                            }, 
-                            {
-                                "value": "Estrco.cut", 
-                                "label": "Estrco.cut"
-                            }, 
-                            {
-                                "value": "Estrmu.cut", 
-                                "label": "Estrmu.cut"
-                            }, 
-                            {
-                                "value": "Estrpn.cut", 
-                                "label": "Estrpn.cut"
-                            }, 
-                            {
-                                "value": "Estrpu.cut", 
-                                "label": "Estrpu.cut"
-                            }, 
-                            {
-                                "value": "Esty.cut", 
-                                "label": "Esty.cut"
-                            }, 
-                            {
-                                "value": "Esus.cut", 
-                                "label": "Esus.cut"
-                            }, 
-                            {
-                                "value": "Esv40.cut", 
-                                "label": "Esv40.cut"
-                            }, 
-                            {
-                                "value": "Esyhsp.cut", 
-                                "label": "Esyhsp.cut"
-                            }, 
-                            {
-                                "value": "Esynco.cut", 
-                                "label": "Esynco.cut"
-                            }, 
-                            {
-                                "value": "Esyncy.cut", 
-                                "label": "Esyncy.cut"
-                            }, 
-                            {
-                                "value": "Esynsp.cut", 
-                                "label": "Esynsp.cut"
-                            }, 
-                            {
-                                "value": "Etbr.cut", 
-                                "label": "Etbr.cut"
-                            }, 
-                            {
-                                "value": "Etcr.cut", 
-                                "label": "Etcr.cut"
-                            }, 
-                            {
-                                "value": "Eter.cut", 
-                                "label": "Eter.cut"
-                            }, 
-                            {
-                                "value": "Etetsp.cut", 
-                                "label": "Etetsp.cut"
-                            }, 
-                            {
-                                "value": "Etetth.cut", 
-                                "label": "Etetth.cut"
-                            }, 
-                            {
-                                "value": "Etheth.cut", 
-                                "label": "Etheth.cut"
-                            }, 
-                            {
-                                "value": "Etob.cut", 
-                                "label": "Etob.cut"
-                            }, 
-                            {
-                                "value": "Etobac.cut", 
-                                "label": "Etobac.cut"
-                            }, 
-                            {
-                                "value": "Etobac_chl.cut", 
-                                "label": "Etobac_chl.cut"
-                            }, 
-                            {
-                                "value": "Etobcp.cut", 
-                                "label": "Etobcp.cut"
-                            }, 
-                            {
-                                "value": "Etom.cut", 
-                                "label": "Etom.cut"
-                            }, 
-                            {
-                                "value": "Etrb.cut", 
-                                "label": "Etrb.cut"
-                            }, 
-                            {
-                                "value": "Etrybr.cut", 
-                                "label": "Etrybr.cut"
-                            }, 
-                            {
-                                "value": "Etrycr.cut", 
-                                "label": "Etrycr.cut"
-                            }, 
-                            {
-                                "value": "Evco.cut", 
-                                "label": "Evco.cut"
-                            }, 
-                            {
-                                "value": "Evibch.cut", 
-                                "label": "Evibch.cut"
-                            }, 
-                            {
-                                "value": "Ewheat.cut", 
-                                "label": "Ewheat.cut"
-                            }, 
-                            {
-                                "value": "Ewht.cut", 
-                                "label": "Ewht.cut"
-                            }, 
-                            {
-                                "value": "Exel.cut", 
-                                "label": "Exel.cut"
-                            }, 
-                            {
-                                "value": "Exenla.cut", 
-                                "label": "Exenla.cut"
-                            }, 
-                            {
-                                "value": "Exenopus.cut", 
-                                "label": "Exenopus.cut"
-                            }, 
-                            {
-                                "value": "Eyeast.cut", 
-                                "label": "Eyeast.cut"
-                            }, 
-                            {
-                                "value": "Eyeast_cai.cut", 
-                                "label": "Eyeast_cai.cut"
-                            }, 
-                            {
-                                "value": "Eyeast_high.cut", 
-                                "label": "Eyeast_high.cut"
-                            }, 
-                            {
-                                "value": "Eyeast_mit.cut", 
-                                "label": "Eyeast_mit.cut"
-                            }, 
-                            {
-                                "value": "Eyeastcai.cut", 
-                                "label": "Eyeastcai.cut"
-                            }, 
-                            {
-                                "value": "Eyen.cut", 
-                                "label": "Eyen.cut"
-                            }, 
-                            {
-                                "value": "Eyeren.cut", 
-                                "label": "Eyeren.cut"
-                            }, 
-                            {
-                                "value": "Eyerpe.cut", 
-                                "label": "Eyerpe.cut"
-                            }, 
-                            {
-                                "value": "Eysc.cut", 
-                                "label": "Eysc.cut"
-                            }, 
-                            {
-                                "value": "Eysc_h.cut", 
-                                "label": "Eysc_h.cut"
-                            }, 
-                            {
-                                "value": "Eyscmt.cut", 
-                                "label": "Eyscmt.cut"
-                            }, 
-                            {
-                                "value": "Eysp.cut", 
-                                "label": "Eysp.cut"
-                            }, 
-                            {
-                                "value": "Ezebrafish.cut", 
-                                "label": "Ezebrafish.cut"
-                            }, 
-                            {
-                                "value": "Ezma.cut", 
-                                "label": "Ezma.cut"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -cfile=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_cfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "cfile option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile": {
-                        "prompt": "Name of the output file (e_outfile)", 
-                        "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Filename"
-                        }, 
-                        "default_value": [
-                            "backtranseq.e_outfile"
-                        ], 
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
-                        }
-                    }, 
-                    "e_osformat_outfile": {
-                        "prompt": "Choose the sequence output format", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
                         "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "FASTA"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "EMBL", 
-                                "label": "Embl"
-                            }, 
-                            {
-                                "value": "FASTA", 
-                                "label": "Fasta"
-                            }, 
-                            {
-                                "value": "GCG", 
-                                "label": "Gcg"
-                            }, 
-                            {
-                                "value": "GENBANK", 
-                                "label": "Genbank"
-                            }, 
-                            {
-                                "value": "NBRF", 
-                                "label": "Nbrf"
-                            }, 
-                            {
-                                "value": "PIR", 
-                                "label": "Pir"
-                            }, 
-                            {
-                                "value": "RAW", 
-                                "label": "Raw"
-                            }, 
-                            {
-                                "value": "SWISSPROT", 
-                                "label": "Swissprot"
-                            }, 
-                            {
-                                "value": "GFF", 
-                                "label": "Gff"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
                             "python": "(\"\", \" -osformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_osformat_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the sequence output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "auto": {
-                "ishidden": true, 
-                "prompt": "Turn off any prompting", 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "5",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
                     "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "backtranseq",
     "outputs": {
-        "parameters": {
-            "e_output": {
-                "name": "e_output", 
-                "parameters": {
-                    "e_outfile_out": {
-                        "isout": true, 
-                        "prompt": "outfile_out option", 
-                        "type": {
-                            "biotype": "DNA", 
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "\n              ", 
-                                "\n            "
-                            ]
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
                             "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_osformat_outfile"
+                                }
+                            ]
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
             }
-        }
-    }, 
-    "comment": "<{http://www.w3.org/1999/xhtml}div >This tool reorders the entries of an MSA according to a reference set of sequences.</{http://www.w3.org/1999/xhtml}div> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "backtranseq",
+    "type": "program",
+    "version": null
 }

@@ -1,452 +1,478 @@
 {
-    "type": "program", 
-    "name": "blast2taxoclass", 
-    "version": "1.0", 
-    "title": "blast2taxoclass", 
-    "description": "<text lang=\"en\">Blast filtering with taxonomic hierarchy information</text> </description>", 
-    "authors": "C. Maufrais</authors>", 
-    "references": [
+    "authors": "C. Maufrais",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
+            "classification": "database:search:filter",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter"
-    ], 
-    "command": "blast2taxoclass", 
+    ],
+    "command": {
+        "path": null,
+        "value": "blast2taxoclass"
+    },
+    "comment": null,
+    "description": "Blast filtering with taxonomic hierarchy information",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
     "inputs": {
-        "parameters": {
-            "infile": {
-                "ismandatory": true, 
-                "prompt": "Blast output file", 
-                "type": {
-                    "datatype_class": "BlastTextReport", 
-                    "datatype_superclass": "Report"
-                }, 
+        "children": [
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" -i $value\"", 
+                    "perl": "\" -i $value\"",
                     "python": "\" -i \" + str(value)"
-                }
-            }, 
-            "blastfilter": {
-                "prompt": "Find taxonomic classification of:", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Blast output file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Choice"
-                }, 
-                "default_value": [
-                    "M"
-                ], 
-                "authorized_values": [
-                    {
-                        "value": "M", 
-                        "label": "best hit"
-                    }, 
-                    {
-                        "value": "F", 
-                        "label": "most frequent hit"
-                    }
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BlastTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "($value) ? \" -$value\" : \"\"", 
+                    "perl": "($value) ? \" -$value\" : \"\"",
                     "python": "\" -\" + str(value)"
-                }
-            }, 
-            "nbofhit": {
-                "prompt": "Number of hsp to consider (-x)", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "blastfilter",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Find taxonomic classification of:",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Integer"
-                }, 
-                "default_value": [
-                    "10"
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": "0: all hsp",
+                "ctrl": null,
                 "format": {
-                    "perl": "(defined $value) ? \" -x $value\" : \"\"", 
+                    "perl": "(defined $value) ? \" -x $value\" : \"\"",
                     "python": "(\"\", \" -x \" + str(value) )[value is not None and value != vdef]"
-                }, 
-                "comment": "<text lang=\"en\">0: all hsp </text> </comment>"
-            }, 
-            "taxonomicfilter": {
-                "name": "taxonomicfilter", 
-                "parameters": {
-                    "position": {
-                        "prompt": "Relative position in taxonomic hierarchy (-p)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "nbofhit",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Number of hsp to consider (-x)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "zero means: root of taxonomy, higher value: leaf or near",
+                        "ctrl": {
+                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))",
+                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None))"
+                        },
                         "format": {
-                            "perl": "(defined $value) ? \" -p $value\" : \"\"", 
+                            "perl": "(defined $value) ? \" -p $value\" : \"\"",
                             "python": "(\"\", \" -p \" + str(value) )[value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))", 
-                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None)) "
-                        }, 
-                        "comment": "<text lang=\"en\">zero means: root of taxonomy, higher value: leaf or near </text> </comment>"
-                    }, 
-                    "taxonomic_name": {
-                        "prompt": "Taxonomic Name (-n)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "position",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Relative position in taxonomic hierarchy (-p)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))",
+                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None))"
+                        },
                         "format": {
-                            "perl": "(defined $value) ? \" -n $value\" : \"\"", 
+                            "perl": "(defined $value) ? \" -n $value\" : \"\"",
                             "python": "(\"\", \" -n \" + str(value).replace(' ','_') )[value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))", 
-                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None)) "
-                        }
-                    }, 
-                    "rank": {
-                        "prompt": "Taxonomic rank name (-r)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "taxonomic_name",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Taxonomic Name (-n)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "null"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "null"
-                            }, 
-                            {
-                                "value": "superkingdom", 
-                                "label": "superkingdom"
-                            }, 
-                            {
-                                "value": "kingdom", 
-                                "label": "kingdom"
-                            }, 
-                            {
-                                "value": "subkingdom", 
-                                "label": "subkingdom"
-                            }, 
-                            {
-                                "value": "superphylum", 
-                                "label": "superphylum"
-                            }, 
-                            {
-                                "value": "phylum", 
-                                "label": "phylum"
-                            }, 
-                            {
-                                "value": "subphylum", 
-                                "label": "subphylum"
-                            }, 
-                            {
-                                "value": "superclass", 
-                                "label": "superclass"
-                            }, 
-                            {
-                                "value": "class", 
-                                "label": "class"
-                            }, 
-                            {
-                                "value": "subclass", 
-                                "label": "subclass"
-                            }, 
-                            {
-                                "value": "infraclass", 
-                                "label": "infraclass"
-                            }, 
-                            {
-                                "value": "superorder", 
-                                "label": "superorder"
-                            }, 
-                            {
-                                "value": "order", 
-                                "label": "order"
-                            }, 
-                            {
-                                "value": "suborder", 
-                                "label": "suborder"
-                            }, 
-                            {
-                                "value": "infraorder", 
-                                "label": "infraorder"
-                            }, 
-                            {
-                                "value": "parvorder", 
-                                "label": "parvorder"
-                            }, 
-                            {
-                                "value": "superfamily", 
-                                "label": "superfamily"
-                            }, 
-                            {
-                                "value": "family", 
-                                "label": "family"
-                            }, 
-                            {
-                                "value": "subfamily", 
-                                "label": "subfamily"
-                            }, 
-                            {
-                                "value": "tribe", 
-                                "label": "tribe"
-                            }, 
-                            {
-                                "value": "subtribe", 
-                                "label": "subtribe"
-                            }, 
-                            {
-                                "value": "genus", 
-                                "label": "genus"
-                            }, 
-                            {
-                                "value": "subgenus", 
-                                "label": "subgenus"
-                            }, 
-                            {
-                                "value": "species_group", 
-                                "label": "species_group"
-                            }, 
-                            {
-                                "value": "species_subgroup", 
-                                "label": "species_subgroup"
-                            }, 
-                            {
-                                "value": "species", 
-                                "label": "species"
-                            }, 
-                            {
-                                "value": "subspecies", 
-                                "label": "subspecies"
-                            }, 
-                            {
-                                "value": "varietas", 
-                                "label": "varietas"
-                            }, 
-                            {
-                                "value": "forma", 
-                                "label": "forma"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If Taxonomic rank is not defined for one hit, it is not treated.",
+                        "ctrl": {
+                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))",
+                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None))"
+                        },
                         "format": {
-                            "perl": "(defined $value) ? \" -r $value\" : \"\"", 
+                            "perl": "(defined $value) ? \" -r $value\" : \"\"",
                             "python": "(\"\", \" -r \" + str(value) )[value is not None]"
-                        }, 
-                        "ctrl": {
-                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))", 
-                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None)) "
-                        }, 
-                        "comment": "<text lang=\"en\">If Taxonomic rank is not defined for one hit, it is not treated.</text> </comment>"
-                    }
-                }
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "blastout": {
-                        "prompt": "Blast output file(s) sort/split by specific taxonomic hierarchy (-b)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rank",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Taxonomic rank name (-r)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "taxonomicfilter",
+                "precond": null,
+                "prompt": "Taxonomic hierarchy filter option"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -b\" : \"\"", 
+                            "perl": "($value)? \" -b\" : \"\"",
                             "python": "(\"\" , \" -b\") [value]"
-                        }
-                    }, 
-                    "queryout": {
-                        "prompt": "Query name write in file(s) sort/split by specific taxonomic hierarchy (-q)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "blastout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Blast output file(s) sort/split by specific taxonomic hierarchy (-b)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value)? \" -q\" : \"\"", 
+                            "perl": "($value)? \" -q\" : \"\"",
                             "python": "(\"\" , \" -q\") [value]"
-                        }
-                    }, 
-                    "fastaExtract": {
-                        "prompt": "Extraction of fasta sequences.", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "queryout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Query name write in file(s) sort/split by specific taxonomic hierarchy (-q)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Extract fasta sequence, matching specified taxonomic filter, from file containing query sequences witch are used to made blast.",
                         "ctrl": {
-                            "perl": "$fastaExtract == 1 and $queryout == 1 and defined $query_seq", 
+                            "perl": "$fastaExtract == 1 and $queryout == 1 and defined $query_seq",
                             "python": "(fastaExtract and (queryout and query_seq is not None)) or (not fastaExtract)"
-                        }, 
-                        "comment": "<text lang=\"en\">Extract fasta sequence, matching specified taxonomic filter, from file containing query sequences witch are used to made blast.</text> </comment>"
-                    }, 
-                    "query_seq": {
-                        "prompt": "Query sequences witch are used to made blast.", 
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fastaExtract",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Extraction of fasta sequences.",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Sequence", 
-                            "data_formats": [
-                                "FASTA"
-                            ], 
-                            "card": "1,n"
-                        }, 
-                        "precond": {
-                            "perl": "defined $fastaExtract and defined $queryout", 
-                            "python": "fastaExtract and queryout"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "100",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": " extractfasta -i $query *.qry\": \"\"", 
-                            "python": " extractfasta -i \"+ str(value) + \" *.qry\") [value is not None]"
+                            "perl": "(defined $value)? \" && extractfasta -i $query *.qry\": \"\"",
+                            "python": "(\"\",\" && extractfasta -i \"+ str(value) + \" *.qry\") [value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "query_seq",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $fastaExtract and defined $queryout",
+                            "python": "fastaExtract and queryout"
+                        },
+                        "prompt": "Query sequences witch are used to made blast.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "blast2taxoclass",
     "outputs": {
-        "parameters": {
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "outfile": {
-                        "isstdout": true, 
-                        "prompt": "Output file", 
-                        "type": {
-                            "datatype_class": "Blast2taxoclassReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"blast2taxoclass.out\"", 
+                            "perl": "\"blast2taxoclass.out\"",
                             "python": "\"blast2taxoclass.out\""
-                        }
-                    }, 
-                    "blastoutfile": {
-                        "isout": true, 
-                        "prompt": "Blast output file(s)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "stdout",
+                        "precond": null,
+                        "prompt": "Output file",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "BlastTextReport", 
-                            "datatype_superclass": "Report"
-                        }, 
-                        "precond": {
-                            "perl": "defined $blastout", 
-                            "python": "blastout"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Blast2taxoclassReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.blast\"", 
+                            "perl": "\"*.blast\"",
                             "python": "\"*.blast\""
-                        }
-                    }, 
-                    "queryoutfile": {
-                        "isout": true, 
-                        "prompt": "Query name file", 
-                        "type": {
-                            "datatype_class": "QueryNameReport", 
-                            "datatype_superclass": "Report"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "blastoutfile",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $queryout", 
-                            "python": "queryout"
-                        }, 
+                            "perl": "defined $blastout",
+                            "python": "blastout"
+                        },
+                        "prompt": "Blast output file(s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "BlastTextReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.qry\"", 
+                            "perl": "\"*.qry\"",
                             "python": "\"*.qry\""
-                        }
-                    }, 
-                    "fastafile": {
-                        "isout": true, 
-                        "prompt": "Fasta file", 
-                        "type": {
-                            "datatype_class": "Sequence"
-                        }, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "queryoutfile",
+                        "output_type": "file",
                         "precond": {
-                            "perl": "defined $fastaExtract", 
-                            "python": "fastaExtract"
-                        }, 
+                            "perl": "defined $queryout",
+                            "python": "queryout"
+                        },
+                        "prompt": "Query name file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "QueryNameReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
                         "filenames": {
-                            "perl": "\"*.fasta\"", 
+                            "perl": "\"*.fasta\"",
                             "python": "\"*.fasta\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "fastafile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $fastaExtract",
+                            "python": "fastaExtract"
+                        },
+                        "prompt": "Fasta file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\"> Extract the Identifier and Data Bank of the hits from the summary of a blast report ( in text format -m 0-6 ) The result is in USA list format. </text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "blast2taxoclass",
+    "type": "program",
+    "version": "1.0"
 }

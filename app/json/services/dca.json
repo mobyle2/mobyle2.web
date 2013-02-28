@@ -1,559 +1,441 @@
 {
-    "type": "program", 
-    "name": "dca", 
-    "version": "1.1", 
-    "title": "DCA", 
-    "description": "<text lang=\"en\">Divide-and-Conquer Multiple Sequence Alignment</text> </description>", 
-    "authors": "J. Stoye</authors>", 
-    "references": [
+    "authors": "J. Stoye",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "G.Z. Hertz and G.D. Stormo. Identification of consensus patterns in unaligned DNA and protein sequences: a large-deviation statistical basis for penalizing gaps. In: Proceedings of the Third International Conference on Bioinformatics and Genome Research (H.A. Lim, and C.R. Cantor, editors). World Scientific Publishing Co., Ltd. Singapore, 1995. pages 201--216.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.</reference>"
-        }, 
-        {
-            "value": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)</reference>"
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/programs/", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://gzhertz.home.comcast.net/~gzhertz/CONSENSUS_2004-04-14.TAR.gz", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/ComAlign.html", 
-        "http://www.daimi.au.dk/~cstorm/combat/", 
-        "http://emboss.sourceforge.net", 
-        "http://gzhertz.home.comcast.net/~gzhertz/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
+    ],
+    "command": {
+        "path": null,
+        "value": "dca"
+    },
+    "comment": "Divide-and-Conquer Multiple Sequence Alignment  (DCA) is a program for producing fast, high quality simultaneous multiple sequence alignments of amino acid, RNA, or DNA sequences. The program is based on the DCA algorithm, a heuristic approach to sum-of-pairs (SP) optimal alignment that has been developed at the FSPM  over the years 1995-97.",
+    "description": "Divide-and-Conquer Multiple Sequence Alignment",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
         "http://bibiserv.techfak.uni-bielefeld.de/dca/"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
-        "http://codonw.sourceforge.net/Tutorial.html", 
-        "http://www.daimi.au.dk/~ocaprani/ComAlign/HowTo.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/compseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cons.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgplot.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cpgreport.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cusp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cutseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html", 
-        "http://emboss.sourceforge.net/docs/themes"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage", 
-        "alignment:multiple", 
-        "alignment:pairwise", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:formatter", 
-        "phylogeny:tree_analyser", 
-        "sequence:protein:pattern", 
-        "sequence:nucleic:pattern", 
-        "alignment:consensus", 
-        "alignment:structure", 
-        "structure:indexing", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:cpg_islands", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:edit", 
-        "sequence:nucleic:composition", 
-        "alignment:multiple"
-    ], 
-    "command": "dca", 
+    ],
     "inputs": {
-        "parameters": {
-            "seq": {
-                "ismandatory": true, 
-                "prompt": "Sequences File", 
+        "children": [
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seq",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequences File",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
-                "format": {
-                    "perl": "\" $value\"", 
-                    "python": "\" \"+str(value)"
                 }
-            }, 
-            "control": {
-                "name": "control", 
-                "parameters": {
-                    "cost": {
-                        "prompt": "Cost matrix (-c)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "null"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "null", 
-                                "label": "Default: depends on sequences"
-                            }, 
-                            {
-                                "value": "blosum30", 
-                                "label": "BLOSUM30"
-                            }, 
-                            {
-                                "value": "blosum45", 
-                                "label": "BLOSUM45"
-                            }, 
-                            {
-                                "value": "blosum62", 
-                                "label": "BLOSUM62"
-                            }, 
-                            {
-                                "value": "pam160", 
-                                "label": "PAM160"
-                            }, 
-                            {
-                                "value": "pam250", 
-                                "label": "PAM250"
-                            }, 
-                            {
-                                "value": "unitcost", 
-                                "label": "Unitcost"
-                            }, 
-                            {
-                                "value": "dna", 
-                                "label": "DNA"
-                            }, 
-                            {
-                                "value": "rna", 
-                                "label": "RNA"
-                            }, 
-                            {
-                                "value": "dnarna", 
-                                "label": "DNA/RNA"
-                            }
-                        ], 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef)? \" -c $value\" : \"\" ", 
+                            "perl": "(defined $value and $value ne $vdef)? \" -c $value\" : \"\"",
                             "python": "( \"\"  , \" -c \" + str(value) )[ value is not None and value != vdef]"
-                        }
-                    }, 
-                    "gaps": {
-                        "prompt": "Penalize end gaps as internal gaps (-g)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cost",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Cost matrix (-c)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Default: free shift",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value)? \" -g \":\"\"", 
+                            "perl": "($value)? \" -g \":\"\"",
                             "python": "(\"\" , \" -g \")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Default: free shift</text> </comment>"
-                    }, 
-                    "approximate": {
-                        "prompt": "Use approximate cut positions (-a)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gaps",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Penalize end gaps as internal gaps (-g)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "On: FastDCA (use approximate cut positions); Off: slower, more accurate algorithm (search for exact cut positions)",
+                        "ctrl": null,
                         "format": {
-                            "perl": " ($value)? \" -a\":\"\"", 
+                            "perl": "($value)? \" -a\":\"\"",
                             "python": "(\"\" , \" -a\")[ value ]"
-                        }, 
-                        "comment": "<text lang=\"en\">On: FastDCA (use approximate cut positions); Off: slower, more accurate algorithm (search for exact cut positions)</text> </comment>"
-                    }, 
-                    "intensity": {
-                        "prompt": "Weight intensity (-b)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "approximate",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use approximate cut positions (-a)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Float"
-                        }, 
-                        "default_value": [
-                            "0.0"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef)? \" -b $value\" : \"\" ", 
-                            "python": "( \"\"  , \" -b \" + str(value) )[ value is not None and value != vdef]"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
                         "ctrl": {
-                            "perl": "= 1.0", 
-                            "python": "= 1.0"
-                        }
-                    }, 
-                    "recursion": {
-                        "prompt": "Recursion stop size (-l)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "30"
-                        ], 
+                            "perl": "$intensity >= 0.0 and $intensity <= 1.0",
+                            "python": "intensity >= 0.0 and intensity <= 1.0"
+                        },
                         "format": {
-                            "perl": " (defined $value and $value != $vdef)? \" -l $value\" : \"\" ", 
+                            "perl": "(defined $value and $value != $vdef)? \" -b $value\" : \"\"",
+                            "python": "( \"\"  , \" -b \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "intensity",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Weight intensity (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "5 ... 100 recommended; small: faster algorithm, maybe worse.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -l $value\" : \"\"",
                             "python": "( \"\"  , \" -l \" + str(value) )[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">5 ... 100 recommended; small: faster algorithm, maybe worse.</text> </comment>"
-                    }, 
-                    "window": {
-                        "prompt": "Window size (-w)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "recursion",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Recursion stop size (-l)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "To correct the alignment in the proximity of division sites, the sequences can be re-aligned inside a window of size w >= 0 placed across each slicing site.",
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and  $value != $vdef)? \" -w $value\" : \"\" ", 
+                            "perl": "(defined $value and  $value != $vdef)? \" -w $value\" : \"\"",
                             "python": "( \"\"  , \" -w \" + str(value) )[ value is not None and value != vdef]"
-                        }, 
-                        "comment": "<text lang=\"en\">To correct the alignment in the proximity of division sites, the sequences can be re-aligned inside a window of size w >= 0 placed across each slicing site.</text> </comment>"
-                    }
-                }
-            }, 
-            "output": {
-                "name": "output", 
-                "parameters": {
-                    "quiet": {
-                        "ishidden": true, 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "window",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Window size (-w)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "control",
+                "precond": null,
+                "prompt": "Control parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\" -q\"", 
+                            "perl": "\" -q\"",
                             "python": "\" -q\""
-                        }
-                    }, 
-                    "output_format": {
-                        "prompt": "Output format (-f)", 
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "quiet",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": null,
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "2"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "1", 
-                                "label": "aln (1)"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "fasta (2)"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "nex (3)"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "dca (4)"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef)? \" -f $value\" : \"\" ", 
+                            "perl": "(defined $value and $value ne $vdef)? \" -f $value\" : \"\"",
                             "python": "( \"\"  , \" -f \" + str(value) )[ value is not None and value != vdef]"
-                        }
-                    }, 
-                    "suppress_output": {
-                        "ishidden": true, 
-                        "prompt": "Suppress output about progress of the program (-o)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_format",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output format (-f)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "String"
-                        }, 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "\" -o\"", 
+                            "perl": "\" -o\"",
                             "python": "\" -o\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "suppress_output",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Suppress output about progress of the program (-o)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output parameters"
             }
-        }
-    }, 
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "dca",
     "outputs": {
-        "parameters": {
-            "fasta_outfile": {
-                "isstdout": true, 
-                "prompt": "Alignment file", 
-                "type": {
-                    "datatype_class": "Alignment", 
-                    "data_formats": [
-                        "\n          ", 
-                        "\n          ", 
-                        "\n        "
-                    ]
-                }, 
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"dca.out\"",
+                    "python": "\"dca.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "fasta_outfile",
+                "output_type": "stdout",
                 "precond": {
-                    "perl": "$output_format eq \"2\" or $output_format eq \"3\"", 
+                    "perl": "$output_format eq \"2\" or $output_format eq \"3\"",
                     "python": "output_format == \"2\" or output_format == \"3\""
-                }, 
-                "filenames": {
-                    "perl": "\"dca.out\"", 
-                    "python": "\"dca.out\""
-                }
-            }, 
-            "aln_outfile": {
-                "isstdout": true, 
-                "prompt": "DCA alignment file", 
+                },
+                "prompt": "Alignment file",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Dcalignment", 
-                    "datatype_superclass": "AbstractText", 
-                    "data_formats": [
-                        "\n          ", 
-                        "\n          ", 
-                        "\n        "
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        {
+                            "#children": [
+                                "FASTA"
+                            ],
+                            "#tag": "test",
+                            "@eq": "2",
+                            "@param": "output_format"
+                        }
                     ]
-                }, 
-                "precond": {
-                    "perl": "$output_format eq \"1\" or $output_format eq \"4\"", 
-                    "python": "output_format == \"1\" or output_format == \"4\""
-                }, 
+                }
+            },
+            {
+                "comment": null,
                 "filenames": {
-                    "perl": "\"dca.out\"", 
+                    "perl": "\"dca.out\"",
                     "python": "\"dca.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "aln_outfile",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "$output_format eq \"1\" or $output_format eq \"4\"",
+                    "python": "output_format == \"1\" or output_format == \"4\""
+                },
+                "prompt": "DCA alignment file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Dcalignment",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        {
+                            "#children": [
+                                "CLUSTAL"
+                            ],
+                            "#tag": "test",
+                            "@eq": "1",
+                            "@param": "output_format"
+                        }
+                    ]
                 }
             }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "A.W.M. Dress, G. Fullen, S.W. Perrey, A Divide and Conquer Approach to Multiple Alignment, Proceedings of the Third International Conference on Intelligent Systems for Molecular Biology (ISMB 95), AAAI Press, Menlo Park, CA, USA, 107-113, 1995.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "J. Stoye, Multiple Sequence Alignment with the Divide-and-Conquer Method, Gene 211(2), GC45-GC56, 1998. (Gene-COMBIS)",
+            "url": null
         }
-    }, 
-    "comment": "<text lang=\"en\">Divide-and-Conquer Multiple Sequence Alignment (DCA) is a program for producing fast, high quality simultaneous multiple sequence alignments of amino acid, RNA, or DNA sequences. The program is based on the DCA algorithm, a heuristic approach to sum-of-pairs (SP) optimal alignment that has been developed at the FSPM over the years 1995-97.</text> </comment>"
+    ],
+    "source_links": [
+        "http://bibiserv.techfak.uni-bielefeld.de/download/tools/dca.html"
+    ],
+    "title": "DCA",
+    "type": "program",
+    "version": "1.1"
 }

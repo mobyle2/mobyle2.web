@@ -1,803 +1,978 @@
 {
-    "type": "program", 
-    "name": "codonw", 
-    "version": "1.4.4", 
-    "title": "codonw", 
-    "description": "<text lang=\"en\">Correspondence Analysis of Codon Usage</text> </description>", 
-    "authors": "J. Peden</authors>", 
-    "references": [
+    "authors": "J. Peden",
+    "classifications": [
         {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Larget, B. and D. Simon (1999). Markov chain Monte Carlo algorithms for the Bayesian analysis of phylogenetic trees. Molecular Biology and Evolution 16:750-759.</reference>"
-        }, 
-        {
-            "value": "Simon, D. and B. Larget. 1998. Bayesian analysis in molecular biology and evolution (BAMBE), version 1.01 beta. Department of Mathematics and Computer Science, Duquesne University.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer,Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaeffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), Gapped BLAST and PSI-BLAST: a new generation of protein database search programs, Nucleic Acids Res. 25:3389-3402.</reference>"
-        }, 
-        {
-            "value": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple sequence alignments. BMC Evolutionary Biology 10:210. </reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "Huang, X. and Madan, A. (1999) CAP3: A DNA Sequence Assembly Program. Genome Research, 9: 868-877.</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
-        }, 
-        {
-            "value": "EMBOSS: The European Molecular Biology Open Software Suite (2000) Rice,P. Longden,I. and Bleasby, A. Trends in Genetics 16, (6) pp276--277</reference>"
+            "classification": "sequence:nucleic:codon_usage",
+            "type": "mobyle1"
         }
-    ], 
-    "sourcelinks": [
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net/download", 
-        "https://projets.pasteur.fr/projects/list_files/blast2usa", 
-        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/", 
-        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://seq.cs.iastate.edu/cap3.html", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://emboss.sourceforge.net/download", 
-        "http://sourceforge.net/projects/codonw/files/"
-    ], 
-    "homepagelinks": [
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://www.stat.wisc.edu/~larget/", 
-        "http://emboss.sourceforge.net", 
-        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/", 
-        "http://emboss.sourceforge.net", 
-        "https://projets.pasteur.fr/projects/show/blast2usa", 
-        "http://www.ch.embnet.org/software/BOX_form.html", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://seq.cs.iastate.edu/", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://emboss.sourceforge.net", 
-        "http://codonw.sourceforge.net/"
-    ], 
-    "doclinks": [
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/abiview.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/antigenic.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranambig.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/backtranseq.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/banana.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/biosed.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=handbook.chapter.ch16", 
-        "http://www.ncbi.nlm.nih.gov/Education/BLASTinfo/tut1.html", 
-        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/btwisted.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cai.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chaos.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/charge.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/checktrans.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/chips.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/cif/cif.html", 
-        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt", 
-        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/cirdna.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://bioweb2.pasteur.fr/docs/phylip/doc/clique.html", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/codcmp.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://serpico.rennes.inria.fr/doku.php?id=software:nd-safir:index", 
-        "http://bioweb2.pasteur.fr/docs/EMBOSS/coderet.html", 
-        "http://emboss.sourceforge.net/docs/themes", 
-        "http://codonw.sourceforge.net/Readme.html", 
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Correspondence Analysis of Codon Usage",
+    "documentation_links": [
+        "http://codonw.sourceforge.net/Readme.html",
         "http://codonw.sourceforge.net/Tutorial.html"
-    ], 
-    "mobyle_cats": [
-        "display", 
-        "alignment:formatter", 
-        "sequence:protein:motifs", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:translation", 
-        "sequence:protein:composition", 
-        "phylogeny:bayesian", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "phylogeny:distance", 
-        "sequence:edit", 
-        "alignment:pairwise", 
-        "database:search:filter", 
-        "database:search:homology", 
-        "database:search:display", 
-        "database:search:filter", 
-        "database:search:display", 
-        "database:search:homology", 
-        "alignment:multiple:information", 
-        "alignment:multiple:display", 
-        "sequence:nucleic:composition", 
-        "sequence:nucleic:codon_usage", 
-        "assembly:assembly", 
-        "sequence:nucleic:composition", 
-        "sequence:protein:composition", 
-        "sequence:protein:composition", 
-        "sequence:nucleic:codon_usage", 
-        "sequence:enzyme:analysis", 
-        "sequence:nucleic:restriction", 
-        "display:nucleic:restriction", 
-        "display", 
-        "phylogeny:others", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "alignment:multiple", 
-        "sequence:nucleic:codon_usage", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "Bio-Imaging", 
-        "sequence:nucleic:edit", 
-        "sequence:nucleic:codon_usage"
-    ], 
-    "command": "coderet", 
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://codonw.sourceforge.net/"
+    ],
     "inputs": {
-        "parameters": {
-            "codonw": {
-                "ishidden": true, 
-                "type": {
-                    "datatype_class": "String"
-                }, 
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\"codonw -silent -nomenu -nowarn\"", 
+                    "perl": "\"codonw -silent -nomenu -nowarn\"",
                     "python": "\"codonw -silent -nomenu -nowarn\""
-                }
-            }, 
-            "outfiles": {
-                "ishidden": true, 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "codonw",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "String"
-                }, 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "\" $seqfile.indices $seqfile.bulk\"", 
+                    "perl": "\" $seqfile.indices $seqfile.bulk\"",
                     "python": "\" \" + str(seqfile) + \".indices \" + str(seqfile) + \".bulk\""
-                }
-            }, 
-            "seqfile": {
-                "ismandatory": true, 
-                "prompt": "Sequences File", 
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "outfiles",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
                 "type": {
-                    "datatype_class": "Sequence", 
-                    "data_formats": [
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seqfile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequences File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
                         "FASTA"
                     ]
-                }, 
-                "format": {
-                    "perl": "\" $value\"", 
-                    "python": "\" \" + str(value)"
                 }
-            }, 
-            "defaults": {
-                "name": "defaults", 
-                "parameters": {
-                    "gc": {
-                        "prompt": "Genetic codes (-code)", 
-                        "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "Universal Genetic code [TGA=* TAA=* TAG=*] (0)"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Vertebrate Mitochondrial code [AGR=* ATA=M TGA=W] (1)"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Yeast Mitochondrial code [CTN=* ATA=M TGA=W] (2)"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "Filamentous fungi Mitochondrial code [TGA=W] (3)"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "Insects and Plathyhelminthes Mitochondrial co [ATA=M TGA=W AGR=S] (4)"
-                            }, 
-                            {
-                                "value": "5", 
-                                "label": "Nuclear code of Cilitia [UAA=Q=Gln UAG=Q] (5)"
-                            }, 
-                            {
-                                "value": "6", 
-                                "label": "Nuclear code of Euplotes [UGA=C] (6)"
-                            }, 
-                            {
-                                "value": "7", 
-                                "label": "Mitochondrial code of Echinoderms UGA=W AGR=S AAA=N (7)"
-                            }
-                        ], 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -code $value\" : \"\"", 
+                            "perl": "(defined $value and $value ne $vdef) ? \" -code $value\" : \"\"",
                             "python": "( \"\"  , \" -code \" + str(value) )[value is not None and value != vdef]"
-                        }
-                    }, 
-                    "fop_values": {
-                        "prompt": "Fop/CBI codons (-f_type)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Genetic codes (-code)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "Escherichia coli (0)"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Bacillus subtilis (1)"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Dictyostelium discoideum (2)"
-                            }, 
-                            {
-                                "value": "3", 
-                                "label": "Aspergillus nidulans (3)"
-                            }, 
-                            {
-                                "value": "4", 
-                                "label": "Saccharomyces cerevisiae (4)"
-                            }, 
-                            {
-                                "value": "5", 
-                                "label": "Drosophila melanogaster (5)"
-                            }, 
-                            {
-                                "value": "6", 
-                                "label": "Caenorhabditis elegans (6)"
-                            }, 
-                            {
-                                "value": "7", 
-                                "label": "Neurospora crassa (7)"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -f_type $value\" : \"\"", 
+                            "perl": "(defined $value and $value ne $vdef) ? \" -f_type $value\" : \"\"",
                             "python": "( \"\"  , \" -f_type \" + str(value) )[ value is not None and value != vdef]"
-                        }
-                    }, 
-                    "cai_values": {
-                        "prompt": "CAI fitness values (-c_type)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fop_values",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Fop/CBI codons (-f_type)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Choice"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "authorized_values": [
-                            {
-                                "value": "0", 
-                                "label": "Escherichia coli (0)"
-                            }, 
-                            {
-                                "value": "1", 
-                                "label": "Bacillus subtilis (1)"
-                            }, 
-                            {
-                                "value": "2", 
-                                "label": "Saccharomyces cerevisiae (2)"
-                            }
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "(defined $value and $value ne $vdef) ? \" -c_type $value\" : \"\"", 
+                            "perl": "(defined $value and $value ne $vdef) ? \" -c_type $value\" : \"\"",
                             "python": "( \"\"  , \" -c_type \" + str(value) )[value is not None and value != vdef]"
-                        }
-                    }, 
-                    "output_type": {
-                        "prompt": "Output Computer readable (-machine)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cai_values",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "CAI fitness values (-c_type)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -machine\" : \"\"", 
+                            "perl": "($value) ? \" -machine\" : \"\"",
                             "python": "( \"\"  , \" -machine\" )[ value ]"
-                        }
-                    }, 
-                    "genes": {
-                        "prompt": "Concatenate all genes instead of individual genes (-totals)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_type",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output Computer readable (-machine)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -totals\" : \"\"", 
+                            "perl": "($value) ? \" -totals\" : \"\"",
                             "python": "( \"\"  , \" -totals\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "genes",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Concatenate all genes instead of individual genes (-totals)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "CU_options": {
-                "name": "CU_options", 
-                "parameters": {
-                    "all_indices": {
-                        "prompt": "All indices (-all_indices)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "defaults",
+                "precond": null,
+                "prompt": "Defaults settings"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -all_indices\" : \"\"", 
+                            "perl": "($value) ? \" -all_indices\" : \"\"",
                             "python": "( \"\"  , \" -all_indices\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "all_indices",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "All indices (-all_indices)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
-                    }, 
-                    "sp_indices": {
-                        "name": "sp_indices", 
-                        "precond": {
-                            "perl": "not $all_indices", 
-                            "python": "not all_indices"
-                        }, 
-                        "parameters": {
-                            "CAI": {
-                                "prompt": "Codon Adaptation Index (-cai)", 
-                                "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -cai\" : \"\"", 
+                                    "perl": "($value) ? \" -cai\" : \"\"",
                                     "python": "( \"\"  , \" -cai\" )[ value ]"
-                                }
-                            }, 
-                            "cai_file": {
-                                "prompt": "User input file of CAI values (-cai_file)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "CAI",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Codon Adaptation Index (-cai)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "CaiValues", 
-                                    "datatype_superclass": "AbstractText"
-                                }, 
-                                "precond": {
-                                    "perl": "$CAI", 
-                                    "python": "CAI"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "2",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "(defined $value) ? \" -cai_file $value\" : \"\"", 
+                                    "perl": "(defined $value) ? \" -cai_file $value\" : \"\"",
                                     "python": "( \"\"  , \" -cai_file \" + str(value) )[value is not None]"
-                                }
-                            }, 
-                            "Fop": {
-                                "prompt": "Frequency of OPtimal codons index (-fop)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "cai_file",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$CAI",
+                                    "python": "CAI"
+                                },
+                                "prompt": "User input file of CAI values (-cai_file)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "CaiValues",
+                                        "superclass": "AbstractText"
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -fop\" : \"\"", 
+                                    "perl": "($value) ? \" -fop\" : \"\"",
                                     "python": "( \"\"  , \" -fop\" )[ value ]"
-                                }
-                            }, 
-                            "fop_file": {
-                                "prompt": "User input file of Fop values (-fop_file)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "Fop",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Frequency of OPtimal codons index (-fop)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "FopValues", 
-                                    "datatype_superclass": "AbstractText"
-                                }, 
-                                "precond": {
-                                    "perl": "$Fop", 
-                                    "python": "Fop"
-                                }, 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "2",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "(defined $value) ? \" -fop_file $value\" : \"\"", 
+                                    "perl": "(defined $value) ? \" -fop_file $value\" : \"\"",
                                     "python": "( \"\"  , \" -fop_file \" + str(value) )[ value is not None ]"
-                                }
-                            }, 
-                            "CBI": {
-                                "prompt": "Codon bias index (-cbi)", 
-                                "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
-                                "format": {
-                                    "perl": "($value) ? \" -cbi\" : \"\"", 
-                                    "python": "( \"\"  , \" -cbi\" )[ value ]"
-                                }
-                            }, 
-                            "cbi_file": {
-                                "prompt": "User input file of CBI values (-cbi_file)", 
-                                "type": {
-                                    "datatype_class": "CbiValues", 
-                                    "datatype_superclass": "AbstractText"
-                                }, 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "fop_file",
+                                "paramfile": null,
                                 "precond": {
-                                    "perl": "$CBI", 
-                                    "python": "CBI"
-                                }, 
+                                    "perl": "$Fop",
+                                    "python": "Fop"
+                                },
+                                "prompt": "User input file of Fop values (-fop_file)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "FopValues",
+                                        "superclass": "AbstractText"
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "(defined $value) ? \" -cbi_file $value\" : \"\"", 
+                                    "perl": "($value) ? \" -cbi\" : \"\"",
+                                    "python": "( \"\"  , \" -cbi\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "CBI",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Codon bias index (-cbi)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "2",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value) ? \" -cbi_file $value\" : \"\"",
                                     "python": "( \"\"  , \" -cbi_file \" + str(value) )[ value is not None ]"
-                                }
-                            }, 
-                            "ENc": {
-                                "prompt": "Effective Number of Codons (-enc)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "cbi_file",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$CBI",
+                                    "python": "CBI"
+                                },
+                                "prompt": "User input file of CBI values (-cbi_file)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "CbiValues",
+                                        "superclass": "AbstractText"
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -enc\" : \"\"", 
+                                    "perl": "($value) ? \" -enc\" : \"\"",
                                     "python": "( \"\"  , \" -enc\" )[ value ]"
-                                }
-                            }, 
-                            "GC": {
-                                "prompt": "GC content of gene (-gc)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ENc",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Effective Number of Codons (-enc)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -gc\" : \"\"", 
+                                    "perl": "($value) ? \" -gc\" : \"\"",
                                     "python": "( \"\"  , \" -gc\" )[ value ]"
-                                }
-                            }, 
-                            "GC3s": {
-                                "prompt": "GC of silent 3rd codon posit. (-gc3s)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "GC",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "GC content of gene (-gc)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -gc3s\" : \"\"", 
+                                    "perl": "($value) ? \" -gc3s\" : \"\"",
                                     "python": "( \"\"  , \" -gc3s\" )[ value ]"
-                                }
-                            }, 
-                            "silent_bc": {
-                                "prompt": "Base composition at synonymous third codon positions (-sil_base)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "GC3s",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "GC of silent 3rd codon posit. (-gc3s)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -sil_base\" : \"\"", 
+                                    "perl": "($value) ? \" -sil_base\" : \"\"",
                                     "python": "( \"\"  , \" -sil_base\" )[ value ]"
-                                }
-                            }, 
-                            "L_sym": {
-                                "prompt": "Number of synonymous codons (-L_sym)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "silent_bc",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Base composition at synonymous third codon positions (-sil_base)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "( $value) ? \" -L_sym\" : \"\"", 
+                                    "perl": "( $value) ? \" -L_sym\" : \"\"",
                                     "python": "( \"\" , \" -L_sym\" )[ value ]"
-                                }
-                            }, 
-                            "L_aa": {
-                                "prompt": "Total Number of synonymous and non-synonymous codons (-L_aa)", 
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "L_sym",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Number of synonymous codons (-L_sym)",
+                                "simple": null,
                                 "type": {
-                                    "datatype_class": "Boolean"
-                                }, 
-                                "default_value": [
-                                    "0"
-                                ], 
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
                                 "format": {
-                                    "perl": "($value) ? \" -L_aa\" : \"\"", 
+                                    "perl": "($value) ? \" -L_aa\" : \"\"",
                                     "python": "( \"\"  , \" -L_aa\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "L_aa",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Total Number of synonymous and non-synonymous codons (-L_aa)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
                                 }
                             }
-                        }
+                        ],
+                        "comment": null,
+                        "name": "sp_indices",
+                        "precond": {
+                            "perl": "not $all_indices",
+                            "python": "not all_indices"
+                        },
+                        "prompt": "Special indices"
                     }
-                }
-            }, 
-            "AA_options": {
-                "name": "AA_options", 
-                "parameters": {
-                    "Hydro": {
-                        "prompt": "Hydrophobicity of protein (-hyd)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                ],
+                "comment": null,
+                "name": "CU_options",
+                "precond": null,
+                "prompt": "Codon usage indices"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -hyd\" : \"\"", 
+                            "perl": "($value) ? \" -hyd\" : \"\"",
                             "python": "( \"\"  , \" -hyd\" )[ value ]"
-                        }
-                    }, 
-                    "Aromo": {
-                        "prompt": "Aromaticity of protein (-aro)", 
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Hydro",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Hydrophobicity of protein (-hyd)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
                         "format": {
-                            "perl": "($value) ? \" -aro\" : \"\"", 
+                            "perl": "($value) ? \" -aro\" : \"\"",
                             "python": "( \"\"  , \" -aro\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Aromo",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Aromaticity of protein (-aro)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
-            }, 
-            "bulk_output_option": {
-                "prompt": "Bulk output option", 
-                "type": {
-                    "datatype_class": "Choice"
-                }, 
-                "default_value": [
-                    "-cu"
-                ], 
-                "authorized_values": [
-                    {
-                        "value": "-cu", 
-                        "label": "Codon Usage (-cu)"
-                    }, 
-                    {
-                        "value": "-aau", 
-                        "label": "Amino Acid Usage (-aau)"
-                    }, 
-                    {
-                        "value": "-raau", 
-                        "label": "Relative Amino Acid Usage (-raau)"
-                    }, 
-                    {
-                        "value": "-cutab", 
-                        "label": "Tabulation of codon usage (-cutab)"
-                    }, 
-                    {
-                        "value": "-cutot", 
-                        "label": "Tabulation of dataset's codon usage (-cutot)"
-                    }, 
-                    {
-                        "value": "-rscu", 
-                        "label": "Relative Synonymous Codon Usage (-rscu)"
-                    }, 
-                    {
-                        "value": "-fasta", 
-                        "label": "Fasta format (-fasta)"
-                    }, 
-                    {
-                        "value": "-reader", 
-                        "label": "Reader format with codons are seperated by spaces (-reader)"
-                    }, 
-                    {
-                        "value": "-transl", 
-                        "label": "Conceptual translation of DNA to amino acid (-transl)"
-                    }, 
-                    {
-                        "value": "-base", 
-                        "label": "Detailed report of codon G+C composition (-base)"
-                    }, 
-                    {
-                        "value": "-dinuc", 
-                        "label": "Dinucleotide usage of the three codon position (-dinuc)"
-                    }, 
-                    {
-                        "value": "-noblk", 
-                        "label": "No bulk output to be written to file (-noblk)"
-                    }
-                ], 
+                ],
+                "comment": null,
+                "name": "AA_options",
+                "precond": null,
+                "prompt": "Amino acid indices"
+            },
+            {
+                "argpos": "4",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "(defined $value and $value ne $vdef) ? \" $value\" : \"\"", 
+                    "perl": "(defined $value and $value ne $vdef) ? \" $value\" : \"\"",
                     "python": "( \"\"  , \" \" + str(value) )[ value is not None and value != vdef]"
-                }
-            }, 
-            "COA_option": {
-                "prompt": "Correspondence analysis options (available for several sequences)", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "bulk_output_option",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Bulk output option",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Choice"
-                }, 
-                "default_value": [
-                    "Null"
-                ], 
-                "authorized_values": [
-                    {
-                        "value": "Null", 
-                        "label": "Do not perform a COA"
-                    }, 
-                    {
-                        "value": "-coa_cu", 
-                        "label": "COA of codon usage frequencies (-coa_cu)"
-                    }, 
-                    {
-                        "value": "-coa_rscu", 
-                        "label": "COA of Relative Synonymous Codon Usage (-coa_rscu)"
-                    }, 
-                    {
-                        "value": "-coa_aa", 
-                        "label": "COA on Amino Acid usage frequencies (-coa_aa)"
-                    }
-                ], 
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "3",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
                 "format": {
-                    "perl": "(defined $value) ? \" $value\" : \"\"", 
+                    "perl": "(defined $value) ? \" $value\" : \"\"",
                     "python": "( \"\" , \" %s\" %value)[value is not None]"
-                }
-            }, 
-            "coa_advanced": {
-                "name": "coa_advanced", 
-                "precond": {
-                    "perl": "$COA_option", 
-                    "python": "COA_option"
-                }, 
-                "parameters": {
-                    "coa_expert": {
-                        "prompt": "Generate detailed (expert) statistics on COA (-coa_expert)", 
-                        "type": {
-                            "datatype_class": "Boolean"
-                        }, 
-                        "default_value": [
-                            "0"
-                        ], 
-                        "format": {
-                            "perl": "($value) ? \" -coa_expert\" : \"\"", 
-                            "python": "( \"\"  , \" -coa_expert\" )[ value ]"
-                        }
-                    }, 
-                    "coa_axes": {
-                        "prompt": "Select number of axis to record (-coa_axes)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "default_value": [
-                            "4"
-                        ], 
-                        "format": {
-                            "perl": "(defined $value and $value != $vdef) ? \" -coa_axes $value\" : \"\"", 
-                            "python": "(  \"\" , \"  -coa_axes \" +  str(value) )[value is not None and value!=vdef]"
-                        }
-                    }, 
-                    "coa_num": {
-                        "prompt": "Select number of genes to use to identify optimal codons (-coa_num)", 
-                        "type": {
-                            "datatype_class": "Integer"
-                        }, 
-                        "format": {
-                            "perl": "(defined $value) ? \" -coa_num $value\" : \"\"", 
-                            "python": "( \"\"  , \" -coa_num \" + str(value) )[ value is not None ]"
-                        }, 
-                        "comment": "<text lang=\"en\">Values can be whole numbers or a percentage (5 or 10%).</text> </comment>"
-                    }
-                }
-            }
-        }
-    }, 
-    "outputs": {
-        "parameters": {
-            "results_files": {
-                "isout": true, 
-                "prompt": "Results files", 
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "COA_option",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Correspondence analysis options (available for several sequences)",
+                "simple": null,
                 "type": {
-                    "datatype_class": "Text"
-                }, 
-                "filenames": {
-                    "perl": "\"*.bulk\"", 
-                    "python": "\"*.bulk\""
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
                 }
-            }, 
-            "coa_advanced": {
-                "name": "coa_advanced", 
-                "precond": {
-                    "perl": "$COA_option", 
-                    "python": "COA_option"
-                }, 
-                "parameters": {
-                    "coa_files": {
-                        "isout": true, 
-                        "prompt": "Coa file", 
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -coa_expert\" : \"\"",
+                            "python": "( \"\"  , \" -coa_expert\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "coa_expert",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Generate detailed (expert) statistics on COA (-coa_expert)",
+                        "simple": null,
                         "type": {
-                            "datatype_class": "Text"
-                        }, 
-                        "filenames": {
-                            "perl": "\"coa_raw\"", 
-                            "python": "\"coa_raw\""
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -coa_axes $value\" : \"\"",
+                            "python": "(  \"\" , \"  -coa_axes \" +  str(value) )[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "coa_axes",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select number of axis to record (-coa_axes)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Values can be whole numbers or a percentage (5 or 10%).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -coa_num $value\" : \"\"",
+                            "python": "( \"\"  , \" -coa_num \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "coa_num",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select number of genes to use to identify optimal codons (-coa_num)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
                         }
                     }
-                }
+                ],
+                "comment": null,
+                "name": "coa_advanced",
+                "precond": {
+                    "perl": "$COA_option",
+                    "python": "COA_option"
+                },
+                "prompt": "Advanced COA options"
             }
-        }
-    }, 
-    "comment": "<text lang=\"en\"> Use this interface to add new sequences to an existing alignment.</text> <text lang=\"en\">The profile is converted into a HMM and the un-aligned sequences will be multiply aligned (using the HMM background information) to form a profile; this constructed profile is aligned with the input profile; the columns in each profile (the original one and the one created from the un-aligned sequences) will be kept fixed and the alignment of the two profiles will be written out. The un/aligned sequences must contain at least two sequences.</text> </comment>"
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "codonw",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.bulk\"",
+                    "python": "\"*.bulk\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results_files",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Results files",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"coa_raw\"",
+                            "python": "\"coa_raw\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "coa_files",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "Coa file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "coa_advanced",
+                "precond": {
+                    "perl": "$COA_option",
+                    "python": "COA_option"
+                },
+                "prompt": "Advanced COA options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "http://sourceforge.net/projects/codonw/files/"
+    ],
+    "title": "codonw",
+    "type": "program",
+    "version": "1.4.4"
 }

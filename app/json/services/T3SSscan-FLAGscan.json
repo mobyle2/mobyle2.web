@@ -1,12 +1,8 @@
 {
-    "authors": null,
+    "authors": "Abby, S.S and Rocha, E.P.",
     "classifications": [
         {
-            "classification": "hmm:database:search",
-            "type": "mobyle1"
-        },
-        {
-            "classification": "database:search:hmm",
+            "classification": "sequence:protein:profiles",
             "type": "mobyle1"
         }
     ],
@@ -14,13 +10,41 @@
         "path": null,
         "value": "hmmscan"
     },
-    "comment": "hmmscan reads sequence(s) from seqfile and compares it against all the HMMs in pfam database looking for significantly similar sequence matches. The output consists of three sections: a ranked list of the best scoring HMMs, a list of the best scoring domains in order of their occurrence in the sequence, and alignments for all the best scoring domains. A sequence score may be higher than a domain score for the same sequence if there is more than one domain in the sequence; the sequence score takes into account all the domains. All sequences scoring above the -E and -T cutoffs are shown in the first list, then every domain found in this list is shown in the second list of domain hits. If desired, E-value and score thresholds may also be applied to the domain list using the --domE and --domT options.",
-    "description": "Search sequence(s) against pfam a profile HMM database",
-    "documentation_links": [],
+    "comment": null,
+    "description": "Sequence profiles to detect bacterial flagella and non-flagellar type III secretion systems",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/hmmer/Userguide.pdf"
+    ],
     "env": [],
     "homepage_links": [],
     "inputs": {
         "children": [
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": null,
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "prog_desc",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Program description",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
             {
                 "argpos": "3",
                 "command": false,
@@ -40,7 +64,9 @@
                 "simple": null,
                 "type": {
                     "biomoby_datatypes": [],
-                    "biotypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
                     "card": null,
                     "datatype": {
                         "class": "Sequence",
@@ -55,7 +81,7 @@
             {
                 "argpos": "2",
                 "command": false,
-                "comment": null,
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:ul><html:li>\"NF-T3SS\" to query non-flagellar Type III secretion system profiles only,</html:li><html:li>\"Flagellum\" to query flagellar profiles only,</html:li><html:li>\"NF-T3SS+Flagellum\" to query all profiles in a single step.</html:li></html:ul></html:div>",
                 "ctrl": null,
                 "format": {
                     "perl": "\" $value\"",
@@ -897,7 +923,7 @@
         "precond": null,
         "prompt": null
     },
-    "name": "hmmscan",
+    "name": "T3SSscan-FLAGscan",
     "outputs": {
         "children": [
             {
@@ -999,9 +1025,30 @@
         "prompt": null
     },
     "package": null,
-    "references": [],
+    "references": [
+        {
+            "doi": "10.1371/journal.pgen.1002983",
+            "label": "The Non-Flagellar Type III Secretion System Evolved from the Bacterial Flagellum and Diversified into Host-Cell Adapted Systems.\n           Abby SS, Rocha EPC (2012). \n           PLoS Genet 8(9): e1002983",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:h4>HMMER is an implementation of profile HMM methods for sensitive database searches using multiple sequence alignments as queries.</html:h4><html:div class=\"reference\">Eddy, S. R. (2011). Accelerated Profile HMM Searches. PLoS Comput. Biol., 7(10): e1002195.</html:div></html:div>",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Eddy, S. R. (2008). A probabilistic model of local sequence alignment that simplifies statistical significance estimation. PLoS Comput. Biol., 4:e1000069.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Eddy, S. R. (1998). Profile hidden Markov models. Bioinformatics, 14:755-763.",
+            "url": null
+        }
+    ],
     "source_links": [],
-    "title": "HMMSCAN",
+    "title": "T3SSscan - FLAGscan",
     "type": "program",
     "version": null
 }
