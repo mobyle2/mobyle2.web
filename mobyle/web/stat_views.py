@@ -115,7 +115,7 @@ def stats(request):
                "  }"
                "  return total;"
                "}")
-    result = {}
+    result = {'results' : {} }
     try:
         if type == 0:
             result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, {"inline" : 1})
@@ -149,7 +149,7 @@ def stats_map(request):
                "  }"
                "  return total;"
                "}")
-    result = {}
+    result = { 'results' : {} }
     try:
         if type == 0:
             result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, {"inline" : 1})
