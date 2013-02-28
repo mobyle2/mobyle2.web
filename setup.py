@@ -17,7 +17,7 @@ requires = [
     "velruse>=0.3dev",
     "py-bcrypt",
     "pyparsing<2.0",
-    "scss",
+    "pyScss",
     "mf>=0.1.9",
     "uuid"
     ]
