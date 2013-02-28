@@ -1,17 +1,27 @@
 <div>
 
-<script type="text/ng-template" id="menu_item_renderer.html">
-  <div id="{{name}}" ng-show="!para.ishidden && (show_advanced || para.issimple || para.parameters)">
-    <b>{{para.prompt || para.name}}</b>
-    <div ng-repeat="(name, para) in para.parameters" ng-include="'menu_item_renderer.html'"></div>
-  </div>
-</script>
+  <script type="text/ng-template" id="menu_item_renderer.html">
+    <div id="{{name}}" ng-show="!para.ishidden && (show_advanced || para.simple || para.children)">
+      <ng-switch on="para.children" >
+         <div ng-switch-when="undefined">
+           <b>{{para.prompt || para.name}}</b>
+         </div>
+         <fieldset ng-switch-default>
+           <legend>{{para.prompt || para.name}}</legend>
+           <div ng-repeat="(name, para) in para.children" ng-include="'menu_item_renderer.html'"></div>
+         </fieldset>
+      </ng-switch>
+    </div>
+  </script>
 
-<h2>{{service.title}} {{service.version}}</h2>
-<h3>{{service.description}}</h3>
+  <h2>{{service.title}} {{service.version}}</h2>
+
+  <h3>{{service.description}}</h3>
+
   <form>
     <toggle state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn"></toggle>
-    <div ng-repeat="(name, para) in service.inputs.parameters" ng-include="'menu_item_renderer.html'">
+    <div ng-repeat="(name, para) in service.inputs.children" ng-include="'menu_item_renderer.html'">
     </div>
   </form>
+
 </div>
