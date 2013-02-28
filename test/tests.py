@@ -73,7 +73,6 @@ class ViewTests(unittest.TestCase):
 	for p in self.public_programs_list:
             program = mobyle.common.session.Program()
 	    program['name'] = p
-	    program['public'] = True
             program.save()
 
         self.request = testing.DummyRequest()
@@ -132,7 +131,6 @@ class ViewTests(unittest.TestCase):
         self.assertTrue('baz' not in program_list(self.request))
         program = mobyle.common.session.Program()
         program['name'] = 'baz'
-        program['public'] = True
         program.save()
         self.assertTrue('baz' in program_list(self.request))
 
