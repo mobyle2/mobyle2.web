@@ -120,18 +120,18 @@ class ViewTests(unittest.TestCase):
 
     def test_public_programs(self):
         """tests that 'public' programs are found in the list"""
-        from mobyle.web.views import program_list
+        from mobyle.web.views import services_list
 
 
         prog_list = services_list(self.request)
         for p in self.public_programs_list:
             self.assertTrue(p in prog_list)
 
-        self.assertTrue('baz' not in program_list(self.request))
+        self.assertTrue('baz' not in services_list(self.request))
         program = mobyle.common.session.Program()
         program['name'] = 'baz'
         program.save()
-        self.assertTrue('baz' in program_list(self.request))
+        self.assertTrue('baz' in services_list(self.request))
 
     def test_private_programs(self):
         pass
