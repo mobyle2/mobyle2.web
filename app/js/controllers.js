@@ -26,6 +26,17 @@ function ServiceDetailCtrl($scope,$http,$routeParams){
         method: "GET"
     }).success(function(data, status, headers, config) {
         $scope.service = data;
+        // initialise collapsible components
+        $(".collapse").collapse();
+        // detect if a parameter or a paragraph is "simple"
+        function simple(para){
+          if(!para.children){
+            return para.simple==true;
+          }else{
+            return para.children.filter(simple).length>0;
+          }
+        }
+        $scope.simple = simple;
     }).error(function(data, status, headers, config) {
         $scope.status = status;
     });
