@@ -1,17 +1,21 @@
 <div>
 
   <script type="text/ng-template" id="menu_item_renderer.html">
-    <div id="{{name}}" class="row-fluid accordion" ng-show="!para.ishidden && (show_advanced || simple(para))">
+    <div id="{{name}}" class="row-fluid" ng-show="!para.ishidden && (show_advanced || simple(para))">
       <ng-switch on="para.children" >
          <div class="span11 offset1 row-fluid" ng-switch-when="undefined">
            <label class="span6">{{para.prompt || para.name}} </label><input type="text" class="span6" name="{{para.name}}">
          </div>
-         <div class="span11 offset1 accordion-group" ng-switch-default>
-           <div class="accordion-heading">
-             <a data-toggle="collapse" data-target="#fieldset-contents-{{name}}">{{para.prompt || para.name}}</a>
-           </div>
-           <div id="fieldset-contents-{{name}}" class="accordion-body collapse in">
-             <div class="accordion-inner" ng-repeat="(name, para) in para.children" ng-include="'menu_item_renderer.html'"></div>
+         <div class="span11 offset1 accordion" ng-switch-default>
+           <div class="accordion-group">
+             <div class="accordion-heading">
+               <h4><a data-toggle="collapse" data-target="#fieldset-contents-{{name}}">{{para.prompt || para.name}}</a><h4>
+             </div>
+             <div id="fieldset-contents-{{name}}" class="accordion-body collapse in">
+               <div class="accordion-inner">
+                 <div ng-repeat="(name, para) in para.children" ng-include="'menu_item_renderer.html'"></div>
+               </div>
+             </div>
            </div>
          </div>
       </ng-switch>
@@ -23,7 +27,7 @@
         <h2>{{service.title}} {{service.version}}</h2>
         <h3>{{service.description}}</h3>
     </div>
-    <toggle class="span3" state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn" style="margin: 1em;"></toggle>
+    <toggle class="span2" state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn" style="margin: 1em;"></toggle>
     <div class="span11" ng-repeat="(name, para) in service.inputs.children" ng-include="'menu_item_renderer.html'" ng-show="!para.ishidden && (show_advanced || para.simple || para.children)">
     </div>
   </form>
