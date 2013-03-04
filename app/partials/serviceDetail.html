@@ -4,7 +4,8 @@
     <div id="{{name}}" class="row-fluid" ng-show="!para.ishidden && (show_advanced || simple(para))">
       <ng-switch on="para.children" >
          <div class="span11 offset1 row-fluid" ng-switch-when="undefined">
-           <label class="span6">{{para.prompt || para.name}} </label><input type="text" class="span6" name="{{para.name}}">
+           <label class="span6">{{para.prompt || para.name}} </label>
+           <mbinput class="span6" para="para">
          </div>
          <div class="span11 offset1 accordion" ng-switch-default>
            <div class="accordion-group">

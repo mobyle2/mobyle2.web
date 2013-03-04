@@ -52,8 +52,34 @@ angular.module('myApp.directives')
           scope.on = !scope.on;
           updateText();
         }
-        // initialize the zippy
+        // initialize
         updateText();
+      }
+    }
+  });
+
+angular.module('myApp.directives')
+  .directive('mbinput', function(){
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: '<input type="{{itype}}" name="{{para.name}}" value="" placeholder="{{para}}"/>',
+      scope: { para: '=' },
+      link: function(scope, element, attrs) {
+        // switch the type of the input according to the parameter type...
+        // work in progress...
+        try{
+          switch (scope.para.type_p.edam_data) {
+            case "0001381":
+              scope.itype = "text";
+              break;
+            default:
+              scope.itype = "button";
+          }
+        }catch(e){
+          scope.itype = "text";
+        }
       }
     }
   });
