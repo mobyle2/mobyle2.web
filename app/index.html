@@ -5,6 +5,19 @@
   <title>awa</title>
   <link rel="stylesheet" href="css/app.css"/>
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"></head>
+  <link href="lib/angularui/angular-ui.css" rel="stylesheet" media="screen"></head>
+  <!--[if lte IE 8]>
+      <script>
+      // The ieshiv takes care of our ui.directives, bootstrap module directives and 
+      // AngularJS's ng-view, ng-include, ng-pluralize and ng-switch directives.
+      // However, IF you have custom directives (yours or someone else's) then
+      // enumerate the list of tags in window.myCustomTags
+ 
+      window.myCustomTags = [ 'toggle', 'mbinput' ]; // optional
+      </script>
+      <script src="build/angular-ui-ieshiv.js"></script>
+  <![endif]-->
+<body>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -22,14 +35,15 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
   -->
+  <script src="lib/jquery-1.9.0.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-sanitize.min.js"></script>
+  <script src="lib/angularui/angular-ui.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-  <script src="lib/jquery-1.9.0.min.js"></script>
-  <script src="lib/bootstrap.min.js"></script>
 </body>
 </html>
