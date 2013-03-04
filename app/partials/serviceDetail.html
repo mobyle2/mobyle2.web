@@ -23,12 +23,15 @@
     </div>
   </script>
 
-  <form class="row-fluid span12">
+  <form class="row-fluid span12" action="/dummy">
     <div class="span9">
         <h2>{{service.title}} {{service.version}}</h2>
         <h3>{{service.description}}</h3>
     </div>
-    <toggle class="span2" state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn" style="margin: 1em;"></toggle>
+    <div class="btn-toolbar">
+      <button type="submit" class="btn btn-primary"><i class="icon-play icon-white"></i> run</button>
+      <toggle class="span2 btn" state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn" style="margin: 1em;"></toggle>
+    </div>
     <div class="span11" ng-repeat="(name, para) in service.inputs.children" ng-include="'menu_item_renderer.html'" ng-show="!para.ishidden && (show_advanced || para.simple || para.children)">
     </div>
   </form>
