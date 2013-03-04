@@ -1,7 +1,7 @@
 'use strict';
 
 /* Filters */
-angular.module('myApp.filters', []).
+angular.module('awa.filters', []).
   filter('searchServices', function() {
     var f = ['name','description','title'];
     return function(s,q){

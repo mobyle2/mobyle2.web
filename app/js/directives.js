@@ -1,14 +1,14 @@
 'use strict';
 
 /* Directives */
-angular.module('myApp.directives', []).
+angular.module('awa.directives', []).
   directive('appVersion', ['version', function(version) {
     return function(scope, elm, attrs) {
       elm.text(version);
     };
   }]);
 
-angular.module('myApp.directives').
+angular.module('awa.directives').
   directive('activeLink', ['$location', function(location) {
     return {
         restrict: 'A',
@@ -30,7 +30,7 @@ angular.module('myApp.directives').
     };
 }]);
 
-angular.module('myApp.directives')
+angular.module('awa.directives')
   .directive('toggle', function(){
     return {
       restrict: 'E',
@@ -58,7 +58,7 @@ angular.module('myApp.directives')
     }
   });
 
-angular.module('myApp.directives')
+angular.module('awa.directives')
   .directive('mbinput', function(){
     return {
       restrict: 'E',
