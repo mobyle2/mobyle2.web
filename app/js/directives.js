@@ -64,19 +64,14 @@ angular.module('awa.directives')
       restrict: 'E',
       replace: true,
       transclude: true,
-      template: '<input type="{{itype}}" name="{{para.name}}" value="" placeholder="{{para}}"/>',
+      templateUrl: 'partials/mbinput.html',
+      //template: '<input ng-show="itype" type="{{itype}}" name="{{para.name}}" value="" placeholder="{{para}}"/>',
       scope: { para: '=' },
       link: function(scope, element, attrs) {
         // switch the type of the input according to the parameter type...
         // work in progress...
         try{
-          switch (scope.para.type_p.edam_data) {
-            case "0001381":
-              scope.itype = "text";
-              break;
-            default:
-              scope.itype = "button";
-          }
+            scope.textinput = scope.para.type_p.edam_formats.indexOf("0002200")!=-1;
         }catch(e){
           scope.itype = "text";
         }
