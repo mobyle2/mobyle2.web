@@ -75,6 +75,9 @@ angular.module('awa.directives')
         }catch(e){
           scope.itype = "text";
         }
+        var infoEl = element.find('[data-content]');
+        infoEl.bind('mouseover', function(){infoEl.popover('show');});
+        infoEl.bind('mouseout', function(){infoEl.popover('hide');});
       }
     }
   });
