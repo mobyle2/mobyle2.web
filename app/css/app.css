@@ -32,3 +32,46 @@
 .fieldset_title {
   margin-left: 0.5em;
 }
+
+.services_list{
+  column-count: auto;
+  /* 
+  commented for chrome
+  as the resulting performances
+  are pathetic 
+  -webkit-column-count: auto;
+  */
+  -moz-column-count: auto;
+  -ms-column-count: auto;
+  -o-column-count: auto;
+  column-width: 300px;
+  /*
+  -webkit-column-width: 300px;
+  */
+  -moz-column-width: 300px;
+  -ms-column-width: 300px;
+  -o-column-width: 300px;
+  /* 
+  warning: column-fill is not 
+  well supported
+  */
+  /*  
+  -webkit-column-fill:auto;
+  */
+  -moz-column-fill:auto;
+  column-fill:auto;
+}
+
+.services_list div{
+  /*
+  warning: break-inside is not
+  well supported
+  */
+  break-inside: avoid-column;
+  -moz-break-inside: avoid-column;
+  
+}
+
+.services_list .dd{
+  margin-bottom: 0.3em;
+}
