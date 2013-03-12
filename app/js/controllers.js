@@ -37,6 +37,7 @@ function ServiceDetailCtrl($scope,$http,$routeParams){
           }
         }
         $scope.simple = simple;
+        $scope.show_advanced = !simple($scope.service.inputs);
     }).error(function(data, status, headers, config) {
         $scope.status = status;
     });
