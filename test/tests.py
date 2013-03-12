@@ -1,28 +1,29 @@
 # -*- coding: utf-8 -*-
+
 import unittest
 
 from pyramid import testing
-
 import pymongo
 import copy
 import os
+import unittest
+
+import mobyle.common.config
+cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'development.ini')))                                 
 
 from mobyle.common import connection
 from mobyle.common.stats.stat import Statistic, HourlyStatistic, DailyStatistic, MonthlyStatistic
 import mobyle.common.service
 import mobyle.common.users
-from mobyle.common import config
 
-config.Config("development.ini")
 base_url = "http://localhost:6543"
 
-from mobyle.common.stats.stat import Statistic, HourlyStatistic, DailyStatistic, MonthlyStatistic
 
 class LoginTest(unittest.TestCase):
 
     def setUp(self):
         from webtest import TestApp
-        self.testapp = TestApp("config:development.ini", relative_to="./")
+        self.testapp = TestApp("config:development.ini", relative_to = os.path.normpath( os.path.join( os.path.dirname(__file__), '..')))
         from mobyle.web.views import add_user
 
         self.user = {
@@ -48,7 +49,7 @@ class LoginTest(unittest.TestCase):
         url_login = base_url + "/login"
         form = self.user
         r = self.testapp.post(url_login, form)
-        self.assertIn('not logged in', r.text)
+        self.assertNotIn('not logged in', r.text)
 
 
     def test_incorrect_login(self):
@@ -146,5 +147,4 @@ class ViewTests(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    import unittest
     unittest.main()
