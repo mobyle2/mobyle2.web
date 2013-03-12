@@ -1,35 +1,28 @@
 # -*- coding: utf-8 -*-
+
 from pyramid.view import view_config
 from pyramid.security import remember, authenticated_userid, forget
-
 from pyramid.httpexceptions import HTTPFound
 from pyramid.renderers import render_to_response
 from pyramid.response import Response
 
 import json
 from bson import json_util
+from bson.code import Code
 import time
-
+from datetime import datetime, timedelta
 import requests
 
-from pyramid.httpexceptions import HTTPFound
-
-import mobyle.common
-from mobyle.common import session
+from mobyle.common import connection
 from mobyle.common.config import Config
 from mobyle.common.service import Program
-
-from mobyle.common.stats.stat import HourlyStatistic,DailyStatistic,MonthlyStatistic
-
-from bson.code import Code
-
-import datetime
-from datetime import datetime, timedelta
+from mobyle.common.stats.stat import HourlyStatistic, DailyStatistic, MonthlyStatistic
 
 import logging
 log = logging.getLogger(__name__)
 
-@view_config(route_name='statistics_usage_json', renderer='json')
+
+@view_config(route_name='statistics_usage_json', renderer = 'json')
 def stats_usage_json(request):
     type = 'month'
     fromdate = None
@@ -41,12 +34,12 @@ def stats_usage_json(request):
         type = 'month'
     try:
         f = request.params.getone('fromdate')
-        fromdate = datetime.strptime(f,"%m/%d/%Y")
+        fromdate = datetime.strptime(f, "%m/%d/%Y")
     except Exception as e:
         fromdate = None
     try:
         t = request.params.getone('todate')
-        todate = datetime.strptime(t,"%m/%d/%Y")
+        todate = datetime.strptime(t, "%m/%d/%Y")
     except Exception:
         todate = None
     if fromdate is not None and todate is not None:
@@ -57,20 +50,20 @@ def stats_usage_json(request):
         filter = { 'timestamp' : { '$lt' : todate }}
 
     if type == 'hour':
-        result = mobyle.common.session.HourlyStatistic.find(filter)
+        result = connection.HourlyStatistic.find(filter)
     if type == 'day':
-        result = mobyle.common.session.DailyStatistic.find(filter)
+        result = connection.DailyStatistic.find(filter)
     if type == 'month':
-        result = mobyle.common.session.MonthlyStatistic.find(filter)
+        result = connection.MonthlyStatistic.find(filter)
 
     usages = []
     for usage in result:
       timestamp = time.mktime(usage['timestamp'].timetuple())
       usages.append({ "x" : timestamp, "y" : usage['total'] })
-    return [ { "color" : "steelblue"  ,"name" : "Jobs", "data" : usages } ]
+    return [ { "color" : "steelblue", "name" : "Jobs", "data" : usages } ]
 
 
-@view_config(route_name='statistics_usage', renderer='mobyle.web:templates/statistics_usage.mako')
+@view_config(route_name = 'statistics_usage', renderer = 'mobyle.web:templates/statistics_usage.mako')
 def stats_usage(request):
     type = 2
     try:
@@ -79,23 +72,23 @@ def stats_usage(request):
         type = 2
     if type == 0:
         # Last 24  hours only
-        result = mobyle.common.session.HourlyStatistic.find({ 'timestamp' : { '$gte' : datetime.today()-timedelta(days=1) }})
+        result = connection.HourlyStatistic.find({ 'timestamp' : { '$gte' : datetime.today() - timedelta(days = 1) }})
         gtype = 'hour'
     if type == 1:
-        result = mobyle.common.session.DailyStatistic.find()
+        result = connection.DailyStatistic.find()
         gtype = 'day'
     if type == 2:
-        result = mobyle.common.session.MonthlyStatistic.find()
+        result = connection.MonthlyStatistic.find()
         gtype = 'month'
 
     return  { 'usages' : result, 'type' : gtype }
 
 
-@view_config(route_name='statistics_user', renderer='mobyle.web:templates/statistics_user.mako')
+@view_config(route_name = 'statistics_user', renderer = 'mobyle.web:templates/statistics_user.mako')
 def stats_user(request):
     return {}
 
-@view_config(route_name='statistics', renderer='mobyle.web:templates/statistics.mako')
+@view_config(route_name = 'statistics', renderer = 'mobyle.web:templates/statistics.mako')
 def stats(request):
     type = 2
     try:
@@ -118,18 +111,18 @@ def stats(request):
     result = {'results' : {} }
     try:
         if type == 0:
-            result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, {"inline" : 1})
+            result = connection[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, {"inline" : 1})
         if type == 1:
-            result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, {"inline" : 1})
+            result = connection[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, {"inline" : 1})
         if type == 2:
-            result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, {"inline" : 1})
+            result = connection[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, {"inline" : 1})
     except Exception as e:
-        log.error("Could not exec mapreduce on stats: "+str(e)) 
-    programs = mobyle.common.session[Config.config().get('app:main','db_name')].programs.count()
+        log.error("Could not exec mapreduce on stats: " + str(e)) 
+    programs = connection[Config.config().get('app:main','db_name')].programs.count()
     return  { 'jobs' : result, 'programs' : programs }
 
 
-@view_config(route_name='statistics_map', renderer='mobyle.web:templates/statistics_map.mako')
+@view_config(route_name = 'statistics_map', renderer = 'mobyle.web:templates/statistics_map.mako')
 def stats_map(request):
     type = 2
     try:
@@ -152,13 +145,13 @@ def stats_map(request):
     result = { 'results' : {} }
     try:
         if type == 0:
-            result = mobyle.common.session[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, {"inline" : 1})
+            result = connection[Config.config().get('app:main','db_name')].hourlystatistics.map_reduce(map, reduce, {"inline" : 1})
         if type == 1:
-            result = mobyle.common.session[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, {"inline" : 1})
+            result = connection[Config.config().get('app:main','db_name')].dailystatistics.map_reduce(map, reduce, {"inline" : 1})
         if type == 2:
-            result = mobyle.common.session[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, {"inline" : 1})
+            result = connection[Config.config().get('app:main','db_name')].monthlystatistics.map_reduce(map, reduce, {"inline" : 1})
     except Exception as e:
-        log.error("Could not exec mapreduce on stats: "+str(e))
+        log.error("Could not exec mapreduce on stats: " + str(e))
     return  { 'locations' : result}
 
 

@@ -1,21 +1,18 @@
 # -*- coding: utf-8 -*-
 from pyramid.view import view_config
 from pyramid.security import remember, authenticated_userid, forget
-
 from pyramid.httpexceptions import HTTPFound
 from pyramid.renderers import render_to_response
 from pyramid.response import Response
 
 from velruse import login_url
 import json
-
 import requests
 import bcrypt
 
-from pyramid.httpexceptions import HTTPFound
-
-import mobyle.common
-from mobyle.common import session
+from mobyle.common import connection
+from mobyle.common import users
+from mobyle.common import service
 
 def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
@@ -23,9 +20,10 @@ def add_user(user):
     user['hashed_password'] = hashed
     user.save()
 
+
 def check_user_pw(username, password):
     """checks for plain password vs hashed password in database"""
-    user  = mobyle.common.session.User.find_one({'email': username})
+    user  = connection.User.find_one({'email': username})
     if not user: return False
     hashed = bcrypt.hashpw(password, user['hashed_password'])
     return hashed == user['hashed_password']
@@ -38,12 +36,12 @@ def main_page(request):
     userid = authenticated_userid(request)
 
     #retrieve list of services:
-    services = mobyle.common.session.Service.find()    
+    services = connection.Service.find()    
     
     if 'service_name' in request.POST:
         new_service_name = request.POST['service_name']
         if new_service_name not in services:
-            service = mobyle.common.session.Service()
+            service = connection.Service()
             service['name'] = new_service_name
             service.save()
             return HTTPFound(location='/')
@@ -53,7 +51,7 @@ def main_page(request):
         page = requests.get(newplatform)
         page = page.json       
         for elt in page.keys():
-            service = mobyle.common.session.Service()
+            service = connection.Service()
             service['name'] = elt
             service.save()
     
@@ -111,12 +109,12 @@ def logout(request):
 
 @view_config(route_name='services_list', renderer="json")
 def services_list(request):
-    services = mobyle.common.session.Service.find()
+    services = connection.Service.find()
     return [s['name'] for s in services]
 
 @view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")
 def user_list(request):
-    users = mobyle.common.session.User.find()
+    users = connection.User.find()
     ret = {}
     for u in users:
        userid = str(u['_id'])
