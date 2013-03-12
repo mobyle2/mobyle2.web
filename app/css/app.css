@@ -28,3 +28,7 @@
   content: "";
   padding: 0;
 }
+
+.fieldset_title {
+  margin-left: 0.5em;
+}
