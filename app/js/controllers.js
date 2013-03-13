@@ -14,6 +14,7 @@ function ServicesCtrl($scope,$http) {
         //    }
         //);
         $scope.services = data.services;
+        $scope.listDisplay = 'list'
     }).error(function(data, status, headers, config) {
         $scope.status = status;
     });
