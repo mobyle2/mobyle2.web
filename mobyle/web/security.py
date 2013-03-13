@@ -1,6 +1,6 @@
 import time
 
-from mobyle.common import connection
+from mobyle.common.connection import connection
 from mobyle.common import users
 
 def groupFinder(userid, request):

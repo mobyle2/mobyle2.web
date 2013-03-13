@@ -10,7 +10,7 @@ import json
 import requests
 import bcrypt
 
-from mobyle.common import connection
+from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
 
