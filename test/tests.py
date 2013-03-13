@@ -11,7 +11,7 @@ import unittest
 import mobyle.common.config
 cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'development.ini')))                                 
 
-from mobyle.common import connection
+from mobyle.common.connection import connection
 from mobyle.common.stats.stat import Statistic, HourlyStatistic, DailyStatistic, MonthlyStatistic
 import mobyle.common.service
 import mobyle.common.users

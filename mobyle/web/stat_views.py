@@ -13,8 +13,8 @@ import time
 from datetime import datetime, timedelta
 import requests
 
-from mobyle.common import connection
 from mobyle.common.config import Config
+from mobyle.common.connection import connection
 from mobyle.common.service import Program
 from mobyle.common.stats.stat import HourlyStatistic, DailyStatistic, MonthlyStatistic
 
