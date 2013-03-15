@@ -79,7 +79,7 @@ def main(global_config, **settings):
     from mobyle.common.project import Project 
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
-    Dashboard.add_dashboard([MobyleConfig, User, Project, Job, Package, Service, Program, Workflow, Widget], config)
+    Dashboard.add_dashboard([MobyleConfig, User, Project, Package, Service, Program, Workflow, Widget], config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])
 
