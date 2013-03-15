@@ -71,7 +71,7 @@ def main(global_config, **settings):
     
     config.scan()
 
-    Dashboard.set_connection(connection)
+    Dashboard.set_connection(connection.connection)
     from mobyle.common.users import User
     from mobyle.common.service import Package, Service, Program, Workflow, Widget
     from mobyle.common.mobyleConfig import MobyleConfig
