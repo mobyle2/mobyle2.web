@@ -4,6 +4,7 @@ Initialise database content
 
 
 import argparse
+import os
 import sys
 from hashlib import sha1
 from random import randint
@@ -25,18 +26,14 @@ if not args.config:
 config = Config(args.config).config()
 
 # Init connection
-
-import mobyle.common.connection
-mobyle.common.connection.init_mongo(config.get("app:main","db_uri"))
-
-import mobyle.common
-from mobyle.common.users import User
+from mobyle.common.connection import connection
+from mobyle.common import users
 
 # Create root user
-if mobyle.common.session.User.find({ 'first_name' : 'root' }).count() == 0:
+if connection.User.find({ 'first_name' : 'root' }).count() == 0:
     pwd = sha1("%s"%randint(1,1e99)).hexdigest()
     Config.logger().warn('root user created with password: '+ pwd )
-    user = mobyle.common.session.User()
+    user = connection.User()
     user['first_name'] = 'root'
     user['last_name'] = 'root'
     user['email'] = config.get("app:main",'root_email')
@@ -50,7 +47,7 @@ if mobyle.common.session.User.find({ 'first_name' : 'root' }).count() == 0:
 
 from mobyle.common.mobyleConfig import MobyleConfig
 #Create default config
-if mobyle.common.session.MobyleConfig.find().count() == 0:
-    cf = mobyle.common.session.MobyleConfig()
+if connection.MobyleConfig.find().count() == 0:
+    cf = connection.MobyleConfig()
     cf.save()
 

@@ -16,12 +16,6 @@ from mf.dashboard import Dashboard
 from gridfs import GridFS
 import pymongo
 
-from mobyle.web.resources import Root
-from mobyle.web.security import groupFinder
-from mobyle.web.views import add_user
-
-from mobyle.common import connection
-from mobyle.common.config import Config
 
 
 
@@ -29,26 +23,37 @@ def main(global_config, **settings):
     """ 
     This function returns a Pyramid WSGI application.
     """
+    # instantiate mobyle config
+    from mobyle.common.config import Config
+    mobyle_config = Config().config()
+    # copy pyramid app:main settings to mobyle config (DB config, etc.)
+    for setting in settings:
+        mobyle_config.set('app:main', setting,settings[setting])
+    # then import connection
+    from mobyle.common import connection
+
+    # Mobyle modules (which import mobyle.lib modules) can be imported
+    # now, they are registered with the right configuration
+    from mobyle.web.resources import Root
+    from mobyle.web.security import groupFinder
+    from mobyle.web.views import add_user
+
     config = Configurator(root_factory = Root, settings = settings)
     config.include(pyramid_beaker)
     config.include('pyramid_mailer')
     config.include("velruse.providers.openid")
     config.add_openid_login(realm=settings['site_uri'])
+
+    db_uri = settings['db_uri']
+    conn = pymongo.Connection(db_uri, safe = True)
+    config.registry.settings['db_conn'] = conn
+    db = conn[config.registry.settings['db_name']]
     
     authentication_policy = AuthTktAuthenticationPolicy('seekrit', callback = groupFinder, hashalg = 'sha512')
     authorization_policy = ACLAuthorizationPolicy()
     
     config.set_authentication_policy(authentication_policy)
     config.set_authorization_policy(authorization_policy)
-    
-    db_uri = settings['db_uri']
-    conn = pymongo.Connection(db_uri, safe = True)
-    config.registry.settings['db_conn'] = conn
-    db = conn[config.registry.settings['db_name']]
-
-    mobyle_config = Config().config()
-    for setting in settings:
-      mobyle_config.set('app:main', setting,settings[setting])
     
     config.add_subscriber(add_mongo_db, NewRequest)
     config.add_subscriber(before_render, BeforeRender)    
