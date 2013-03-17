@@ -1,0 +1,19 @@
+<div id="{{name}}" class="row-fluid" ng-ddshow="!mbformpara.ishidden && (show_advanced || simple)">
+  <ng-switch on="mbformpara.children" >
+     <div class="span11 offset1 row-fluid" ng-switch-when="undefined">
+       <mbinput para="mbformpara">
+     </div>
+     <div class="span11 offset1 accordion" ng-switch-default>
+       <div class="accordion-group">
+         <div class="accordion-heading">
+           <h4 class="fieldset_title"><a data-toggle="collapse" data-target="#fieldset-contents-{{name}}">{{mbformpara.prompt || mbformpara.name}}</a><h4>
+         </div>
+         <div id="fieldset-contents-{{name}}" class="accordion-body collapse in">
+           <div class="accordion-inner">
+             <div ng-repeat="(name, mbformpara) in mbformpara.children"><recursive><span mbformpara="mbformpara"></span></recursive></div>
+           </div>
+         </div>
+       </div>
+     </div>
+  </ng-switch>
+</div>

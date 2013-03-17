@@ -21,24 +21,13 @@ function ServicesCtrl($scope,$http) {
 }
 //ServicesCtrl.$inject = [$scope];
 
-function ServiceDetailCtrl($scope,$http,$routeParams){
+function ServiceDetailCtrl($scope,$http,$routeParams,mbsimple){
     $http({
         url: "json/services/"+$routeParams.serviceId+".json",
         method: "GET"
     }).success(function(data, status, headers, config) {
         $scope.service = data;
-        // initialise collapsible components
-        $(".collapse").collapse();
-        // detect if a parameter or a paragraph is "simple"
-        function simple(para){
-          if(!para.children){
-            return para.simple==true;
-          }else{
-            return para.children.filter(simple).length>0;
-          }
-        }
-        $scope.simple = simple;
-        $scope.show_advanced = !simple($scope.service.inputs);
+        $scope.show_advanced = !mbsimple($scope.service.inputs);
     }).error(function(data, status, headers, config) {
         $scope.status = status;
     });
