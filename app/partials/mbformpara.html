@@ -1,4 +1,4 @@
-<div id="{{name}}" class="row-fluid" ng-ddshow="!mbformpara.ishidden && (show_advanced || simple)">
+<div id="{{name}}" class="row-fluid" ng-show="!mbformpara.ishidden && (show_advanced || mbsimple(mbformpara))">
   <ng-switch on="mbformpara.children" >
      <div class="span11 offset1 row-fluid" ng-switch-when="undefined">
        <mbinput para="mbformpara">

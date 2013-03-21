@@ -27,6 +27,7 @@ function ServiceDetailCtrl($scope,$http,$routeParams,mbsimple){
         method: "GET"
     }).success(function(data, status, headers, config) {
         $scope.service = data;
+        $scope.mbsimple = mbsimple;
         $scope.show_advanced = !mbsimple($scope.service.inputs);
     }).error(function(data, status, headers, config) {
         $scope.status = status;

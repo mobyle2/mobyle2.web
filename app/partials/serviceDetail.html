@@ -5,7 +5,7 @@
   </div>
   <div class="btn-toolbar">
     <button type="submit" class="btn btn-primary"><i class="icon-play icon-white"></i> run</button>
-    <toggle class="span2 btn" state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn" style="margin: 1em;"></toggle>
+    <toggle class="span2 btn" ng-show="mbsimple(service.inputs)" state="{{show_advanced}}" textWhenOn="Only simple parameters" textWhenOff="All parameters" ng-click="show_advanced=!show_advanced" class="btn" style="margin: 1em;"></toggle>
   </div>
   <div ng-repeat="(name, mbformpara) in service.inputs.children"<span recursive mbformpara="mbformpara"></span>
   </div>

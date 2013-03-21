@@ -98,15 +98,8 @@ angular.module('awa.directives').directive("recursive", function($compile) {
   };
 });
 
-angular.module('awa.directives').directive("mbformpara", ['mbsimple', function() {
+angular.module('awa.directives').directive("mbformpara", [function() {
   return {
-    scope: {mbformpara: '='},
     templateUrl: 'partials/mbformpara.html',
-    compile: function() {
-      return  function($scope){
-        //$scope.simple = mbsimple($scope.mbformpara);
-        //$scope.show_advanced = !mbsimple($scope.mbformpara);
-      }
-    }
   };
 }]);
