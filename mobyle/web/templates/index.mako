@@ -10,6 +10,9 @@ This <a href='/onlyauthenticated'>view</a> is restricted to authenticated users.
 <h2>Admin dashboard</h2>
 Admin dashboard is available <a href='/admin'>here</a> (no authentication for the moment)
 
+<h2>Data manager</h2>
+Data-manager prototype is available <a href='/data-manager/'>here</a>
+
 <h2>Tests</h2>
 <div class="row">
 <div class="offset1">
