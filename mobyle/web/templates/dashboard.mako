@@ -49,6 +49,8 @@
 
    var autocompleteelt = null;
 
+   mfprefix = "${prefix}";
+
 $(document).ready(function() {
 
    $(".mf-list").hide();
