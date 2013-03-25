@@ -45,6 +45,14 @@ if connection.User.find({ 'first_name' : 'root' }).count() == 0:
     user['hashed_password'] = hashed
     user.save()
 
+    # Create default project for root
+    project = connection.Project()
+    project['name'] = 'admin_project'
+    project['owner'] = 'root'
+    project['users'].append({ 'user' : user, 'role' : 'admin'})
+    project.save()
+
+
 from mobyle.common.mobyleConfig import MobyleConfig
 #Create default config
 if connection.MobyleConfig.find().count() == 0:
