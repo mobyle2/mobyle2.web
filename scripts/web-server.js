@@ -4,15 +4,38 @@ var util = require('util'),
     http = require('http'),
     fs = require('fs'),
     url = require('url'),
-    events = require('events');
+    events = require('events'),
+    httpProxy = require('http-proxy');
 
 var DEFAULT_PORT = 8000;
+var DEFAULT_PYRAMID_PORT = 6543;
+var DEFAULT_PROXY_PORT = 9000;
 
 function main(argv) {
+  var awa_port = (Number(argv[2]) || DEFAULT_PORT);
+  var pyramid_port = (Number(argv[3]) || DEFAULT_PYRAMID_PORT);
+  var proxy_port = (Number(argv[3]) || DEFAULT_PROXY_PORT);   
   new HttpServer({
     'GET': createServlet(StaticServlet),
     'HEAD': createServlet(StaticServlet)
-  }).start(Number(argv[2]) || DEFAULT_PORT);
+  }).start(awa_port);
+
+  /**
+   * Declaring the proxy server which should
+   * avoid SOP problems
+   * incoming requests for awa (/app) ->node server
+   * incoming requests for pyramid(/api) ->pyramid server
+  **/
+  var options = {
+    pathnameOnly: true,
+    router: {
+      '/api': '127.0.0.1:' + pyramid_port,
+      '/app': '127.0.0.1:' + awa_port
+    }
+  };
+  var proxyServer = httpProxy.createServer(options);
+  proxyServer.listen(proxy_port);
+  util.puts('AWA is available on http://localhost:' + proxy_port + '/app/index.html');
 }
 
 function escapeHtml(value) {
@@ -66,6 +89,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
   }
 };
 
+
 /**
  * Handles static content.
  */
@@ -87,9 +111,10 @@ StaticServlet.MimeMap = {
 
 StaticServlet.prototype.handleRequest = function(req, res) {
   var self = this;
-  var path = ('./' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
+  var path = ('./app/' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
     return String.fromCharCode(parseInt(hex, 16));
   });
+  util.puts(path);
   var parts = path.split('/');
   if (parts[parts.length-1].charAt(0) === '.')
     return self.sendForbidden_(req, res, path);
