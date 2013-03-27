@@ -114,7 +114,6 @@ StaticServlet.prototype.handleRequest = function(req, res) {
   var path = ('./app/' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
     return String.fromCharCode(parseInt(hex, 16));
   });
-  util.puts(path);
   var parts = path.split('/');
   if (parts[parts.length-1].charAt(0) === '.')
     return self.sendForbidden_(req, res, path);
