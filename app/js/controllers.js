@@ -8,18 +8,12 @@ function ServicesCtrl($scope,$http) {
         url: "json/listing.json",
         method: "GET"
     }).success(function(data, status, headers, config) {
-        //$scope.services = data['services'].map(
-        //    function(name){
-        //        return {'name':name};
-        //    }
-        //);
         $scope.services = data.services;
         $scope.listDisplay = 'list'
     }).error(function(data, status, headers, config) {
         $scope.status = status;
     });
 }
-//ServicesCtrl.$inject = [$scope];
 
 function ServiceDetailCtrl($scope,$http,$routeParams,mbsimple){
     $http({
@@ -36,4 +30,3 @@ function ServiceDetailCtrl($scope,$http,$routeParams,mbsimple){
 
 function DataCtrl() {
 }
-//DataCtrl.$inject = [];
