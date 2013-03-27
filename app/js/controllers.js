@@ -5,10 +5,10 @@
 
 function ServicesCtrl($scope,$http) {
     $http({
-        url: "json/listing.json",
+        url: "/api/services/",
         method: "GET"
     }).success(function(data, status, headers, config) {
-        $scope.services = data.services;
+        $scope.services = data;
         $scope.listDisplay = 'list'
     }).error(function(data, status, headers, config) {
         $scope.status = status;
@@ -17,10 +17,10 @@ function ServicesCtrl($scope,$http) {
 
 function ServiceDetailCtrl($scope,$http,$routeParams,mbsimple){
     $http({
-        url: "json/services/"+$routeParams.serviceId+".json",
+        url: "/api/services/"+$routeParams.serviceId,
         method: "GET"
     }).success(function(data, status, headers, config) {
-        $scope.service = data;
+        $scope.service = data.service;
         $scope.mbsimple = mbsimple;
         $scope.show_advanced = !mbsimple($scope.service.inputs);
     }).error(function(data, status, headers, config) {

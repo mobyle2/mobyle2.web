@@ -10,7 +10,7 @@
 <div class="services {{listDisplay}}">
   <div ng-repeat="s in filteredServices = (services | searchServices:query | orderBy:'name')">
     <div class="dt">
-      <a href="#/services/{{s.name}}" ng-bind-html="s.nameHl || s.name"/></a>
+      <a href="#/services/{{s._id.$oid}}" ng-bind-html="s.nameHl || s.name"/></a>
     </div>
     <div class="dd">
       <span ui-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
