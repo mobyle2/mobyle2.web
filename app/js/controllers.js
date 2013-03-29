@@ -8,10 +8,8 @@ function ServicesCtrl($scope,Service) {
     $scope.listDisplay = 'list';
 }
 
-function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service){
-    Service.get({id:$routeParams.serviceId}, function(data){
-        $scope.service = data.service;
-    });
+function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service,$resource){
+    $scope.service = Service.get({id:$routeParams.serviceId});
     $scope.mbsimple = mbsimple;
 }
 

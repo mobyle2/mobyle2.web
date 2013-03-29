@@ -23,15 +23,22 @@ angular.module('awa.services').value('mbsimple', function(para) {
 });
 
 angular.module('awa.services').factory('mfResource', function ($resource) {
-
     function MFResourceFactory(collectionName) {
+        var resource = $resource('/api/'+collectionName+'/:id',{},
+            {
+             get: {
+                  method:'get',
+                  transformResponse: function (data) {
+                                         var json_data = JSON.parse(data);
+                                         return json_data[json_data.object];
+                                     }
 
-        var resource = $resource('/api/'+collectionName+'/:id');
+                 }
+            }
+        );
         return resource;
     }
-
     return MFResourceFactory;
-
 });
 
 angular.module('awa.services').factory('Service', function (mfResource) {
