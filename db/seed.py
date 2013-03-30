@@ -28,7 +28,7 @@ config = Config(args.config).config()
 # Init connection
 from mobyle.common.connection import connection
 from mobyle.common import users
-
+from mobyle.common import project
 # Create root user
 if connection.User.find({ 'first_name' : 'root' }).count() == 0:
     pwd = sha1("%s"%randint(1,1e99)).hexdigest()
