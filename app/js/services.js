@@ -44,3 +44,7 @@ angular.module('awa.services').factory('mfResource', function ($resource) {
 angular.module('awa.services').factory('Service', function (mfResource) {
     return mfResource('services');
 });
+
+angular.module('awa.services').factory('Project', function (mfResource) {
+    return mfResource('projects');
+});

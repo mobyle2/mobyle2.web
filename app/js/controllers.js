@@ -13,5 +13,15 @@ function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service,$resource){
     $scope.mbsimple = mbsimple;
 }
 
+function ProjectsCtrl($scope,Project) {
+    $scope.projects = Project.query();
+    $scope.listDisplay = 'list';
+}
+
+function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
+    $scope.project = Project.get({id:$routeParams.projectId});
+    $scope.mbsimple = mbsimple;
+}
+
 function DataCtrl() {
 }
