@@ -1,11 +1,7 @@
 'use strict';
 
 /* Directives */
-angular.module('awa.directives', []).directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
-    elm.text(version);
-  };
-}]);
+angular.module('awa.directives', []);
 
 angular.module('awa.directives').directive('activeLink', ['$location', function(location) {
   return {
@@ -13,7 +9,7 @@ angular.module('awa.directives').directive('activeLink', ['$location', function(
     link: function(scope, element, attrs, controller) {
       var clazz = attrs.activeLink;
       var path = attrs.href;
-      path = path.substring(1); //hack because path does bot return including hashbang
+      path = path.substring(1); //hack because return path includes leading hash
       scope.location = location;
       scope.$watch('location.path()', function(newPath) {
         if (path === newPath) {
