@@ -20,7 +20,7 @@ describe('service', function() {
             expect(mbsimple({'children':[{'simple':false},{'simple':false}]})).toEqual(false);
         }));
         it('should return true if the paragraph contains at least one simple child', inject(function(mbsimple) {
-            expect(mbsimple({'children':[{'simple':true},{'simple':false}]})).toEqual(false);
+            expect(mbsimple({'children':[{'simple':true},{'simple':false}]})).toEqual(true);
         }));
     });
 });
