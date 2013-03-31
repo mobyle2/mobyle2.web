@@ -1,11 +1,7 @@
 'use strict';
 
 /* Directives */
-angular.module('awa.directives', []).directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
-    elm.text(version);
-  };
-}]);
+angular.module('awa.directives', []);
 
 angular.module('awa.directives').directive('activeLink', ['$location', function(location) {
   return {
