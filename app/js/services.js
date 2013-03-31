@@ -9,6 +9,8 @@ angular.module('awa.services', ['ngResource']);
 
 angular.module('awa.services').value('mbsimple', function(para) {
   // detect if a parameter or a paragraph is "simple"
+  // it is simple if it has the "simple" property set to true
+  // or if one of its children has the "simple" property set to true
   function simple(para){
     if(!para){
         return false;
