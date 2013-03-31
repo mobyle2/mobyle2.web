@@ -2,7 +2,7 @@
 
 /* jasmine specs for controllers go here */
 
-describe('MyCtrl1', function(){
+/*describe('MyCtrl1', function(){
   var myCtrl1;
 
   beforeEach(function(){
@@ -28,4 +28,4 @@ describe('MyCtrl2', function(){
   it('should ....', function() {
     //spec body
   });
-});
+});*/
