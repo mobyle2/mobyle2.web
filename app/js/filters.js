@@ -14,7 +14,7 @@ angular.module('awa.filters', []).
       for (var i = 0; i < s.length; i++){
         var o = angular.copy(s[i]);
         for (var j = 0; j < f.length; j++){
-          if(o[f[j]].indexOf(q)!==-1){
+          if(o[f[j]] && o[f[j]].indexOf(q)!==-1){
             // if matching. set found flag and highlight match(es)
             o[f[j]+'Hl']=o[f[j]].replace(q,'<strong>'+q+'</strong>','g');
             o['found']=true;
