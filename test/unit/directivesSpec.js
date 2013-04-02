@@ -5,17 +5,28 @@
 describe('directives', function() {
   beforeEach(module('awa.directives'));
 
-/*
-  describe('app-version', function() {
-    it('should print current version', function() {
-      module(function($provide) {
-        $provide.value('version', 'TEST_VER');
-      });
+  describe('toggle', function(){
+    it('should display textWhenOn if state==true', function(){
       inject(function($compile, $rootScope) {
-        var element = $compile('<span app-version></span>')($rootScope);
-        expect(element.text()).toEqual('TEST_VER');
+        var element = $compile('<toggle textWhenOn="when on" textWhenOff="when off" state="true"></toggle>')($rootScope);
+        $rootScope.$digest();
+        expect(element[0].value).toEqual('when on');
       });
     });
-  });
-*/
+    it('should display textWhenOff if state==false', function(){
+      inject(function($compile, $rootScope) {
+          var element = $compile('<toggle textWhenOn="when on" textWhenOff="when off" state="false"></toggle>')($rootScope);
+          $rootScope.$digest();
+          expect(element[0].value).toEqual('when off');
+      });
+    });
+    it('should display textWhenOff if state is not defined', function(){
+      inject(function($compile, $rootScope) {
+          var element = $compile('<toggle textWhenOn="when on" textWhenOff="when off"></toggle>')($rootScope);
+          $rootScope.$digest();
+          expect(element[0].value).toEqual('when off');
+      });
+    });
+  })
+
 });
