@@ -11,6 +11,8 @@ function ServicesCtrl($scope,Service) {
 function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service,$resource){
     $scope.service = Service.get({id:$routeParams.serviceId});
     $scope.mbsimple = mbsimple;
+    $scope.show_advanced = mbsimple($scope.service.inputs);
+
 }
 
 function ProjectsCtrl($scope,Project) {
