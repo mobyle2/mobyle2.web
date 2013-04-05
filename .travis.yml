@@ -7,4 +7,4 @@
   - sh -e /etc/init.d/xvfb start
   - npm install --quiet -g testacular
 
- script: "./node_modules/.bin/karma start --browsers Firefox --single-run"
+ script: "./node_modules/.bin/karma start config/testacular.conf.js --single-run"
