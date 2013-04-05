@@ -1,8 +1,10 @@
-language: node_js
-node_js:
-  - 0.8
-before_script:
+ language: node_js
+ node_js:
+   - "0.8"
+
+ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-script:
-  - scripts/test.sh
+  - npm install --quiet -g testacular
+
+ script: scripts/test.sh
