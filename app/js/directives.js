@@ -92,6 +92,6 @@ angular.module('awa.directives').directive("recursive", function($compile) {
 
 angular.module('awa.directives').directive("mbformpara", [function() {
   return {
-    templateUrl: 'partials/mbformpara.html',
+    templateUrl: 'partials/mbformpara.html'
   };
 }]);
