@@ -18,3 +18,16 @@ junitReporter = {
   outputFile: 'test_out/unit.xml',
   suite: 'unit'
 };
+
+// code coverage configuration
+
+preprocessors = {
+  'app/js/**/*.js': 'coverage'
+};
+
+reporters = ['coverage'];
+
+coverageReporter = {
+  type : 'html',
+  dir : 'coverage/'
+}
