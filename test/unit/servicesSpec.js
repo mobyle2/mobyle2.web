@@ -68,4 +68,119 @@ describe('service', function() {
         });
      });
 
+    describe('Service', function() {
+        var $httpBackend, scope, testServiceList, testServiceObject, testId;
+        beforeEach(inject(function($injector, $rootScope, Service) {
+            $httpBackend = $injector.get('$httpBackend');
+            // resource listing
+            testServiceList = [
+                {
+                    "_id": {
+                        "$oid": "5152bedd93546d544bf4d7a8"
+                    },
+                    "description": "Tool 1",
+                    "title": "tool1",
+                    "package": null,
+                    "version": null,
+                    "type": "program",
+                    "name": "tool1"
+                },
+                {
+                    "_id": {
+                        "$oid": "5152bedd93546d544bf4d99c"
+                    },
+                    "description": "Tool 2",
+                    "title": "Tool 2",
+                    "package": null,
+                    "version": null,
+                    "type": "program",
+                    "name": "tool2"
+                }
+            ];
+            $httpBackend.when('GET', '/api/services').respond(JSON.stringify(testServiceList));
+            // resource detail
+            testId = "5152bedd93546d544bf4d99c";
+            testServiceObject = {"object":"service","service":                {
+                "_id": {
+                    "$oid": "5152bedd93546d544bf4d99c"
+                },
+                "description": "Tool 2",
+                "title": "Tool 2",
+                "package": null,
+                "version": null,
+                "type": "program",
+                "name": "tool2"
+            }};
+            $httpBackend.when('GET', '/api/services/5152bedd93546d544bf4d99c').respond(JSON.stringify(testServiceObject));
+            scope = $rootScope.$new();
+        }));
+        it('query() should return a list of services', inject(function(Service) {
+            $httpBackend.expectGET('/api/services');
+            var res = Service.query();
+            $httpBackend.flush();
+            expect(res).toEqualData(testServiceList);
+        }));
+        it('get() should return an service detail', inject(function(Service) {
+            $httpBackend.expectGET('/api/services/'+testId);
+            var res = Service.get({'id':testId});
+            $httpBackend.flush();
+            expect(res).toEqualData(testServiceObject["service"]);
+        }));
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+    });
+
+    describe('Project', function() {
+        var $httpBackend, scope, testProjectList, testProjectObject, testId;
+        beforeEach(inject(function($injector, $rootScope, Service) {
+            $httpBackend = $injector.get('$httpBackend');
+            // resource listing
+            testProjectList = [
+                {
+                    "_id": {
+                        "$oid": "aa"
+                    },
+                    "name": "Project 1"
+                },
+                {
+                    "_id": {
+                        "$oid": "bb"
+                    },
+                    "description": "Project 2"
+                }
+            ];
+            $httpBackend.when('GET', '/api/projects').respond(JSON.stringify(testProjectList));
+            // resource detail
+            testId = "aa";
+            testProjectObject = {"object":"service", "service":
+                {
+                    "_id": {
+                        "$oid": "aa"
+                    },
+                    "name": "Project 1"
+                }
+            };
+            $httpBackend.when('GET', '/api/projects/aa').respond(JSON.stringify(testProjectObject));
+            scope = $rootScope.$new();
+        }));
+        it('query() should return a list of projects', inject(function(Project) {
+            $httpBackend.expectGET('/api/projects');
+            var res = Project.query();
+            $httpBackend.flush();
+            expect(res).toEqualData(testProjectList);
+        }));
+        it('get() should return an project detail', inject(function(Project) {
+            $httpBackend.expectGET('/api/projects/'+testId);
+            var res = Project.get({'id':testId});
+            $httpBackend.flush();
+            expect(res).toEqualData(testProjectObject["service"]);
+        }));
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+    });
+
 });
