@@ -127,4 +127,51 @@ describe('directives', function () {
 
     });
 
+    describe('mbformpara', function () {
+
+        var scope, mbformpara, html, compile;
+
+        // load the templates
+        beforeEach(module('partials/mbinput.html'));
+        beforeEach(module('partials/mbformpara.html'));
+
+        beforeEach(inject(function($rootScope, $compile){
+            scope = $rootScope.$new();
+            compile = $compile;
+            mbformpara = angular.element('<span recursive mbformpara="mbformpara">');
+            scope.mbformpara = {
+                "prompt": "Paragraph prompt",
+                "name": "paragraph name",
+                "children": [
+                    {
+                        "prompt": "Parameter a prompt",
+                        "name": "parameter a name"
+                    },
+                    {
+                        "prompt": "Parameter b prompt",
+                        "name": "parameter b name"
+                    },
+                    {
+                        "prompt": "Parameter c prompt",
+                        "name": "parameter c name"
+                    }
+                ]
+            }
+            html = compile(mbformpara)(scope);
+            scope.$digest();
+            html = html.find('div');
+            //console.log(html.html());
+        }));
+
+        it('should have the top id attribute equal to the paragraph name', function () {
+            expect(html.attr('id')).toEqual(scope.mbformpara.name);
+        });
+
+        it('should have the heading text equal to the paragraph prompt', function () {
+            expect(html.find('h4').find('a').text()).toEqual(scope.mbformpara.prompt);
+        });
+
+    });
+
+
 });
