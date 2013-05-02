@@ -14,6 +14,9 @@ from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
 
+import urllib
+improt urllib2
+
 def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
     hashed = bcrypt.hashpw(user['hashed_password'], bcrypt.gensalt())
@@ -105,6 +108,44 @@ def logout(request):
     request.session.flash("You have logged out")
     return HTTPFound(location='/', headers=headers)
 
+@view_config(route_name="auth_login",renderer="json")
+def auth_login
+    # Needed for:
+    # - Mozilla Persona
+    # - Mobyle account
+    auth_system = request.matchdict['auth']
+    settings = request.registry.settings
+    if auth_system == 'persona':
+        assertion = request.params.getone('assertion')
+        audience = settings['site_uri']
+        # Check assertion
+        url = 'https://verifier.login.persona.org/verify'
+        values = {'assertion': assertion,
+                  'audience': audience}
+
+        data = urllib.urlencode(values)
+        req = urllib2.Request(url, data)
+        verification_data = None
+        status = 1
+        user = None
+        try:
+            response = urllib2.urlopen(req)
+            auth_answer = response.read()
+            verification_data = json.loads(auth_answer)
+            user = verification_data['email']
+            status = 0
+        except URLError, e:
+            logging.error(e.reason)
+
+    headers = remember(request, username)
+    request.response.headerlist.extend(headers)
+    return { 'user': user, 'status': status }
+
+@view_config(route_name="auth_logout", renderer="json")
+def auth_logout
+    # logout
+    headers = forget(request)
+    return { 'user': None, 'status': 0 }
 
 
 @view_config(route_name='services_list', renderer="json")
