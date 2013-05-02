@@ -1,0 +1,152 @@
+<div class="row" ng-controller="LoginCtrl" style="margin-top:10px;">
+<div class="span3 offset1">
+
+<div ng-repeat="login in logins">
+<div ng-switch="login">
+	<form action="/velruse/login/facebook" method="post">
+    <input type="hidden" name="scope" value="publish_stream,create_event" />
+    <a href="#" class="btn-auth btn-facebook"
+        ng-switch-when="facebook">Sign in with <b>Facebook</b></a>
+	</form>
+	<form action="/velruse/twitter/login" method="post">
+    <a href="#" class="btn-auth btn-twitter"
+        ng-switch-when="twitter">Sign in with <b>Twitter</b></a>
+	</form>
+	<form action="/velruse/github/login" method="post">
+    <a href="#" class="btn-auth btn-github"
+        ng-switch-when="github">Sign in with <b>GitHub</b></a>
+	</form>
+    <a href="#" class="btn-auth btn-openid"
+        ng-switch-when="openid">Sign in with <b>Open ID</b></a>
+    <img class="img-auth" id="signinpersona"
+        src="img/social_signin_buttons_icons/persona_signin.png"
+        ng-switch-when="persona"/>
+
+</div>
+</div>
+</div>
+<div class="span2" style="white-space: nowrap;">
+<h2>
+<i class="icon-chevron-left" style="vertical-align: middle;margin-right:10px"></i>
+Login
+<i class="icon-chevron-right" style="vertical-align:middle;margin-left: 10px;"></i>
+</h2>
+</div>
+<div class="span6">
+    <div class="login">
+        <div class="control-group">
+            <label for="login">Sign in with your <b>Mobyle account</b></label>
+        <div class="controls">
+			<div class="input-prepend">
+			<span class="add-on"><i class="icon-user"></i></span>
+            <input type="text" id="login" name="login" placeholder="Identifier"/>
+			</div>
+            <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+            <input type="password" id="password" name="password" placeholder="Password"/>
+			</div>
+        </div>
+		<div>
+		<a href="#" id="forgot">Forgot your password?</a> or <a href="#" id="register"><b>Register</b></a>
+		</div>
+		</div>
+    </div>
+	<div class="register form form-inline">
+        <div class="control-group">
+		<label for="rlogin">Create a <b>Mobyle</b> account:</label>
+		<div class="controls">
+            <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            <input type="text" id="rlogin" name="rlogin" placeholder="Email"/>
+            </div>
+		</div>
+        <div class="controls">
+            <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+            <input type="password" id="rpassword" name="rpassword" placeholder="Password"/>
+            </div>
+		</div>
+        <div class="controls">
+            <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+            <input type="password" id="rpassword2" name="rpassword2" placeholder="Confirm password"/>
+            </div>
+        </div>
+		<div class="controls">
+			<button type="button" class="btn btn-primary">Register</button>
+		</div>
+		</div>
+    </div>
+	<div class="signin" id="sopenid">
+		<form action="#" method="post" class="form form-inline">
+        <label for="openid_login">
+		<a href="#" class="btn-auth btn-openid">Open ID identifier</a>
+        </label>
+			<input type="text" id="openid_login" name="openid_login" placeholder="Identifier"/>
+		<button class="btn btn-primary">Login</button>
+		</form>
+	</div>
+</div>
+
+</div>
+
+
+<script>
+
+var currentUser = null;
+
+$(function () {
+
+$('.signin').hide();
+
+$(".register").hide();
+$("#register").click(function(e) {
+	$(".register").show();
+	$(".login").hide();
+	e.preventDefault();
+});
+
+$(document).on('click','#signinpersona',function() {
+   navigator.id.request(); 
+});
+
+$(document).on('click','#signoutpersona',function() {
+   navigator.id.logout(); 
+});
+
+$(document).on('click','.btn-openid',function(e) {
+  $(".register").hide();
+  $(".login").hide();
+  $('#sopenid').show(); 
+  e.preventDefault();
+  return false;
+});
+
+
+navigator.id.watch({
+  loggedInUser: currentUser,
+  onlogin: function(assertion) {
+    jQuery.ajax({
+      type: 'POST',
+      url: '/api/auth/login',
+      data: {assertion: assertion},
+      success: function(res, status, xhr) { window.location.reload(); },
+      error: function(xhr, status, err) {
+        navigator.id.logout();
+        alert("Login failure: " + err);
+      }
+    });
+  },
+  onlogout: function() {
+    jQuery.ajax({
+      type: 'POST',
+      url: '/api/auth/logout',
+      success: function(res, status, xhr) { window.location.reload(); },
+      error: function(xhr, status, err) { alert("Logout failure: " + err); }
+    });
+  }
+});
+
+}); 
+
+</script>

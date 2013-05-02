@@ -1,5 +1,26 @@
 /* app css stylesheet */
 
+.btn-auth {
+  margin: 10px;
+}
+
+.register {
+  margin-top: 30px;
+}
+
+.login {
+  margin-top: 30px;
+}
+
+
+.register .controls {
+  margin: 10px;
+}
+
+.img-auth {
+  margin: 10px;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

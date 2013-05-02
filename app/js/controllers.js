@@ -2,6 +2,10 @@
 
 /* Controllers */
 
+function LoginCtrl($scope) {
+    $scope.logins = ['facebook', 'openid', 'twitter', 'github', 'persona', 'native' ];
+}
+
 
 function ServicesCtrl($scope,Service) {
     $scope.services = Service.query();
