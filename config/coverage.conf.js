@@ -1,13 +1,14 @@
-basePath = '../';
+basePath = '../app';
 
 files = [
     JASMINE,
     JASMINE_ADAPTER,
-    'app/lib/angular/angular.js',
-    'app/lib/angular/angular-*.js',
-    'test/lib/angular/angular-mocks.js',
-    'app/js/**/*.js',
-    'test/unit/**/*.js'
+    'lib/angular/angular.js',
+    'lib/angular/angular-*.js',
+    '../test/lib/angular/angular-mocks.js',
+    'js/**/*.js',
+    'partials/*.html',
+    '../test/unit/**/*.js'
 ];
 
 autoWatch = true;
@@ -19,10 +20,11 @@ junitReporter = {
     suite: 'unit'
 };
 
-// code coverage configuration
-
 preprocessors = {
-    'app/js/**/*.js': 'coverage'
+    // generate js files from html templates
+    'partials/*.html': 'html2js',
+    // code coverage configuration
+    'js/**/*.js': 'coverage'
 };
 
 reporters = ['coverage'];
