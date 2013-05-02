@@ -15,7 +15,7 @@ from mobyle.common import users
 from mobyle.common import service
 
 import urllib
-improt urllib2
+import urllib2
 
 def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
@@ -109,7 +109,7 @@ def logout(request):
     return HTTPFound(location='/', headers=headers)
 
 @view_config(route_name="auth_login",renderer="json")
-def auth_login
+def auth_login(request):
     # Needed for:
     # - Mozilla Persona
     # - Mobyle account
@@ -142,7 +142,7 @@ def auth_login
     return { 'user': user, 'status': status }
 
 @view_config(route_name="auth_logout", renderer="json")
-def auth_logout
+def auth_logout(request):
     # logout
     headers = forget(request)
     return { 'user': None, 'status': 0 }
