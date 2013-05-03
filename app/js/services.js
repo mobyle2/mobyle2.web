@@ -53,21 +53,39 @@ angular.module('awa.services').factory('Project', function (mfResource) {
 
 
 angular.module('awa.services').factory('Login', function ($resource) {
-    function LoginFactory(authName,params) {
-        var resource = $resource('/api/auth/login/'+authName,params,
+    function LoginFactory(authName) {
+        return $resource('/api/auth/login/'+authName,{},
             {
-                get: {
-                    method:'post',
-                    transformResponse: function (data) {
-                        var json_data = JSON.parse(data);
-                        return json_data[json_data.object];
-                    }
-
-                }
             }
         );
-        return resource;
     }
     return LoginFactory;
+});
+
+angular.module('awa.services').factory('Logout', function ($resource) {
+    function LogoutFactory(authName) {
+        return $resource('/api/auth/logout',{},
+            {
+            }
+        );
+    }
+    return LogouFactory;
+});
+
+/**
+ *   Login controller is used at multiple places (global + login page).
+ *   USe this service to store login process elements and notify controllers on update
+  */
+
+angular.module('awa.services').factory('LoginManager', function ($rootScope) {
+
+    return { login : { 'user' : null, 'msg': '', 'status' : 0},
+             result: function(user,msg,status) {
+                 this.login.user = user;
+                 this.login.msg = msg;
+                 this.login.status = status;
+                 $rootScope.$broadcast( 'LoginManager.update', this.login );
+             }
+        };
 });
 

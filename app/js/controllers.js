@@ -7,12 +7,36 @@ function UserCtrl($scope) {
 
 }
 
-function LoginCtrl($scope, $location, Login) {
+function LoginCtrl(LoginManager, $scope, $location, Login) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona' ];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
-    $scope.loginUser = null;
-    $scope.loginPassword = null;
+    $scope.login = null;
+    $scope.password = null;
+
+    $scope.$on( 'LoginManager.update', function( event, login ) {
+        $scope.msg = login.msg;
+        if (login.status==0) {
+            if($scope.provider=='register') {
+                $scope.provider = 'native';
+            }
+
+            $scope.password = null;
+            $scope.rpassword = null;
+            $scope.rpassword2 = null;
+
+            $scope.setUser(login.user);
+        }
+        else {
+            $scope.User = null;
+        }
+
+    });
+
+    // For register
+    $scope.rlogin = null;
+    $scope.rpassword = null;
+    $scope.rpassword2 = null;
 
     $scope.provider = 'native';
 
@@ -31,13 +55,30 @@ function LoginCtrl($scope, $location, Login) {
     }
 
     $scope.signIn = function(type) {
+        $scope.msg = "";
         $scope.provider = type;
         if(type == 'persona') {
             navigator.id.request();
         }
-        else if (type == 'native') {
-            $scope.loginUser = null;
-            $scope.loginPassword = null;
+        else if (type == 'register') {
+            if($scope.rpassword == $scope.rpassword2) {
+                var newuser = new Login('register');
+                var res = newuser.get({username: $scope.rlogin, password: $scope.rpassword});
+
+            }
+            else {
+                $scope.msg = "Passwords are not identical";
+            }
+        }
+        else if(type == 'native'){
+            var newuser = new Login('native');
+            var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
+                    LoginManager.result(res['user'],res['msg'],res['status']);
+                    //$scope.setUser(res['user']);
+                    //$scope.msg = res['msg'];
+                    //$scope.password = null;
+            });
+
         }
         else {
             alert('not yet implemented');
@@ -47,6 +88,9 @@ function LoginCtrl($scope, $location, Login) {
     $scope.signOut = function() {
         if($scope.provider == 'persona') {
             navigator.id.logout();
+        }
+        else {
+            Logout().get();
         }
         $scope.setUser(null);
         $scope.provider = null;
