@@ -3,10 +3,11 @@
 /* Controllers */
 
 function UserCtrl($scope) {
+    $scope.admin = false;
 
 }
 
-function LoginCtrl($scope, $location) {
+function LoginCtrl($scope, $location, Login) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona' ];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
@@ -34,10 +35,12 @@ function LoginCtrl($scope, $location) {
         if(type == 'persona') {
             navigator.id.request();
         }
-        else if (type == 'mobyle') {
+        else if (type == 'native') {
             $scope.loginUser = null;
             $scope.loginPassword = null;
-
+        }
+        else {
+            alert('not yet implemented');
         }
     }
 
@@ -52,6 +55,7 @@ function LoginCtrl($scope, $location) {
 
     $scope.remember = function($event) {
         // remember user password
+        alert('not yet implemented');
         $event.preventDefault()
     }
 
