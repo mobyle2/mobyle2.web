@@ -30,14 +30,17 @@ def add_user(user):
 def create_if_no_exists(email, password=None):
     """Check if user exists, else create it"""
     user  = connection.User.find_one({'email': email})
+    newuser = False
     if not user:
+        newuser = True
         user= connection.User()
         user['email'] = email
         if password:
             user['hashed_password'] = bcrypt.hashpw(password,
             bcrypt.gensalt())
         user.save()
-    return user
+
+    return (user,newuser)
 
 
 
@@ -143,16 +146,25 @@ def auth_login(request):
     auth_system = request.matchdict['auth']
     settings = request.registry.settings
     if auth_system == 'register':
-        ruser = request.json_body
+        #ruser = request.json_body
+        ruser = {}
+        ruser['username'] = request.params.getone('username')
+        ruser['password'] = request.params.getone('password')
         user = ruser['username']
-        userobj = create_if_no_exists(ruser['username'],ruser['password'])
-        admin = False
-        status = 0
-        msg = "Your account is created, you can now log in the \
-        system with your new credentials"
+        (userobj, newuser) = create_if_no_exists(ruser['username'],ruser['password'])
+        if not newuser:
+            status = 1
+            msg = "User already exists"
+        else:
+            status = 0
+            msg = "Your account is created, you can now log in the \
+            system with your new credentials"
     if auth_system == 'native':
         try:
-            ruser = request.json_body
+            #ruser = request.json_body
+            ruser = {}
+            ruser['username'] = request.params.getone('username')
+            ruser['password'] = request.params.getone('password')
             userobj = check_user_pw(ruser['username'],
                              ruser['password'])
             if userobj:
@@ -188,7 +200,7 @@ def auth_login(request):
             else:
                 user = verification_data['email']
                 status = 0
-                userobj = create_if_no_exists(user)
+                (userobj, newuser) = create_if_no_exists(user)
                 admin = userobj['admin']
         except URLError, e:
             logging.error(e.reason)
