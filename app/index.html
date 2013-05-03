@@ -29,8 +29,10 @@
         <li><a href="#/services" active-link="active">services</a></li>
         <li><a href="#/projects" active-link="active">projects</a></li>
       </ul>
-      <ul class="nav pull-right">
-        <li><a href="#/login" >Login</a></li>
+      <ul class="nav pull-right" ng-controller="LoginCtrl" id="loginnavbar">
+        <li ng-hide="userLogged()"><a href="#/login">Login</a></li>
+		<li ng-show="userLogged()"><a href="#/my" ng-bind="User"></a></li>
+        <li ng-show="userLogged()"><a href="#/logout" ng-click="signOut()">Logout</a></li>
       </ul>
     </div>
   </div>
@@ -55,5 +57,46 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="https://login.persona.org/include.js"></script>
+
+<script>
+$(function () {
+
+
+    navigator.id.watch({
+        loggedInUser: angular.element(document.getElementById('loginnavbar')).scope().User,
+        onlogin: function(assertion) {
+            jQuery.ajax({
+                type: 'POST',
+                url: '/api/auth/login/persona',
+                data: {assertion: assertion},
+                error: function(xhr, status, err) {
+                    navigator.id.logout();
+                    alert("Login failure: " + err);
+                }
+            }).done(function(data) {
+                        scope = angular.element(document.getElementById('loginnavbar')).scope();
+                        scope.$apply(function() {
+                            scope.setUser(data['user']);
+                        });
+
+                    });
+        },
+        onlogout: function() {
+            jQuery.ajax({
+                type: 'POST',
+                url: '/api/auth/logout',
+                error: function(xhr, status, err) { alert("Logout failure: " + err); }
+            }).done(function(data) {
+                        //scope = angular.element(document.getElementById('loginnavbar')).scope();
+                        //scope.$apply(function() {
+                        //    scope.setUser(null);
+                        //});
+                    });
+        }
+    });
+
+});
+</script>
+
 </body>
 </html>

@@ -50,3 +50,24 @@ angular.module('awa.services').factory('Service', function (mfResource) {
 angular.module('awa.services').factory('Project', function (mfResource) {
     return mfResource('projects');
 });
+
+
+angular.module('awa.services').factory('Login', function ($resource) {
+    function LoginFactory(authName,params) {
+        var resource = $resource('/api/auth/login/'+authName,params,
+            {
+                get: {
+                    method:'post',
+                    transformResponse: function (data) {
+                        var json_data = JSON.parse(data);
+                        return json_data[json_data.object];
+                    }
+
+                }
+            }
+        );
+        return resource;
+    }
+    return LoginFactory;
+});
+
