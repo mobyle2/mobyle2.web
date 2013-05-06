@@ -69,7 +69,7 @@ angular.module('awa.services').factory('Logout', function ($resource) {
             }
         );
     }
-    return LogouFactory;
+    return LogoutFactory;
 });
 
 /**

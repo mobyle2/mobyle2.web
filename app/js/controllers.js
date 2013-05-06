@@ -7,12 +7,17 @@ function UserCtrl($scope) {
 
 }
 
-function LoginCtrl(LoginManager, $scope, $location, Login) {
-    $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona' ];
+function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout) {
+    $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google' ];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
     $scope.login = null;
     $scope.password = null;
+
+    if($routeParams['username']!=null && $routeParams['provider']!=null) {
+        $scope.provider = $routeParams['provider'];
+        LoginManager.result($routeParams['username'],'',0);
+    }
 
     $scope.$on( 'LoginManager.update', function( event, login ) {
         $scope.msg = login.msg;
@@ -37,6 +42,9 @@ function LoginCtrl(LoginManager, $scope, $location, Login) {
     $scope.rlogin = null;
     $scope.rpassword = null;
     $scope.rpassword2 = null;
+
+    // For serve side verification
+    $scope.token = null;
 
     $scope.provider = 'native';
 
@@ -74,10 +82,14 @@ function LoginCtrl(LoginManager, $scope, $location, Login) {
             var newuser = new Login('native');
             var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
                     LoginManager.result(res['user'],res['msg'],res['status']);
-                    //$scope.setUser(res['user']);
-                    //$scope.msg = res['msg'];
-                    //$scope.password = null;
             });
+
+        }
+        else if(type == 'google') {
+            // send login info to pyramid and check token on server side. Get user info in return
+
+        }
+        else if(type == 'openid'){
 
         }
         else {
