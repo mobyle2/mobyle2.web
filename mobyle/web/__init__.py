@@ -44,7 +44,9 @@ def main(global_config, **settings):
     config.include("velruse.providers.openid")
     config.add_openid_login(realm=settings['site_uri'])
     config.include('velruse.providers.facebook')
+    config.include('velruse.providers.google_oauth2')
     config.add_facebook_login_from_settings(prefix='velruse.facebook.')
+    config.add_google_oauth2_login_from_settings(prefix='velruse.google.')
 
     db_uri = settings['db_uri']
     conn = pymongo.Connection(db_uri, safe = True)
@@ -69,6 +71,7 @@ def main(global_config, **settings):
     config.add_route('about', '/about')
     config.add_route('auth_login','/auth/login/{auth}')
     config.add_route('auth_logout','/auth/logout')
+
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
     config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)

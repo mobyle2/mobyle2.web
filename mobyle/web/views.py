@@ -93,20 +93,28 @@ def main_page(request):
 def login_complete_view(request):
     context = request.context
     
-    context.profile['accounts'][0]["username"]
+    #context.profile['accounts'][0]["username"]
 
     result = {
         'profile': context.profile,
         'credentials': context.credentials,
     }
-    
-    username = context.profile['accounts'][0]["username"]
+
+    #log.error(json.dumps(result))
+    log.error(str(result))
+    if context.provider_name == 'facebook': 
+        username = context.profile['verifiedEmail']
+    elif context.provider_name == 'openid':
+        username = context.profile['emails'][0]
+    else:
+        username = context.profile['accounts'][0]["username"]
+
     request.db.login_log.insert({ 'username': username } )
     headers = remember(request, username)
-    request.response.headerlist.extend(headers)
-    return {
-        'result': json.dumps(result, indent=4),
-    }
+    return HTTPFound(location='http://localhost:9000/app/index.html#login?username='+username+'&provider='+context.provider_name)
+    #return {
+    #    'result': json.dumps(result, indent=4),
+    #}
 
 @view_config(route_name='onlyauthenticated', permission='viewauth')
 def onlyauth(request):
