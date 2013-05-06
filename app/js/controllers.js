@@ -92,6 +92,9 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
         else if(type == 'openid'){
 
         }
+        else if(type == 'facebook'){
+
+        }
         else {
             alert('not yet implemented');
         }

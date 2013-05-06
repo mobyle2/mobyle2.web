@@ -6,18 +6,15 @@
 <div ng-switch="login">
     <a href="#/login" class="btn btn-auth"
        ng-switch-when="native" ng-click="signIn('native')"><i class="icon-user"></i> Sign in with <b>Mobyle</b></a>
-	<form action="/velruse/login/facebook" method="post">
-    <input type="hidden" name="scope" value="publish_stream,create_event" />
-    <a href="#" class="btn-auth btn-facebook"
-        ng-switch-when="facebook" ng-click="signIn('facebook')">Sign in with <b>Facebook</b></a>
+	<form action="/login/facebook" method="post" ng-switch-when="facebook">
+    <input type="hidden" name="scope" value="email" />
+    <button type="submit" class="btn-auth btn-facebook">Sign in with <b>Facebook</b></button>
 	</form>
-	<form action="/velruse/twitter/login" method="post">
-    <a href="#" class="btn-auth btn-twitter"
-        ng-switch-when="twitter" ng-click="signIn('twitter')">Sign in with <b>Twitter</b></a>
+	<form action="/login/twitter" method="post" ng-switch-when="twitter">
+    <a href="#" class="btn-auth btn-twitter" ng-click="signIn('twitter')">Sign in with <b>Twitter</b></a>
 	</form>
-	<form action="/velruse/github/login" method="post">
-    <a href="#" class="btn-auth btn-github"
-        ng-switch-when="github" ng-click="signIn('github')">Sign in with <b>GitHub</b></a>
+	<form action="/login/github" method="post" ng-switch-when="github">
+    <a href="#" class="btn-auth btn-github" ng-click="signIn('github')">Sign in with <b>GitHub</b></a>
 	</form>
     <a href="#/login" class="btn-auth btn-openid"
         ng-switch-when="openid" ng-click="signIn('openid')">Sign in with <b>Open ID</b></a>
