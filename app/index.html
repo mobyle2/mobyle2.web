@@ -29,7 +29,7 @@
         <li><a href="#/services" active-link="active">services</a></li>
         <li><a href="#/projects" active-link="active">projects</a></li>
       </ul>
-      <ul class="nav pull-right" ng-controller="LoginCtrl" id="loginnavbar">
+      <ul class="nav pull-right" ng-controller="LoginCtrl" id="loginnavbar" ng-init="alreadyLogged()">
         <li ng-hide="userLogged()"><a href="#/login">Login</a></li>
 		<li class="dropdown" ng-show="userLogged()">
             <a href="#" ng-bind="User" data-toggle="dropdown"></a>

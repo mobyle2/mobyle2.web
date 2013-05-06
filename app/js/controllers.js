@@ -19,6 +19,15 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
         LoginManager.result($routeParams['username'],'',0);
     }
 
+    $scope.alreadyLogged = function() {
+        console.log("check if logged");
+        var newuser = new Login('native');
+        var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
+            LoginManager.result(res['user'],res['msg'],res['status']);
+            console.log(res);
+        });
+    }
+
     $scope.$on( 'LoginManager.update', function( event, login ) {
         $scope.msg = login.msg;
         if (login.status==0) {
