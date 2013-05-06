@@ -11,8 +11,8 @@ angular.module('awa', ['awa.filters', 'awa.services', 'awa.directives', 'ngSanit
     $routeProvider.when('/data', {templateUrl: 'partials/data.html', controller: DataCtrl});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html',controller: LoginCtrl});
     $routeProvider.when('/logout', {templateUrl: 'partials/login.html',controller: LoginCtrl});
-    $routeProvider.when('/my', {templateUrl: 'partials/my.html',controller: UserCtrl});
-    $routeProvider.when('/dashboard', {templateUrl: 'partials/my.html',controller: UserCtrl});
+    $routeProvider.when('/my', {templateUrl: 'partials/my.html',controller: LoginCtrl});
+    $routeProvider.when('/dashboard', {templateUrl: 'partials/my.html',controller: LoginCtrl});
     $routeProvider.otherwise({redirectTo: '/services'});
   }]);
 

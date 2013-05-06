@@ -2,10 +2,6 @@
 
 /* Controllers */
 
-function UserCtrl($scope) {
-    $scope.admin = false;
-
-}
 
 function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google' ];
@@ -13,23 +9,27 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
     $scope.User = null;
     $scope.login = null;
     $scope.password = null;
+    $scope.admin = false;
 
-    if($routeParams['username']!=null && $routeParams['provider']!=null) {
-        $scope.provider = $routeParams['provider'];
-        LoginManager.result($routeParams['username'],'',0);
+    $scope.isAdmin = function() {
+        return $scope.admin;
     }
+    //if($routeParams['username']!=null && $routeParams['provider']!=null) {
+    //    $scope.provider = $routeParams['provider'];
+    //    LoginManager.result($routeParams['username'],'',0);
+    //}
 
     $scope.alreadyLogged = function() {
-        console.log("check if logged");
+        // Check at startup if user was previously logged on server
         var newuser = new Login('native');
         var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
-            LoginManager.result(res['user'],res['msg'],res['status']);
-            console.log(res);
+            LoginManager.result(res['user'],res['msg'],res['status'],res['admin']);
         });
     }
 
     $scope.$on( 'LoginManager.update', function( event, login ) {
         $scope.msg = login.msg;
+        $scope.admin = login.admin;
         if (login.status==0) {
             if($scope.provider=='register') {
                 $scope.provider = 'native';
@@ -44,6 +44,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
         else {
             $scope.User = null;
         }
+        $scope.admin = login.admin;
 
     });
 
@@ -90,19 +91,18 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
         else if(type == 'native'){
             var newuser = new Login('native');
             var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
-                    LoginManager.result(res['user'],res['msg'],res['status']);
+                    LoginManager.result(res['user'],res['msg'],res['status'], res['admin']);
             });
 
         }
         else if(type == 'google') {
-            // send login info to pyramid and check token on server side. Get user info in return
-
+              // Via velruse
         }
         else if(type == 'openid'){
-
+            // Via velruse
         }
         else if(type == 'facebook'){
-
+            // Via velruse
         }
         else {
             alert('not yet implemented');

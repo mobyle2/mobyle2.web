@@ -38,8 +38,8 @@
                 <li>
                     <a href="#/my">Settings</a>
                 </li>
-                <li ng-controller="UserCtrl" id="usernavbar">
-                    <a href="#/dashboard" ng-show="{{ admin }}">Dashboard</a>
+                <li id="usernavbar">
+                    <a href="#/dashboard" ng-show="isAdmin()">Dashboard</a>
                 </li>
             </ul>
         </li>
@@ -89,13 +89,10 @@ $(function () {
                         scope.$apply(function() {
                             scope.setUser(data['user']);
                             scope.provider = 'persona';
-                        });
-                        if(data['admin']) {
-                            scope = angular.element(document.getElementById('usernavbar')).scope();
-                            scope.$apply(function() {
+                            if(data['admin']) {
                                 scope.admin=true;
-                            });
-                        }
+                            }
+                        });
 
                     });
         },

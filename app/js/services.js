@@ -79,11 +79,12 @@ angular.module('awa.services').factory('Logout', function ($resource) {
 
 angular.module('awa.services').factory('LoginManager', function ($rootScope) {
 
-    return { login : { 'user' : null, 'msg': '', 'status' : 0},
-             result: function(user,msg,status) {
+    return { login : { 'user' : null, 'msg': '', 'status' : 0, 'admin' : false},
+             result: function(user,msg,status,admin) {
                  this.login.user = user;
                  this.login.msg = msg;
                  this.login.status = status;
+                 this.login.admin = admin;
                  $rootScope.$broadcast( 'LoginManager.update', this.login );
              }
         };
