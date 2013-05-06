@@ -111,7 +111,8 @@ def login_complete_view(request):
 
     request.db.login_log.insert({ 'username': username } )
     headers = remember(request, username)
-    return HTTPFound(location='http://localhost:9000/app/index.html#login?username='+username+'&provider='+context.provider_name)
+    return HTTPFound(location='http://localhost:9000/app/index.html#login?username='+ \
+    username+'&provider='+context.provider_name, headers = headers)
     #return {
     #    'result': json.dumps(result, indent=4),
     #}
@@ -148,6 +149,13 @@ def auth_login(request):
     # Needed for:
     # - Mozilla Persona
     # - Mobyle account
+    userid = authenticated_userid(request)
+    if userid:
+        log.error("Someone is logged "+str(userid))
+        user  = connection.User.find_one({'email': userid})
+        return { 'user': user['email'], 'status': 0 , 'msg': '', 'admin' :
+        user['admin']}
+
     msg = ''
     user = None
     admin = False
@@ -222,6 +230,7 @@ def auth_login(request):
 def auth_logout(request):
     # logout
     headers = forget(request)
+    request.response.headerlist.extend(headers)
     return { 'user': None, 'status': 0 , 'msg' : ''}
 
 
