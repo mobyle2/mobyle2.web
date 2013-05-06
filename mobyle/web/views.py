@@ -101,7 +101,7 @@ def login_complete_view(request):
     }
 
     #log.error(json.dumps(result))
-    log.error(str(result))
+    #log.error(str(result))
     if context.provider_name == 'facebook': 
         username = context.profile['verifiedEmail']
     elif context.provider_name == 'openid':
@@ -111,8 +111,9 @@ def login_complete_view(request):
 
     request.db.login_log.insert({ 'username': username } )
     headers = remember(request, username)
-    return HTTPFound(location='http://localhost:9000/app/index.html#login?username='+ \
-    username+'&provider='+context.provider_name, headers = headers)
+    (userobj, newuser) = create_if_no_exists(username)
+    return HTTPFound(location='http://localhost:9000/app/index.html',
+        headers = headers)
     #return {
     #    'result': json.dumps(result, indent=4),
     #}
