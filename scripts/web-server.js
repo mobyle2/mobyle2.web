@@ -30,7 +30,8 @@ function main(argv) {
     pathnameOnly: true,
     router: {
       '/api': '127.0.0.1:' + pyramid_port,
-      '/app': '127.0.0.1:' + awa_port
+      '/app': '127.0.0.1:' + awa_port,
+      '/': '127.0.0.1:' + pyramid_port
     }
   };
   var proxyServer = httpProxy.createServer(options);
