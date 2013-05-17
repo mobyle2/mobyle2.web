@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 from pyramid.view import view_config
 from pyramid.security import remember, authenticated_userid, forget
-from pyramid.httpexceptions import HTTPFound
+from pyramid.httpexceptions import HTTPFound, HTTPNotFound, HTTPForbidden
 from pyramid.renderers import render_to_response
 from pyramid.response import Response
+from pyramid_mailer import get_mailer
+from pyramid_mailer.message import Message
 
 from velruse import login_url
 import json
@@ -13,6 +15,7 @@ import bcrypt
 from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
+from mobyle.common import token
 
 import urllib
 from urllib2 import URLError
@@ -112,8 +115,9 @@ def login_complete_view(request):
     request.db.login_log.insert({ 'username': username } )
     headers = remember(request, username)
     (userobj, newuser) = create_if_no_exists(username)
-    return HTTPFound(location='http://localhost:9000/app/index.html',
-        headers = headers)
+    settings = request.registry.settings
+    return HTTPFound(location='http://'+settings['site.awa']+\
+                     settings['url.main'], headers = headers)
     #return {
     #    'result': json.dumps(result, indent=4),
     #}
@@ -144,9 +148,67 @@ def logout(request):
     request.session.flash("You have logged out")
     return HTTPFound(location='/', headers=headers)
 
+@view_config(route_name="auth_reset_password",renderer="json")
+def auth_reset_password(request):
+    '''
+    User asks for a password reset.
+    Generates a temporary token and send an email to
+    the user.
+    '''
+    user  = connection.User.find_one({'email': request.params.getone('username')})
+    if not user:
+        log.error("Reset requested for non existing user")
+        return HTTPNotFound()
+    # Generate token
+    temptoken = connection.Token()
+    temptoken.generate()
+    temptoken['user'] = user['email']
+    temptoken.save()
+    # Send email
+    mailer = get_mailer(request)
+    settings = request.registry.settings
+    msg = "You have requested to reset your password.\n"+ \
+    "To do so, you can connect to the following address for 1 hour.\n"+ \
+           settings['site.awa']+settings['url.password_reset']+\
+           "?token="+temptoken['token']+\
+           "\nThe Mobyle portal team."
+    log.debug('send mail '+msg)
+    message = Message(subject="Mobyle password reset request",
+                      recipients=[user['email']],
+                      body=msg)
+    mailer.send(message)
+    return {}
+
+
+@view_config(route_name="auth_update_password",renderer="json")
+def auth_update_password(request):
+    '''
+    Password update
+    '''
+    token = request.params.getone('token')
+    password = request.params.getone('password')
+    token_object = connection.Token.find_one({'token': token})
+    if token_object is None:
+        return HTTPForbidden()
+    if not token_object.check_validity():
+        return HTTPForbidden()
+    user = connection.User.find_one({'email': token_object['user']})
+    if not user:
+        return HTTPNotFound()
+    # Update password
+    hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+    user['hashed_password'] = hashed
+    user.save()
+    log.debug("User "+token_object['user']+" has reset its password")
+    return {}
+
+    
 
 @view_config(route_name="auth_login",renderer="json")
 def auth_login(request):
+    '''
+    Login request
+    '''
     # Needed for:
     # - Mozilla Persona
     # - Mobyle account
@@ -197,7 +259,7 @@ def auth_login(request):
             msg = "User does not exists"
     if auth_system == 'persona':
         assertion = request.params.getone('assertion')
-        audience = settings['site_awa']
+        audience = settings['site.awa']
         # Check assertion
         url = 'https://verifier.login.persona.org/verify'
         values = {'assertion': assertion,
@@ -229,6 +291,7 @@ def auth_login(request):
 
 @view_config(route_name="auth_logout", renderer="json")
 def auth_logout(request):
+    '''logout request'''
     # logout
     headers = forget(request)
     request.response.headerlist.extend(headers)
