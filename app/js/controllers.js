@@ -10,6 +10,19 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
     $scope.login = null;
     $scope.password = null;
     $scope.admin = false;
+    // Token for password resets
+    $scope.token = $routeParams['token'];
+
+
+    $scope.resetPassword = function() {
+        if($scope.rpassword == $scope.rpassword2) {
+            alert('not yet implemented');
+
+        }
+        else {
+            $scope.msg = "Passwords are not identical";
+        }
+    }
 
     $scope.isAdmin = function() {
         return $scope.admin;
@@ -53,8 +66,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
     $scope.rpassword = null;
     $scope.rpassword2 = null;
 
-    // For serve side verification
-    $scope.token = null;
+
 
     $scope.provider = 'native';
 
@@ -103,6 +115,9 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
         }
         else if(type == 'facebook'){
             // Via velruse
+        }
+        else if(type == 'reset'){
+            // Temporary state to reset password
         }
         else {
             alert('not yet implemented');

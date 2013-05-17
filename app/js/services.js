@@ -72,6 +72,26 @@ angular.module('awa.services').factory('Logout', function ($resource) {
     return LogoutFactory;
 });
 
+angular.module('awa.services').factory('PasswordResetRequest', function ($resource) {
+    function PasswordResetQuestFactory(authName) {
+        return $resource('/api/auth/password/reset',{ username: authName},
+            {
+            }
+        );
+    }
+    return PasswordResetQuestFactory;
+});
+
+angular.module('awa.services').factory('PasswordReset', function ($resource) {
+    function PasswordResetQuestFactory(userToken, userNewPassword) {
+        return $resource('/api/auth/password',{ token: userToken, password: userNewPassword},
+            {
+            }
+        );
+    }
+    return PasswordResetQuestFactory;
+});
+
 /**
  *   Login controller is used at multiple places (global + login page).
  *   USe this service to store login process elements and notify controllers on update
