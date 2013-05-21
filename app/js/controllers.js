@@ -3,7 +3,7 @@
 /* Controllers */
 
 
-function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout) {
+function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google' ];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
@@ -13,10 +13,15 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
     // Token for password resets
     $scope.token = $routeParams['token'];
 
-
+    // Update the password of the user
     $scope.resetPassword = function() {
         if($scope.rpassword == $scope.rpassword2) {
-            alert('not yet implemented');
+            var passwordResetRequest = new PasswordReset($scope.token, $scope.rpassword);
+            var res = passwordResetRequest.get({}, function() {
+                $scope.msg ="Your password has been updated, you can login with your new password";
+            });
+            $scope.rpassword = null;
+            $scope.provider = 'native';
 
         }
         else {
@@ -138,7 +143,10 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout)
 
     $scope.remember = function($event) {
         // remember user password
-        alert('not yet implemented');
+        var resetRequest = new PasswordResetRequest($scope.rlogin);
+        var res = resetRequest.get({}, function() {
+            $scope.msg = "A request has been sent, you will receive soon an email at the provided address to reset your password";
+        });
         $event.preventDefault()
     }
 
