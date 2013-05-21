@@ -116,7 +116,7 @@ def login_complete_view(request):
     headers = remember(request, username)
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
-    return HTTPFound(location='http://'+settings['site.awa']+\
+    return HTTPFound(location=settings['site.awa']+\
                      settings['url.main'], headers = headers)
     #return {
     #    'result': json.dumps(result, indent=4),
