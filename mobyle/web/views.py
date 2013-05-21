@@ -176,7 +176,7 @@ def auth_reset_password(request):
     message = Message(subject="Mobyle password reset request",
                       recipients=[user['email']],
                       body=msg)
-    mailer.send(message)
+    mailer.send_immediately(message)
     return {}
 
 
