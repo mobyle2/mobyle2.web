@@ -1,0 +1,636 @@
+{
+    "authors": "S. Guindon and O. Gascuel",
+    "classifications": [
+        {
+            "classification": "phylogeny:likelihood",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "phyml"
+    },
+    "comment": null,
+    "description": "A simple, fast, and accurate algorithm to estimate large phylogenies by maximum likelihood",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/phyml/phyml_manual_2008.pdf"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://code.google.com/p/phyml"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"-i $value\"",
+                    "python": "\" -i \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "alignment",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence Alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "PHYLIPI"
+                    ]
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -d $value\" : \"\"",
+                    "python": "( \"\" , \" -d \" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "seqtype",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Data type (-d)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -n $value\" : \"\"",
+                            "python": "(\"\", \" -n \"+str(value))[value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "datasets",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of data sets to analyse (-n)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -b $value\" : \"\"",
+                            "python": "( \"\" , \" -b \" + str(value) )[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bootstrap_sets",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$datasets == 1",
+                            "python": "datasets == 1"
+                        },
+                        "prompt": "Number of bootstraps sets to analyse (only works with one data set to analyse) (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "inputopt",
+                "precond": null,
+                "prompt": "Input Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value ne $vdef) ? \" -m $value\" : \"\"",
+                            "python": "(\"\", \" -m \"+str(value))[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ntmodel",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqtype eq \"nt\"",
+                            "python": "seqtype == \"nt\""
+                        },
+                        "prompt": "Nucleotide substitution model (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value ne $vdef) ? \" -m $value\" : \"\"",
+                            "python": "(\"\", \" -m \"+str(value))[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "aamodel",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqtype eq \"aa\"",
+                            "python": "seqtype == \"aa\""
+                        },
+                        "prompt": "Amino-acid substitution model (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -t e\" : \"\"",
+                            "python": "( \"\"  , \" -t e\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tstvratio1",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqtype eq \"nt\"",
+                            "python": "seqtype == \"nt\""
+                        },
+                        "prompt": "Estimated transition/transversion ratio for DNA sequences? (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -t $value\" : \"\"",
+                            "python": "( \"\"  , \" -t \"+str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tstvratio2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqtype eq \"nt\" and not $tstvratio1",
+                            "python": "seqtype == \"nt\" and not tstvratio1"
+                        },
+                        "prompt": "User transition/transversion ratio for DNA sequences? (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -v e\" : \"\"",
+                            "python": "( \"\"  , \" -v e\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "propinvar1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Estimated proportion of invariable sites? (-v)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value >= 0 and $value < 1",
+                            "python": "value >= 0 and value < 1"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \" -v $value\" : \"\"",
+                            "python": "( \"\"  , \" -v \"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "propinvar2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $propinvar1",
+                            "python": "not propinvar1"
+                        },
+                        "prompt": "User proportion of invariable sites? (-v)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -c $value\" : \"\"",
+                            "python": "(\"\", \" -c \"+str(value))[value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nbsubstcat",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of relative substitution rate categories (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -a e\" : \"\"",
+                            "python": "(\"\", \" -a e\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gamma1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Estimated Gamma distribution parameter? (-a)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -a $value\" : \"\"",
+                            "python": "(\"\", \" -a \"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gamma2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $gamma1",
+                            "python": "not gamma1"
+                        },
+                        "prompt": "User gamma distribution parameter? (-a)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value ne $vdef) ? \" -s $value\" : \"\"",
+                            "python": "(\"\", \" -s \"+str(value))[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "move",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Tree topology search operation (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -u $value\" : \"\"",
+                            "python": "(\"\", \" -u \"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "usertreefile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Starting tree filename (u)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEWICK"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "control_opt",
+                "precond": null,
+                "prompt": "Control Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "phyml",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*_phyml_stats.txt\"",
+                    "python": "\"*_phyml_stats.txt\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*_phyml_tree.txt\"",
+                    "python": "\"*_phyml_tree.txt\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outtree",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output tree",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*_phyml_boot_stats.txt\"",
+                    "python": "\"*_phyml_boot_stats.txt\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "boot_outfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Bootstrap output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*_phyml_boot_trees.txt\"",
+                    "python": "\"*_phyml_boot_trees.txt\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "boot_outtree",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Bootstrap output trees",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Guindon, S. and Gascuel, O. (2003) A simple, fast and accurate algorithm to estimate large phylogenies by maximum likelihood Syst. Biol., 52, 696-704",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://code.google.com/p/phyml"
+    ],
+    "title": "PHYML",
+    "type": "program",
+    "version": "3.0"
+}

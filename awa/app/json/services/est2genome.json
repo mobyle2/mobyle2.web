@@ -1,0 +1,656 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "alignment:pairwise:global",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "est2genome"
+    },
+    "comment": null,
+    "description": "Align EST sequences to genomic DNA sequence",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/est2genome.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -estsequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_estsequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Spliced est nucleotide sequence(s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -genomesequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_genomesequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Additional section",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,1",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -match=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_match",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Score for matching two bases",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -mismatch=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mismatch",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Cost for mismatching two bases",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Cost for deleting a single base in either sequence, excluding introns",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -gappenalty=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gappenalty",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap penalty",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "Cost for an intron, independent of length.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -intronpenalty=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_intronpenalty",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Intron penalty",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": "Cost for an intron, independent of length and starting/ending on donor-acceptor sites",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -splicepenalty=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_splicepenalty",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Splice site penalty",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": "Exclude alignments with scores below this threshold score.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -minscore=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_minscore",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum accepted score",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": "Reverse the orientation of the EST sequence",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -reverse\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_reverse",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Reverse orientation",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "Use donor and acceptor splice sites. If you want to ignore donor-acceptor sites then set this to be false.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nousesplice\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_usesplice",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use donor and acceptor splice sites",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": "This determines the comparison mode. The default value is 'both', in which case both strands of the est are compared  assuming a forward gene direction (ie GT/AG splice sites), and the  best comparison redone assuming a reversed (CT/AC) gene splicing  direction. The other allowed modes are 'forward', when just the  forward strand is searched, and 'reverse', ditto for the reverse  strand.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -mode=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mode",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Comparison mode",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": "You can print out all comparisons instead of just the best one by setting this to be false.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nobest\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_best",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Print out only best alignment",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": "For linear-space recursion. If product of sequence lengths divided by 4 exceeds this then a divide-and-conquer strategy is  used to control the memory requirements. In this way very long  sequences can be aligned. \n  If you have a machine with plenty of memory you can raise this  parameter (but do not exceed the machine's physical RAM)",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -space=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_space",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Space threshold (in megabytes)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -shuffle=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_shuffle",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Shuffle",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "15",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -seed=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_seed",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Random number seed",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "16",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": "Show the alignment. The alignment includes the first and last 5 bases of each intron, together with the intron width. The  direction of splicing is indicated by angle brackets (forward or  reverse) or ???? (unknown).",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -align\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_align",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show the alignment",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -width=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_width",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment width",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "19",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "est2genome",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Est2genomeReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "est2genome",
+    "type": "program",
+    "version": null
+}

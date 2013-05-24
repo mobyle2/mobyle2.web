@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" ng-app="awa">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>awa</title>
+  <link rel="stylesheet" href="css/auth-buttons.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"></head>
+  <link href="lib/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"i media="screen"></head>
+  <link href="lib/angularui/angular-ui.css" rel="stylesheet" media="screen"></head>
+  <!--[if lte IE 8]>
+      <script>
+      // The ieshiv takes care of our ui.directives, bootstrap module directives and 
+      // AngularJS's ng-view, ng-include, ng-pluralize and ng-switch directives.
+      // However, IF you have custom directives (yours or someone else's) then
+      // enumerate the list of tags in window.myCustomTags
+ 
+      window.myCustomTags = [ 'toggle', 'mbinput' ]; // optional
+      </script>
+      <script src="build/angular-ui-ieshiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li><a href="#/services" active-link="active">services</a></li>
+        <li><a href="#/projects" active-link="active">projects</a></li>
+      </ul>
+      <ul class="nav pull-right" ng-controller="LoginCtrl" id="loginnavbar" ng-init="alreadyLogged()">
+        <li ng-hide="userLogged()"><a href="#/login">Login</a></li>
+		<li class="dropdown" ng-show="userLogged()">
+            <a href="#" ng-bind="User" data-toggle="dropdown"></a>
+            <b class="caret"></b>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#/my">Settings</a>
+                </li>
+                <li id="usernavbar">
+                    <a href="#/dashboard" ng-show="isAdmin()">Dashboard</a>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="userLogged()"><a href="#/logout" ng-click="signOut()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 40px;">
+    <div class="span12" ng-view>
+    </div>
+  </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+  -->
+  <script src="lib/jquery-1.9.0.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-sanitize.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="lib/angularui/angular-ui.js"></script>
+  <script src="lib/ui-bootstrap/ui-bootstrap-tpls-0.2.0.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="https://login.persona.org/include.js"></script>
+
+<script>
+$(function () {
+
+
+    navigator.id.watch({
+        loggedInUser: angular.element(document.getElementById('loginnavbar')).scope().User,
+        onlogin: function(assertion) {
+            jQuery.ajax({
+                type: 'POST',
+                url: '/api/auth/login/persona',
+                data: {assertion: assertion},
+                error: function(xhr, status, err) {
+                    navigator.id.logout();
+                    alert("Login failure: " + err);
+                }
+            }).done(function(data) {
+                        scope = angular.element(document.getElementById('loginnavbar')).scope();
+                        scope.$apply(function() {
+                            scope.setUser(data['user']);
+                            scope.provider = 'persona';
+                            if(data['admin']) {
+                                scope.admin=true;
+                            }
+                        });
+
+                    });
+        },
+        onlogout: function() {
+            jQuery.ajax({
+                type: 'POST',
+                url: '/api/auth/logout',
+                error: function(xhr, status, err) { alert("Logout failure: " + err); }
+            }).done(function(data) {
+                        //scope = angular.element(document.getElementById('loginnavbar')).scope();
+                        //scope.$apply(function() {
+                        //    scope.setUser(null);
+                        //});
+                    });
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

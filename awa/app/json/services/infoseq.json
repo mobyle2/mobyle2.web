@@ -1,0 +1,660 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "information",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "infoseq"
+    },
+    "comment": null,
+    "description": "Display basic information about sequences",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoseq.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Set this option on (Y) to print the sequence information into neat, aligned columns in the output file. Alternatively,  leave it unset (N), in which case the information records will be  delimited by a character, which you may specify by using the  -delimiter option. In other words, if -columns is set on, the  -delimiter option is overriden.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nocolumns\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_columns",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Print information in neat, aligned columns.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "This string, which is usually a single character only, is used to delimit individual records in the text output file. It  could be a space character, a tab character or  any other character or string.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -delimiter=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_delimiter",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Delimiter of records in text output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "If you enter the name of a file here then this program will write the sequence details into that file.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -html\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_html",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Format output as an html table",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "This is a way of shortening the command line if you only want a few things to be displayed. Instead of specifying: \n  '-nohead -noname -noacc -notype -nopgc -nodesc' \n  to get only the length output, you can specify \n  '-only -length'",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -only\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display the specified columns",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noheading\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_heading",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display column headings",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -usa\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_usa",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display the usa of the sequence",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -database\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_database",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'database' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -name\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_name",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'name' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -accession\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_accession",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'accession' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -gi\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gi",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display 'gi' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -seqversion\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_seqversion",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display 'version' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -type\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_type",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'type' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "15",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -length\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_length",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'length' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "16",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -pgc\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_pgc",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'percent gc content' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -organism\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_organism",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'organism' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -description\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_description",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'description' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "19",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "infoseq",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "InfoseqReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "infoseq",
+    "type": "program",
+    "version": null
+}

@@ -1,0 +1,762 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "alignment:multiple:information",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "infoalign"
+    },
+    "comment": null,
+    "description": "Display basic information about a multiple sequence alignment",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/infoalign.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "The sequence alignment to be displayed.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA",
+                                "MSF",
+                                "PAIR",
+                                "MARKX0",
+                                "MARKX1",
+                                "MARKX2",
+                                "MARKX3",
+                                "MARKX10",
+                                "SRS",
+                                "SRSPAIR",
+                                "SCORE",
+                                "UNKNOWN",
+                                "MULTIPLE",
+                                "SIMPLE",
+                                "MATCH"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "This is the scoring matrix file used when comparing sequences. By default it is the file 'EBLOSUM62' (for proteins) or  the file 'EDNAFULL' (for nucleic sequences). These files are  found in the 'data' directory of the EMBOSS installation.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -matrix=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_matrix",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Similarity scoring matrix file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "If you give the number in the alignment or the name of a sequence, it will be taken to be the reference sequence. The  reference sequence is the one against which all the other  sequences are compared. If this is set to 0 then the consensus  sequence will be used as the reference sequence. By default the  consensus sequence is used as the reference sequence.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -refseq=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_refseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "The number or the name of the reference sequence",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "Set a cut-off for the % of positive scoring matches below which there is no consensus. The default plurality is taken as 50%  of the total weight of all the sequences in the alignment.",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -plurality=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_plurality",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Plurality check % for consensus (value from 0.0 to 100.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Provides the facility of setting the required number of identities at a position for it to give a consensus. Therefore, if  this is set to 100% only columns of identities contribute to the  consensus.",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -identity=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_identity",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Required % of identities at a position fro consensus (value from 0.0 to 100.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "If you enter the name of a file here then this program will write the sequence details into that file.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -html\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_html",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Format output as an html table",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": "This is a way of shortening the command line if you only want a few things to be displayed. Instead of specifying: \n  '-nohead -nousa -noname -noalign -nogaps -nogapcount -nosimcount  -noidcount -nodiffcount -noweight' \n  to get only the sequence length output, you can specify \n  '-only -seqlength'",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -only\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display the specified columns",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -heading\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_heading",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display column headings",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -usa\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_usa",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display the usa of the sequence",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -name\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_name",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'name' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -seqlength\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_seqlength",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'seqlength' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -alignlength\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_alignlength",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'alignlength' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -gaps\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gaps",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display number of gaps",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "15",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -gapcount\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gapcount",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display number of gap positions",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "16",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -idcount\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_idcount",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display number of identical positions",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -simcount\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_simcount",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display number of similar positions",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -diffcount\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_diffcount",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display number of different positions",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -change\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_change",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display % number of changed positions",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -weight\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_weight",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'weight' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "21",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -description\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_description",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_only"
+                        },
+                        "prompt": "Display 'description' column",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "22",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "infoalign",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "InfoalignReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "infoalign",
+    "type": "program",
+    "version": null
+}

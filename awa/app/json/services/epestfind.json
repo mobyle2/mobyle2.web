@@ -1,0 +1,654 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "sequence:protein:motifs",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "epestfind"
+    },
+    "comment": null,
+    "description": "Finds PEST motifs as potential proteolytic cleavage sites",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/epestfind.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Protein sequence USA to be analysed.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": "1,1",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -mwdata=\" + str(value))[value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mwdata",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Molecular weights data file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "MolecularWeights",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Minimal distance between positively charged amino acids.",
+                        "ctrl": {
+                            "python": "value >= 2"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -window=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_window",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Window length (value greater than or equal to 2)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "Name of the output file which holds the results of the analysis. Results may be sorted by length, position and score.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -order=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_order",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sort order of results",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_required",
+                "precond": null,
+                "prompt": "Required section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Threshold value to discriminate weak from potential PEST motifs. Valid PEST motifs are discriminated into 'poor' and  'potential' motifs depending on this threshold score. By default,  the default value is set to +5.0 based on experimental data.  Alterations are not recommended since significance is a matter of  biology, not mathematics.",
+                        "ctrl": {
+                            "python": "value >= -55.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -threshold=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Threshold score (value from -55.0 to +55.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -mono\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mono",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use monoisotopic weights",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": "Decide whether potential PEST motifs should be printed.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nopotential\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_potential",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display potential pest motifs",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": "Decide whether poor PEST motifs should be printed.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nopoor\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_poor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display poor pest motifs",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": "Decide whether invalid PEST motifs should be printed.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -invalid\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_invalid",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display invalid pest motifs",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "Decide whether PEST motifs should be mapped to sequence.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nomap\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_map",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display pest motifs map",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": "Name of file to which results will be written.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -graph=\" + str(vdef), \" -graph=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_graph",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the e_graph output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -goutfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "xy_goutfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output graph",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "14",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "epestfind",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "EpestfindReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.png\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_png",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graph == \"png\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.gif\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_gif",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graph == \"gif\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.ps\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_ps",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graph == \"ps\" or e_graph == \"cps\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PostScript",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.meta\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_meta",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graph == \"meta\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.dat\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_data",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graph == \"data\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "epestfind",
+    "type": "program",
+    "version": null
+}

@@ -1,0 +1,495 @@
+{
+    "authors": "E. Quevillon, B. Boeda",
+    "classifications": [
+        {
+            "classification": "sequence:enzyme:analysis",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:nucleic:restriction",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "display:nucleic:restriction",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "cif"
+    },
+    "comment": "cif (for Cut In Frame) is a tool that works with DNA sequences. It is used to digest\n      your sequences with a pool of restriction enzymes and to search which enzymes cut your\n      sequence keeping your reading frame after ligation without any frame shift produced\n      due to the digestion.This helps users to work with a gene of interest to localize potential region(s) that\n      could be removed from the final protein to check if regions have an impact or not on\n      the final gene product. It can also allow to identify vital region(s) for the gene.",
+    "description": "Cut DNA regions in frame",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/cif/cif.html",
+        "http://bioweb2.pasteur.fr/docs/cif/compatible_cohesive_ends.txt",
+        "http://bioweb2.pasteur.fr/docs/cif/paillasse_liste.txt"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -i $value \"",
+                            "python": "( \"\" , \" -i \" + str( value ) + \" \" )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sequence",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You can choose between:- blunt : Use blunt cutters- cohesive : Use cohesive cutters- klenow  : Use only 5' enzymes for Klenow fill-in.[Default all three]",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-T $value \": \"\"",
+                            "python": "( \"\" , \" -T \" + str( value ) )[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "enztype",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Type of enzymes (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Cohesive enzyme strand to use:- 5'- 3'- both : 5' and 3' (Default value).(No effect if you choose to use blunt enzymes)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-S $value \": \"\"",
+                            "python": "( \"\" , \" -S \" + str( value ) )[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "strand",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Cohesive enzyme strand (-S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Digestion mode:- double: Report couple of enzymes that digest sequence- simple: Report enzyme name that cut more than one time- both: simple + double (Default value).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-D $value \": \"\"",
+                            "python": "( \"\" , \" -D \" + str( value ) )[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "digestionmod",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Digestion mode (-D)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use enzymes with minimum length for DNA recognition site.By default, 6.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-L $value \": \"\"",
+                            "python": "( \"\" , \" -L \" + str( value ) )[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Length",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum length of recognition site (-L)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Some cohesive enzymes have variant recognition site like 'GDGCH^C' for Bsp1286I, where:D = not C (A or G or T)H = not G (A or C or T)This option, when set, use of these type of enzymes..By default, this option is off.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-V\": \"\"",
+                            "python": "( \"\" , \" -V \" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "variant",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use enzymes with variant recognition site (-V)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Some cohesive enzymes have variant recognition site like 'GDGCH^C' for Bsp1286I, where:D = not C (A or G or T)H = not G (A or C or T)Thus, using thoses enzymes may produce a cut in frame but the produced ends may not be \n                compatible together regarding DNA sequence.Requires the '[-V | --variant]' option to work. By default, this option is off.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-X\": \"\"",
+                            "python": "( \"\" , \" -X \" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "exotic",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$variant == 1",
+                            "python": "variant == 1"
+                        },
+                        "prompt": "Report digestions in frame without ends compatibilities (-X)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "File with list of compatible cohesive ends.The default list used is given in the program help pages (compatible_cohesive_ends.txt).If you want to give your own list, the format must be as follow:\"Enzyme_name:compatEnz1_name,compatEnz2_name,...\"",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-C $value \": \"\"",
+                            "python": "( \"\" , \" -C \" + str( value ) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "compat",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "List of compatible cohesive ends (-C)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "By default, the program works with a list of enzymes commonly used in laboratory \n          \t\tgiven in the program help pages (paillasse_liste.txt).If you want to give your own list, the format is one enzyme per line.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-E $value \": \"\"",
+                            "python": "( \"\" , \" -E \" + str( value ) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "enzlist",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Enzyme list to work with (-E)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "options",
+                "precond": null,
+                "prompt": "Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sometimes, blunt digestion, after linkage, can produce new codon around the cutting site \n            that leads to stop codon.This option displays such digestions with a tag 'stopCodon' in the output line results.NOTE: This option only works if 'blunt' type is set. By default this option is off, thus \n            if such case happened no results are reported for enzymes digestion.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-P\": \"\"",
+                            "python": "( \"\" , \" -P \" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "stop",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$enztype == 0 or $enztype eq 'blunt'",
+                            "python": "enztype == 0 or enztype == 'blunt'"
+                        },
+                        "prompt": "Show stop codon (-P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Enzymes may cut your sequence more than once.This option \n            reports the number of time enzyme(s) cut your sequence. [Default off]",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-N\": \"\"",
+                            "python": "( \"\" , \" -N \" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cut_pos",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show cut positions (-N)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Experimental option. [Default off]This option allows, for 'blunt' or 'klenow' analysis to\n            show, in such case, the Amino acid that have been changed due to the ligation between \n            the 2 parts of the DNA after the digestion.It will be shown as OldAA>NewAA (e.g.: G>N).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-A\": \"\"",
+                            "python": "( \"\" , \" -A \" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "mod_aa",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$enztype ne 'cohesive'",
+                            "python": "enztype != 'cohesive'"
+                        },
+                        "prompt": "Show new generated amino acid (-A)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Choose the output type that you prefer.- Text output (Default value)- GFF3 output- Image (png): Creates image (png).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ?\"-F $value \": \"\"",
+                            "python": "( \"\" , \" -F \" + str( value ) )[value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outputstyle",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output style format (-F)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "outputopt",
+                "precond": null,
+                "prompt": "Output parameters"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "cif",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "*.png",
+                    "python": "\"*.png\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "img",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$outputstyle eq 'image'",
+                    "python": "outputstyle == 'image'"
+                },
+                "prompt": "Output image",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": "1,n",
+                    "datatype": {
+                        "class": "Picture",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "CIF",
+    "type": "program",
+    "version": "0.2.2"
+}

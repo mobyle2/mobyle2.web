@@ -1,0 +1,375 @@
+{
+    "authors": "Kupfer, Li",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:primers",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "primo"
+    },
+    "comment": null,
+    "description": "A primer design tool",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "input_file_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence data",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -all\"",
+                    "python": "\" -all\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "all",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value)? \" -cover\" : \"\"",
+                    "python": "( \"\" , \" -cover\" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "cover",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Cover template with walking-primers on both strands (-cover)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value)? \" -print\" : \"\"",
+                    "python": "( \"\" , \" -print\" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "print",
+                "paramfile": null,
+                "precond": {
+                    "perl": "not $cover",
+                    "python": "not cover"
+                },
+                "prompt": "Print formatted/annotated sequence to log file (-print)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value)? \" -read $value\" : \"\"",
+                    "python": "( \"\" , \" -read \" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "regions_file",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Regions file (-read)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PrimoRegion",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value)? \"\" : \" -noqual\"",
+                    "python": "( \" -noqual\" , \"\" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "qual_file",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use quality data? (-noqual)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value)? \"ln -s $value human.rep; \" : \"\"",
+                    "python": "( \"\" , \"ln -s \" +str(value)+ \" human.rep; \" )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "repeats_file",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Repeats file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PrimoRepeats",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value )? \"ln -s $value oligo.screen; \" : \"\"",
+                    "python": "( \"\" , \"ln -s \" +str(value)+ \" oligo.screen; \" )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "oligo_file",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Oligo file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PrimoOligo",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $regions_file $input_file_name.regions && \"",
+                    "python": "\"ln -s \"+str(regions_file) + \" \" + str(input_file_name) + \".regions && \""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "rf",
+                "paramfile": null,
+                "precond": {
+                    "perl": "defined $regions_file",
+                    "python": "regions_file is not None"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $qual_file $input_file_name.qual; \"",
+                    "python": "\"ln -s \"+str(qual_file) + \" \" + str(input_file_name) + \".qual && \""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "qf",
+                "paramfile": null,
+                "precond": {
+                    "perl": "$qual_file",
+                    "python": "qual_file"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "primo",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"oligo.cri\"",
+                    "python": "\"oligo.cri\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results_files",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output files",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "P. Li, K. C. Kupfer, C. J. Davies, D. Burbee, G. A. Evans, and H. R. Garner. PRIMO: A primer design program that applies base quality statistics for automated large-scale DNA sequencing. Genomics 40:476-485 (1997).",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "PRIMO",
+    "type": "program",
+    "version": null
+}

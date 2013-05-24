@@ -1,0 +1,260 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:restriction",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "redata"
+    },
+    "comment": null,
+    "description": "Retrieve information from REBASE restriction enzyme database",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/redata.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Enter the name of the restriction enzyme that you wish to get details of. The names often have a 'I' in them - this is a  capital 'i', not a '1' or an 'l'. The names are case-independent  ('AaeI' is the same as 'aaei')",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -enzyme=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_enzyme",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Restriction enzyme name",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Show other enzymes with this specificity. (Isoschizomers)",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noisoschizomers\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_isoschizomers",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show isoschizomers",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noreferences\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_references",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show references",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nosuppliers\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_suppliers",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show suppliers",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "6",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "redata",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "RedataReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "redata",
+    "type": "program",
+    "version": null
+}

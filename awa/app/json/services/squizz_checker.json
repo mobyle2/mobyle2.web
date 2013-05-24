@@ -1,0 +1,105 @@
+{
+    "authors": "N. Joly",
+    "classifications": [
+        {
+            "classification": "alignment:formatter",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:formatter",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "squizz"
+    },
+    "comment": null,
+    "description": "Sequence/Alignment format checker",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/squizz/seqfmt.html",
+        "http://bioweb2.pasteur.fr/docs/squizz/alifmt.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence/Alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Enabled by default",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value != $vdef) ? \" -s\" : \"\"",
+                    "python": "(\"\", \" -s\")[value is not None and value !=vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "strict",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Disable strict format checks (-s)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "squizz_checker",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "SQUIZZ",
+    "type": "program",
+    "version": "0.99"
+}

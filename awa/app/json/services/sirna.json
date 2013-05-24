@@ -1,0 +1,458 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:composition",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "sirna"
+    },
+    "comment": null,
+    "description": "Finds siRNA duplexes in mRNA",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/sirna.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "2",
+                                "command": false,
+                                "comment": "This option allows you to select only the 21 base probes that start with a purine and so can be expressed from Pol III  expression vectors. This is the NARN(17)YNN pattern that has  been suggested by Tuschl et al.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -poliii\")[ bool(value) ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_poliii",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Select probes for pol iii expression vectors",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "3",
+                                "command": false,
+                                "comment": "This option allows you to select only those 23 base regions that start with AA. If this option is not selected then  regions that start with AA will be favoured by giving them a  higher score, but regions that do not start with AA will also be  reported.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -aa\")[ bool(value) ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_aa",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Select only regions that start with aa",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "4",
+                                "command": false,
+                                "comment": "This option allows you to select only those 23 base regions that end with TT. If this option is not selected then  regions that end with TT will be favoured by giving them a  higher score, but regions that do not end with TT will also be  reported.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -tt\")[ bool(value) ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_tt",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Select only regions that end with tt",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "5",
+                                "command": false,
+                                "comment": "If this option is FALSE then only those 23 base regions that have no repeat of 4 or more of any bases in a row will be  reported. No regions will ever be reported that have 4 or more  G's in a row.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\" -nopolybase\", \"\")[ bool(value) ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_polybase",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Allow regions with 4 repeats of a base",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_seqinsection",
+                        "precond": null,
+                        "prompt": "Sequence input options"
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "The output is a table of the forward and reverse parts of the 21 base siRNA duplex. Both the forward and reverse sequences  are written 5' to 3', ready to be ordered. The last two bases have  been replaced by 'dTdT'. The starting position of the 23 base  region and the %GC content is also given. If you wish to see the  complete 23 base sequence, then either look at the sequence in the  other output file, or use the qualifier '-context' which will  display the 23 bases of the forward sequence in this report  with the first two bases in brackets. These first two bases do not  form part of the siRNA probe to be ordered.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the report file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -rformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_rformat_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the report output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": "This is a file of the sequences of the 23 base regions that the siRNAs are selected from. You may use it to do searches of  mRNA databases (e.g. REFSEQ) to confirm that the probes are unique  to the gene you wish to use it on.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outseq=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output sequence file (e_outseq)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -osformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_osformat_outseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the sequence output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "The output report file gives the sequences of the 21 base siRNA regions ready to be ordered. This does not give you an  indication of the 2 bases before the 21 bases. It is often  interesting to see which of the suggested possible probe regions  have an 'AA' in front of them (i.e. it is useful to see which of  the 23 base regions start with an 'AA'). This option displays the  whole 23 bases of the region with the first two bases in brackets,  e.g. '(AA)' to give you some context for the probe region. YOU  SHOULD NOT INCLUDE THE TWO BASES IN BRACKETS WHEN YOU PLACE AN  ORDER FOR THE PROBES.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -context\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_context",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show the two bases before the output 21 base probe",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "11",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "sirna",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_rformat_outfile in ['DASGFF', 'DBMOTIF', 'DIFFSEQ', 'EMBL', 'EXCEL', 'FEATTABLE', 'GENBANK', 'GFF', 'LISTFILE', 'MOTIF', 'NAMETABLE', 'PIR', 'REGIONS', 'SEQTABLE', 'SIMPLE', 'SRS', 'SWISS', 'TABLE', 'TAGSEQ']"
+                        },
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_rformat_outfile"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outseq"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outseq_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outseq_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_osformat_outseq"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "sirna",
+    "type": "program",
+    "version": null
+}

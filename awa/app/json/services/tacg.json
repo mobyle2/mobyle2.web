@@ -1,0 +1,1352 @@
+{
+    "authors": "Mangalam",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:pattern",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "tacg"
+    },
+    "comment": null,
+    "description": "Restriction Enzyme analysis",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/tacg/tacg4.0.main.html"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://tacg.sourceforge.net/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" < $value \"",
+                    "python": "\" < \" + str( value ) + \" \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "DNA Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Select  the beginning  of a subsequence  from a larger sequence file. The smallest sequence that tacg can handle is 4 bases, 10 for the ladders map (-l). This allows analysis of primers and linkers.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -b $value\" : \"\"",
+                            "python": "( \"\" , \" -b \" + str( value ) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "beginning",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Beginning of a subsequence in your sequence (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -e $value\" : \"\"",
+                            "python": "( \"\" , \" -e \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "end",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "End of a subsequence in your sequence (-e)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -f $value\" : \"\"",
+                            "python": "( \"\" , \" -f \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "topology",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Form (or topology) of DNA (-f)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The  pattern  matching  is adaptive; given a small window of nondegenerate sequence, the algorithm will match very fast; if degenerate  sequence  is  detected,  it  will switch  to a slower, iterative approach.  This results in speed that is proportional to degeneracy for most cases.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne  $vdef)? \" -D $value\" : \"\"",
+                            "python": "( \"\" , \" -D \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "degeneracy",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Degeneracy flag - controls input and analysis of degenerate sequence input (-D)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -C $value\" : \"\"",
+                            "python": "( \"\" , \" -C \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "codon",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Codon Usage table to use for translation (-C)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input_options",
+                "precond": null,
+                "prompt": "Input options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -c\" : \"\"",
+                            "python": "( \"\" , \" -c\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "order_by_cut",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$print_fragments != 0 or $sites  or $ladder_map  or $gel_map",
+                            "python": "print_fragments != 0 or sites  or ladder_map  or gel_map"
+                        },
+                        "prompt": "Order the output by number of cuts/fragments (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The number  is truncated to a # exactly divisible by 15 (-w 100  will  be interpreted as -w 90) and actual printed output will be about 20 characters wider. Also applies to output of the ladder and gel maps, so if you are trying to  get  more accuracy  and  your  output device can display small fonts, you may want to use this flag to widen the output.",
+                        "ctrl": {
+                            "perl": "$value >= 60 and $value <= 210",
+                            "python": "value >= 60 and value <= 210"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -w $value\" : \"\"",
+                            "python": "( \"\" , \" -w \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "width",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output width (-w)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -G$binsize,$value\" : \"\"",
+                            "python": "( \"\" , \" -G\" + str(binsize) +\",\" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "graphic",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $binsize",
+                            "python": "binsize is not None"
+                        },
+                        "prompt": "Histogram output (-G)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "N bases for which hits should be pooled (integer)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "binsize",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$graphic",
+                            "python": "graphic"
+                        },
+                        "prompt": "Step size in histogram",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Controls the output for sequences (in a  collection)  that  have  no  hits  for  the options  selected.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne  $vdef)? \" -i $value\" : \"\"",
+                            "python": "( \"\" , \" -i \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "idonly",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Controls the output for sequences (-i)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -H\" : \"\"",
+                            "python": "( \"\" , \" -H\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "html",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Generates  HTML  tags (-H)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" --ps\" : \"\"",
+                            "python": "( \"\" , \" --ps\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ps",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Generates  a  postscript plasmid map (--ps)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -M $value\" : \"\"",
+                            "python": "( \"\" , \" -M \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max_cut",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of cuts allowed in sequence (-M)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -m $value\" : \"\"",
+                            "python": "( \"\" , \" -m \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "min_cut",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum number of cuts in sequence for the enzyme to be selected (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "The 'magnitude' of the recognition sequence depends on the number of defined bases that make up the site. Degenerate bases can also contribute:acgt each count '1' magnitude pointyrwsmk each count '1/2' magnitude pointbdhu each count '1/4' magnitude pointn doesn't count at allThose enzymes sequences' patterns that 'sum' to the equivalent of at least the given magnitude pass the testThe values are upwardly inclusive (5=5,6,7,8 6=6,7,8 ...)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -n $value\" : \"\"",
+                            "python": "( \"\" , \" -n \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "magnitude",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select enzymes by magnitude of recognition site (-n)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -o $value\" : \"\"",
+                            "python": "( \"\" , \" -o \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "overhang",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select enzymes by overhang generated (-o)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "selection_options",
+                "precond": null,
+                "prompt": "Enzymes Selection options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Prints  the  summary  of site information, describing how many  times   each pattern matches the sequence.  Those that match zero times are shown first.  In Ver >2, only those that match at least once are shown in the second part (the 0 matchers are  not reiterated)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -s\" : \"\"",
+                            "python": "( \"\" , \" -s\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "summary",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Summary of site information (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -F $value\" : \"\"",
+                            "python": "( \"\" , \" -F \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_fragments",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Print/sort table of fragments (-F)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -S 1\" : \"\"",
+                            "python": "( \"\" , \" -S 1\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "sites",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Table of actual cut sites (-S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Specify if you want a ladder map of selected enzymes, much like the GCG MAPPLOT output.  Also appends a summary of those enzymes that match a few times.  The number of matches that is included in the  summary  is  length-sensitive  in  the  distributed source  code.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -l\" : \"\"",
+                            "python": "( \"\" , \" -l\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ladder_map",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Ladder map of selected enzymes (-l)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -g $cutoff\" : \"\"",
+                            "python": "( \"\" , \" -g \" + str(cutoff) )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gel_map",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Print a pseudo-graphic gel map (-g)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You can cut off any size in 10^n increments (as you might want to cut off very large fragments if you were doing chromosomal digests).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "cutoff",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$gel_map",
+                            "python": "gel_map"
+                        },
+                        "prompt": "Low-end cutoff in number of bases for gel map (>= 10)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "This spews the most output (about 10x  the  #  of input  characters) and depending on what other options are specified, can be of moderate to very  little use. If you want the co-translation, you'll have to specify it via the -T flag below.  The Linear map also no longer shows ALL the  patterns  that match from the pattern file.  It now obeys the same filtering rules that the Sites, Fragments, Ladder Map and other analyses do.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value)? \" -L\" : \"\"",
+                                    "python": "( \"\" , \" -L\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "linear_map",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Specify if you want linear map (-L)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Requests frames 1, 1-3, or 1-6 to be cotranslated with the Linear Map using 1  or  3 letter codes.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value)? \" -T $translation_frames,$three_letter\" : \"\"",
+                                    "python": "( \"\" , \" -T \" + str(translation_frames) + \",\" + str(three_letter) )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "translation",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$linear_map  and defined  $three_letter and defined $translation_frames",
+                                    "python": "linear_map  and three_letter is not None and translation_frames is not None"
+                                },
+                                "prompt": "Linear co-translation (-T)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "translation_frames",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$translation",
+                                    "python": "translation"
+                                },
+                                "prompt": "Translation in how many frames",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "three_letter",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$translation",
+                                    "python": "translation"
+                                },
+                                "prompt": "Translation code ( 1 or 3-letter)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "linear_map_options",
+                        "precond": null,
+                        "prompt": "Linear map"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value)? \" -O $frame,$min_size\" : \"\"",
+                                    "python": "( \"\" , \" -O \" + str(frame)+\",\"+ str(min_size) )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "orf",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "defined $frame and defined $min_size",
+                                    "python": "frame is not None and min_size is not None"
+                                },
+                                "prompt": "Do an ORF analysis (-O)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"\"",
+                                    "python": "\"\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "frame",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$orf",
+                                    "python": "orf"
+                                },
+                                "prompt": "Frames to search",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "MultipleChoice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"\"",
+                                    "python": "\"\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "min_size",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$orf",
+                                    "python": "orf"
+                                },
+                                "prompt": "Min ORF size",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "orf_options",
+                        "precond": null,
+                        "prompt": "Open Reading Frames"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value)? \" -p $Name,$pattern,$errors\" : \"\"",
+                                    "python": "( \"\" , \" -p \" + str(Name)+\",\"+ str(pattern) +\",\" + str(errors) )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pattern_search",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "defined $Name and defined $pattern and defined $errors",
+                                    "python": "Name is not None  and pattern is not None and errors is not None"
+                                },
+                                "prompt": "Do a pattern search (-p)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"\"",
+                                    "python": "\"\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pattern",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$pattern_search",
+                                    "python": "pattern_search"
+                                },
+                                "prompt": "Pattern (<30 IUPAC character)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"\"",
+                                    "python": "\"\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "errors",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$pattern_search",
+                                    "python": "pattern_search"
+                                },
+                                "prompt": "Max number of errors that are tolerated (<6) (-p)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"\"",
+                                    "python": "\"\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "Name",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$pattern_search",
+                                    "python": "pattern_search"
+                                },
+                                "prompt": "Label of pattern",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "argpos": null,
+                                        "command": false,
+                                        "comment": "Use  this  option to search for spacial relationships between factors, 2 at a time (up to a total of 10).",
+                                        "ctrl": null,
+                                        "format": {
+                                            "perl": "($value)? \" -P $nameA,$distance,$nameB\" : \"\"",
+                                            "python": "( \"\" , \" -P \" + str(nameA)+\",\" + str(distance)+ \",\" + str(nameB) )[ value ]"
+                                        },
+                                        "hidden": false,
+                                        "main": false,
+                                        "mandatory": false,
+                                        "name": "proximity",
+                                        "paramfile": null,
+                                        "precond": {
+                                            "perl": "defined $nameA and defined $distance and defined $nameB",
+                                            "python": "nameA is not None and distance is not None and nameB is not None"
+                                        },
+                                        "prompt": "Do a proximity search",
+                                        "simple": null,
+                                        "type": {
+                                            "biomoby_datatypes": [],
+                                            "biotypes": [],
+                                            "card": null,
+                                            "datatype": {
+                                                "class": "Boolean",
+                                                "superclass": null
+                                            },
+                                            "edam_types": [],
+                                            "formats": []
+                                        }
+                                    },
+                                    {
+                                        "argpos": null,
+                                        "command": false,
+                                        "comment": "Distance specification: [+-][lg]Dist_Lo[-Dist_Hi+ NameA is DOWNSTREAM of NameB (default is either)- NameA is UPSTREAM of NameB (ditto)l NameA is LESS THAN Dist_Lo from NameB (default)g NameA is GREATER THAN Dist_Lo from NameB",
+                                        "ctrl": null,
+                                        "format": {
+                                            "perl": "\"\"",
+                                            "python": "\"\""
+                                        },
+                                        "hidden": false,
+                                        "main": false,
+                                        "mandatory": true,
+                                        "name": "distance",
+                                        "paramfile": null,
+                                        "precond": {
+                                            "perl": "$proximity",
+                                            "python": "proximity"
+                                        },
+                                        "prompt": "Distance between factors",
+                                        "simple": null,
+                                        "type": {
+                                            "biomoby_datatypes": [],
+                                            "biotypes": [],
+                                            "card": null,
+                                            "datatype": {
+                                                "class": "String",
+                                                "superclass": null
+                                            },
+                                            "edam_types": [],
+                                            "formats": []
+                                        }
+                                    },
+                                    {
+                                        "argpos": null,
+                                        "command": false,
+                                        "comment": "NameA must be enzymes names (Rebase db)",
+                                        "ctrl": null,
+                                        "format": {
+                                            "perl": "\"\"",
+                                            "python": "\"\""
+                                        },
+                                        "hidden": false,
+                                        "main": false,
+                                        "mandatory": true,
+                                        "name": "nameA",
+                                        "paramfile": null,
+                                        "precond": {
+                                            "perl": "$proximity",
+                                            "python": "proximity"
+                                        },
+                                        "prompt": "Name of first factor (nameA)",
+                                        "simple": null,
+                                        "type": {
+                                            "biomoby_datatypes": [],
+                                            "biotypes": [],
+                                            "card": null,
+                                            "datatype": {
+                                                "class": "String",
+                                                "superclass": null
+                                            },
+                                            "edam_types": [],
+                                            "formats": []
+                                        }
+                                    },
+                                    {
+                                        "argpos": null,
+                                        "command": false,
+                                        "comment": "NameB must be enzymes names (Rebase db)",
+                                        "ctrl": null,
+                                        "format": {
+                                            "perl": "\"\"",
+                                            "python": "\"\""
+                                        },
+                                        "hidden": false,
+                                        "main": false,
+                                        "mandatory": true,
+                                        "name": "nameB",
+                                        "paramfile": null,
+                                        "precond": {
+                                            "perl": "$proximity",
+                                            "python": "proximity"
+                                        },
+                                        "prompt": "Name of second factor (nameB)",
+                                        "simple": null,
+                                        "type": {
+                                            "biomoby_datatypes": [],
+                                            "biotypes": [],
+                                            "card": null,
+                                            "datatype": {
+                                                "class": "String",
+                                                "superclass": null
+                                            },
+                                            "edam_types": [],
+                                            "formats": []
+                                        }
+                                    }
+                                ],
+                                "comment": null,
+                                "name": "proximity_options",
+                                "precond": null,
+                                "prompt": "Search for spatial relationships between factors (-P)"
+                            }
+                        ],
+                        "comment": null,
+                        "name": "pattern_search_options",
+                        "precond": null,
+                        "prompt": "Pattern Search"
+                    }
+                ],
+                "comment": null,
+                "name": "analyses",
+                "precond": null,
+                "prompt": "Analyses"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "tacg",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"tacg.out\"",
+                    "python": "\"tacg.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "not $html",
+                    "python": "not html"
+                },
+                "prompt": "Tacg output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "TacgTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.ps\"",
+                    "python": "\"*.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "psfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$ps",
+                    "python": "ps"
+                },
+                "prompt": "Postscript file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PostScript",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.html\"",
+                    "python": "\"*.html\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "htmlfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$html",
+                    "python": "html"
+                },
+                "prompt": "Html file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "TacgHtmlReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "http://sourceforge.net/projects/tacg/files/"
+    ],
+    "title": "TACG",
+    "type": "program",
+    "version": "4.1.0"
+}

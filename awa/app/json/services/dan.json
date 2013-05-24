@@ -1,0 +1,848 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:composition",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "dan"
+    },
+    "comment": null,
+    "description": "Calculates nucleic acid melting temperature",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/dan.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "The values of melting point and other thermodynamic properties of the sequence are determined by taking a short length  of sequence known as a window and determining the properties of  the sequence in that window. The window is incrementally moved  along the sequence with the properties being calculated at each  new position.",
+                        "ctrl": {
+                            "python": "value >= 1"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -windowsize=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_windowsize",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Enter window size (value from 1 to 100)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "This is the amount by which the window is moved at each increment in order to find the melting point and other properties  along the sequence.",
+                        "ctrl": {
+                            "python": "value >= 1"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -shiftincrement=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_shiftincrement",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Enter shift increment (value greater than or equal to 1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 1."
+                        },
+                        "format": {
+                            "python": "(\"\", \" -dnaconc=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_dnaconc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Enter dna concentration (nm) (value from 1. to 100000.)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 1."
+                        },
+                        "format": {
+                            "python": "(\"\", \" -saltconc=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_saltconc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Enter salt concentration (mm) (value from 1. to 1000.)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_required",
+                "precond": null,
+                "prompt": "Required section"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "argpos": "6",
+                                "command": false,
+                                "comment": "This prompts for percent formamide, percent of mismatches allowed and product length.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -product\")[ bool(value) ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_product",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Prompt for product values",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "7",
+                                "command": false,
+                                "comment": "This specifies the percent formamide to be used in calculations (it is ignored unless -product is used).",
+                                "ctrl": {
+                                    "python": "value >= 0."
+                                },
+                                "format": {
+                                    "python": "(\"\", \" -formamide=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_formamide",
+                                "paramfile": null,
+                                "precond": {
+                                    "python": "e_product"
+                                },
+                                "prompt": "Enter percentage of formamide (value from 0. to 100.)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "8",
+                                "command": false,
+                                "comment": "This specifies the percent mismatch to be used in calculations (it is ignored unless -product is used).",
+                                "ctrl": {
+                                    "python": "value >= 0."
+                                },
+                                "format": {
+                                    "python": "(\"\", \" -mismatch=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_mismatch",
+                                "paramfile": null,
+                                "precond": {
+                                    "python": "e_product"
+                                },
+                                "prompt": "Enter percent mismatch (value from 0. to 100.)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "9",
+                                "command": false,
+                                "comment": "This specifies the product length to be used in calculations (it is ignored unless -product is used).",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -prodlen=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_prodlen",
+                                "paramfile": null,
+                                "precond": {
+                                    "python": "e_product and e_windowsize"
+                                },
+                                "prompt": "Enter the product length",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_productsection",
+                        "precond": null,
+                        "prompt": "Product options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "10",
+                                "command": false,
+                                "comment": "Output the DeltaG, DeltaH and DeltaS values of the sequence windows to the output data file.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -thermo\")[ bool(value) ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_thermo",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Thermodynamic calculations",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "11",
+                                "command": false,
+                                "comment": "If -thermo has been specified then this specifies the temperature at which to calculate the DeltaG, DeltaH and DeltaS  values.",
+                                "ctrl": {
+                                    "python": "value >= 0."
+                                },
+                                "format": {
+                                    "python": "(\"\", \" -temperature=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_temperature",
+                                "paramfile": null,
+                                "precond": {
+                                    "python": "e_thermo"
+                                },
+                                "prompt": "Enter temperature (value from 0. to 100.)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_thermosection",
+                        "precond": null,
+                        "prompt": "Thermodynamic options"
+                    }
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": "This specifies that the sequence is an RNA sequence and not a DNA sequence.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -rna\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_rna",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use rna data values",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": "If this is not specified then the file of output data is produced, else a plot of the melting point along the sequence is  produced.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -plot\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_plot",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Produce a plot",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": "Enter a minimum value for the temperature scale (y-axis) of the plot.",
+                        "ctrl": {
+                            "python": "value >= 0."
+                        },
+                        "format": {
+                            "python": "(\"\", \" -mintemp=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_mintemp",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "e_plot"
+                        },
+                        "prompt": "Enter minimum temperature (value from 0. to 150.)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "15",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -graph=\" + str(vdef), \" -graph=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_graph",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "e_plot"
+                        },
+                        "prompt": "Choose the e_graph output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "16",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -goutfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "xy_goutfile",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "e_plot"
+                        },
+                        "prompt": "Name of the output graph",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": "If a plot is not being produced then data on the melting point etc. in each window along the sequence is output to the  file.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_plot"
+                        },
+                        "prompt": "Name of the report file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -rformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_rformat_outfile",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_plot"
+                        },
+                        "prompt": "Choose the report output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "19",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "dan",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.png\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_png",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_plot and e_graph == \"png\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.gif\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_gif",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_plot and e_graph == \"gif\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.ps\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_ps",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_plot and e_graph == \"ps\" or e_graph == \"cps\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PostScript",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.meta\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_meta",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_plot and e_graph == \"meta\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.dat\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "xy_outgraph_data",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_plot and e_graph == \"data\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_rformat_outfile in ['DASGFF', 'DBMOTIF', 'DIFFSEQ', 'EMBL', 'EXCEL', 'FEATTABLE', 'GENBANK', 'GFF', 'LISTFILE', 'MOTIF', 'NAMETABLE', 'PIR', 'REGIONS', 'SEQTABLE', 'SIMPLE', 'SRS', 'SWISS', 'TABLE', 'TAGSEQ']"
+                        },
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_rformat_outfile"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "dan",
+    "type": "program",
+    "version": null
+}

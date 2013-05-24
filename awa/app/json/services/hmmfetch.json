@@ -1,0 +1,188 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "hmm:database:search",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "database:search:hmm",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "hmmfetch"
+    },
+    "comment": "hmmfetch  is  a  small  utility  that  retrieves an HMM called name from a HMMER model database called database.  in a new format, and prints that model to standard output.  For example, hmmfetch Pfam  rrm retrieves  the RRM (RNA recognition motif) model from Pfam.  The retrieved HMM file is written in HMMER 2 ASCII format.",
+    "description": "Retrieve an HMM from pfam an HMM database",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "11",
+                "command": false,
+                "comment": "A file containing a list of one or more keys is read instead. The first white space delimited\n      field on each non-blank non-comment line of the file is used as a key, and any remaining\n      data on the line is ignored; this allows a variety of whitespace delimited datafiles to be used as files.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "Name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Name of the HMM",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "HMMKeys",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -f $value\"",
+                    "python": "\" -f \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "HMMDB",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "HMM database",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Save the synthetic sequences to file rather than writing them to stdout.",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value ) ? \" -o $value\" : \"\"",
+                    "python": "( \"\" , \" -o \" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "outfile_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Name of the HMM output file (-o)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "hmmfetch",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "$outfile_name",
+                    "python": "str(outfile_name)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_file_name",
+                "output_type": "file",
+                "precond": {
+                    "perl": "defined $outfile_name",
+                    "python": "outfile_name is not None"
+                },
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "HmmProfile",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"hmmfetch.out\"",
+                    "python": "\"hmmfetch.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_file",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "not defined $outfile_name",
+                    "python": "outfile_name is None"
+                },
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "HmmProfile",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "HMMFETCH",
+    "type": "program",
+    "version": null
+}

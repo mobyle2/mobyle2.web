@@ -1,0 +1,376 @@
+{
+    "authors": "N. Joly",
+    "classifications": [
+        {
+            "classification": "alignment:formatter",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:formatter",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "squizz"
+    },
+    "comment": null,
+    "description": "Sequence/Alignment format converter",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/squizz/seqfmt.html",
+        "http://bioweb2.pasteur.fr/docs/squizz/alifmt.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "not $infile_aln",
+                            "python": "not infile_aln"
+                        },
+                        "format": {
+                            "perl": "\" ($value)\"",
+                            "python": "\" \"+str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "infile_seq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Input",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "IG",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -S -c $value\" : \"\"",
+                            "python": "(\"\", \" -S -c \"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "convert_seq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Convert sequence into sequence format (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "seq",
+                "precond": {
+                    "perl": "not $infile_aln or ($infile_seq and $infile_aln)",
+                    "python": "not infile_aln or (infile_seq and infile_aln)"
+                },
+                "prompt": "Sequence section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "not $infile_seq",
+                            "python": "not infile_seq"
+                        },
+                        "format": {
+                            "perl": "\" $value\"",
+                            "python": "\" \"+str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "infile_aln",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Input",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "CLUSTAL",
+                                "PHYLIPI",
+                                "PHYLIPS",
+                                "MSF",
+                                "NEXUS",
+                                "STOCKHOLM",
+                                "FASTA",
+                                "MEGA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "defined $convert_aln and not defined $convert_seq2",
+                            "python": "convert_aln is not None and convert_seq2 is None"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \"-A -c $value\" : \"\"",
+                            "python": "(\"\", \" -A -c \"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "convert_aln",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined $convert_seq2 or (defined $convert_aln and defined $convert_seq2)",
+                            "python": "convert_seq2 is None or (convert_aln is not None and convert_seq2 is not None)"
+                        },
+                        "prompt": "Convert alignment into alignment format (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "not defined $convert_aln and defined $convert_seq2",
+                            "python": "convert_aln is None and convert_seq2 is not None"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \" -c $value\" : \"\"",
+                            "python": "(\"\", \" -c \"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "convert_seq2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined $convert_aln or (defined $convert_aln and defined $convert_seq2)",
+                            "python": "convert_aln is None or (convert_aln is not None and convert_seq2 is not None)"
+                        },
+                        "prompt": "Convert alignment into sequence format (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "aln",
+                "precond": {
+                    "perl": "not $infile_seq or ($infile_seq and $infile_aln)",
+                    "python": "not infile_seq or (infile_seq and infile_aln)"
+                },
+                "prompt": "Alignment section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "squizz_convert",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"squizz_convert.out\"",
+                            "python": "\"squizz_convert.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "seq_outfile",
+                        "output_type": "stdout",
+                        "precond": {
+                            "perl": "defined $infile_seq",
+                            "python": "infile_seq is not None"
+                        },
+                        "prompt": "Sequence(s) file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "convert_seq"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "seq",
+                "precond": {
+                    "perl": "not $infile_aln or ($infile_seq and $infile_aln)",
+                    "python": "not infile_aln or (infile_seq and infile_aln)"
+                },
+                "prompt": "Sequence section"
+            },
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"squizz_convert.out\"",
+                            "python": "\"squizz_convert.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "aln_outfile",
+                        "output_type": "stdout",
+                        "precond": {
+                            "perl": "defined $infile_aln and defined $convert_aln",
+                            "python": "infile_aln is not None and convert_aln is not None"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "convert_aln"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"squizz_convert.out\"",
+                            "python": "\"squizz_convert.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "seq2_outfile",
+                        "output_type": "stdout",
+                        "precond": {
+                            "perl": "defined $infile_aln and defined $convert_seq2",
+                            "python": "infile_aln is not None and convert_seq2 is not None"
+                        },
+                        "prompt": "Sequence(s) file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "convert_seq2"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "aln",
+                "precond": {
+                    "perl": "not $infile_seq or ($infile_seq and $infile_aln)",
+                    "python": "not infile_seq or (infile_seq and infile_aln)"
+                },
+                "prompt": "Alignment section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "SQUIZZ",
+    "type": "program",
+    "version": "0.99"
+}

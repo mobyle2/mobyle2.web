@@ -1,0 +1,260 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "sequence:protein:2D_structure",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "structure:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "prediction of transmembrane helices in proteins.",
+    "documentation_links": [
+        "http://www.cbs.dtu.dk/services/TMHMM//"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"tmhmm \"",
+                    "python": "\"tmhmm \""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "tmhmm",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "50",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value \"",
+                    "python": "\" \" + str( value )"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Input Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": null,
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "output_opt",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "output options",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value)? \" -v1 \": \"\"",
+                    "python": "( \"\",\" -v1 \")[ bool( value ) ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "v1",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use old model (version 1).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "tmhmm",
+    "outputs": {
+        "children": [
+            {
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p><html:strong>Long output format</html:strong></html:p><html:p>The first few lines gives some statistics:</html:p><html:ul><html:li>Length: the length of the protein sequence.</html:li><html:li>Number of predicted TMHs: The number of predicted transmembrane helices.</html:li><html:li>Exp number of AAs in TMHs: The expected number of amino acids intransmembrane\n              helices. If this number is larger than 18 it is very likely to be a transmembrane\n              protein (OR have a signal peptide).</html:li><html:li>Exp number, first 60 AAs: The expected number of amino acids in transmembrane\n              helices in the first 60 amino acids of the protein. If this number more\n              than a few, you should be warned that a predicted transmembrane helix in\n              the N-term could be a signal peptide.</html:li><html:li>Total prob of N-in: The total probability that the N-term is on the cytoplasmic\n              side of the membrane.</html:li><html:li>POSSIBLE N-term signal sequence: a warning that is produced when \"Exp number,\n              first 60 AAs\" is larger than 10.</html:li></html:ul><html:p><html:strong>Short output format</html:strong></html:p><html:p>In the short output format one line is produced for each protein with no\n           graphics. Each line starts with the sequence identifier and then these\n           fields:</html:p><html:ul><html:li>\"len=\": the length of the protein sequence.</html:li><html:li>\"ExpAA=\": The expected number of amino acids intransmembrane helices (see\n             above).</html:li><html:li><html:tt>\"First60=\"</html:tt>: The expected number of amino acids in transmembrane\n             helices in the first 60 amino acids of the protein (see above).</html:li><html:li><html:tt>\"PredHel=\":</html:tt>The number of predicted transmembrane helices by N-best.</html:li><html:li>\"Topology=\": The topology predicted by N-best.</html:li></html:ul><html:p>For the example above the short output would be (except that it would be\n         on one line):</html:p><html:p><html:tt>COX2_BACSU</html:tt><html:br /><html:tt>len=278</html:tt><html:br /><html:tt>ExpAA=68.69</html:tt><html:br /><html:tt>First60=39.89</html:tt><html:br /><html:tt>PredHel=3</html:tt><html:br /><html:tt>Topology=i7-29o44-66i87-109o</html:tt></html:p><html:p>The topology is given as the position of the transmembrane helices separated\n        by 'i' if the loop is on the inside or 'o' if it is on the outside. The\n        above example '<html:tt>i7-29o44-66i87-109o' means that it starts on the inside,\n        has a predicted TMH at position 7 to 29, the outside, then a TMH at position\n        44-66 etc.</html:tt></html:p></html:div>",
+                "filenames": {
+                    "perl": "\"tmhmm.out\"",
+                    "python": "\"tmhmm.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "tmhmm report.",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "tmhmm",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>The plot shows the posterior probabilities\n           of inside/outside/TM helix. Here one can see possible weak TM helices that\n           were not predicted, and one can get an idea of the certainty of each\n           segment in the prediction.</html:p><html:p>At the top of the plot (between 1 and 1.2) the N-best prediction is shown.</html:p><html:p>The plot is obtained by calculating the total probability that a\n           residue sits in helix, inside, or outside summed over all possible\n           paths through the model. Sometimes it seems like the plot and the\n           prediction are contradictory, but that is because the plot shows probabilities\n           for each residue, whereas the prediction is the over-all most probable\n           structure. Therefore the plot should be seen as a complementary source\n           of information.</html:p></html:div>",
+                "filenames": {
+                    "perl": "\"*.eps\"",
+                    "python": "\"*.eps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "eps",
+                "output_type": "file",
+                "precond": {
+                    "perl": "output_opt == \"0\"",
+                    "python": "output_opt == \"0\""
+                },
+                "prompt": "Plot of probabilities",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "tmhmm_graphic",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "EPS"
+                    ]
+                }
+            },
+            {
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>The plot shows the posterior probabilities\n           of inside/outside/TM helix. Here one can see possible weak TM helices that\n           were not predicted, and one can get an idea of the certainty of each\n           segment in the prediction.</html:p><html:p>At the top of the plot (between 1 and 1.2) the N-best prediction is shown.</html:p><html:p>The plot is obtained by calculating the total probability that a\n           residue sits in helix, inside, or outside summed over all possible\n           paths through the model. Sometimes it seems like the plot and the\n           prediction are contradictory, but that is because the plot shows probabilities\n           for each residue, whereas the prediction is the over-all most probable\n           structure. Therefore the plot should be seen as a complementary source\n           of information.</html:p></html:div>",
+                "filenames": {
+                    "perl": "\"*.png\"",
+                    "python": "\"*.png\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "png",
+                "output_type": "file",
+                "precond": {
+                    "perl": "output_opt == \"0\"",
+                    "python": "output_opt == \"0\""
+                },
+                "prompt": "tmhmm graphic.",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "tmhmm_graphic",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "png"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?tmhmm"
+    ],
+    "title": "tmhmm",
+    "type": "program",
+    "version": "2.0"
+}

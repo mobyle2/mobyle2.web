@@ -1,0 +1,1094 @@
+{
+    "authors": "T. Lowe, S. Eddy",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:pattern",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "tRNAscan-SE"
+    },
+    "comment": "tRNAscan-SE identifies transfer RNA genes in genomic DNA or RNA sequences.  It combines the specificity of the Cove probabilistic RNA prediction package (Eddy & Durbin, 1994) with the speed and sensitivity of tRNAscan 1.3 (Fichant & Burks, 1991) plus an implementation of an algorithm described by Pavesi and colleagues\n(1994) which searches for eukaryotic pol III tRNA promoters (our implementation referred to as EufindtRNA).  tRNAscan and EufindtRNA are used as first-pass prefilters to identify \"candidate\" tRNA regions of the sequence.  These subsequences are then passed to Cove for further analysis, and output if Cove confirms the initial tRNA prediction.",
+    "description": "Detection of transfer RNA genes",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://selab.janelia.org/software.html#trnascan"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This parameter loosens the search parameters for EufindtRNA to improve detection of prokaryotic tRNAs. Use this option when scanning prokaryotic sequences or both eukaryotic and prokaryotic sequences in the same sequence file. This option also disables pseudogene checking automatically since criteria for pseudogene checking were developed for eukaryotic pseudogenes.Use of this mode with prokaryotic sequences will also improve bounds prediction of the 3' end (the terminal CCA triplet).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -P\":\"\"",
+                            "python": "(\"\" , \" -P\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "prokaryotic",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Improve detection of prokaryotic tRNAs (-P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option selects an archaeal-specific covariance model for tRNA analysis, as well as slightly loosening the EufindtRNA search cutoffs.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -A\" : \"\"",
+                            "python": "( \"\" , \" -A\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "archeal",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select archeal-specific covariance model (-A)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This parameter bypasses the fast first-pass scanners that are poor at detecting organellar tRNAs and runs Cove analysis only. Since true organellar tRNAs have been found to have Cove scores between 15 and 20 bits, the search cutoff is lowered from 20 to 15 bits. Also, pseudogene checking is disabled since it is only applicable to eukaryotic cytoplasmic tRNA pseudogenes. Since Cove-only mode is used, searches will be very slow (see -C option below) relative to the default mode.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -O\":\"\"",
+                            "python": "(\"\" , \" -O\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "organellar",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Bypasses the fast first-pass scanners that are poor at detecting organellar tRNAs (-O)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option selects the general tRNA covariance model that was trained on tRNAs from all three phylogenetic domains (archaea, bacteria, & eukarya). This mode can be used when analyzing a mixed collection of sequences from more than one phylogenetic domain, with only slight loss of sensitivity and selectivity.The original publication describing this program and tRNAscan-SE version 1.0 used this general tRNA model exclusively.  If you wish to compare scores to those found in the paper or scans using v1.0, use this option.  Use of this option is compatible with all other search mode options described in this section.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -G\" : \"\"",
+                            "python": "( \"\" , \" -G\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "general",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "General covariance model trained on all three phylogenetic domains (-G)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Directs tRNAscan-SE to analyze sequences using Cove analysis only. This option allows a slightly more sensitive search than the default tRNAscan + EufindtRNA -> Cove mode, but is much slower (by approx. 250 to 3,000 fold). Output format and other program defaults are otherwise identical to the normal analysis.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -C\":\"\"",
+                            "python": "(\"\" , \" -C\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cove_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Analyze sequences using Cove only (-C)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Since tRNA pseudogenes often have one very low component (good secondary structure but poor primary sequence similarity to the tRNA model, or vice versa), this information may be useful in deciding whether a low-scoring tRNA is likely to be a pseudogene.  The heuristic pseudogene detection filter uses this information to flag possible pseudogenes -- use this option to see why a hit is marked as a possible pseudogene.  The user may wish to examine score breakdowns from known tRNAs in the organism of interest to get a frame of reference.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -H\" : \"\"",
+                            "python": "( \"\" , \" -H\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "breakdown",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show both primary and secondary structure components to covariance model bit score (-H)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This will slightly speed the program and may be necessary for non-eukaryotic sequences that are flagged as possible pseudogenes but are known to be functional tRNAs.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -D\":\"\"",
+                            "python": "(\"\" , \" -D\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "disable_checking",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Disable pseudogene checking (-D)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "search_options",
+                "precond": null,
+                "prompt": "Search Mode options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Directs tRNAscan-SE to use only tRNAscan to analyze sequences. This mode will default to using 'strict' parameters with tRNAscan analysis (similar to tRNAscan version 1.3 operation). This mode of operation is faster (3-5 times faster than default mode analysis), but will result in approximately 0.2 to 0.6 false positive tRNAs per Mbp, decreased sensitivity, and less reliable prediction of anticodons, tRNA isotype, and introns.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -T\":\"\"",
+                            "python": "(\"\" , \" -T\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trnascan_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use tRNAscan only to analyze sequences (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Since Cove is not being used as a secondary filter to remove false positives, this run mode defaults to 'Normal' parameters which more closely approximates the sensitivity and selectivity of the original algorithm describe by Pavesi and colleagues (see the option -e for a description of the various run modes).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -E\":\"\"",
+                            "python": "(\"\" , \" -E\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eufindtrna_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use EufindtRNA only to search for tRNAs (-E)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Relaxed parameters may give very slightly increased search sensitivity, but increase search time by 20-40 fold.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -t $value\":\"\"",
+                            "python": "(\"\" , \" -t \"+ str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trnascan_mode",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Strict or relaxed tRNAscan mode (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Explicitly set EufindtRNA params, where <mode>= R, N, or S (relaxed, normal, or strict). The 'relaxed' mode is used for EufindtRNA when using tRNAscan-SE in default mode. With relaxed parameters, tRNAs that lack pol III poly-T terminators are not penalized, increasing search sensitivity, but decreasing selectivity. When Cove analysis is being used as a secondary filter for false positives (as in tRNAscan-SE's default mode), overall selectivity is not decreased.Using 'normal' parameters with EufindtRNA does incorporate a log odds score for the distance between the B box and the first poly-T terminator, but does not disqualify tRNAs that do not have a terminator signal within 60 nucleotides. This mode is used by default when Cove analysis is not being used as a secondary false positive filter.Using 'strict' parameters with EufindtRNA also incorporates a log odds score for the distance between the B box and the first poly-T terminator, but _rejects_ tRNAs that do not have such a signal within 60 nucleotides of the end of the B box. This mode most closely approximates the originally published search algorithm (3); sensitivity is reduced relative to using 'relaxed' and 'normal' modes, but selectivity is increased which is important if no secondary filter, such as Cove analysis, is being used to remove false positives. This mode will miss most prokaryotic tRNAs since the poly-T terminator signal is a feature specific to eukaryotic tRNAs genes (always use 'relaxed' mode for scanning prokaryotic sequences for tRNAs).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -e $value\":\"\"",
+                            "python": "(\"\" , \" -e \"+ str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "eufindtrna_mode",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "EufindtRNA mode (-e)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Save tabular, formatted output results from tRNAscan and/or EufindtRNA first pass scans. The format is similar to the final tabular output format, except no Cove score is available at this point in the search (if EufindtRNA has detected the tRNA, the negative log likelihood score is given). Also, the sequence ID number and source sequence length appear in the columns where intron bounds are shown in final output. This option may be useful for examining false positive tRNAs predicted by first-pass scans that have been filtered out by Cove analysis.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -r\\\\#\":\"\"",
+                            "python": "(\"\" , \" -r#\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "save_first_pass",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save first pass results (-r)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option allows the user to re-generate results from regions identified to have tRNAs by a previous tRNAscan-SE run. Either a regular tabular result file, or output saved with the -r option may be used as the specified <file>. This option is particularly useful for generating either secondary structure output (-f option) or ACeDB output (-a option) without having to re-scan entire sequences. Alternatively, if the -r option is used to generate the previous results file, tRNAscan-SE will pick up at the stage of Cove-confirmation of tRNAs and output final tRNA predictons as with a normal run.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -u $value\":\"\"",
+                            "python": "(\"\" , \" -u \"+ str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "previous_first_pass_result",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$matching or $start",
+                            "python": "matching and  start"
+                        },
+                        "prompt": "Use a previous first pass result tabular file (-u)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "TrnaScanFirstPassResult",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Save first-pass candidate tRNAs that were then found to be false positives by Cove analysis. This option saves candidate tRNAs found by either tRNAscan and/or EufindtRNA that were then rejected by Cove analysis as being false positives. tRNAs are saved in the FASTA sequence format.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -F\\\\#\":\"\"",
+                            "python": "(\"\" , \" -F#\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "false_positives",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save false positives (-F)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "special_options",
+                "precond": null,
+                "prompt": "Special options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option allows the user to specify a different Cove score threshold for reporting tRNAs. It is not recommended that novice users change this cutoff, as a lower cutoff score will increase the number of pseudogenes and other false positives found by tRNAscan-SE (especially when used with the 'Cove only' scan mode). Conversely, a higher cutoff than 20.0 bits will likely cause true tRNAs to be missed by tRNAscan (numerous 'real' tRNAs have been found just above the 20.0 cutoff). Knowledgable users may wish to experiment with this parameter to find very unusual tRNAs or pseudogenes beyond the normal range of detection with the preceding caveats in mind.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -X $value\":\"\"",
+                            "python": "(\"\" , \" -X \"+ str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cutoff",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Cove cutoff score for reporting tRNAs (-X)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set max length of tRNA intron+variable region (default=116bp). The default maximum tRNA length for tRNAscan-SE is 192 bp, but this limit can be increased with this option to allow searches with no practical limit on tRNA length. In the first phase of tRNAscan-SE, EufindtRNA searches for A and B boxes of <length> maximum distance apart, and passes only the 5' and 3' tRNA ends to covariance model analysis for confirmation (removing the bulk of long intervening sequences). tRNAs containing group I and II introns have been detected by setting this parameter to over 800 bp. Caution: group I or II introns in tRNAs tend to occur in positions other than the canonical position of protein-spliced introns, so tRNAscan-SE mispredicts the intron bounds and anticodon sequence for these cases. tRNA bound predictions, however, have been found to be reliable in these same tRNAs.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value !=$vdef) ? \" -L $value\":\"\"",
+                            "python": "(\"\" , \" -L \"+ str(value))[ value is not None and value !=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Length",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Max length of tRNA intron+variable region (-L)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "By default, tRNAscan-SE adds 7 nucleotides to both ends of tRNA predictions when first-pass tRNA predictions are passed to covariance model (CM) analysis.  CM analysis generally trims these bounds back down, but on occasion, allows prediction of an otherwise truncated first-pass tRNA prediction.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -z $value\" : \"\"",
+                            "python": "( \"\" , \" -z \"+ str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "add_to_both_ends",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of nucleotids to add to both ends during first-pass (-z)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option does not have any effect when using the -T or -E options -- you must be running in default or Cove only analysis mode.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -g $value\":\"\"",
+                            "python": "(\"\" , \" -g \"+ str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "genetic",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $trnascan_only and not $eufindtrna_only",
+                            "python": "not trnascan_only and not eufindtrna_only"
+                        },
+                        "prompt": "Genetic code (-g)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -c $value\":\"\"",
+                            "python": "(\"\" , \" -c \" + str(value))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "covariante",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Specify an alternate covariance model (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "specify_options",
+                "precond": null,
+                "prompt": "Specify Alternate Cutoffs / Data Files options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Search only sequences with names matching this string. Only those sequences with names (first non-white space word after '>' symbol on FASTA name/description line) matching this string are analyzed for tRNAs.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -n $value\":\"\"",
+                            "python": "(\"\" , \" -n \"+ str(value))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matching",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Search only sequences with names matching this string (-n)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Start search at first sequence with name matching <EXPR> string and continue to end of input sequence file(s). This may be useful for re-starting crashed/aborted runs at the point where the previous run stopped. (If same names for output file(s) are used, program will ask if files should be over-written or appended to -- choose append and run will successfully be restarted where it left off).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -s $value\":\"\"",
+                            "python": "(\"\" , \" -s \"+ str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "start",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Start search at first sequence with name matching this string (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "misc_options",
+                "precond": null,
+                "prompt": "Misc options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Save final results and Cove tRNA secondary structure predictions. This output format makes visual inspection of individual tRNA predictions easier since the tRNA sequence is displayed along with the predicted tRNA base pairings.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -f\\\\#\":\"\"",
+                            "python": "(\"\" , \" -f#\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "secondary_structure",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save secondary structure results file (-f)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -a\":\"\"",
+                            "python": "(\"\" , \" -a\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "acedb",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output final results in ACeDB format instead of the default tabular format (-a)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option directs tRNAscan-SE to write a brief summary to a file which contains the run options selected as well as statistics on the number of tRNAs detected at each phase of the search, search speed, and other bits of information. See Manual documentation for explanation of each statistic.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -m\\\\#\":\"\"",
+                            "python": "(\"\" , \" -m#\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "statistics",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save statistics summary for run (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Messages indicating which phase of the tRNA search are printed to standard output. If final results are also being sent to standard output, some of these messages will be suppressed so as to not interrupt display of the results.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -d\":\"\"",
+                            "python": "(\"\" , \" -d\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "progress",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display program progress (-d)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -l\\\\#\":\"\"",
+                            "python": "(\"\" , \" -l#\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "log",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Save log of program progress (-l)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The credits & run option selections normally printed to standard error at the beginning of each run are suppressed.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -q\":\"\"",
+                            "python": "(\"\" , \" -q\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "quiet",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Quiet mode (-q)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This eliminates column headers that appear by default when writing results in tabular output format. Useful if results are to be parsed or piped to another program.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -b\":\"\"",
+                            "python": "(\"\" , \" -b\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "brief",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use brief output format (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -N\":\"\"",
+                            "python": "(\"\" , \" -N\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trna_codon",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output a tRNA's corresponding codon in place of its anticodon (-N)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -p $value\":\"\"",
+                            "python": "(\"\" , \" -p \"+str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use prefix for all default output file names (-p)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "'Ts', 'Eu', or 'Bo' will appear in the last column of Tabular output, indicating that either tRNAscan 1.4, EufindtRNA, or both scanners detected the tRNA, respectively.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -y\":\"\"",
+                            "python": "(\"\" , \" -y\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "scanners",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Displays which of the first-pass scanners detected the tRNA being output (-y)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "trnascan",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.fpos\"",
+                    "python": "\"*.fpos\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Results files",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.fpass.out\"",
+                    "python": "\"*.fpass.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "first_pass_scan_results",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "First pass scan result",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "TrnaScanFirstPassResult",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Fichant, G.A. and Burks, C. (1991) Identifying potential tRNA genes in genomic DNA sequences, J. Mol. Biol., 220, 659-671.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Eddy, S.R. and Durbin, R. (1994) RNA sequence analysis using covariance models, Nucl. Acids Res., 22, 2079-2088.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Pavesi, A., Conterio, F., Bolchi, A., Dieci, G., Ottonello, S. (1994) Identification of new eukaryotic tRNA genes in genomic DNA databases by a multistep weight matrix analysis of trnascriptional control regions, Nucl. Acids Res., 22, 1247-1256.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Lowe, T.M. and Eddy, S.R. (1997) tRNAscan-SE: A program for improved detection of transfer RNA genes in genomic sequence, Nucl. Acids Res., 25, 955-964.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "ftp://selab.janelia.org/pub/software/tRNAscan-SE/"
+    ],
+    "title": "tRNAscan-SE",
+    "type": "program",
+    "version": "1.23"
+}

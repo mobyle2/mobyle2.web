@@ -1,0 +1,429 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "hmm:alignment:multiple",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "alignment:multiple:hmm",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Align sequences to a profile HMM",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"hmmalign\"",
+                    "python": "\"hmmalign\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "hmmcmd",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\" $seqfile\"",
+                                    "python": "\" \" + str(seqfile)"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "seqfile",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Sequences File",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": "2,n",
+                                    "datatype": {
+                                        "class": "Sequence",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": [
+                                        "FASTA",
+                                        "EMBL",
+                                        "Genbank",
+                                        "Uniprot"
+                                    ]
+                                }
+                            }
+                        ],
+                        "comment": "Input sequence file may  be in  any unaligned  or  aligned file format. If  it is \n            in  a multiple alignment format  (e.g. Stockholm, MSF,  ClustalW),  the  existing  alignment is  \n            ignored  (i.e.,  the\n\t      sequences are read as if they were unaligned).",
+                        "name": "file",
+                        "precond": null,
+                        "prompt": "Input sequences file"
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" $value\"",
+                            "python": "\" \"+str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "hmmfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Profile HMM file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "HmmProfile",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "infile",
+                "precond": null,
+                "prompt": "Input file"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The alphabet type (amino, DNA, or RNA) is autodetected by default, by looking at the composition of the\n            msafile. Autodetection is normally quite reliable, but occasionally alphabet type may be ambiguous and\n            autodetection can fail (for instance, on tiny toy alignments of just a few residues). To avoid this, or to\n            increase robustness in automated analysis pipelines, you may specify the alphabet type of msafile with\n            these options.Protein: Specify that all sequences in seqfile are proteins. By default, alphabet type is\n                    autodetected from looking at the residue composition.DNA: Specify that all sequences in seqfile are DNAs.RNA: Specify that all sequences in seqfile are RNAs.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" $value\" : \"\"",
+                            "python": "(\"\", \" \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "biotype",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Assert sequences and hmm files are both in same type",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "expert_options",
+                "precond": null,
+                "prompt": "Expert Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Include columns in the output alignment for every match (consensus) state in\n            the hmmfile, even if it means having all-gap columns. This is useful in analysis\n            pipelines that need to be able to maintain a predetermined profile HMM architecture\n            (with an unchanging number of consensus columns) through an hmmalign\n            step.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" --allcol : \"\"",
+                            "python": "( \"\" , \" --allcol \" )[ value  ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "allcol",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Include all consensus columns in ali, even if all gaps",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Merge the existing alignment in file into the result, where the file is exactly the\n            same alignment that was used to build the model in hmmfile. This is done using\n            a 'map' of alignment columns to consensus profile positions that is stored in the\n            hmmfile. The multiple alignment in the file will be exactly reproduced in its consensus\n            columns (as defined by the profile), but the displayed alignment in insert columns\n            may be altered, because insertions relative to a profile are considered by convention\n            to be unaligned data.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --mapali $value\" : \"\"",
+                            "python": "( \"\" , \" --mapali \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "mapali",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Include alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "STOCKHOLM"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "common_options",
+                "precond": null,
+                "prompt": "Common Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Trim nonhomologous residues (assigned to N and C states in the optimal alignments)\n            from the resulting multiple alignment output.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" --trim\" : \"\"",
+                            "python": "( \"\", \" --trim\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "trim",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Trim terminal tails of nonaligned residues from alignment",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -o $value\" : \"\"",
+                            "python": "(\"\", \" -o \" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile_name",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Outfile name (-o)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Specify that the msafile is in the selected format. Currently the accepted multiple \n            alignment sequence file formats only include Stockholm and SELEX. Default is to autodetect\n            the format of the file.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" --outformat $value\" : \"\"",
+                            "python": "( \"\" , \" --outformat \" + str( value) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outputformat",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "hmmalign",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$outfile_name\"",
+                            "python": "str(outfile_name)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outputfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined($outfile_name)",
+                            "python": "outfile_name is not None"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "outputformat"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"hmmalign.out\"",
+                            "python": "\"hmmalign.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "stdout",
+                        "precond": {
+                            "perl": "not defined($outfile_name)",
+                            "python": "outfile_name is None"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "outputformat"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "HMMALIGN",
+    "type": "program",
+    "version": null
+}

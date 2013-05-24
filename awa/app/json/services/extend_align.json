@@ -1,0 +1,219 @@
+{
+    "authors": "N\u00e9ron, B.",
+    "classifications": [
+        {
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "extend_align"
+    },
+    "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>for instance</html:p>fisrt alignment<html:pre>&gt;seq1\n            aaaaggg\n            &gt;seq2\n            aaaa--g\n            &gt;seq3\n            aa--ggg</html:pre>second alignment<html:pre>&gt;seq1\n            ccccttt\n            &gt;seq2\n            cccc--t\n            &gt;seq3\n            cc--ttt</html:pre>the resulting alignment if the linker is \"---\" will be:<html:pre>&gt;seq1\n            aaaaggg---ccccttt\n            &gt;seq2\n            aaaa--g---cccc--t\n            &gt;seq3\n            aa--ggg---cc--ttt</html:pre>two methods can be used to extend the aligenmt:<html:ol><html:li>by sequence order: in this case the ids of sequences could be different.\n             and the id of each sequence in the resulting alignment is the concatenation of the respective sequence id \n             (All Alignments MUST have the same number of sequences)</html:li><html:li>by sequence id: in this case the extension is made based on the sequence ids.</html:li></html:ol></html:div>",
+    "description": "This tool concatenates multiple MSAs.",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "5",
+                "command": false,
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:ol><html:li>by sequence order: in this case the ids of sequences could be different.\n             and the id of each sequence in the resulting alignment is the concatenation of the respective sequence id \n             (All Alignments MUST have the same number of sequences)</html:li><html:li>by sequence id: in this case the extension is made based on the sequence ids.</html:li></html:ol></html:div>",
+                "ctrl": null,
+                "format": {
+                    "perl": "( defined $value and value != $vdef)? \" --id \":\"\"",
+                    "python": "( \"\" , \" --id \")[value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "extend_method",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "method to extend the alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -i $value fasta\"",
+                    "python": "\" -i \" + str( value ) + \" fasta\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "fasta_align",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -i $value fasta\" : \"\"",
+                    "python": "(\"\" , \" -i \" + str( value ) + \" fasta\")[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "fasta_align2",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "30",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -i $value fasta\" : \"\"",
+                    "python": "(\"\" , \" -i \" + str( value ) + \" fasta\")[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "fasta_align3",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value)?\"\": \" -l $value\"",
+                    "python": "(\"\", \" -l \" + str( value ) )[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "linker",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "sequence linker",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "extend_align",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"extend_align.out\"",
+                    "python": "\"extend_align.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "concatenated_alignment",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "concatenated alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "concatenate several alignments from several files",
+    "type": "program",
+    "version": null
+}

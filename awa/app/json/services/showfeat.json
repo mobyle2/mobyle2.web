@@ -1,0 +1,848 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "display:feature_table",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "showfeat"
+    },
+    "comment": null,
+    "description": "Display features of a sequence in pretty format",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/showfeat.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "By default any feature source in the feature table is shown. You can set this to match any feature source you wish to  show. \n  The source name is usually either the name of the program that  detected the feature or it is the feature table (eg: EMBL) that  the feature came from. \n  The source may be wildcarded by using '*'. \n  If you wish to show more than one source, separate their names  with the character '|', eg: \n  gene* | embl",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sourcematch=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_sourcematch",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Source of feature to display",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "By default any feature type in the feature table is shown. You can set this to match any feature type you wish to show. \n  See http://www.ebi.ac.uk/embl/WebFeat/ for a list of the EMBL  feature types and see Appendix A of the Swissprot user manual in  http://www.expasy.org/sprot/userman.html for a list of the Swissprot  feature types. \n  The type may be wildcarded by using '*'. \n  If you wish to show more than one type, separate their names with  the character '|', eg: \n  *UTR | intron",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -typematch=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_typematch",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Type of feature to display",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "Tags are the types of extra values that a feature may have. For example in the EMBL feature table, a 'CDS' type of feature  may have the tags '/codon', '/codon_start', '/db_xref',  '/EC_number', '/evidence', '/exception', '/function', '/gene',  '/label', '/map', '/note', '/number', '/partial', '/product',  '/protein_id', '/pseudo', '/standard_name', '/translation',  '/transl_except', '/transl_table', or '/usedin'. Some of these  tags also have values, for example '/gene' can have the value of  the gene name. \n  By default any feature tag in the feature table is shown. You can  set this to match any feature tag you wish to show. \n  The tag may be wildcarded by using '*'. \n  If you wish to show more than one tag, separate their names with  the character '|', eg: \n  gene | label",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -tagmatch=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_tagmatch",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Tag of feature to display",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Tag values are the values associated with a feature tag. Tags are the types of extra values that a feature may have. For  example in the EMBL feature table, a 'CDS' type of feature may  have the tags '/codon', '/codon_start', '/db_xref', '/EC_number',  '/evidence', '/exception', '/function', '/gene', '/label', '/map',  '/note', '/number', '/partial', '/product', '/protein_id',  '/pseudo', '/standard_name', '/translation', '/transl_except',  '/transl_table', or '/usedin'. Only some of these tags can have  values, for example '/gene' can have the value of the gene name.  By default any feature tag value in the feature table is shown.  You can set this to match any feature tag value you wish to show. \n  The tag value may be wildcarded by using '*'. \n  If you wish to show more than one tag value, separate their names  with the character '|', eg: \n  pax* | 10",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -valuematch=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_valuematch",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Value of feature tags to display",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sort=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_sort",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sorting features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -joinfeatures\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_joinfeatures",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Join coding regions together",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": "Regions to annotate by marking. \n If this is left blank, then no annotation is added. \n  A set of regions is specified by a set of pairs of positions  followed by optional text. \n  The positions are integers. \n  They are followed by any text (but not digits when on the  command-line). \n  Examples of region specifications are: \n  24-45 new domain 56-78 match to Mouse \n  1-100 First part 120-156 oligo \n  A file of ranges to annotate (one range per line) can be specified  as '@filename'.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -annotation=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_annotation",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Regions to mark (eg: 4-57 promoter region 78-94 first exon)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -html\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_html",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use html formatting",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display the ID name of the sequence.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noid\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_id",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show sequence id",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display the description of the sequence.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nodescription\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_description",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show description",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display the scale line.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noscale\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_scale",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show scale line",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": "You can expand (or contract) the width of the ASCII-character graphics display of the positions of the features  using this value. \n  For example, a width of 80 characters would cover a standard page  width and a width a 10 characters would be nearly unreadable. \n  If the width is set to less than 4, the graphics lines and the  scale line will not be displayed.",
+                        "ctrl": {
+                            "python": "value >= 0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -width=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_width",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Width of graphics lines (value greater than or equal to 0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": "If this is set, then features from the same source and of the same type and sense are all printed on the same line. For  instance if there are several features from the EMBL feature table  (ie. the same source) which are all of type 'exon' in the same  sense, then they will all be displayed on the same line. This  makes it hard to distinguish overlapping features. \n  If this is set to false then each feature is displayed on a  separate line making it easier to distinguish where features start  and end.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -collapse\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_collapse",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display features with the same type on one line",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "15",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display forward sense features.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noforward\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_forward",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display forward sense features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "16",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display reverse sense features.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noreverse\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_reverse",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display reverse sense features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display unknown sense features. (ie. features with no directionality - all protein  features are of this type and some nucleic features (for example,  CG-rich regions)).",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -nounknown\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_unknown",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display unknown sense features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": "Set this if you wish to display the strand of the features. Protein features are always directionless (indicated by '0'),  forward is indicated by '+' and reverse is '-'.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -strand\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_strand",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display strand of features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": "Set this if you wish to display the origin of the features. \n  The source name is usually either the name of the program that  detected the feature or it is the name of the feature table (eg:  EMBL) that the feature came from.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -origin\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_origin",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display source of features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": "Set this if you wish to display the start and end position of the features. If several features are being displayed on the  same line, then the start and end positions will be joined by a  comma, for example: '189-189,225-225'.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -position\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_position",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display position of features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "21",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display the type of the features.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -notype\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_type",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display type of features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "22",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display the tags and values of the features.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -tags\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_tags",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display tags of features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "23",
+                        "command": false,
+                        "comment": "Set this to be false if you do not wish to display the tag values of the features. If this is set to be false, only the tag  names will be displayed. If the tags are not displayed, then the  values will not be displayed. The value of the 'translation' tag  is never displayed as it is often extremely long.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -novalues\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_values",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display tag values of features",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "24",
+                        "command": false,
+                        "comment": "By default if any tag/value pair in a feature matches the specified tag and value, then all the tags/value pairs of that  feature will be displayed. If this is set to be true, then only  those tag/value pairs in a feature that match the specified tag  and value will be displayed.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -stricttags\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_stricttags",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Only display the matching tags",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_advanced",
+                "precond": null,
+                "prompt": "Advanced section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "25",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output file (e_outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "26",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "showfeat",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "ShowfeatReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "showfeat",
+    "type": "program",
+    "version": null
+}

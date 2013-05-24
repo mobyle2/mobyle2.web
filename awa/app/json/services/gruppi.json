@@ -1,0 +1,134 @@
+{
+    "authors": "Marco Pontoglio",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:pattern",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:nucleic:clusters",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "clusters of binding sites",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"gruppi",
+                    "python": "\"gruppi"
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "gruppi",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $sequences\"",
+                    "python": "\" \" + str(sequences)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequences",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequences",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NBRF"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "gruppi",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"gruppi.out\"",
+                    "python": "\"gruppi.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "Gruppi output",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "GruppiReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "ftp://ftp.pasteur.fr/pub/GenSoft/unix/nucleic_acid/"
+    ],
+    "title": "gruppi",
+    "type": "program",
+    "version": "1.0"
+}

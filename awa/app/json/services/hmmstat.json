@@ -1,0 +1,69 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "hmm:statistic",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "hmmstat"
+    },
+    "comment": null,
+    "description": "Sisplay summary statistics for a profile file",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "Name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Name of the HMM profile",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "HmmProfile",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "hmmstat",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "HMMSTAT",
+    "type": "program",
+    "version": null
+}

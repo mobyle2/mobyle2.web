@@ -1,0 +1,404 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "phylogeny:tree_analyser",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "CONSENSE reads a  file of  computer-readable trees\n\tand prints out (and may also write out onto a file) a consensus tree.",
+    "description": "Consensus tree program",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/consense.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"consense <consense.params\"",
+                    "python": "\"consense <consense.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": "Input is a tree file which contains a series of trees in the Newick standard form",
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $infile intree && \"",
+                    "python": "\"ln -s \"+ str( infile )+ \" intree &&\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Series of trees in file (intree)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": null,
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "type",
+                "paramfile": "consense.params",
+                "precond": null,
+                "prompt": "Consensus type",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to print a semi-graphical picture of the tree in the outfile.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \"3\\\\n\"",
+                            "python": "( \"3\\n\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_tree",
+                        "paramfile": "consense.params",
+                        "precond": null,
+                        "prompt": "Print out tree (3)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to save the tree in a treefile (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \"4\\\\n\"",
+                            "python": "( \"4\\n\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_treefile",
+                        "paramfile": "consense.params",
+                        "precond": null,
+                        "prompt": "Write out trees onto tree file (4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"1\\\\n\" : \"\"",
+                            "python": "( \"\" , \"1\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "printdata",
+                        "paramfile": "consense.params",
+                        "precond": null,
+                        "prompt": "Print out the data at start of run (1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value > 0",
+                            "python": "value > 0"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"O\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"O\\n\"+ str( value ) +\"\\n\" )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outgroup",
+                        "paramfile": "consense.params",
+                        "precond": null,
+                        "prompt": "Outgroup species (O)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"R\\\\n\" : \"\"",
+                            "python": "( \"\" , \"R\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rooted",
+                        "paramfile": "consense.params",
+                        "precond": null,
+                        "prompt": "Trees to be treated as rooted (R)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "other_options",
+                "precond": null,
+                "prompt": "Other options"
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"Y\\\\n\"",
+                    "python": "\"Y\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "confirm",
+                "paramfile": "consense.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"T\\\\n\"",
+                    "python": "\"T\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "terminal_type",
+                "paramfile": "consense.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "consense",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"consense.outfile\"",
+                    "python": "\"consense.outfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Consense output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"consense.outtree\"",
+                    "python": "\"consense.outtree\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$print_treefile",
+                    "python": "print_treefile"
+                },
+                "prompt": "Consense tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "consense",
+    "type": "program",
+    "version": null
+}

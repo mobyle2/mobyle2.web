@@ -1,0 +1,864 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "sequence:edit:feature_table",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "twofeat"
+    },
+    "comment": null,
+    "description": "Finds neighbouring pairs of features in sequence(s)",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/twofeat.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -sequence=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_sequence",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "sequence option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "EMBL",
+                                "FASTA",
+                                "GCG",
+                                "GENBANK",
+                                "NBRF",
+                                "PIR",
+                                "RAW",
+                                "SWISSPROT",
+                                "GFF"
+                            ]
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "2",
+                                "command": false,
+                                "comment": "By default any feature source in the feature table is allowed. You can set this to match any feature source you wish  to allow. \n  The source name is usually either the name of the program that  detected the feature or it is the feature table (eg: EMBL) that  the feature came from. \n  The source may be wildcarded by using '*'. \n  If you wish to allow more than one source, separate their names  with the character '|', eg: \n  gene* | embl",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -asource=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_asource",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Source of first feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "3",
+                                "command": false,
+                                "comment": "By default every feature in the feature table is allowed. You can set this to be any feature type you wish to allow. \n  See http://www.ebi.ac.uk/embl/WebFeat/ for a list of the  EMBL feature types and see Appendix A of the Swissprot user  manual in http://www.expasy.org/sprot/userman.html  for a list of the Swissprot feature types. \n  The type may be wildcarded by using '*'. \n  If you wish to allow more than one type, separate their names  with the character '|', eg: \n  *UTR | intron",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -atype=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "e_atype",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Type of first feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "4",
+                                "command": false,
+                                "comment": "By default any feature sense is allowed. You can set this to match the required sense.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -asense=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_asense",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Sense of first feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "5",
+                                "command": false,
+                                "comment": "If this is greater than or equal to the maximum score, then any score is allowed.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -aminscore=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_aminscore",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Minimum score of first feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "6",
+                                "command": false,
+                                "comment": "If this is less than or equal to the maximum score, then any score is permitted.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -amaxscore=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_amaxscore",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Maximum score of first feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "7",
+                                "command": false,
+                                "comment": "Tags are the types of extra values that a feature may have. For example in the EMBL feature table, a 'CDS' type of  feature may have the tags '/codon', '/codon_start', '/db_xref',  '/EC_number', '/evidence', '/exception', '/function', '/gene',  '/label', '/map', '/note', '/number', '/partial', '/product',  '/protein_id', '/pseudo', '/standard_name', '/translation',  '/transl_except', '/transl_table', or '/usedin'. Some of these  tags also have values, for example '/gene' can have the value of  the gene name. \n  By default any feature tag in the feature table is allowed. You  can set this to match any feature tag you wish to allow. \n  The tag may be wildcarded by using '*'. \n  If you wish to allow more than one tag, separate their names  with the character '|', eg: \n  gene | label",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -atag=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_atag",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Tag of first feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "8",
+                                "command": false,
+                                "comment": "Tag values are the values associated with a feature tag. Tags are the types of extra values that a feature may have. For  example in the EMBL feature table, a 'CDS' type of feature may  have the tags '/codon', '/codon_start', '/db_xref',  '/EC_number', '/evidence', '/exception', '/function', '/gene',  '/label', '/map', '/note', '/number', '/partial', '/product',  '/protein_id', '/pseudo', '/standard_name', '/translation',  '/transl_except', '/transl_table', or '/usedin'. Only some of  these tags can have values, for example '/gene' can have the  value of the gene name. By default any feature tag value in the  feature table is allowed. You can set this to match any feature  tag value you wish to allow. \n  The tag value may be wildcarded by using '*'. \n  If you wish to allow more than one tag value, separate their  names with the character '|', eg: \n  pax* | 10",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -avalue=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_avalue",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Value of first feature's tags",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_afeaturesection",
+                        "precond": null,
+                        "prompt": "First feature options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "9",
+                                "command": false,
+                                "comment": "By default any feature source in the feature table is allowed. You can set this to match any feature source you wish  to allow. \n  The source name is usually either the name of the program that  detected the feature or it is the feature table (eg: EMBL) that  the feature came from. \n  The source may be wildcarded by using '*'. \n  If you wish to allow more than one source, separate their names  with the character '|', eg: \n  gene* | embl",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -bsource=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_bsource",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Source of second feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "10",
+                                "command": false,
+                                "comment": "By default every feature in the feature table is allowed. You can set this to be any feature type you wish to allow. \n  See http://www.ebi.ac.uk/embl/WebFeat/ for a list of the  EMBL feature types and see Appendix A of the Swissprot user  manual in http://www.expasy.org/sprot/userman.html  for a list of the Swissprot feature types. \n  The type may be wildcarded by using '*'. \n  If you wish to allow more than one type, separate their names  with the character '|', eg: \n  *UTR | intron",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -btype=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "e_btype",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Type of second feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "11",
+                                "command": false,
+                                "comment": "By default any feature sense is allowed. You can set this to match the required sense.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -bsense=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_bsense",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Sense of second feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "12",
+                                "command": false,
+                                "comment": "If this is greater than or equal to the maximum score, then any score is allowed.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -bminscore=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_bminscore",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Minimum score of second feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "13",
+                                "command": false,
+                                "comment": "If this is less than or equal to the maximum score, then any score is permitted.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -bmaxscore=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_bmaxscore",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Maximum score of second feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "14",
+                                "command": false,
+                                "comment": "Tags are the types of extra values that a feature may have. For example in the EMBL feature table, a 'CDS' type of  feature may have the tags '/codon', '/codon_start', '/db_xref',  '/EC_number', '/evidence', '/exception', '/function', '/gene',  '/label', '/map', '/note', '/number', '/partial', '/product',  '/protein_id', '/pseudo', '/standard_name', '/translation',  '/transl_except', '/transl_table', or '/usedin'. Some of these  tags also have values, for example '/gene' can have the value of  the gene name. \n  By default any feature tag in the feature table is allowed. You  can set this to match any feature tag you wish to allow. \n  The tag may be wildcarded by using '*'. \n  If you wish to allow more than one tag, separate their names  with the character '|', eg: \n  gene | label",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -btag=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_btag",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Tag of second feature",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "15",
+                                "command": false,
+                                "comment": "Tag values are the values associated with a feature tag. Tags are the types of extra values that a feature may have. For  example in the EMBL feature table, a 'CDS' type of feature may  have the tags '/codon', '/codon_start', '/db_xref',  '/EC_number', '/evidence', '/exception', '/function', '/gene',  '/label', '/map', '/note', '/number', '/partial', '/product',  '/protein_id', '/pseudo', '/standard_name', '/translation',  '/transl_except', '/transl_table', or '/usedin'. Only some of  these tags can have values, for example '/gene' can have the  value of the gene name. By default any feature tag value in the  feature table is allowed. You can set this to match any feature  tag value you wish to allow. \n  The tag value may be wildcarded by using '*'. \n  If you wish to allow more than one tag value, separate their  names with the character '|', eg: \n  pax* | 10",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -bvalue=\" + str(value))[value is not None]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_bvalue",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Value of second feature's tags",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_bfeaturesection",
+                        "precond": null,
+                        "prompt": "Second feature options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "16",
+                                "command": false,
+                                "comment": "This allows you to specify the allowed overlaps of the features A and B. \n  You can allow any or no overlaps, specify that they must or must  not overlap, that one must or must not be wholly enclosed  within another feature.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -overlap=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_overlap",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Type of overlap required",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "17",
+                                "command": false,
+                                "comment": "If this is greater or equal to 'maxrange', then no min or max range is specified",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -minrange=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "e_minrange",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "The minimum distance between the features",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "18",
+                                "command": false,
+                                "comment": "If this is less than or equal to 'minrange', then no min or max range is specified",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -maxrange=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "e_maxrange",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "The maximum distance between the features",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "19",
+                                "command": false,
+                                "comment": "This allows you to specify the positions from which the allowed minimum or maximum distance between the features is  measured",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -rangetype=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_rangetype",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Positions from which to measure the distance",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "20",
+                                "command": false,
+                                "comment": "This allows you to specify the required sense that the two features must be on. This is ignored (always 'Any') when  looking at protein sequence features.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -sense=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_sense",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Sense of the features",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "21",
+                                "command": false,
+                                "comment": "This allows you to specify the required order of the two features. The order is measured from the start positions of the  features. This criterion is always applied despite the specified  overlap type required.",
+                                "ctrl": null,
+                                "format": {
+                                    "python": "(\"\", \" -order=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "e_order",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Order of the features",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "e_featurerelationsection",
+                        "precond": null,
+                        "prompt": "Feature relation options"
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "22",
+                        "command": false,
+                        "comment": "If you set this to be true, then the two features themselves will be written out. If it is left as false, then a  single feature will be written out covering the two features you  found.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -twoout\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_twoout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do you want the two features written out individually",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "23",
+                        "command": false,
+                        "comment": "If you have specified that the pairs of features that are found should be reported as one feature in the ouput, then you can  specify the 'type' name of the new feature here. By default every  feature in the feature table is allowed. See  http://www.ebi.ac.uk/embl/WebFeat/ for a list of the EMBL  feature types and see Appendix A of the Swissprot user manual in  http://www.expasy.org/sprot/userman.html for a list of the Swissprot  feature types. If you specify an invalid feature type name, then  the default name 'misc_feature' is used.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -typeout=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_typeout",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not e_twoout"
+                        },
+                        "prompt": "Name of the output new feature",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "24",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -outfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the report file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "25",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -rformat=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_rformat_outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the report output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "26",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "twofeat",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "e_outfile"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "e_outfile_out",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_rformat_outfile in ['DASGFF', 'DBMOTIF', 'DIFFSEQ', 'EMBL', 'EXCEL', 'FEATTABLE', 'GENBANK', 'GFF', 'LISTFILE', 'MOTIF', 'NAMETABLE', 'PIR', 'REGIONS', 'SEQTABLE', 'SIMPLE', 'SRS', 'SWISS', 'TABLE', 'TAGSEQ']"
+                        },
+                        "prompt": "outfile_out option",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "e_rformat_outfile"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "twofeat",
+    "type": "program",
+    "version": null
+}

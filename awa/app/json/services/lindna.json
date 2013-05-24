@@ -1,0 +1,818 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "display",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "lindna"
+    },
+    "comment": null,
+    "description": "Draws linear maps of DNA constructs",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/EMBOSS/lindna.html",
+        "http://emboss.sourceforge.net/docs/themes"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -infile=\" + str(value))[value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_infile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Commands to the lindna drawing program file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "LindnaMappingCommands",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 1"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -maxgroups=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_maxgroups",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of groups (value greater than or equal to 1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 1"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -maxlabels=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_maxlabels",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of labels (value greater than or equal to 1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_additional",
+                "precond": null,
+                "prompt": "Additional section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -noruler\", \"\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_ruler",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Draw a ruler",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -blocktype=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_blocktype",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Type of blocks",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -intersymbol=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_intersymbol",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Type of junctions between blocks",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -intercolour=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_intercolour",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Colour of junctions between blocks (enter a colour number) (value from 0 to 15)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "8",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -interticks\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_interticks",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Horizontal junctions between ticks",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "python": "value >= 0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -gapsize=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gapsize",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Interval between ticks in the ruler (value greater than or equal to 0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -ticklines\")[ bool(value) ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_ticklines",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Vertical lines at the ruler's ticks",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": "Height of text. Enter a number <1.0 or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -textheight=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_textheight",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Height of text multiplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": "Length of text. Enter a number <1.0 or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -textlength=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_textlength",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Length of text multiplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": "Width of left margin. This is the region left to the groups where the names of the groups are displayed. Enter a number <1.0  or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -margin=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_margin",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Width of left margin multiplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": "Height of ticks. Enter a number <1.0 or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -tickheight=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_tickheight",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Height of ticks multiplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "15",
+                        "command": false,
+                        "comment": "Height of blocks. Enter a number <1.0 or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -blockheight=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_blockheight",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Height of blocks multilpier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "16",
+                        "command": false,
+                        "comment": "Height of range ends. Enter a number <1.0 or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -rangeheight=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_rangeheight",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Height of range ends multiplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": "Space between groups. Enter a number <1.0 or >1.0 to decrease or increase the size, respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -gapgroup=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_gapgroup",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Space between groups mutliplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": "Space between text and ticks, blocks, and ranges. Enter a number <1.0 or >1.0 to decrease or increase the size,  respectively",
+                        "ctrl": {
+                            "python": "value >= 0.0"
+                        },
+                        "format": {
+                            "python": "(\"\", \" -postext=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_postext",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Space between text and ticks, blocks, and ranges multiplier (value greater than or equal to 0.0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\" -graphout=\" + str(vdef), \" -graphout=\" + str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_graphout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose the e_graphout output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\" , \" -goutfile=\" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "e_goutfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of the output graph",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            },
+            {
+                "argpos": "21",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "python": "\" -auto -stdout\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "auto",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Turn off any prompting",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "lindna",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.png\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outgraph_png",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graphout == \"png\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.gif\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outgraph_gif",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graphout == \"gif\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.ps\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outgraph_ps",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graphout == \"ps\" or e_graphout == \"cps\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PostScript",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.meta\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outgraph_meta",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graphout == \"meta\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Picture",
+                                "superclass": "Binary"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "python": "\"*.dat\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outgraph_data",
+                        "output_type": "file",
+                        "precond": {
+                            "python": "e_graphout == \"data\""
+                        },
+                        "prompt": "Graph file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_output",
+                "precond": null,
+                "prompt": "Output section"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "lindna",
+    "type": "program",
+    "version": null
+}

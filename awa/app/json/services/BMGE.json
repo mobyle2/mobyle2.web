@@ -1,0 +1,738 @@
+{
+    "authors": "Alexis Criscuolo and Simonetta Gribaldo",
+    "classifications": [
+        {
+            "classification": "alignment:multiple:information",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "BMGE"
+    },
+    "comment": null,
+    "description": "Block Mapping and Gathering using Entropy",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/BMGE/BMGE_doc.pdf"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "BMGE uses FASTA or PHYLIP sequential format for input. These are\n                    plain text files. There is no limit on the length of the\n                    alignment. There is also no limit on the length of the label of\n                    a sequence (i.e. its FASTA annotation line), although a too long\n                    label (e.g. more than 100 letters) will be truncated if the\n                    output format is PHYLIP sequential.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -i $value\"",
+                            "python": "\" -i \"+str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "infile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment (-i)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein",
+                                "DNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA",
+                                "PHYLIPS"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Both standard single-letter amino acid and nucleotide alphabets\n                          are used by BMGE. When using amino acid sequences, degenerated\n                          character states B and Z are understood by BMGE; similarly,\n                          degenerated nucleotide characters are also understood. The\n                          character state X is understood to be any of the 4 or 20\n                          character states when using as input nucleotide or amino acid\n                          sequences, respectively. Dashes (i.e. '-') are understood as\n                          gaps, whereas dots (i.e. '.'), as any other single letter that\n                          are not inside standard alphabets, are considered as unknown\n                          character state (i.e. '?'). Nucleotide sequences can be set as\n                          codon ones. In this case, each successive nucleotide character\n                          triplet is considered as one codon character.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -t $value\" : \"\"",
+                            "python": "(\"\", \" -t \"+str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "input_type",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Type of sequence (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input",
+                "precond": null,
+                "prompt": "Input"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "For each character, BMGE computes a score mainly determined by the entropy induced by\n              the respective proportion of each residue. To estimate realistic\n              scores that take into account biologically relevant substitution processes, BMGE weights the\n              entropy estimation with substitution matrices.These option can be used with the 15 estimated BLOSUM matrices. BMGE uses by \n              default the popular BLOSUM62 matrix. The character\n              trimming is progressively more stringent as the BLOSUM index\n              increases (e.g. BLOSUM95); reciprocally, the trimming is\n              progressively more relaxed as the BLOSUM index is lower (e.g.\n              BLOSUM30). In practice, it is recommended to use BLOSUM95 with\n              closely related sequences, and BLOSUM30 with distantly related\n              sequences.If input sequences are set as codons, BMGE performs a conversion\n              into amino acid sequences (following the universal genetic code)\n              and uses BLOSUM matrices to estimate the entropy-like score for\n              each codon character. So, with option -t set as CODON, one can\n              modify the option -m only with BLOSUM matrices.\n              It is also possible to use the identity matrix with any sequence\n              types.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -m $value\" : \"\"",
+                            "python": "(\"\", \" -m \"+str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matrixaa",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$input_type eq 'AA' or $input_type eq 'CODON'",
+                            "python": "input_type in ['AA', 'CODON']"
+                        },
+                        "prompt": "Similarity Matrices for amino acid and codon sequences (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "For nucleotide input sequences, BMGE uses PAM matrices with a\n              fixed transition/transition ratio. BMGE can be used with all\n              possible PAM matrices, from the most stringent (i.e. DNAPAM1) to\n              highly relaxed ones (e.g. DNAPAM500). By default with nucleotide\n              sequences, BMGE uses the PAM-100 matrix.It is also possible to use the identity matrix.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -m $value\" : \"\"",
+                            "python": "(\"\", \" -m \"+str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matrixan",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$input_type eq 'DNA'",
+                            "python": "input_type in ['DNA']"
+                        },
+                        "prompt": "Similarity Matrices for nucleotide sequences (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": "It is possible to indicate a transition/transversion ratio to\n              better define the PAM matrices with nucleotide sequences. By\n              default, BMGE uses a transition/transversion ratio of 2.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \":$value \" : \"\"",
+                            "python": "(\"\", \":\" +str(value) + \" \")[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "transition",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$input_type eq 'DNA' and ($matrixan ne 'DNAPAM100' and  $matrixan ne 'ID' )",
+                            "python": "input_type in ['DNA'] and (matrixan != 'DNAPAM100' and  matrixan != 'ID' )"
+                        },
+                        "prompt": "Transition/transversion ratio for nucleotide sequences.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "BMGE allows characters containing too many gaps to be removed\n                with this option. By default, BMGE removes all characters with a\n                gap frequency greater than 0.2.",
+                        "ctrl": {
+                            "perl": "$value >= 0 and $value <= 1",
+                            "python": "value >= 0 and value <= 1"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -g $value\" : \"\"",
+                            "python": "(\"\", \" -g \"+str(value))[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gap_rate_cutoff",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap Rate Cut-off (-g)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "Following the smoothing operation of the entropy-like score\n              values across characters, BMGE selects characters associated with\n              a score value greater than a fixed threshold. This cut-off is set\n              to 0.0 by default.",
+                        "ctrl": {
+                            "perl": "$value >= 0 and $value <= 1",
+                            "python": "value >= 0 and value <= 1"
+                        },
+                        "format": {
+                            "perl": "(($max_entropy != 0.5 or $value != $vdef) and  ($max_entropy > $value)) ? \" -h $value:$max_entropy\" : \"\"",
+                            "python": "(\"\", \" -h %s:%s \" % ( value, max_entropy) )[ (max_entropy != 0.5 or value !=vdef) and  (max_entropy > value)  ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "min_entropy",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum entropy Score Cut-off (-h)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": "Following the smoothing operation of the entropy-like score\n              values across characters, BMGE selects characters associated with\n              a score value below a fixed threshold. This cut-off is set to 0.5\n              by default.",
+                        "ctrl": {
+                            "perl": "($value >= 0 and $value <= 1) and ($value > $min_entropy)",
+                            "python": "(value >= 0 and value <= 1) and (value > min_entropy)"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max_entropy",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $min_entropy",
+                            "python": "min_entropy is not None"
+                        },
+                        "prompt": "Maximum entropy Score Cut-off (-h)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": "BMGE only selects regions of size greater than or equal to 5. Use\n              this option to modify this minimum block size parameter.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -b $value\" : \"\"",
+                            "python": "(\"\", \" -b \"+str(value) )[value is not None and value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "minimun_block_size",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum Block Size (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "options",
+                "precond": null,
+                "prompt": "Control options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "( $value ) ? \" -op $infile.phy\" : \"\"",
+                            "python": "(\"\", \" -op \"+ infile.split('.')[0] + \".phy \")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "phylip",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $infile",
+                            "python": "infile is not None"
+                        },
+                        "prompt": "Output in phylip sequential format (-op)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": "If input sequences are in FASTA format with NCBI-formatted annotation lines, e.g.\n                      >field1|field2|field3|field4| field5 [field6]\n            the options -oppp allow naming sequences by field6_____field4 ; knowing that field4 is generally\n            an accession number, and field6 a\n            taxon name, this option leads to PHYLIP files where each sequence is labelled as a\n            taxon name and an accession number.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "( $value ) ? \" -oppp $infile.phyp\" : \"\"",
+                            "python": "(\"\", \" -oppp \"+ infile.split('.')[0] + \".phyp \")[ value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "phylip_oppp",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $infile",
+                            "python": "infile is not None"
+                        },
+                        "prompt": "Output in phylip sequential format. Special formating (-oppp)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "( $value ) ? \" -on $infile.nex\" : \"\"",
+                            "python": "(\"\", \" -on \"+ infile.split('.')[0] + \".nex \")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nexus",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $infile",
+                            "python": "infile is not None"
+                        },
+                        "prompt": "Output in nexus format (-on)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": "If input sequences are in FASTA format with NCBI-formatted\n                 annotation lines,\n               e.g. >field1|field2|field3|field4| field5 [field6]\n               the option -onnn allow naming sequences by field6_____field4 ;\n               knowing that field4 is generally an accession number and field6 a\n              taxon name, this option leads to NEXUS files where each sequence\n              is labelled as a taxon name and an accession number.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "( $value ) ? \" -onnn $infile.nexn\" : \"\"",
+                            "python": "(\"\", \" -onnn \"+ infile.split('.')[0] + \".nexn \")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nexus_onnn",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $infile",
+                            "python": "infile is not None"
+                        },
+                        "prompt": "Output in nexus format. Special formating (-onnn)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "( $value ) ? \" -of $infile.fa\" : \"\"",
+                            "python": "(\"\", \" -of \"+ infile.split('.')[0] + \".fa \")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fasta",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $infile",
+                            "python": "infile is not None"
+                        },
+                        "prompt": "Output in fasta format (-of)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "11",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "( $value ) ? \" -oh $infile.html\" : \"\"",
+                            "python": "(\"\", \" -oh \"+ infile.split('.')[0] + \".html \")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "html",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $infile",
+                            "python": "infile is not None"
+                        },
+                        "prompt": "Output in html format (-oh)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_option",
+                "precond": null,
+                "prompt": "Output format options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "BMGE",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$infile.phy\"",
+                            "python": "infile.split('.')[0] + \".phy\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "phylipout",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$phylip",
+                            "python": "phylip"
+                        },
+                        "prompt": "Output in phylip sequential format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "PHYLIPS"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$infile.phyp\"",
+                            "python": "infile.split('.')[0] + \".phyp\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "phylipout_oppp",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$phylip_oppp",
+                            "python": "phylip_oppp"
+                        },
+                        "prompt": "Output in phylip sequential format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "PHYLIPS"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$infile.nex\"",
+                            "python": "infile.split('.')[0] + \".nex\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "nexusout",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$nexus",
+                            "python": "nexus"
+                        },
+                        "prompt": "Output in nexus format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEXUS"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$infile.nexn\"",
+                            "python": "infile.split('.')[0] + \".nexn\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "nexusout_onnn",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$nexus_onnn",
+                            "python": "nexus_onnn"
+                        },
+                        "prompt": "Output in nexus format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEXUS"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$infile.fa\"",
+                            "python": "infile.split('.')[0] + \".fa\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "fastaout",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$fasta",
+                            "python": "fasta"
+                        },
+                        "prompt": "Output in fasta format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$infile.html\"",
+                            "python": "infile.split('.')[0] + \".html\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "htmlout",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$html",
+                            "python": "html"
+                        },
+                        "prompt": "Output in html format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Report",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_option",
+                "precond": null,
+                "prompt": "Output format options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Criscuolo A, Gribaldo S (2010) BMGE (Block Mapping and Gathering with Entropy): selection of phylogenetic informative regions from multiple\nsequence alignments. BMC Evolutionary Biology 10:210.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/"
+    ],
+    "title": "BMGE",
+    "type": "program",
+    "version": "Version 1.0"
+}

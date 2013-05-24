@@ -1,0 +1,164 @@
+{
+    "authors": "Eric Deveaud",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:pattern",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:protein:pattern",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "sig"
+    },
+    "comment": "sig  is a program to search  multiple occurences of\n\tmultiple motifs in a set of sequences.",
+    "description": "Multiple Prosite motifs searching",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seqfile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Protein Sequences",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\">File format :<html:ul><html:li>one pattern per line.</html:li><html:li>A pattern consists in motifs definition separated by distance constraints.</html:li><html:li>The format is strictly the following: motif_1 (min,max) motif_2 ... (min,max) motif_n, and so on.</html:li></html:ul>The sig motif syntax follow the syntax used in the PROSITE database :<html:h3>Pattern syntax</html:h3><html:ol><html:li>The standard IUPAC one-letter codes for the amino acids are used in PROSITE.</html:li><html:li>The symbol `x' is used for a position where any amino acid is accepted.</html:li><html:li>Ambiguities are indicated by listing the acceptable amino acids for a \n    given position, between square brackets `[ ]'. For example: [ALT] \n    stands for Ala or Leu or Thr.</html:li><html:li>Ambiguities are also indicated by listing between a pair of curly \n    brackets `{ }' the amino acids that are not accepted at a given \n    position. For example: {AM} stands for any amino acid except Ala and Met.</html:li><html:li>Each element in a pattern is separated from its neighbor by a `-'.</html:li><html:li>Repetition of an element of the pattern can be indicated by following \n    that element with a numerical value or, if it is a gap ('x'),\n     by a numerical range between parentheses.<html:br /><html:dl><html:dt>Examples:</html:dt><html:dd>x(3) corresponds to x-x-x</html:dd><html:dd>x(2,4) corresponds to x-x or x-x-x or x-x-x-x</html:dd><html:dd>A(3) corresponds to A-A-A</html:dd><html:dt>Note: You can only use a range with 'x', i.e. A(2,4) is not a valid pattern element.</html:dt></html:dl></html:li><html:li>When a pattern is restricted to either the N- or C-terminal of a sequence, \n   that pattern either starts with a `&lt;' symbol or respectively ends with a `&gt;' symbol. \n   In some rare cases (<html:em>e.g.</html:em>PS00267 or PS00539), '&gt;' can also occur inside square brackets for the C-terminal element. \n'F-[GSTV]-P-R-L-[G&gt;]' means that either 'F-[GSTV]-P-R-L-G' or 'F-[GSTV]-P-R-L&gt;' are considered.</html:li></html:ol>the sig pattern ( motifs with distance constraints).<html:ul><html:li><html:strong>[RK]-x-V-x-[FW] (0,) F-x-x-[RK]-x-[RK]</html:strong>:\n    no distance constraints are set between motif [RK]-X-V-X-[FW] and motif F-X-X-[RK]-X-[RK]</html:li><html:li><html:strong>[RK]-x-V-x-[FW] (5,15) F-X-X-[RK]-X-[RK]</html:strong>:\n            motif [RK]-X-V-X-[FW] and motif F-X-X-[RK]-X-[RK] should be separated by a gap\n            whose length is longer or equal to 5 and shorter or equal to 15.</html:li></html:ul></html:div>",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -f $value\" : \"\"",
+                    "python": "(\"\", \" -f \"+str(value))[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "patterns",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Pattern File (-f)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "SigPattern",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -i\" : \"\"",
+                    "python": "(\"\", \" -i\")[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "overlapping",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Allows motifs from pattern to be overlapping (-i)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -r\" : \"\"",
+                    "python": "(\"\", \" -r\")[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "reverse",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Searches motifs in ordered and reverse search order, conserving the distance constraints (-r)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "sig",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "ftp://ftp.pasteur.fr/pub/gensoft/projects/sig/"
+    ],
+    "title": "sig",
+    "type": "program",
+    "version": "1.0"
+}

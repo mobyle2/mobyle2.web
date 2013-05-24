@@ -1,0 +1,476 @@
+{
+    "authors": "Pedersen, Lyngso,Hein",
+    "classifications": [
+        {
+            "classification": "alignment:pairwise",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Comparison of coding DNA",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://www.daimi.au.dk/~cstorm/combat/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"cat $sequence1 $sequence2 >> sequence && combat combat.params >distance.out && combine sequence combat.aln\"",
+                    "python": "\"cat \" + str(sequence2) + \" \" + str(sequence1) + \" >> sequence.data && combat combat.params > distance.out && combine sequence.data combat.aln\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "combat",
+                "paramfile": null,
+                "precond": {
+                    "perl": "defined $sequence1 and defined $sequence2",
+                    "python": "sequence1 is not None and sequence2 is not None"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Sequences must describe an integer number of codon, i.e. the length of sequence must be a multiple of three.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\">inputfile\\n\\\"sequence.data\\\"\\n\"",
+                    "python": "'>inputfile\\n\"sequence.data\"\\n'"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence1",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "First Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": "Sequences must describe an integer number of codon, i.e. the length of sequence must be a multiple of three.",
+                "ctrl": null,
+                "format": null,
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence2",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Second Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "3",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\">distance matrix\\n\\\"",
+                    "python": "\">distance matrix\\n\\\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "protein_distance_matrix",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "Amino-acid distance matrix",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "4",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\">nucleotide matrix\\n\\\"",
+                    "python": "\">nucleotide matrix\\n\\\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "nucleotide_distance_matrix",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "Nucleotid distance matrix",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "5",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\">gap functions\\\\nprotein:        $value\"",
+                    "python": "\">gap functions\\nprotein:        \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "protein_gap_open",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "Gap open cost for protein",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "6",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" + $value*k\\\\n\"",
+                    "python": "\" + \" + str(value) + \"*k\\n\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "protein_gap_ext",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "Gap extension cost for protein",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "7",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"dna:        $value\"",
+                    "python": "\"dna:        \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "dna_gap_open",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "Gap open cost for dna",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "8",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" + $value*k\"",
+                    "python": "\" + \" + str(value) + \"*k\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "dna_gap_ext",
+                "paramfile": "combat.params",
+                "precond": null,
+                "prompt": "Gap extension cost for dna",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" && gnuplot <gnuplot.params\"",
+                    "python": "\" && gnuplot <gnuplot.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "gnuplot_call",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"set xtics 12,5.,1000\\nset ytics 12,5.,1000\\nset grid\\nset terminal postscript\\nset output \\\"combat.ps\\\"\\nplot \\\"combat.aln\\\" with lines\\n\"",
+                    "python": "'set xtics 12,5.,1000\\nset ytics 12,5.,1000\\nset grid\\nset terminal postscript\\nset output \"combat.ps\"\\nplot \"combat.aln\" with lines\\n'"
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "gnuplot_commands",
+                "paramfile": "gnuplot.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "combat",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"combat.aln\"",
+                    "python": "\"combat.aln\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_aln",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"combat.out\"",
+                    "python": "\"combat.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "combat_out",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "Alignment file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"distance.out\"",
+                    "python": "\"distance.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "distance_files",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Distance file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"combat.ps\"",
+                    "python": "\"combat.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "ps_files",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Postscript file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PostScript",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Christian N. S. Pedersen, Rune B. Lyngso and Jotun Hein. Comparison of coding DNA in Proceedings of the 9th Annual Symposium of Combinatorial Pattern Matching (CPM), 1998.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.daimi.au.dk/~cstorm/combat/"
+    ],
+    "title": "COMBAT",
+    "type": "program",
+    "version": "1.0"
+}

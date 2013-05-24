@@ -1,0 +1,287 @@
+{
+    "authors": "D. Barker",
+    "classifications": [
+        {
+            "classification": "phylogeny:parsimony",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Reconstructing Evolution With Parsimony And Simulated Annealing",
+    "documentation_links": [
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"lvb <lvb.params\"",
+                    "python": "\"lvb <lvb.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "lvb",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $value infile; \"",
+                    "python": "\"ln -s \" + str(value) + \" infile; \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": {
+                    "perl": "$infile ne \"infile\"",
+                    "python": "infile != \"infile\""
+                },
+                "prompt": "Alignment File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "PHYLIPI"
+                    ]
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"$value\\\\n\"",
+                    "python": "str(value) + \"\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "format",
+                "paramfile": "lvb.params",
+                "precond": null,
+                "prompt": "Format is INTERLEAVED or SEQUENTIAL",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": "A gap represented by the letter 'O' in the data matrix is always treated as a character state in its own right (fifth state). lvb can treat gaps represented by'-' in either of the following ways:Fifth state '-' is treated as equivalent to 'O'.Unknown '-' is treated as equivalent to '?', i.e., as an ambiguous site that may contain 'A' or 'C' or 'G' or 'T' or 'O'.'Fifth state' may give excessive weight to multi-site gaps, since each affected base will be counted as one event.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\"$value\\\\n\"",
+                    "python": "str(value) + \"\\n\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "gaps_treatment",
+                "paramfile": "lvb.params",
+                "precond": null,
+                "prompt": "Treatment of gaps represented by '-'",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "3",
+                "command": false,
+                "comment": "When prompted for the random number seed, enter an integer in the range 0 to 900000000 inclusive. The default value is taken from the system clock and hence will vary from one analysis to the next, changing every second. The default is usually appropriate.",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value)? \"$value\\\\n\" : \"\\\\n\"",
+                    "python": "( \"\\n\" , str(value) + \"\\n\" )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "seed",
+                "paramfile": "lvb.params",
+                "precond": null,
+                "prompt": "Seed for the random number generator",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "5",
+                "command": false,
+                "comment": "Number of bootstrap replicates required as an integer in the range 1 to 1000 inclusive, or 0 for no bootstrapping (this server allows no more than 1000 replicates)",
+                "ctrl": {
+                    "perl": "$bootstrap < 1000",
+                    "python": "bootstrap <= 1000"
+                },
+                "format": {
+                    "perl": "\"$value\\\\n\"",
+                    "python": "str(value) + \"\\n\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "bootstrap",
+                "paramfile": "lvb.params",
+                "precond": null,
+                "prompt": "How many bootstrap replicates required (bootstrap)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "lvb",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"outtree\"",
+                    "python": "\"outtree\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "res",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"ini*\"",
+                    "python": "\"ini*\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "other_results",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Results files",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Barker, D. 2004. LVB: Parsimony and simulated annealing in the search for phylogenetic trees. Bioinformatics, 20, 274-275.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://biology.st-andrews.ac.uk/cegg/lvb.htm"
+    ],
+    "title": "LVB",
+    "type": "program",
+    "version": "2.3"
+}

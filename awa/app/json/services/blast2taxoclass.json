@@ -1,0 +1,478 @@
+{
+    "authors": "C. Maufrais",
+    "classifications": [
+        {
+            "classification": "database:search:filter",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "blast2taxoclass"
+    },
+    "comment": null,
+    "description": "Blast filtering with taxonomic hierarchy information",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -i $value\"",
+                    "python": "\" -i \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Blast output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BlastTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -$value\" : \"\"",
+                    "python": "\" -\" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "blastfilter",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Find taxonomic classification of:",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": "0: all hsp",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -x $value\" : \"\"",
+                    "python": "(\"\", \" -x \" + str(value) )[value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "nbofhit",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Number of hsp to consider (-x)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "zero means: root of taxonomy, higher value: leaf or near",
+                        "ctrl": {
+                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))",
+                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None))"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \" -p $value\" : \"\"",
+                            "python": "(\"\", \" -p \" + str(value) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "position",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Relative position in taxonomic hierarchy (-p)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))",
+                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None))"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \" -n $value\" : \"\"",
+                            "python": "(\"\", \" -n \" + str(value).replace(' ','_') )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "taxonomic_name",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Taxonomic Name (-n)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If Taxonomic rank is not defined for one hit, it is not treated.",
+                        "ctrl": {
+                            "perl": "(defined $position and (not defined $taxonomic_name and not defined $rank))",
+                            "python": "(position is not None and (taxonomic_name is None and rank is None)) or (taxonomic_name is not None and (position is None and rank is None)) or (rank is not None and (taxonomic_name is None and position is None))"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \" -r $value\" : \"\"",
+                            "python": "(\"\", \" -r \" + str(value) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rank",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Taxonomic rank name (-r)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "taxonomicfilter",
+                "precond": null,
+                "prompt": "Taxonomic hierarchy filter option"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -b\" : \"\"",
+                            "python": "(\"\" , \" -b\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "blastout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Blast output file(s) sort/split by specific taxonomic hierarchy (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -q\" : \"\"",
+                            "python": "(\"\" , \" -q\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "queryout",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Query name write in file(s) sort/split by specific taxonomic hierarchy (-q)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Extract fasta sequence, matching specified taxonomic filter, from file containing query sequences witch are used to made blast.",
+                        "ctrl": {
+                            "perl": "$fastaExtract == 1 and $queryout == 1 and defined $query_seq",
+                            "python": "(fastaExtract and (queryout and query_seq is not None)) or (not fastaExtract)"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fastaExtract",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Extraction of fasta sequences.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "100",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" && extractfasta -i $query *.qry\": \"\"",
+                            "python": "(\"\",\" && extractfasta -i \"+ str(value) + \" *.qry\") [value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "query_seq",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $fastaExtract and defined $queryout",
+                            "python": "fastaExtract and queryout"
+                        },
+                        "prompt": "Query sequences witch are used to made blast.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "blast2taxoclass",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"blast2taxoclass.out\"",
+                            "python": "\"blast2taxoclass.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "stdout",
+                        "precond": null,
+                        "prompt": "Output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Blast2taxoclassReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.blast\"",
+                            "python": "\"*.blast\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "blastoutfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $blastout",
+                            "python": "blastout"
+                        },
+                        "prompt": "Blast output file(s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "BlastTextReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.qry\"",
+                            "python": "\"*.qry\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "queryoutfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $queryout",
+                            "python": "queryout"
+                        },
+                        "prompt": "Query name file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "QueryNameReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.fasta\"",
+                            "python": "\"*.fasta\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "fastafile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $fastaExtract",
+                            "python": "fastaExtract"
+                        },
+                        "prompt": "Fasta file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "blast2taxoclass",
+    "type": "program",
+    "version": "1.0"
+}

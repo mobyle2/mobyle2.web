@@ -1,0 +1,579 @@
+{
+    "authors": "Morgenstern, Dress, Werner",
+    "classifications": [
+        {
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "dialign"
+    },
+    "comment": null,
+    "description": "DNA and protein sequence alignment based on segment-to-segment comparison",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://dialign.gobics.de/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequences",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": "2,n",
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef) ? \" -n\" : \"\"",
+                    "python": "( \"\"  , \" -n\" )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "protein_dna",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Nucleic acid or protein alignment (-n)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -thr $value\" : \"\"",
+                            "python": "( \"\"  , \" -thr \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Threshold (-thr)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "\"maximum or minimum linkage\" clustering used to construct sequence tree (instead of UPGMA).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -$value\" : \"\"",
+                            "python": "( \"\"  , \" -\" +str(value) )[ value is not None and value !=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "cluster",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Clustering type used to construct sequence tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "iterative scoring scheme (fragment scores are based on\n                 conditional probabilities given the previously aligned\n                 fragments. I.e. the probability of a fragment -- and\n                 therefore its score -- is not based on the probability\n                 of random occurrence in the input sequences but rather on\n                 the probability of occurrence between those fragments\n                 that have already been accepted in previous iteration\n                 steps).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -it\" : \"\"",
+                            "python": "( \"\"  , \" -it\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "iterative",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Iterative scoring scheme (-it)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "overlap weights switched off (by default,\n                 overlap weights are used if up to 35 sequences are\n                 aligned). This option speeds up the alignment but may lead\n                 to reduced alignment quality.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -iw\" : \"\"",
+                            "python": "( \"\"  , \" -iw\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "overlap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Overlap weights (-iw)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Input sequences are nucleic acid sequences and `nucleic acid segments' are translated to `peptide segments'.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -nt\" : \"\"",
+                                    "python": "( \"\"  , \" -nt\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "translation",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Translation of nucleotide diagonals into peptide diagonals (-nt)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "If segments are translated, not only the `Watson strand' but also the `Crick strand' is looked at",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -cs\" : \"\"",
+                                    "python": "( \"\"  , \" -cs\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "translation_strand",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "$translation or $mix",
+                                    "python": "translation or mix"
+                                },
+                                "prompt": "Strand to looked at Watson and Crick strands (-cs)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "`mixed alignments' consisting of P-fragments and N-fragments if nucleic acid sequences are aligned.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -ma\" : \"\"",
+                                    "python": "( \"\"  , \" -ma\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "mix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Mixed alignments (-ma)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Non-translated nucleic acid fragments are taken\n                 into account only if they start with at least two matches.\n                 Speeds up DNA alignment at the expense of sensitivity.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -ds\" : \"\"",
+                                    "python": "( \"\"  , \" -ds\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "speed",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Dna alignment speed up (-ds)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "combines the following options:\n                 -ma, -it, -thr 2, -lmax 30, -smin 8, -nta, -ff,\n                 -fop, -ff, -cs, -ds, -pst",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -lgs\" : \"\"",
+                                    "python": "( \"\"  , \" -lgs\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "long_genomic",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "not $long_genomic_pep",
+                                    "python": "not long_genomic_pep"
+                                },
+                                "prompt": "Long genomic sequences (-lgs)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Like \"-lgs\" but with all segment pairs assessed at the  peptide level (rather than 'mixed alignments' as with the\"-lgs\" option). Therefore faster than -lgs but not very sensitive for non-coding regions.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -lgs_t\" : \"\"",
+                                    "python": "( \"\"  , \" -lgs_t\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "long_genomic_pep",
+                                "paramfile": null,
+                                "precond": {
+                                    "perl": "not $long_genomic",
+                                    "python": "not long_genomic"
+                                },
+                                "prompt": "Long genomic sequences (-lfs_t)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "dna_opt",
+                        "precond": {
+                            "perl": "$protein_dna eq \"n\"",
+                            "python": "protein_dna == \"n\""
+                        },
+                        "prompt": "DNA options"
+                    }
+                ],
+                "comment": null,
+                "name": "dialign_opt",
+                "precond": null,
+                "prompt": "Others options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The number of `*' characters below the alignment reflects the degree of local similarity among sequences. More precisely: They represent the sum of `weights' of diagonals connecting residues at the respective position.By default, no stars are used but numbers between 0 and 9, instead.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -stars $value\" : \"\"",
+                            "python": "( \"\"  , \" -stars \" + str(value) )[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "max_simil",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of * characters representing degree similarity (-stars)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "residues not belonging to selected fragments are replaced by `*' characters in output alignment (rather than being printed in lower-case characters)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -mask\" : \"\"",
+                            "python": "( \"\"  , \" -mask\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "mask",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Mask not aligned residues (-mask)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Be aware that only upper-case letters are regarded to be aligned in fasta output file.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -fa\" : \"\"",
+                            "python": "( \"\"  , \" -fa\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fasta",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment in fasta format (-fa)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "dialign",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.cw\"",
+                    "python": "\"*.cw\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "ali",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.fa\"",
+                    "python": "\"*.fa\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "fasta_alignment",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$fasta",
+                    "python": "fasta"
+                },
+                "prompt": "fasta alignment file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "Fasta"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "B. Morgenstern (1999). DIALIGN 2: improvement of the segment-to-segment approach to multiple sequence alignment. Bioinformatics 15, 211 - 218.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://dialign.gobics.de/download/"
+    ],
+    "title": "DIALIGN",
+    "type": "program",
+    "version": "2.2.1"
+}

@@ -1,0 +1,231 @@
+{
+    "authors": "Morten Nielsen, mniel@cbs.dtu.dk",
+    "classifications": [
+        {
+            "classification": "sequence:protein:motifs",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:protein:pattern",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:protein:profiles",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "predict cleavage sites for human proteasome.",
+    "documentation_links": [
+        "http://www.cbs.dtu.dk/services/NetChop/"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"netChop \"",
+                    "python": "\"netChop \""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "netchop",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "50",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str( value )"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Input Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": "netchop has  been  trained using  a  novel  sequence  encoding scheme, \n       and an improved neural network training strategy. \n       The netchop 3.0 version has two different network  methods  that  can  be\n       used for prediction.  Cterm-3.0 and 20S-3.0.",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef)? \" -v $value\": \"\"",
+                    "python": "( \"\" , \" -v \"+ value )[ value is not None and value != vdef ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "Method",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Prediction method (-v).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef)? \" -t $value\": \"\"",
+                    "python": "( \"\" , \" -t \"+str(value) )[value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "threshold",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use value as threshold for cleavage sites (-t).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Float",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "30",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value)? \" -s\": \"\"",
+                    "python": "( \"\",\" -s \")[ bool( value ) ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "short_output",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use short format for output (-s).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "netchop",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"netchop.out\"",
+                    "python": "\"netchop.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "netChop report.",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "NetChop",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "The role of the proteasome in generating cytotoxic T cell epitopes:\n                 Insights obtained from improved predictions of proteasomal cleavage.\n                 M. Nielsen, C. Lundegaard, S. Brunak, O. Lund, and C. Kesmir.\n                 Immunogenetics., 57(1-2):33-41, 2005.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netchop"
+    ],
+    "title": "netChop",
+    "type": "program",
+    "version": "3.1"
+}

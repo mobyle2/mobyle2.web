@@ -1,0 +1,1405 @@
+{
+    "authors": "N. P. Brown",
+    "classifications": [
+        {
+            "classification": "alignment:multiple:display",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "display:alignment:multiple",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "mview"
+    },
+    "comment": null,
+    "description": "Multiple alignment pretty viewer",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/mview/index.html"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://bio-mview.sourceforge.net/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -in clustal $value\"",
+                    "python": "\" -in clustal \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "alig",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Alignment File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "CLUSTAL"
+                    ]
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef) ? \"-out $value\" : \"\"",
+                    "python": "( \"\", \" -out \" + str(value) )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "out",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Output format (-out)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -ruler on\" : \"\"",
+                            "python": "( \"\" , \" -ruler on\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ruler",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Attach a ruler (-ruler)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \" -alignment off\"",
+                            "python": "( \" -alignment off\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "alignment",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show alignment (-alignment)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -consensus on\" : \"\"",
+                            "python": "( \"\" , \" -consensus on\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "consensus",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show consensus (-consensus)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -dna\" : \"\"",
+                            "python": "( \"\" , \" -dna\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dna",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use DNA/RNA colormaps and/or consensus groups (-dna)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "main_formatting_options",
+                "precond": null,
+                "prompt": "Main formatting options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:ul><html:li><html:em>Colour all the residues</html:em>, will colour every residue according to the currently selected palette.</html:li><html:li><html:em>Colouring by identity to the first sequence</html:em>, will colour only those residues that are identical to some reference sequence (usually the query or first row).</html:li><html:li><html:em>Colour only when above a given percent similarity</html:em>, will colour only those residues that belong to a specified physicochemical class that is conserved in at least a specified percentage of all rows for a given column. This defaults to 70% and and may be set to another threshold, eg., -coloring consensus -threshold 80 would specify 80%. Note that the physicochemical classes in question can be confined to individual residues.</html:li><html:li><html:em>Colours residues by the colour of the class to which they belong</html:em>, is like -coloring consensus, but colours residues by the colour of the class to which they belong.</html:li></html:ul><html:p>By default, the consensus computation counts gap characters, so that sections of the alignment may be uncolored where the presence of gaps prevents the non-gap count from reaching the threshold. Setting -con_gaps off prevents this, allowing sequence-only based consensus thresholding.</html:p></html:div>",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value and $value ne $vdef) ? \" -coloring $value\" : \"\"",
+                            "python": "( \"\" , \" -coloring \" + str(value) )[ value !=vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "coloring",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Colour scheme (-coloring)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -threshold $value\" : \"\"",
+                            "python": "( \"\" , \" -threshold \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Threshold percentage for consensus coloring (-threshold)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Tip: If you want to see only the conserved residues above the threshold (ie., only one type of conserved residue per column), add the option -ignore class.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -ignore $value\" : \"\"",
+                            "python": "( \"\" , \" -ignore \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ignore",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Ignore singleton or class group (-ignore)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "alignment_options",
+                "precond": null,
+                "prompt": "Alignment options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>Colouring of an alignment by consensus determines which residues to colour and the colours to use based on</html:p><html:ol><html:li>the consensus threshold chosen for the colouring operation,</html:li><html:li>a consideration of the common physicochemical properties of the residues in that column,</html:li><html:li>the chosen colour scheme.</html:li></html:ol></html:div>",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -con_coloring $value\" : \"\"",
+                            "python": "( \"\" , \" -con_coloring \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "con_coloring",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Basic style of coloring (-con_coloring)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -con_threshold $value\" : \"\"",
+                            "python": "( \"\" , \" -con_threshold \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "con_threshold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Consensus line thresholds (in range 50..100) (separated by commas) (-con_threshold)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -con_ignore $value\" : \"\"",
+                            "python": "( \"\" , \" -con_ignore \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "con_ignore",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Ignore singleton or class group (-con_ignore)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "consensus_options",
+                "precond": {
+                    "perl": "$consensus",
+                    "python": "consensus"
+                },
+                "prompt": "Consensus options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \" -con_gaps off\"",
+                            "python": "( \" -con_gaps off\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "con_gaps",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Count gaps during consensus computations (-con_gaps)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "hybrid_alignment_consensus_options",
+                "precond": null,
+                "prompt": "Hybrid alignment and consensus options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -top $value\" : \"\"",
+                            "python": "( \"\" , \" -top \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "top",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report top N hits (-top)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You must enter a string composed of two numbers separated by comma",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value =~ s/,/:/g) ? \" -range $value\" : \"\"",
+                            "python": "( \"\" , \" -range \" + str(value).replace(',',':') )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "range",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display column range M:N (-range)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -maxident $value\" : \"\"",
+                            "python": "( \"\" , \" -maxident \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "maxident",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Only report sequences with percent identity <= N (-maxident)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -ref $value\" : \"\"",
+                            "python": "( \"\" , \" -ref \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ref",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use row N or row identifier as percent identity reference (-ref)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You must enter a string composed of two numbers separated by comma",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value ) ? \" -keep $value\" : \"\"",
+                            "python": "( \"\"  , \" -keep \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "keep_only",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Keep only the rows from start to end (separated by comma) (-keep)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You must enter a string composed of two numbers separated by comma",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value =~ s/,/../ ) ? \" -disc $value\" : \"\"",
+                            "python": "( \"\"  , \" -disc \" + str(value).replace(',','..') )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "disc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Discard rows from start to end (separated by comma) (-disc)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You must enter a string composed of two numbers separated by comma",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value =~ s/,/../) ? \" -nops $value\" : \"\"",
+                            "python": "( \"\"  , \" -nops \" + str(value).replace(',','..' ))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nops",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Display rows unprocessed (separated by comma ) (-nops)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "general_row_column_filters",
+                "precond": null,
+                "prompt": "General row/column filters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -width $value\" : \"\"",
+                            "python": "( \"\" , \" -width \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "width",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Paginate in N columns of alignment (-width)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -gap $value\" : \" \"",
+                            "python": "( \" \" ,  \" -gap \" + str(value) )[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use this character as the gap (-gap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -label0\" : \"\"",
+                            "python": "( \"\" , \" -label0\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label0",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Switch off label: row number (-label0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -label1\" : \"\"",
+                            "python": "( \"\" , \" -label1\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label1",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Switch off label: identifier (-label1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -label2\" : \"\"",
+                            "python": "( \"\" , \" -label2\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label2",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Switch off label: description (-label2)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -label3\" : \"\"",
+                            "python": "( \"\" , \" -label3\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label3",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Switch off label: scores (-label3)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -label4\" : \"\"",
+                            "python": "( \"\" , \" -label4\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label4",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Switch off label: percent identity (-label4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \" -register off\"",
+                            "python": "( \" -register off\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "register",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output multi-pass alignments with columns in register (-register)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "general_formatting_options",
+                "precond": null,
+                "prompt": "General formatting options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value]) ? \"-html $value\":\"\"",
+                            "python": "(\"\", \" -html \" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "html_output",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Amount of HTML markup (-html)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -title $value\" : \"\"",
+                            "python": "( \"\" , \" -title \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Title",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Page title string",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -pagecolor $value\" : \"\"",
+                            "python": "( \"\" , \" -pagecolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pagecolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Page background color (-pagecolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -textcolor $value\" : \"\"",
+                            "python": "( \"\" , \" -textcolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "textcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Page text color (-textcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -linkcolor $value\" : \"\"",
+                            "python": "( \"\" , \" -linkcolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "linkcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Link color (-linkcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -alinkcolor $value\" : \"\"",
+                            "python": "( \"\" , \" -alinkcolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "alinkcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Active link color (-alinkcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -vlinkcolor $value\" : \"\"",
+                            "python": "( \"\" , \" -vlinkcolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "vlinkcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Visited link color (-vlinkcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -alncolor $value\" : \"\"",
+                            "python": "( \"\" , \" -alncolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "alncolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment background color (-alncolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -labcolor $value\" : \"\"",
+                            "python": "( \"\" , \" -labcolor \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "labcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment label color (-labcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -symcolor $value\" : \" \"",
+                            "python": "( \" \" , \" -symcolor \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "symcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment default text color (-symcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -gapcolor $value\" : \"\"",
+                            "python": "( \"\" , \" -gapcolor \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gapcolor",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Alignment gap color (-gapcolor)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -bold\" : \"\"",
+                            "python": "( \"\" , \" -bold\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bold",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use bold emphasis for coloured residues (-bold)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value eq $vdef) ? \" -css on\" : \"\"",
+                            "python": "( \"\" , \" -css on\" )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "css",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use Cascading Style Sheets (-css)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "html_markup_options",
+                "precond": {
+                    "perl": "$out eq \"html\"",
+                    "python": "out == \"html\""
+                },
+                "prompt": "HTML markup options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "mview_alignment",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"mview.out\"",
+                    "python": "\"mview.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "alig_file",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "$out eq \"msf\" or $out eq \"pearson\" or $out eq \"pir\"",
+                    "python": "out in [ \"msf\", \"pearson\" , \"pir\"]"
+                },
+                "prompt": "Alignment output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        {
+                            "#children": [
+                                "FASTA"
+                            ],
+                            "#tag": "test",
+                            "@eq": "pearson",
+                            "@param": "outformat"
+                        }
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"mview_alignment.html\"",
+                    "python": "\"mview_alignment.html\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "html_file",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "$out eq \"html\"",
+                    "python": "out == \"html\""
+                },
+                "prompt": "Alignment output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Report",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "HTML"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"mview.out\"",
+                    "python": "\"mview.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "rdb_file",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "$out eq \"rdb\"",
+                    "python": "out == \"rdb\""
+                },
+                "prompt": "Alignment output in RDB format",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Report",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "RDB"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Brown, N.P., Leroy C., Sander C. (1998). MView: A Web compatible database search or multiple alignment viewer. Bioinformatics. 14(4):380-381.",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "MVIEW",
+    "type": "program",
+    "version": "1.49"
+}

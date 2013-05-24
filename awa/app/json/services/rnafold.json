@@ -1,0 +1,653 @@
+{
+    "authors": "Hofacker, Fontana, Bonhoeffer, Stadler",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:2D_structure",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "structure:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "RNAfold"
+    },
+    "comment": "RNAfold reads RNA sequences, calculates their minimum free energy (mfe) structure and prints the mfe structure in bracket notation and its free energy. It also produces PostScript files with plots of the resulting secondary structure graph and a \"dot plot\" of the base pairing matrix.",
+    "description": "Calculate secondary structures of RNAs",
+    "documentation_links": [
+        "http://www.tbi.univie.ac.at/RNA/RNAfold.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": "The string for the structure constraint must be of the length of the sequence.Rq: No constraint should be applied during structure predictions.Structure constraint:| : paired with another base> : base i is paired with a base j>ix : base must not pair< : base i is paired with a base j<i. : no constraint at allmatching brackets ( ): base i pairs base j",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" <$value\"",
+                    "python": "\" <\"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seqin",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "RNA/DNA Sequence File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "RNA",
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "SequenceWithStructureConstraint",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Calculate the partition function and base pairing probability matrix \n            in addition to the mfe structure. Default is calculation of mfe structure only. \n            Prints a coarse representation of the pair probabilities in form of a pseudo bracket \n            notation, the ensemble free energy, the frequency of the mfe structure, and the \n            structural diversity. Note that unless you also specify -d2 or -d0, the partition \n            function and mfe calculations will use a slightly different energy model. See the \n            discussion of dangling end options below.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -p\" : \"\"",
+                            "python": "( \"\" , \" -p\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "partition",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $pf",
+                            "python": "not pf"
+                        },
+                        "prompt": "Calculate the partition function and base pairing probability matrix (-p)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Calculate  the partition function but not the pair probabilities, \n            saving about 50% in runtime. Prints the  ensemble free energy -kT ln(Z).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -p0\" : \"\"",
+                            "python": "( \"\" , \" -p0\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pf",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $partition",
+                            "python": "not partition"
+                        },
+                        "prompt": "Calculate  the partition function but not the pair probabilities (-p0)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "In addition to pair probabilities compute stack probabil-\n              ities, i.e. the probability that a  pair  (i,j  and  the\n              immediately interior pair (i+1,j-1) are formed simultane-\n              ously. A second postscript dot plot called \"name_dp2.ps\",\n              or  \"dot2.ps\"  (if the sequence does not have a name), is\n              produced that contains pair probabilities  in  the  upper\n              right half and stack probabilities in the lower left.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -p2\" : \"\"",
+                            "python": "( \"\" , \" -p2 \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "p2",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "In addition to pair probabilities compute stack probabilities (-p2)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Calculate  an  MEA (maximum expected accuracy) structure,\n              where the expected accuracy is  computed  from  the  pair\n              probabilities:   each   base  pair  (i,j)  gets  a  score\n              2*gamma*p_ij and the score of an unpaired base  is  given\n              by  the  probability of not forming a pair. The parameter\n              gamma tunes the importance of correctly  predicted  pairs\n              versus  unpaired  bases.  Thus, for small values of gamma\n              the MEA structure will contain only pairs with very  high\n              probability.   The  default value is gamma=1.  Using -MEA\n              implies -p for computing the pair probabilities.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -MEA $value\" : \"\"",
+                            "python": "( \"\" , \" -MEA \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "mea",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $partition",
+                            "python": "partition"
+                        },
+                        "prompt": "Calculate an MEA (maximum expected accuracy) structure",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -T $value\" : \"\"",
+                            "python": "( \"\" , \" -T \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "temperature",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Rescale energy parameters to a temperature of temp C. (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -4\" : \"\"",
+                            "python": "( \"\" , \" -4\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tetraloops",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not include special stabilizing energies for certain tetraloops (-4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "How to treat 'dangling end' energies for bases adjacent to helices in free ends and multiloops: Normally only unpaired bases can participate in at most one dangling end. With -d2 this check is ignored, this is the default for partition function folding (-p). -d ignores dangling ends altogether. Note that by default pf and mfe folding treat dangling ends differently, use -d2 (or -d) in addition to -p to ensure that both algorithms use the same energy model.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" $value\" : \"\"",
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dangling",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "How to treat dangling end energies for bases adjacent to helices in free ends and multiloops (-d)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "In the calculation of the pf use scale*mfe as an estimate for the ensemble free energy (used to avoid overflows). The default is 1.07, usefull values are 1.0 to 1.2. Occasionally needed for long sequences. You can also recompile the programm to use double precision.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -S $value\" : \"\"",
+                            "python": "( \"\" , \" -S \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "scale",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use scale*mfe as an estimate for the free energy (-S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "control",
+                "precond": null,
+                "prompt": "Control options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The programm reads first the sequence then the a string containg constraints on the structure encoded with the symbols:| (the corresponding base has to be paired x (the base is unpaired)< (base i is paired with a base j>i)> (base i is paired with a base j<i)matching brackets ( ) (base i pairs base j)Pf folding ignores constraints of type '|' '<' and '>', but disallow all pairs conflicting with a constraint of type 'x' or '( )'. This is usually sufficient to enforce the constraint.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -C\" : \"\"",
+                            "python": "( \"\" , \" -C\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "constraints",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Calculate structures subject to constraints (-C)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Produce structures without lonely pairs (helices of length 1). For partition function folding this only disallows pairs that can only occur isolated. Other pairs may still occasionally occur as helices of length 1.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noLP\" : \"\"",
+                            "python": "( \"\" , \" -noLP\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noLP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Avoid lonely pairs (helices of length 1) (-noLP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noGU\" : \"\"",
+                            "python": "( \"\" , \" -noGU\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noGU",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not allow GU pairs (-noGU)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noCloseGU\" : \"\"",
+                            "python": "( \"\" , \" -noCloseGU\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noCloseGU",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not allow GU pairs at the end of helices (-noCloseGU)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Allow other pairs in addition to the usual AU, GC and GU pairs. Pairs is a comma seperated list of additionally allowed pairs. If a the first character is a '-' then AB will imply that AB and BA are allowed pairs. e.g. RNAfold -nsp -GA will allow GA and AG pairs. Nonstandard pairs are given 0 stacking energy.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -nsp $value\" : \"\"",
+                            "python": "( \"\"  , \" -nsp \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nsp",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Non standard pairs (comma seperated list) (-nsp)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Read energy parameters from paramfile, instead of using the default parameter set.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -P $value\" : \"\"",
+                            "python": "( \"\" , \" -P \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "parameter",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Energy parameter file (-P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "EnergyParameter",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input",
+                "precond": null,
+                "prompt": "Input parameters"
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"mv $seqin $seqin.ori &&",
+                    "python": "\"mv %s %s.ori &&"
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "readseq",
+                "paramfile": null,
+                "precond": {
+                    "perl": "not $constraints/",
+                    "python": "not constraints"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "rnafold",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"$seqin.tmp\"",
+                            "python": "str(seqin)+'.tmp'"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile_name",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "Result file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "SequenceWithStructureConstraint",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"rnafold.out\"",
+                            "python": "\"rnafold.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "stdout",
+                        "precond": null,
+                        "prompt": "Result file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "RnafoldOutput",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.ps\"",
+                    "python": "\"*.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "psfiles",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Postscript file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PostScript",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "A. Walter, D Turner, J Kim, M Lyttle, P Muller, D Mathews, M Zuker Coaxial stacking of helices enhances binding of oligoribonucleotides. PNAS, 91, pp 9218-9222, 1994",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "M. Zuker, P. Stiegler (1981) Optimal computer folding of large RNA sequences using thermodynamic and auxiliary information, Nucl Acid Res 9: 133-148",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "J.S. McCaskill (1990) The equilibrium partition function and base pair binding probabilities for RNA secondary structures, Biopolymers 29: 11051119 D.H. Turner N. Sugimoto and S.M. Freier (1988) RNA structure prediction, Ann Rev Biophys Biophys Chem 17: 167-192",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "D. Adams (1979) The hitchhiker's guide to the galaxy, Pan Books, London",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "RNAfold",
+    "type": "program",
+    "version": null
+}

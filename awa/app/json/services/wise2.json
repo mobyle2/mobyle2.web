@@ -1,0 +1,1516 @@
+{
+    "authors": "E. Birney",
+    "classifications": [
+        {
+            "classification": "alignment:pairwise",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Comparisons of protein/DNA sequences",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://www.ebi.ac.uk/Tools/Wise2/doc_wise2.html"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"$value\"",
+                    "python": "str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "wise2",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Wise program",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "You must  give  a protein  sequence file  in fasta format.",
+                        "ctrl": {
+                            "perl": "not ($hmmer)",
+                            "python": "not (hmmer)"
+                        },
+                        "format": {
+                            "perl": "\" $value\"",
+                            "python": "\" \" +str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "protein",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $hmmer",
+                            "python": "hmmer is None"
+                        },
+                        "prompt": "Protein sequence File",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "You must give an HMMER file.",
+                        "ctrl": {
+                            "perl": "not ($protein)",
+                            "python": "not (protein)"
+                        },
+                        "format": {
+                            "perl": "\" $value\"",
+                            "python": "\" \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "hmmer",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$protein is not defined",
+                            "python": "protein is None"
+                        },
+                        "prompt": "or Protein HMM File",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "HmmTextProfile",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -hmmer\"",
+                            "python": "\" -hmmer\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "hmmer_command",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "defined $hmmer",
+                            "python": "hmmer is not None"
+                        },
+                        "prompt": "HMM command (-hmmer)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "protein_file",
+                "precond": null,
+                "prompt": "Protein file"
+            },
+            {
+                "argpos": "3",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "dna",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "DNA sequence File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "100",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -silent -quiet\"",
+                    "python": "\" -silent -quiet\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "quiet",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Silent mode (-silent -quiet)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -u $value\" : \"\"",
+                            "python": "( \"\" , \" -u \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dna_start",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Start position in dna (-u)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -v $value\" : \"\"",
+                            "python": "( \"\" , \" -v \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dna_end",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "End position in dna (-v)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" $value\" : \"\"",
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "strand",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Strand comparison",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -tabs\" : \"\"",
+                            "python": "( \"\" , \" -tabs\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tabs",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report positions as absolute to truncated/reverse sequence (-tabs)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "dna_options",
+                "precond": null,
+                "prompt": "DNA sequence Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -s $value\" : \"\"",
+                            "python": "( \"\" , \" -s \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "protein_start",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Start position in protein (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -t $value\" : \"\"",
+                            "python": "( \"\" , \" -t \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "protein_end",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "End position in protein (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -g $value\" : \"\"",
+                            "python": "( \"\" , \" -g \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap penalty (-g)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -e $value\" : \"\"",
+                            "python": "( \"\" , \" -e \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ext",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap extension penalty (-e)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -m $value\" : \"\"",
+                            "python": "( \"\" , \" -m\" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matrix",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Comparison matrix (-m)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "protein_options",
+                "precond": {
+                    "perl": "not $hmmer",
+                    "python": "hmmer is None"
+                },
+                "prompt": "Protein comparison Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -init $value\" : \"\"",
+                            "python": "( \"\" , \" -init \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "init",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Type of match (-init)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -subs $value\" : \"\"",
+                            "python": "( \"\" , \" -subs \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "subs",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Substitution error rate (-subs)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -indel $value\" : \"\"",
+                            "python": "( \"\" , \" -indel \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "indel",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Insertion/deletion error rate (-indel)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -null $value\" : \"\"",
+                            "python": "( \"\" , \" -null \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "null",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Random Model as synchronous or flat (-null)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -alln $value\" : \"\"",
+                            "python": "( \"\" , \" -alln \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "alln",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Probability of matching a NNN codon (-alln)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -gene $value\" : \"\"",
+                                    "python": "( \"\" , \" -gene \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "gene",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Gene parameter file (-gene)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -cfreq $value\" : \"\"",
+                                    "python": "( \"\" , \" -cfreq \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "cfreq",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Using codon bias or not (-cfreq)?",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -splice $value\" : \"\"",
+                                    "python": "( \"\" , \" -splice \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "splice",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Using splice model or GT/AG (-splice)?",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -intron $value\" : \"\"",
+                                    "python": "( \"\" , \" -intron \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "intron",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Use tied model for introns (-intron)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -insert $value\" : \"\"",
+                                    "python": "( \"\" , \" -insert \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "insert",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Protein insert model (-insert)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "wise2_model_opt",
+                        "precond": {
+                            "perl": "$wise2 eq \"genewise\"",
+                            "python": "wise2 == \"genewise\""
+                        },
+                        "prompt": "Genewise special option"
+                    }
+                ],
+                "comment": null,
+                "name": "gene_model_options",
+                "precond": null,
+                "prompt": "Model Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -pretty\" : \"\"",
+                            "python": "( \"\" , \" -pretty\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pretty",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show pretty ascii output (-pretty)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -para\" : \"\"",
+                            "python": "( \"\" , \" -para\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "para",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show parameters (-para)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -sum\" : \"\"",
+                            "python": "( \"\" , \" -sum\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "sum",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show summary output (-sum)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -pep\" : \"\"",
+                            "python": "( \"\" , \" -pep\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pep",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show protein translation, splicing frameshifts (-pep)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -alb\" : \"\"",
+                            "python": "( \"\" , \" -alb\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "alb",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show logical AlnBlock alignment (-alb)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -pal\" : \"\"",
+                            "python": "( \"\" , \" -pal\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pal",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Show raw matrix alignment (-pal)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -block $value\" : \"\"",
+                            "python": "( \"\" , \" -block \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "block",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Length of main block in pretty output (-block)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -divide \\\"$value\\\"\" : \"\"",
+                            "python": "( \"\" , \" -divide \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "divide",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Divide string for multiple outputs (-divide)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -pseudo\" : \"\"",
+                                    "python": "( \"\" , \" -pseudo\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pseudo",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Mark genes with frameshifts as pseudogenes (-pseudo)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -genes\" : \"\"",
+                                    "python": "( \"\" , \" -genes\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "genes",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Show gene structure (-genes)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -genesf\" : \"\"",
+                                    "python": "( \"\" , \" -genesf\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "genesf",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Show gene structure with supporting evidence (-genesf)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -embl\" : \"\"",
+                                    "python": "( \"\" , \" -embl\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "embl",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Show EMBL feature format with CDS key (-embl)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -diana\" : \"\"",
+                                    "python": "( \"\" , \" -diana\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "diana",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Show EMBL feature format with misc_feature key for diana (-diana)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -cdna\" : \"\"",
+                                    "python": "( \"\" , \" -cdna\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "cdna",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Show cDNA (-cdna)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -trans\" : \"\"",
+                                    "python": "( \"\" , \" -trans\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "trans",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Show protein translation, breaking at frameshifts (-trans)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -ace\" : \"\"",
+                                    "python": "( \"\" , \" -ace\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ace",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Ace file gene structure (-ace)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -gff\" : \"\"",
+                                    "python": "( \"\" , \" -gff\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "gff",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Gene Feature Format file (-gff)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -gener\" : \"\"",
+                                    "python": "( \"\" , \" -gener\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "gener",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Raw gene structure (-gener)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "wise2_out_opt",
+                        "precond": {
+                            "perl": "$wise2 eq \"genewise\"",
+                            "python": "wise2 == \"genewise\""
+                        },
+                        "prompt": "Genewise special option"
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output Options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -splice_max_collar $value\" : \"\"",
+                            "python": "( \"\" , \" -splice_max_collar \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "splice_max_collar",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum Bits value for a splice site (-splice_max_collar)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -splice_min_collar $value\" : \"\"",
+                            "python": "( \"\" , \" -splice_min_collar \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "splice_min_collar",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum Bits value for a splice site (-splice_min_collar)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -splice_score_offset $value\" : \"\"",
+                            "python": "( \"\" , \" -splice_score_offset \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "splice_score_offset",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Score offset for splice sites (-splice_score_offset)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "New_gene_options",
+                "precond": {
+                    "perl": "$wise2 eq \"genewise\"",
+                    "python": "wise2 == \"genewise\""
+                },
+                "prompt": "New gene model statistics for genewise"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -erroroffstd\" : \"\"",
+                            "python": "( \"\" , \" -erroroffstd\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "erroroffstd",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "No warning messages (-erroroffstd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "standard_options",
+                "precond": null,
+                "prompt": "Standard Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "wise2",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "ftp://ftp.ebi.ac.uk/pub/software/unix/wise2/"
+    ],
+    "title": "WISE2",
+    "type": "program",
+    "version": "2.2.0"
+}

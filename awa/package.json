@@ -1,0 +1,12 @@
+{
+    "author": "https://github.com/mobyle2/mobyle2.awa/graphs/contributors",
+    "name": "mobyle2.awa",
+    "version": "",
+    "dependencies": {},
+    "devDependencies": {
+        "karma": "~0.8"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "authors": "O. Gascuel",
+    "classifications": [
+        {
+            "classification": "phylogeny:distance",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "bionj"
+    },
+    "comment": null,
+    "description": "Neighbor Joining algorithm improved for molecular sequences",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Enter a matrix in Phylip format.This algorithm is adapted to evolutive\n\t  distances calculated from molecular data sequences (O. Gascuel,\n\t  1997, MBE 14(7), 685-695).If only one data matrix is given, then BIONJ\n\t    returns one tree. When the input file contains several matrices\n\t    given one after the other, as obtained when combining PHYLIP's\n\t    SEQBOOT and DNADIST to perform a bootstrap, BIONJ returns the\n\t    same number of trees, written one after the other in the output\n\t    file; this file may be given to PHYLIP's CONSENSE to obtain the\n\t    bootstrap tree.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Distances matrix File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PhylipDistanceMatrix",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "treefile_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Name of Tree File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "bionj",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "$treefile_name",
+                    "python": "str(treefile_name)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Tree File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Gascuel O., 1997, BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data, Molecular Biology and Evolution 14(7):685-695",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.lirmm.fr/~w3ifa/MAAS/BIONJ/"
+    ],
+    "title": "BIONJ",
+    "type": "program",
+    "version": null
+}

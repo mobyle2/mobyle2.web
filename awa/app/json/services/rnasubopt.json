@@ -1,0 +1,560 @@
+{
+    "authors": "Wuchty, Hofacker, Fontana",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:2D_structure",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "structure:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "RNAsubopt reads RNA sequences from file and (in the default -e mode) calculates all suboptimal secondary structures within a user defined energy range above the minimum free energy (mfe).It prints the suboptimal structures in bracket  notation  followed by  the  energy in kcal/mol to stdout. Be careful, the number of structures returned grows exponentially with both sequence length and energy range.Alternatively, when used with the -p option, RNAsubopt produces  Boltzmann  weighted samples of secondary structures.",
+    "description": "Calculate suboptimal secondary structures of RNAs",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"RNAsubopt\"",
+                    "python": "\"RNAsubopt\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "rnasubopt",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" < $value\"",
+                    "python": "\" < \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seq",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "RNA Sequences File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "RNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -e $value\" : \"\"",
+                            "python": "(\"\", \" -e \" + str(value))[value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "mfe",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Calculate suboptimal structures within this range kcal/mol of the mfe (-e)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -T $value\" : \"\"",
+                            "python": "( \"\" , \" -T \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "temperature",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Rescale energy parameters to a temperature of temperature Celcius (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -4\" : \"\"",
+                            "python": "( \"\" , \" -4\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tetraloops",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not include special stabilizing energies for certain tetraloops (-4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Change treatment of dangling ends, as in RNAfold and RNAeval.  The default is -d2  (as  in  partition  function  folding).  If -d1 or -d3 are specified the structures are generated as with -d2 but  energies  are  re-evaluated  before printing.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" $value\" : \"\"",
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dangling",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "How to treat dangling end energies for bases adjacent to helices in free ends and multiloops (-d)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This option does not effect structure generation, only the energies that is printed out. Since logML lowers energies somewhat, some structures may be missing.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -logML\" : \"\"",
+                            "python": "(\"\", \" -logML\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "logML",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Recalculate energies of structures using a logarithmic energy function for multi-loops (-logML)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Only print structures with energy within prange of the mfe.  Useful  in  conjunction  with  -logML,  -d1  or -d3: while the -e option specifies the range before energies are re-evaluated, -ep  specifies  the  maximum  energy  after re-evaluation.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -ep $value\" : \"\"",
+                            "python": "(\"\", \" -ep \" + str(value))[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ep",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Only print structures with energy within this prange of the mfe (-ep)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Since the sort in is done in memory, this\n              becomes impractical when the number of structures  produced  goes  into  millions.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -s\" : \"\"",
+                            "python": "(\"\", \" -s\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "sort",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sort the structures by energy (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "control",
+                "precond": null,
+                "prompt": "Control options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Only  produce  structures  without  lonely  pairs (helices of length 1). This reduces the number of structures drastically and should therefore be used for longer sequences and larger energy ranges.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noLP\" : \"\"",
+                            "python": "(\"\", \" -noLP\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noLP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Avoid lonely pairs (helices of length 1) (-noLP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noGU\" : \"\"",
+                            "python": "(\"\", \" -noGU\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noGU",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not allow GU pairs (-noGU)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noCloseGU\" : \"\"",
+                            "python": "(\"\", \" -noCloseGU\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noCloseGU",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not allow GU pairs at the end of helices (-noCloseGU)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Allow other pairs in addition to the usual AU,GC,and GU pairs. pairs is a comma seperated list of additionally allowed pairs. If a the first character is a '-' then AB will imply that AB and BA are allowed pairs. e.g. RNAfold -nsp -GA will allow GA and AG pairs. Nonstandard pairs are given 0 stacking energy.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -nsp $value\" : \"\"",
+                            "python": "( \"\"  , \" -nsp \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nsp",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Non standard pairs (comma seperated list) (-nsp)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Read energy parameters from paramfile, instead of using the default parameter set. A sample parameterfile should accompany your distribution. See the RNAlib documentation for details on the file format.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -P $value\" : \"\"",
+                            "python": "( \"\" , \" -P \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "parameter",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Parameter file (-P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "EnergyParameterFile",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -z\" : \"\"",
+                            "python": "( \"\" , \" -z\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "z",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Calculate z score",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input",
+                "precond": null,
+                "prompt": "Input parameters"
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"",
+                    "python": "\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "readseq",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "rnasubopt",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.ps\"",
+                    "python": "\"*.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "psfiles",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Postscript file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PostScript",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "S. Wuchty, W. Fontana, I. L. Hofacker and P. Schuster Complete Suboptimal Folding of RNA and the Stability of Secondary Structures, Biopolymers, 49, 145-165 (1999)",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "RNAsubopt",
+    "type": "program",
+    "version": null
+}
