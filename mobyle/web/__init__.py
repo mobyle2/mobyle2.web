@@ -23,6 +23,7 @@ def main(global_config, **settings):
     """ 
     This function returns a Pyramid WSGI application.
     """
+
     # instantiate mobyle config
     from mobyle.common.config import Config
     mobyle_config = Config().config()
@@ -77,7 +78,7 @@ def main(global_config, **settings):
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
     config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
-    
+    config.add_static_view('app','mobyle.web:static/app', cache_max_age = 3600) 
     config.scan()
 
     Dashboard.set_connection(connection.connection)
