@@ -40,8 +40,7 @@ Login
 </h2>
 </div>
 <div class="span6">
-    <div class="alert" ng-bind="msg">
-    </div>
+    <div class="alert" ng-show="msg">{{msg}}</div>
     <div class="login" ng-show="isProvider('native')">
         <div class="control-group">
             <label for="login">Sign in with your <b>Mobyle account</b></label>
