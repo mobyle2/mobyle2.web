@@ -78,7 +78,7 @@ $(function () {
         onlogin: function(assertion) {
             jQuery.ajax({
                 type: 'POST',
-                url: '/api/auth/login/persona',
+                url: '/auth/login/persona',
                 data: {assertion: assertion},
                 error: function(xhr, status, err) {
                     navigator.id.logout();
@@ -99,7 +99,7 @@ $(function () {
         onlogout: function() {
             jQuery.ajax({
                 type: 'POST',
-                url: '/api/auth/logout',
+                url: '/auth/logout',
                 error: function(xhr, status, err) { alert("Logout failure: " + err); }
             }).done(function(data) {
                         //scope = angular.element(document.getElementById('loginnavbar')).scope();

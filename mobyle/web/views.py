@@ -116,7 +116,7 @@ def login_complete_view(request):
     headers = remember(request, username)
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
-    return HTTPFound(location=settings['site.awa']+\
+    return HTTPFound(location=settings['site_uri']+\
                      settings['url.main'], headers = headers)
     #return {
     #    'result': json.dumps(result, indent=4),
@@ -169,7 +169,7 @@ def auth_reset_password(request):
     settings = request.registry.settings
     msg = "You have requested to reset your password.\n"+ \
     "To do so, you can connect to the following address for 1 hour.\n"+ \
-           settings['site.awa']+settings['url.password_reset']+\
+           settings['site_uri']+settings['url.password_reset']+\
            "?token="+temptoken['token']+\
            "\nThe Mobyle portal team."
     log.debug('send mail '+msg)
@@ -259,7 +259,7 @@ def auth_login(request):
             msg = "User does not exists"
     if auth_system == 'persona':
         assertion = request.params.getone('assertion')
-        audience = settings['site.awa']
+        audience = settings['site_uri']
         # Check assertion
         url = 'https://verifier.login.persona.org/verify'
         values = {'assertion': assertion,

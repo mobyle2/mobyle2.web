@@ -26,7 +26,7 @@ angular.module('awa.services').value('mbsimple', function(para) {
 
 angular.module('awa.services').factory('mfResource', function ($resource) {
     function MFResourceFactory(collectionName) {
-        var resource = $resource('/api/'+collectionName+'/:id',{},
+        var resource = $resource('/'+collectionName+'/:id',{},
             {
              get: {
                   method:'get',
@@ -54,7 +54,7 @@ angular.module('awa.services').factory('Project', function (mfResource) {
 
 angular.module('awa.services').factory('Login', function ($resource) {
     function LoginFactory(authName) {
-        return $resource('/api/auth/login/'+authName,{},
+        return $resource('/auth/login/'+authName,{},
             {
             }
         );
@@ -64,7 +64,7 @@ angular.module('awa.services').factory('Login', function ($resource) {
 
 angular.module('awa.services').factory('Logout', function ($resource) {
     function LogoutFactory(authName) {
-        return $resource('/api/auth/logout',{},
+        return $resource('/auth/logout',{},
             {
             }
         );
@@ -74,7 +74,7 @@ angular.module('awa.services').factory('Logout', function ($resource) {
 
 angular.module('awa.services').factory('PasswordResetRequest', function ($resource) {
     function PasswordResetQuestFactory(authName) {
-        return $resource('/api/auth/password/reset',{ username: authName},
+        return $resource('/auth/password/reset',{ username: authName},
             {
             }
         );
@@ -84,7 +84,7 @@ angular.module('awa.services').factory('PasswordResetRequest', function ($resour
 
 angular.module('awa.services').factory('PasswordReset', function ($resource) {
     function PasswordResetQuestFactory(userToken, userNewPassword) {
-        return $resource('/api/auth/password',{ token: userToken, password: userNewPassword},
+        return $resource('/auth/password',{ token: userToken, password: userNewPassword},
             {
             }
         );
