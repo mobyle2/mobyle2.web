@@ -1,0 +1,196 @@
+{
+    "authors": "C. Maufrais",
+    "classifications": [
+        {
+            "classification": "phylogeny:tree_analyser",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "rbvotree"
+    },
+    "comment": null,
+    "description": "Report bootstrap values found with consensus program on related tree found with phylogeny algorithm without bootstrap analysis.",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -n $value\"",
+                    "python": "\" -n \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "njtree",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Tree File (Newick standard form)(-n)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -c $value\"",
+                    "python": "\" -c \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "constree",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Consensus tree file with bootstrap values (Newick standard form)(-c)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -o $value\" : \"\"",
+                            "python": "(\"\", \" -o \" + str(value)) [ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outname",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Name of output tree file (-o)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "rbvotree",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"$outname\"",
+                    "python": "str(outname)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile_name",
+                "output_type": "file",
+                "precond": {
+                    "perl": "defined $outname",
+                    "python": "outname is not None"
+                },
+                "prompt": "Output tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"rbvotree.out\"",
+                    "python": "\"rbvotree.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "not defined $outname",
+                    "python": "outname is  None"
+                },
+                "prompt": "Output tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "rbvotree",
+    "type": "program",
+    "version": "1.0"
+}

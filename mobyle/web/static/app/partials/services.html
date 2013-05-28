@@ -1,0 +1,21 @@
+<div class="span10 offset1">
+<h2>{{filteredServices.length}} Services</h2>
+<div>
+  Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query" ng-model="query">
+  <div class="btn-group" data-toggle="buttons-radio">
+    <button type="button" class="btn" ng-model="listDisplay" btn-radio="'list'"><i class="icon-align-justify"></i></button>
+    <button type="button" class="btn" ng-model="listDisplay" btn-radio="'grid'"><i class="icon-th"></i></button>
+  </div>
+</div>
+<div class="services {{listDisplay}}">
+  <div ng-repeat="s in filteredServices = (services | searchServices:query | orderBy:'name')">
+    <div class="dt">
+      <a href="#/services/{{s._id.$oid}}" ng-bind-html="s.nameHl || s.name"/></a>
+    </div>
+    <div class="dd">
+      <span ui-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
+      <span ng-bind-html="s.descriptionHl || s.description" />
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,130 @@
+{
+    "authors": "E. Deveaud",
+    "classifications": [
+        {
+            "classification": "sequence:protein:composition",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "bigorf_extract.py"
+    },
+    "comment": null,
+    "description": "extract sequences with the largest ORF from a sequence translated with EMBOSS transseq and checktrans",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": "This is where you should enter the list of candidate ORFs for each gene",
+                "ctrl": null,
+                "format": {
+                    "python": "\" \" + value"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "protein_sequences",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Protein sequences to filter",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Number of characters that should be stripped. Default value is 4 because transseq adds 2 characters (_[frame index]) and checktrans another 2 (_[candidate index])",
+                "ctrl": null,
+                "format": {
+                    "python": "\" -s %d\" % value"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "characters_to_strip",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Integer",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "bigorf_extract",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"bigorf_extract.out\"",
+                    "python": "\"bigorf_extract.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "protein_sequence_out",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "bigorf_extract",
+    "type": "program",
+    "version": "1.0"
+}

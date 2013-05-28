@@ -1,0 +1,387 @@
+{
+    "authors": "Victor Soria-Carrasco, Jose Castresana",
+    "classifications": [
+        {
+            "classification": "phylogeny:tree_analyser",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "ktreedist"
+    },
+    "comment": null,
+    "description": "Calculation of the minimum branch length distance (K tree score) between phylogenetic trees",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/ktreedist/"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://molevol.cmima.csic.es/castresana/Ktreedist.html"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "This is the file that contains the tree to which you want to compare the comparison tree/s.Only NEWICK or NEXUS tree format are accepted by ktreedist.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"-rt $value\"",
+                            "python": "\" -rt \"+str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "ref_tree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Reference Tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "This is the file that contains the tree or the set of trees you want to compare to the reference tree. They will be scaled to match as much as possible the reference tree.Only NEWICK or NEXUS tree format are accepted by ktreedist.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"-ct $value \"",
+                            "python": "\" -ct \"+str(value)+\" \""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "comp_tree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Comparison Tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "The program is supposed to run with one reference tree and one or several comparison trees. If the reference file contains more than one tree, only the first one will be used.",
+                "name": "input",
+                "precond": null,
+                "prompt": "Input"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "A file containing a table of results is generated.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -t\"",
+                            "python": "(\"\", \" -t\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_res",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output file for table of results (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "A file containing a table of partitions for each comparison tree is generated.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -p\"",
+                            "python": "(\"\", \" -p\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_part",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output file for table of partitions (-p)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "A file containing the scaled comparison tree/s is generated.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -s\"",
+                            "python": "(\"\", \" -s\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_comp",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output file for comparison tree/s after scaling (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The symmetric difference is defined as the number of partitions that are not shared between two trees, \n\t\t\t\t\t\tthat is, the number of partitions of the first tree that are not present in the second tree plus the number of partitions \n\t\t\t\t\t\tof the second tree that are not present in the first tree.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -r\"",
+                            "python": "(\"\", \" -r\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_rf",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output symmetric difference (Robinson-Foulds) (-r)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The knowledge of the number of partitions may be useful to detect trees with polytomies.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -n\"",
+                            "python": "(\"\", \" -n\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_nbpf",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output number of partitions in the comparison tree/s (-n)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Equivalent to all options.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -a\"",
+                            "python": "(\"\", \" -a\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "output_all",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Equivalent to all options (-a)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "options",
+                "precond": null,
+                "prompt": "Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "ktreedist",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.tab\"",
+                    "python": "\"*.tab\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_res_f",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_res or $output_all",
+                    "python": "output_res or output_all"
+                },
+                "prompt": "Output file for table of results",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.part\"",
+                    "python": "\"*.part\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_part_f",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_part or $output_all",
+                    "python": "output_part or output_all"
+                },
+                "prompt": "Output file for table of partitions",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.scaled\"",
+                    "python": "\"*.scaled\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_comp_f",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_comp or $output_all",
+                    "python": "output_comp or output_all"
+                },
+                "prompt": "Output file for comparison tree/s after scaling",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Soria-Carrasco, V., Talavera, G., Igea, J., and Castresana, J. (2007). The K tree score: quantification of differences \n      \t\tin the relative branch length and topology of phylogenetic trees. Bioinformatics 23, 2954-2956.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://molevol.cmima.csic.es/castresana/Ktreedist.html"
+    ],
+    "title": "Ktreedist",
+    "type": "program",
+    "version": "Version 1.0"
+}

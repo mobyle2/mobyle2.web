@@ -1,0 +1,382 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "hmm:building",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "hmmemit reads an HMM file from hmmfile and generates a number of sequences from it; or, if the -c option is selected, generate a single majority-rule consensus. This can be useful for various applications in which one needs a simulation of sequences consistent with a sequence family consensus.By default, hmmemit generates 10 sequences and outputs them in FASTA (unaligned) format.",
+    "description": "Generate sequences from a profile HMM",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"hmmemit\"",
+                    "python": "\"hmmemit\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "hmmcmd",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "HMM emit command",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $hmmfile\"",
+                    "python": "\" \" + str(hmmfile)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "hmmfile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "HMM file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "HmmProfile",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Save the synthetic sequences to file rather than writing them to stdout.",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -o $value\" : \"\"",
+                    "python": "( \"\" , \" -o \" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "outfile_name",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Name of the synthetic sequences file (-o)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Emit a consensus sequence, instead of sampling a sequence from the profile\n        HMM's probability distribution. The consensus sequence is formed by selecting\n        the maximum probability residue at each match state.",
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -c\" : \"\"",
+                    "python": "( \"\" , \" -c\" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "consensus",
+                "paramfile": null,
+                "precond": {
+                    "perl": "$number == 1 and not sample",
+                    "python": "number ==  1 and not sample"
+                },
+                "prompt": "Consensus sequence (-c)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Sample x sequences, rather than just one.",
+                "ctrl": {
+                    "perl": "0 < $value",
+                    "python": "0 < value"
+                },
+                "format": {
+                    "perl": "(defined $value and $value != $vdef) ? \" -N $value \" : \"\"",
+                    "python": "( \"\" , \" -N \" + str(value) )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "number",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Number of sequences to sample (-N)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Sample sequences from the implicit profile, not from the core model. \n        The core\n        model consists only of the homologous states (between the begin and end states\n        of a HMMER Plan7 model). The profile includes the nonhomologous N, C, and J\n        states, local/glocal and uni/multihit algorithm configuration, and the target length\n        model. Therefore sequences sampled from a profile may include nonhomologous\n        as well as homologous sequences, and may contain more than one homologous\n        sequence segment. By default, the profile is in multihit local mode, and the target\n        sequence length is configured for L=400. To change these defaults, see Options\n        Controlling Emission from Profiles, below.",
+                "ctrl": null,
+                "format": {
+                    "perl": "( $value ) ? \" -p \" : \"\"",
+                    "python": "( \"\" , \" -p \" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "sample",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sample from profile, not core model (-p)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Configure the profile's target sequence length model to generate a mean length of\n          approximately the value rather than the default of 400.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -L $value \" : \"\"",
+                            "python": "( \"\" , \" -L \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "len",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Set expected length from profile (-L)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --$value \" : \"\"",
+                            "python": "( \"\" , \" --\" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "local",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Configure profile mode",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "controlP",
+                "precond": {
+                    "perl": "define $sample",
+                    "python": "sample"
+                },
+                "prompt": "Options controlling emission from profiles (with -p)"
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Seed the random number generator with the value, an integer >= 0. If the value is nonzero,\n          any stochastic simulations will be reproducible; the same command will give the\n          same results. If the value is 0, the random number generator is seeded arbitrarily, and\n          stochastic simulations will vary from run to run of the same command. The default\n          is 0: use an arbitrary seed, so different hmmemit runs will generate different\n          samples.",
+                "ctrl": {
+                    "perl": "0 <= $value",
+                    "python": "0 <= value"
+                },
+                "format": {
+                    "perl": "(defined $value and $value != $vdef) ? \" --seed $value \" : \"\"",
+                    "python": "( \"\" , \" --seed \" + str(value) )[ value is not None and value !=vdef ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "seed",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Seed number (--seed)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Integer",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "hmmemit",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "$outfile_name",
+                    "python": "str(outfile_name)"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "output_file",
+                "output_type": "file",
+                "precond": {
+                    "perl": "defined $outfile_name",
+                    "python": "outfile_name is not None"
+                },
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"hmmemit.out\"",
+                    "python": "\"hmmemit.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "out_file",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "not defined $outfile_name",
+                    "python": "outfile_name is None"
+                },
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "HMMEMIT",
+    "type": "program",
+    "version": null
+}

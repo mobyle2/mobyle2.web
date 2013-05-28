@@ -1,0 +1,329 @@
+{
+    "authors": "Hofacker, Stadler",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:2D_structure",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "structure:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "RNAeval  evaluates  the  free  energy  of  an  RNA molecule in fixed secondary structure.",
+    "description": "Calculate energy of RNA sequences on given secondary structure",
+    "documentation_links": [
+        "http://www.tbi.univie.ac.at/RNA/RNAeval.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"RNAeval\"",
+                    "python": "\"RNAeval\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "rnaeval",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": "Sequences and structures are read alternately from stdin.\n        The energy in Kcal/Mol is written to stdout.\n        The program will continue to read new sequences and structures until  a  line\n       consisting of the single character \"@\" or an end of file condition is encountered.\n       If the input sequence or structure contains the separator character \"&\" the program\n       calculates the energy of the co-folding of two RNA strands, where the \"&\" marks the\n       boundary between the two strands.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" < $value\"",
+                    "python": "\" < \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seqstruct",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequences/Structures File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "RNAStructure",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -T $value\" : \"\"",
+                            "python": "( \"\" , \" -T \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "temperature",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Rescale energy parameters to a temperature of temp C. (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -4\" : \"\"",
+                            "python": "( \"\" , \" -4\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tetraloops",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not include special stabilizing energies for certain tetraloops (-4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "How to treat 'dangling end' energies for bases adjacent to helices in free \n            ends and multiloops: Normally only unpaired bases can participate in at most one dangling end.-d     Do  not  give  stabilizing energies to unpaired bases adjacent to helices in\n              multiloops and free ends (\"dangling ends\"). Same as  -d0,  opposite  of  -d1\n              (the default).-d2    Treat dangling ends as in the partition function algorithm, i.e. bases adjacent \n           to helices in multiloops and free ends give a stabilizing  energy  contribution, \n           regardless whether they're paired or unpaired.-d3    Allow coaxial stacking of adjacent helices in multi-loops.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" $value\" : \"\"",
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dangling",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "How to treat dangling end energies for bases adjacent to helices in free ends and multiloops (-d)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Let multiloop energies depend logarithmically on the size, \n            instead of the usual linear energy function.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -logML\" : \"\"",
+                            "python": "( \"\" , \" -logML\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "logML",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Let multiloop energies depend logarithmically on the size (-logML)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -circ\" : \"\"",
+                            "python": "( \"\" , \" -circ\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "circular",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "-circ  Assume a cricular (rather than linear) RNA molecule.",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "<html:p xmlns:html=\"http://www.w3.org/1999/xhtml\">Read energy parameters from paramfile, instead of using the default parameter set.<html:a href=\"http://www.tbi.univie.ac.at/~ivo/RNA/RNAlib/Param-Files.html\" target=\"ParamFile\">( documentation for details on the file format.)</html:a></html:p>",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -P $value\" : \"\"",
+                            "python": "( \"\" , \" -P \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "parameter",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Energy parameter file (-P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "EnergyParameterFile",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value)? \" -v \": \"\"",
+                                    "python": "( \"\" , \" -v \")[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "verbose",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Print out energy contribution of each loop in the structure.",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "output_options",
+                        "precond": null,
+                        "prompt": "Output options"
+                    }
+                ],
+                "comment": null,
+                "name": "others_options",
+                "precond": null,
+                "prompt": "Other options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "rnaeval",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "RNAeval",
+    "type": "program",
+    "version": null
+}

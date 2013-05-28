@@ -1,0 +1,528 @@
+{
+    "authors": "Todd Treangen, Aaron Darling and Eduardo PC Rocha",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:repeats",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "repeatoire"
+    },
+    "comment": null,
+    "description": "Locating DNA repeats inside of sequenced genome",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/repeatoire/Repeatoire_UserGuide.pdf"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://wwwabi.snv.jussieu.fr/public/Repeatoire/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Fasta sequence input file",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" --sequence=$value\"",
+                    "python": "\" --sequence=\" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Input sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Forms the foundation of the repeats families. Smaller values are more sensitive\n        but allow for more noise (less specific), whereas larger values are less sensitive but more specific.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --z=$value\" : \"\"",
+                            "python": "( \"\" , \" --z=\" + str(value))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seedSize",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Seed weight",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Often one wants to only analyze repeats in the same orientation. Else, program will include\n            inverted repeats in the output.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --onlydirect=1\" : \"\"",
+                            "python": "( \"\" , \" --onlydirect=1\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "onlydirect",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Only process seed matches on same strand",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If gapped extension is disabled, output will be the local multiple alignments of the gapped chains.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"\" : \" --extend=0\"",
+                            "python": "( \" --extend=0\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "extend",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Perform gapped extension",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"\" : \" --large-repeats=0\"",
+                            "python": "( \" --large-repeats=0\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "large-repeats",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Optimize for large repeats",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "To increase specificity when wanting to focus on larger repeats, this option will only return repeat families containing repeats > value",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --minreplen=$value\" : \"\"",
+                            "python": "( \"\" , \" --minreplen=\" + str(value))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "minreplen",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum final repeat length",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Option to increase specificity. If one knows a priori that high copy repeats can be excluded from \n            the analysis, this option can be used to discard all repeat families with more repeat copies than this specified value.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --maxmulti=$value\" : \"\"",
+                            "python": "( \"\" , \" --maxmulti=\" + str(value))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "maxmulti",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum repeat multiplicity",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Similar to maxmulti, this option can be used to discard all repeat families that have fewer copies than this value.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" --minmulti=$value\" : \"\"",
+                            "python": "( \"\" , \" --minmulti=\" + str(value))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "minmulti",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum repeat multiplicity",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "By default, the program uses palindromic spaces seed patterns to find seed matches inside of the input\n            sequence. However, this can be turned off, which will use solid seed patterns (no mismatches in the seed matches allowed).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --solid=1\" : \"\"",
+                            "python": "( \"\" , \" --solid=1\")[ value  ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "solid",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use solid/exact seeds",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "main",
+                "precond": null,
+                "prompt": "Main options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --allow-redundant=1\" : \"\"",
+                            "python": "( \"\" , \" --allow-redundant=1\" )[ value  ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "redundant",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Allow redundant alignments",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --two-hits=1\" : \"\"",
+                            "python": "( \"\" , \" --two-hits=1\" )[ value  ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "two_hits",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Require two hits for gapped extension",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"\" : \" --chain=0\"",
+                            "python": "( \" --chain=0\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "chain",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Chain seeds",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --xml=repeatoire.xml\" : \"\"",
+                            "python": "( \"\" , \" --xml=repeatoire.xml\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "xml",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "XML format output",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "expert",
+                "precond": null,
+                "prompt": "Expert options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "repeatoire",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"reps.out\"",
+                    "python": "\"reps.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "gle_output",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "General results",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Report",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"stats.highest\"",
+                    "python": "\"stats.highest\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "stat_output",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Statistical results",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Report",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"repeatoire.xml\"",
+                    "python": "\"repeatoire.xml\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "xml_output",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$xml",
+                    "python": "xml"
+                },
+                "prompt": "Xml output",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Report",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Todd J. Treangen, Aaron E. Darling, Guillaume Achaz, Mark A. Ragan, Xavier\n       Messeguer, Eduardo P.C. Rocha, \"A Novel Heuristic for Local Multiple Alignment of\n       Interspersed DNA Repeats,\" IEEE/ACM Transactions on Computational Biology and\n       Bioinformatics, vol. 6, no. 2, pp. 180-189",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://wwwabi.snv.jussieu.fr/public/Repeatoire/"
+    ],
+    "title": "repeatoire",
+    "type": "program",
+    "version": "1.0"
+}

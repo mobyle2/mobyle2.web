@@ -1,0 +1,526 @@
+{
+    "authors": "C. Maufrais",
+    "classifications": [
+        {
+            "classification": "database:search:display",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "blast2taxonomy"
+    },
+    "comment": null,
+    "description": "Blast Taxonomy report",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Blast output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BlastTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "All hit are display in tree by default.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -s\" : \"\"",
+                            "python": "(\"\" , \" -s\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "single",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report one branch per organism (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -a\" : \"\"",
+                            "python": "(\"\" , \" -a\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "acc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report accession number (-a)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -n $value\" : \"\"",
+                            "python": "(\"\" , \" -n \" + str(value)) [value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "node_name",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Lowest common ancestor name (-n).",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" - $value\" : \"\"",
+                            "python": "(\"\" , \" -E \" + str(value)) [value and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "filterevalue",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Select hit blast with e-value lower than value (-E).",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -e\" : \"\"",
+                            "python": "(\"\" , \" -e\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "evalue",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report score and e-value Blast hit (-e).",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -l\" : \"\"",
+                            "python": "(\"\" , \" -l\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "perlen",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Report ratio of Blast hit length per query length (-l).",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "display",
+                "precond": null,
+                "prompt": "Display options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -x\" : \"\"",
+                            "python": "(\"\" , \" -x\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "xlsoutput",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Tabular output (-x)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -w\" : \"\"",
+                            "python": "(\"\" , \" -w\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "htmloutput",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Html output (-w)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -t\" : \"\"",
+                            "python": "(\"\" , \" -t\") [value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dndoutput",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Taxonomy report in Newick format (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -o $value\" : \"\"",
+                            "python": "(\"\"  , \" -o  \" + str(value))  [value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outputfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output file name (-o)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "blast2taxonomy",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "$outputfile",
+                            "python": "str(outputfile)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile_name",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "not $htmloutput and $outputfile",
+                            "python": "not htmloutput and outputfile"
+                        },
+                        "prompt": "Output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Blast2taxonomyReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"blast2taxonomy.out\"",
+                            "python": "\"blast2taxonomy.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "stdout",
+                        "precond": {
+                            "perl": "not ($htmloutput and $outputfile)",
+                            "python": "not (htmloutput and outputfile)"
+                        },
+                        "prompt": "Output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Blast2taxonomyReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "(defined $outputfile)? \"$outputfile.html\": \"blast2taxonomy.html\"",
+                            "python": "(\"blast2taxonomy.html\", str(outputfile)+\".html\")[outputfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "htmloutfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$htmloutput",
+                            "python": "htmloutput"
+                        },
+                        "prompt": "Html output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Blast2taxonomyHtmlReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"alignment.html\"",
+                            "python": "\"alignment.html\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "htmloutfilealn",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$htmloutput",
+                            "python": "htmloutput"
+                        },
+                        "prompt": "Alignment Html output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "AlnHtmlReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "(defined $outputfile)? \"$outputfile.dnd\": \"blast2taxonomy.dnd\"",
+                            "python": "(\"blast2taxonomy.dnd\", str(outputfile)+\".dnd\")[outputfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "dndoutfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$dndoutput",
+                            "python": "dndoutput"
+                        },
+                        "prompt": "Newick tree file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEWICK"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output option"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "blast2taxonomy",
+    "type": "program",
+    "version": "2.0"
+}

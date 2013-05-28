@@ -1,0 +1,1366 @@
+{
+    "authors": "M. Zuker",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:2D_structure",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "structure:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "Prediction of RNA secondary structure",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/mfold/index.html"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://www.bioinfo.rpi.edu/applications/mfold/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"mfold\"",
+                    "python": "\"mfold\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "mfold",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "SEQ : The sequence file may contain multiple sequences.\n\t      At present, the mfold script will fold the first sequence by default.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" SEQ=$value\"",
+                    "python": "\" SEQ=\" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "SEQ",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence File (SEQ)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "IG",
+                        "GENBANK",
+                        "EMBL"
+                    ]
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef) ? \" NA=$value\" : \"\"",
+                    "python": "(\"\" , \" NA=\" + str(value))[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "NA",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "RNA or DNA (NA)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": "It indicates whether a linear or circular nucleic acid is being folded.",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef) ? \" LC=$value\" : \"\"",
+                    "python": "(\"\" , \" LC=\" + str(value))[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "LC",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence type  (LC)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value <= 100 and $value >= 0",
+                            "python": "value <= 100 and value >= 0"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" T=$value\" : \"\"",
+                            "python": "(\"\" , \" T=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "T",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Temperature (T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "This is the percent suboptimality for computing the energy dot plot and suboptimal foldings. The default value is 5%. This parameter controls the value of the free energy increment, delta (deltaG). Delta of deltaG is set to P% of deltaG, computed minimum free energy. The energy dot plot shows only those base pairs that are in foldings with free energy minus or equal to deltaG plus delta (deltaG). Similarly, the free energies of computed foldings are in the range from deltaG to deltaG plus delta (deltaG). No matter the value of P, mfold currently keeps delta (deltaG) in the range [1,12] (kcal/mole).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" P=$value\" : \"\"",
+                            "python": "(\"\", \" P=\"+str(value))[value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "P",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Percent (P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" NA_CONC=$value\" : \"\"",
+                            "python": "(\"\" , \" NA_CONC=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "NA_CONC",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Na+ molar concentration (NA_CONC)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" MG_CONC=$value\" : \"\"",
+                            "python": "(\"\" , \" MG_CONC=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MG_CONC",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Mg++ molar concentration (MG_CONC)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "This is the window parameter that controls the number of foldings that are automatically computed by mfold . `W' may be thought of as a distance parameter. The distance between 2 base pairs, i.j and i'.j' may be defined as max{|i-i'|,|j-j'|}. Then if k-1 foldings have already been predicted by mfold , the kth folding will have at least W base pairs that are at least a distance W from any of the base pairs in the first k-1 foldings. As W increases, the number of predicted foldings decreases. If W is not specified, mfold selects a value by default based on sequence length.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" W=$value\" : \"\"",
+                            "python": "(\"\" , \" W=\" + str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "W",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Window parameter  (W)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "A base pair i.j will not be allowed to form (in linear RNA) if j-i > MAXBP. For circular RNA, a base pair i.j cannot form if min{j-i,n+i-j} > MAXBP . Thus small values of MAXBP ensure that only short range base pairs will be predicted. By default, MAXBP=+infinity, indicating no constraint.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" MAXBP=$value\" : \"\"",
+                            "python": "(\"\" , \" MAXBP=\" + str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MAXBP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Max base pair distance (MAXBP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" MAX_LP=$value\" : \"\"",
+                            "python": "(\"\" , \" MAX_LP=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MAX_LP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum bulge/interior loop size (MAX_LP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" MAX_AS=$value\" : \"\"",
+                            "python": "(\"\" , \" MAX_AS=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MAX_AS",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum asymmetry of a bulge/interior loop (MAX_AS)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "MAX : This is the maximum number of foldings that mfold will compute (50 by default). It is better to limit the number of foldings by careful selection of the P and W parameters.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" MAX=$value\" : \"\"",
+                            "python": "(\"\" , \" MAX=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MAX",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of foldings to be computed (MAX)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "This parameter currently takes on 3 values.- `none' : secondary structures are drawn without any special annotation. Letters or outline are in black, while base pairs are red lines or dots for GC pairs and blue lines or dots for AU and GU pairs.- `p-num' : Colored dots, colored base characters or a combination are used to display in each folding how well-determined each base is according to the P-num values in the `fold_name.ann' file.- `ss-count' : Colored dots, colored base characters or a combination are used to display in each folding how likely a base is to be single-stranded according to sample statistics stored in the `fold_name.ss-count' file.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" ANN=$value\" : \"\"",
+                            "python": "(\"\" , \" ANN=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ANN",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Structure annotation type (ANN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" MODE=$value\" : \"\"",
+                            "python": "(\"\" , \" MODE=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MODE",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Structure display mode (MODE)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" ROT_ANG=$value\" : \"\"",
+                            "python": "(\"\" , \" ROT_ANG=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ROT_ANG",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Structure rotation angle (ROT_ANG)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" START=$value\" : \"\"",
+                            "python": "(\"\" , \" START=\" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "START",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "5' base number (START)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" STOP=$value\" : \"\"",
+                            "python": "(\"\" , \" STOP=\" + str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "STOP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "3' base number  (STOP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "AUX : (optional) This is the name of an auxiliary input file of folding\n\t\t  constraints. If this parameter is not used, mfold looks for a file\n\t\t  named `fold_name.aux'. If this file exists and is not empty, then it\n\t\t  is interpreted as a constraint file. Thus constraints may be used\n\t\t  without the use of this command line parameter.Fill the box or the file with constraints (1 constraint per line) You may:1. force bases i,i+1,...,i+k-1 to be double stranded by entering:F   i   0   k2. force consecutive base pairs i.j,i+1.j-1, ...,i+k-1.j-k+1 by entering:F   i   j   k3. force bases i,i+1,...,i+k-1 to be single stranded by entering:P   i   0   k4. prohibit the consecutive base pairsi.j,i+1.j-1, ...,i+k-1.j-k+1 by entering:P   i   j   k5. prohibit bases i to j from pairing with bases k to l by entering:P   i-j   k-l",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" AUX=$value\" : \"\"",
+                            "python": "( \"\" , \" AUX=\" + str(value) )[ value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "AUX",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Constraints File (AUX)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "MfoldFoldingConstraints",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "control",
+                "precond": null,
+                "prompt": "Control options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "txt_format",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Text output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "det_format",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Detailed output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "4",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" RUN_TYPE=html\" : \"\"",
+                            "python": "(\"\" , \" RUN_TYPE=html\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "html_format",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Html output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The RNAML (RNA Markup Language) was developed by a consortium of investigators and is a proposed syntax for RNA information files. A description was published in 2002:A. Waugh, P. Gendron, R. Altman, J.W. Brown, D. Case, D. Gautheret, S.C. Harvey, N. Leontis, J. Westbrook, E. Westhof, M. Zuker, and\nF. Major RNAML: A standard syntax for exchanging RNA information. RNA   8 (6), 707-717, (2002)",
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rnaml_format",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "RNAML output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "This is a text file that contains all the\nbase pairs on the energy dot plot , organized into helices for which Delta G(i,j) is constant. The first record is a header, and each subsequent record\ndescribes a single helix. The records are usually sorted by Delta G(i,j) and are often filtered so that short helices or isolated base pairs (helices of length 1) in suboptimal foldings are removed.",
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "plot_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Energy dot plot output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ann_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Structure annotation output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "This file is the same as plot file, except that the energy column is replaced by an h-num column. These files are usually sorted by h-num; lowest to highest, or best determined to worst determined. Often, only helices in optimal foldings are retained.",
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "hnum_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Helix num output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "energy_param",
+                        "precond": null,
+                        "prompt": "Energy Dot plot"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "A graphics file that ends with the suffix .gif should be displayed directly on the page of your web browser.",
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "gif_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "GIF output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pdf_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "PDF output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "PostScript is a programming language that is used to describe output for printing and display. It was developed by Adobe Systems. It is common to have PostScript capability on most printers. Programs such as Ghostscript, Ghostview and GSview can be used to display PostScript files(http://www.cs.wisc.edu/~ghost/\").",
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ps_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Postscript output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "The '.ct file' contains the nucleic acid sequence and base pairing information from which a structure plot may be computed. The mfold software and mfold web servers use the \"sir_graph_ng\" program to create Postscript, jpg and png images from .ct files. \"sir_graph_ng\" is part of the mfold_util package that may be obtained here: http://www.bioinfo.rpi.edu/~zukerm/export/.",
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ct_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "CT output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "This is an input file for the XRNA program by Bryn Weiser and Harry Noller. \n                The new Java version is available from UC Santa Cruz RNA Center web site: \n                href=\"http://rna.ucsc.edu/rnacenter/xrna/xrna.html\". The\n                ss file can be regarded as an expanded ct file. It contains base and connect information as \n                well a coordinates for plotting the bases.",
+                                "ctrl": null,
+                                "format": null,
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ss_format",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "XRNA_ss output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "structure_format",
+                        "precond": null,
+                        "prompt": "Structure file format"
+                    }
+                ],
+                "comment": null,
+                "name": "runtype",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "mfold",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.out\"",
+                            "python": "\"*.out\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "txt_out",
+                        "output_type": "stdout",
+                        "precond": {
+                            "perl": "$txt_format",
+                            "python": "txt_format"
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.det.html\"",
+                            "python": "\"*.det.html\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "det_out_html",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$det_format  and $html_format",
+                            "python": "det_format  and html_format"
+                        },
+                        "prompt": "Detailed outfile",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "MfoldDetailHtmlReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.det\"",
+                            "python": "\"*.det\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "det_out",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$det_format  and not $html_format",
+                            "python": "det_format  and not html_format"
+                        },
+                        "prompt": "Detailed outfile",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.html\"",
+                            "python": "\"*.html\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "out_html",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$html_format",
+                            "python": "html_format"
+                        },
+                        "prompt": "Html output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "MfoldHtmlReport",
+                                "superclass": "Report"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.rnaml\"",
+                            "python": "\"*.rnaml\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "out_rnaml",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$rnaml_format",
+                            "python": "rnaml_format"
+                        },
+                        "prompt": "RNAML output file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "RNA"
+                            ],
+                            "card": null,
+                            "datatype": {
+                                "class": "2DStructure",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "RNAML"
+                            ]
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.plot\"",
+                                    "python": "\"*.plot\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "out_plot",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$plot_format",
+                                    "python": "plot_format"
+                                },
+                                "prompt": "Energy dot plot output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Text",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.ann\"",
+                                    "python": "\"*.ann\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "ann_plot",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$ann_format",
+                                    "python": "ann_format"
+                                },
+                                "prompt": "Structure annotation output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Text",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.h-num\"",
+                                    "python": "\"*.h-num\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "hnum_plot",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$hnum_format",
+                                    "python": "hnum_format"
+                                },
+                                "prompt": "Helix num output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Text",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "energy_param",
+                        "precond": null,
+                        "prompt": "Energy Dot plot"
+                    },
+                    {
+                        "children": [
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "*.gif",
+                                    "python": "\"*.gif\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "out_gif",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$gif_format",
+                                    "python": "gif_format"
+                                },
+                                "prompt": "GIF output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Picture",
+                                        "superclass": "Binary"
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.pdf\"",
+                                    "python": "\"*.pdf\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "out_pdf",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$pdf_format",
+                                    "python": "pdf_format"
+                                },
+                                "prompt": "PDF output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Pdf",
+                                        "superclass": "Binary"
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.ps\"",
+                                    "python": "\"*.ps\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "out_ps",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$ps_format",
+                                    "python": "ps_format"
+                                },
+                                "prompt": "Postscript output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "PostScript",
+                                        "superclass": "Binary"
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.ct\"",
+                                    "python": "\"*.ct\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "out_ct",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$ct_format",
+                                    "python": "ct_format"
+                                },
+                                "prompt": "CT output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "2DStructure",
+                                        "superclass": "AbstractText"
+                                    },
+                                    "edam_types": [],
+                                    "formats": [
+                                        "CT"
+                                    ]
+                                }
+                            },
+                            {
+                                "comment": null,
+                                "filenames": {
+                                    "perl": "\"*.ss-count\"",
+                                    "python": "\"*.ss-count\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "name": "out_ss",
+                                "output_type": "file",
+                                "precond": {
+                                    "perl": "$ss_format",
+                                    "python": "ss_format"
+                                },
+                                "prompt": "XRNA_ss output file",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "2DStructure",
+                                        "superclass": "AbstractText"
+                                    },
+                                    "edam_types": [],
+                                    "formats": [
+                                        "SS"
+                                    ]
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "structure_format",
+                        "precond": null,
+                        "prompt": "Structure file format"
+                    }
+                ],
+                "comment": null,
+                "name": "runtype",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "M. Zuker, D.H. Mathews and D.H. Turner Algorithms and Thermodynamics for RNA Secondary Structure Prediction: A Practical Guide in RNA Biochemistry and Biotechnology, J. Barciszewski and B.F.C. Clark, eds., NATO ASI Series, Kluwer Academic Publishers, (1999)",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.bioinfo.rpi.edu/~zukerm/export/"
+    ],
+    "title": "MFOLD",
+    "type": "program",
+    "version": "3.2"
+}

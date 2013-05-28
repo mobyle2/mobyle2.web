@@ -1,0 +1,632 @@
+{
+    "authors": "Ivo L Hofacker, Peter F Stadler, Stephan Bernhart",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "RNAup"
+    },
+    "comment": "RNAup  calculates the thermodynamics of RNA-RNA interactions, by decomposing the \n        binding into two stages.(1) First the  probability  that  a\n       potential binding sites remains unpaired (equivalent to the free energy\n       needed to open the site) is computed.(2) Then  this  accessibility  is\n       combined  with  the  interaction  energy  to  obtain  the total binding\n       energy.All calculations are done by computing partition functions over\n       all possible conformations.",
+    "description": "Calculate the thermodynamics of RNA-RNA interactions",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/gensoft/sequence/nucleic/2D_structure.html#ViennaRNa"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": "Each line of file corresponds to one sequence, except for lines starting with \">\" which contain the name of the next sequence. To compute the hybrid structure of two molecules, the two sequences must be concatenated using the & character as separator.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" < $value\"",
+                    "python": "\" < \" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seq",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "RNA Sequences File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "RNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "RNASequence",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Specifies  the  length  (len)  of the unstructured region in the\n              output. The  default  value  is  4.  The  probability  of  being\n              unpaired  is plotted on the right border of the unpaired region.\n              You can specify up to 20 different length values:   use  \"-\"  to\n              specify  a range of continuous values (e.g. -u 4-8) or specify a\n              list of comma separated values (e.g. -u 4,8,15).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -u $value\" : \"\"",
+                            "python": "( \"\" , \" -u \"+ str(value) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "partition_free",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Specifies  the  length of the unstructured region  (-u)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "by default only the full probability of being unpaired is  plot-\n              ted. The -c option allows to get the different contributions (c)\n              to the probability of being unpaired: The  full  probability  of\n              being  unpaired  (\"S\")  is  the  sum of the probability of being\n              unpaired in the exterior  loop  (\"E\"),  within  a  hairpin  loop\n              (\"H\"),  within  an  interior  loop  (\"I\") and within a multiloop\n              (\"M\"). Any combination of these letters may be given.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -c $value\" : \"\"",
+                            "python": "( \"\" , \" -c \" +str(value)  )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "shime",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Option allows to get the different contributions to the probability of being unpaired. (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "freeEnergie",
+                "precond": null,
+                "prompt": "Options for calculation of free energies"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Determines the maximal length of the region of interaction,  the\n              default is 25.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -w $value\" : \"\"",
+                            "python": "( \"\" , \" -w \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Length",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Determines the maximal length of the region of interaction (-w)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Include the probability of unpaired regions in both (b) RNAs. By\n              default only the probability of being unpaired in the longer RNA\n              (target) is used.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -b \" : \"\"",
+                            "python": "( \"\" , \" -b \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "unpaired",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Include the probability of unpaired regions in both RNAs (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "These  options extend the region of interaction in the target by\n              len residues to the 5' and 3' side, respectively. The underlying\n              assumption  is  that  it  is favorable for an interaction if not\n              only the direct region of contact is unpaired  but  also  a  few\n              residues 5' and 3' of this region.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -5 $value\" : \"\"",
+                            "python": "( \"\" , \" -5 \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "side5",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Extend the region of interaction in the target by len residues  to the 5' side",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "These  options extend the region of interaction in the target by\n              len residues to the 5' and 3' side, respectively. The underlying\n              assumption  is  that  it  is favorable for an interaction if not\n              only the direct region of contact is unpaired  but  also  a  few\n              residues 5' and 3' of this region.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -3 $value\" : \"\"",
+                            "python": "( \"\" , \" -3 \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "side3",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Extend the region of interaction in the target by len residues  to the  3' side",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Xp: Pairwise (p) interaction is calculated:\n              The first sequence interacts with the 2nd, the  third  with  the\n              4th  etc.  If  -Xp  is selected two interacting sequences may be\n              given in a single line separated by \"&\" or each sequence may  be\n              given on an extra line.Xf: The interaction of each sequence with the\n              first one is calculated (e.g. interaction of one mRNA with  many\n              small RNAs). Each sequence has to be given on an extra line.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" $value\" : \"\"",
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "interaction",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Interaction  mode",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Use  the  first  sequence  in  the  input file as the target. No\n              length check is done",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -target \" : \"\"",
+                            "python": "( \"\" , \" -target \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "target",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use  the  first  sequence  in  the  input file as the target",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "interaction",
+                "precond": null,
+                "prompt": "Options for calculation of interaction"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -T $value\" : \"\"",
+                            "python": "( \"\" , \" -T \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "temperature",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Rescale energy parameters to a temperature of temp C. (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -4\" : \"\"",
+                            "python": "( \"\" , \" -4\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "tetraloops",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not include special stabilizing energies for certain tetraloops (-4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "How to treat 'dangling end' energies for bases adjacent to helices in free ends and multiloops: Normally only unpaired bases can participate in at most one dangling end. With -d2 this check is ignored, this is the default for partition function folding (-p). -d ignores dangling ends altogether. Note that by default pf and mfe folding treat dangling ends differently, use -d2 (or -d) in addition to -p to ensure that both algorithms use the same energy model. The -d2 options is available for RNAfold, RNAeval, and RNAinverse only.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" $value\" : \"\"",
+                            "python": "( \"\" , \" \" + str(value) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "dangling",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "How to treat dangling end energies for bases adjacent to helices in free ends and multiloops (-d)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "In the calculation of the pf use scale*mfe as an estimate for the ensemble free energy (used to avoid overflows). The default is 1.07, usefull values are 1.0 to 1.2. Occasionally needed for long sequences. You can also recompile the programm to use double precision (see the README file).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -S $value\" : \"\"",
+                            "python": "( \"\" , \" -S \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "scale",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Use scale*mfe as an estimate for the free energy (-S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Produce structures without lonely pairs (helices of length 1).  For  partition  function  folding  this  only disallows pairs that can only occur isolated. Other pairs may still occasionally occur as helices  of  length 1.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noLP\" : \"\"",
+                            "python": "( \"\" , \" -noLP\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noLP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Avoid lonely pairs (helices of length 1) (-noLP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noGU\" : \"\"",
+                            "python": "( \"\" , \" -noGU\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noGU",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not allow GU pairs (-noGU)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -noCloseGU\" : \"\"",
+                            "python": "( \"\" , \" -noCloseGU\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "noCloseGU",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Do not allow GU pairs at the end of helices (-noCloseGU)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Allow other pairs in addition to the usual AU,GC,and GU pairs. pairs is a comma seperated list of additionally allowed pairs. If a the first character is a '-' then AB will imply that AB and BA are allowed pairs. e.g. RNAfold -nsp -GA will allow GA and AG pairs. Nonstandard pairs are given 0 stacking energy.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -nsp $value\" : \"\"",
+                            "python": "( \"\"  , \" -nsp \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "nsp",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Non standard pairs (comma seperated list) (-nsp)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Read energy parameters from paramfile, instead of using the default parameter set. A sample parameterfile should accompany your distribution. See the RNAlib documentation for details on the file format.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value)? \" -P $value\" : \"\"",
+                            "python": "( \"\" , \" -P \" + str(value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "parameter",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Energy parameter file (-P)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "EnergyParameterFile",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "general",
+                "precond": null,
+                "prompt": "General option"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "rnaup",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"RNA*.out\"",
+                    "python": "\"RNA*.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfiles",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "RNAup output",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "RNAupOut",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "S.H.Bernhart, Ch. Flamm, P.F. Stadler, I.L. Hofacker Partition Function and Base Pairing Probabilities of RNA Heterodimers Algorithms Mol. Biol. (2006)",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "D.H. Mathews, J. Sabina, M. Zuker and H. Turner \"Expanded Sequence Dependence of Thermodynamic Parameters Provides Robust Prediction of RNA Secondary Structure\" JMB, 288, pp 911-940, 1999",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "RNAup",
+    "type": "program",
+    "version": "1.8.4"
+}

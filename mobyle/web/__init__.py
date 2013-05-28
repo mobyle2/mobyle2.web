@@ -23,6 +23,7 @@ def main(global_config, **settings):
     """ 
     This function returns a Pyramid WSGI application.
     """
+
     # instantiate mobyle config
     from mobyle.common.config import Config
     mobyle_config = Config().config()
@@ -43,6 +44,10 @@ def main(global_config, **settings):
     config.include('pyramid_mailer')
     config.include("velruse.providers.openid")
     config.add_openid_login(realm=settings['site_uri'])
+    config.include('velruse.providers.facebook')
+    config.include('velruse.providers.google_oauth2')
+    config.add_facebook_login_from_settings(prefix='velruse.facebook.')
+    config.add_google_oauth2_login_from_settings(prefix='velruse.google.')
 
     db_uri = settings['db_uri']
     conn = pymongo.Connection(db_uri, safe = True)
@@ -65,10 +70,15 @@ def main(global_config, **settings):
     config.add_route('services_list', '/services/list')
     config.add_route('user_list', '/users')
     config.add_route('about', '/about')
+    config.add_route('auth_login','/auth/login/{auth}')
+    config.add_route('auth_logout','/auth/logout')
+    config.add_route('auth_reset_password','/auth/password/reset')
+    config.add_route('auth_update_password','/auth/password')
+
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
     config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
-    
+    config.add_static_view('app','mobyle.web:static/app', cache_max_age = 3600) 
     config.scan()
 
     Dashboard.set_connection(connection.connection)

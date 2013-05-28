@@ -1,0 +1,138 @@
+{
+    "authors": "Nakai, K. and Horton, P.",
+    "classifications": [
+        {
+            "classification": "sequence:protein:composition",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "psort"
+    },
+    "comment": null,
+    "description": "Predicts protein subcellular localization sites from their amino acid sequence",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/psort/index.html"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://psort.hgc.jp/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seqfile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Protein sequence file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "Protein"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -w\" : \"\"",
+                    "python": "(\"\", \" -w\")[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "Verbose",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Verbose mode (-w)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "psort",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"psort.html\"",
+                    "python": "\"psort.html\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "htmlfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Html output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PsortHtmlReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "A program for detecting the sorting signals of\n\tproteins and predicting their subcellular localization, trends\n\tBiochem. Sci., in press, 1999.",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "PSORT",
+    "type": "program",
+    "version": null
+}

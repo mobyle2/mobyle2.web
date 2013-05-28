@@ -1,0 +1,157 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "phylogeny:tree_analyser",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "Unroot use RETREE a tree editor. It reads in a tree.",
+    "description": "Unroot a tree",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/retree.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"retree < retree.params\"",
+                    "python": "\"retree < retree.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "unroot",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": "The program hangs when provided a tree with [...] added to branch lengths.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $treefile intree && \"",
+                    "python": "\"ln -s \"+str( treefile ) +\" intree && \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "treefile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Tree File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"0\\\\nY\\\\nW\\\\nU\\\\nQ\\\\n\"",
+                    "python": "\"0\\nY\\nW\\nU\\nQ\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "commands",
+                "paramfile": "retree.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "unroot",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"unroot.outtree\"",
+                    "python": "\"unroot.outtree\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outtree",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Tree output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "unroot",
+    "type": "program",
+    "version": null
+}

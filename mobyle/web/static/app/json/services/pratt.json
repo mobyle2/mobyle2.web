@@ -1,0 +1,1176 @@
+{
+    "authors": "K. Sturzrehm, I. Jonassen",
+    "classifications": [
+        {
+            "classification": "sequence:protein:pattern",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "pratt"
+    },
+    "comment": null,
+    "description": "Pattern discovery in sets of unaligned protein sequences",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://www.ii.uib.no/~inge/Pratt.html"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": "Fasta  format.  One   file  containing   all  the sequences. One sequence is specified byone line starting with '>' in position 1 and then the name of the sequence, and some lines containing the sequence in upper or lower case. The end of a sequence is identified by looking for either the start of a new sequence or the end of the file.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" fasta $value\"",
+                    "python": "\" fasta \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seq",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the minimum number of sequences to match a pattern. Pratt will only report patterns that match at least the chosen number of the sequences that you have input. Pratt will not allow you to choose a value higher than the number of sequences input.",
+                        "ctrl": {
+                            "perl": "$value >= 2 and $value <= 4",
+                            "python": "value >= 2 and value <= 4"
+                        },
+                        "format": {
+                            "perl": "(defined $value)? \" -CM $value\":\"\"",
+                            "python": "(\"\" , \" -CM \" + str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "CM",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum number of Sequences to Match (-CM)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the minimum percentage of the input sequences that should match a pattern. If you set this to, say 80, Pratt will only report patterns matching at least 80 % of the sequences input.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -C% $value\":\"\"",
+                            "python": "(\"\" , \" -C% \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "Cpct",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Minimum Percentage of Sequences to Match (-C%)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "conservation",
+                "precond": null,
+                "prompt": "Pattern conservation parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "<text lang=\"en\" />",
+                        "ctrl": {
+                            "perl": "$value eq $vdef or ($value ne $vdef and defined $PF)",
+                            "python": "value == vdef or (value != vdef and PF is not None)"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -PP $value\":\"\"",
+                            "python": "(\"\" , \" -PP \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "PP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Position in sequence (-PP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This file contains lines to restrict pattern searches to certain regions in a sequence, say ACE2_YEAST:>ACE2_YEAST (100,200)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -PF $value\"",
+                            "python": "\" -PF \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "PF",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$PP ne \"off\"",
+                            "python": "PP != \"off\""
+                        },
+                        "prompt": "Restriction File name (if PP not off) (-PF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "RestrictionPattern",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Allows you to set the maximum length of a pattern. The length of the pattern C-x(2,4)-[DE] is 1+4+1=6.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -PL $value\":\"\"",
+                            "python": "(\"\" , \" -PL \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "PL",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum Pattern Length (-PL)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Using this you can set the maximum number of symbols in a pattern. The pattern C-x(2,4)-[DE] has 2 symbols (C and [DE]).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -PN $value\":\" \"",
+                            "python": "(\"\" , \" -PN \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "PN",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of Pattern Symbols (-PN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Using this option you can set the maximum length of a wildcard.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -PX $value\":\"\"",
+                            "python": "(\"\" , \" -PX \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "PX",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of consecutive x's (-PX)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Using this option you can set the maximum number of flexible wildcards (matching a variable number of arbitrary sequence symbols). For instance x(2,4) is a flexible wildcard, and the pattern C-x(2,4)-[DE]-x(10)-F contains one flexible wildcard.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -FN $value\":\"\"",
+                            "python": "(\"\" , \" -FN \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "FN",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of flexible spacers (-FN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You can set the maximum flexibility of a flexible wildcard (matching a variable number of arbitrary sequence symbols). For instance x(2,4) and x(10,12) has flexibility 2, and x(10) has flexibility 0. Increasing FL will increase the time used by Pratt.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -FL $value\":\"\"",
+                            "python": "(\"\" , \" -FL \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "FL",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum Flexibility (-FL)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Using option FP you can set an upper limit on the product of a flexibilities for a pattern. This is related to the memory requirements of the search, and increasing the limit, increases the memory usage. Some patterns and the corresponding product of flexibilities.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -FP $value\":\"\"",
+                            "python": "(\"\" , \" -FP \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "FP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum Flexibility Product (-FP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Using the B options (BN,BI,BF) on the menu you can control which pattern symbols will be used during the initial pattern search and during the refinement phase. The pattern symbols that can be used, are read from a file if the BI option is set, otherwise a default set will be used.The default set has as the 20 first elements, the single amino acid symbols, and it also contains a set of ambiguous symbols, each containing amino acids that share some physio-chemical properties",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -BI on\":\"\"",
+                            "python": "(\"\" , \" -BI on\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "BI",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Input Pattern Symbol File? (-BI)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "In the file each symbol is given on a separate line concataining the letters that the symbol should match. For the example, only patterns with the symbols C and [DE] would be considered. During the initial search, pattern symbols corresponding to the first BN lines can be used.default file is: Pratt.sets.big",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -BF $value\" : \"-BF",
+                            "python": "( \" -BF"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "BF",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$BI",
+                            "python": "BI"
+                        },
+                        "prompt": "Input Pattern Symbol File name (if BI on) (-BF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PatternSymbol",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Increasing BN will slow down the search and increase the memory usage, but allow more ambiguous pattern symbols.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -BN $value\":\"\"",
+                            "python": "(\"\" , \" -BN \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "BN",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of Pattern Symbols Initial Search (-BN)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "restrictions",
+                "precond": null,
+                "prompt": "Pattern restrictions parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The S option allows you to control the scoring of patterns. There are five possible scoring schemes to be used:info: patterns are scored by their information content as defined in (Jonassen et al, 1995). Note that a pattern's score is independent of which sequences it matches.mdl: patterns are scored by a Minimum Description Length principle derived scoring scheme, which is related to the one above, but penalises patterns scoring few sequences vs. patterns scoring many. Parameters Z0 to Z3 are required when this scoring scheme is used.tree: a pattern is scored higher if it contains more information and/or if it matches more diverse sequences. The sequence diversity is calculated from a dendrogram which has to be input.dist: similar to the tree scoring, except a matrix with pairwise the similarity between all pairs of input sequences are used instead of the tree. The matrix has to be input.ppv: a measure of Positive Predictive Value - it is assumed that the input sequences constitute a family, and are all contained in the Swiss-Prot database. PPV measures how certain one can be that a sequence belongs to the family given that it matches the pattern.For the last three scoring schemes (tree, dist, ppv), an input file is needed.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -S $value\":\"\"",
+                            "python": "(\"\" , \" -S \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "S",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Scoring (-S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -SF $value \"",
+                            "python": "\" -SF \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "treefile",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$S eq \"tree\"",
+                            "python": "S == \"tree\""
+                        },
+                        "prompt": "Tree File for Scoring equal to tree (-SF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "A matrix with pairwise the similarity between all pairs of input sequences are used instead of the tree.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -SF $value; \"",
+                            "python": "\" -SF \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "distfile",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$S eq \"dist\"",
+                            "python": "S == \"dist\""
+                        },
+                        "prompt": "Distances File if Scoring equal to dist (-SF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PhylipDistanceMatrix",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Default: uniprot_sprot databank.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -SF $value\" : \" -SF",
+                            "python": "( \" -SF"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "uniprotdb",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$S eq \"ppv\"",
+                            "python": "S == \"ppv\""
+                        },
+                        "prompt": "Swissprot file if Scoring equal to ppv (-SF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "SWISSPROT"
+                            ]
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef)? \" -Z0 $value\" : \"\"",
+                                    "python": "( \"\"  , \" -Z0 \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "Z0",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Z0",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef)? \" -Z1 $value\" : \"\"",
+                                    "python": "( \"\" , \" -Z1 \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "Z1",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Z1",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef)? \" -Z2 $value\" : \"\"",
+                                    "python": "( \"\" , \" -Z2 \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "Z2",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Z2",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef)? \" -Z3 $value\" : \"\"",
+                                    "python": "( \"\" , \" -Z3 \" + str(value) )[ value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "Z3",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Z3",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "mdl_param",
+                        "precond": {
+                            "perl": "$S eq \"mdl\"",
+                            "python": "S == \"mdl\""
+                        },
+                        "prompt": "MDL parameters (Z0-Z3) (if MDL scoring)"
+                    }
+                ],
+                "comment": null,
+                "name": "scoring",
+                "precond": null,
+                "prompt": "Pattern Scoring parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If G is set to al or query, another option GF is required allowing the user to give the name of a file containing a multiple sequence alignment (in Clustal W format), or a query sequence in FastA format (without annotation). Only patterns consistent with the alignment/matching the query sequence will be considered.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef)? \" -G $value\":\"\"",
+                            "python": "(\"\" , \" -G \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "G",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pattern Graph from: (-G)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Alignment file must be in CLUSTALW format",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -GF $value\"",
+                            "python": "\" -GF \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "GF_ali",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$G eq \"al\"",
+                            "python": "G == \"al\""
+                        },
+                        "prompt": "Alignment file (if G set to al) (-GF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "CLUSTAL"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Query file must be in Fasta format",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -GF $value\"",
+                            "python": "\" -GF \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "GF_seq",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$G eq \"query\"",
+                            "python": "G == \"query\""
+                        },
+                        "prompt": "Query sequence file (if G set query) (-GF)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Using the E parameter you can adjust the greediness of the search. Setting E to 0 (zero), the search will be exhaustive. Increasing E increases the greediness, and decreases the time used in the search.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -E $value\":\"\"",
+                            "python": "(\"\" , \" -E \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "E",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Search Greediness (-E)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "When the R option is switched on, patterns found during the initial pattern search are input to a refinement algorithm where more ambiguous pattern symbols can be added. For instance the pattern C-x(4)-D might be refined to C-x-[ILV]-x-D-x(3)-[DEF]",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -R off\" : \"\"",
+                            "python": "( \" \" , \" -R off\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "R",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Pattern Refinement (-R)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If the RG option is switched on, then ambiguous symbols listed in the symbols file (or in the default symbol set -- see help for option B), are used. If RG is off, only the letters needed to match the input sequences are included in the ambiguous pattern positions.For example, if [ILV] is a listed allowed symbol, and [IL] is not, [IL] can be included in a pattern if RG is off, but if RG is on, the full symbol [ILV] will be included instead.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -RG on\" : \"\"",
+                            "python": "( \"\"  , \" -RG on\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "RG",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$R",
+                            "python": "R"
+                        },
+                        "prompt": "Generalise ambiguous symbols (if Pattern Refinement on) (-RG)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "search",
+                "precond": null,
+                "prompt": "Search parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "When switched on, patterns will be output in PROSITE style (for instance C-x(2,4)-[DE]). When switched off, patterns are output in a simpler consensus pattern style (for instance Cxx--[DE] where x matches exactly one arbitrary sequence symbol and - matches zero or one arbitrary sequence symbol).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -OP off \" : \"\"",
+                            "python": "( \"\" , \" -OP off \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "OP",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "PROSITE Pattern Format (-OP)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the maximum number of patterns to be found by Pratt",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -ON $value\":\"\"",
+                            "python": "(\"\" , \" -ON \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ON",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number patterns (-ON)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set the max. nr of patterns for which Pratt is to produce an alignment of the sequence segments matching it.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -OA $value\":\"\"",
+                            "python": "(\"\" , \" -OA \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "OA",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number Alignments (-OA)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If the M option is set, then Pratt will print out the location of the sequence segments matching each of the (maximum 52) best patterns. The patterns are given labels A, B,...Z,a,b,...z in order of decreasing pattern score. Each sequence is printed on a line, one character per K-tuple in the sequence. If pattern with label C matches the third K-tuple in a sequence C is printed out. If several patterns match in the same K-tuple, only the best will be printed.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -M off \" : \"\"",
+                            "python": "( \" \" , \" -M off\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "M",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Print Patterns in sequences (-M)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Sets the K value (ratio) used for printing the summary information about where in each sequence the pattern matches are found.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef)? \" -MR $value\":\"\"",
+                            "python": "(\"\" , \" -MR \" + str(value))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MR",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$M",
+                            "python": "M"
+                        },
+                        "prompt": "Ratio for printing (-MR)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If set, the output is printed vertically instead of horizontally, vertical output can be better for large sequence sets.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value)? \" -MV on \" : \"\"",
+                            "python": "( \"\"  , \" -MV on \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "MV",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$M",
+                            "python": "M"
+                        },
+                        "prompt": "Print vertically (-MV)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "pratt",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"*.pat\"",
+                    "python": "\"*.pat\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfiles",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"report\"",
+                    "python": "\"report\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "report",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Report output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "ftp://ftp.ebi.ac.uk/pub/software/unix/pratt/"
+    ],
+    "title": "Pratt",
+    "type": "program",
+    "version": "2.1"
+}

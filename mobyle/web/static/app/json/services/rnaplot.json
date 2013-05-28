@@ -1,0 +1,189 @@
+{
+    "authors": "Hofacker, Fontana, Bonhoeffer, Stadler",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:2D_structure",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "RNAplot"
+    },
+    "comment": "RNAplot  reads RNA sequences and structures from stdin in the format as\n       produced by RNAfold and produces drawings of  the  secondary  structure\n       graph.   The  coordinates  are  produced  using  either E. Bruccolerias\n       naview routines, or a simple radial layout method.",
+    "description": "Draw RNA Secondary Structures",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/gensoft/sequence/nucleic/2D_structure.html#ViennaRNa"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" <$value\"",
+                    "python": "\" <\"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "seqin",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "RNA sequences and structures from output in the format as\n       produced by RNAfold",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "RnafoldOutput",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": "Choose  the  layout  algorithm.  Simple  radial  layout if 0, or\n              naview if 1.  Default is 1.",
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef)? \" -t $value\" : \"\"",
+                    "python": "( \"\" , \" -t \" + str(value) )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "layout",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Choose  the  layout  algorithm",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef)? \" -o $value\" : \"\"",
+                    "python": "( \"\" , \" -o \" + str(value) )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "outformat",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Specify output format",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "rnaplot",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"rna.*\"",
+                            "python": "\"rna.*\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "outfile",
+                        "output_type": "file",
+                        "precond": null,
+                        "prompt": "Result file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "RnaplotdOutput",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_options",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "I.L. Hofacker, W. Fontana, P.F. Stadler, S. Bonhoeffer, M. Tacker, P. Schuster (1994) Fast Folding and Comparison of RNA Secondary Structures. Monatshefte f. Chemie 125: 167-188",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "A. Walter, D Turner, J Kim, M Lyttle, P Muller, D Mathews, M Zuker Coaxial stacking of helices enhances binding of oligoribonucleotides. PNAS, 91, pp 9218-9222, 1994",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "M. Zuker, P. Stiegler (1981) Optimal computer folding of large RNA sequences using thermodynamic and auxiliary information, Nucl Acid Res 9: 133-148",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "J.S. McCaskill (1990) The equilibrium partition function and base pair binding probabilities for RNA secondary structures, Biopolymers 29: 11051119 D.H. Turner N. Sugimoto and S.M. Freier (1988) RNA structure prediction, Ann Rev Biophys Biophys Chem 17: 167-192",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "D. Adams (1979) The hitchhiker's guide to the galaxy, Pan Books, London",
+            "url": null
+        }
+    ],
+    "source_links": [],
+    "title": "RNAplot",
+    "type": "program",
+    "version": "1.8.4"
+}

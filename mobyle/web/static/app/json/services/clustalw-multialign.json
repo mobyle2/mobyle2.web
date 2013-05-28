@@ -1,0 +1,1266 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "clustalw -align"
+    },
+    "comment": null,
+    "description": "Do full multiple alignment",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "not $alignment_input",
+                            "python": "not alignment_input"
+                        },
+                        "format": {
+                            "perl": "\" -infile=$value\"",
+                            "python": "\" -infile=\" + str( value )"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "sequences_input",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $alignment_input or ($sequences_input and $alignment_input)",
+                            "python": "not alignment_input or (sequences_input and alignment_input)"
+                        },
+                        "prompt": "Sequences File ( a file containing several sequences ) (-infile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "2,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA",
+                                "NBRF",
+                                "EMBL",
+                                "GCG",
+                                "GDE",
+                                "SWISSPROT"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "When the sequences are aligned (all sequences\n              have the same length and at least one sequence has at least one\n              gap)",
+                        "ctrl": {
+                            "perl": "not $sequences_input",
+                            "python": "not sequences_input"
+                        },
+                        "format": {
+                            "perl": "\" -infile=$value\"",
+                            "python": "\" -infile=\" + str( value )"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "alignment_input",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $sequences_input or ($sequences_input and $alignment_input)",
+                            "python": "not sequences_input or (sequences_input and alignment_input)"
+                        },
+                        "prompt": "Aligned sequences",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "Protein",
+                                "DNA"
+                            ],
+                            "card": "1",
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "CLUSTAL",
+                                "FASTA"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input",
+                "precond": null,
+                "prompt": "Data Input"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "slow: by dynamic programming (slow but accurate)fast: method of Wilbur and Lipman (extremely fast but approximate)",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value eq \"fast\") ? \" -quicktree\" : \"\"",
+                            "python": "( \"\" , \" -quicktree\")[ value == \"fast\"]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "quicktree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Toggle Slow/Fast pairwise alignments (-quicktree)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -type=$value\" : \"\"",
+                            "python": "(\"\", \" -type=\"+str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "typeseq",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Protein or DNA (-type)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "general",
+                "precond": null,
+                "prompt": "General settings"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -gapopen=$value\" : \"\"",
+                            "python": "( \"\" , \" -gapopen=\" + str( value ))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gapopen",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap opening penalty (-gapopen)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -gapext=$value\" : \"\"",
+                            "python": "( \"\" , \" -gapext=\" + str( value ))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gapext",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap extension penalty (-gapext)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "End gap separation treats end gaps just\n\t\tlike internal gaps for the purposes of avoiding gaps that\n\t\tare too close (set by GAP SEPARATION DISTANCE above). If\n\t\tyou turn this off, end gaps will be ignored for this\n\t\tpurpose. This is useful when you wish to align fragments\n\t\twhere the end gaps are not biologically meaningful.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -endgaps\" : \"\"",
+                            "python": "( \"\" ,\" -endgaps\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "endgaps",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "No end gap separation penalty (-endgaps)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Gap separation distance tries to decrease\n\t\tthe chances of gaps being too close to each other. Gaps\n\t\tthat are less than this distance apart are penalised more\n\t\tthan other gaps. This does not prevent close gaps; it makes\n\t\tthem less frequent, promoting a block-like appearance of\n\t\tthe alignment.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -gapdist=$value\" : \"\"",
+                            "python": "( \"\" , \" -gapdist=\" + str( value ))[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gapdist",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap separation penalty range (-gapdist)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Delays the alignment of the most distantly\n\t\trelated sequences until after the most closely related\n\t\tsequences have been aligned. The setting shows the percent\n\t\tidentity level required to delay the addition of a\n\t\tsequence; sequences that are less identical than this level\n\t\tto any other sequences will be aligned later.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -maxdiv=$value\" : \"\"",
+                            "python": "( \"\" , \" -maxdiv=\" + str( value ))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "maxdiv",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Delay divergent sequences : % ident. for delay (-maxdiv)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -newtree=$value\" : \"\"",
+                            "python": "( \"\" , \" -newtree=\" + str( value ))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "newtree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "File for new guide tree (-newtree)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You can give a previously computed tree (.dnd file) - on the same data",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -usetree=$value\" : \"\"",
+                            "python": "( \"\" ,\" -usetree=\" + str( value ))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "usetree",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "File for old guide tree (-usetree)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "There are three 'in-built' series of weight\n\t\tmatrices offered. Each consists of several matrices which\n\t\twork differently at different evolutionary distances. To\n\t\tsee the exact details, read the documentation. Crudely, we\n\t\tstore several matrices in memory, spanning the full range\n\t\tof amino acid distance (from almost identical sequences to\n\t\thighly divergent ones). For very similar sequences, it is\n\t\tbest to use a strict weight matrix which only gives a high\n\t\tscore to identities and the most favoured conservative\n\t\tsubstitutions. For more divergent sequences, it is\n\t\tappropriate to use 'softer' matrices which give a high\n\t\tscore to many other frequent substitutions.BLOSUM (Henikoff). These matrices appear to\n\t\tbe the best available for carrying out data base similarity\n\t\t(homology searches). The matrices used are: Blosum80, 62,\n\t\t40 and 30.The Gonnet Pam 250 matrix has been reported\n\t\tas the best single matrix for alignment, if you only choose\n\t\tone matrix. Our experience with profile database searches\n\t\tis that the Gonnet series is unambiguously superior to the\n\t\tBlosum series at high divergence. However, we did not get\n\t\tthe series to perform systematically better than the Blosum\n\t\tseries in Clustal W (communication of the authors).PAM (Dayhoff). These have been extremely\n\t\twidely used since the late '70s. We use the PAM 120, 160,\n\t\t250 and 350 matrices.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -matrix=$value\" : \"\"",
+                                    "python": "(\"\", \" -matrix=\"+str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "matrix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Protein weight matrix (-matrix)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -negative\" : \"\"",
+                                    "python": "( \"\" , \" -negative\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "negative",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Negative values in matrix ? (-negative)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Residue specific penalties are amino acid\n\t\tspecific gap penalties that reduce or increase the gap\n\t\topening penalties at each position in the alignment or\n\t\tsequence. As an example, positions that are rich in glycine\n\t\tare more likely to have an adjacent gap than positions that\n\t\tare rich in valine.Table of residue specific gap modification\n\t\tfactors:A 1.13 M 1.29C 1.13 N 0.63D 0.96 P 0.74E 1.31 Q 1.07F 1.20 R 0.72G 0.61 S 0.76H 1.00 T 0.89I 1.32 V 1.25K 0.96 Y 1.00L 1.21 W 1.23The values are normalised around a mean value of 1.0 for H. The lower the value, the greater the chance of having an adjacent gap. These are derived from the original table of relative frequencies of gaps adjacent to each residue (12) by subtraction from 2.0.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -nopgap\" : \"\"",
+                                    "python": "( \"\" , \" -nopgap\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pgap",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Residue specific gaps off (-nopgap)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "Hydrophilic gap penalties are used to\n\t\tincrease the chances of a gap within a run (5 or more\n\t\tresidues) of hydrophilic amino acids; these are likely to\n\t\tbe loop or random coil regions where gaps are more\n\t\tcommon. The residues that are 'considered' to be\n\t\thydrophilic are set by menu item 3.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \" -nohgap\" : \"\"",
+                                    "python": "( \"\" , \" -nohgap\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "hgap",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Hydrophilic gaps off (-nohgap)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value and $value ne $vdef) ? \" -hgapresidues=\\\\\"$value\\\\\"\" : \"\"",
+                                    "python": "( '' , ' -hgapresidues=\"%s\"' % str(value) )[ value and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "hgapresidues",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Hydrophilic residues list (-hgapresidues)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "MultipleChoice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "multalign_prot",
+                        "precond": {
+                            "perl": "$typeseq eq \"protein\"",
+                            "python": "typeseq == \"protein\""
+                        },
+                        "prompt": "Protein parameters"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "1) IUB. This is the default scoring matrix\n\t\tused by BESTFIT for the comparison of nucleic acid\n\t\tsequences. X's and N's are treated as matches to any IUB\n\t\tambiguity symbol. All matches score 1.9; all mismatches for\n\t\tIUB symbols score 0.2) CLUSTALW(1.6). The previous system used\n\t\tby ClustalW, in which matches score 1.0 and mismatches\n\t\tscore 0. All matches for IUB symbols also score 0.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -dnamatrix=$value\" : \"\"",
+                                    "python": "(\"\", \" -dnamatrix=\" + str(value))[value is not None and value!=vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "dnamatrix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "DNA weight matrix (-dnamatrix)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "A weight of\n\t\tzero means that the transitions are scored as mismatches; a\n\t\tweight of 1 gives transitions the full match score. For\n\t\tdistantly related DNA sequences, the weight should be near\n\t\tto zero; for closely related sequences it can be useful to\n\t\tassign a higher score.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value != $vdef) ? \" -transweight=$value\" : \"\"",
+                                    "python": "( \"\" , \" -transweight=\" + str( value ) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "transweight",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Transitions weight (between 0 and 1) (-transweight)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "multalign_dna",
+                        "precond": {
+                            "perl": "$typeseq eq \"dna\"",
+                            "python": "typeseq == \"dna\""
+                        },
+                        "prompt": "DNA parameters"
+                    }
+                ],
+                "comment": "Multiple alignments are carried out in 3 stages :1) all sequences are compared to each other (pairwise alignments);2) a dendrogram (like a phylogenetic tree) is constructed, describing the approximate groupings of the sequences by similarity (stored in a file).3) the final multiple alignment is carried out, using the dendrogram as a guide.Pairwise alignment parameters control the speed/sensitivity of the initial alignments.Multiple alignment parameters control the gaps in the final multiple alignments.",
+                "name": "multalign",
+                "precond": null,
+                "prompt": "Multiple Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "K-TUPLE SIZE: This is the size of exactly matching fragment that is used. INCREASE for speed (max= 2 for proteins; 4 for DNA), DECREASE for sensitivity. For longer sequences (e.g. >1000 residues) you may need to increase the default.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -ktuple=$value\" : \"\"",
+                            "python": "( \"\" , \" -ktuple=\" + str( value ) )[value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ktuple",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Word size (-ktuple)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "The number of k-tuple matches on each\n\t\tdiagonal (in an imaginary dot-matrix plot) is\n\t\tcalculated. Only the best ones (with most matches) are used\n\t\tin the alignment. This parameter specifies how\n\t\tmany. Decrease for speed; increase for sensitivity.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -topdiags=$value\" : \"\"",
+                            "python": "( \"\" , \" -topdiags=\" + str( value ))[value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "topdiags",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Number of best diagonals (-topdiags)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "WINDOW SIZE: This is the number of\n\t\tdiagonals around each of the 'best' diagonals that will be\n\t\tused. Decrease for speed; increase for sensitivity",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -window=$value\" : \"\"",
+                            "python": "( \"\" , \" -window=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "window",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Window around best diags (-window)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "This is a penalty for each gap in the fast\n\t\talignments. It has little affect on the speed or\n\t\tsensitivity except for extreme values.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pairgap=$value\" : \"\"",
+                            "python": "( \"\" , \" -pairgap=\" + str( value ))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pairgap",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap penalty (-pairgap)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -score=$value\" : \"\"",
+                            "python": "( \"\" , \" -score=\" +str( value ) )[value is not None or value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "score",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Percent or absolute score ? (-score)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "These similarity scores are calculated from fast,\n\t  approximate, global alignments, which are controlled by 4\n\t  parameters. 2 techniques are used to make these alignments very\n\t  fast: 1) only exactly matching fragments (k-tuples) are\n\t  considered; 2) only the 'best' diagonals (the ones with most\n\t  k-tuple matches) are used.",
+                "name": "fastpw",
+                "precond": {
+                    "perl": "$quicktree eq \"fast\"",
+                    "python": "quicktree == \"fast\""
+                },
+                "prompt": "Fast Pairwise Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapopen=$value\" : \"\"",
+                            "python": "( \"\" , \" -pwgapopen=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pwgapopen",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap opening penalty (-pwgapopen)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -pwgapext=$value\" : \"\"",
+                            "python": "( \"\" , \" -pwgapext=\" + str( value ) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "pwgapext",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Gap extension penalty (-pwgapext)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "The scoring table which describes the\n\t\tsimilarity of each amino acid to each other. For DNA, an\n\t\tidentity matrix is used.BLOSUM (Henikoff). These matrices appear to\n\t\tbe the best available for carrying out data base similarity\n\t\t(homology searches). The matrices used are: Blosum80, 62,\n\t\t40 and 30.The Gonnet Pam 250 matrix has been reported\n\t\tas the best single matrix for alignment, if you only choose\n\t\tone matrix. Our experience with profile database searches\n\t\tis that the Gonnet series is unambiguously superior to the\n\t\tBlosum series at high divergence. However, we did not get\n\t\tthe series to perform systematically better than the Blosum\n\t\tseries in Clustal W (communication of the authors).PAM (Dayhoff). These have been extremely\n\t\twidely used since the late '70s. We use the PAM 120, 160,\n\t\t250 and 350 matrices.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwmatrix=$value\" : \"\"",
+                                    "python": "( \"\" , \" -pwmatrix=\" + str(value) )[value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pwmatrix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "Protein weight matrix (-pwmatrix)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "slowpw_prot",
+                        "precond": {
+                            "perl": "$typeseq eq \"protein\"",
+                            "python": "typeseq == \"protein\""
+                        },
+                        "prompt": "Protein parameters"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "For DNA, a single matrix (not a series) is\n\t\tused. Two hard-coded matrices are available:1) IUB. This is the default scoring matrix\n\t\tused by BESTFIT for the comparison of nucleic acid\n\t\tsequences. X's and N's are treated as matches to any IUB\n\t\tambiguity symbol. All matches score 1.9; all mismatches for\n\t\tIUB symbols score 0.2) CLUSTALW(1.6). The previous system used\n\t\tby ClustalW, in which matches score 1.0 and mismatches\n\t\tscore 0. All matches for IUB symbols also score 0.",
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \" -pwdnamatrix=$value\" : \"\"",
+                                    "python": "( \"\" , \" -pwdnamatrix=\" + str(value) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pwdnamatrix",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "DNA weight matrix (-pwdnamatrix)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "slowpw_dna",
+                        "precond": {
+                            "perl": "$typeseq eq \"dna\"",
+                            "python": "typeseq == \"dna\""
+                        },
+                        "prompt": "DNA parameters"
+                    }
+                ],
+                "comment": "These parameters do not have any affect on the\n\t  speed of the alignments. They are used to give initial alignments\n\t  which are then rescored to give percent identity scores. These %\n\t  scores are the ones which are displayed on the screen. The scores\n\t  are converted to distances for the trees.",
+                "name": "slowpw",
+                "precond": {
+                    "perl": "$quicktree eq \"slow\"",
+                    "python": "quicktree == \"slow\""
+                },
+                "prompt": "Slow Pairwise Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value ) ? \" -output=$value\" : \"\"",
+                            "python": "( \"\" , \" -output=\" + str( value) )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outputformat",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Output format (-output)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -seqnos=on\" : \"\"",
+                            "python": "( \"\" , \" -seqnos=on\")[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqnos",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined $outputformat",
+                            "python": "outputformat is None"
+                        },
+                        "prompt": "Output sequence numbers in the output file (for clustalw output only) (-seqnos)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -outorder=$value\" : \"\"",
+                            "python": "( \"\" , \" -outorder=\" + str(value))[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outorder",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Result order (-outorder)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" -outfile=$value\" : \"\"",
+                            "python": "( \"\" , \" -outfile=\" + str( value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Sequence alignment file name (-outfile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" -case=upper\" : \"\"",
+                            "python": "( \"\" , \" -case=upper\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "gde_lower",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$outputformat eq \"GDE\"",
+                            "python": "outputformat == \"GDE\""
+                        },
+                        "prompt": "Upper case (for GDE output only) (-case)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "outputparam",
+                "precond": null,
+                "prompt": "Output parameters"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "clustalw-multialign",
+    "outputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "$newtree",
+                            "python": "newtree"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "newtreefile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "defined $newtree",
+                            "python": "newtree is not None"
+                        },
+                        "prompt": "Output tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEWICK"
+                            ]
+                        }
+                    }
+                ],
+                "comment": "Multiple alignments are carried out in 3 stages :1) all sequences are compared to each other (pairwise alignments);2) a dendrogram (like a phylogenetic tree) is constructed, describing the approximate groupings of the sequences by similarity (stored in a file).3) the final multiple alignment is carried out, using the dendrogram as a guide.Pairwise alignment parameters control the speed/sensitivity of the initial alignments.Multiple alignment parameters control the gaps in the final multiple alignments.",
+                "name": "multalign",
+                "precond": null,
+                "prompt": "Multiple Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "comment": "In the conservation line output in the clustal format alignment file, three characters are used:'*' indicates positions which have a single, fully conserved residue.':' indicates that one of the following 'strong' groups is fully conserved (STA,NEQK,NHQK,NDEQ,QHRK,MILV,MILF,HY,FYW).'.' indicates that one of the following 'weaker' groups is fully conserved (CSA,ATV,SAG,STNK,STPA,SGND,SNDEQK,NDEQHK,NEQHRK,FVLIM,HFY).These are all the positively scoring groups that occur in the Gonnet Pam250\nmatrix. The strong and weak groups are defined as strong score >0.5 and weak\nscore =<0.5 respectively.",
+                        "filenames": {
+                            "perl": "(defined $outfile)? \"$outfile\":\"*.aln\"",
+                            "python": "(\"*.aln\", str(outfile))[outfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "clustalaligfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "not defined $outputformat",
+                            "python": "outputformat is None"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "CLUSTAL"
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "(defined $outfile)? ( $outputformat eq 'GCG' )? ( $outputformat eq 'PHYLIPI' )?\"$outfile\":\"*.msf\" : \"*.phy\" : \"*.nxs\"",
+                            "python": "{ \"FASTA\":\"*.fasta\", \"NEXUS\": \"*.nxs\", \"PHYLIPI\": \"*.phy\" , 'GCG': '*.msf' }[outputformat ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "aligfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$outputformat =~ /^(NEXUS|GCG|PHYLIPI|FASTA)$/",
+                            "python": "outputformat in [ \"FASTA\", \"NEXUS\", \"GCG\", \"PHYLIPI\"]"
+                        },
+                        "prompt": "Alignment file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                {
+                                    "#children": [],
+                                    "#tag": "ref",
+                                    "@param": "outputformat"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "(defined $outfile)? ( $outputformat eq 'GDE' )? ( $outputformat eq 'PIR' )?\"$outfile\":\"*.gde\" : \"*.pir\" : \"*.fasta\"",
+                            "python": "(((\"*.fasta\",\"*.pir\")[outputformat == 'PIR'],\"*.gde\")[outputformat == 'GDE'],str(outfile))[outfile is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "seqfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "$outputformat =~ /^(GDE|PIR)$/",
+                            "python": "outputformat in [ 'GDE', 'PIR' ]"
+                        },
+                        "prompt": "Sequences file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "comment": null,
+                        "filenames": {
+                            "perl": "\"*.dnd\"",
+                            "python": "\"*.dnd\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "name": "dndfile",
+                        "output_type": "file",
+                        "precond": {
+                            "perl": "not defined $newtree",
+                            "python": "newtree is None"
+                        },
+                        "prompt": "Tree file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEWICK"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "outputparam",
+                "precond": null,
+                "prompt": "Output parameters"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "Clustalw: Multiple alignment",
+    "type": "program",
+    "version": null
+}

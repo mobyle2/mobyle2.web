@@ -1,0 +1,371 @@
+{
+    "authors": "Olof Emanuelsson, olof@sbc.su.se",
+    "classifications": [
+        {
+            "classification": "sequence:protein:localization",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>targetp  predicts  the subcellular location of eukaryotic protein sequences. The assignment is based on the\n       predicted presence of any of the N-terminal presequences: chloroplast transit peptide (cTP),  mitochondrial\n       targeting  peptide (mTP) or secretory pathway signal peptide (SP).</html:p><html:p>targetp comes in two versions, one for plant proteins (-P) and one for non-plant proteins (-N). In the lat&#8208;\n       ter  case cTP is a forbidden prediction. For the sequences predicted to contain an N-terminal presequence a\n       prediction of its length can be provided (-c).</html:p><html:p><html:strong>CAVEATS :</html:strong><html:br />Submit if possible 130 N-terminal residues. The suggested length is  due  to  the  fact  that  targetp  was\n       trained  taking into account the 130 N-terminal residues, and the fact that using longer sequences does not\n       influence the prediction in any way (apart from making it slower). The cTP and mTP  cleavage  site  predic&#8208;\n       tions  are restricted to search for a potential cleavage site within the 100 or 120 N-terminal amino acids,\n       respectively.</html:p></html:div>",
+    "description": "predicts the subcellular location of eukaryotic proteins.",
+    "documentation_links": [
+        "http://www.cbs.dtu.dk/services/TargetP/"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"targetp \"",
+                    "python": "\"targetp \""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "targetp",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "50",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str( value )"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Input Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "( $value eq 'p')? \" -P \": \" -N \"",
+                    "python": "( \" -N \", \" -P \")[ value == 'p' ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "type",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use the plant or non-plant version.",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef)? \" -c \" : \"\"",
+                    "python": "( \"\" , \" -c \")[ value is not None and value != vdef ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "cleavege",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Include cleavage site prediction (-c).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "30",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "predefined_cutoff",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "In  order to increase the specificity of cTP prediction, use Pcut as a cutoff for predicting cTP: if\n              the winning score is the chloroplast (cTP) score, specifying Pcut means that the score also  has  to\n              be above that value; if not, the sequence will be left unpredicted, and an asterisk (*) will be out\u2010\n              put in the Loc column.The value of Pcut must be between 0.0 and 1.0.",
+                                "ctrl": {
+                                    "perl": "$value >= 0.0 or $value <= 1.0",
+                                    "python": "value >= 0.0 or value <= 1.0"
+                                },
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef)? \" -p $value \" : \"\"",
+                                    "python": "( \"\" , \" -p \" + str( value ) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "cTP",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "cTP",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "In  order to increase the specificity of mTP prediction, use Tcut as a cutoff for predicting mTP: if\n              the winning score is the mithochondrial (mTP) score, specifying Tcut means that the score also  has  to\n              be above that value; if not, the sequence will be left unpredicted, and an asterisk (*) will be out\u2010\n              put in the Loc column.The value of Tcut must be between 0.0 and 1.0.",
+                                "ctrl": {
+                                    "perl": "$value >= 0.0 or $value <= 1.0",
+                                    "python": "value >= 0.0 or value <= 1.0"
+                                },
+                                "format": {
+                                    "perl": "( defined $value and $value ne $vdef)? \" -t $value\" : \"\"",
+                                    "python": "( \"\" , \" -t \" + str( value ) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "mTP",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "mTP",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "In  order to increase the specificity of SP prediction, use Scut as a cutoff for predicting SP: if\n              the winning score is the Secretory pathway (SP) score, specifying Scut means that the score also  has  to\n              be above that value; if not, the sequence will be left unpredicted, and an asterisk (*) will be out\u2010\n              put in the Loc column.The value of Scut must be between 0.0 and 1.0.",
+                                "ctrl": {
+                                    "perl": "$value >= 0.0 or $value <= 1.0",
+                                    "python": "value >= 0.0 or value <= 1.0"
+                                },
+                                "format": {
+                                    "perl": "( defined $value and $value ne $vdef)? \" -s $value\" : \"\"",
+                                    "python": "( \"\" , \" -s \" + str( value ) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "SP",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "SP",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": null,
+                                "command": false,
+                                "comment": "In  order to increase the specificity of any other location prediction, use Ocut as \n              a cutoff for predicting any other location : if\n              the winning score is the other location score, specifying Ocut means that the score also  has  to\n              be above that value; if not, the sequence will be left unpredicted, and an asterisk (*) will be out\u2010\n              put in the Loc column.The value of Ocut must be between 0.0 and 1.0.",
+                                "ctrl": {
+                                    "perl": "$value >= 0.0 or $value <= 1.0",
+                                    "python": "value >= 0.0 or value <= 1.0"
+                                },
+                                "format": {
+                                    "perl": "( defined $value and $value ne $vdef)? \" -o $value\" : \"\"",
+                                    "python": "( \"\" , \" -o \" + str( value ) )[ value is not None and value != vdef ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "other",
+                                "paramfile": null,
+                                "precond": null,
+                                "prompt": "other",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Float",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": "The user cutoffs will be ignored if a predefine set of cutoffs is specified",
+                        "name": "user_cutoffs",
+                        "precond": {
+                            "python": "not predefined_cutoff"
+                        },
+                        "prompt": "define your own Cutoffs"
+                    }
+                ],
+                "comment": "predefined set of cutoffs that yielded this specificity on the TargetP test sets.",
+                "name": "cutoffs",
+                "precond": null,
+                "prompt": "Cutoffs"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "targetp",
+    "outputs": {
+        "children": [
+            {
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>The output is in plain text; it will go to stdout. For each input sequence the following is printed (on one line):</html:p><html:ul><html:li><html:strong>Name :</html:strong>Sequence name truncated to 20 characters.</html:li><html:li><html:strong>Len :</html:strong>Sequence length.</html:li><html:li><html:strong>cTP, mTP, SP, other :</html:strong>Final NN scores on which the final prediction is based (Loc, see below). Note that  the  scores  are\n              not  really  probabilities,  and  they do not necessarily add to one. However, the location with the\n              highest score is the most likely according to targetp, and the relationship between the scores  (the\n              reliability class, see below) may be an indication of how certain the prediction is.</html:li><html:li><html:strong>Loc :</html:strong>Prediction of localization, based on the scores above; the codes are:<html:ul><html:li><html:strong>C :</html:strong>Chloroplast, i.e. the sequence contains cTP, a chloroplast transit peptide;</html:li><html:li><html:strong>M :</html:strong>Mitochondrion, i.e. the sequence contains mTP, a mitochondrial targeting peptide;</html:li><html:li><html:strong>S :</html:strong>Secretory pathway, i.e. the sequence contains SP, a signal peptide;</html:li><html:li><html:strong>_ :</html:strong>any other location;</html:li><html:li><html:strong>* :</html:strong>\"don't know\". This character appears if cutoff\n                  restrictions were demanded (-p, -t, -s, -o, see\n                  below) and the winning network output score was below the requested cutoff for that category.</html:li></html:ul></html:li><html:li><html:strong>RC :</html:strong>Reliability  class,  from 1 to 5, where 1 indicates the strongest prediction. RC is a measure of the\n              size of the difference ('diff') between the highest (winning) and the second highest output  scores.\n              There are 5 reliability classes, defined as follows:<html:ol><html:li>diff &gt; 0.8</html:li><html:li>0.800 &gt; diff &gt; 0.600</html:li><html:li>0.600 &gt; diff &gt; 0.400</html:li><html:li>0.400 &gt; diff &gt; 0.200</html:li><html:li>0.200 &gt; diff</html:li></html:ol>Thus, the lower the value of RC the safer the prediction.</html:li><html:li><html:strong>TPlen :</html:strong>predicted presequence length (only when the -c option is given).</html:li></html:ul></html:div>",
+                "filenames": {
+                    "perl": "\"targetp.out\"",
+                    "python": "\"targetp.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "targetp report",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "targetp",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Predicting subcellular localization of proteins based on their N-terminal amino acid sequence.\n        Olof Emanuelsson, Henrik Nielsen, S\u00f8ren Brunak and Gunnar von Heijne.\n        J. Mol. Biol., 300: 1005-1016, 2000.",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Identification of prokaryotic and eukaryotic signal peptides and prediction of their cleavage sites.\n         Henrik Nielsen, Jacob Engelbrecht, S\u00f8ren Brunak and Gunnar von Heijne.\n         Protein Engineering, 10:1-6, 1997.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?targetp"
+    ],
+    "title": "targetp",
+    "type": "program",
+    "version": "1.1"
+}

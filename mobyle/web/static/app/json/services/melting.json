@@ -1,0 +1,406 @@
+{
+    "authors": "N. Le Novere",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:composition",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "enthalpy, entropy and melting temperature",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/melting/melting.pdf"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://www.ebi.ac.uk/~lenov/meltinghome.html"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"melting -q -v\"",
+                    "python": "\"melting -q -v\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "melting",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -H$value\"",
+                    "python": "\" -H\" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "hybridation_type",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Hybridisation type (-H)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value and $value ne $vdef) ? \" -A$value\" : \"\"",
+                    "python": "( \"\" , \" -A\" + str(value) )[ value is not None and value != vdef]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "nnfile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Nearest Neighbor parameters set (-A)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -S$value\"",
+                    "python": "\" -S\" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Sequence string (-S)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -C$value\" : \"\"",
+                    "python": "( \"\" , \" -C\" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "complement_string",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Complementary sequence (-C)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Value must be greater than 0.0 and lower than 10.0",
+                "ctrl": {
+                    "perl": "$value > 0.0 and $value < 10.0",
+                    "python": "value > 0.0 and value < 10.0"
+                },
+                "format": {
+                    "perl": "\" -N$value\"",
+                    "python": "\" -N\" + str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "salt_concentration",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Salt concentration (-N)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Float",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": "Value must be greater than 0.0 and lower than 0.1",
+                "ctrl": {
+                    "perl": "$value > 0.0 and $value < 0.1",
+                    "python": "value > 0.0 and value < 0.1"
+                },
+                "format": {
+                    "perl": "(defined $value) ? \" -P$value\" : \"\"",
+                    "python": "(\"\", \" -P\" + str(value))[value is not None]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "nucacid_concentration",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Nucleic acid concentration in excess (-P)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Float",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -F$value\" : \"\"",
+                    "python": "( \"\" , \" -F\" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "correction_factor",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Nucleic acid correction factor (-F)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Float",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "(defined $value) ? \" -K$value\" : \"\"",
+                    "python": "( \"\" , \" -K\" + str(value) )[ value is not None ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "salt_correction",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Salt correction (-K)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -x\" : \"\"",
+                    "python": "( \"\" , \" -x\" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "approx",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Force approximative temperature computation (-x)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -Ddnadnade.nn \" : \"\"",
+                    "python": "( \"\" , \" -Ddnadnade.nn \" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "dangling_ends",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use parameters for dangling ends (dnadnade.nn) (-D)?",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "($value) ? \" -Mdnadnamm.nn \" : \"\"",
+                    "python": "( \"\" , \" -Mdnadnamm.nn \" )[ value ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "mismatches",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Use parameters for mismatches (dnadnamm.nn) (-M)?",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "melting",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Nicolas Le Novere (2001), MELTING, computing the melting temperature of nucleic acid duplex. Bioinformatics 17(12), 1226-1227",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.ebi.ac.uk/~lenov/SOFTWARES/"
+    ],
+    "title": "MELTING",
+    "type": "program",
+    "version": "4.1f"
+}

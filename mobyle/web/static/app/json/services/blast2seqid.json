@@ -1,0 +1,167 @@
+{
+    "authors": "Bertrand N\u00e9ron",
+    "classifications": [
+        {
+            "classification": "database:search:display",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "blast2usa"
+    },
+    "comment": "Extract the Identifier and Data Bank of the hits\n                    from the summary of a blast report ( in text format -m 0-6 ) \n                    The result is in USA list format.",
+    "description": "Extract sequence Ids from blast hits (in USA format)",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "https://projets.pasteur.fr/projects/show/blast2usa"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "40",
+                "command": false,
+                "comment": "A blast output in pairwise format ( option -m 0 default ).",
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \"+str(value)"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "BLAST text report",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BlastTextReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --from $value\" : \"\"",
+                            "python": "( \"\" , \" --from \" + str(value) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "From",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "ignore the hits until the hit n (integer)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \" --to $value\" : \"\"",
+                            "python": "( \"\" , \" --to \" + str(value) )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "To",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "ignore the hits after the hit n (integer)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "blast2seqid",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"blast2seqid.out\"",
+                    "python": "\"blast2seqid.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "id_list",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "hits identifier",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "GenesId",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "USAList"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "https://projets.pasteur.fr/projects/list_files/blast2usa"
+    ],
+    "title": "blast2seqid",
+    "type": "program",
+    "version": "1.0"
+}

@@ -1,6 +1,8 @@
 language: python
 python:
   - "2.7"
+node_js:
+  - "0.8"
 services: mongodb
 # Apply only on main branches
 branches:
@@ -14,6 +16,14 @@ install:
   - "pip install git+https://github.com/bbangert/velruse.git"
   - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
   - "python setup.py -q install"
+
+# run js part unit tests in before-script
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install --quiet -g testacular
+  - ./node_modules/.bin/karma start config/karma.conf.js --single-run
+
 # command to run tests
 script: nosetests
 

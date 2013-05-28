@@ -1,0 +1,1397 @@
+{
+    "authors": "Hofmann, Baron",
+    "classifications": [
+        {
+            "classification": "alignment:multiple:display",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": null,
+    "description": "printouts from multiple-aligned protein or DNA sequences",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [
+        "http://www.ch.embnet.org/software/BOX_form.html"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade <boxshade.params\"",
+                    "python": "\"boxshade <boxshade.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "boxshade",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"$value\\\\n\"",
+                    "python": "str(value) + \"\\n\""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "alignment",
+                "paramfile": "boxshade.params",
+                "precond": null,
+                "prompt": "Alignment File",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "CLUSTAL"
+                    ]
+                }
+            },
+            {
+                "argpos": "2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"2\\\\n\"",
+                    "python": "\"2\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "input_format",
+                "paramfile": "boxshade.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str(value) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "output_format",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "13",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_name",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Should sequence name be printed",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "6",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ruler",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Display ruler line",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "14",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_position",
+                        "paramfile": "boxshade.params",
+                        "precond": {
+                            "perl": "not $ruler",
+                            "python": "not ruler"
+                        },
+                        "prompt": "Should position numbers be printed?",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "12",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value <= 254",
+                            "python": "value <= 254"
+                        },
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str( value ) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "sequence_characters",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "How many sequence characters per line",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "17",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value > 0",
+                            "python": "value > 0"
+                        },
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str(value) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "lines",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "How many lines between two sequence blocks",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "28",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str(value) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "character_size",
+                        "paramfile": "boxshade.params",
+                        "precond": {
+                            "perl": "$output_format !~ /^[89be]$/",
+                            "python": "output_format not in [\"8\",\"9\",\"b\",\"e\"]"
+                        },
+                        "prompt": "Character size in Points (except for HTML and ASCII output formats)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "29",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str(value) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "save_shading",
+                        "paramfile": "boxshade.params",
+                        "precond": {
+                            "perl": "$output_format eq \"d\"",
+                            "python": "output_format == \"d\""
+                        },
+                        "prompt": "Save Shading/Text",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "31",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rotate",
+                        "paramfile": "boxshade.params",
+                        "precond": {
+                            "perl": "$output_format eq \"1\" or $output_format eq \"3\" or $output_format eq \"d\"",
+                            "python": "output_format == \"1\" or output_format == \"3\" or output_format == \"d\""
+                        },
+                        "prompt": "Rotate plot",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output_params",
+                "precond": null,
+                "prompt": "Output parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "18",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label_similar",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Special label for similar residues",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "19",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label_identical",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Special label for identical residues in all sequences",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n .*\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n .*\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "consensus",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Display consensus line",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": "The threshold is the fraction of residues that must be identical or similar for shading to occur.",
+                        "ctrl": {
+                            "perl": "0 <= $value <= 1",
+                            "python": "0 <= value <= 1"
+                        },
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str(value) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "threshold",
+                        "paramfile": "boxshade.params",
+                        "precond": {
+                            "perl": "$output_format ne \"b\"",
+                            "python": "output_format != \"b\""
+                        },
+                        "prompt": "Identity threshold",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "20",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "different_background",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$output_format ne \"b\"",
+                                    "python": "output_format != \"b\""
+                                },
+                                "prompt": "Background for different residues",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "21",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "different_foreground",
+                                "paramfile": "boxshade.params",
+                                "precond": null,
+                                "prompt": "Foreground for different residues (lowercase choices mean lowercase letters in the sequence)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "22",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "identical_background",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$output_format ne \"b\"",
+                                    "python": "output_format != \"b\""
+                                },
+                                "prompt": "Background for identical residues",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "23",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "identical_foreground",
+                                "paramfile": "boxshade.params",
+                                "precond": null,
+                                "prompt": "Foreground for identical residues (lowercase choices mean lowercase letters in the sequence)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "24",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "similar_background",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$label_similar and $output_format ne \"b\"",
+                                    "python": "label_similar and output_format != \"b\""
+                                },
+                                "prompt": "Background for similar residues",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "25",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "similar_foreground",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$label_similar",
+                                    "python": "label_similar"
+                                },
+                                "prompt": "Foreground for similar residues (lowercase choices mean lowercase letters in the sequence)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "26",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "conserved_background",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "label_identical and output_format ne \"b\"",
+                                    "python": "label_identical and output_format != \"b\""
+                                },
+                                "prompt": "Background for conserved residues (if special label for identical residues)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "27",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "conserved_foreground",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$label_identical",
+                                    "python": "label_identical"
+                                },
+                                "prompt": "Foreground for conserved residues (lowercase choices mean lowercase letters in the sequence)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "letters",
+                        "precond": null,
+                        "prompt": "Letters foreground and background colors"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "4",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                                    "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "single",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$output_format ne \"b\"",
+                                    "python": "output_format != \"b\""
+                                },
+                                "prompt": "Similarity to a single sequence",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "40",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": {
+                                    "perl": "$seq_no >= 0",
+                                    "python": "seq_no >= 0"
+                                },
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "seq_no",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$single",
+                                    "python": "single"
+                                },
+                                "prompt": "Which sequence (give its number)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "41",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                                    "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "hide",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$single",
+                                    "python": "single"
+                                },
+                                "prompt": "Hide this sequence",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "42",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                                    "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "show_normal",
+                                "paramfile": "boxshade.params",
+                                "precond": {
+                                    "perl": "$single",
+                                    "python": "single"
+                                },
+                                "prompt": "Show this sequence in all-normal rendition",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Boolean",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "single_comparison",
+                        "precond": null,
+                        "prompt": "Comparison to a single sequence"
+                    },
+                    {
+                        "argpos": "34",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"y\\\\n\" : \"n\\\\n\"",
+                            "python": "( \"n\\n\" , \"y\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "matrix",
+                        "paramfile": "boxshade.params",
+                        "precond": null,
+                        "prompt": "Create identity / similarity matrix",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "sequence_params",
+                "precond": null,
+                "prompt": "Sequence properties"
+            },
+            {
+                "argpos": "32",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.result\\\\n\"",
+                    "python": "\"boxshade.result\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "outfileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$output_format ne \"1\" and $output_format ne \"e\" and $output_format ne \"2\" and $output_format ne \"d\" and $output_format ne \"c\" and $output_format ne \"4\"",
+                    "python": "output_format != \"1\" and output_format != \"e\" and output_format != \"2\" and output_format != \"d\" and output_format != \"c\" and output_format != \"4\""
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "33",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.ps\\\\n\"",
+                    "python": "\"boxshade.ps\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "psFileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$output_format eq \"1\" or $output_format eq \"2\"",
+                    "python": "output_format == \"1\" or output_format == \"2\""
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "33",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.html\\\\n\"",
+                    "python": "\"boxshade.html\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "htmlFileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$output_format eq \"e\"",
+                    "python": "output_format == \"e\""
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "33",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.rtf\\\\n\"",
+                    "python": "\"boxshade.rtf\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "rtfFileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$output_format eq \"4\"",
+                    "python": "output_format == \"4\""
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "33",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.fig\\\\n\"",
+                    "python": "\"boxshade.fig\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "figFileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$output_format eq \"c\"",
+                    "python": "output_format == \"c\""
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "33",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.pict\\\\n\"",
+                    "python": "\"boxshade.pict\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "pictFileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$output_format eq \"d\"",
+                    "python": "output_format == \"d\""
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "35",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"boxshade.matrix\\\\n\"",
+                    "python": "\"boxshade.matrix\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "matrixFileName",
+                "paramfile": "boxshade.params",
+                "precond": {
+                    "perl": "$matrix",
+                    "python": "matrix"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Filename",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "boxshade",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.result\"",
+                    "python": "\"boxshade.result\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_format ne \"1\" and $output_format ne \"e\" and $output_format ne \"2\" and $output_format ne \"d\" and $output_format ne \"c\" and $output_format ne \"4\"",
+                    "python": "output_format != \"1\" and output_format != \"e\" and output_format != \"2\" and output_format != \"d\" and output_format != \"c\" and output_format != \"4\""
+                },
+                "prompt": "Output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.ps\"",
+                    "python": "\"boxshade.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "psFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_format eq \"1\" or $output_format eq \"2\"",
+                    "python": "output_format == \"1\" or output_format == \"2\""
+                },
+                "prompt": "Postscript output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PostScript",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.html\"",
+                    "python": "\"boxshade.html\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "htmlFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_format eq \"e\"",
+                    "python": "output_format == \"e\""
+                },
+                "prompt": "Html output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BoxshadeHtmlReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.rtf\"",
+                    "python": "\"boxshade.rtf\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "rtfFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_format eq \"4\"",
+                    "python": "output_format == \"4\""
+                },
+                "prompt": "Rich text format output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BoxshadeRtfReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.fig\"",
+                    "python": "\"boxshade.fig\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "figFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_format eq \"c\"",
+                    "python": "output_format == \"c\""
+                },
+                "prompt": "Xfig output file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "BoxshadeXfigReport",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.pict\"",
+                    "python": "\"boxshade.pict\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "pictFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$output_format eq \"d\"",
+                    "python": "output_format == \"d\""
+                },
+                "prompt": "Picture in pict format",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Picture",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"boxshade.matrix\"",
+                    "python": "\"boxshade.matrix\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "matrixFile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$matrix",
+                    "python": "matrix"
+                },
+                "prompt": "Output matrix",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [
+        "ftp://www.isrec.isb-sib.ch/pub/software/unix/boxshade/"
+    ],
+    "title": "BOXSHADE",
+    "type": "program",
+    "version": "3.31"
+}

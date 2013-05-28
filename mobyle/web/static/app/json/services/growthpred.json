@@ -1,0 +1,563 @@
+{
+    "authors": "S. Vieira-Silva, E. Rocha",
+    "classifications": [
+        {
+            "classification": "sequence:nucleic:prediction",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:nucleic:codon_usage",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "growthpred"
+    },
+    "comment": "This application predicts the minimum generation time for a bacterial or archaeal organism based on  its codon usage bias intensity (CUB). \n    \tThe CUB index is calculated given two input sets of sequences: 1) highly expressed genes 2) other genes. \n    \tThe application runs 1000 bootstraps and outputs the average and the standard deviation of the predictions.",
+    "description": "Sequence-based Prediction of Minimum Generation Times for Bacteria and Archaea",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/growthpred/growthpred.pdf"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "4",
+                "command": false,
+                "comment": "Use a set of example files (E. coli K12) to run the program.The expected results depending on the choosen option and the example files are shown in the program help pages (end of the form).",
+                "ctrl": null,
+                "format": {
+                    "python": "( \"\" , \" -e \" )[value]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "example",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Run with example data (-e)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set of genes under purifying selection for codon usage.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -f \" + str( value ) + \" \" )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "hsequence",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not example and not b"
+                        },
+                        "prompt": "Enter sequences of highly expressed genes (-f)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -b\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "b",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Retrieve ribosomal protein genes by blast (-b)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Set of control genes with near random codon usage.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -g \" + str( value ) + \" \" )[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "nhsequence",
+                        "paramfile": null,
+                        "precond": {
+                            "python": "not example"
+                        },
+                        "prompt": "Enter sequences of non-highly expressed genes/Complete genome (-g)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [
+                                "DNA"
+                            ],
+                            "card": "1,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You need to precise to the program if your sequences are metagenome or mixed organisms sequences.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -m\" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "typeg",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Mixed organisms sequences",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "input",
+                "precond": null,
+                "prompt": "Input section"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \" -s \" , \"\" )[value!=vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "First codon (-s)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \" -S \" , \"\" )[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "lc",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Last codon (-S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "codon_remove",
+                "precond": null,
+                "prompt": "Remove from sequences"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "\" -c \" + str( value )"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "geneticcode",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Choose genetic code (-c)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -r\")[value]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rfiles",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Recover file with ribosomal protein genes retrieved by blast or given as input (-r)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -i\")[value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "ifiles",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Recover file with codon usage bias indexes for each gene (-i)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -t\")[value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "autotemp",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Estimate optimal growth temperature (-t)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -T \" + str( value ) )[value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "temp",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not $autotemp",
+                            "python": "not autotemp"
+                        },
+                        "prompt": "Enter optimal growth temperature (Celsius) (-T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "python": "( \"\" , \" -o \" + str(value))[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Outfile name (-o)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "options",
+                "precond": null,
+                "prompt": "Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "growthpred",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "python": "\"*.results\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "res",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Prediction results",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "python": "\"*.errors\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "err",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Prediction error(s)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "python": "\"*.cub\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "cubs",
+                "output_type": "file",
+                "precond": {
+                    "python": "ifiles"
+                },
+                "prompt": "Codon usage bias indexes for each gene",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "python": "\"*.ribs\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "ribs",
+                "output_type": "file",
+                "precond": {
+                    "python": "rfiles"
+                },
+                "prompt": "Ribosomal protein genes retrieved by blast",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "<html:a xmlns:html=\"http://www.w3.org/1999/xhtml\" href=\"ftp://ftp.pasteur.fr/pub/gensoft/projects/growthpred/\" target=\"ftp\">The program sources and Example files are downloadable here.</html:a>",
+            "url": null
+        },
+        {
+            "doi": null,
+            "label": "Vieira-Silva S,  Rocha EPC, 2010 The Systemic Imprint of Growth and Its Uses in Ecological (Meta)Genomics. PLoS Genet 6(1): e1000808. doi:10.1371/journal.pgen.1000808",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "ftp://ftp.pasteur.fr/pub/GenSoft/projects/growthpred/"
+    ],
+    "title": "growthpred",
+    "type": "program",
+    "version": "1.07"
+}

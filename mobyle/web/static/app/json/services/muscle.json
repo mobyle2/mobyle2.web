@@ -1,0 +1,542 @@
+{
+    "authors": "Edgar, R.C.",
+    "classifications": [
+        {
+            "classification": "alignment:multiple",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "muscle"
+    },
+    "comment": null,
+    "description": "MUSCLE is a program for creating multiple alignments of amino acid or nucleotide sequences.",
+    "documentation_links": [
+        "http://www.drive5.com/muscle/"
+    ],
+    "env": [],
+    "homepage_links": [
+        "http://www.drive5.com/muscle/"
+    ],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" -quiet\"",
+                    "python": "\" -quiet\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "quiet",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"-in $value\"",
+                            "python": "\" -in \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "sequence",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined($profile1) and not defined($profile2)",
+                            "python": "profile1 is None and profile2 is None"
+                        },
+                        "prompt": "Sequences (-in)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": "2,n",
+                            "datatype": {
+                                "class": "Sequence",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "By default, MUSCLE looks at the first 100 letters in the input sequence data (excluding gaps). If 95% or more of those letters are valid nucleotides (AGCTUN), then the file is treated as nucleotides, otherwise as amino acids.This method almost always guesses correctly, but you can make sure by specifying the sequence type on the command line.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \" -seqtype $value \" : \"\"",
+                            "python": "( \"\" , \" -seqtype \" + str(value) )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqtype",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Determining sequence type (-seqtype)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "inputs",
+                "precond": null,
+                "prompt": "Inputs options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "You can control the number of iterations that MUSCLE does by specifying the -maxiters option.If you specify 1, 2 or 3, then this is exactly the number of iterations that will be performed.If the value is greater than 3, then muscle will continue up to the maximum you specify or until convergence is reached, which ever happens sooner.The default is 16. If you have a large number of sequences, refinement may be rather slow.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -maxiters $value\" : \"\"",
+                            "python": "( \"\" , \" -maxiters \" + str( value ) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "maxiters",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of iterations (-maxiters)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Option controls the maximum number of new trees to create in iteration 2.experience suggests that a point of diminishing returns is typically reached after the first tree, so the default value is 1.If a larger value is given, the process will repeat until convergence or until this number of trees has been created, which ever comes first.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"-maxtrees $value\" : \"\"",
+                            "python": "( \"\" , \" -maxtrees \" + str( value ) )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "maxtrees",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum number of trees (-maxtrees)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "If you have a large alignment, muscle may take a long time to complete. It is sometimes convenient to say \"I want the best alignment I can get in 24 hours\" rather than specifying a set of options that will take an unknown length of time.This is done by using -maxhours, which specifies a floating-point number of hours. If this time is exceeded, muscle will write out current alignment and stop. For example,muscle -in huge.fa -out huge.afa -maxiters 9999 -maxhours 24.0",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $maxhours) ? \"-maxhours $value\" : \"\"",
+                            "python": "( \"\" , \" -maxhours \" + str( value ) )[ maxhours is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "maxhours",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Maximum time to run in hours (-maxhours)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "Creating a pair-wise alignment by dynamic programming requires computing an L1 * L2 matrix, where L1 and L2 are the sequence lengths.A trick used in algorithms such as BLAST is to reduce the size of this matrix by using fast methods to find \"diagonals\", i.e. short regions of high similarity between the two sequences.This speeds up the algorithm at the expense of some reduction in accuracy.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \" -diags \" : \"\"",
+                            "python": "( \"\" , \" -diags \" )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "diags",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Find diagonals (faster for similar sequences) (-diags)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "optimization",
+                "precond": null,
+                "prompt": "Optimization parameters"
+            },
+            {
+                "argpos": null,
+                "command": false,
+                "comment": "Three different protein profile scoring functions are supported,- the log-expectation score (-le option)- and a sum of pairs score using either the PAM200 matrix (-sp)- or the VTML240 matrix (-sv).The log-expectation score is the default as it gives better results on our tests, but is typically somewhere between two or three times slower than the sum-of-pairs score.For nucleotides, -spn is currently the only option (which is of course the default for nucleotide data, so you don't need to specify this option).",
+                "ctrl": null,
+                "format": null,
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "scoring",
+                "paramfile": null,
+                "precond": {
+                    "perl": "$seqtype ne \"nucleo\"",
+                    "python": "seqtype != \"nucleo\""
+                },
+                "prompt": "The profile scoring function (for protein only)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Choice",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"-in1 $value\"",
+                            "python": "\" -in1 \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "profile1",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined($sequence)",
+                            "python": "sequence is None"
+                        },
+                        "prompt": "Profile 1",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"-in2 $value\"",
+                            "python": "\" -in2 \" + str(value)"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "profile2",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined($sequence)",
+                            "python": "sequence is None"
+                        },
+                        "prompt": "Profile 2",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Alignment",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "FASTA"
+                            ]
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\" -profile \""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "profile",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "not defined($sequence) and defined($profile1) and defined($profile2)",
+                            "python": "sequence is None and profile1 is not None and profile2 is not None"
+                        },
+                        "prompt": "(-profile)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "To align two sequence alignments. Not compatible with Input options.",
+                "name": "profile_option",
+                "precond": null,
+                "prompt": "Profile Alignments parameters"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": "fasta : Write output in Fasta formathtml  : Write output in HTML formatmsf   : Write output in GCG MSF formatphylip   : Write output in Phylip (interleaved) formatmuscle   : Write output in CLUSTALW format with muscle headerclustalw : Write output in CLUSTALW format with CLUSTAL W (1.81)",
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outformat",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "output format",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\" -out $value\"",
+                            "python": "(\"\", \" -out \" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outfile",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Filename (-out)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Filename",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "outpout_options",
+                "precond": null,
+                "prompt": "Output Options"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "muscle",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "(defined $outfile) ? \"$outfile\" : \"muscle.out\"",
+                    "python": "( outfile , \"muscle.out\")[outfile is None]"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "alignmentout",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "$outformat =~ /^(fasta|msf|phyi|clwstrict|clw)$/",
+                    "python": "outformat in [ 'fasta' , 'msf' , 'phyi' , 'clwstrict' , 'clw']"
+                },
+                "prompt": "Alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        {
+                            "#children": [
+                                "FASTA"
+                            ],
+                            "#tag": "test",
+                            "@eq": "fasta",
+                            "@param": "outformat"
+                        }
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "(defined $outfile) ? \"$outfile\" : \"muscle.out\"",
+                    "python": "( outfile , \"muscle.out\")[outfile is None]"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "muscleHtmlout",
+                "output_type": "stdout",
+                "precond": {
+                    "perl": "$outformat == 'html'",
+                    "python": "outformat == 'html'"
+                },
+                "prompt": "Alignment",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "MuscleHtmlAlignment",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": "10.1093/nar/gkh340",
+            "label": "Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-97.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.drive5.com/muscle/downloads.htm"
+    ],
+    "title": "Muscle",
+    "type": "program",
+    "version": "3.8.31"
+}

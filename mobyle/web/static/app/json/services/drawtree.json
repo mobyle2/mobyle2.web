@@ -1,0 +1,1006 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "phylogeny:display",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "display:tree",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "DRAWTREE interactively plots an unrooted tree diagram, with many options\nincluding orientation of tree and branches, label sizes and angles, margin\nsizes.  Particularly if you can use your computer screen to\npreview the plot, you can very effectively adjust the details of the plotting\nto get just the kind of plot you want.",
+    "description": "Plots an unrooted tree diagram",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/drawtree.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"drawtree <drawtree.params\"",
+                    "python": "\"drawtree <drawtree.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "drawtree",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": "Tree in Newick format.",
+                "ctrl": null,
+                "format": {
+                    "perl": "\"ln -s $treefile intree && \"",
+                    "python": "\"ln -s \"+str( treefile ) + \" intree && \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "treefile",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Tree File (intree)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"0\\\\n\"",
+                    "python": "\"0\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "screen_type",
+                "paramfile": "drawtree.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value ne $vdef) ? \"P\\\\n$value\\\\n\" : \"\"",
+                            "python": "(\"\" , \"P\\n\" + str(value) + \"\\n\")[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "plotter",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Which plotter or printer will the tree be drawn on",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "3",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": {
+                                    "perl": "$value <= 2500",
+                                    "python": "value <= 2500"
+                                },
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str( value ) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "xres",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": "X resolution (in pixels)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            },
+                            {
+                                "argpos": "4",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": {
+                                    "perl": "$value <= 2500",
+                                    "python": "value <= 2500"
+                                },
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str( value ) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "xyres",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": "Y resolution (in pixels)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Integer",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "bitmap_options",
+                        "precond": {
+                            "perl": "$plotter =~ /^[XW]$/",
+                            "python": "plotter in [ \"X\" , \"W\" ]"
+                        },
+                        "prompt": "Bitmap options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "3",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "laserjet_resolution",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": "Laserjet resolution",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "laserjet_options",
+                        "precond": {
+                            "perl": "$plotter eq \"J\"",
+                            "python": "plotter == \"J\""
+                        },
+                        "prompt": "Laserjet options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "3",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"$value\\\\n\"",
+                                    "python": "str(value) + \"\\n\""
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": true,
+                                "name": "pcx_resolution",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": "Paintbrush PCX resolution",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "pcx_options",
+                        "precond": {
+                            "perl": "$plotter eq \"P\"",
+                            "python": "plotter == \"P\""
+                        },
+                        "prompt": "Paintbrush options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "2000",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"Y\\\\n\"",
+                                    "python": "\"Y\\n\""
+                                },
+                                "hidden": true,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "pov_validate",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": null,
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "pov_options",
+                        "precond": {
+                            "perl": "$plotter eq \"V\"",
+                            "python": "plotter == \"V\""
+                        },
+                        "prompt": "POVRAY options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "5",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "(defined $value and $value ne $vdef) ? \"F\\\\n$value\\\\n\" : \"\"",
+                                    "python": "(\"\", \"F\\n\"+str(value)+\"\\n\")[value is not None and value != vdef]"
+                                },
+                                "hidden": false,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "font",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": "Font (F)",
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "Choice",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "ps_options",
+                        "precond": {
+                            "perl": "$plotter eq \"L\"",
+                            "python": "plotter == \"L\""
+                        },
+                        "prompt": "PostScript options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "2000",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"Y\\\\n\"",
+                                    "python": "\"Y\\n\""
+                                },
+                                "hidden": true,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "vrml_validate",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": null,
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "vrml_options",
+                        "precond": {
+                            "perl": "$plotter eq \"Z\"",
+                            "python": "plotter == \"Z\""
+                        },
+                        "prompt": "VRML options"
+                    },
+                    {
+                        "children": [
+                            {
+                                "argpos": "2000",
+                                "command": false,
+                                "comment": null,
+                                "ctrl": null,
+                                "format": {
+                                    "perl": "\"Y\\\\n\"",
+                                    "python": "\"Y\\n\""
+                                },
+                                "hidden": true,
+                                "main": false,
+                                "mandatory": false,
+                                "name": "ray_validate",
+                                "paramfile": "drawtree.params",
+                                "precond": null,
+                                "prompt": null,
+                                "simple": null,
+                                "type": {
+                                    "biomoby_datatypes": [],
+                                    "biotypes": [],
+                                    "card": null,
+                                    "datatype": {
+                                        "class": "String",
+                                        "superclass": null
+                                    },
+                                    "edam_types": [],
+                                    "formats": []
+                                }
+                            }
+                        ],
+                        "comment": null,
+                        "name": "ray_options",
+                        "precond": {
+                            "perl": "$plotter eq \"R\"",
+                            "python": "plotter == \"R\""
+                        },
+                        "prompt": "Rayshade options"
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"V\\\\nN\\\\n\"",
+                            "python": "\"V\\nN\\n\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "preview",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \"B\\\\n\"",
+                            "python": "(\"B\\n\" , \"\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "branch_lengths",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Use branch lengths (B)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "angle",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Angle of labels (L)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "7",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value >= -90.0 and $value <= 90.0",
+                            "python": "value >= -90.0 and value <= 90.0"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"L\\\\nF\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"L\\nF\\n\"+ str( value ) +\"\\n\")[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "fixed_angle",
+                        "paramfile": "drawtree.params",
+                        "precond": {
+                            "perl": "$angle eq \"\" or $angle eq \"F\"",
+                            "python": "angle == \"\" or angle == \"F\""
+                        },
+                        "prompt": "Fixed angle: Are the labels to be plotted vertically (90), horizontally (0), or downwards (-90)  (L)?",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"R\\\\n$value\\\\n\" : \"\"",
+                            "python": "(\"\" , \"R\\n\" +str( value ) +\"\\n\" )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "rotation",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Rotation of tree (in degrees from 360 to -360) (R)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"A\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"A\\n\" + str( value ) +\"\\n\" )[ value is not None and value != vdef]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "arc",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Angle of arc for tree (in degrees from 0 to 360)  (A)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "iterate",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Iterate to improve tree (I)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": "Default value: Automatically rescaled",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value) ? \"S\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"S\\n\"+ str( value )+ \"\\n\")[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "scale",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Scale of branch length (S)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"D\\\\n\" : \"\"",
+                            "python": "( \"\" , \"D\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "label_overlap",
+                        "paramfile": "drawtree.params",
+                        "precond": {
+                            "perl": "$iterate ne \"N\"",
+                            "python": "iterate != \"N\""
+                        },
+                        "prompt": "Try to avoid label overlap (D)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "10",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"M\\\\n$value\\\\n$vertical_margins\\\\n\" : \"\"",
+                            "python": "(\"\" , \"M\\n\" + str( value ) + \"\\n\" + str(vertical_margins ) + \"\\n\")[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "horizontal_margins",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Horizontal margins (M)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "9",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"\"",
+                            "python": "\"\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "vertical_margins",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Vertical margins (M)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"C\\\\n$value\\\\n\" : \"\"",
+                            "python": "(\"\", \"C\\n\" + str( value ) + \"\\n\" )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "character_height",
+                        "paramfile": "drawtree.params",
+                        "precond": null,
+                        "prompt": "Relative character height (C)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Float",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "options",
+                "precond": null,
+                "prompt": "Drawtree options"
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"Y\\\\n\"",
+                    "python": "\"Y\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "confirm",
+                "paramfile": "drawtree.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "drawtree",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"plotfile\"",
+                    "python": "\"plotfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "plotfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$plotter !~ /^[LMWX]$/",
+                    "python": "plotter not in [ \"L\" , \"M\" , \"W\", \"X\" ]"
+                },
+                "prompt": "Graphic tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Picture",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"plotfile.ps\"",
+                    "python": "\"plotfile.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "psfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$plotter eq \"L\"",
+                    "python": "plotter == \"L\""
+                },
+                "prompt": "Graphic tree file ( postscript format )",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "PostScript",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"plotfile.pict\"",
+                    "python": "\"plotfile.pict\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "pictfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$plotter eq \"M\"",
+                    "python": "plotter == \"M\""
+                },
+                "prompt": "Graphic tree file ( pict format )",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Picture",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"plotfile.xbm\"",
+                    "python": "\"plotfile.xbm\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "xbmfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$plotter eq \"X\"",
+                    "python": "plotter == \"X\""
+                },
+                "prompt": "Graphic tree file ( xbm format )",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Picture",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"plotfile.bmp\"",
+                    "python": "\"plotfile.bmp\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "bmpfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$plotter eq \"W\"",
+                    "python": "plotter == \"W\""
+                },
+                "prompt": "Graphic tree file ( bmp format )",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Picture",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "drawtree",
+    "type": "program",
+    "version": null
+}

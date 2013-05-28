@@ -1,0 +1,1246 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "phylogeny:parsimony",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "This   program  carries  out   unrooted  parsimony (analogous to Wagner trees) (Eck and Dayhoff, 1966; Kluge and Farris, 1969) on DNA sequences.  The method of Fitch (1971) is used to count the number of changes of base needed on a given tree.",
+    "description": "DNA Parsimony Program",
+    "documentation_links": [
+        "http://bioweb2.pasteur.fr/docs/phylip/doc/dnapars.html"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": "0",
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"dnapars <dnapars.params\"",
+                    "python": "\"dnapars <dnapars.params\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "dnapars",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-10",
+                "command": false,
+                "comment": "The input file must contained aligned sequences in PHYLIP format obtained by sequence alignment programs.",
+                "ctrl": {
+                    "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\"",
+                    "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\"  , \"intree\")"
+                },
+                "format": {
+                    "perl": "\"ln -s $infile infile && \"",
+                    "python": "\"ln -s \" + str( infile ) + \" infile && \""
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "infile",
+                "paramfile": null,
+                "precond": {
+                    "perl": "$infile ne \"infile\"",
+                    "python": "infile != \"infile\""
+                },
+                "prompt": "Alignment File (infile)",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [
+                        "DNA"
+                    ],
+                    "card": null,
+                    "datatype": {
+                        "class": "Alignment",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "PHYLIPI"
+                    ]
+                }
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"T\\\\n$threshold\\\\n\" : \"\"",
+                            "python": "( \"\" , \"T\\n\" + str( threshold ) + \"\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "use_threshold",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use Threshold parsimony (T)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "3",
+                        "command": false,
+                        "comment": "Thresholds less than or equal to 1.0 do not have any meaning and should not be used: they will result in a tree dependent only on the input order of species and not at all on the data",
+                        "ctrl": {
+                            "perl": "$threshold > 1",
+                            "python": "threshold > 1"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "threshold",
+                        "paramfile": "dnapars.params",
+                        "precond": {
+                            "perl": "$use_threshold",
+                            "python": "use_threshold"
+                        },
+                        "prompt": "Value for threshold parsimony",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "5",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"N\\\\n\" : \"\"",
+                            "python": "( \"\" , \"N\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "use_transversion",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use Transversion parsimony (N)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "dnapars_opt",
+                "precond": null,
+                "prompt": "Parsimony options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "-5",
+                        "command": false,
+                        "comment": "By selecting this option, the bootstrap will be performed on your sequence file. So you don't need to perform a separated seqboot before.Don't give an already bootstrapped file to the program, this won't work!You can't use \"Randomize options\" and \"Bootstrap options\" at the same time.",
+                        "ctrl": {
+                            "perl": "not( $seqboot and $jumble)",
+                            "python": "not( seqboot and jumble)"
+                        },
+                        "format": {
+                            "perl": "($value) ? \"seqboot <seqboot.params && mv outfile seqboot.outfile && rm infile  && ln -s seqboot.outfile infile && \" : \"\"",
+                            "python": "( \"\" , \"seqboot <seqboot.params && mv outfile seqboot.outfile && rm infile  && ln -s seqboot.outfile infile && \" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqboot",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Perform a bootstrap before analysis",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "1. The bootstrap. Bootstrapping was invented by Bradley Efron in 1979, and its use in phylogeny estimation was introduced by me (Felsenstein, 1985b). It involves creating a new data set by sampling N characters randomly with replacement, so that the resulting data set has the same size as the original, but some characters have been left out and others are duplicated. The random variation of the results from analyzing these bootstrapped data sets can be shown statistically to be\n              typical of the variation that you would get from collecting new data sets. The method assumes that the characters evolve independently, an assumption that may not be realistic for many kinds of data.2. Delete-half-jackknifing. This alternative to the bootstrap involves sampling a random half of the characters, and including them in the data but dropping the others. The resulting data sets are half the size of the original, and no characters are duplicated. The random variation from doing this should be very similar to that obtained from the bootstrap. The method is advocated by Wu (1986).3. Permuting species for each characters. This method of resampling (well, OK, it may not be best to call it resampling) was introduced by Archie (1989) and Faith (1990; see also Faith and Cranston, 1991). It involves permuting the columns of the data matrix separately. This produces data matrices that have the same number and kinds of characters but no taxonomic structure. It is used for different purposes than the bootstrap, as it tests not the variation around an estimated tree but the hypothesis that there is no taxonomic structure in the data: if a statistic such as number of steps is significantly smaller in the actual data than it is in replicates that are permuted, then we can argue that there is some taxonomic structure in the data (though perhaps it might be just the presence of aa pair of sibling species).4. Permuting characters order. This simply permutes the order of the characters, the same reordering being applied to all species. For many methods of tree inference this will make no difference to the outcome (unless one has rates of evolution correlated among adjacent sites). It is included as a possible step in carrying out a permutation test of homogeneity of characters (such as the Incongruence Length Difference test).5. Permuting characters separately for each species. This is a method introduced by Steel, Lockhart, and Penny (1993) to permute data so as to destroy all phylogenetic structure, while keeping the base composition of each species the same as before. It shuffles the character order separately for each species.",
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "Method",
+                        "paramfile": "seqboot.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": "Resampling methods (J)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Choice",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$replicates <= 1000",
+                            "python": "replicates <= 1000"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"R\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"R\\n\" + str( value ) +\"\\n\" )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "replicates",
+                        "paramfile": "seqboot.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": "How many replicates (R)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1010",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value > 0 and (($value % 2) != 0)",
+                            "python": "value > 0 and (( value % 2 ) != 0 )"
+                        },
+                        "format": {
+                            "perl": "\"$value\\\\n\"",
+                            "python": "str( value ) + \"\\n\""
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "seqboot_seed",
+                        "paramfile": "seqboot.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": "Random number seed (must be odd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "($seqboot_times2jumble * (defined $replicates) ? $replicates : 1) <= 100000",
+                            "python": "seqboot_times2jumble * ( 1 , replicates)[replicates is not None] <= 100000"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "seqboot_times2jumble",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": "Number of times to jumble",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"M\\\\nD\\\\n$replicates\\\\n$seqboot_seed\\\\n$times2jumble\\\\n\"",
+                            "python": "\"M\\nD\\n\" + str( replicates ) + \"\\n\" + str(seqboot_seed) + \"\\n\"+ str( seqboot_times2jumble ) + \"\\n\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "multiple_dataset",
+                        "paramfile": "dnapars.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1000",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"Y\\\\n\"",
+                            "python": "\"Y\\n\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bootconfirm",
+                        "paramfile": "seqboot.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "\"0\\\\n\"",
+                            "python": "\"0\\n\""
+                        },
+                        "hidden": true,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "bootterminal_type",
+                        "paramfile": "seqboot.params",
+                        "precond": {
+                            "perl": "$seqboot",
+                            "python": "seqboot"
+                        },
+                        "prompt": null,
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "100",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \" && cp infile dnapars.infile &&  cp dnapars.outtree intree && consense <consense.params && mv outtree consense.outtree && mv outfile consense.outfile\" : \"\"",
+                            "python": "( \"\" , \" && cp infile dnapars.infile && cp dnapars.outtree intree && consense <consense.params && mv outtree consense.outtree && mv outfile consense.outfile\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "consense",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$seqboot and $print_treefile",
+                            "python": "seqboot and print_treefile"
+                        },
+                        "prompt": "Compute a consensus tree",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "bootstrap",
+                "precond": null,
+                "prompt": "Bootstrap options ( multiple dataset )"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "20",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "not( $jumble and $seqboot)",
+                            "python": "not (jumble and seqboot)"
+                        },
+                        "format": {
+                            "perl": "($value and not $seqboot )? \"J\\\\n$jumble_seed\\\\n$jumble_times\\\\n\" : \"\"",
+                            "python": "( \"\" , \"J\\n\" + str( jumble_seed ) + \"\\n\" + str( jumble_times ) +\"\\n\" )[ value and not seqboot ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "jumble",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Randomize (jumble) input order (J)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "defined $value and ($value > 0 and (($value % 2) != 0))",
+                            "python": "value is not None and (value > 0 and ((value % 2) != 0))"
+                        },
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "jumble_seed",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$jumble",
+                            "python": "jumble"
+                        },
+                        "prompt": "Random number seed for jumble (must be odd)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": null,
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": null,
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "jumble_times",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$jumble",
+                            "python": "jumble"
+                        },
+                        "prompt": "Number of times to jumble",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": "Use these options only if you have only one data set",
+                "name": "jumble_opt",
+                "precond": null,
+                "prompt": "Randomize options ( one dataset )"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "To give your tree to the program, you must normally put it in the alignment file, after the sequences, preceded by a line indicating how many trees you give.Here, this will be automatically appended: just give a treefile and the number of trees in it.",
+                        "ctrl": {
+                            "perl": "not ( $user_tree and $seqboot )",
+                            "python": "not ( user_tree and seqboot )"
+                        },
+                        "format": {
+                            "perl": "($value)? \"U\\\\n\" : \"\"",
+                            "python": "( \"\" , \"U\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "user_tree",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use User tree (default: no, search for best tree) (U)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": "Give a tree whenever the infile does not already contain the tree.",
+                        "ctrl": {
+                            "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\"",
+                            "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\" ,\"intree\" )"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \"ln -s $tree_file intree; \" : \"\"",
+                            "python": "( \"\" , \"ln -s \" + str( tree_file ) + \" intree; \" )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "tree_file",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$user_tree",
+                            "python": "user_tree"
+                        },
+                        "prompt": "User Tree file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Tree",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "NEWICK"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "user_tree_opt",
+                "precond": null,
+                "prompt": "User tree options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"W\\\\n\" : \"\"",
+                            "python": "( \"\" , \"W\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "weights",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Use weights for sites (W)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "-1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": {
+                            "perl": "$value ne \"outfile\" and $value ne \"infile\" and $value ne \"outtree\" and $value ne \"intree\"",
+                            "python": "value not in ( \"outfile\" , \"infile\" , \"outtree\" ,\"intree\" )"
+                        },
+                        "format": {
+                            "perl": "(defined $value) ? \"ln -s $weights_file weights; \" : \"\"",
+                            "python": "( \"\" , \"ln -s \" + str( weights_file ) + \" weights; \" )[ value is not None ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "weights_file",
+                        "paramfile": null,
+                        "precond": {
+                            "perl": "$weights",
+                            "python": "weights"
+                        },
+                        "prompt": "Weights file",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "PhylipWeight",
+                                "superclass": "AbstractText"
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "weight_opt",
+                "precond": null,
+                "prompt": "Weight options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to print a semi-graphical picture of the tree in the outfile.",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \"3\\\\n\"",
+                            "python": "( \"3\\n\" , \"\")[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_tree",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print out tree (3)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"4\\\\n\" : \"\"",
+                            "python": "( \"\" , \"4\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_steps",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print out steps in each site (4)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"5\\\\n\" : \"\"",
+                            "python": "( \"\" , \"5\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_sequences",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print sequences at all nodes of tree (5)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Tells the program to save the tree in a tree file (outtree) (a standard representation of trees where the tree is specified by a nested pairs of parentheses, enclosing names and separated by commas).",
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"\" : \"6\\\\n\"",
+                            "python": "( \"6\\n\" , \"\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "print_treefile",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Write out trees onto tree file (6)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    },
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": null,
+                        "ctrl": null,
+                        "format": {
+                            "perl": "($value) ? \"1\\\\n\" : \"\"",
+                            "python": "( \"\" , \"1\\n\" )[ value ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "printdata",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Print out the data at start of run (1)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Boolean",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "output",
+                "precond": null,
+                "prompt": "Output options"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "The O (Outgroup) option specifies which species is to have the root of the tree be on the line leading to it.For example, if the outgroup is a species \"Mouse\" then the root of the tree will be placed in the middle of the branch which is connected to this species, with Mouse branching off on one side of the root and the lineage leading to the rest of the tree on the other.This option is toggle on by choosing the number of the outgroup (the species being taken in the numerical order that they occur in the input file).Outgroup-rooting will not be attempted  if it is a user-defined tree, despite your invoking the option.When it is used, the tree as printed out is still listed as being an unrooted tree, though the outgroup is connected to the bottommost node so that it is easy to visually convert the tree into rooted form.",
+                        "ctrl": {
+                            "perl": "defined $value and $value > 0",
+                            "python": "value is not None and value > 0"
+                        },
+                        "format": {
+                            "perl": "(defined $value and $value != $vdef) ? \"O\\\\n$value\\\\n\" : \"\"",
+                            "python": "( \"\" , \"O\\n\" + str( value ) + \"\\n\" )[ value is not None and value != vdef ]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": false,
+                        "name": "outgroup",
+                        "paramfile": "dnapars.params",
+                        "precond": null,
+                        "prompt": "Outgroup species (J)",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Integer",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "other_options",
+                "precond": null,
+                "prompt": "Other options"
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"Y\\\\n\"",
+                    "python": "\"Y\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "confirm",
+                "paramfile": "dnapars.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-1",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"0\\\\n\"",
+                    "python": "\"0\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "terminal_type",
+                "paramfile": "dnapars.params",
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"Y\\\\n\"",
+                    "python": "\"Y\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_confirm",
+                "paramfile": "consense.params",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "-2",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"T\\\\n\"",
+                    "python": "\"T\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_terminal_type",
+                "paramfile": "consense.params",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "1000",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"O\\\\n$outgroup\\\\n\"",
+                    "python": "\"O\\n\" + str( outgroup ) + \"\\n\""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "consense_outgroup",
+                "paramfile": "consense.params",
+                "precond": {
+                    "perl": "$consense and $outgroup and $outgroup > 1",
+                    "python": "consense and outgroup and outgroup > 1"
+                },
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "dnapars",
+    "outputs": {
+        "children": [
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "dnapars.outfile",
+                    "python": "'dnapars.outfile'"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "outfile",
+                "output_type": "file",
+                "precond": null,
+                "prompt": "Outfile",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "dnapars.outtree",
+                    "python": "'dnapars.outtree'"
+                },
+                "hidden": false,
+                "main": false,
+                "name": "treefile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$print_treefile",
+                    "python": "print_treefile"
+                },
+                "prompt": "Tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"seqboot.outfile\"",
+                    "python": "\"seqboot.outfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "seqboot_out",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$seqboot",
+                    "python": "seqboot"
+                },
+                "prompt": "seqboot outfile",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "SetOfAlignment",
+                        "superclass": "AbstractText"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"consense.outfile\"",
+                    "python": "\"consense.outfile\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "consense_outfile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": "Consense outfile",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Text",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": null,
+                "filenames": {
+                    "perl": "\"consense.outtree\"",
+                    "python": "\"consense.outtree\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "consense_treefile",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$consense",
+                    "python": "consense"
+                },
+                "prompt": "Consense tree file",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Tree",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "NEWICK"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "dnapars",
+    "type": "program",
+    "version": null
+}

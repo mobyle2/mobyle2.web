@@ -1,0 +1,290 @@
+{
+    "authors": "Ramneek Gupta, ramneek@cbs.dtu.dk",
+    "classifications": [
+        {
+            "classification": "sequence:protein:motifs",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:protein:pattern",
+            "type": "mobyle1"
+        },
+        {
+            "classification": "sequence:protein:profiles",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": null
+    },
+    "comment": "netNglyc predicts N-glycosylation sites in human proteins using artificial neural networks that examine the\n       sequence context of Asn-Xaa-Ser/Thr sequons where Xaa  is  any  amino  acid  but  proline.",
+    "description": "predict N-glycosylation sites in proteins.",
+    "documentation_links": [
+        "http://www.cbs.dtu.dk/services/NetNGlyc/"
+    ],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "argpos": null,
+                "command": true,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\"netNglyc \"",
+                    "python": "\"netNglyc \""
+                },
+                "hidden": true,
+                "main": false,
+                "mandatory": false,
+                "name": "netnglyc",
+                "paramfile": null,
+                "precond": null,
+                "prompt": null,
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "String",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "50",
+                "command": false,
+                "comment": null,
+                "ctrl": null,
+                "format": {
+                    "perl": "\" $value\"",
+                    "python": "\" \" + str( value )"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": true,
+                "name": "sequence",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Input Sequence",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Sequence",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "FASTA"
+                    ]
+                }
+            },
+            {
+                "argpos": "10",
+                "command": false,
+                "comment": "Generate  graphics,  plotting  the N-glycosylation potential and the thresh\u2010\n              old(s) against the residue number of each predicted site. Two files will  be\n              produced for each input sequence, one in PostScript and the other in GIF.",
+                "ctrl": null,
+                "format": {
+                    "perl": "($value)? \"-g \" : \"\"",
+                    "python": "( \"\" , \"-g \" )[ bool( value ) ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "graphics",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "generate graphics (-g).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "20",
+                "command": false,
+                "comment": "Show  additional thresholds (0.32, 0.75 and 0.90) in the graphs. This option\n              is ignored unless -g is also given.",
+                "ctrl": null,
+                "format": {
+                    "perl": "( defined $value )? \"-a \" : \"\"",
+                    "python": "( \"\" , \"-a \" )[ bool( value ) ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "threshold",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Show additional thresholds (0.32, 0.75, 0.90) in the graph(s).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "argpos": "30",
+                "command": false,
+                "comment": "Predict on all asparagines in the input. Note that asparagines that  do  not\n              occur  within the Asn-Xaa-Ser/Thr sequon are unlikely to be glycosylated, no\n              matter what the prediction score.  The default is to  predict  only  on  the\n              asparagines in the Asn-Xaa-Ser/Thr triplet.",
+                "ctrl": null,
+                "format": {
+                    "perl": "( defined )? \"-f \" : \"\"",
+                    "python": "( \"\",\"-f \")[ bool( value ) ]"
+                },
+                "hidden": false,
+                "main": false,
+                "mandatory": false,
+                "name": "aspargine",
+                "paramfile": null,
+                "precond": null,
+                "prompt": "Predict on all Asn residues (-f).",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "Boolean",
+                        "superclass": null
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "netNglyc",
+    "outputs": {
+        "children": [
+            {
+                "comment": "<html:div xmlns:html=\"http://www.w3.org/1999/xhtml\"><html:p>Each input sequence is displayed with  the  predicted  \n        N-glycosylation sites highlighted. For each site the following is shown:</html:p><html:ul><html:li>sequence name</html:li><html:li>position in the sequence</html:li><html:li>sequence motif</html:li><html:li>N-glycosylation potential</html:li><html:li>Jury agreement, 9 networks</html:li><html:li>Prediction strength (+, ++ or +++)</html:li></html:ul></html:div>",
+                "filenames": {
+                    "perl": "\"netNglyc.out\"",
+                    "python": "\"netNglyc.out\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "results",
+                "output_type": "stdout",
+                "precond": null,
+                "prompt": "netNglyc report.",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "NetNglyc",
+                        "superclass": "Report"
+                    },
+                    "edam_types": [],
+                    "formats": []
+                }
+            },
+            {
+                "comment": "plotting the N-glycosylation potential and the threshold(s) against the residue\n              number of each predicted site.",
+                "filenames": {
+                    "perl": "\"*.ps\"",
+                    "python": "\"*.ps\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "postscript",
+                "output_type": "file",
+                "precond": {
+                    "python": "graphics"
+                },
+                "prompt": "graphic in PostScript",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "NetNGlyc_Graph",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "Postscript"
+                    ]
+                }
+            },
+            {
+                "comment": "plotting the N-glycosylation potential and the threshold(s) against the residue\n              number of each predicted site.",
+                "filenames": {
+                    "perl": "\"*.gif\"",
+                    "python": "\"*.gif\""
+                },
+                "hidden": false,
+                "main": false,
+                "name": "gif",
+                "output_type": "file",
+                "precond": {
+                    "perl": "$graphics",
+                    "python": "graphics"
+                },
+                "prompt": "graphic in GIF",
+                "simple": null,
+                "type": {
+                    "biomoby_datatypes": [],
+                    "biotypes": [],
+                    "card": null,
+                    "datatype": {
+                        "class": "NetNGlyc_Graph",
+                        "superclass": "Binary"
+                    },
+                    "edam_types": [],
+                    "formats": [
+                        "GIF"
+                    ]
+                }
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [
+        {
+            "doi": null,
+            "label": "Prediction of N-glycosylation sites in human proteins.\n                 R. Gupta, E. Jung and S. Brunak.\n                 In preparation, 2004.",
+            "url": null
+        }
+    ],
+    "source_links": [
+        "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netNglyc"
+    ],
+    "title": "netNglyc",
+    "type": "program",
+    "version": "1.0a"
+}

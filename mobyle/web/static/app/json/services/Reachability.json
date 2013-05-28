@@ -1,0 +1,114 @@
+{
+    "authors": null,
+    "classifications": [
+        {
+            "classification": "Process Hitting",
+            "type": "mobyle1"
+        }
+    ],
+    "command": {
+        "path": null,
+        "value": "ph-reach"
+    },
+    "comment": null,
+    "description": "Checks process reachability",
+    "documentation_links": [],
+    "env": [],
+    "homepage_links": [],
+    "inputs": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "argpos": "1",
+                        "command": false,
+                        "comment": "Type in, paste, download from databases or upload from your computer a model in the PH \nformat.",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" -i \" + str(value))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_model",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "Model input",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "Text",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": [
+                                "PH"
+                            ]
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input"
+            },
+            {
+                "children": [
+                    {
+                        "argpos": "2",
+                        "command": false,
+                        "comment": "Enter the state whose reachability you want to check, in the form: a 1 c 1 f 1 fc 0",
+                        "ctrl": null,
+                        "format": {
+                            "python": "(\"\", \" \"+ str(value).replace(\"'\",\"\"))[value is not None]"
+                        },
+                        "hidden": false,
+                        "main": false,
+                        "mandatory": true,
+                        "name": "e_state",
+                        "paramfile": null,
+                        "precond": null,
+                        "prompt": "State",
+                        "simple": null,
+                        "type": {
+                            "biomoby_datatypes": [],
+                            "biotypes": [],
+                            "card": null,
+                            "datatype": {
+                                "class": "String",
+                                "superclass": null
+                            },
+                            "edam_types": [],
+                            "formats": []
+                        }
+                    }
+                ],
+                "comment": null,
+                "name": "e_input",
+                "precond": null,
+                "prompt": "Input"
+            }
+        ],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "name": "Reachability",
+    "outputs": {
+        "children": [],
+        "comment": null,
+        "name": null,
+        "precond": null,
+        "prompt": null
+    },
+    "package": null,
+    "references": [],
+    "source_links": [],
+    "title": "ph-reach",
+    "type": "program",
+    "version": null
+}
