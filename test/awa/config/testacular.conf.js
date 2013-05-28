@@ -1,14 +1,14 @@
-basePath = '../../mobyle/web/static/app';
+basePath = '../../../mobyle/web/static/app';
 
 files = [
   JASMINE,
   JASMINE_ADAPTER,
   'lib/angular/angular.js',
   'lib/angular/angular-*.js',
-  '../test/lib/angular/angular-mocks.js',
+  '../../../../test/awa/test/lib/angular/angular-mocks.js',
   'js/**/*.js',
   'partials/*.html',
-  '../test/unit/**/*.js'
+  '../../../../test/awa/test/unit/**/*.js'
 ];
 
 // generate js files from html templates

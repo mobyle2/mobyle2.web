@@ -1,14 +1,14 @@
 basePath = '../../mobyle/web/static/app';
 
 files = [
-    JASMINE,
-    JASMINE_ADAPTER,
-    'lib/angular/angular.js',
-    'lib/angular/angular-*.js',
-    '../test/lib/angular/angular-mocks.js',
-    'js/**/*.js',
-    'partials/*.html',
-    '../test/unit/**/*.js'
+  JASMINE,
+  JASMINE_ADAPTER,
+  'lib/angular/angular.js',
+  'lib/angular/angular-*.js',
+  '../../../../test/awa/test/lib/angular/angular-mocks.js',
+  'js/**/*.js',
+  'partials/*.html',
+  '../../../../test/awa/test/unit/**/*.js'
 ];
 
 autoWatch = true;
