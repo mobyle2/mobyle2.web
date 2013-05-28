@@ -21,7 +21,7 @@ install:
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - npm install --quiet -g testacular
+  - npm install --quiet -g karma
   - ./node_modules/.bin/karma start config/karma.conf.js --single-run
 
 # command to run tests
