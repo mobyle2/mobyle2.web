@@ -1,4 +1,4 @@
-basePath = '../../mobyle/web/static/app';
+basePath = '../../../mobyle/web/static/app';
 
 files = [
   JASMINE,
