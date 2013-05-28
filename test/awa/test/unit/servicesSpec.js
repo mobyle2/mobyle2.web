@@ -42,22 +42,22 @@ describe('service', function() {
             $httpBackend = $injector.get('$httpBackend');
             // resource listing
             testList = [{"id":1},{"id":2}];
-            $httpBackend.when('GET', '/api/test').respond(JSON.stringify(testList));
+            $httpBackend.when('GET', '/test').respond(JSON.stringify(testList));
             // resource detail
             testId = 1;
             testObject = {"object":"test","test":{"id":1,"foo":"bar"}};
-            $httpBackend.when('GET', '/api/test/1').respond(JSON.stringify(testObject));
+            $httpBackend.when('GET', '/test/1').respond(JSON.stringify(testObject));
             scope = $rootScope.$new();
             testMfResource = mfResource('test');
         }));
         it('query() should return a list of objects', inject(function() {
-           $httpBackend.expectGET('/api/test');
+           $httpBackend.expectGET('/test');
            var res = testMfResource.query();
            $httpBackend.flush();
            expect(res).toEqualData(testList);
         }));
         it('get() should return an object detail', inject(function() {
-            $httpBackend.expectGET('/api/test/'+testId);
+            $httpBackend.expectGET('/test/'+testId);
             var res = testMfResource.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testObject["test"]);
@@ -97,7 +97,7 @@ describe('service', function() {
                     "name": "tool2"
                 }
             ];
-            $httpBackend.when('GET', '/api/services').respond(JSON.stringify(testServiceList));
+            $httpBackend.when('GET', '/services').respond(JSON.stringify(testServiceList));
             // resource detail
             testId = "5152bedd93546d544bf4d99c";
             testServiceObject = {"object":"service","service":                {
@@ -111,17 +111,17 @@ describe('service', function() {
                 "type": "program",
                 "name": "tool2"
             }};
-            $httpBackend.when('GET', '/api/services/5152bedd93546d544bf4d99c').respond(JSON.stringify(testServiceObject));
+            $httpBackend.when('GET', '/services/5152bedd93546d544bf4d99c').respond(JSON.stringify(testServiceObject));
             scope = $rootScope.$new();
         }));
         it('query() should return a list of services', inject(function(Service) {
-            $httpBackend.expectGET('/api/services');
+            $httpBackend.expectGET('/services');
             var res = Service.query();
             $httpBackend.flush();
             expect(res).toEqualData(testServiceList);
         }));
         it('get() should return an service detail', inject(function(Service) {
-            $httpBackend.expectGET('/api/services/'+testId);
+            $httpBackend.expectGET('/services/'+testId);
             var res = Service.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testServiceObject["service"]);
@@ -151,7 +151,7 @@ describe('service', function() {
                     "description": "Project 2"
                 }
             ];
-            $httpBackend.when('GET', '/api/projects').respond(JSON.stringify(testProjectList));
+            $httpBackend.when('GET', '/projects').respond(JSON.stringify(testProjectList));
             // resource detail
             testId = "aa";
             testProjectObject = {"object":"service", "service":
@@ -162,17 +162,17 @@ describe('service', function() {
                     "name": "Project 1"
                 }
             };
-            $httpBackend.when('GET', '/api/projects/aa').respond(JSON.stringify(testProjectObject));
+            $httpBackend.when('GET', '/projects/aa').respond(JSON.stringify(testProjectObject));
             scope = $rootScope.$new();
         }));
         it('query() should return a list of projects', inject(function(Project) {
-            $httpBackend.expectGET('/api/projects');
+            $httpBackend.expectGET('/projects');
             var res = Project.query();
             $httpBackend.flush();
             expect(res).toEqualData(testProjectList);
         }));
         it('get() should return an project detail', inject(function(Project) {
-            $httpBackend.expectGET('/api/projects/'+testId);
+            $httpBackend.expectGET('/projects/'+testId);
             var res = Project.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testProjectObject["service"]);
