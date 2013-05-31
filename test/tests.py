@@ -109,30 +109,9 @@ class ViewTests(unittest.TestCase):
         self.assertEqual(info['project'], 'mobyle')
 
 
-    def test_public_programs(self):
-        """tests that 'public' programs are found in the list"""
-        from mobyle.web.views import services_list
-        prog_list = services_list(self.request)
-        for p in self.public_programs_list:
-            self.assertTrue(p in prog_list)
-        self.assertNotIn('baz', services_list(self.request))
-        program = connection.Program()
-        program['name'] = 'baz'
-        program.save()
-        self.assertIn('baz', services_list(self.request))
-
 
     def test_private_programs(self):
         pass
-
-
-    def test_user_list(self):
-        from mobyle.web import views
-        users = views.user_list(self.request).values()
-        user = users[0]
-        self.assertIn('email', user)
-        self.assertIn('group:admin', user['groups'])
-        self.assertEqual(user['type'], "registered")
 
 
     def test_stats(self):
