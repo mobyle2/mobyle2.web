@@ -7,5 +7,8 @@ def groupFinder(userid, request):
      #try to find user in database:
      user = connection.User.find_one({"email": userid})
      if user is not None:
-        return user['groups']
+        groups = user['groups']
+        if user['admin']:
+            groups.append('group:admin')
+        return groups
 
