@@ -67,8 +67,6 @@ def main(global_config, **settings):
     config.add_route('onlyauthenticated', '/onlyauthenticated')
     config.add_route('login', '/login')    
     config.add_route('logout', '/logout')
-    config.add_route('services_list', '/services/list')
-    config.add_route('user_list', '/users')
     config.add_route('about', '/about')
     config.add_route('auth_login','/auth/login/{auth}')
     config.add_route('auth_logout','/auth/logout')

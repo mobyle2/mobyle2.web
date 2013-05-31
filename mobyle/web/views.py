@@ -298,26 +298,6 @@ def auth_logout(request):
     return { 'user': None, 'status': 0 , 'msg' : ''}
 
 
-@view_config(route_name='services_list', renderer="json")
-def services_list(request):
-    services = connection.Service.find()
-    return [s['name'] for s in services]
-
-@view_config(route_name='user_list', request_method='GET', renderer="json", permission="isadmin")
-def user_list(request):
-    users = connection.User.find()
-    ret = {}
-    for u in users:
-       userid = str(u['_id'])
-       ret[userid] = { 
-                       'email': u['email'],
-                       'username': u['email'],
-                       'type': u['type'],
-                       'groups': [u'group:admin'],
-                       
-                     } 
-    return ret
-
 
 @view_config(route_name='about', renderer='mobyle.web:templates/about.mako')
 def about(request):
