@@ -99,12 +99,14 @@ angular.module('awa.services').factory('PasswordReset', function ($resource) {
 
 angular.module('awa.services').factory('LoginManager', function ($rootScope) {
 
-    return { login : { 'user' : null, 'msg': '', 'status' : 0, 'admin' : false},
-             result: function(user,msg,status,admin) {
+    return { login : { 'user' : null, 'msg': '', 'status' : 0, 'admin' : false,
+methods: []},
+             result: function(user,msg,status,admin,methods) {
                  this.login.user = user;
                  this.login.msg = msg;
                  this.login.status = status;
                  this.login.admin = admin;
+                 this.login.methods = methods.replace(/ /g,'').split(',');
                  $rootScope.$broadcast( 'LoginManager.update', this.login );
              }
         };

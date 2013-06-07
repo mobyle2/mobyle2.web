@@ -2,9 +2,20 @@
 
 /* Controllers */
 
+function GlobalCtrl($scope, $rootScope, ConfigManager) {
+    var confmngr = new ConfigManager();
+    var conf = confmngr.get({}, function() {
+        // Set allowed login methods
+        $rootScope.logins = conf['allowed_methods'].replace(/ /g,'').split(',');
+    });
+}
 
-function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset) {
-    $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google' ];
+
+
+function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, $rootScope) {
+    if($rootScope.config != undefined) {
+        $scope.logins = $rootScope.config['allowed_methods'];
+    }
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
     $scope.login = null;
@@ -48,6 +59,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
     $scope.$on( 'LoginManager.update', function( event, login ) {
         $scope.msg = login.msg;
         $scope.admin = login.admin;
+        $scope.logins = login.methods;
         if (login.status==0) {
             if($scope.provider=='register') {
                 $scope.provider = 'native';

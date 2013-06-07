@@ -213,24 +213,25 @@ def auth_login(request):
     # - Mozilla Persona
     # - Mobyle account
     userid = authenticated_userid(request)
+    settings = request.registry.settings
+
     if userid:
         log.error("Someone is logged "+str(userid))
         user  = connection.User.find_one({'email': userid})
         return { 'user': user['email'], 'status': 0 , 'msg': '', 'admin' :
-        user['admin']}
+        user['admin'], 'methods': settings['login.allow'] }
 
     msg = ''
     user = None
     admin = False
     auth_system = request.matchdict['auth']
-    settings = request.registry.settings
     if auth_system == 'register':
         #ruser = request.json_body
         ruser = {}
         ruser['username'] = request.params.getone('username')
         ruser['password'] = request.params.getone('password')
         user = ruser['username']
-        (userobj, newuser) = create_if_no_exists(ruser['username'],ruser['password'])
+        (userobj, newuser) = create_if_no_exists(ruser['username'], ruser['password'])
         if not newuser:
             status = 1
             msg = "User already exists"
@@ -287,7 +288,8 @@ def auth_login(request):
     if user:
         headers = remember(request, user)
         request.response.headerlist.extend(headers)
-    return { 'user': user, 'status': status , 'msg': msg, 'admin' : admin}
+    return { 'user': user, 'status': status , 'msg': msg, 'admin' : admin ,
+    'methods': settings['login.allow']}
 
 @view_config(route_name="auth_logout", renderer="json")
 def auth_logout(request):
@@ -323,4 +325,13 @@ def user_list(request):
 def about(request):
         return {
         }
+
+
+@view_config(route_name="get_config", renderer="json")
+def get_config(request):
+    '''
+    Return public config parameters
+    '''
+    settings = request.registry.settings
+    return { 'allowed_methods': settings['login.allow'] }
 

@@ -18,7 +18,7 @@ requires = [
     "py-bcrypt",
     "pyparsing<2.0",
     "pyScss",
-    "mf>=0.1.18",
+    "mf>=0.1.21",
     "uuid"
     ]
 
