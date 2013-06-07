@@ -15,7 +15,7 @@ import bcrypt
 from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
-from mobyle.common import token
+from mobyle.common import tokens
 
 import urllib
 from urllib2 import URLError
