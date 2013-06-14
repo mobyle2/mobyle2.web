@@ -48,8 +48,8 @@ if connection.User.find({ 'first_name' : 'root' }).count() == 0:
     # Create default project for root
     project = connection.Project()
     project['name'] = 'admin_project'
-    project['owner'] = user
-    project['users'].append({ 'user' : user, 'role' : 'admin'})
+    project['owner'] = user['_id']
+    project['users'].append({ 'user' : user['_id'], 'role' : 'admin'})
     project.save()
 
 
