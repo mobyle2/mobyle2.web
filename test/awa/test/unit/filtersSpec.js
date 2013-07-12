@@ -6,13 +6,13 @@ describe('filter', function() {
   beforeEach(module('awa.filters'));
 
 
-  describe('searchServices', function() {
-    it('should not filter if no query provided', inject(function(searchServicesFilter) {
+  describe('kwSearch', function() {
+    it('should not filter if no query provided', inject(function(kwSearchFilter) {
       var services = [{'name':'test1'},{'name':'test2'}];
       var q = '';
-      expect(searchServicesFilter(services,q)).toEqual(services);
+      expect(kwSearchFilter(services,q)).toEqual(services);
     }));
-    it('should filter only the matching service', inject(function(searchServicesFilter) {
+    it('should filter only the matching service', inject(function(kwSearchFilter) {
         var matchingService = {'name':'test1', 'description': 'matching description'};
         var matchedServices = [{'name':'test1',
                                 'description': 'matching description',
@@ -21,7 +21,7 @@ describe('filter', function() {
         var nonMatchingService = {'name':'test1', 'description': 'nothing to match'};
         var services = [matchingService,nonMatchingService];
         var q = 'matching';
-        expect(searchServicesFilter(services,q)).toEqual(matchedServices);
+        expect(kwSearchFilter(services,q,['name','description'])).toEqual(matchedServices);
     }));
   });
 });
