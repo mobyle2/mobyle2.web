@@ -8,6 +8,7 @@ angular.module('awa', ['awa.filters', 'awa.services', 'awa.directives', 'ngSanit
     $routeProvider.when('/services/:serviceId', {templateUrl: 'partials/serviceDetail.html', controller: ServiceDetailCtrl});
     $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: ProjectsCtrl});
     $routeProvider.when('/projects/:projectId', {templateUrl: 'partials/projectDetail.html', controller: ProjectDetailCtrl});
+    $routeProvider.when('/types', {templateUrl: 'partials/types.html', controller: TypesCtrl});
     $routeProvider.when('/data', {templateUrl: 'partials/data.html', controller: DataCtrl});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html',controller: LoginCtrl});
     $routeProvider.when('/logout', {templateUrl: 'partials/login.html',controller: LoginCtrl});

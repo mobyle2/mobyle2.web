@@ -164,6 +164,12 @@ function ServicesCtrl($scope,Service) {
     $scope.listDisplay = 'list';
 }
 
+function TypesCtrl($scope,Type) {
+    $scope.types= Type.query();
+    $scope.listDisplay = 'list';
+}
+
+
 function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service,$resource){
     $scope.service = Service.get({id:$routeParams.serviceId});
     $scope.mbsimple = mbsimple;
