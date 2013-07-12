@@ -50,6 +50,7 @@ if connection.User.find({ 'first_name' : 'root' }).count() == 0:
     project['name'] = 'admin_project'
     project['owner'] = user['_id']
     project['users'].append({ 'user' : user['_id'], 'role' : 'admin'})
+    project['public'] = True
     project.save()
 
 
