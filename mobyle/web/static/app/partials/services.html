@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="services {{listDisplay}}">
-  <div ng-repeat="s in filteredServices = (services | searchServices:query | orderBy:'name')">
+  <div ng-repeat="s in filteredServices = (services | kwSearch:query:['name','description','title']:true | orderBy:'name')">
     <div class="dt">
       <a href="#/services/{{s._id.$oid}}" ng-bind-html="s.nameHl || s.name"/></a>
     </div>
