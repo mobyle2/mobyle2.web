@@ -164,17 +164,29 @@ function ServicesCtrl($scope,Service) {
     $scope.listDisplay = 'list';
 }
 
-function TypesCtrl($scope,Type) {
-    $scope.types= Type.query();
-    $scope.listDisplay = 'list';
-}
-
-
 function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service,$resource){
     $scope.service = Service.get({id:$routeParams.serviceId});
     $scope.mbsimple = mbsimple;
     $scope.show_advanced = mbsimple($scope.service.inputs);
 
+}
+
+function TypesCtrl($scope,Type) {
+    $scope.types= Type.query();
+    $scope.listDisplay = 'list';
+}
+
+function TypeDetailCtrl($scope,$routeParams,Type,$resource){
+    $scope.type = Type.get({id:$routeParams.typeId});
+}
+
+function FormatsCtrl($scope,Format) {
+    $scope.formats= Format.query();
+    $scope.listDisplay = 'list';
+}
+
+function FormatDetailCtrl($scope,$routeParams,Format,$resource){
+    $scope.format = Format.get({id:$routeParams.formatId});
 }
 
 function ProjectsCtrl($scope,Project) {

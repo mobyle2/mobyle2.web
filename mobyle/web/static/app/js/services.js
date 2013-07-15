@@ -51,6 +51,10 @@ angular.module('awa.services').factory('Type', function (mfResource) {
     return mfResource('types');
 });
 
+angular.module('awa.services').factory('Format', function (mfResource) {
+    return mfResource('formats');
+});
+
 angular.module('awa.services').factory('Project', function (mfResource) {
     return mfResource('projects');
 });
