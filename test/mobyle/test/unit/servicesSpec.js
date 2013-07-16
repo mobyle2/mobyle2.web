@@ -12,7 +12,7 @@ describe('service', function() {
         });
     });
 
-    beforeEach(module('awa.services'));
+    beforeEach(module('mobyle.services'));
 
 
     describe('mbsimple', function() {

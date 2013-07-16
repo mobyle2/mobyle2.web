@@ -4,7 +4,7 @@
 
 describe('directives', function () {
 
-    beforeEach(module('awa.directives'));
+    beforeEach(module('mobyle.directives'));
 
     describe('toggle', function () {
 

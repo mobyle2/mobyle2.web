@@ -22,7 +22,7 @@ function highlight( data, search )
 }
 
 /* Filters */
-angular.module('awa.filters', []).
+angular.module('mobyle.filters', []).
   filter('kwSearch', function() {
     // kwSearch searches for a query string (q)
     // in each service description of an array (s)

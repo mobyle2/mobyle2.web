@@ -3,7 +3,7 @@
 /* jasmine specs for filters go here */
 
 describe('filter', function() {
-  beforeEach(module('awa.filters'));
+  beforeEach(module('mobyle.filters'));
 
 
   describe('kwSearch', function() {

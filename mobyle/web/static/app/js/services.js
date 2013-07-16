@@ -5,9 +5,9 @@
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
-angular.module('awa.services', ['ngResource']);
+angular.module('mobyle.services', ['ngResource']);
 
-angular.module('awa.services').value('mbsimple', function(para) {
+angular.module('mobyle.services').value('mbsimple', function(para) {
   // detect if a parameter or a paragraph is "simple"
   // it is simple if it has the "simple" property set to true
   // or if one of its children has the "simple" property set to true
@@ -24,7 +24,7 @@ angular.module('awa.services').value('mbsimple', function(para) {
   return simple(para);
 });
 
-angular.module('awa.services').factory('mfResource', function ($resource) {
+angular.module('mobyle.services').factory('mfResource', function ($resource) {
     function MFResourceFactory(collectionName) {
         var resource = $resource('/'+collectionName+'/:id',{},
             {
@@ -43,24 +43,24 @@ angular.module('awa.services').factory('mfResource', function ($resource) {
     return MFResourceFactory;
 });
 
-angular.module('awa.services').factory('Service', function (mfResource) {
+angular.module('mobyle.services').factory('Service', function (mfResource) {
     return mfResource('services');
 });
 
-angular.module('awa.services').factory('Type', function (mfResource) {
+angular.module('mobyle.services').factory('Type', function (mfResource) {
     return mfResource('types');
 });
 
-angular.module('awa.services').factory('Format', function (mfResource) {
+angular.module('mobyle.services').factory('Format', function (mfResource) {
     return mfResource('formats');
 });
 
-angular.module('awa.services').factory('Project', function (mfResource) {
+angular.module('mobyle.services').factory('Project', function (mfResource) {
     return mfResource('projects');
 });
 
 
-angular.module('awa.services').factory('Login', function ($resource) {
+angular.module('mobyle.services').factory('Login', function ($resource) {
     function LoginFactory(authName) {
         return $resource('/auth/login/'+authName,{},
             {
@@ -70,7 +70,7 @@ angular.module('awa.services').factory('Login', function ($resource) {
     return LoginFactory;
 });
 
-angular.module('awa.services').factory('Logout', function ($resource) {
+angular.module('mobyle.services').factory('Logout', function ($resource) {
     function LogoutFactory(authName) {
         return $resource('/auth/logout',{},
             {
@@ -80,7 +80,7 @@ angular.module('awa.services').factory('Logout', function ($resource) {
     return LogoutFactory;
 });
 
-angular.module('awa.services').factory('PasswordResetRequest', function ($resource) {
+angular.module('mobyle.services').factory('PasswordResetRequest', function ($resource) {
     function PasswordResetQuestFactory(authName) {
         return $resource('/auth/password/reset',{ username: authName},
             {
@@ -90,7 +90,7 @@ angular.module('awa.services').factory('PasswordResetRequest', function ($resour
     return PasswordResetQuestFactory;
 });
 
-angular.module('awa.services').factory('PasswordReset', function ($resource) {
+angular.module('mobyle.services').factory('PasswordReset', function ($resource) {
     function PasswordResetQuestFactory(userToken, userNewPassword) {
         return $resource('/auth/password',{ token: userToken, password: userNewPassword},
             {
@@ -105,7 +105,7 @@ angular.module('awa.services').factory('PasswordReset', function ($resource) {
  *   USe this service to store login process elements and notify controllers on update
   */
 
-angular.module('awa.services').factory('LoginManager', function ($rootScope) {
+angular.module('mobyle.services').factory('LoginManager', function ($rootScope) {
 
     return { login : { 'user' : null, 'msg': '', 'status' : 0, 'admin' : false},
              result: function(user,msg,status,admin) {

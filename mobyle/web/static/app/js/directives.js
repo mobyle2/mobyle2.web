@@ -1,9 +1,9 @@
 'use strict';
 
 /* Directives */
-angular.module('awa.directives', []);
+angular.module('mobyle.directives', []);
 
-angular.module('awa.directives').directive('activeLink', ['$location', function(location) {
+angular.module('mobyle.directives').directive('activeLink', ['$location', function(location) {
   return {
     restrict: 'A',
     link: function(scope, element, attrs, controller) {
@@ -22,7 +22,7 @@ angular.module('awa.directives').directive('activeLink', ['$location', function(
   };
 }]);
 
-angular.module('awa.directives').directive('toggle', function(){
+angular.module('mobyle.directives').directive('toggle', function(){
   return {
     restrict: 'E',
     replace: true,
@@ -45,7 +45,7 @@ angular.module('awa.directives').directive('toggle', function(){
   }
 });
 
-angular.module('awa.directives').directive('mbinput', function(){
+angular.module('mobyle.directives').directive('mbinput', function(){
   return {
     restrict: 'E',
     replace: true,
@@ -70,7 +70,7 @@ angular.module('awa.directives').directive('mbinput', function(){
 
 // recursive directive example
 // (from https://groups.google.com/forum/#!topic/angular/vswXTes_FtM)
-angular.module('awa.directives').directive("recursive", function($compile) {
+angular.module('mobyle.directives').directive("recursive", function($compile) {
   return {
     restrict: "E",
     priority: 100000,
@@ -90,7 +90,7 @@ angular.module('awa.directives').directive("recursive", function($compile) {
   };
 });
 
-angular.module('awa.directives').directive("mbformpara", [function() {
+angular.module('mobyle.directives').directive("mbformpara", [function() {
   return {
     templateUrl: 'partials/mbformpara.html'
   };

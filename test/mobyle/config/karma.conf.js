@@ -5,10 +5,10 @@ files = [
   JASMINE_ADAPTER,
   'lib/angular/angular.js',
   'lib/angular/angular-*.js',
-  '../../../../test/awa/test/lib/angular/angular-mocks.js',
+  '../../../../test/mobyle/test/lib/angular/angular-mocks.js',
   'js/**/*.js',
   'partials/*.html',
-  '../../../../test/awa/test/unit/**/*.js'
+  '../../../../test/mobyle/test/unit/**/*.js'
 ];
 
 // generate js files from html templates
