@@ -110,7 +110,7 @@ def login_complete_view(request):
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
                      
-    return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html") )
+    return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html"), headers = headers )
 
 
 @view_config(route_name='onlyauthenticated', permission='viewauth')
