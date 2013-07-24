@@ -116,8 +116,9 @@ def login_complete_view(request):
     headers = remember(request, username)
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
-    return HTTPFound(location=settings['site_uri']+\
-                     settings['url.main'], headers = headers)
+                     
+    return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html") )
+                     
     #return {
     #    'result': json.dumps(result, indent=4),
     #}
