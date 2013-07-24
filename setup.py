@@ -16,10 +16,11 @@ requires = [
     "pyramid_mailer",
     "velruse>=0.3dev",
     "py-bcrypt",
-    "scss",
-    "mf>=0.1.9",
-    "uuid",
     "pygeoip",
+    "pyparsing<2.0",
+    "pyScss",
+    "mf>=0.1.18",
+    "uuid"
     ]
 
 setup(name='mobyle.web',

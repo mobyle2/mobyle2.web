@@ -1,0 +1,7 @@
+<div>
+<label class="span6">{{para.prompt || para.name}} 
+<i ng-show="para.comment" class="icon-info-sign" data-html="true" data-content="{{para.comment}}" data-container="body"/>
+</label>
+<input class="span6" type="text" ui-if="!textinput" name="{{para.name}}" />
+<textarea class="span12" ui-if="textinput" name="{{para.name}}"></textarea>
+</div>

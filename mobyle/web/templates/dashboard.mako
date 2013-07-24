@@ -15,6 +15,15 @@
 % endfor
 <hr/>
 % for object in klasses:
+<script>
+% if object.get_display_list_fields():
+  objectsListFields['${object.__name__}'] = Array();
+  % for field in object.get_display_list_fields():
+    objectsListFields['${object.__name__}'].push('${field}');
+  % endfor
+% endif
+</script>
+
 <div class="row">
 
 <div class="accordion offset1" id="accordion${object.__name__}">
@@ -48,6 +57,8 @@
    var objList = {};
 
    var autocompleteelt = null;
+
+   mfprefix = "${prefix}";
 
 $(document).ready(function() {
 

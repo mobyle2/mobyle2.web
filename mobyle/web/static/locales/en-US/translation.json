@@ -28,7 +28,9 @@
     "owner": "Owner",
 
     "jobs": "Jobs",
-
+    "services": "Services",
     "programs": "Programs",
+    "workflows": "Workflows",
+    "widgets": "Widgets",
     "public": "Public"
 }

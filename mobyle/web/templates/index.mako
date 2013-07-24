@@ -10,6 +10,9 @@ This <a href='/onlyauthenticated'>view</a> is restricted to authenticated users.
 <h2>Admin dashboard</h2>
 Admin dashboard is available <a href='/admin'>here</a> (no authentication for the moment)
 
+<h2>Data manager</h2>
+Data-manager prototype is available <a href='/data-manager/'>here</a>
+
 <h2>Tests</h2>
 <div class="row">
 <div class="offset1">
@@ -34,10 +37,10 @@ Form login:
 <hr />
 <div class="row">
 <div class="offset1">
-Add a program:
+Add a service:
 <form action="" method="post">
-<input type='text' name='progname' />
-<input type='submit' value='add program' />
+<input type='text' name='service_name' />
+<input type='submit' value='add service' />
 </form>
 </div>
 </div>
@@ -51,9 +54,9 @@ import a platform:
 </div></div>
 <hr />
 <div class="row"><div class="offset1">
-Program list:
-%for p in programs:
-    ${p['name']} <br />
+Services list:
+%for s in services:
+    ${s['name']} <br />
 %endfor
 </div>/<div>
 

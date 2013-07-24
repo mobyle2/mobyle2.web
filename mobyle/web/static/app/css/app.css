@@ -1,0 +1,83 @@
+/* app css stylesheet */
+
+.btn-auth {
+  margin: 10px;
+}
+
+.register {
+  margin-top: 30px;
+}
+
+.login {
+  margin-top: 30px;
+}
+
+
+.register .controls {
+  margin: 10px;
+}
+
+.img-auth {
+  margin: 10px;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.fieldset_title {
+  margin-left: 0.5em;
+}
+
+.grid{
+  column-count: auto;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  -ms-column-count: auto;
+  -o-column-count: auto;
+  column-width: 300px;
+  -webkit-column-width: 300px;
+  -moz-column-width: 300px;
+  -ms-column-width: 300px;
+  -o-column-width: 300px;
+  -webkit-column-fill:auto;
+  -moz-column-fill:auto;
+  column-fill:auto;
+}
+
+.grid div{
+  break-inside: avoid-column;
+  -webkit-break-inside: avoid-column;
+  -moz-break-inside: avoid-column;
+  -ms-break-inside: avoid-column;
+  -o-break-inside: avoid-column;
+}
+
+.grid .dd{
+  margin-bottom: 0.3em;
+}
