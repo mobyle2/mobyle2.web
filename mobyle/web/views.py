@@ -89,22 +89,15 @@ def main_page(request):
     return {'project':'mobyle', 'services': services, 'userid': userid }
 
     
-@view_config(
-    context='velruse.AuthenticationComplete',
-    renderer='mobyle.web:templates/result.mako',
-)
+@view_config(context='velruse.AuthenticationComplete')
 def login_complete_view(request):
     context = request.context
     
-    #context.profile['accounts'][0]["username"]
-
     result = {
         'profile': context.profile,
         'credentials': context.credentials,
     }
 
-    #log.error(json.dumps(result))
-    #log.error(str(result))
     if context.provider_name == 'facebook': 
         username = context.profile['verifiedEmail']
     elif context.provider_name == 'openid':
@@ -118,10 +111,7 @@ def login_complete_view(request):
     settings = request.registry.settings
                      
     return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html") )
-                     
-    #return {
-    #    'result': json.dumps(result, indent=4),
-    #}
+
 
 @view_config(route_name='onlyauthenticated', permission='viewauth')
 def onlyauth(request):
