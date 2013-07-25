@@ -19,8 +19,9 @@ requires = [
     "pygeoip",
     "pyparsing<2.0",
     "pyScss",
-    "mf>=0.1.18",
-    "uuid"
+    "mf>=0.1.24",
+    "uuid",
+    "webtest"
     ]
 
 setup(name='mobyle.web',
