@@ -72,6 +72,7 @@ def main(global_config, **settings):
     config.add_route('auth_logout','/auth/logout')
     config.add_route('auth_reset_password','/auth/password/reset')
     config.add_route('auth_update_password','/auth/password')
+    config.add_route('auth_confirm_email','/auth/confirm_email')
 
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
