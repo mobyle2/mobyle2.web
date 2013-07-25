@@ -104,10 +104,11 @@ class ViewTests(unittest.TestCase):
 
     def test_main_page(self):
         from mobyle.web.views import main_page
+        self.config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
         request = testing.DummyRequest()
         info = main_page(request)
-        self.assertEqual(info['project'], 'mobyle')
-
+        self.assertEqual(info.code, 302)
+        self.assertEqual(info.location, '/static/app/index.html')
 
 
     def test_private_programs(self):
