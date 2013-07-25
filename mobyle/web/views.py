@@ -30,8 +30,18 @@ def add_user(user):
     user['hashed_password'] = hashed
     user.save()
 
-def create_if_no_exists(email, password=None):
-    """Check if user exists, else create it"""
+def create_if_no_exists(email, password=None, encrypted=False):
+    """
+    Check if user exists, else create it
+    
+    :param email: email identifier
+    :type email: str
+    :param password: password for the user to create
+    :type password: str
+    :param encrypted: is password encrypted or clear? If clear, encrypt it
+    :type encrypted: bool
+    
+    """
     user  = connection.User.find_one({'email': email})
     newuser = False
     if not user:
@@ -39,8 +49,11 @@ def create_if_no_exists(email, password=None):
         user= connection.User()
         user['email'] = email
         if password:
-            user['hashed_password'] = bcrypt.hashpw(password,
-            bcrypt.gensalt())
+            if not encrypted:
+                user['hashed_password'] = bcrypt.hashpw(password,
+                bcrypt.gensalt())
+            else:
+                user['hashed_password'] = password
         user.save()
 
     return (user,newuser)
@@ -170,6 +183,23 @@ def auth_reset_password(request):
     mailer.send_immediately(message)
     return {}
 
+@view_config(route_name="auth_confirm_email")
+def auth_confirm_email(request):
+    token = request.params.getone('token')
+    token_object = connection.Token.find_one({'token': token})
+    if token_object is None:
+        return HTTPForbidden()
+    if not token_object.check_validity():
+        return HTTPForbidden()
+
+    # Token is valid, create user from token dataa
+    ruser = json.loads(token_object['data'])
+    (userobj, newuser) = create_if_no_exists(ruser['email'], ruser['password'], True)
+
+    if not newuser:
+        return HTTPForbidden()
+
+    return HTTPFound(location=request.static_path("mobyle.web:app/index.html#/login"))
 
 @view_config(route_name="auth_update_password",renderer="json")
 def auth_update_password(request):
@@ -218,17 +248,37 @@ def auth_login(request):
     if auth_system == 'register':
         #ruser = request.json_body
         ruser = {}
-        ruser['username'] = request.params.getone('username')
-        ruser['password'] = request.params.getone('password')
-        user = ruser['username']
-        (userobj, newuser) = create_if_no_exists(ruser['username'],ruser['password'])
-        if not newuser:
+        ruser['email'] = request.params.getone('username')
+        userexists  = connection.User.find_one({'email': ruser['email']})
+        if userexists:
             status = 1
             msg = "User already exists"
         else:
-            status = 0
-            msg = "Your account is created, you can now log in the \
-            system with your new credentials"
+            password = request.params.getone('password')
+            hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+            ruser['password'] = hashed
+            status = 1
+            msg = "An email has been sent to confirm your email address.\
+            Click on the provided link to active your account and login \
+            with your new credentials"
+            temptoken = connection.Token()
+            temptoken.generate()
+            temptoken['user'] = ruser['email']
+            temptoken['data'] = json.dumps(ruser)
+            temptoken.save()
+            # Send email
+            mailer = get_mailer(request)
+            settings = request.registry.settings
+            mailmsg = "You have requested to create an account.\n"+ \
+                  "To do so, you can connect to the following address \
+                  for 1 hour.\n"+ \
+                  request.route_url('auth_confirm_email')+\
+                  "?token="+temptoken['token']+\
+                  "\nThe Mobyle portal team."
+            message = Message(subject="Mobyle account creation request",
+                      recipients=[ruser['email']],
+                      body=mailmsg)
+            mailer.send_immediately(message)
     if auth_system == 'native':
         try:
             #ruser = request.json_body

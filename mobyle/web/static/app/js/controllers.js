@@ -98,8 +98,9 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         else if (type == 'register') {
             if($scope.rpassword == $scope.rpassword2) {
                 var newuser = new Login('register');
-                var res = newuser.get({username: $scope.rlogin, password: $scope.rpassword});
-
+                var res = newuser.get({username: $scope.rlogin, password: 
+$scope.rpassword}, function() {
+                LoginManager.result(res['user'],res['msg'],res['status'], res['admin']);  });
             }
             else {
                 $scope.msg = "Passwords are not identical";
