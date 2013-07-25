@@ -199,7 +199,7 @@ def auth_confirm_email(request):
     if not newuser:
         return HTTPForbidden()
 
-    return HTTPFound(location=request.static_path("mobyle.web:app/index.html#/login"))
+    return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html#/login"))
 
 @view_config(route_name="auth_update_password",renderer="json")
 def auth_update_password(request):
