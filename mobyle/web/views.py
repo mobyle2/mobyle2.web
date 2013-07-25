@@ -60,33 +60,10 @@ def check_user_pw(username, password):
         return None
 
 
-@view_config(route_name='main', renderer='mobyle.web:templates/index.mako')
+@view_config(route_name='main')
 def main_page(request):
-    
-    #print login_url(request, "openid")
-    userid = authenticated_userid(request)
-
-    #retrieve list of services:
-    services = connection.Service.find()    
-    
-    if 'service_name' in request.POST:
-        new_service_name = request.POST['service_name']
-        if new_service_name not in services:
-            service = connection.Service()
-            service['name'] = new_service_name
-            service.save()
-            return HTTPFound(location='/')
-    
-    if 'platformurl' in request.POST:
-        newplatform = request.POST['platformurl']
-        page = requests.get(newplatform)
-        page = page.json       
-        for elt in page.keys():
-            service = connection.Service()
-            service['name'] = elt
-            service.save()
-    
-    return {'project':'mobyle', 'services': services, 'userid': userid }
+    return HTTPFound(location=request.static_path(\
+        "mobyle.web:static/app/index.html"))
 
     
 @view_config(context='velruse.AuthenticationComplete')

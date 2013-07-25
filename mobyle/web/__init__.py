@@ -76,7 +76,6 @@ def main(global_config, **settings):
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
     config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
-    config.add_static_view('app','mobyle.web:static/app', cache_max_age = 3600) 
     config.scan()
 
     Dashboard.set_connection(connection.connection)
@@ -98,7 +97,7 @@ def main(global_config, **settings):
     config.add_route('statistics_usage', '/admin/stats/usage')
     config.add_route('statistics_usage_json', '/admin/stats/usage.json')
     config.add_route('statistics_user', '/admin/stats/user')
-    
+
     return config.make_wsgi_app()
 
 
