@@ -16,6 +16,7 @@ install:
   - "pip install git+https://github.com/bbangert/velruse.git"
   - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
   - "pip install coverage"
+  - "pip install python-coveralls"
   - "python setup.py -q install"
 
 # run js part unit tests in before-script
