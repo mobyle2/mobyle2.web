@@ -25,6 +25,9 @@ before_script:
   - karma start test/mobyle/config/karma.conf.js --single-run
 
 # command to run tests
-script: nosetests
+# command to run tests
+script: nosetests --with-coverage --cover-package=mf
+after_success:
+  - coveralls
 
 
