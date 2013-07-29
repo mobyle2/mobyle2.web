@@ -8,6 +8,7 @@ services: mongodb
 branches:
   except:
     - /^feature.*$/
+    - master
 # command to install dependencies with mobyle2.lib on develop
 install:
   - "pip install paste pastedeploy pastescript py-bcrypt mongokit"
