@@ -10,7 +10,7 @@
 <div class="types {{listDisplay}}">
   <div ng-repeat="t in filteredTypes = (types | kwSearch:query:['name','definition','id']:true | orderBy:'name')">
     <div class="dt">
-      <a href="#/types/{{t._id.$oid}}" ng-bind-html="t.nameHl || t.name"/></a> (id <i ng-bind-html="t.idHl || t.id"></i>)
+      <a href="#/types/{{t.id}}" ng-bind-html="t.nameHl || t.name"/></a> (id <i ng-bind-html="t.idHl || t.id"></i>)
     </div>
     <div class="dd">
       <span ng-bind-html="t.definitionHl || t.definition" />
