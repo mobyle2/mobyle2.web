@@ -9,6 +9,7 @@ from pyramid_mailer.message import Message
 
 from velruse import login_url
 import json
+from bson import json_util
 import requests
 import bcrypt
 
@@ -16,6 +17,8 @@ from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
 from mobyle.common import tokens
+
+from mobyle.web.classification import classification
 
 import urllib
 from urllib2 import URLError
@@ -322,3 +325,7 @@ def about(request):
         return {
         }
 
+@view_config(route_name='topics')
+def topics(request):
+    objlist = json.dumps(classification, default=json_util.default)
+    return Response(body=objlist, content_type="application/json")
