@@ -44,7 +44,7 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
 });
 
 angular.module('mobyle.services').factory('Classification', function ($resource) {
-    var resource = $resource('/topics',{},
+    var resource = $resource('/services/by_:key',{},
         {
             get: {
                 method:'get',

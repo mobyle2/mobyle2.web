@@ -159,8 +159,8 @@ $scope.rpassword}, function() {
 
 }
 
-function ClassificationCtrl($scope,Classification) {
-    $scope.classification = Classification.query();
+function ClassificationCtrl($scope,$routeParams,Classification) {
+    $scope.classification = Classification.query({key:$routeParams.key});
     $scope.listDisplay = 'list';
 }
 

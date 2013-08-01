@@ -18,7 +18,10 @@ from mobyle.common import users
 from mobyle.common import service
 from mobyle.common import tokens
 
-from mobyle.web.classification import classification
+from mobyle.web.classification import classification_by_topic, \
+    classification_by_operation
+
+print classification_by_topic
 
 import urllib
 from urllib2 import URLError
@@ -325,7 +328,12 @@ def about(request):
         return {
         }
 
-@view_config(route_name='topics')
-def topics(request):
-    objlist = json.dumps(classification, default=json_util.default)
+@view_config(route_name='services_by_topic')
+def services_by_topic(request):
+    objlist = json.dumps(classification_by_topic.sublevels, default=json_util.default)
+    return Response(body=objlist, content_type="application/json")
+
+@view_config(route_name='services_by_operation')
+def services_by_operation(request):
+    objlist = json.dumps(classification_by_operation.sublevels, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
