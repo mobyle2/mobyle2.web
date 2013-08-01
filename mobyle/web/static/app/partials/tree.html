@@ -1,0 +1,7 @@
+<li id="{{tree.id}}" class="active">
+    <a ng-click="alert(event);">{{tree.name}}</a>
+    <ul class="nav">
+        <li ng-repeat="tree in tree.subtopics"><recursive><ul tree class="nav"/></recursive></li>
+        <li ng-repeat="service in tree.services"><a href="#/services/{{service._id['$oid']}}">{{service.name}}</a></li>
+    </div>
+</li>

@@ -95,3 +95,9 @@ angular.module('mobyle.directives').directive("mbformpara", [function() {
     templateUrl: 'partials/mbformpara.html'
   };
 }]);
+
+angular.module('mobyle.directives').directive("tree", [function() {
+    return {
+        templateUrl: 'partials/tree.html'
+    };
+}]);

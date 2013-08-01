@@ -159,6 +159,10 @@ $scope.rpassword}, function() {
 
 }
 
+function ClassificationCtrl($scope,Classification) {
+    $scope.classification = Classification.query();
+    $scope.listDisplay = 'list';
+}
 
 function ServicesCtrl($scope,Service) {
     $scope.services = Service.query();
