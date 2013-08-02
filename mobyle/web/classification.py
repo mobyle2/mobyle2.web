@@ -26,7 +26,9 @@ class Classification:
             self.key_class = Topic
         else:
             self.key_class = Operation
+        log.debug('started classification loading on %s' % key)
         self.load()
+        log.debug('ended classification loading on %s' % key)
 
     def load(self):
         """
@@ -61,9 +63,17 @@ class Classification:
         for t in self.key_class.find({'subclassOf': level_filter}):
             if not ':' in t['id']:
                 continue
+            if t['is_obsolete'] == True:
+                continue
             level = {'id': t['id'], 'name': t['name']}
             level['services'] = self.load_services(t['id'])
             level['sublevels'] = self.load_level({ '$in': [t['id']]})
+            for sublevel in level['sublevels']:
+               if len(sublevel['services']) == 1 and\
+                  len(sublevel['sublevels']) == 0:
+                   # move up a service which is the only one in its sublevel
+                   level['services'].append(sublevel['services'][0])
+                   level['sublevels'].remove(sublevel)
             if len(level['services']) == 0 and len(level['sublevels']) == 0:
                 # do not load empty tree nodes
                 continue
