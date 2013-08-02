@@ -82,11 +82,11 @@
   margin-bottom: 0.3em;
 }
 
-.recursive ul.nav, recursive ul.nav{
+[recursive] ul.nav, recursive ul.nav{
     margin-bottom: 0;
 }
 
-.recursive ul.nav li, recursive ul.nav li{
+[recursive] ul.nav li, recursive ul.nav li{
     padding-left: 1em;
     border-left: #3b5998 solid 1px;
 }
