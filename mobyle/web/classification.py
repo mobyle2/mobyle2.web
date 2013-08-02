@@ -6,9 +6,9 @@ from mobyle.common.operation import Operation
 from mobyle.common.topic import Topic
 from mobyle.common.service import Service
 
-Topic=connection.Topic
-Operation=connection.Operation
-Service=connection.Service
+Topic = connection.Topic
+Operation = connection.Operation
+Service = connection.Service
 
 class Classification:
     """
@@ -22,7 +22,7 @@ class Classification:
         :type key: string 
         """
         self.key = key
-        if key=='topic':
+        if key == 'topic':
             self.key_class = Topic
         else:
             self.key_class = Operation
@@ -41,10 +41,14 @@ class Classification:
                           looked for
         :type level_key: string
         """
-        query = {'classifications':{'type':'EDAM','classification':'/edam/'+self.key+'/000'+level_key.split(':')[1]}}
+        service_key = '/edam/'+self.key+'/000'+level_key.split(':')[1]
+        query = {'classifications':
+                 {'type':'EDAM',
+                  'classification':service_key}}
         services = []
         for s in Service.find(query):
-            services.append({'name':s['name'],'version':s['version'],'_id':s['_id']})
+            services.append({'name':s['name'],
+                             'version':s['version'],'_id':s['_id']})
         return services
 
     def load_level(self, level_filter):
@@ -60,14 +64,15 @@ class Classification:
             level = {'id': t['id'], 'name': t['name']}
             level['services'] = self.load_services(t['id'])
             level['sublevels'] = self.load_level({ '$in': [t['id']]})
-            if len(level['services'])==0 and len(level['sublevels'])==0:
+            if len(level['services']) == 0 and len(level['sublevels']) == 0:
                 # do not load empty tree nodes
                 continue
-            if len(level['services'])==0 and len(level['sublevels'])==1:
+            if len(level['services']) == 0 and len(level['sublevels']) == 1:
                 # replace current node with child node if there is only one
                 level = level['sublevels'][0]
             sublevels.append(level) 
         return sublevels
 
-classification_by_topic = Classification('topic')
-classification_by_operation = Classification('operation')
+BY_TOPIC = Classification('topic')
+
+BY_OPERATION = Classification('operation')
