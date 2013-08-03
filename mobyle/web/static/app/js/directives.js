@@ -167,7 +167,7 @@ angular.module('mobyle.directives').
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<svg ng-x="{{taskx}}" ng-y="{{tasky}}"><tinput /><rect class="box" ng-x="2" ng-y="2" ng-width="{{width}}em" ng-height="{{height}}" rx="10" ry="10" fill="#D8FFCF" stroke="grey" stroke-width="3"></rect><text ng-x="{{width/2}}em" ng-y="15" style="text-anchor: middle"> {{taskText}} </text></svg>',
+            template:'<svg ng-x="{{taskx}}" ng-y="{{tasky}}"><rect class="box" ng-x="2" ng-y="2" ng-width="{{width}}em" ng-height="{{height}}" rx="10" ry="10" fill="#D8FFCF" stroke="grey" stroke-width="3"></rect><text ng-x="{{width/2}}em" ng-y="15" style="text-anchor: middle"> {{taskText}} </text><tinput /></svg>',
             scope:{ taskx:'@',
                 tasky:'@',
                 serviceName:'@',
@@ -188,7 +188,7 @@ angular.module('mobyle.directives').
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<circle cx="4" cy="4" r="8" fill="yellow" stroke="grey" stroke-width="3"/>',
+            template:'<svg x="4" y="4" z-index="999" ><circle z-index="999" cx="4" cy="4" r="8" fill="yellow" stroke="grey" stroke-width="3"/></svg>',
             link:function (scope, element, attrs) {
             }
 
