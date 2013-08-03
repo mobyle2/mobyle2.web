@@ -202,3 +202,6 @@ function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
 
 function DataCtrl() {
 }
+
+function WorkflowCtrl() {
+}

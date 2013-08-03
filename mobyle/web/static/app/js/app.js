@@ -18,6 +18,7 @@ angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directive
     $routeProvider.when('/my', {templateUrl: 'partials/my.html',controller: LoginCtrl});
     $routeProvider.when('/my/password_reset', {templateUrl: 'partials/my_password_reset.html',controller: LoginCtrl});
     $routeProvider.when('/dashboard', {templateUrl: 'partials/my.html',controller: LoginCtrl});
+    $routeProvider.when('/workflow', {templateUrl: 'partials/workflow.html', controller: WorkflowCtrl});
     $routeProvider.otherwise({redirectTo: '/services'});
   }]);
 
