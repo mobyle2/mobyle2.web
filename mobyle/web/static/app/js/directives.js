@@ -132,7 +132,6 @@ angular.module('mobyle.directives').
             }
         }
     });
-
 // workaround for issue #1050 in angular-chrome
 // might be removed if issue solved in a newest version of angular
 // https://github.com/angular/angular.js/issues/1050#issuecomment-9643773
@@ -168,7 +167,7 @@ angular.module('mobyle.directives').
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<svg ng-x="{{taskx}}" ng-y="{{tasky}}"><rect class="box" ng-x="2" ng-y="2" ng-width="{{width}}em" ng-height="{{height}}" rx="10" ry="10" fill="#D8FFCF" stroke="grey" stroke-width="3"></rect><text ng-x="{{width/2}}em" ng-y="15" style="text-anchor: middle"> {{taskText}} </text></svg>',
+            template:'<svg ng-x="{{taskx}}" ng-y="{{tasky}}"><tinput /><rect class="box" ng-x="2" ng-y="2" ng-width="{{width}}em" ng-height="{{height}}" rx="10" ry="10" fill="#D8FFCF" stroke="grey" stroke-width="3"></rect><text ng-x="{{width/2}}em" ng-y="15" style="text-anchor: middle"> {{taskText}} </text></svg>',
             scope:{ taskx:'@',
                 tasky:'@',
                 serviceName:'@',
@@ -178,6 +177,19 @@ angular.module('mobyle.directives').
                 scope.height = 50;
                 scope.taskText = scope.taskName ? scope.taskName : scope.serviceName;
                 scope.width = scope.taskText.length;
+            }
+
+        }
+    });
+
+angular.module('mobyle.directives').
+    directive('tinput', function ($document) {
+        return {
+            restrict:'E',
+            replace:true,
+            transclude:true,
+            template:'<circle cx="4" cy="4" r="8" fill="yellow" stroke="grey" stroke-width="3"/>',
+            link:function (scope, element, attrs) {
             }
 
         }
