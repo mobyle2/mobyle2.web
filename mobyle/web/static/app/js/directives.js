@@ -98,6 +98,12 @@ angular.module('mobyle.directives').directive("mbformpara", [function() {
 
 angular.module('mobyle.directives').directive("tree", [function() {
     return {
-        templateUrl: 'partials/tree.html'
+        templateUrl: 'partials/tree.html',
+        link: function(scope, element, attrs) {
+            scope.toggleState = true;
+            scope.toggle = function(){
+                scope.toggleState = !scope.toggleState;
+            }
+        }
     };
 }]);

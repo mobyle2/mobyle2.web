@@ -88,5 +88,12 @@
 
 [recursive] ul.nav li, recursive ul.nav li{
     padding-left: 1em;
-    border-left: #3b5998 solid 1px;
+}
+
+[recursive] ul.nav li a.toggle-true:before, recursive ul.nav li a.toggle-true:before{
+    content: '+ ';
+}
+
+[recursive] ul.nav li a.toggle-false:before, recursive ul.nav li a.toggle-false:before{
+    content: '- ';
 }
