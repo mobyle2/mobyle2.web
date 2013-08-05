@@ -90,10 +90,10 @@
     padding-left: 1em;
 }
 
-[recursive] ul.nav li a.toggle-true:before, recursive ul.nav li a.toggle-true:before{
+a.toggle-true:before{
     content: '+ ';
 }
 
-[recursive] ul.nav li a.toggle-false:before, recursive ul.nav li a.toggle-false:before{
+a.toggle-false:before{
     content: '- ';
 }

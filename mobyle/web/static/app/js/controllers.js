@@ -160,8 +160,10 @@ $scope.rpassword}, function() {
 }
 
 function ClassificationCtrl($scope,$routeParams,Classification) {
-    $scope.classification = Classification.query({key:$routeParams.key});
-    $scope.listDisplay = 'list';
+    $scope.classification = Classification.query({key:$routeParams.key},function(classification){
+        $scope.sublevels = classification[0].sublevels;
+        $scope.services = classification[0].services;
+    });
 }
 
 function ServicesCtrl($scope,Service) {
