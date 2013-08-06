@@ -97,3 +97,7 @@ a.toggle-true:before{
 a.toggle-false:before{
     content: '- ';
 }
+
+a.service-link{
+    color: darkslategrey;
+}

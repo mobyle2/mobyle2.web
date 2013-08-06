@@ -1,6 +1,6 @@
 <div class="span10 offset1">
   <ul class="nav">
       <li ng-repeat="tree in sublevels" recursive tree/>
-      <li ng-repeat="service in services"><a href="#/services/{{service._id['$oid']}}">{{service.name}}</a></li>
+      <li ng-repeat="service in services"><a class="service-link" href="#/services/{{service._id['$oid']}}">{{service.name}}</a></li>
   </ul>
 </div>

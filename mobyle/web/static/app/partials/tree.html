@@ -1,5 +1,5 @@
 <a ng-click="toggle()" class="toggle-{{toggleState==true}}">{{tree.name}}</a>
 <ul id="{{tree.id}}" class="nav" ng-show="toggleState==false">
     <li ng-repeat="tree in tree.sublevels"><recursive><span tree class="nav"/></recursive></li>
-    <li ng-repeat="service in tree.services"><a href="#/services/{{service._id['$oid']}}">{{service.name}}</a></li>
+    <li ng-repeat="service in tree.services"><a class="service-link" href="#/services/{{service._id['$oid']}}">{{service.name}}</a></li>
 </ul>
