@@ -15,6 +15,7 @@ class Classification:
     tree structure that stores the classification of services
     according to either topics and/or operations
     """
+
     def __init__(self, key):
         """
         :param key: key use to generate the classification,
@@ -34,24 +35,24 @@ class Classification:
         """
         load or reload the classification
         """
+        self.load_all_services()
         self.sublevels = self.load_level([])
 
-    def load_services(self, level_key):
+    def load_all_services(self):
         """
-        load the services corresponding to a given term
-        :param level_key: value of the key which should be
-                          looked for
-        :type level_key: string
+        load all services in a dictionary sorted per classification key
         """
-        service_key = '/edam/'+self.key+'/000'+level_key.split(':')[1]
-        query = {'classifications':
-                 {'type':'EDAM',
-                  'classification':service_key}}
-        services = []
-        for s in Service.find(query):
-            services.append({'name':s['name'],
-                             'version':s['version'],'_id':s['_id']})
-        return services
+        self.services_by_key = {}
+        for s in Service.find({}):
+            keys = [i['classification'] for i in s['classifications'] if i['type']=='EDAM']
+            entry = {'name':s['name'],
+                             'version':s['version'],
+                             '_id':s['_id']}
+            for key in keys:
+                if not(self.services_by_key.has_key(key)):
+                    self.services_by_key[key]=[entry]
+                else:
+                    self.services_by_key[key].append(entry)
 
     def load_level(self, level_filter):
         """
@@ -66,7 +67,8 @@ class Classification:
             if t['is_obsolete'] == True:
                 continue
             level = {'id': t['id'], 'name': t['name']}
-            level['services'] = self.load_services(t['id'])
+            key = '/edam/'+self.key+'/000'+t['id'].split(':')[1]
+            level['services'] = self.services_by_key.get(key,[])
             level['sublevels'] = self.load_level({ '$in': [t['id']]})
             for sublevel in level['sublevels']:
                if len(sublevel['services']) == 1 and\
