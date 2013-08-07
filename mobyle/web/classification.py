@@ -36,7 +36,7 @@ class Classification:
         load or reload the classification
         """
         self.load_all_services()
-        self.sublevels = self.load_level([])
+        self.root_node = self.load_level()
 
     def load_all_services(self):
         """
@@ -48,42 +48,77 @@ class Classification:
             entry = {'name':s['name'],
                              'version':s['version'],
                              '_id':s['_id']}
+            if not(keys):
+                # if the service is not classified
+                keys = ['0000']
             for key in keys:
                 if not(self.services_by_key.has_key(key)):
                     self.services_by_key[key]=[entry]
                 else:
                     self.services_by_key[key].append(entry)
 
-    def load_level(self, level_filter):
+    def load_level(self, node_input=None):
         """
         load a classification level
         :param level_filter: query filter used to select the level
         :type level_filter: dict
         """
-        sublevels = []
-        for t in self.key_class.find({'subclassOf': level_filter}):
+        node_output = {}
+
+        if node_input:
+            node_output['id'] = node_input['id']
+            node_output['name'] = node_input['name']
+            node_filter = {'subclassOf': { '$in': [node_input['id']]}}
+        else:
+            node_output['id']='EDAM:0000'
+            node_output['name']='nowhere'
+            node_filter = {'subclassOf':[]}
+        node_output['sublevels']=[]
+        for t in self.key_class.find(node_filter):
             if not ':' in t['id']:
                 continue
             if t['is_obsolete'] == True:
                 continue
-            level = {'id': t['id'], 'name': t['name']}
-            key = '/edam/'+self.key+'/000'+t['id'].split(':')[1]
-            level['services'] = self.services_by_key.get(key,[])
-            level['sublevels'] = self.load_level({ '$in': [t['id']]})
-            for sublevel in level['sublevels']:
-               if len(sublevel['services']) == 1 and\
-                  len(sublevel['sublevels']) == 0:
-                   # move up a service which is the only one in its sublevel
-                   level['services'].append(sublevel['services'][0])
-                   level['sublevels'].remove(sublevel)
-            if len(level['services']) == 0 and len(level['sublevels']) == 0:
-                # do not load empty tree nodes
-                continue
-            if len(level['services']) == 0 and len(level['sublevels']) == 1:
-                # replace current node with child node if there is only one
-                level = level['sublevels'][0]
-            sublevels.append(level) 
-        return sublevels
+            node_output['sublevels'].append(self.load_level(t))
+
+        key = '/edam/'+self.key+'/000'+node_output['id'].split(':')[1]
+        node_output['services'] = self.services_by_key.get(key,[])
+        return node_output
+
+    def get_classification(self, node_input=None, filter=None):
+        if not(node_input):
+            node_input = self.root_node
+        node_output =  {'id': node_input['id'], 'name': node_input['name'], 'services':[],'sublevels':[]}
+        for sublevel in node_input['sublevels']:
+            n = self.get_classification(node_input=sublevel,filter=filter)
+            if n:
+                node_output['sublevels'].append(n)
+        if filter is not None:
+            node_output['services'] = [service for service in node_input['services'] if filter in service['name']]
+        else:
+            node_output['services'] = list(node_input['services'])
+        node_output = self.prune(node_output)
+        return node_output
+
+    def prune(self, node):
+        """
+        prune classification tree to simplify it
+        """
+        #for sublevel in level['sublevels']:
+        #    if len(sublevel['services']) == 1 and\
+        #        len(sublevel['sublevels']) == 0:
+        #        # move up a service which is the only one in its sublevel
+        #        level['services'].append(sublevel['services'][0])
+        #        level['sublevels'].remove(sublevel)
+        print node['name'], ' services: ', len(node['services']), ' sublevels: ', len(node['sublevels'])
+        #return node
+        if len(node['services']) == 0 and len(node['sublevels']) == 0:
+            # do not load empty tree nodes
+            return None
+        if len(node['services']) == 0 and len(node['sublevels']) == 1:
+            # replace current node with child node if there is only one
+            return node['sublevels'][0]
+        return node
 
 BY_TOPIC = Classification('topic')
 

@@ -160,9 +160,24 @@ $scope.rpassword}, function() {
 }
 
 function ClassificationCtrl($scope,$routeParams,Classification) {
-    $scope.classification = Classification.query({key:$routeParams.key},function(classification){
-        $scope.sublevels = classification[0].sublevels;
-        $scope.services = classification[0].services;
+    $scope.load = function(query){
+        Classification.query({key:$routeParams.key,filter:query},function(classification){
+            if(classification.length>0){
+                $scope.classification = classification;
+            }else{
+                $scope.classification = [];
+            }
+        });
+    }
+    $scope.load();
+    $scope.$watch('query',function(newValue,oldValue){
+        if((!oldValue || oldValue.length<3) && (!newValue || newValue.length<3)){
+            return;
+        }else if(!newValue || newValue.length<3){
+            $scope.load(null);
+        }else{
+            $scope.load(newValue);
+        }
     });
 }
 
