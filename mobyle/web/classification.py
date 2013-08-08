@@ -104,14 +104,6 @@ class Classification:
         """
         prune classification tree to simplify it
         """
-        #for sublevel in level['sublevels']:
-        #    if len(sublevel['services']) == 1 and\
-        #        len(sublevel['sublevels']) == 0:
-        #        # move up a service which is the only one in its sublevel
-        #        level['services'].append(sublevel['services'][0])
-        #        level['sublevels'].remove(sublevel)
-        print node['name'], ' services: ', len(node['services']), ' sublevels: ', len(node['sublevels'])
-        #return node
         if len(node['services']) == 0 and len(node['sublevels']) == 0:
             # do not load empty tree nodes
             return None
