@@ -327,10 +327,14 @@ def about(request):
 
 @view_config(route_name='services_by_topic')
 def services_by_topic(request):
-    objlist = json.dumps(BY_TOPIC.get_classification(filter=request.params.get('filter',None))['sublevels'], default=json_util.default)
+    tree_list = BY_TOPIC.get_classification(filter=request.params.get('filter',None))
+    tree_list = tree_list['sublevels'] if tree_list else []
+    objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
 
 @view_config(route_name='services_by_operation')
 def services_by_operation(request):
-    objlist = json.dumps(BY_OPERATION.get_classification(filter=request.params.get('filter',None)['sublevels']), default=json_util.default)
+    tree_list = BY_OPERATION.get_classification(filter=request.params.get('filter',None))
+    tree_list = tree_list['sublevels'] if tree_list else []
+    objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
