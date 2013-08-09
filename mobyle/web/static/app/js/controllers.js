@@ -161,12 +161,10 @@ $scope.rpassword}, function() {
 
 function ClassificationCtrl($scope,$routeParams,Classification) {
     $scope.load = function(query){
+        $scope.loading = true;
         Classification.query({key:$routeParams.key,filter:query},function(classification){
-            if(classification.length>0){
-                $scope.classification = classification;
-            }else{
-                $scope.classification = [];
-            }
+            $scope.classification = classification;
+            $scope.loading = false;
         });
     }
     $scope.load();

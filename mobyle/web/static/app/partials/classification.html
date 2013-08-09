@@ -1,5 +1,5 @@
 <div class="span10 offset1">
-  <input type="search" placeholder="search with 3 chars or more" class="search-query" ng-model="query">
+  <input type="search" placeholder="search with 3 chars or more" class="search-query" ng-model="query" ng-disabled="loading">
   <ul class="nav">
       <li ng-repeat="tree in classification" recursive tree/>
   </ul>
