@@ -164,6 +164,7 @@ function ClassificationCtrl($scope,$routeParams,Classification) {
         $scope.loading = true;
         Classification.query({key:$routeParams.key,filter:query},function(classification){
             $scope.classification = classification;
+            $scope.defaultToggleState = !query;
             $scope.loading = false;
         });
     }

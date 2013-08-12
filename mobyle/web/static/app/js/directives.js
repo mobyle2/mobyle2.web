@@ -103,7 +103,7 @@ angular.module('mobyle.directives').directive("tree", [function() {
             scope.isService = function(tree){
                 return tree.hasOwnProperty('version');
             }
-            scope.toggleState = true;
+            scope.toggleState = scope.defaultToggleState;
             scope.toggle = function(){
                 scope.toggleState = !scope.toggleState;
             }
