@@ -203,5 +203,7 @@ function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
 function DataCtrl() {
 }
 
-function WorkflowCtrl() {
+function WorkflowCtrl($scope,$routeParams,mbsimple,Service) {
+    $scope.services = [Service.get({id:'51f53f7d0b5cb068bffcaa64'}),
+                       Service.get({id:'51f53f7d0b5cb068bffcaa81'})];
 }

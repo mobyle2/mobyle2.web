@@ -162,34 +162,46 @@ angular.module('mobyle.directives').directive('ngX',function () {
     });
 
 angular.module('mobyle.directives').
-    directive('task', function ($document) {
+    directive('task', function ($document, Service) {
         return {
             restrict:'E',
             replace:true,
             transclude:true,
-            template:'<svg ng-x="{{taskx}}" ng-y="{{tasky}}"><rect class="box" ng-x="2" ng-y="2" ng-width="{{width}}em" ng-height="{{height}}" rx="10" ry="10" fill="#D8FFCF" stroke="grey" stroke-width="3"></rect><text ng-x="{{width/2}}em" ng-y="15" style="text-anchor: middle"> {{taskText}} </text><tinput /></svg>',
-            scope:{ taskx:'@',
+            template:'<svg ng-x="{{taskx}}" ng-y="{{tasky}}">'+
+                     '<rect class="box" ng-x="2" ng-y="2" ng-width="{{width}}em" ng-height="{{height}}em" rx="10" ry="10" fill="#D8FFCF" stroke="grey" stroke-width="3" />'+
+                     '<text ng-x="{{width/2}}em" ng-y="15" style="text-anchor: middle"> {{taskText}}</text>'+
+                     '<g ng-repeat="parameter in parameters" >'+
+                     '<circle ng-click="selectParameter(parameter.name);" id="#{{parameter.name}}" class="parameterport" cx="{{parameter.isInput() && 1 || width}}em" cy="{{2+$index}}em" r=".4em" fill="yellow" stroke="grey" stroke-width="1.5"/>'+
+                     '<text x="2em" ng-y="{{2.5+$index}}em" style="text-anchor: left">{{parameter.prompt}}</text>'+
+                     '</g>'+
+                     '</svg>',
+            scope:{
+                taskx:'@',
                 tasky:'@',
-                serviceName:'@',
-                taskName:'@'
+                taskName:'@',
+                service: '@'
             },
             link:function (scope, element, attrs) {
-                scope.height = 50;
-                scope.taskText = scope.taskName ? scope.taskName : scope.serviceName;
-                scope.width = scope.taskText.length;
-            }
-
-        }
-    });
-
-angular.module('mobyle.directives').
-    directive('tinput', function ($document) {
-        return {
-            restrict:'E',
-            replace:true,
-            transclude:true,
-            template:'<svg x="4" y="4" z-index="999" ><circle z-index="999" cx="4" cy="4" r="8" fill="yellow" stroke="grey" stroke-width="3"/></svg>',
-            link:function (scope, element, attrs) {
+                scope.selectParameter = function(text){
+                    console.log(text);
+                }
+                scope.updateTask = function(){
+                    if(scope.service.name){
+                        scope.taskText = scope.taskName ? scope.taskName : scope.service.name;
+                        scope.parameters = scope.service.inputs.children.concat(scope.service.outputs.children);
+                        var prompts = scope.parameters.map(function(parameter){return parameter.prompt.length;});
+                        console.log(prompts);
+                        var longestPrompt = Math.max.apply(null, prompts);
+                        scope.width = longestPrompt;
+                        scope.height = 3 + scope.service.inputs.children.length + scope.service.outputs.children.length;
+                    }
+                }
+                scope.service = {'name':'loading...', 'inputs':{'children':[]}, 'outputs':{'children':[]}};
+                scope.updateTask();
+                attrs.$observe('service', function(service){
+                    scope.service = angular.fromJson(service);
+                    scope.updateTask();
+                });
             }
 
         }
