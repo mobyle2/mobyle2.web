@@ -9,6 +9,7 @@ from pyramid_mailer.message import Message
 
 from velruse import login_url
 import json
+from bson import json_util
 import requests
 import bcrypt
 
@@ -16,6 +17,8 @@ from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
 from mobyle.common import tokens
+
+from mobyle.web.classification import BY_TOPIC, BY_OPERATION
 
 import urllib
 from urllib2 import URLError
@@ -322,3 +325,16 @@ def about(request):
         return {
         }
 
+@view_config(route_name='services_by_topic')
+def services_by_topic(request):
+    tree_list = BY_TOPIC.get_classification(filter=request.params.get('filter',None))
+    tree_list = tree_list['sublevels'] if tree_list else []
+    objlist = json.dumps(tree_list, default=json_util.default)
+    return Response(body=objlist, content_type="application/json")
+
+@view_config(route_name='services_by_operation')
+def services_by_operation(request):
+    tree_list = BY_OPERATION.get_classification(filter=request.params.get('filter',None))
+    tree_list = tree_list['sublevels'] if tree_list else []
+    objlist = json.dumps(tree_list, default=json_util.default)
+    return Response(body=objlist, content_type="application/json")

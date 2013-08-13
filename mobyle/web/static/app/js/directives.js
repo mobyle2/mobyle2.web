@@ -95,12 +95,6 @@ angular.module('mobyle.directives').directive("recursive", function ($compile) {
     };
 });
 
-angular.module('mobyle.directives').directive("mbformpara", [function () {
-    return {
-        templateUrl:'partials/mbformpara.html'
-    };
-}]);
-
 angular.module('mobyle.directives').
     directive('draggable', function ($document) {
         return function (scope, element, attr) {
@@ -206,3 +200,24 @@ angular.module('mobyle.directives').
 
         }
     });
+
+angular.module('mobyle.directives').directive("mbformpara", [function() {
+  return {
+    templateUrl: 'partials/mbformpara.html'
+  };
+}]);
+
+angular.module('mobyle.directives').directive("tree", [function() {
+    return {
+        templateUrl: 'partials/tree.html',
+        link: function(scope, element, attrs) {
+            scope.isService = function(tree){
+                return tree.hasOwnProperty('version');
+            }
+            scope.toggleState = scope.defaultToggleState;
+            scope.toggle = function(){
+                scope.toggleState = !scope.toggleState;
+            }
+        }
+    };
+}]);

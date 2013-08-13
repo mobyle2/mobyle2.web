@@ -73,6 +73,8 @@ def main(global_config, **settings):
     config.add_route('auth_reset_password','/auth/password/reset')
     config.add_route('auth_update_password','/auth/password')
     config.add_route('auth_confirm_email','/auth/confirm_email')
+    config.add_route('services_by_topic', '/services/by_topic')
+    config.add_route('services_by_operation', '/services/by_operation')
 
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
@@ -86,10 +88,12 @@ def main(global_config, **settings):
     from mobyle.common.job import Job
     from mobyle.common.project import Project, ProjectData 
     from mobyle.common.type import Type, Format
+    from mobyle.common.topic import Topic
+    from mobyle.common.operation import Operation
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
     dconfig['permission'] = 'isadmin'
-    Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData, Package, Service, Program, Workflow, Widget, Type, Format], config)
+    Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData, Package, Service, Program, Workflow, Widget, Type, Format, Topic, Operation], config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])
 

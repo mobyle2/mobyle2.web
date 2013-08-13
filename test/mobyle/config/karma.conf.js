@@ -1,26 +1,30 @@
-basePath = '../../../mobyle/web/static/app';
+module.exports = function(karma) {
+  karma.configure({
+    basePath: '../../../mobyle/web/static/app',
 
-files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  'lib/angular/angular.js',
-  'lib/angular/angular-*.js',
-  '../../../../test/mobyle/test/lib/angular/angular-mocks.js',
-  'js/**/*.js',
-  'partials/*.html',
-  '../../../../test/mobyle/test/unit/**/*.js'
-];
+    frameworks: ["jasmine"],
 
-// generate js files from html templates
-preprocessors = {
-    'partials/*.html': 'html2js'
-};
+    files: [
+      'lib/angular/angular.js',
+      'lib/angular/angular-*.js',
+      '../../../../test/mobyle/test/lib/angular/angular-mocks.js',
+      'js/**/*.js',
+      'partials/*.html',
+      '../../../../test/mobyle/test/unit/**/*.js'
+    ],
 
-autoWatch = true;
+    // generate js files from html templates
+    preprocessors: {
+        'partials/*.html': 'ng-html2js'
+    },
 
-browsers = ['Firefox'];
+    autoWatch: true,
 
-junitReporter = {
-  outputFile: 'test_out/unit.xml',
-  suite: 'unit'
+    browsers: ['Firefox'],
+
+    junitReporter: {
+      outputFile: 'test_out/unit.xml',
+      suite: 'unit'
+    }
+ });
 };

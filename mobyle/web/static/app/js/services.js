@@ -43,6 +43,22 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
     return MFResourceFactory;
 });
 
+angular.module('mobyle.services').factory('Classification', function ($resource) {
+    var resource = $resource('/services/by_:key',{},
+        {
+            get: {
+                method:'get',
+                transformResponse: function (data) {
+                    var json_data = JSON.parse(data);
+                    return json_data[json_data.object];
+                }
+
+            }
+        }
+    );
+    return resource;
+});
+
 angular.module('mobyle.services').factory('Service', function (mfResource) {
     return mfResource('services');
 });
