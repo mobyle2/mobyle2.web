@@ -1,11 +1,14 @@
 language: python
 python:
   - "2.7"
+node_js:
+  - "0.8"
 services: mongodb
 # Apply only on main branches
 branches:
   except:
     - /^feature.*$/
+    - master
 # command to install dependencies with mobyle2.lib on develop
 install:
   - "pip install paste pastedeploy pastescript py-bcrypt mongokit"
@@ -13,8 +16,22 @@ install:
   - "pip install pyramid pyramid_debugtoolbar waitress pyramid_beaker pymongo pyramid_mailer py-bcrypt pyScss webtest mf pygeoip"
   - "pip install git+https://github.com/bbangert/velruse.git"
   - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
+  - "pip install coverage"
+  - "pip install python-coveralls"
   - "python setup.py -q install"
+
+# run js part unit tests in before-script
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install --quiet -g karma
+  - npm install --quiet -g karma-ng-html2js-preprocessor
+  - karma start test/mobyle/config/karma.conf.js --single-run
+
 # command to run tests
-script: nosetests
+# command to run tests
+script: nosetests --with-coverage --cover-package=mf
+after_success:
+  - coveralls
 
 

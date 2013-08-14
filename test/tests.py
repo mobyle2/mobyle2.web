@@ -7,6 +7,7 @@ import pymongo
 import copy
 import os
 import unittest
+from webob.multidict import MultiDict
 
 import mobyle.common.config
 cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'development.ini')))                                 
@@ -65,6 +66,10 @@ class ViewTests(unittest.TestCase):
    
     def setUp(self):
         self.config = testing.setUp()
+        self.config.include('pyramid_mailer.testing')
+        # Define routes
+        self.config.add_route('auth_confirm_email','/auth/confirm_email')
+        self.config.add_static_view('static', 'mobyle.web:static')
         self.public_programs_list = ['foo', 'bar']
         for p in self.public_programs_list:
             program = connection.Program()
@@ -95,44 +100,57 @@ class ViewTests(unittest.TestCase):
         programs = connection.Program.find({})
         for program in programs:
             program.delete()
-            users = connection.User.find({})
-            for user in users:
-                user.delete()
-            self.clear_stats()
-            testing.tearDown()
+        users = connection.User.find({})
+        for user in users:
+            user.delete()
+        tokens = connection.Token.find({})
+        for token in tokens:
+            token.delete()
+
+        self.clear_stats()
+        testing.tearDown()
 
 
     def test_main_page(self):
         from mobyle.web.views import main_page
+        self.config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
         request = testing.DummyRequest()
         info = main_page(request)
-        self.assertEqual(info['project'], 'mobyle')
-
-
-    def test_public_programs(self):
-        """tests that 'public' programs are found in the list"""
-        from mobyle.web.views import services_list
-        prog_list = services_list(self.request)
-        for p in self.public_programs_list:
-            self.assertTrue(p in prog_list)
-        self.assertNotIn('baz', services_list(self.request))
-        program = connection.Program()
-        program['name'] = 'baz'
-        program.save()
-        self.assertIn('baz', services_list(self.request))
+        self.assertEqual(info.code, 302)
+        self.assertEqual(info.location, '/static/app/index.html')
 
 
     def test_private_programs(self):
         pass
 
-
-    def test_user_list(self):
-        from mobyle.web import views
-        users = views.user_list(self.request).values()
-        user = users[0]
-        self.assertIn('email', user)
-        self.assertIn('group:admin', user['groups'])
-        self.assertEqual(user['type'], "registered")
+    def test_user_registration(self):
+        from mobyle.web.views import auth_login, auth_confirm_email
+        from pyramid_mailer import get_mailer
+        mdict = MultiDict()
+        mdict.add('username','user@fake.org')
+        mdict.add('password','fakepassword')
+        request = testing.DummyRequest(mdict)
+        request.registry = self.config.registry
+        mailer = get_mailer(request)
+        request.matchdict['auth'] = 'register'
+        info = auth_login(request)
+        usertoken = connection.Token.find_one({'user': 'user@fake.org'})
+        self.assertTrue(usertoken is not None)
+        try:
+            userindb = connection.User.find_one({'email': 'user@fake.org'})
+            self.assertTrue(userindb is None)
+        except Exception:
+            # No user in db, this is fine
+            pass
+        mdict = MultiDict()
+        mdict.add('token' ,usertoken['token'])
+        request = testing.DummyRequest(mdict)
+        info = auth_confirm_email(request)
+        try:
+            userindb = connection.User.find_one({'email': 'user@fake.org'})
+            self.assertTrue(userindb is not None)
+        except Exception:
+            self.fail("User not created")
 
 
     def test_stats(self):

@@ -15,6 +15,8 @@
 
    var mfprefix = '';
 
+   var objectsListFields = Array();
+
 $(function() {
 
 $(document).on("change", ".mf-psize", function(event) {
@@ -92,7 +94,7 @@ $(document).on("click", ".mf-prev", function(event) {
   */
   function mfsearch() {
      updateCheckboxValues();
-     $.ajax({type:"POST", data: $("#mf-search-form-"+curObject).serialize(), url: mfprefix+"/"+curObject.toLowerCase()+"s/",
+     $.ajax({type:"POST", data: $("#mf-search-form-"+curObject).serialize(), url: mfprefix+"/"+curObject.toLowerCase()+"s",
             success: function(msg){
                if(msg["status"]==1) {
                    $("#mf-flash").attr('class','alert alert-error');
@@ -118,7 +120,11 @@ $(document).on("click", ".mf-prev", function(event) {
      id = $("#"+curObject+"\\[_id\\]").val();
      method = "POST";
      if(id ==null || id == '') { method = "PUT"; id = "" }
-     $.ajax({type:method, data: $("#mf-form-"+curObject).serialize(), url: mfprefix+"/"+curObject.toLowerCase()+"s/"+id,
+     route = mfprefix+"/"+curObject.toLowerCase()+"s";
+     if(id != "") {
+        route = mfprefix+"/"+curObject.toLowerCase()+"s/"+id
+     }
+     $.ajax({type:method, data: $("#mf-form-"+curObject).serialize(), url: route,
             success: function(msg){
                if(msg["status"]==1) {
                  $.each(msg["error"], function(err){
@@ -181,7 +187,7 @@ $(document).on("click", ".mf-prev", function(event) {
     $("#accordion"+curObject).show();
     //$("#show-"+curObject).show();
     //$("#search-"+curObject).show();
-    route = mfprefix+'/'+id.toLowerCase()+'s/';
+    route = mfprefix+'/'+id.toLowerCase()+'s';
     var filter='?page='+curPage+'&pagesize='+pageSize;
     if(mfsort['key']!=null) {
       filter += '&order='+mfsort['key']+'&order_type='+mfsort['value']
@@ -206,8 +212,10 @@ $(document).on("click", ".mf-prev", function(event) {
           if( key!='id' && val!=null && ((!jQuery.isPlainObject(val)) || val['$date']!=null )) {
             var type = $('#'+curObject+'\\['+key+'\\]').attr('type');
             if ( $.inArray(key, keys) < 0) {
-              keys.push(key)
-              types[key] = type
+              if(objectsListFields[curObject]==null || $.inArray(key,objectsListFields[curObject]) >= 0) {
+              keys.push(key);
+              types[key] = type;
+              }
             }
           }
         });
@@ -297,6 +305,8 @@ $(document).on("click", ".mf-prev", function(event) {
        }
        else if(val['$oid']!=null){
          $('#'+elt).val(val['$oid']);
+         $('#DbRef'+elt).text(val['$oid']);
+         searchDbRef(elt);
        }
        else if(val['_id']!=null && val['_id']['$oid']!=null){
          // Db object reference
@@ -437,7 +447,7 @@ $(document).on("click", ".mf-prev", function(event) {
   * get id, search in database and update name in dbref container.
   */
   function searchDbRef(container){
-
+      console.log("SALLOU dbref "+container);
       id = $('#'+container).val();
       var obj = $('#DbRef'+container).attr("data-object");
       if(obj==null) { return; }
@@ -538,7 +548,7 @@ $(document).on("click", ".mf-prev", function(event) {
     autocompleteelt = autocompleteelt.replace(/\[/g,'\\[');
     autocompleteelt = autocompleteelt.replace(/\]/g,'\\]');
 
-    route = mfprefix + '/'+objname.toLowerCase()+'s/';
+    route = mfprefix + '/'+objname.toLowerCase()+'s';
     return $.ajax({type:"POST", data: 'Search'+objname+"[name]="+query, url: route,
             success: function(msg){
                if(msg["status"]==1) {

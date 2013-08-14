@@ -1,0 +1,8 @@
+<div class="span10 offset1">
+<h2>Projects</h2>
+<div class="projects {{listDisplay}}">
+  <div ng-repeat="p in projects">
+      <a href="#/projects/{{p._id.$oid}}" ng-bind-html="p.name"/></a>
+  </div>
+</div>
+</div>
