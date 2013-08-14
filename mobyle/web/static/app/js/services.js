@@ -59,6 +59,66 @@ angular.module('mobyle.services').factory('Classification', function ($resource)
     return resource;
 });
 
+// MbService is a factory to attach service methods to
+// JSON data representing a data in Mobyle
+// TODO: find a better name to
+angular.module('mobyle.services').factory('MbService', function() {
+    var MbService = function(data) {
+        var flattenParameters = function(para_object){
+            if(para_object.hasOwnProperty('children')){
+                if(para_object.children.length>0){
+                    return para_object.children.map(
+                        function(child){
+                            return flattenParameters(child);
+                        }
+                    ).reduce(
+                          function(previous, current){
+                            return previous.concat(current);
+                          }
+                        );
+                }else{
+                    return [];
+                }
+            }else{
+                return [para_object];
+            }
+        }
+        var getPrompts = function(parameters){
+            return parameters.map(function(parameter){
+                return parameter.prompt;
+            })
+        }
+        //set defaults properties and functions
+        angular.extend(this, {
+            // get the flattened list of inputs
+            getInputs:function(){
+               return flattenParameters(this.inputs);
+            },
+            // get the flattened list of input prompts
+            getInputPrompts:function(){
+                return getPrompts(flattenParameters(this.inputs));
+            },
+            // get the flattened list of outputs
+            getOutputs:function(){
+                return flattenParameters(this.outputs);
+            },
+            // get the flattened list of outputs
+            getOutputPrompts:function(){
+                return getPrompts(flattenParameters(this.outputs));
+            },
+            // get the flattened list of all parameters
+            getParameters:function(){
+                return flattenParameters(this.inputs).concat(flattenParameters(this.outputs));
+            },
+            // get the flattened list of all parameter prompts
+            getParameterPrompts:function(){
+                return getPrompts(flattenParameters(this.inputs).concat(flattenParameters(this.outputs)));
+            }
+        });
+        angular.extend(this, data);
+    };
+    return MbService;});
+
 angular.module('mobyle.services').factory('Service', function (mfResource) {
     return mfResource('services');
 });

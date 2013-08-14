@@ -156,7 +156,7 @@ angular.module('mobyle.directives').directive('ngX',function () {
     });
 
 angular.module('mobyle.directives').
-    directive('task', function ($document, Service) {
+    directive('task', function ($document, Service, MbService) {
         return {
             restrict:'E',
             replace:true,
@@ -182,18 +182,16 @@ angular.module('mobyle.directives').
                 scope.updateTask = function(){
                     if(scope.service.name){
                         scope.taskText = scope.taskName ? scope.taskName : scope.service.name;
-                        scope.parameters = scope.service.inputs.children.concat(scope.service.outputs.children);
-                        var prompts = scope.parameters.map(function(parameter){return parameter.prompt.length;});
-                        console.log(prompts);
-                        var longestPrompt = Math.max.apply(null, prompts);
+                        scope.parameters = scope.service.getParameters();
+                        var longestPrompt = Math.max.apply(null, scope.service.getParameterPrompts().map(function(prompt){return prompt.length;}));
                         scope.width = longestPrompt;
-                        scope.height = 3 + scope.service.inputs.children.length + scope.service.outputs.children.length;
+                        scope.height = 3 + scope.service.getInputs().length + scope.service.getOutputs().length;
                     }
                 }
-                scope.service = {'name':'loading...', 'inputs':{'children':[]}, 'outputs':{'children':[]}};
+                scope.service = new MbService({'name':'loading...', 'inputs':{'children':[]}, 'outputs':{'children':[]}});
                 scope.updateTask();
                 attrs.$observe('service', function(service){
-                    scope.service = angular.fromJson(service);
+                    scope.service = new MbService(angular.fromJson(service));
                     scope.updateTask();
                 });
             }
