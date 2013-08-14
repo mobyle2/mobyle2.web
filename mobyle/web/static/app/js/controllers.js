@@ -224,6 +224,10 @@ function DataCtrl() {
 }
 
 function WorkflowCtrl($scope,$routeParams,mbsimple,Service) {
-    $scope.services = [Service.get({id:'51f53f7d0b5cb068bffcaa64'}),
-                       Service.get({id:'51f53f7d0b5cb068bffcaa81'})];
+    // warning: the IDs which are specified will not work anywhere
+    // but on my Mongo DB
+    // this will be solved as soon as the identification of services
+    // issue is solved.
+    $scope.services = [Service.get({id:'520101b793546d74bc590727'}),
+                       Service.get({id:'520101b793546d74bc590737'})];
 }
