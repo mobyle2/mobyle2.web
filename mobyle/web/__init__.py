@@ -93,7 +93,7 @@ def main(global_config, **settings):
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
     dconfig['permission'] = 'isadmin'
-    Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData, Package, Service, Program, Workflow, Widget, Type, Format, Topic, Operation], config)
+    Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData, Package, Service, Program, Workflow, Widget, Type, Format, Topic, Operation, Job], config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])
 
