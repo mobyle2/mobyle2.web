@@ -110,3 +110,23 @@ angular.module('mobyle.directives').directive("tree", [function() {
         }
     };
 }]);
+
+angular.module('mobyle.directives').directive('flashMessages', function() {
+    var directive = { restrict: 'E', replace: true };
+    directive.template =
+        '<div ng-repeat="m in messages" id="flash-messages">' +
+            '<div class="alert {{ m.level }}">' +
+            '<button class="close" data-dismiss="alert" type="button">×</button>' +
+            '{{ m.text }}' +
+            '</div>';
+    '</div>';
+
+    directive.controller = function($scope, $rootScope) {
+        $rootScope.$on('flash:message', function(_, messages, done) {
+            $scope.messages = messages;
+            done();
+        });
+    };
+
+    return directive;
+});
