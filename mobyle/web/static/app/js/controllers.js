@@ -185,8 +185,14 @@ function ServicesCtrl($scope,Service) {
     $scope.listDisplay = 'list';
 }
 
-function ServiceDetailCtrl($scope,$routeParams,mbsimple,Service,$resource){
-    $scope.service = Service.get({id:$routeParams.serviceId});
+function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,Service,$resource,flash){
+    $scope.service = Service.get({id:$routeParams.serviceId}).$then(
+        function(response){
+            return response.data;
+        },function(error){
+            flash([{ level: 'alert-block', text: 'service not found!' }]);
+        }
+    );
     $scope.mbsimple = mbsimple;
     $scope.show_advanced = mbsimple($scope.service.inputs);
 
