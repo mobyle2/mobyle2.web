@@ -346,7 +346,7 @@ def services_by_operation(request):
 @view_config(route_name='service_by_name_version')
 @view_config(route_name='service_by_projectid_name')
 @view_config(route_name='service_by_projectid_name_version')
-def services_by_operation(request):
+def service_by_name_version_and_maybe_project(request):
     '''Returns a service object
 
     :param request: HTTP params
