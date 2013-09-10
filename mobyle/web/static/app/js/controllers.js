@@ -186,11 +186,9 @@ function ServicesCtrl($scope,Service) {
 }
 
 function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,Service,$resource,flash){
-    $scope.service = Service.get({id:$routeParams.serviceId}).$then(
-        function(response){
-            return response.data;
-        },function(error){
-            flash([{ level: 'alert-block', text: 'service not found!' }]);
+    $scope.service = Service.get_by_name({name:$routeParams.name}).$promise.catch(
+        function(error){
+            flash([{ level: 'alert-block', text: 'service ' + $routeParams.name + ' not found!' }]);
         }
     );
     $scope.mbsimple = mbsimple;
