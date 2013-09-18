@@ -1,5 +1,5 @@
-module.exports = function(karma) {
-  karma.configure({
+module.exports = function(config) {
+  config.set({
     basePath: '../../../mobyle/web/static/app',
 
     frameworks: ["jasmine"],
@@ -13,6 +13,8 @@ module.exports = function(karma) {
       '../../../../test/mobyle/test/unit/**/*.js'
     ],
 
+    exclude: ['lib/angular/angular-scenario.js'],
+
     // generate js files from html templates
     preprocessors: {
         'partials/*.html': 'ng-html2js'
@@ -20,11 +22,20 @@ module.exports = function(karma) {
 
     autoWatch: true,
 
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
 
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
+    plugins: [
+        'karma-junit-reporter',
+        'karma-jasmine',
+        'karma-chrome-launcher',
+        'karma-firefox-launcher',
+        'karma-ng-html2js-preprocessor'
+    ],
+
+    junitReporter : {
+        outputFile: 'test_out/unit.xml',
+        suite: 'unit'
     }
- });
+
+  });
 };
