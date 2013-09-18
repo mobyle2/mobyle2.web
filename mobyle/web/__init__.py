@@ -75,6 +75,8 @@ def main(global_config, **settings):
     config.add_route('auth_confirm_email','/auth/confirm_email')
     config.add_route('services_by_topic', '/services/by_topic')
     config.add_route('services_by_operation', '/services/by_operation')
+    config.add_route('service_by_identifier','/api/services/{identifier}')
+    config.add_route('service_by_identifier_version','/api/services/{identifier}/{service_version}') 
 
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")

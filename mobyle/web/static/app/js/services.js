@@ -24,9 +24,9 @@ angular.module('mobyle.services').value('mbsimple', function(para) {
   return simple(para);
 });
 
-angular.module('mobyle.services').factory('mfResource', function ($resource) {
-    function MFResourceFactory(collectionName) {
-        var resource = $resource('/'+collectionName+'/:id',{},
+angular.module('mobyle.services').factory('mfResourceByRoute', function ($resource) {
+    function MFResourceFactory(route) {
+        var resource = $resource(route,{},
             {
              get: {
                   method:'get',
@@ -43,36 +43,44 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
     return MFResourceFactory;
 });
 
-angular.module('mobyle.services').factory('Classification', function ($resource) {
-    var resource = $resource('/services/by_:key',{},
+angular.module('mobyle.services').factory('mfResourceByCollection', function (mfResourceByRoute) {
+    function MFResourceFactory(collectionName) {
+        var resource = mfResourceByRoute('/'+collectionName+'/:id');
+        return resource;
+    }
+    return MFResourceFactory;
+});
+
+angular.module('mobyle.services').factory('Classification', function (mfResourceByRoute) {
+    return mfResourceByRoute('/services/by_:key');
+});
+
+angular.module('mobyle.services').factory('Service', function ($resource) {
+    var resource = $resource('/services/:id',{},
         {
             get: {
-                method:'get',
+                method: 'get',
+                url: '/api/services/:id/:public_name/:version',
                 transformResponse: function (data) {
                     var json_data = JSON.parse(data);
                     return json_data[json_data.object];
                 }
-
             }
         }
     );
     return resource;
 });
 
-angular.module('mobyle.services').factory('Service', function (mfResource) {
-    return mfResource('services');
+angular.module('mobyle.services').factory('Type', function (mfResourceByCollection) {
+    return mfResourceByCollection('types');
 });
 
-angular.module('mobyle.services').factory('Type', function (mfResource) {
-    return mfResource('types');
+angular.module('mobyle.services').factory('Format', function (mfResourceByCollection) {
+    return mfResourceByCollection('formats');
 });
 
-angular.module('mobyle.services').factory('Format', function (mfResource) {
-    return mfResource('formats');
-});
-
-angular.module('mobyle.services').factory('Project', function (mfResource) {
-    return mfResource('projects');
+angular.module('mobyle.services').factory('Project', function (mfResourceByCollection) {
+    return mfResourceByCollection('projects');
 });
 
 

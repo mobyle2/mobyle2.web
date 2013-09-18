@@ -10,8 +10,11 @@ from pyramid_mailer.message import Message
 from velruse import login_url
 import json
 from bson import json_util
+from bson.objectid import ObjectId
 import requests
 import bcrypt
+from mf.views import mf_filter, MF_READ
+from mf.db_conn import DbConn
 
 from mobyle.common.connection import connection
 from mobyle.common import users
@@ -338,3 +341,31 @@ def services_by_operation(request):
     tree_list = tree_list['sublevels'] if tree_list else []
     objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
+
+@view_config(route_name='service_by_identifier')
+@view_config(route_name='service_by_identifier_version')
+def service_by_name_version_and_maybe_project(request):
+    '''Returns a service object
+
+    :param request: HTTP params
+    :type request: IMultiDict
+    :return: json - Object from database
+    '''
+    mffilter = mf_filter('service', MF_READ, request)
+    if mffilter is None:
+        raise HTTPForbidden
+    if request.matchdict.has_key('identifier'):
+        # identifier can be an object id or a public name
+        try:
+            mffilter["_id"] = ObjectId(request.matchdict['identifier'])
+        except:
+            mffilter["public_name"] = request.matchdict['identifier']
+    if request.matchdict.has_key('service_version'):
+        mffilter["version"] = request.matchdict['service_version']
+    collection = DbConn.get_db('Service')
+    obj = collection.find_one(mffilter)
+    if not obj:
+        raise HTTPNotFound()
+    response = {'object': 'service', 'status': 0, 'service': obj, 'filter': mffilter}
+    response = json.dumps(response, default=json_util.default)
+    return Response(body=response, content_type="application/json")
