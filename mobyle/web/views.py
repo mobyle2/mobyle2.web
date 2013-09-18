@@ -342,10 +342,8 @@ def services_by_operation(request):
     objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
 
-@view_config(route_name='service_by_name')
-@view_config(route_name='service_by_name_version')
-@view_config(route_name='service_by_projectid_name')
-@view_config(route_name='service_by_projectid_name_version')
+@view_config(route_name='service_by_identifier')
+@view_config(route_name='service_by_identifier_version')
 def service_by_name_version_and_maybe_project(request):
     '''Returns a service object
 
@@ -356,9 +354,12 @@ def service_by_name_version_and_maybe_project(request):
     mffilter = mf_filter('service', MF_READ, request)
     if mffilter is None:
         raise HTTPForbidden
-    if request.matchdict.has_key('project_id'):
-        mffilter["project"] = ObjectId(request.matchdict['project_id'])
-    mffilter["name"] = request.matchdict['service_name']
+    if request.matchdict.has_key('identifier'):
+        # identifier can be an object id or a public name
+        try:
+            mffilter["_id"] = ObjectId(request.matchdict['identifier'])
+        except:
+            mffilter["public_name"] = request.matchdict['identifier']
     if request.matchdict.has_key('service_version'):
         mffilter["version"] = request.matchdict['service_version']
     collection = DbConn.get_db('Service')
