@@ -186,14 +186,14 @@ function ServicesCtrl($scope,Service) {
 }
 
 function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,Service,$resource,flash){
-    $scope.service = Service.get_by_name({name:$routeParams.name}).$promise.catch(
+    var params = {public_name:$routeParams.name};
+    $scope.service = Service.get(params).$promise.catch(
         function(error){
             flash([{ level: 'alert-block', text: 'service ' + $routeParams.name + ' not found!' }]);
         }
     );
     $scope.mbsimple = mbsimple;
     $scope.show_advanced = mbsimple($scope.service.inputs);
-
 }
 
 function TypesCtrl($scope,Type) {

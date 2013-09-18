@@ -6,7 +6,8 @@ angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directive
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/classification/by_:key', {templateUrl: 'partials/classification.html', controller: ClassificationCtrl});
     $routeProvider.when('/services', {templateUrl: 'partials/services.html', controller: ServicesCtrl});
-    $routeProvider.when('/services/:name', {templateUrl: 'partials/serviceDetail.html', controller: ServiceDetailCtrl});
+    $routeProvider.when('/services/:name/:version', {templateUrl: 'partials/serviceDetail.html', controller: ServiceDetailCtrl});
+    $routeProvider.when('/projects/:project/services/:name/:version', {templateUrl: 'partials/serviceDetail.html', controller: ServiceDetailCtrl});
     $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: ProjectsCtrl});
     $routeProvider.when('/projects/:projectId', {templateUrl: 'partials/projectDetail.html', controller: ProjectDetailCtrl});
     $routeProvider.when('/types', {templateUrl: 'partials/types.html', controller: TypesCtrl});
