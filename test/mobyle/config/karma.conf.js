@@ -22,13 +22,12 @@ module.exports = function(config) {
 
     autoWatch: true,
 
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     plugins: [
         'karma-junit-reporter',
         'karma-jasmine',
-        'karma-chrome-launcher',
-        'karma-firefox-launcher',
+        'karma-phantomjs-launcher',
         'karma-ng-html2js-preprocessor'
     ],
 
