@@ -36,9 +36,9 @@ describe('service', function() {
         }));
     });
 
-    describe('mfResource', function() {
-        var testMfResource, $httpBackend, scope, testList, testObject, testId;
-        beforeEach(inject(function($injector, $rootScope, mfResource) {
+    describe('mfResourceByCollection', function() {
+        var testMfResourceByCollection, $httpBackend, scope, testList, testObject, testId;
+        beforeEach(inject(function($injector, $rootScope, mfResourceByCollection) {
             $httpBackend = $injector.get('$httpBackend');
             // resource listing
             testList = [{"id":1},{"id":2}];
@@ -48,17 +48,17 @@ describe('service', function() {
             testObject = {"object":"test","test":{"id":1,"foo":"bar"}};
             $httpBackend.when('GET', '/test/1').respond(JSON.stringify(testObject));
             scope = $rootScope.$new();
-            testMfResource = mfResource('test');
+            testMfResourceByCollection = mfResourceByCollection('test');
         }));
         it('query() should return a list of objects', inject(function() {
            $httpBackend.expectGET('/test');
-           var res = testMfResource.query();
+           var res = testMfResourceByCollection.query();
            $httpBackend.flush();
            expect(res).toEqualData(testList);
         }));
         it('get() should return an object detail', inject(function() {
             $httpBackend.expectGET('/test/'+testId);
-            var res = testMfResource.get({'id':testId});
+            var res = testMfResourceByCollection.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testObject["test"]);
         }));
