@@ -162,8 +162,7 @@ describe('directives', function () {
             }
             html = compile(mbformpara)(scope);
             scope.$digest();
-            html = html.find('div');
-            //console.log(html.html());
+            html = html.children('div');
         }));
 
         it('should have the top id attribute equal to the paragraph name', function () {
