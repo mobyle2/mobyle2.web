@@ -111,7 +111,7 @@ describe('service', function() {
                 "type": "program",
                 "name": "tool2"
             }};
-            $httpBackend.when('GET', '/services/5152bedd93546d544bf4d99c').respond(JSON.stringify(testServiceObject));
+            $httpBackend.when('GET', '/api/services/5152bedd93546d544bf4d99c').respond(JSON.stringify(testServiceObject));
             scope = $rootScope.$new();
         }));
         it('query() should return a list of services', inject(function(Service) {
@@ -121,7 +121,7 @@ describe('service', function() {
             expect(res).toEqualData(testServiceList);
         }));
         it('get() should return an service detail', inject(function(Service) {
-            $httpBackend.expectGET('/services/'+testId);
+            $httpBackend.expectGET('/api/services/'+testId);
             var res = Service.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testServiceObject["service"]);
