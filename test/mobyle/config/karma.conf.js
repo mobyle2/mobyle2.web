@@ -7,7 +7,6 @@ module.exports = function(config) {
     files: [
       'lib/angular/angular.js',
       'lib/angular/angular-*.js',
-      '../../../../test/mobyle/test/lib/angular/angular-mocks.js',
       'js/**/*.js',
       'partials/*.html',
       '../../../../test/mobyle/test/unit/**/*.js'
