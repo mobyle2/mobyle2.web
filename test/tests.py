@@ -10,7 +10,7 @@ import unittest
 from webob.multidict import MultiDict
 
 import mobyle.common.config
-cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'development.ini')))                                 
+cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'test.ini')))                                 
 
 from mobyle.common.connection import connection
 from mobyle.common.stats.stat import Statistic, HourlyStatistic, DailyStatistic, MonthlyStatistic
