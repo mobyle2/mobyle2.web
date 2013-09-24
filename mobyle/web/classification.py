@@ -46,7 +46,7 @@ class Classification:
         for s in Service.find({}):
             keys = [i['classification'] for i in s['classifications'] if i['type']=='EDAM']
             entry = {'name':s['name'],
-                             'public_name':s['public_name'],
+                             'public_name':s.get('public_name'),
                              'version':s['version'],
                              '_id':s['_id']}
             if not(keys):
