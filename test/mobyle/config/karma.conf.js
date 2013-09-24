@@ -14,8 +14,8 @@ module.exports = function(config) {
 
     exclude: ['lib/angular/angular-scenario.js'],
 
-    // generate js files from html templates
     preprocessors: {
+        // generate js files from html templates
         'partials/*.html': 'ng-html2js'
     },
 
@@ -28,12 +28,7 @@ module.exports = function(config) {
         'karma-jasmine',
         'karma-phantomjs-launcher',
         'karma-ng-html2js-preprocessor'
-    ],
-
-    junitReporter : {
-        outputFile: 'test_out/unit.xml',
-        suite: 'unit'
-    }
+    ]
 
   });
 };
