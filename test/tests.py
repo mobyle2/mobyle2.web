@@ -24,7 +24,7 @@ class LoginTest(unittest.TestCase):
 
     def setUp(self):
         from webtest import TestApp
-        self.testapp = TestApp("config:development.ini", relative_to = os.path.normpath( os.path.join( os.path.dirname(__file__), '..')))
+        self.testapp = TestApp("config:test/test.ini", relative_to = os.path.normpath( os.path.join( os.path.dirname(__file__), '..')))
         from mobyle.web.views import add_user
 
         self.user = {
@@ -155,7 +155,6 @@ class ViewTests(unittest.TestCase):
 
     def test_stats(self):
         from mobyle.web import stat_views
-        self.clear_stats()
         mystats = stat_views.stats(self.request).values()
         self.assertTrue((not mystats[0]) or (len(mystats[0]["results"]) == 0))
         newstat  = Statistic()
