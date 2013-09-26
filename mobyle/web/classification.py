@@ -44,14 +44,16 @@ class Classification:
         """
         self.services_by_key = {}
         for s in Service.find({}):
-            keys = [i['classification'] for i in s['classifications'] if i['type']=='EDAM']
+            keys = [i['classification'] for i in s.get('classifications',[]) if i.get('type')=='EDAM']
             entry = {'name':s['name'],
                              'public_name':s.get('public_name'),
-                             'version':s['version'],
+                             'version':s.get('version'),
                              '_id':s['_id']}
             if not(keys):
-                # if the service is not classified
-                keys = ['0000']
+                if self.key=='topic':
+                    keys=['/edam/topic/0000003']
+                else:
+                    keys=['/edam/operation/0000004']
             for key in keys:
                 if not(self.services_by_key.has_key(key)):
                     self.services_by_key[key]=[entry]
@@ -84,6 +86,8 @@ class Classification:
 
         key = '/edam/'+self.key+'/000'+node_output['id'].split(':')[1]
         node_output['services'] = self.services_by_key.get(key,[])
+        if not(node_input):
+            node_output['services'] = self.services_by_key.get('EDAM:0000',[])
         return node_output
 
     def get_classification(self, node_input=None, filter=None):
@@ -99,6 +103,9 @@ class Classification:
         else:
             node_output['services'] = list(node_input['services'])
         node_output = self.prune(node_output)
+        if node_output:
+            print "after prune"
+            print node_output['services']
         return node_output
 
     def prune(self, node):
