@@ -162,9 +162,10 @@ $scope.rpassword}, function() {
 function ClassificationCtrl($scope,$routeParams,Classification) {
     $scope.load = function(query){
         $scope.loading = true;
+        $scope.tree = null;
+        $scope.defaultToggleState = !query;
         Classification.query({key:$routeParams.key,filter:query},function(classification){
-            $scope.classification = classification;
-            $scope.defaultToggleState = !query;
+            $scope.tree = classification;
             $scope.loading = false;
         });
     }

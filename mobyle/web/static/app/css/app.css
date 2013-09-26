@@ -91,11 +91,11 @@
 }
 
 a.toggle-true:before{
-    content: '+ ';
+    content: '- ';
 }
 
 a.toggle-false:before{
-    content: '- ';
+    content: '+ ';
 }
 
 a.service-link{

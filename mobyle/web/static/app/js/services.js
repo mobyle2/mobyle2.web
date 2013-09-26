@@ -51,8 +51,10 @@ angular.module('mobyle.services').factory('mfResourceByCollection', function (mf
     return MFResourceFactory;
 });
 
-angular.module('mobyle.services').factory('Classification', function (mfResourceByRoute) {
-    return mfResourceByRoute('/services/by_:key');
+angular.module('mobyle.services').factory('Classification', function ($resource) {
+    return $resource('/services/by_:key',{},{
+        query: {isArray:false}
+    });
 });
 
 angular.module('mobyle.services').factory('Service', function ($resource) {
