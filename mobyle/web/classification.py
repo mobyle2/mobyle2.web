@@ -103,9 +103,6 @@ class Classification:
         else:
             node_output['services'] = list(node_input['services'])
         node_output = self.prune(node_output)
-        if node_output:
-            print "after prune"
-            print node_output['services']
         return node_output
 
     def prune(self, node):
