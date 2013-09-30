@@ -20,6 +20,8 @@ from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import service
 from mobyle.common import tokens
+from mobyle.common.mobyleError import MobyleError
+from mobyle.common.mobyleConfig import MobyleConfig
 
 from mobyle.web.classification import BY_TOPIC, BY_OPERATION
 
@@ -64,7 +66,96 @@ def create_if_no_exists(email, password=None, encrypted=False):
 
     return (user,newuser)
 
+def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
+    """
+    Checks if user is in ldap
+    :param username: user id or email
+    :type username: str
+    :param mob_config: Mobyle configuration object
+    :type mob_config: MobyleConfig
+    :return: True if in ldap, False if not in ldap, None if error    
+    """
+    import ldap
+    try:
+        con = ldap.initialize( 'ldap://'+mob_config['auth']['ldap']['host']+
+                            ':'+str(mob_config['auth']['ldap']['port']) )
+    except Exception , err :
+            log.error(err)
+            return None
 
+    base_dn= 'ou=People,' + mob_config['auth']['ldap']['dn']
+
+    filter = "(&""(|(uid=" + username + ")(mail=" + username + ")))"
+    try:
+        con.simple_bind_s()
+        attrs =['mail', 'homeDirectory']
+        results = con.search_s( base_dn , ldap.SCOPE_SUBTREE , filter , attrs )
+        if results:
+            return True
+        return False 
+    except Exception , err :
+        log.error(err)
+        return None
+
+
+def check_user_ldap(username, password=None, mob_config=MobyleConfig.get_current()):
+    """
+    Checks for ldap authentication, create user locally if 
+    it does not exists.
+    
+    :param username: user id or email
+    :type username: str
+    :param password: clear password for authentication.
+    :type password: str
+    :param mob_config: Mobyle configuration object
+    :type mob_config: MobyleConfig
+    :return: user
+    """
+    import ldap
+    try:
+        con = ldap.initialize( 'ldap://'+mob_config['auth']['ldap']['host']+
+                            ':'+str(mob_config['auth']['ldap']['port']) )
+    except Exception , err :
+            log.error(err)
+            return None
+
+    base_dn= 'ou=People,' + mob_config['auth']['ldap']['dn']
+    opt_filter = ''
+    if mob_config['auth']['ldap']['filter']:
+        opt_filter = mob_config['auth']['ldap']['filter']
+
+    filter = "(&"+opt_filter+"(|(uid=" + username + ")(mail=" + username + ")))"
+    try:
+        con.simple_bind_s()
+    except Exception , err :
+        log.error(err)
+        return None
+
+    attrs =['mail', 'homeDirectory']
+    try:
+        # Get user info
+        results = con.search_s( base_dn , ldap.SCOPE_SUBTREE , filter , attrs )
+        user_dn = None
+        ldapMail = None
+        ldapHomeDirectory = None
+        for dn, entry in results:
+            user_dn = str(dn)
+            ldapHomeDirectory = entry['homeDirectory'][0]
+            ldapMail = entry['mail'][0]
+        con.simple_bind_s(user_dn,password)
+        con.unbind_s()
+        if user_dn:
+            (db_user, newuser) = create_if_no_exists(ldapMail)
+            if newuser and ldapHomeDirectory:
+                db_user['home_dir'] = ldapHomeDirectory
+                db_user.save()
+            return db_user
+
+    except Exception , err :
+        log.error('Could not find the user based on current filter: '+
+                   filter+", "+str(err))
+        return None
+    return None
 
 def check_user_pw(username, password):
     """checks for plain password vs hashed password in database"""
@@ -233,42 +324,57 @@ def auth_login(request):
         ruser = {}
         ruser['email'] = request.params.getone('username')
         userexists  = connection.User.find_one({'email': ruser['email']})
+        mob_config = MobyleConfig.get_current()
         if userexists:
             status = 1
             msg = "User already exists"
         else:
-            password = request.params.getone('password')
-            hashed = bcrypt.hashpw(password, bcrypt.gensalt())
-            ruser['password'] = hashed
-            status = 1
-            msg = "An email has been sent to confirm your email address.\
-            Click on the provided link to active your account and login \
-            with your new credentials"
-            temptoken = connection.Token()
-            temptoken.generate()
-            temptoken['user'] = ruser['email']
-            temptoken['data'] = json.dumps(ruser)
-            temptoken.save()
-            # Send email
-            mailer = get_mailer(request)
-            settings = request.registry.settings
-            mailmsg = "You have requested to create an account.\n"+ \
+            # If ldap on and user in ldap, do not allow registration
+            if mob_config['auth']['ldap']['allow'] and \
+               is_user_in_ldap(ruser['email'], mob_config):
+                status = 1
+                msg = "User already in ldap, registration is not allowed"
+            else:
+                password = request.params.getone('password')
+                hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+                ruser['password'] = hashed
+                status = 1
+                msg = "An email has been sent to confirm your email address.\
+                Click on the provided link to active your account and login \
+                with your new credentials"
+                temptoken = connection.Token()
+                temptoken.generate()
+                temptoken['user'] = ruser['email']
+                temptoken['data'] = json.dumps(ruser)
+                temptoken.save()
+                # Send email
+                mailer = get_mailer(request)
+                settings = request.registry.settings
+                mailmsg = "You have requested to create an account.\n"+ \
                   "To do so, you can connect to the following address \
                   for 1 hour.\n"+ \
                   request.route_url('auth_confirm_email')+\
                   "?token="+temptoken['token']+\
                   "\nThe Mobyle portal team."
-            message = Message(subject="Mobyle account creation request",
+                message = Message(subject="Mobyle account creation request",
                       recipients=[ruser['email']],
                       body=mailmsg)
-            mailer.send_immediately(message)
+                mailer.send_immediately(message)
     if auth_system == 'native':
         try:
             #ruser = request.json_body
             ruser = {}
             ruser['username'] = request.params.getone('username')
             ruser['password'] = request.params.getone('password')
-            userobj = check_user_pw(ruser['username'],
+
+            userobj = None
+            mob_config = MobyleConfig.get_current()
+            if mob_config['auth']['ldap']['allow']:
+                # Check ldap
+                userobj = check_user_ldap(ruser['username'],
+                            ruser['password'], mob_config)
+            if userobj is None:
+                userobj = check_user_pw(ruser['username'],
                              ruser['password'])
             if userobj:
                 status = 0
