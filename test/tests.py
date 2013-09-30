@@ -16,6 +16,7 @@ from mobyle.common.connection import connection
 from mobyle.common.stats.stat import Statistic, HourlyStatistic, DailyStatistic, MonthlyStatistic
 import mobyle.common.service
 import mobyle.common.users
+from mobyle.common.mobyleConfig import MobyleConfig
 
 base_url = "http://localhost:6543"
 
@@ -83,6 +84,11 @@ class ViewTests(unittest.TestCase):
         mongouser['hashed_password'] = 'test'
         mongouser['type'] = 'registered'
         add_user(mongouser)
+        if MobyleConfig.get_current() is None:
+            mconf = connection.MobyleConfig()
+            mconf['active'] = True
+            mconf.save()
+
 
 
     def clear_stats(self):
