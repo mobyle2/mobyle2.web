@@ -14,6 +14,7 @@ requires = [
     "pyramid_beaker",
     "pymongo",
     "pyramid_mailer",
+    "pyramid_mako",
     "velruse>=0.3dev",
     "py-bcrypt",
     "pygeoip",
