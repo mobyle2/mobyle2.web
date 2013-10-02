@@ -203,7 +203,7 @@ function TypesCtrl($scope,Type) {
 }
 
 function TypeDetailCtrl($scope,$routeParams,Type,$resource){
-    $scope.type = Type.get({id:$routeParams.typeId});
+    $scope.term = Type.get({id:$routeParams.typeId});
     $scope.object = "type";
 }
 
