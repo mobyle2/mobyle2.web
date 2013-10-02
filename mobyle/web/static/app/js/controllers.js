@@ -204,6 +204,7 @@ function TypesCtrl($scope,Type) {
 
 function TypeDetailCtrl($scope,$routeParams,Type,$resource){
     $scope.type = Type.get({id:$routeParams.typeId});
+    $scope.object = "type";
 }
 
 function FormatsCtrl($scope,Format) {
@@ -212,7 +213,8 @@ function FormatsCtrl($scope,Format) {
 }
 
 function FormatDetailCtrl($scope,$routeParams,Format,$resource){
-    $scope.format = Format.get({id:$routeParams.formatId});
+    $scope.term = Format.get({id:$routeParams.formatId});
+    $scope.object = "format";
 }
 
 function ProjectsCtrl($scope,Project) {

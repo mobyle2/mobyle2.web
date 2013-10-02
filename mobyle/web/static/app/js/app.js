@@ -11,9 +11,9 @@ angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directive
     $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: ProjectsCtrl});
     $routeProvider.when('/projects/:projectId', {templateUrl: 'partials/projectDetail.html', controller: ProjectDetailCtrl});
     $routeProvider.when('/types', {templateUrl: 'partials/types.html', controller: TypesCtrl});
-    $routeProvider.when('/types/:typeId', {templateUrl: 'partials/typeDetail.html', controller: TypeDetailCtrl});
+    $routeProvider.when('/types/:typeId', {templateUrl: 'partials/termDetail.html', controller: TypeDetailCtrl});
     $routeProvider.when('/formats', {templateUrl: 'partials/formats.html', controller: FormatsCtrl});
-    $routeProvider.when('/formats/:formatId', {templateUrl: 'partials/formatDetail.html', controller: FormatDetailCtrl});
+    $routeProvider.when('/formats/:formatId', {templateUrl: 'partials/termDetail.html', controller: FormatDetailCtrl});
     $routeProvider.when('/data', {templateUrl: 'partials/data.html', controller: DataCtrl});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html',controller: LoginCtrl});
     $routeProvider.when('/logout', {templateUrl: 'partials/login.html',controller: LoginCtrl});
