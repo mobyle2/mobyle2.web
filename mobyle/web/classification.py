@@ -2,12 +2,11 @@ import logging
 log = logging.getLogger(__name__)
 
 from mobyle.common.connection import connection
-from mobyle.common.operation import Operation
-from mobyle.common.topic import Topic
+from mobyle.common.term import TopicTerm, OperationTerm
 from mobyle.common.service import Service
 
-Topic = connection.Topic
-Operation = connection.Operation
+TopicTerm = connection.TopicTerm
+OperationTerm = connection.OperationTerm
 Service = connection.Service
 
 class Classification:
@@ -24,9 +23,9 @@ class Classification:
         """
         self.key = key
         if key == 'topic':
-            self.key_class = Topic
+            self.key_class = TopicTerm
         else:
-            self.key_class = Operation
+            self.key_class = OperationTerm
         log.debug('started classification loading on %s' % key)
         self.load()
         log.debug('ended classification loading on %s' % key)

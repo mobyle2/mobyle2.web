@@ -89,13 +89,11 @@ def main(global_config, **settings):
     from mobyle.common.mobyleConfig import MobyleConfig
     from mobyle.common.job import Job
     from mobyle.common.project import Project, ProjectData 
-    from mobyle.common.type import Type, Format
-    from mobyle.common.topic import Topic
-    from mobyle.common.operation import Operation
+    from mobyle.common.term import DataTerm, FormatTerm, TopicTerm, OperationTerm
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
     dconfig['permission'] = 'isadmin'
-    Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData, Package, Service, Program, Workflow, Widget, Type, Format, Topic, Operation], config)
+    Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData, Package, Service, Program, Workflow, Widget, DataTerm, FormatTerm, TopicTerm, OperationTerm], config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])
 
