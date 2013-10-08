@@ -10,10 +10,10 @@ angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directive
     $routeProvider.when('/projects/:project/services/:name/:version', {templateUrl: 'partials/serviceDetail.html', controller: ServiceDetailCtrl});
     $routeProvider.when('/projects', {templateUrl: 'partials/projects.html', controller: ProjectsCtrl});
     $routeProvider.when('/projects/:projectId', {templateUrl: 'partials/projectDetail.html', controller: ProjectDetailCtrl});
-    $routeProvider.when('/types', {templateUrl: 'partials/types.html', controller: TypesCtrl});
-    $routeProvider.when('/types/:typeId', {templateUrl: 'partials/termDetail.html', controller: TypeDetailCtrl});
-    $routeProvider.when('/formats', {templateUrl: 'partials/formats.html', controller: FormatsCtrl});
-    $routeProvider.when('/formats/:formatId', {templateUrl: 'partials/termDetail.html', controller: FormatDetailCtrl});
+    $routeProvider.when('/dataterms', {templateUrl: 'partials/terms.html', controller: DataTermsCtrl});
+    $routeProvider.when('/dataterms/:dataTermId', {templateUrl: 'partials/termDetail.html', controller: DataTermDetailCtrl});
+    $routeProvider.when('/formatterms', {templateUrl: 'partials/terms.html', controller: FormatTermsCtrl});
+    $routeProvider.when('/formatterms/:formatTermId', {templateUrl: 'partials/termDetail.html', controller: FormatTermDetailCtrl});
     $routeProvider.when('/data', {templateUrl: 'partials/data.html', controller: DataCtrl});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html',controller: LoginCtrl});
     $routeProvider.when('/logout', {templateUrl: 'partials/login.html',controller: LoginCtrl});

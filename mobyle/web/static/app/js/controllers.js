@@ -197,23 +197,25 @@ function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,Service,$resourc
     $scope.show_advanced = mbsimple($scope.service.inputs);
 }
 
-function TypesCtrl($scope,Type) {
-    $scope.types= Type.query();
+function DataTermsCtrl($scope,DataTerm) {
+    $scope.terms= DataTerm.query();
     $scope.listDisplay = 'list';
+    $scope.object = "dataterm";
 }
 
-function TypeDetailCtrl($scope,$routeParams,Type,$resource){
-    $scope.term = Type.get({id:$routeParams.typeId});
+function DataTermDetailCtrl($scope,$routeParams,DataTerm,$resource){
+    $scope.term = DataTerm.get({id:$routeParams.dataTermId});
     $scope.object = "type";
 }
 
-function FormatsCtrl($scope,Format) {
-    $scope.formats= Format.query();
+function FormatTermsCtrl($scope,FormatTerm) {
+    $scope.terms= FormatTerm.query();
     $scope.listDisplay = 'list';
+    $scope.object = "formatterm";
 }
 
-function FormatDetailCtrl($scope,$routeParams,Format,$resource){
-    $scope.term = Format.get({id:$routeParams.formatId});
+function FormatTermDetailCtrl($scope,$routeParams,FormatTerm,$resource){
+    $scope.term = FormatTerm.get({id:$routeParams.formatTermId});
     $scope.object = "format";
 }
 

@@ -73,12 +73,12 @@ angular.module('mobyle.services').factory('Service', function ($resource) {
     return resource;
 });
 
-angular.module('mobyle.services').factory('Type', function (mfResourceByCollection) {
-    return mfResourceByCollection('types');
+angular.module('mobyle.services').factory('DataTerm', function (mfResourceByCollection) {
+    return mfResourceByCollection('dataterms');
 });
 
-angular.module('mobyle.services').factory('Format', function (mfResourceByCollection) {
-    return mfResourceByCollection('formats');
+angular.module('mobyle.services').factory('FormatTerm', function (mfResourceByCollection) {
+    return mfResourceByCollection('formatterms');
 });
 
 angular.module('mobyle.services').factory('Project', function (mfResourceByCollection) {

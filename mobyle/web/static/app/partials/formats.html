@@ -1,20 +1,20 @@
 <div class="span10 offset1">
-<h2>{{filteredFormats.length}} Formats</h2>
-<div>
-  Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query" ng-model="query">
-  <div class="btn-group" data-toggle="buttons-radio">
-    <button format="button" class="btn" ng-model="listDisplay" btn-radio="'list'"><i class="icon-align-justify"></i></button>
-    <button format="button" class="btn" ng-model="listDisplay" btn-radio="'grid'"><i class="icon-th"></i></button>
-  </div>
-</div>
-<div class="formats {{listDisplay}}">
-  <div ng-repeat="f in filteredFormats = (formats | kwSearch:query:['name','definition']:true | orderBy:'name')">
-    <div class="dt">
-      <a href="#/formats/{{f.id}}" ng-bind-html="f.nameHl || f.name"/></a>
+    <h2>{{filteredTerms.length}} terms</h2>
+    <div>
+        Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query" ng-model="query">
+        <div class="btn-group" data-toggle="buttons-radio">
+            <button type="button" class="btn" ng-model="listDisplay" btn-radio="'list'"><i class="icon-align-justify"></i></button>
+            <button type="button" class="btn" ng-model="listDisplay" btn-radio="'grid'"><i class="icon-th"></i></button>
+        </div>
     </div>
-    <div class="dd">
-      <span ng-bind-html="f.definitionHl || f.definition" />
+    <div class="types {{listDisplay}}">
+        <div ng-repeat="t in filteredTerms = (terms | kwSearch:query:['name','definition','id']:true | orderBy:'name')">
+            <div class="dt">
+                <a href="#/{{object}}s/{{t.id}}" ng-bind-html="t.nameHl || t.name"/></a> (id <i ng-bind-html="t.idHl || t.id"></i>)
+            </div>
+            <div class="dd">
+                <span ng-bind-html="t.definitionHl || t.definition" />
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </div>
