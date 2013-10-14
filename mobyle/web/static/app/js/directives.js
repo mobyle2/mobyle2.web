@@ -56,11 +56,38 @@ angular.module('mobyle.directives').directive('mbinput', function(){
     link: function(scope, element, attrs) {
       // switch the type of the input according to the parameter type...
       // work in progress...
-      try{
-        scope.textinput = scope.para.type_p.edam_formats.indexOf("0002200")!=-1;
-      }catch(e){
-        scope.itype = "text";
-      }
+        switch (scope.para.type.type){
+            case "string":
+                if(scope.para.type.enum){
+                    scope.select = true;
+                    scope.options = [];
+                    for(var value in scope.para.type.enum){
+                        scope.options.push({"label":value,"value":value});
+                    }
+                }else{
+                    scope.itype = "text";
+                }
+                break;
+            case "float":
+                scope.itype = "number";
+                scope.step = "any";
+                break;
+            case "integer":
+                scope.itype = "number";
+                scope.step = "1";
+                break;
+            case "boolean":
+                scope.select = true;
+                scope.options = [{"label":"yes","value":true},{"label":"no","value":false}];
+                break;
+            case "formatted":
+                //text formats
+                scope.textarea = true;
+                break;
+            default:
+                scope.untranslated = true;
+        }
+
       var infoEl = element.find('[data-content]');
       infoEl.bind('mouseover', function(){infoEl.popover('show');});
       infoEl.bind('mouseout', function(){infoEl.popover('hide');});
