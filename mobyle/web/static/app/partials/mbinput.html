@@ -3,9 +3,7 @@
 <i ng-show="para.comment" class="icon-info-sign" data-html="true" data-content="{{para.comment}}" data-container="body"/>
 </label>
 <div class="alert-info" ui-if="untranslated">no layout defined for type {{para.type}}</div>
-<input class="span6" type="{{itype}}" ui-if="itype" name="{{para.name}}" step="{{step}}"/>
-<select class="span6" ui-if="select" name="{{para.name}}" step="{{step}}">
-    <option ng-repeat="option in options" value="{{option.value}}">{{option.label}}</option>
-</select>
-<textarea class="span12" ui-if="textarea" name="{{para.name}}"></textarea>
+<input class="span6" type="{{itype}}" ui-if="itype" name="{{para.name}}" step="{{step}}" value="{{para.type.default}}"/>
+<select class="span6" ui-if="select" name="{{para.name}}" step="{{step}}" ng-options="opt.value as opt.label for opt in options" ng-model="para.type.default" />
+<textarea class="span12" ui-if="textarea" name="{{para.name}}">{{para.type.default}}</textarea>
 </div>
