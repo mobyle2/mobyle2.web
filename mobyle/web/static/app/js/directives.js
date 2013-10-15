@@ -58,12 +58,12 @@ angular.module('mobyle.directives').directive('mbinput', function(){
       // work in progress...
         switch (scope.para.type.type){
             case "string":
-                if(scope.para.type.enum){
+                if(scope.para.type.options){
                     scope.select = true;
                     scope.options = [];
-                    for(var value in scope.para.type.enum){
-                        scope.options.push({"label":value,"value":value});
-                    }
+                    scope.para.type.options.forEach(function(item){
+                        scope.options.push({"label":item.label,"value":item.value});
+                    });
                 }else{
                     scope.itype = "text";
                 }
