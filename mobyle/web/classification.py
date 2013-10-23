@@ -43,16 +43,16 @@ class Classification:
         """
         self.services_by_key = {}
         for s in Service.find({}):
-            keys = [i['classification'] for i in s.get('classifications',[]) if i.get('type')=='EDAM']
+            keys = [term for term in s.get(self.key+'s',[])]
             entry = {'name':s['name'],
                              'public_name':s.get('public_name'),
                              'version':s.get('version'),
                              '_id':s['_id']}
             if not(keys):
                 if self.key=='topic':
-                    keys=['/edam/topic/0000003']
+                    keys=['EDAM_topic:0003']
                 else:
-                    keys=['/edam/operation/0000004']
+                    keys=['EDAM_operation:0004']
             for key in keys:
                 if not(self.services_by_key.has_key(key)):
                     self.services_by_key[key]=[entry]
@@ -83,7 +83,7 @@ class Classification:
                 continue
             node_output['sublevels'].append(self.load_level(t))
 
-        key = '/edam/'+self.key+'/000'+node_output['id'].split(':')[1]
+        key = node_output['id']
         node_output['services'] = self.services_by_key.get(key,[])
         if not(node_input):
             node_output['services'] = self.services_by_key.get('EDAM:0000',[])
