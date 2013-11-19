@@ -56,7 +56,7 @@ angular.module('mobyle.directives').directive('mbinput', function(){
     link: function(scope, element, attrs) {
       // switch the type of the input according to the parameter type...
       // work in progress...
-        switch (scope.para.type.type){
+        switch (scope.para.type._type){
             case "string":
                 if(scope.para.type.options){
                     scope.select = true;
