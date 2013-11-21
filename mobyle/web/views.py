@@ -65,6 +65,7 @@ def create_if_no_exists(email, password=None, encrypted=False):
             else:
                 user['hashed_password'] = password
         user.save()
+        # create first project
         default_project = connection.Project()
         default_project['owner'] = user['_id']
         default_project['users'] = [{ 'role': 'admin',
@@ -72,6 +73,9 @@ def create_if_no_exists(email, password=None, encrypted=False):
                                    }]
         default_project['name'] = 'my project'
         default_project.save()
+        # set this project to be opened by default
+        user['default_project'] = default_project['_id']
+        user.save()
     return (user,newuser)
 
 def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
