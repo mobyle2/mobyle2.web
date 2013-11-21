@@ -323,20 +323,22 @@ def auth_login(request):
     if userid:
         log.error("Someone is logged "+str(userid))
         user  = connection.User.find_one({'email': userid})
-        return { 'user': user['email'], 'status': 0 , 'msg': '', 'admin' :
-        user['admin']}
+        return {'user': user['email'], 'status': 0, 'msg': '', 
+                'admin': user['admin'], 
+                'default_project': str(user['default_project'])}
 
     msg = ''
     user = None
     admin = False
+    default_project = None
     auth_system = request.matchdict['auth']
     settings = request.registry.settings
     if auth_system == 'register':
         #ruser = request.json_body
         ruser = {}
         ruser['email'] = request.params.getone('username')
-        userexists  = connection.User.find_one({'email': ruser['email']})
         mob_config = MobyleConfig.get_current()
+        userexists = connection.User.find_one({'email': request.params.getone('username')})
         if userexists:
             status = 1
             msg = "User already exists"
@@ -429,7 +431,11 @@ def auth_login(request):
     if user:
         headers = remember(request, user)
         request.response.headerlist.extend(headers)
-    return { 'user': user, 'status': status , 'msg': msg, 'admin' : admin}
+        user_doc = connection.User.find_one({'email': user})
+        if user_doc:
+            default_project = user_doc.get('default_project')
+    return { 'user': user, 'status': status , 'msg': msg, 'admin' : admin,
+                        'default_project':str(default_project)}
 
 @view_config(route_name="auth_logout", renderer="json")
 def auth_logout(request):
