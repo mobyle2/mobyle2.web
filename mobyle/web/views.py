@@ -18,6 +18,7 @@ from mf.db_conn import DbConn
 
 from mobyle.common.connection import connection
 from mobyle.common import users
+from mobyle.common import project
 from mobyle.common import service
 from mobyle.common import tokens
 from mobyle.common.mobyleError import MobyleError
@@ -41,7 +42,8 @@ def add_user(user):
 def create_if_no_exists(email, password=None, encrypted=False):
     """
     Check if user exists, else create it
-    
+    If the user is created, also add a first project for him to work in.
+
     :param email: email identifier
     :type email: str
     :param password: password for the user to create
@@ -63,7 +65,13 @@ def create_if_no_exists(email, password=None, encrypted=False):
             else:
                 user['hashed_password'] = password
         user.save()
-
+        default_project = connection.Project()
+        default_project['owner'] = user['_id']
+        default_project['users'] = [{ 'role': 'admin',
+                                      'user': user['_id']
+                                   }]
+        default_project['name'] = 'my project'
+        default_project.save()
     return (user,newuser)
 
 def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
