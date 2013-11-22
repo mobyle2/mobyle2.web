@@ -139,7 +139,6 @@ angular.module('mobyle.services').factory('LoginManager', function ($rootScope) 
                  this.login.status = status;
                  this.login.admin = admin;
                  this.login.defaultProjectId = default_project;
-                 console.log(this.login.defaultProjectId);
                  $rootScope.$broadcast( 'LoginManager.update', this.login );
              }
         };
