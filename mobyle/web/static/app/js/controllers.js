@@ -10,6 +10,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
     $scope.login = null;
     $scope.password = null;
     $scope.admin = false;
+    $scope.defaultProjectId = false;
     // Token for password resets
     $scope.token = $routeParams['token'];
 
@@ -41,7 +42,8 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         // Check at startup if user was previously logged on server
         var newuser = new Login('native');
         var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
-            LoginManager.result(res['user'],res['msg'],res['status'],res['admin']);
+            LoginManager.result(res['user'],res['msg'],res['status'],res['admin'], res['default_project']);
+            $scope.setDefaultProjectId(res['default_project']) ;
         });
     }
 
@@ -63,7 +65,6 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
             $scope.User = null;
         }
         $scope.admin = login.admin;
-
     });
 
     // For register
@@ -85,6 +86,11 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
             $location.path('/');
         }
     }
+
+    $scope.setDefaultProjectId = function(defaultProjectId) {
+        $scope.defaultProjectId = defaultProjectId;
+    }
+
     $scope.userLogged = function() {
         return $scope.User!=null;
     }
@@ -100,7 +106,8 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
                 var newuser = new Login('register');
                 var res = newuser.get({username: $scope.rlogin, password: 
 $scope.rpassword}, function() {
-                LoginManager.result(res['user'],res['msg'],res['status'], res['admin']);  });
+                LoginManager.result(res['user'],res['msg'],res['status'], res['admin'], res['default_project']);  });
+                $scope.setDefaultProjectId(res['default_project']) ;
             }
             else {
                 $scope.msg = "Passwords are not identical";
@@ -109,7 +116,8 @@ $scope.rpassword}, function() {
         else if(type == 'native'){
             var newuser = new Login('native');
             var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
-                    LoginManager.result(res['user'],res['msg'],res['status'], res['admin']);
+                    LoginManager.result(res['user'],res['msg'],res['status'], res['admin'], res['default_project']);
+                    $scope.setDefaultProjectId(res['default_project']) ;
             });
 
         }

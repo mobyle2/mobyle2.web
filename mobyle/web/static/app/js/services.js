@@ -130,15 +130,16 @@ angular.module('mobyle.services').factory('PasswordReset', function ($resource) 
  *   Login controller is used at multiple places (global + login page).
  *   USe this service to store login process elements and notify controllers on update
   */
-
 angular.module('mobyle.services').factory('LoginManager', function ($rootScope) {
 
-    return { login : { 'user' : null, 'msg': '', 'status' : 0, 'admin' : false},
-             result: function(user,msg,status,admin) {
+    return { login : { 'user' : null, 'msg': '', 'status' : 0, 'admin' : false, 'default_project':null},
+             result: function(user,msg,status,admin,default_project) {
                  this.login.user = user;
                  this.login.msg = msg;
                  this.login.status = status;
                  this.login.admin = admin;
+                 this.login.defaultProjectId = default_project;
+                 console.log(this.login.defaultProjectId);
                  $rootScope.$broadcast( 'LoginManager.update', this.login );
              }
         };
