@@ -267,7 +267,7 @@ def auth_confirm_email(request):
         return HTTPForbidden()
 
     # Token is valid, create user from token dataa
-    ruser = json.loads(token_object['data'])
+    ruser = token_object['data']
     (userobj, newuser) = create_if_no_exists(ruser['email'], ruser['password'], True)
 
     if not newuser:
@@ -345,7 +345,7 @@ def auth_login(request):
                 temptoken = connection.Token()
                 temptoken.generate()
                 temptoken['user'] = ruser['email']
-                temptoken['data'] = json.dumps(ruser)
+                temptoken['data'] = ruser
                 temptoken.save()
                 # Send email
                 mailer = get_mailer(request)
