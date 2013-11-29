@@ -325,7 +325,7 @@ def auth_login(request):
         user  = connection.User.find_one({'email': userid})
         return {'user': user['email'], 'status': 0, 'msg': '', 
                 'admin': user['admin'], 
-                'default_project': str(user['default_project'])}
+                'default_project': str(user['default_project']) if user['default_project'] else False}
 
     msg = ''
     user = None
@@ -435,7 +435,7 @@ def auth_login(request):
         if user_doc:
             default_project = user_doc.get('default_project')
     return { 'user': user, 'status': status , 'msg': msg, 'admin' : admin,
-                        'default_project':str(default_project)}
+                        'default_project':str(default_project) if default_project else False}
 
 @view_config(route_name="auth_logout", renderer="json")
 def auth_logout(request):
