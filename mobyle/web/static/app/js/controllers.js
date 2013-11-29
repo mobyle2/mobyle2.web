@@ -213,7 +213,7 @@ function DataTermsCtrl($scope,DataTerm) {
 
 function DataTermDetailCtrl($scope,$routeParams,DataTerm,$resource){
     $scope.term = DataTerm.get({id:$routeParams.dataTermId});
-    $scope.object = "type";
+    $scope.object = "dataterm";
 }
 
 function FormatTermsCtrl($scope,FormatTerm) {
@@ -224,7 +224,7 @@ function FormatTermsCtrl($scope,FormatTerm) {
 
 function FormatTermDetailCtrl($scope,$routeParams,FormatTerm,$resource){
     $scope.term = FormatTerm.get({id:$routeParams.formatTermId});
-    $scope.object = "format";
+    $scope.object = "formatterm";
 }
 
 function ProjectsCtrl($scope,Project) {
