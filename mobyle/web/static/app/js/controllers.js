@@ -43,7 +43,6 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         var newuser = new Login('native');
         var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
             LoginManager.result(res['user'],res['msg'],res['status'],res['admin'], res['default_project']);
-            $scope.setDefaultProjectId(res['default_project']) ;
         });
     }
 
@@ -60,9 +59,11 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
             $scope.rpassword2 = null;
 
             $scope.setUser(login.user);
+            $scope.setDefaultProjectId(login.defaultProjectId) ;
         }
         else {
             $scope.User = null;
+            $scope.setDefaultProjectId(null) ;
         }
         $scope.admin = login.admin;
     });
@@ -107,7 +108,6 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
                 var res = newuser.get({username: $scope.rlogin, password: 
 $scope.rpassword}, function() {
                 LoginManager.result(res['user'],res['msg'],res['status'], res['admin'], res['default_project']);  });
-                $scope.setDefaultProjectId(res['default_project']) ;
             }
             else {
                 $scope.msg = "Passwords are not identical";
@@ -117,9 +117,7 @@ $scope.rpassword}, function() {
             var newuser = new Login('native');
             var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
                     LoginManager.result(res['user'],res['msg'],res['status'], res['admin'], res['default_project']);
-                    $scope.setDefaultProjectId(res['default_project']) ;
             });
-
         }
         else if(type == 'google') {
               // Via velruse
