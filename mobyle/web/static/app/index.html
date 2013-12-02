@@ -36,10 +36,15 @@
       <ul class="nav pull-right" ng-controller="LoginCtrl" id="loginnavbar" ng-init="alreadyLogged()">
         <li ng-hide="userLogged()"><a href="#/login">Login</a></li>
         <li class="dropdown" ng-show="userLogged()" ng-controller="ProjectsCtrl">
-          <a data-toggle="dropdown">{{defaultProjectId || "no project selected"}}</a>
+
+          <a data-toggle="dropdown"><i class="icon-folder-open icon-white"></i> {{currentProject.name || "no project selected"}}</a>
           <ul class="dropdown-menu" ng-repeat="p in projects">
             <li ng-repeat="p in projects">
-              <a href="#/projects/{{p._id.$oid}}" ng-bind-html="p.name"/></a>
+              <a href="#/projects/{{p._id.$oid}}" ng-click="setCurrentProjectId(p._id.$oid)"/>
+                <i class="icon-folder-open" ng-show="p._id.$oid==currentProject._id.$oid"></i>
+                <i class="icon-folder-close" ng-show="p._id.$oid!=currentProject._id.$oid"></i>
+                {{ p.name}}
+              </a>
             </li>
           </ul>
         </li>

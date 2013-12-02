@@ -3,14 +3,21 @@
 /* Controllers */
 
 
-function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset) {
+function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google' ];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
     $scope.login = null;
     $scope.password = null;
     $scope.admin = false;
-    $scope.defaultProjectId = false;
+    $scope.currentProject = CurrentProject.get();
+    $scope.$on( 'CurrentProject.update', function( event, currentProject ) {
+        $scope.currentProject = currentProject;
+    });
+    $scope.setCurrentProjectId = function(currentProjectId){
+        CurrentProject.setId(currentProjectId);
+    }
+
     // Token for password resets
     $scope.token = $routeParams['token'];
 
@@ -59,11 +66,11 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
             $scope.rpassword2 = null;
 
             $scope.setUser(login.user);
-            $scope.setDefaultProjectId(login.defaultProjectId) ;
+            CurrentProject.setId(login.defaultProjectId);
         }
         else {
             $scope.User = null;
-            $scope.setDefaultProjectId(null) ;
+            Project.setId(null) ;
         }
         $scope.admin = login.admin;
     });
@@ -86,10 +93,6 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         if($location.path() == '/login') {
             $location.path('/');
         }
-    }
-
-    $scope.setDefaultProjectId = function(defaultProjectId) {
-        $scope.defaultProjectId = defaultProjectId;
     }
 
     $scope.userLogged = function() {

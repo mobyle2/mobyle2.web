@@ -34,7 +34,6 @@ angular.module('mobyle.services').factory('mfResourceByRoute', function ($resour
                                          var json_data = JSON.parse(data);
                                          return json_data[json_data.object];
                                      }
-
                  }
             }
         );
@@ -85,6 +84,20 @@ angular.module('mobyle.services').factory('Project', function (mfResourceByColle
     return mfResourceByCollection('projects');
 });
 
+angular.module('mobyle.services').factory('CurrentProject', function(Project, $rootScope){
+    var currentProject = {};
+    function setId(currentProjectId) {
+        currentProject = Project.get({id:currentProjectId});
+        $rootScope.$broadcast( 'CurrentProject.update', currentProject );
+    }
+    function get(){
+        return currentProject;
+    }
+    return {
+        setId: setId,
+        get: get
+    }
+});
 
 angular.module('mobyle.services').factory('Login', function ($resource) {
     function LoginFactory(authName) {
