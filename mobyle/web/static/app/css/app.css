@@ -82,6 +82,13 @@
   margin-bottom: 0.3em;
 }
 
+.project-data{
+    border: 1px solid rgb(212,212,212);
+    height: 300px;
+    width: 100%;
+    overflow-x: scroll;
+}
+
 [recursive] ul.nav, recursive ul.nav{
     margin-bottom: 0;
 }

@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'ngSanitize', 'ngRoute', 'ui', 'ui.bootstrap']).
+angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'ngSanitize', 'ngRoute', 'ui', 'ui.bootstrap', 'ngGrid']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/classification/by_:key', {templateUrl: 'partials/classification.html', controller: ClassificationCtrl});
     $routeProvider.when('/services', {templateUrl: 'partials/services.html', controller: ServicesCtrl});

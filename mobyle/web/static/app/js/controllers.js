@@ -236,6 +236,39 @@ function ProjectsCtrl($scope,Project) {
 function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
     $scope.project = Project.get({id:$routeParams.projectId});
     $scope.mbsimple = mbsimple;
+    $scope.projectData = [
+        {'name' : 'test1',
+         'description' : 'test data',
+        'tags' : ['tag1','tag2'],
+        //'project': ObjectId,
+        'data': 'ATTGAGAGACCTATATTACCCG'
+        },
+        {'name' : 'test2',
+            'description' : 'ma seq',
+            'tags' : ['tag2'],
+            //'project': ObjectId,
+            'data': '>104K_THEPA\nGFASDFSFASFSFSAFASFADFAS'
+        }
+        ];
+    var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
+                             '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
+                          '</div>';
+    $scope.projectDataGridOptions = {data:'projectData',
+                                     columnDefs: [{ field: 'name',
+                                                    displayName: 'Name',
+                                                    width: "*"},
+                                                  { field: 'description',
+                                                    displayName: 'Description',
+                                                    width: "*"},
+                                                 { field: 'tags',
+                                                     displayName: 'Tags',
+                                                     cellTemplate: tagCellTemplate,
+                                                     width: "*"},
+                                                 { field: 'data',
+                                                     displayName: 'Data',
+                                                     width: "*"
+                                                     }
+                                                 ]}
 }
 
 function DataCtrl() {
