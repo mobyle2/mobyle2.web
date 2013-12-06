@@ -13,7 +13,7 @@ branches:
 install:
   - "pip install paste pastedeploy pastescript py-bcrypt mongokit"
   - "pip install 'pyparsing<2.0'"
-  - "pip install pyramid pyramid_debugtoolbar waitress pyramid_beaker pymongo pyramid_mailer py-bcrypt pyScss webtest mf pygeoip pairtree gitpython==0.3.2.RC1 ython-ldap"
+  - "pip install pyramid pyramid_debugtoolbar waitress pyramid_beaker pymongo pyramid_mailer py-bcrypt pyScss webtest mf pygeoip pairtree gitpython==0.3.2.RC1 python-ldap"
   - "pip install git+https://github.com/bbangert/velruse.git"
   - "pip install git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib"
   - "pip install coverage"
