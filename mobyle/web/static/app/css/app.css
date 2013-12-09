@@ -89,6 +89,10 @@
     overflow-x: scroll;
 }
 
+.project-data .label{
+    margin-left: 2px;
+}
+
 [recursive] ul.nav, recursive ul.nav{
     margin-bottom: 0;
 }
