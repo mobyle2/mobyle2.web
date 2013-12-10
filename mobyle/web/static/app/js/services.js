@@ -25,8 +25,8 @@ angular.module('mobyle.services').value('mbsimple', function(para) {
 });
 
 angular.module('mobyle.services').factory('mfResourceByRoute', function ($resource) {
-    function MFResourceFactory(route) {
-        var resource = $resource(route,{},
+    function MFResourceFactory(route, paramDefaults) {
+        var resource = $resource(route, paramDefaults || {},
             {
              get: {
                   method:'get',
@@ -34,7 +34,36 @@ angular.module('mobyle.services').factory('mfResourceByRoute', function ($resour
                                          var json_data = JSON.parse(data);
                                          return json_data[json_data.object];
                                      }
-                 }
+             },
+             save: {
+                method: 'put',
+                headers: {'Content-Type':'application/x-www-form-urlencoded'},
+                transformRequest: function(data){
+                    var requestObject = {};
+                    var rootPrefix = paramDefaults._mfPrefix;
+                    var serialize = function(prefix, data){
+                        if (data instanceof Array){
+                            $.each(data, function(index, value){
+                                serialize(prefix+'['+index+']', data[index]);
+                            });
+                        }else if(data instanceof Object){
+                            for (var prop in data){
+                                if(data.hasOwnProperty(prop)){
+                                    serialize(prefix+'['+prop+']', data[prop]);
+                                }
+                            }
+                        }else{
+                            requestObject[prefix]=data;
+                        }
+                    }
+                    serialize(rootPrefix, data);
+                    return $.param(requestObject);
+                }
+             },
+             delete: {
+                 method: 'delete',
+                 url: route
+             }
             }
         );
         return resource;
@@ -43,8 +72,9 @@ angular.module('mobyle.services').factory('mfResourceByRoute', function ($resour
 });
 
 angular.module('mobyle.services').factory('mfResourceByCollection', function (mfResourceByRoute) {
-    function MFResourceFactory(collectionName) {
-        var resource = mfResourceByRoute('/'+collectionName+'/:id');
+    function MFResourceFactory(collectionName, paramDefaults) {
+        var resource = mfResourceByRoute('/'+collectionName+'/:id', paramDefaults);
+        resource.collectionName = collectionName;
         return resource;
     }
     return MFResourceFactory;
@@ -80,8 +110,22 @@ angular.module('mobyle.services').factory('FormatTerm', function (mfResourceByCo
     return mfResourceByCollection('formatterms');
 });
 
+angular.module('mobyle.services').factory('User', function (mfResourceByCollection) {
+    return mfResourceByCollection('users');
+});
+
 angular.module('mobyle.services').factory('Project', function (mfResourceByCollection) {
-    return mfResourceByCollection('projects');
+    var defaultParams = {'name':'@name',
+                         'public':'@public',
+                         'owner':'@owner',
+                         'users':'@users',
+                         'id':'@_id.$oid',
+                         '_mfPrefix':'Project'}
+    return mfResourceByCollection('projects',defaultParams);
+});
+
+angular.module('mobyle.services').factory('ProjectData', function (mfResourceByCollection) {
+    return mfResourceByCollection('projectdatas');
 });
 
 angular.module('mobyle.services').factory('CurrentProject', function(Project, $rootScope){
@@ -97,6 +141,20 @@ angular.module('mobyle.services').factory('CurrentProject', function(Project, $r
         setId: setId,
         get: get
     }
+});
+
+angular.module('mobyle.services').factory('CurrentUser', function(User, LoginManager, $rootScope){
+    var user = new User();
+    $rootScope.$on( 'LoginManager.update', function( event, login ) {
+        User.query({'email': login.email},
+            function(users){
+                user = users[0];
+            });
+    });
+    var get = function(){
+        return user;
+    }
+    return {'get':get}
 });
 
 angular.module('mobyle.services').factory('Login', function ($resource) {

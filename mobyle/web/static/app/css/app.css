@@ -82,11 +82,9 @@
   margin-bottom: 0.3em;
 }
 
-.project-data{
+.mb-grid{
     border: 1px solid rgb(212,212,212);
-    height: 300px;
-    width: 100%;
-    overflow-x: scroll;
+    height: 100%;
 }
 
 .project-data .label{

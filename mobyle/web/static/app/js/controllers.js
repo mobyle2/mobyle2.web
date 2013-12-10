@@ -228,28 +228,76 @@ function FormatTermDetailCtrl($scope,$routeParams,FormatTerm,$resource){
     $scope.object = "formatterm";
 }
 
-function ProjectsCtrl($scope,Project) {
-    $scope.projects = Project.query();
-    $scope.listDisplay = 'list';
+function ProjectsCtrl($scope, $modal, Project, CurrentUser) {
+    $scope.update = function(){
+        $scope.projects = Project.query();
+    }
+    var usersTemplate = '<div ng-repeat="access in row.getProperty(col.field)">{{access.user.$oid}} - {{access.role}}</div>';
+    $scope.projectGridOptions = {data:'projects',
+                                 enableRowSelection:false,
+        columnDefs: [{ field: 'name',
+            displayName: 'Name',
+            width: "**",
+            cellTemplate: '<a ng-click="show(row)">{{row.getProperty(col.field)}}</a><i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'},
+            { field: 'notebook',
+              displayName: 'Notebook',
+              width: "***"},
+            { field: 'users',
+              cellTemplate: usersTemplate,
+              displayName: 'Access',
+              width: "***"
+            },
+            { field: '',
+              cellTemplate: '<span><button ng-click="edit(row.entity)"><i class="icon-pencil"></i></button>'+
+                            '<button ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
+              width: '*'
+            }
+        ]}
+    // new project creation form
+    $scope.newProject = new Project();
+    $scope.create = function(){
+        $scope.newProject['owner'] = CurrentUser.get()._id.$oid;
+        $scope.newProject['users'] = [{'role':'manager', 'user':$scope.newProject['owner']}];
+        $scope.newProject.$save($scope.update);
+        $scope.newProject = new Project();
+    }
+    $scope.delete = function(p){
+        p.$delete($scope.updateProjects);
+    }
+    $scope.display_create_dialog = function(){
+        // testing the use of bootstrap modal...
+        console.log('ici');
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/projectEdit.html',
+            controller: ProjectNewCtrl
+        });
+    }
+/*
+    $scope.edit = function(){
+            // testing the use of bootstrap modal...
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/projectDetail.html',
+                controller: ProjectDetailCtrl
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                console.log('tranquille...');
+            }, function () {
+                console.log('Modal dismissed at: ' + new Date());
+            });
+        }
+ */
+    $scope.update();
 }
 
-function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
+function ProjectNewCtrl($scope,$routeParams,mbsimple,Project,ProjectData){
+
+}
+
+function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,ProjectData){
     $scope.project = Project.get({id:$routeParams.projectId});
     $scope.mbsimple = mbsimple;
-    $scope.projectData = [
-        {'name' : 'test1',
-         'description' : 'test data',
-        'tags' : ['tag1','tag2'],
-        //'project': ObjectId,
-        'data': 'ATTGAGAGACCTATATTACCCG'
-        },
-        {'name' : 'test2',
-            'description' : 'ma seq',
-            'tags' : ['tag2'],
-            //'project': ObjectId,
-            'data': '>104K_THEPA\nGFASDFSFASFSFSAFASFADFAS'
-        }
-        ];
+    $scope.projectData = ProjectData.query();
     var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
                              '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
                           '</div>';
@@ -269,6 +317,11 @@ function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
                                                      width: "*"
                                                      }
                                                  ]}
+
+    $scope.createData = function(){
+        ProjectData.save(newProjectData);
+    }
+    
 }
 
 function DataCtrl() {

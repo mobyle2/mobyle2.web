@@ -24,7 +24,7 @@
   <![endif]-->
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar navbar-inverse navbar-fixed-top"  ng-cloak>
     <div class="navbar-inner">
       <ul class="nav">
         <li><a href="#/classification/by_topic" active-link="active">classification by topic</a></li>
@@ -66,7 +66,7 @@
   </div>
   <div class="row-fluid" style="padding-top: 40px;">
     <div class="span12"><div class="span10 offset1"><flash-messages> </flash-messages></div></div>
-    <div class="span12" ng-view>
+    <div class="span12" ng-view ng-cloak>
     </div>
   </div>
 
@@ -80,7 +80,8 @@
   <script src="lib/angular/angular-sanitize.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
   <script src="lib/angularui/angular-ui.js"></script>
-  <script src="lib/ui-bootstrap/ui-bootstrap-tpls-0.2.0.js"></script>
+  <script src="lib/ui-bootstrap/ui-bootstrap-0.7.0.js"></script>
+  <script src="lib/ui-bootstrap/ui-bootstrap-tpls-0.7.0.js"></script>
   <script src="lib/ng-grid/js/ng-grid.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
