@@ -50,7 +50,7 @@ def create_if_no_exists(email, password=None, encrypted=False):
     :type password: str
     :param encrypted: is password encrypted or clear? If clear, encrypt it
     :type encrypted: bool
-    
+
     """
     user  = connection.User.find_one({'email': email})
     newuser = False
@@ -68,7 +68,7 @@ def create_if_no_exists(email, password=None, encrypted=False):
         # create first project
         default_project = connection.Project()
         default_project['owner'] = user['_id']
-        default_project['users'] = [{ 'role': 'admin',
+        default_project['users'] = [{ 'role': u'manager',
                                       'user': user['_id']
                                    }]
         default_project['name'] = 'my project'
@@ -85,7 +85,7 @@ def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
     :type username: str
     :param mob_config: Mobyle configuration object
     :type mob_config: MobyleConfig
-    :return: True if in ldap, False if not in ldap, None if error    
+    :return: True if in ldap, False if not in ldap, None if error
     """
     import ldap
     try:
@@ -104,7 +104,7 @@ def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
         results = con.search_s( base_dn , ldap.SCOPE_SUBTREE , filter , attrs )
         if results:
             return True
-        return False 
+        return False
     except Exception , err :
         log.error(err)
         return None
@@ -112,9 +112,9 @@ def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
 
 def check_user_ldap(username, password=None, mob_config=MobyleConfig.get_current()):
     """
-    Checks for ldap authentication, create user locally if 
+    Checks for ldap authentication, create user locally if
     it does not exists.
-    
+
     :param username: user id or email
     :type username: str
     :param password: clear password for authentication.
@@ -187,17 +187,17 @@ def main_page(request):
     return HTTPFound(location=request.static_path(\
         "mobyle.web:static/app/index.html"))
 
-    
+
 @view_config(context='velruse.AuthenticationComplete')
 def login_complete_view(request):
     context = request.context
-    
+
     result = {
         'profile': context.profile,
         'credentials': context.credentials,
     }
 
-    if context.provider_name == 'facebook': 
+    if context.provider_name == 'facebook':
         username = context.profile['verifiedEmail']
     elif context.provider_name == 'openid':
         username = context.profile['emails'][0]
@@ -208,7 +208,7 @@ def login_complete_view(request):
     headers = remember(request, username)
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
-                     
+
     return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html"), headers = headers )
 
 
@@ -223,7 +223,7 @@ def login(request):
     if 'username' in request.POST:
         username = request.POST['username']
         password = request.POST['password']
-        
+
         user = check_user_pw(username, password)
         if user:
             headers = remember(request, username)
@@ -309,7 +309,7 @@ def auth_update_password(request):
     log.debug("User "+token_object['user']+" has reset its password")
     return {}
 
-    
+
 
 @view_config(route_name="auth_login",renderer="json")
 def auth_login(request):
@@ -323,8 +323,8 @@ def auth_login(request):
     if userid:
         log.error("Someone is logged "+str(userid))
         user  = connection.User.find_one({'email': userid})
-        return {'user': user['email'], 'status': 0, 'msg': '', 
-                'admin': user['admin'], 
+        return {'user': user['email'], 'status': 0, 'msg': '',
+                'admin': user['admin'],
                 'default_project': str(user['default_project']) if user['default_project'] else False}
 
     msg = ''
