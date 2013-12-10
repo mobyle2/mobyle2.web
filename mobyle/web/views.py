@@ -33,11 +33,13 @@ import urllib2
 import logging
 log = logging.getLogger(__name__)
 
+
 def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
     hashed = bcrypt.hashpw(user['hashed_password'], bcrypt.gensalt())
     user['hashed_password'] = hashed
     user.save()
+
 
 def create_if_no_exists(email, password=None, encrypted=False):
     """
@@ -52,11 +54,11 @@ def create_if_no_exists(email, password=None, encrypted=False):
     :type encrypted: bool
 
     """
-    user  = connection.User.find_one({'email': email})
+    user = connection.User.find_one({'email': email})
     newuser = False
     if not user:
         newuser = True
-        user= connection.User()
+        user = connection.User()
         user['email'] = email
         if password:
             if not encrypted:
@@ -68,15 +70,16 @@ def create_if_no_exists(email, password=None, encrypted=False):
         # create first project
         default_project = connection.Project()
         default_project['owner'] = user['_id']
-        default_project['users'] = [{ 'role': u'manager',
-                                      'user': user['_id']
+        default_project['users'] = [{'role': u'manager',
+                                     'user': user['_id']
                                    }]
         default_project['name'] = 'my project'
         default_project.save()
         # set this project to be opened by default
         user['default_project'] = default_project['_id']
         user.save()
-    return (user,newuser)
+    return (user, newuser)
+
 
 def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
     """
@@ -89,28 +92,29 @@ def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
     """
     import ldap
     try:
-        con = ldap.initialize( 'ldap://'+mob_config['auth']['ldap']['host']+
-                            ':'+str(mob_config['auth']['ldap']['port']) )
-    except Exception , err :
+        con = ldap.initialize('ldap://' + mob_config['auth']['ldap']['host'] +
+                              ':' + str(mob_config['auth']['ldap']['port']))
+    except Exception, err:
             log.error(err)
             return None
 
-    base_dn= 'ou=People,' + mob_config['auth']['ldap']['dn']
+    base_dn = 'ou=People,' + mob_config['auth']['ldap']['dn']
 
     filter = "(&""(|(uid=" + username + ")(mail=" + username + ")))"
     try:
         con.simple_bind_s()
-        attrs =['mail', 'homeDirectory']
-        results = con.search_s( base_dn , ldap.SCOPE_SUBTREE , filter , attrs )
+        attrs = ['mail', 'homeDirectory']
+        results = con.search_s(base_dn, ldap.SCOPE_SUBTREE, filter, attrs)
         if results:
             return True
         return False
-    except Exception , err :
+    except Exception, err:
         log.error(err)
         return None
 
 
-def check_user_ldap(username, password=None, mob_config=MobyleConfig.get_current()):
+def check_user_ldap(username, password=None,
+                    mob_config=MobyleConfig.get_current()):
     """
     Checks for ldap authentication, create user locally if
     it does not exists.
@@ -125,28 +129,29 @@ def check_user_ldap(username, password=None, mob_config=MobyleConfig.get_current
     """
     import ldap
     try:
-        con = ldap.initialize( 'ldap://'+mob_config['auth']['ldap']['host']+
-                            ':'+str(mob_config['auth']['ldap']['port']) )
-    except Exception , err :
+        con = ldap.initialize('ldap://' + mob_config['auth']['ldap']['host'] +
+                              ':' + str(mob_config['auth']['ldap']['port']))
+    except Exception, err:
             log.error(err)
             return None
 
-    base_dn= 'ou=People,' + mob_config['auth']['ldap']['dn']
+    base_dn = 'ou=People,' + mob_config['auth']['ldap']['dn']
     opt_filter = ''
     if mob_config['auth']['ldap']['filter']:
         opt_filter = mob_config['auth']['ldap']['filter']
 
-    filter = "(&"+opt_filter+"(|(uid=" + username + ")(mail=" + username + ")))"
+    filter = "(&" + opt_filter + "(|(uid=" + username + ")(mail=" +\
+             username + ")))"
     try:
         con.simple_bind_s()
-    except Exception , err :
+    except Exception, err:
         log.error(err)
         return None
 
-    attrs =['mail', 'homeDirectory']
+    attrs = ['mail', 'homeDirectory']
     try:
         # Get user info
-        results = con.search_s( base_dn , ldap.SCOPE_SUBTREE , filter , attrs )
+        results = con.search_s(base_dn, ldap.SCOPE_SUBTREE, filter, attrs)
         user_dn = None
         ldapMail = None
         ldapHomeDirectory = None
@@ -154,7 +159,7 @@ def check_user_ldap(username, password=None, mob_config=MobyleConfig.get_current
             user_dn = str(dn)
             ldapHomeDirectory = entry['homeDirectory'][0]
             ldapMail = entry['mail'][0]
-        con.simple_bind_s(user_dn,password)
+        con.simple_bind_s(user_dn, password)
         con.unbind_s()
         if user_dn:
             (db_user, newuser) = create_if_no_exists(ldapMail)
@@ -163,18 +168,20 @@ def check_user_ldap(username, password=None, mob_config=MobyleConfig.get_current
                 db_user.save()
             return db_user
 
-    except Exception , err :
-        log.error('Could not find the user based on current filter: '+
-                   filter+", "+str(err))
+    except Exception, err:
+        log.error('Could not find the user based on current filter: ' +
+                   filter + ", " + str(err))
         return None
     return None
 
+
 def check_user_pw(username, password):
     """checks for plain password vs hashed password in database"""
-    if not password or password=='':
+    if not password or password == '':
         return None
-    user  = connection.User.find_one({'email': username})
-    if not user: return False
+    user = connection.User.find_one({'email': username})
+    if not user:
+        return False
     hashed = bcrypt.hashpw(password, user['hashed_password'])
     if hashed == user['hashed_password']:
         return user
@@ -184,7 +191,7 @@ def check_user_pw(username, password):
 
 @view_config(route_name='main')
 def main_page(request):
-    return HTTPFound(location=request.static_path(\
+    return HTTPFound(location=request.static_path(
         "mobyle.web:static/app/index.html"))
 
 
@@ -204,12 +211,14 @@ def login_complete_view(request):
     else:
         username = context.profile['accounts'][0]["username"]
 
-    request.db.login_log.insert({ 'username': username } )
+    request.db.login_log.insert({'username': username})
     headers = remember(request, username)
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
 
-    return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html"), headers = headers )
+    return HTTPFound(location=
+                     request.static_path("mobyle.web:static/app/index.html"),
+                     headers=headers)
 
 
 @view_config(route_name='onlyauthenticated', permission='viewauth')
@@ -227,7 +236,7 @@ def login(request):
         user = check_user_pw(username, password)
         if user:
             headers = remember(request, username)
-            return HTTPFound(location="/", headers = headers)
+            return HTTPFound(location="/", headers=headers)
     return Response("not logged in")
 
 
@@ -238,14 +247,16 @@ def logout(request):
     request.session.flash("You have logged out")
     return HTTPFound(location='/', headers=headers)
 
-@view_config(route_name="auth_reset_password",renderer="json")
+
+@view_config(route_name="auth_reset_password", renderer="json")
 def auth_reset_password(request):
     '''
     User asks for a password reset.
     Generates a temporary token and send an email to
     the user.
     '''
-    user  = connection.User.find_one({'email': request.params.getone('username')})
+    user = connection.User.find_one({'email':
+                                     request.params.getone('username')})
     if not user:
         log.error("Reset requested for non existing user")
         return HTTPNotFound()
@@ -257,17 +268,18 @@ def auth_reset_password(request):
     # Send email
     mailer = get_mailer(request)
     settings = request.registry.settings
-    msg = "You have requested to reset your password.\n"+ \
-    "To do so, you can connect to the following address for 1 hour.\n"+ \
-           settings['site_uri']+settings['url.password_reset']+\
-           "?token="+temptoken['token']+\
+    msg = "You have requested to reset your password.\n" + \
+    "To do so, you can connect to the following address for 1 hour.\n" + \
+           settings['site_uri'] + settings['url.password_reset'] + \
+           "?token=" + temptoken['token'] + \
            "\nThe Mobyle portal team."
-    log.debug('send mail '+msg)
+    log.debug('send mail ' + msg)
     message = Message(subject="Mobyle password reset request",
                       recipients=[user['email']],
                       body=msg)
     mailer.send_immediately(message)
     return {}
+
 
 @view_config(route_name="auth_confirm_email")
 def auth_confirm_email(request):
@@ -280,14 +292,18 @@ def auth_confirm_email(request):
 
     # Token is valid, create user from token dataa
     ruser = json.loads(token_object['data'])
-    (userobj, newuser) = create_if_no_exists(ruser['email'], ruser['password'], True)
+    (userobj, newuser) = create_if_no_exists(ruser['email'],
+                                             ruser['password'], True)
 
     if not newuser:
         return HTTPForbidden()
 
-    return HTTPFound(location=request.static_path("mobyle.web:static/app/index.html")+"#/login")
+    return HTTPFound(location=
+                     request.static_path("mobyle.web:static/app/index.html") +
+                     "#/login")
 
-@view_config(route_name="auth_update_password",renderer="json")
+
+@view_config(route_name="auth_update_password", renderer="json")
 def auth_update_password(request):
     '''
     Password update
@@ -306,12 +322,11 @@ def auth_update_password(request):
     hashed = bcrypt.hashpw(password, bcrypt.gensalt())
     user['hashed_password'] = hashed
     user.save()
-    log.debug("User "+token_object['user']+" has reset its password")
+    log.debug("User " + token_object['user'] + " has reset its password")
     return {}
 
 
-
-@view_config(route_name="auth_login",renderer="json")
+@view_config(route_name="auth_login", renderer="json")
 def auth_login(request):
     '''
     Login request
@@ -321,11 +336,12 @@ def auth_login(request):
     # - Mobyle account
     userid = authenticated_userid(request)
     if userid:
-        log.error("Someone is logged "+str(userid))
-        user  = connection.User.find_one({'email': userid})
+        log.error("Someone is logged " + str(userid))
+        user = connection.User.find_one({'email': userid})
         return {'user': user['email'], 'status': 0, 'msg': '',
                 'admin': user['admin'],
-                'default_project': str(user['default_project']) if user['default_project'] else False}
+                'default_project': str(user['default_project'])
+               if user['default_project'] else False}
 
     msg = ''
     user = None
@@ -338,7 +354,8 @@ def auth_login(request):
         ruser = {}
         ruser['email'] = request.params.getone('username')
         mob_config = MobyleConfig.get_current()
-        userexists = connection.User.find_one({'email': request.params.getone('username')})
+        userexists = connection.User.find_one(
+                         {'email': request.params.getone('username')})
         if userexists:
             status = 1
             msg = "User already exists"
@@ -364,11 +381,11 @@ def auth_login(request):
                 # Send email
                 mailer = get_mailer(request)
                 settings = request.registry.settings
-                mailmsg = "You have requested to create an account.\n"+ \
+                mailmsg = "You have requested to create an account.\n" + \
                   "To do so, you can connect to the following address \
-                  for 1 hour.\n"+ \
-                  request.route_url('auth_confirm_email')+\
-                  "?token="+temptoken['token']+\
+                  for 1 hour.\n" + \
+                  request.route_url('auth_confirm_email') + \
+                  "?token=" + temptoken['token'] + \
                   "\nThe Mobyle portal team."
                 message = Message(subject="Mobyle account creation request",
                       recipients=[ruser['email']],
@@ -434,8 +451,10 @@ def auth_login(request):
         user_doc = connection.User.find_one({'email': user})
         if user_doc:
             default_project = user_doc.get('default_project')
-    return { 'user': user, 'status': status , 'msg': msg, 'admin' : admin,
-                        'default_project':str(default_project) if default_project else False}
+    return {'user': user, 'status': status, 'msg': msg, 'admin': admin,
+                        'default_project': str(default_project)
+                        if default_project else False}
+
 
 @view_config(route_name="auth_logout", renderer="json")
 def auth_logout(request):
@@ -443,8 +462,7 @@ def auth_logout(request):
     # logout
     headers = forget(request)
     request.response.headerlist.extend(headers)
-    return { 'user': None, 'status': 0 , 'msg' : ''}
-
+    return {'user': None, 'status': 0, 'msg': ''}
 
 
 @view_config(route_name='about', renderer='mobyle.web:templates/about.mako')
@@ -452,17 +470,22 @@ def about(request):
         return {
         }
 
+
 @view_config(route_name='services_by_topic')
 def services_by_topic(request):
-    tree_list = BY_TOPIC.get_classification(filter=request.params.get('filter',None))
+    tree_list = BY_TOPIC.get_classification(
+                    filter=request.params.get('filter', None))
     objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
 
+
 @view_config(route_name='services_by_operation')
 def services_by_operation(request):
-    tree_list = BY_OPERATION.get_classification(filter=request.params.get('filter',None))
+    tree_list = BY_OPERATION.get_classification(
+                    filter=request.params.get('filter', None))
     objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
+
 
 @view_config(route_name='service_by_identifier')
 @view_config(route_name='service_by_identifier_version')
@@ -476,18 +499,19 @@ def service_by_name_version_and_maybe_project(request):
     mffilter = mf_filter('service', MF_READ, request)
     if mffilter is None:
         raise HTTPForbidden
-    if request.matchdict.has_key('identifier'):
+    if 'identifier' in request.matchdict:
         # identifier can be an object id or a public name
         try:
             mffilter["_id"] = ObjectId(request.matchdict['identifier'])
         except:
             mffilter["public_name"] = request.matchdict['identifier']
-    if request.matchdict.has_key('service_version'):
+    if 'service_version' in request.matchdict:
         mffilter["version"] = request.matchdict['service_version']
     collection = DbConn.get_db('Service')
     obj = collection.find_one(mffilter)
     if not obj:
         raise HTTPNotFound()
-    response = {'object': 'service', 'status': 0, 'service': obj, 'filter': mffilter}
+    response = {'object': 'service', 'status': 0,
+                'service': obj, 'filter': mffilter}
     response = json.dumps(response, default=json_util.default)
     return Response(body=response, content_type="application/json")
