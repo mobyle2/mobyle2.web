@@ -93,21 +93,16 @@ def main(global_config, **settings):
     from mobyle.common.project import Project, ProjectData
 
     # owner est une référence vers l'objet User.
-    owner_renderer = mf.renderer.SimpleReferenceRenderer(Project,
-        'owner', User)
-    # Par ce qu'owner est un object id et qu'on a redéfini son renderer
-    owner_renderer.is_object_id = True
+    owner_renderer = Project.get_renderer("owner")
+    owner_renderer.set_reference(User)
     # Pour afficher dans le dashboard l'email quand on cherche un user
     owner_renderer.set_display_field("email")
 
     # users.user est une référence vers l'objet User.
-    users_user_renderer = mf.renderer.SimpleReferenceRenderer(Project,
-        'users.user', User)
-    # Par ce qu'owner est un object id et qu'on a redéfini son renderer
-    users_user_renderer.is_object_id = True
+    users_user_renderer = Project.get_renderer("users.user")
+    users_user_renderer.set_reference(User)
     # Pour afficher dans le dashboard l'email quand on cherche un user
     users_user_renderer.set_display_field("email")
-
 
     from mobyle.common.term import DataTerm, FormatTerm,\
         TopicTerm, OperationTerm
