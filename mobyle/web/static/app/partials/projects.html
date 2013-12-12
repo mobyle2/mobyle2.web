@@ -1,4 +1,7 @@
-<div class="span10 offset1">
-<h2>Projects <i class="icon-refresh" ng-click="update()"></i> <i class="icon-plus" ng-click="display_create_dialog()"></i></h2>
-<div class="mb-grid row" ng-grid="projectGridOptions"></div>
+<div class="span11">
+    <h2>Projects
+        <button ng-click="update()" class="btn btn-default btn-lg"><i class="icon-refresh"></i></button>
+        <button ng-click="edit_dialog()" class="btn btn-primary btn-lg"><i class="icon-plus"></i></button>
+    </h2>
+    <div class="mb-grid" ng-grid="projectGridOptions"></div>
 </div>
