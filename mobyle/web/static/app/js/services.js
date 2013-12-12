@@ -25,7 +25,37 @@ angular.module('mobyle.services').value('mbsimple', function(para) {
 });
 
 angular.module('mobyle.services').factory('mfResourceByRoute', function ($resource) {
-    function MFResourceFactory(route, paramDefaults) {
+    function MFResourceFactory(route, paramDefaults, methods) {
+        var saveActionTemplate = {
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            transformRequest: function(data){
+                var requestObject = {};
+                var rootPrefix = paramDefaults._mfPrefix;
+                var serialize = function(prefix, data){
+                    if (data instanceof Array){
+                        $.each(data, function(index, value){
+                            serialize(prefix+'['+index+']', data[index]);
+                        });
+                    }else if(data instanceof Object){
+                        if(data.$oid){
+                            requestObject[prefix]=data.$oid;
+                        }else{
+                            for (var prop in data){
+                                if(data.hasOwnProperty(prop)){
+                                    serialize(prefix+'['+prop+']', data[prop]);
+                                }
+                            }
+                        }
+                    }else{
+                        requestObject[prefix]=data;
+                    }
+                }
+                serialize(rootPrefix, data);
+                return $.param(requestObject);
+            }
+        }
+        var updateAction = angular.extend({'method':'PUT'}, saveActionTemplate);
+        var createAction = angular.extend({'method':'POST'}, saveActionTemplate);
         var resource = $resource(route, paramDefaults || {},
             {
              get: {
@@ -35,37 +65,22 @@ angular.module('mobyle.services').factory('mfResourceByRoute', function ($resour
                                          return json_data[json_data.object];
                                      }
              },
-             save: {
-                method: 'put',
-                headers: {'Content-Type':'application/x-www-form-urlencoded'},
-                transformRequest: function(data){
-                    var requestObject = {};
-                    var rootPrefix = paramDefaults._mfPrefix;
-                    var serialize = function(prefix, data){
-                        if (data instanceof Array){
-                            $.each(data, function(index, value){
-                                serialize(prefix+'['+index+']', data[index]);
-                            });
-                        }else if(data instanceof Object){
-                            for (var prop in data){
-                                if(data.hasOwnProperty(prop)){
-                                    serialize(prefix+'['+prop+']', data[prop]);
-                                }
-                            }
-                        }else{
-                            requestObject[prefix]=data;
-                        }
-                    }
-                    serialize(rootPrefix, data);
-                    return $.param(requestObject);
-                }
-             },
              delete: {
                  method: 'delete',
                  url: route
-             }
+             },
+             create: createAction,
+             update: updateAction
             }
         );
+        resource.prototype.$save = function() {
+            if ( !this._id ) {
+                return this.$create();
+            }
+            else {
+                return this.$update();
+            }
+        };
         return resource;
     }
     return MFResourceFactory;
@@ -143,15 +158,23 @@ angular.module('mobyle.services').factory('CurrentProject', function(Project, $r
     }
 });
 
-angular.module('mobyle.services').factory('CurrentUser', function(User, LoginManager, $rootScope){
+angular.module('mobyle.services').factory('CurrentUser', function(User, LoginManager, $rootScope, $log){
     var user = new User();
-    $rootScope.$on( 'LoginManager.update', function( event, login ) {
-        User.query({'email': login.email},
+    var load = function(email){
+        $log.info("load current user info for " + email);
+        User.query({'email': email},
             function(users){
                 user = users[0];
+                $log.debug(users);
+                $log.info("current user loaded: " + user.email);
             });
+    }
+    $rootScope.$on( 'LoginManager.update', function( event, login ) {
+        load(login.email);
     });
+    load(LoginManager.login.user);
     var get = function(){
+        $log.info("returning current user :" + user.email);
         return user;
     }
     return {'get':get}

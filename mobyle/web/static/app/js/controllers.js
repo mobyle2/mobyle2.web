@@ -70,7 +70,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         }
         else {
             $scope.User = null;
-            Project.setId(null) ;
+            CurrentProject.setId(null);
         }
         $scope.admin = login.admin;
     });
@@ -228,8 +228,9 @@ function FormatTermDetailCtrl($scope,$routeParams,FormatTerm,$resource){
     $scope.object = "formatterm";
 }
 
-function ProjectsCtrl($scope, $modal, Project, CurrentUser) {
+function ProjectsCtrl($scope, $log, $modal, Project) {
     $scope.update = function(){
+        $log.info("querying list of projects...");
         $scope.projects = Project.query();
     }
     var usersTemplate = '<div ng-repeat="access in row.getProperty(col.field)">{{access.user.$oid}} - {{access.role}}</div>';
@@ -238,7 +239,7 @@ function ProjectsCtrl($scope, $modal, Project, CurrentUser) {
         columnDefs: [{ field: 'name',
             displayName: 'Name',
             width: "**",
-            cellTemplate: '<a ng-click="show(row)">{{row.getProperty(col.field)}}</a><i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'},
+            cellTemplate: '<a href="#/projects/{{row.getProperty(\'_id\').$oid}}">{{row.getProperty(col.field)}}</a><i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'},
             { field: 'notebook',
               displayName: 'Notebook',
               width: "***"},
@@ -248,50 +249,53 @@ function ProjectsCtrl($scope, $modal, Project, CurrentUser) {
               width: "***"
             },
             { field: '',
-              cellTemplate: '<span><button ng-click="edit(row.entity)"><i class="icon-pencil"></i></button>'+
-                            '<button ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
+              cellTemplate: '<span><button tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button>'+
+                            '<button tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
               width: '*'
             }
         ]}
-    // new project creation form
-    $scope.newProject = new Project();
-    $scope.create = function(){
-        $scope.newProject['owner'] = CurrentUser.get()._id.$oid;
-        $scope.newProject['users'] = [{'role':'manager', 'user':$scope.newProject['owner']}];
-        $scope.newProject.$save($scope.update);
-        $scope.newProject = new Project();
-    }
+
     $scope.delete = function(p){
-        p.$delete($scope.updateProjects);
+        p.$delete($scope.update);
     }
-    $scope.display_create_dialog = function(){
-        // testing the use of bootstrap modal...
-        console.log('ici');
+
+    $scope.edit_dialog = function(project){
         var modalInstance = $modal.open({
-            templateUrl: 'partials/projectEdit.html',
-            controller: ProjectNewCtrl
+            templateUrl: 'partials/projectEditProperties.html',
+            controller: ProjectEditPropertiesCtrl,
+            resolve: {
+                project: function(){ return project;}
+            }
+        });
+        modalInstance.result.then(function (selectedItem) {
+            $scope.update();
         });
     }
-/*
-    $scope.edit = function(){
-            // testing the use of bootstrap modal...
-            var modalInstance = $modal.open({
-                templateUrl: 'partials/projectDetail.html',
-                controller: ProjectDetailCtrl
-            });
 
-            modalInstance.result.then(function (selectedItem) {
-                console.log('tranquille...');
-            }, function () {
-                console.log('Modal dismissed at: ' + new Date());
-            });
-        }
- */
     $scope.update();
 }
 
-function ProjectNewCtrl($scope,$routeParams,mbsimple,Project,ProjectData){
+function ProjectEditPropertiesCtrl($scope, $log, $modalInstance, Project, CurrentUser, project){
+    // new project creation form
+    $log.info("editing " + (project ? ('project ' + project.name) : ' new project'));
+    if(!project){
+        $scope.project = new Project();
+        $scope.project.name = "new project";
 
+    }else{
+        $log.info($scope.project);
+        $scope.project = project;
+    }
+    $scope.ok = function () {
+        if(!project){
+            $scope.project['owner'] = CurrentUser.get()._id.$oid;
+            $scope.project['users'] = [{'role':'manager', 'user':$scope.project['owner']}];
+        }
+        $scope.project.$save($modalInstance.close($scope.project));
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
 }
 
 function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,ProjectData){
