@@ -140,7 +140,12 @@ angular.module('mobyle.services').factory('Project', function (mfResourceByColle
 });
 
 angular.module('mobyle.services').factory('ProjectData', function (mfResourceByCollection) {
-    return mfResourceByCollection('projectdatas');
+    var defaultParams = {'name':'@name',
+                         'description':'@description',
+                         'project':'@project',
+                         'id':'@_id.$oid',
+                         '_mfPrefix':'ProjectData'}
+    return mfResourceByCollection('projectdatas',defaultParams);
 });
 
 angular.module('mobyle.services').factory('CurrentProject', function(Project, $rootScope){

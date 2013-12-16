@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3>{{data.name}}</h3>
+</div>
+<form>
+<div class="modal-body">
+    <label>Name: <input name="name" ng-model="data.name" placeholder="enter a name"/></label>
+    <label>Description: <input name="name" ng-model="data.description" placeholder="enter a description"/></label>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
+    <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+</form>

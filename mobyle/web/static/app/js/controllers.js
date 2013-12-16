@@ -298,10 +298,12 @@ function ProjectEditPropertiesCtrl($scope, $log, $modalInstance, Project, Curren
     };
 }
 
-function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,ProjectData){
-    $scope.project = Project.get({id:$routeParams.projectId});
-    $scope.mbsimple = mbsimple;
-    $scope.projectData = ProjectData.query();
+function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectData){
+    $scope.update = function(){
+        $log.info("querying project " + $routeParams.projectId + "...");
+        $scope.project = Project.get({id:$routeParams.projectId});
+        $scope.projectData = ProjectData.query();
+    }
     var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
                              '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
                           '</div>';
@@ -322,10 +324,44 @@ function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,ProjectData){
                                                      }
                                                  ]}
 
-    $scope.createData = function(){
-        ProjectData.save(newProjectData);
+    $scope.delete = function(data){
+       data.$delete($scope.update);
     }
-    
+
+    $scope.edit_dialog = function(data, project){
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/dataEdit.html',
+            controller: DataEditCtrl,
+            resolve: {
+                data: function(){ return data;},
+                project: function(){ return project;}          }
+        });
+        modalInstance.result.then(function (selectedItem) {
+            $scope.update();
+        });
+    }
+
+    $scope.update();
+}
+
+function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project){
+    // new project creation form
+    $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
+    if(!data){
+        $scope.data = new ProjectData();
+        $scope.data['project'] = project._id.$oid;
+        $scope.data.name = "new data";
+
+    }else{
+        $log.info($scope.data);
+        $scope.data = data;
+    }
+    $scope.ok = function () {
+        $scope.data.$save($modalInstance.close($scope.data));
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
 }
 
 function DataCtrl() {

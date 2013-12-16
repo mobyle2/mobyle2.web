@@ -1,6 +1,7 @@
 <div class="modal-header">
     <h3>{{project.name}}</h3>
 </div>
+<form>
 <div class="modal-body">
     <label>Name: <input name="name" ng-model="project.name" placeholder="enter a name"/></label>
     <label>Public: <input name="public" type="checkbox" ng-model="project.public" /></label>
@@ -12,3 +13,4 @@
     <button class="btn btn-primary" ng-click="ok()">OK</button>
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>
+</form>
