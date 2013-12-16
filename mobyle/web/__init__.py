@@ -92,17 +92,25 @@ def main(global_config, **settings):
     from mobyle.common.job import Job
     from mobyle.common.project import Project, ProjectData
 
-    # owner est une référence vers l'objet User.
+
+    # mf bindings configuration for Project
+    # owner is a reference to User object.
     owner_renderer = Project.get_renderer("owner")
     owner_renderer.set_reference(User)
-    # Pour afficher dans le dashboard l'email quand on cherche un user
+    # display owner's email in the dashboard
     owner_renderer.set_display_field("email")
-
-    # users.user est une référence vers l'objet User.
+    # owner is a reference to User object.
     users_user_renderer = Project.get_renderer("users.user")
     users_user_renderer.set_reference(User)
-    # Pour afficher dans le dashboard l'email quand on cherche un user
+    # display user's email in the dashboard
     users_user_renderer.set_display_field("email")
+    # mf bindings configuration for ProjectData
+    # project is a reference to ProjectData object.
+    project_renderer = ProjectData.get_renderer("project")
+    project_renderer.set_reference(Project)
+    # display owner's email in the dashboard
+    project_renderer.set_display_field("name")
+
 
     from mobyle.common.term import DataTerm, FormatTerm,\
         TopicTerm, OperationTerm
