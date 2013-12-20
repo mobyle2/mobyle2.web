@@ -36,29 +36,29 @@ describe('service', function() {
         }));
     });
 
-    describe('mfResourceByCollection', function() {
-        var testMfResourceByCollection, $httpBackend, scope, testList, testObject, testId;
-        beforeEach(inject(function($injector, $rootScope, mfResourceByCollection) {
+    describe('mfResource', function() {
+        var testMfResource, $httpBackend, scope, testList, testObject, testId;
+        beforeEach(inject(function($injector, $rootScope, mfResource) {
             $httpBackend = $injector.get('$httpBackend');
             // resource listing
             testList = [{"id":1},{"id":2}];
-            $httpBackend.when('GET', '/test').respond(JSON.stringify(testList));
+            $httpBackend.when('GET', '/tests').respond(JSON.stringify(testList));
             // resource detail
             testId = 1;
             testObject = {"object":"test","test":{"id":1,"foo":"bar"}};
-            $httpBackend.when('GET', '/test/1').respond(JSON.stringify(testObject));
+            $httpBackend.when('GET', '/tests/1').respond(JSON.stringify(testObject));
             scope = $rootScope.$new();
-            testMfResourceByCollection = mfResourceByCollection('test');
+            testMfResource = mfResource('Test');
         }));
         it('query() should return a list of objects', inject(function() {
-           $httpBackend.expectGET('/test');
-           var res = testMfResourceByCollection.query();
+           $httpBackend.expectGET('/tests');
+           var res = testMfResource.query();
            $httpBackend.flush();
            expect(res).toEqualData(testList);
         }));
         it('get() should return an object detail', inject(function() {
-            $httpBackend.expectGET('/test/'+testId);
-            var res = testMfResourceByCollection.get({'id':testId});
+            $httpBackend.expectGET('/tests/'+testId);
+            var res = testMfResource.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testObject["test"]);
         }));
@@ -151,7 +151,7 @@ describe('service', function() {
                     "description": "Project 2"
                 }
             ];
-            $httpBackend.when('GET', '/projects').respond(JSON.stringify(testProjectList));
+            $httpBackend.when('GET', '/projects?').respond(JSON.stringify(testProjectList));
             // resource detail
             testId = "aa";
             testProjectObject = {"object":"service", "service":
@@ -162,17 +162,17 @@ describe('service', function() {
                     "name": "Project 1"
                 }
             };
-            $httpBackend.when('GET', '/projects/aa').respond(JSON.stringify(testProjectObject));
+            $httpBackend.when('GET', '/projects/aa?').respond(JSON.stringify(testProjectObject));
             scope = $rootScope.$new();
         }));
         it('query() should return a list of projects', inject(function(Project) {
-            $httpBackend.expectGET('/projects');
+            $httpBackend.expectGET('/projects?');
             var res = Project.query();
             $httpBackend.flush();
             expect(res).toEqualData(testProjectList);
         }));
         it('get() should return an project detail', inject(function(Project) {
-            $httpBackend.expectGET('/projects/'+testId);
+            $httpBackend.expectGET('/projects/'+testId +'?');
             var res = Project.get({'id':testId});
             $httpBackend.flush();
             expect(res).toEqualData(testProjectObject["service"]);
