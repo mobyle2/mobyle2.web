@@ -302,7 +302,8 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
     $scope.update = function(){
         $log.info("querying project " + $routeParams.projectId + "...");
         $scope.project = Project.get({id:$routeParams.projectId});
-        $scope.projectData = ProjectData.query();
+        $log.info("querying data for project " + $routeParams.projectId + "...");
+        $scope.projectData = ProjectData.filter({'project':$routeParams.projectId});
     }
     var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
                              '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
@@ -347,6 +348,7 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
 function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project){
     // new project creation form
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
+    $scope.project = project;
     if(!data){
         $scope.data = new ProjectData();
         $scope.data['project'] = project._id.$oid;

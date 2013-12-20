@@ -24,13 +24,19 @@ angular.module('mobyle.services').value('mbsimple', function(para) {
   return simple(para);
 });
 
-angular.module('mobyle.services').factory('mfResourceByRoute', function ($resource) {
-    function MFResourceFactory(route, paramDefaults, methods) {
-        var saveActionTemplate = {
-            headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            transformRequest: function(data){
+angular.module('mobyle.services').factory('mfResource', function ($resource) {
+    function MFResourceFactory(collectionName, paramDefaults) {
+        // default url template, used for everything *but* search
+        var route = '/' + collectionName.toLowerCase() + 's/:id';
+        // url template used for search/filter
+        var filterUrl = '/' + collectionName.toLowerCase() + "s?";
+        for(var key in paramDefaults){
+            filterUrl += "Search"+collectionName+"["+key+"]=:"+key+"&";
+        }
+        // custom function to build request body
+        var transformRequestFactory = function(){
+            return function(data){
                 var requestObject = {};
-                var rootPrefix = paramDefaults._mfPrefix;
                 var serialize = function(prefix, data){
                     if (data instanceof Array){
                         $.each(data, function(index, value){
@@ -50,29 +56,53 @@ angular.module('mobyle.services').factory('mfResourceByRoute', function ($resour
                         requestObject[prefix]=data;
                     }
                 }
-                serialize(rootPrefix, data);
+                serialize(collectionName, data);
                 return $.param(requestObject);
             }
         }
-        var updateAction = angular.extend({'method':'PUT'}, saveActionTemplate);
-        var createAction = angular.extend({'method':'POST'}, saveActionTemplate);
+        var updateAction = {
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            'method':'PUT',
+            transformRequest: transformRequestFactory('')
+        };
+        var createAction = {
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            'method':'POST',
+            transformRequest: transformRequestFactory('')
+        };
+        var listAction = {
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            'method':'GET',
+            transformRequest: transformRequestFactory(''),
+            isArray: true
+        };
+        var filterAction = {
+            url: filterUrl,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            'method': 'GET',
+            transformRequest: transformRequestFactory('Search'),
+            isArray: true
+        };
         var resource = $resource(route, paramDefaults || {},
             {
              get: {
-                  method:'get',
+                  method:'GET',
                   transformResponse: function (data) {
                                          var json_data = JSON.parse(data);
                                          return json_data[json_data.object];
                                      }
              },
+             list: listAction,
+             filter: filterAction,
              delete: {
-                 method: 'delete',
+                 method: 'DELETE',
                  url: route
              },
              create: createAction,
              update: updateAction
             }
         );
+        // define save action to use create or update
         resource.prototype.$save = function() {
             if ( !this._id ) {
                 return this.$create();
@@ -81,15 +111,6 @@ angular.module('mobyle.services').factory('mfResourceByRoute', function ($resour
                 return this.$update();
             }
         };
-        return resource;
-    }
-    return MFResourceFactory;
-});
-
-angular.module('mobyle.services').factory('mfResourceByCollection', function (mfResourceByRoute) {
-    function MFResourceFactory(collectionName, paramDefaults) {
-        var resource = mfResourceByRoute('/'+collectionName+'/:id', paramDefaults);
-        resource.collectionName = collectionName;
         return resource;
     }
     return MFResourceFactory;
@@ -117,35 +138,34 @@ angular.module('mobyle.services').factory('Service', function ($resource) {
     return resource;
 });
 
-angular.module('mobyle.services').factory('DataTerm', function (mfResourceByCollection) {
-    return mfResourceByCollection('dataterms');
+angular.module('mobyle.services').factory('DataTerm', function (mfResource) {
+    return mfResource('DataTerm');
 });
 
-angular.module('mobyle.services').factory('FormatTerm', function (mfResourceByCollection) {
-    return mfResourceByCollection('formatterms');
+angular.module('mobyle.services').factory('FormatTerm', function (mfResource) {
+    return mfResource('FormatTerm');
 });
 
-angular.module('mobyle.services').factory('User', function (mfResourceByCollection) {
-    return mfResourceByCollection('users');
+angular.module('mobyle.services').factory('User', function (mfResource) {
+    return mfResource('User');
 });
 
-angular.module('mobyle.services').factory('Project', function (mfResourceByCollection) {
+angular.module('mobyle.services').factory('Project', function (mfResource) {
     var defaultParams = {'name':'@name',
                          'public':'@public',
                          'owner':'@owner',
                          'users':'@users',
-                         'id':'@_id.$oid',
-                         '_mfPrefix':'Project'}
-    return mfResourceByCollection('projects',defaultParams);
+                         'id':'@_id.$oid'}
+    return mfResource('Project',defaultParams);
 });
 
-angular.module('mobyle.services').factory('ProjectData', function (mfResourceByCollection) {
+angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
     var defaultParams = {'name':'@name',
                          'description':'@description',
                          'project':'@project',
-                         'id':'@_id.$oid',
-                         '_mfPrefix':'ProjectData'}
-    return mfResourceByCollection('projectdatas',defaultParams);
+                         'tags':'@tags',
+                         'id':'@_id.$oid'}
+    return mfResource('ProjectData',defaultParams);
 });
 
 angular.module('mobyle.services').factory('CurrentProject', function(Project, $rootScope){
