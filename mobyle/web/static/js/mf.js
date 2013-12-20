@@ -94,7 +94,7 @@ $(document).on("click", ".mf-prev", function(event) {
   */
   function mfsearch() {
      updateCheckboxValues();
-     $.ajax({type:"POST", data: $("#mf-search-form-"+curObject).serialize(), url: mfprefix+"/"+curObject.toLowerCase()+"s",
+     $.ajax({type:"GET", data: $("#mf-search-form-"+curObject).serialize(), url: mfprefix+"/"+curObject.toLowerCase()+"s",
             success: function(msg){
                if(msg["status"]==1) {
                    $("#mf-flash").attr('class','alert alert-error');
@@ -118,8 +118,8 @@ $(document).on("click", ".mf-prev", function(event) {
   function mfsubmit() {
      updateCheckboxValues();
      id = $("#"+curObject+"\\[_id\\]").val();
-     method = "POST";
-     if(id ==null || id == '') { method = "PUT"; id = "" }
+     method = "PUT";
+     if(id ==null || id == '') { method = "POST"; id = "" }
      route = mfprefix+"/"+curObject.toLowerCase()+"s";
      if(id != "") {
         route = mfprefix+"/"+curObject.toLowerCase()+"s/"+id
@@ -142,7 +142,7 @@ $(document).on("click", ".mf-prev", function(event) {
                else {
                  clear_form_elements("#show-"+curObject);
                  $("#mf-flash").attr('class','alert alert-success');
-                 if(method == "POST") {
+                 if(method == "PUT") {
                    $("#mf-flash").text(curObject+" Operation successful");
                  }
                  else { 
@@ -330,6 +330,7 @@ $(document).on("click", ".mf-prev", function(event) {
    */
    function json2form(data,parent) {
      $.each(data, function(key, val) {
+
      if(jQuery.isPlainObject(val)) {
        if( ! setSpecificObjectValue(curObject+parent+'\\['+key+'\\]',val)) {
          var newparent = parent + '\\['+key+'\\]';
@@ -350,13 +351,13 @@ $(document).on("click", ".mf-prev", function(event) {
             inputs = newelt.find('input:not(.mf-dbref)');
             objlist = {};
             $.each(inputs, function(input) {
-              ielt = $(inputs[input])
+              ielt = $(inputs[input]);
               oldid = ielt.attr("id");
               ielt.attr("id",oldid+'['+count+']');
               ielt.attr("name",oldid+'['+count+']');
               if(jQuery.isPlainObject(val[elt])) {
                  $.each(val[elt], function(key,value) {
-                   reg1=new RegExp(key,"g");
+                   reg1=new RegExp("\\["+key+"\\]$","g");
                    if(oldid.match(reg1)) {
                      if(jQuery.isPlainObject(val[elt][key])) {
                        // Object, not simple type
@@ -409,7 +410,8 @@ $(document).on("click", ".mf-prev", function(event) {
              });
              objlist = {}
              newelt.find('.mf-dbref').typeahead({
-                source: function (query, process) { return getObjects(query,$(this)[0].$element[0].dataset.dbref,$(this)[0].$element[0].dataset.object,process);},
+                source: function (query, process) { return
+getObjects(query,$(this)[0].$element[0].dataset.dbref,$(this)[0].$element[0].dataset.object,process,$(this)[0].$element[0].dataset.display);},
                 updater: function (item) { $("#"+autocompleteelt).val(objList[item]);return item;},
                 minLength: 3 
         	  });
@@ -421,7 +423,7 @@ $(document).on("click", ".mf-prev", function(event) {
        else {
          elt = $('#'+curObject+parent+'\\['+key+'\\]');
          elt.val(val);
-         if(elt.attr('data-type') == 'choice') {
+         if(elt.attr('data-type') == 'choice' && val!=null) {
            elt.val(val.toString());
          }
 
@@ -447,7 +449,6 @@ $(document).on("click", ".mf-prev", function(event) {
   * get id, search in database and update name in dbref container.
   */
   function searchDbRef(container){
-      console.log("SALLOU dbref "+container);
       id = $('#'+container).val();
       var obj = $('#DbRef'+container).attr("data-object");
       if(obj==null) { return; }
@@ -542,14 +543,14 @@ $(document).on("click", ".mf-prev", function(event) {
   /**
   * Get object list and set objList with obj name/obj id
   */
-  function getObjects(query,param,objname,process) {
+  function getObjects(query,param,objname,process,searchBy) {
     autocompleteelt = param;
 
     autocompleteelt = autocompleteelt.replace(/\[/g,'\\[');
     autocompleteelt = autocompleteelt.replace(/\]/g,'\\]');
 
     route = mfprefix + '/'+objname.toLowerCase()+'s';
-    return $.ajax({type:"POST", data: 'Search'+objname+"[name]="+query, url: route,
+    return $.ajax({type:"GET", data: 'Search'+objname+"["+searchBy+"]="+query, url: route,
             success: function(msg){
                if(msg["status"]==1) {
                    $("#mf-flash").attr('class','alert alert-error');
@@ -560,8 +561,8 @@ $(document).on("click", ".mf-prev", function(event) {
                    objList = {};
                    nameList = [];
                    $.each(msg, function(obj) {
-                     objList[msg[obj]["name"]] = msg[obj]["_id"]["$oid"];
-                     nameList.push(msg[obj]["name"]);
+                     objList[msg[obj][searchBy]] = msg[obj]["_id"]["$oid"];
+                     nameList.push(msg[obj][searchBy]);
                    });
                return process(nameList);
                }
