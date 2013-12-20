@@ -57,7 +57,7 @@ angular.module('mobyle.directives').directive('mbinput', function(){
       // switch the type of the input according to the parameter type...
       // work in progress...
         switch (scope.para.type._type){
-            case "string":
+            case "StringType":
                 if(scope.para.type.options){
                     scope.select = true;
                     scope.options = [];
@@ -68,19 +68,19 @@ angular.module('mobyle.directives').directive('mbinput', function(){
                     scope.itype = "text";
                 }
                 break;
-            case "float":
+            case "FloatType":
                 scope.itype = "number";
                 scope.step = "any";
                 break;
-            case "integer":
+            case "IntegerType":
                 scope.itype = "number";
                 scope.step = "1";
                 break;
-            case "boolean":
+            case "BooleanType":
                 scope.select = true;
                 scope.options = [{"label":"yes","value":true},{"label":"no","value":false}];
                 break;
-            case "formatted":
+            case "FormattedType":
                 //text formats
                 scope.textarea = true;
                 break;
