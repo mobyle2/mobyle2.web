@@ -359,6 +359,7 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data = data;
     }
     $scope.ok = function () {
+        $scope.data.tags = $scope.data.tags.split(' '); // transform tags into an array
         $scope.data.$save($modalInstance.close($scope.data));
     };
     $scope.cancel = function () {
