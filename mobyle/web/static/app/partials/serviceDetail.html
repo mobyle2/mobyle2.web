@@ -1,14 +1,17 @@
 <form class="row-fluid span12" action="/dummy" ui-if="service">
-  <div class="span9">
-      <h2>{{service.title}} {{service.version}}</h2>
-      <h3>{{service.description}}</h3>
-  </div>
-  <div class="btn-toolbar">
-    <button type="submit" class="btn btn-primary"><i class="icon-play icon-white"></i> run</button>
+    <div class="span9">
+        <h2>{{service.title}} {{service.version}}</h2>
+
+        <h3>{{service.description}}</h3>
+    </div>
+    <div class="btn-toolbar">
+        <button type="submit" class="btn btn-primary"><i class="icon-play icon-white"></i> run</button>
     <span ng-show="mbsimple(service.inputs)">
-      <toggle class="span2 btn" toggle-state="show_advanced" text-when-on="Only simple parameters" text-when-off="All parameters" class="btn" style="margin: 1em;"></toggle>
+      <toggle class="span2 btn" toggle-state="show_advanced" text-when-on="Only simple parameters"
+              text-when-off="All parameters" class="btn" style="margin: 1em;"></toggle>
     </span>
-  </div>
-  <div class="span11" ng-repeat="(name, mbformpara) in service.inputs.children"><span recursive mbformpara="mbformpara"></span>
-  </div>
+    </div>
+    <div class="span11" ng-repeat="(name, mbformpara) in service.inputs.children"><span recursive
+                                                                                        mbformpara="mbformpara"></span>
+    </div>
 </form>

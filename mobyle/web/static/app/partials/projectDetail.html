@@ -1,12 +1,15 @@
 <div class="row-fluid span12">
-  <div class="span9">
-      <h2>{{project.name}}</h2>
-      <h2>Notebook</h2>
-      <textarea>{{project.notebook}}</textarea>
-      <h2>Data
-          <button ng-click="update()" class="btn btn-default btn-lg"><i class="icon-refresh"></i></button>
-          <button ng-click="edit_dialog(null, project)" class="btn btn-primary btn-lg"><i class="icon-plus"></i></button>
-      </h2>
-      <div class="mb-grid" ng-grid="projectDataGridOptions"></div>
-  </div>
+    <div class="span9">
+        <h2>{{project.name}}</h2>
+
+        <h2>Notebook</h2>
+        <textarea>{{project.notebook}}</textarea>
+
+        <h2>Data
+            <button ng-click="update()" class="btn btn-default btn-lg"><i class="icon-refresh"></i></button>
+            <button ng-click="edit_dialog(null, project)" class="btn btn-primary btn-lg"><i class="icon-plus"></i>
+            </button>
+        </h2>
+        <div class="mb-grid" ng-grid="projectDataGridOptions"></div>
+    </div>
 </div>

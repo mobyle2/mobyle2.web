@@ -2,18 +2,18 @@
     <h3>{{data.name}} (project {{project.name}})</h3>
 </div>
 <form>
-<div class="modal-body">
-    <label>Name: <input name="name" ng-model="data.name" placeholder="data name" autofocus/></label>
-    <label>Description: <input name="name" ng-model="data.description" placeholder="data description"/></label>
-    <label>Tags: <input name="tags" ng-model="data.tags"/></label>
-    <!--disabled until it works (need ObjectManager for this on the server side)
-    <label>Data:
-        <textarea name="data" ng-model="data.data" placeholder="tags"/>
-    </label>
-    -->
-</div>
-<div class="modal-footer">
-    <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
-    <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
-</div>
+    <div class="modal-body">
+        <label>Name: <input name="name" ng-model="data.name" placeholder="data name" autofocus/></label>
+        <label>Description: <input name="name" ng-model="data.description" placeholder="data description"/></label>
+        <label>Tags: <input name="tags" ng-model="data.tags"/></label>
+        <!--disabled until it works (need ObjectManager for this on the server side)
+        <label>Data:
+            <textarea name="data" ng-model="data.data" placeholder="tags"/>
+        </label>
+        -->
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
+        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
 </form>

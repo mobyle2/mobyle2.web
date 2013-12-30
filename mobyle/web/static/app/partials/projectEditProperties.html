@@ -2,15 +2,15 @@
     <h3>{{project.name}}</h3>
 </div>
 <form>
-<div class="modal-body">
-    <label>Name: <input name="name" ng-model="project.name" placeholder="enter a name" autofocus/></label>
-    <label>Public: <input name="public" type="checkbox" ng-model="project.public" /></label>
-    <label>Notebook:
-        <textarea name="notebook" ng-model="project.notebook"></textarea>
-    </label>
-</div>
-<div class="modal-footer">
-    <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
-    <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
-</div>
+    <div class="modal-body">
+        <label>Name: <input name="name" ng-model="project.name" placeholder="enter a name" autofocus/></label>
+        <label>Public: <input name="public" type="checkbox" ng-model="project.public"/></label>
+        <label>Notebook:
+            <textarea name="notebook" ng-model="project.notebook"></textarea>
+        </label>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
+        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
 </form>
