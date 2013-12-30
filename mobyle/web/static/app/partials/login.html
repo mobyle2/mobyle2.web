@@ -42,7 +42,7 @@ Login
 <div class="span6">
     <div class="alert" ng-show="msg">{{msg}}</div>
     <div class="login" ng-show="isProvider('native')">
-        <div class="control-group">
+        <form class="control-group">
             <label for="login">Sign in with your <b>Mobyle account</b></label>
         <div class="controls">
 			<div class="input-prepend">
@@ -52,12 +52,12 @@ Login
             <div class="input-prepend">
             <span class="add-on"><i class="icon-lock"></i></span>
             <input type="password" id="password"  placeholder="Password"  ng-model="password"/>
-            <button type="button" class="btn btn-primary" ng-click="signIn('native')">Login</button>
+            <button type="submit" class="btn btn-primary" ng-click="signIn('native')">Login</button>
 			</div>
         </div>
 		<div>
-		<button class="btn" type="btn" id="forgot" ng-click="signIn('reset')">Forgot your password?</button> or <a href="#" id="register" ng-click="register($event)"><b>Register</b></a>
-		</div>
+		<button class="btn" type="button" id="forgot" ng-click="signIn('reset')">Forgot your password?</button> or <a href="#" id="register" ng-click="register($event)"><b>Register</b></a>
+		</form>
 		</div>
     </div>
     <div class="login form form-inline" ng-show="isProvider('reset')">
