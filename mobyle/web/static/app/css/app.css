@@ -82,6 +82,16 @@
   margin-bottom: 0.3em;
 }
 
+.mb-grid{
+    border: 1px solid rgb(212,212,212);
+    height: 80vh;
+
+}
+
+.project-data .label{
+    margin-left: 2px;
+}
+
 [recursive] ul.nav, recursive ul.nav{
     margin-bottom: 0;
 }

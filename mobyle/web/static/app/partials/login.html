@@ -1,68 +1,75 @@
 <div class="hero-unit">
-You can login with a Mobyle account or you can use one of the following
-providers. If you do so, Mobyle will never see nor store your password, you
-login directly with your Google, Facebook, ... provider. We will only ask to
-your provider your email address that will be used as a primary identifier in
-Mobyle and used to communicate jobs results etc...
+    You can login with a Mobyle account or you can use one of the following
+    providers. If you do so, Mobyle will never see nor store your password, you
+    login directly with your Google, Facebook, ... provider. We will only ask to
+    your provider your email address that will be used as a primary identifier in
+    Mobyle and used to communicate jobs results etc...
 </div>
 <div class="row" ng-controller="LoginCtrl" style="margin-top:10px;">
-<div class="span3 offset1">
+    <div class="span3 offset1">
 
-<div ng-repeat="login in logins">
-<div ng-switch="login">
-    <a href="#/login" class="btn btn-auth"
-       ng-switch-when="native" ng-click="signIn('native')"><i class="icon-user"></i> Sign in with <b>Mobyle</b></a>
-	<form action="/login/facebook" method="post" ng-switch-when="facebook">
-    <input type="hidden" name="scope" value="email" />
-    <button type="submit" class="btn-auth btn-facebook">Sign in with <b>Facebook</b></button>
-	</form>
-	<form action="/login/twitter" method="post" ng-switch-when="twitter">
-    <a href="#" class="btn-auth btn-twitter" ng-click="signIn('twitter')">Sign in with <b>Twitter</b></a>
-	</form>
-	<form action="/login/github" method="post" ng-switch-when="github">
-    <a href="#" class="btn-auth btn-github" ng-click="signIn('github')">Sign in with <b>GitHub</b></a>
-	</form>
-    <a href="#/login" class="btn-auth btn-openid"
-        ng-switch-when="openid" ng-click="signIn('openid')">Sign in with <b>Open ID</b></a>
-    <img class="img-auth" id="signinpersona"
-        src="img/social_signin_buttons_icons/persona_signin.png"
-        ng-switch-when="persona"  ng-click="signIn('persona')"/>
-    <a href="/login/google" class="btn-auth btn-google"
-           ng-switch-when="google" ng-click="signIn('google')">Sign in with <b>Google</b></a>
-</div>
-</div>
-</div>
-<div class="span2" style="white-space: nowrap;">
-<h2>
-<i class="icon-chevron-left" style="vertical-align: middle;margin-right:10px"></i>
-Login
-<i class="icon-chevron-right" style="vertical-align:middle;margin-left: 10px;"></i>
-</h2>
-</div>
-<div class="span6">
-    <div class="alert" ng-show="msg">{{msg}}</div>
-    <div class="login" ng-show="isProvider('native')">
-        <div class="control-group">
-            <label for="login">Sign in with your <b>Mobyle account</b></label>
-        <div class="controls">
-			<div class="input-prepend">
-			<span class="add-on"><i class="icon-user"></i></span>
-            <input type="text" id="login" placeholder="Identifier"  ng-model="login"/>
-			</div>
-            <div class="input-prepend">
-            <span class="add-on"><i class="icon-lock"></i></span>
-            <input type="password" id="password"  placeholder="Password"  ng-model="password"/>
-            <button type="button" class="btn btn-primary" ng-click="signIn('native')">Login</button>
-			</div>
+        <div ng-repeat="login in logins">
+            <div ng-switch="login">
+                <a href="#/login" class="btn btn-auth"
+                   ng-switch-when="native" ng-click="signIn('native')"><i class="icon-user"></i> Sign in with
+                    <b>Mobyle</b></a>
+
+                <form action="/login/facebook" method="post" ng-switch-when="facebook">
+                    <input type="hidden" name="scope" value="email"/>
+                    <button type="submit" class="btn-auth btn-facebook">Sign in with <b>Facebook</b></button>
+                </form>
+                <form action="/login/twitter" method="post" ng-switch-when="twitter">
+                    <a href="#" class="btn-auth btn-twitter" ng-click="signIn('twitter')">Sign in with
+                        <b>Twitter</b></a>
+                </form>
+                <form action="/login/github" method="post" ng-switch-when="github">
+                    <a href="#" class="btn-auth btn-github" ng-click="signIn('github')">Sign in with <b>GitHub</b></a>
+                </form>
+                <a href="#/login" class="btn-auth btn-openid"
+                   ng-switch-when="openid" ng-click="signIn('openid')">Sign in with <b>Open ID</b></a>
+                <img class="img-auth" id="signinpersona"
+                     src="img/social_signin_buttons_icons/persona_signin.png"
+                     ng-switch-when="persona" ng-click="signIn('persona')"/>
+                <a href="/login/google" class="btn-auth btn-google"
+                   ng-switch-when="google" ng-click="signIn('google')">Sign in with <b>Google</b></a>
+            </div>
         </div>
-		<div>
-		<button class="btn" type="btn" id="forgot" ng-click="signIn('reset')">Forgot your password?</button> or <a href="#" id="register" ng-click="register($event)"><b>Register</b></a>
-		</div>
-		</div>
+    </div>
+    <div class="span2" style="white-space: nowrap;">
+        <h2>
+            <i class="icon-chevron-left" style="vertical-align: middle;margin-right:10px"></i>
+            Login
+            <i class="icon-chevron-right" style="vertical-align:middle;margin-left: 10px;"></i>
+        </h2>
+    </div>
+    <div class="span6">
+        <div class="alert" ng-show="msg">{{msg}}</div>
+        <div class="login" ng-show="isProvider('native')">
+            <form class="control-group">
+                <label for="login">Sign in with your <b>Mobyle account</b></label>
+
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-user"></i></span>
+                        <input type="text" id="login" placeholder="Identifier" ng-model="login"/>
+                    </div>
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon-lock"></i></span>
+                        <input type="password" id="password" placeholder="Password" ng-model="password"/>
+                        <button type="submit" class="btn btn-primary" ng-click="signIn('native')">Login</button>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn" type="button" id="forgot" ng-click="signIn('reset')">Forgot your password?
+                    </button>
+                    or <a href="#" id="register" ng-click="register($event)"><b>Register</b></a>
+            </form>
+        </div>
     </div>
     <div class="login form form-inline" ng-show="isProvider('reset')">
         <div class="control-group">
             <label for="rlogin">Email address attached to the account</label>
+
             <div class="controls">
                 <div class="input-prepend">
                     <span class="add-on"><i class="icon-user"></i></span>
@@ -75,42 +82,43 @@ Login
         </div>
 
     </div>
-	<div class="register form form-inline" ng-show="isProvider('register')">
+    <div class="register form form-inline" ng-show="isProvider('register')">
         <div class="control-group">
-		<label for="rlogin">Create a <b>Mobyle</b> account:</label>
-		<div class="controls">
-            <div class="input-prepend">
-            <span class="add-on"><i class="icon-user"></i></span>
-            <input type="text" ng-model="rlogin" id="rlogin" placeholder="Email"/>
-            </div>
-		</div>
+            <label for="rlogin">Create a <b>Mobyle</b> account:</label>
 
-        <div class="controls">
-            <div class="input-prepend">
-            <span class="add-on"><i class="icon-lock"></i></span>
-            <input type="password" ng-model="rpassword" id="rpassword" placeholder="Password"/>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user"></i></span>
+                    <input type="text" ng-model="rlogin" id="rlogin" placeholder="Email"/>
+                </div>
             </div>
-		</div>
-        <div class="controls">
-            <div class="input-prepend">
-            <span class="add-on"><i class="icon-lock"></i></span>
-            <input type="password" ng-model="rpassword2" id="rpassword2" placeholder="Confirm password"/>
+
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-lock"></i></span>
+                    <input type="password" ng-model="rpassword" id="rpassword" placeholder="Password"/>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-lock"></i></span>
+                    <input type="password" ng-model="rpassword2" id="rpassword2" placeholder="Confirm password"/>
+                </div>
+            </div>
+            <div class="controls">
+                <button type="button" class="btn btn-primary" ng-click="signIn('register')">Register</button>
             </div>
         </div>
-		<div class="controls">
-			<button type="button" class="btn btn-primary" ng-click="signIn('register')">Register</button>
-		</div>
-		</div>
     </div>
-	<div class="signin" id="sopenid" ng-show="isProvider('openid')">
-		<form action="/login/openid" method="post" class="form form-inline">
-        <label for="openid_identifier">
-		<a href="#/login" class="btn-auth btn-openid">Open ID identifier</a>
-        </label>
-			<input type="text" id="openid_identifier" name="openid_identifier" placeholder="Identifier"/>
-		<button class="btn btn-primary">Login</button>
-		</form>
-	</div>
+    <div class="signin" id="sopenid" ng-show="isProvider('openid')">
+        <form action="/login/openid" method="post" class="form form-inline">
+            <label for="openid_identifier">
+                <a href="#/login" class="btn-auth btn-openid">Open ID identifier</a>
+            </label>
+            <input type="text" id="openid_identifier" name="openid_identifier" placeholder="Identifier"/>
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
 </div>
 
 </div>

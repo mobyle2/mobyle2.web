@@ -3,13 +3,21 @@
 /* Controllers */
 
 
-function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset) {
+function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google' ];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
     $scope.login = null;
     $scope.password = null;
     $scope.admin = false;
+    $scope.currentProject = CurrentProject.get();
+    $scope.$on( 'CurrentProject.update', function( event, currentProject ) {
+        $scope.currentProject = currentProject;
+    });
+    $scope.setCurrentProjectId = function(currentProjectId){
+        CurrentProject.setId(currentProjectId);
+    }
+
     // Token for password resets
     $scope.token = $routeParams['token'];
 
@@ -41,7 +49,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         // Check at startup if user was previously logged on server
         var newuser = new Login('native');
         var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
-            LoginManager.result(res['user'],res['msg'],res['status'],res['admin']);
+            LoginManager.result(res['user'],res['msg'],res['status'],res['admin'], res['default_project']);
         });
     }
 
@@ -58,12 +66,13 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
             $scope.rpassword2 = null;
 
             $scope.setUser(login.user);
+            CurrentProject.setId(login.defaultProjectId);
         }
         else {
             $scope.User = null;
+            CurrentProject.setId(null);
         }
         $scope.admin = login.admin;
-
     });
 
     // For register
@@ -85,6 +94,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
             $location.path('/');
         }
     }
+
     $scope.userLogged = function() {
         return $scope.User!=null;
     }
@@ -100,7 +110,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
                 var newuser = new Login('register');
                 var res = newuser.get({username: $scope.rlogin, password: 
 $scope.rpassword}, function() {
-                LoginManager.result(res['user'],res['msg'],res['status'], res['admin']);  });
+                LoginManager.result(res['user'],res['msg'],res['status'], res['admin'], res['default_project']);  });
             }
             else {
                 $scope.msg = "Passwords are not identical";
@@ -109,9 +119,8 @@ $scope.rpassword}, function() {
         else if(type == 'native'){
             var newuser = new Login('native');
             var res = newuser.get({username: $scope.login, password: $scope.password}, function() {
-                    LoginManager.result(res['user'],res['msg'],res['status'], res['admin']);
+                    LoginManager.result(res['user'],res['msg'],res['status'], res['admin'], res['default_project']);
             });
-
         }
         else if(type == 'google') {
               // Via velruse
@@ -197,34 +206,165 @@ function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,Service,$resourc
     $scope.show_advanced = mbsimple($scope.service.inputs);
 }
 
-function TypesCtrl($scope,Type) {
-    $scope.types= Type.query();
+function DataTermsCtrl($scope,DataTerm) {
+    $scope.terms= DataTerm.query();
     $scope.listDisplay = 'list';
+    $scope.object = "dataterm";
 }
 
-function TypeDetailCtrl($scope,$routeParams,Type,$resource){
-    $scope.term = Type.get({id:$routeParams.typeId});
-    $scope.object = "type";
+function DataTermDetailCtrl($scope,$routeParams,DataTerm,$resource){
+    $scope.term = DataTerm.get({id:$routeParams.dataTermId});
+    $scope.object = "dataterm";
 }
 
-function FormatsCtrl($scope,Format) {
-    $scope.formats= Format.query();
+function FormatTermsCtrl($scope,FormatTerm) {
+    $scope.terms= FormatTerm.query();
     $scope.listDisplay = 'list';
+    $scope.object = "formatterm";
 }
 
-function FormatDetailCtrl($scope,$routeParams,Format,$resource){
-    $scope.term = Format.get({id:$routeParams.formatId});
-    $scope.object = "format";
+function FormatTermDetailCtrl($scope,$routeParams,FormatTerm,$resource){
+    $scope.term = FormatTerm.get({id:$routeParams.formatTermId});
+    $scope.object = "formatterm";
 }
 
-function ProjectsCtrl($scope,Project) {
-    $scope.projects = Project.query();
-    $scope.listDisplay = 'list';
+function ProjectsCtrl($scope, $log, $modal, Project) {
+    $scope.update = function(){
+        $log.info("querying list of projects...");
+        $scope.projects = Project.query();
+    }
+    var usersTemplate = '<div ng-repeat="access in row.getProperty(col.field)">{{access.user.$oid}} - {{access.role}}</div>';
+    $scope.projectGridOptions = {data:'projects',
+                                 enableRowSelection:false,
+        columnDefs: [{ field: 'name',
+            displayName: 'Name',
+            width: "**",
+            cellTemplate: '<a href="#/projects/{{row.getProperty(\'_id\').$oid}}">{{row.getProperty(col.field)}}</a><i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'},
+            { field: 'notebook',
+              displayName: 'Notebook',
+              width: "***"},
+            { field: 'users',
+              cellTemplate: usersTemplate,
+              displayName: 'Access',
+              width: "***"
+            },
+            { field: '',
+              cellTemplate: '<span><button tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button>'+
+                            '<button tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
+              width: '*'
+            }
+        ]}
+
+    $scope.delete = function(p){
+        p.$delete($scope.update);
+    }
+
+    $scope.edit_dialog = function(project){
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/projectEditProperties.html',
+            controller: ProjectEditPropertiesCtrl,
+            resolve: {
+                project: function(){ return project;}
+            }
+        });
+        modalInstance.result.then(function (selectedItem) {
+            $scope.update();
+        });
+    }
+
+    $scope.update();
 }
 
-function ProjectDetailCtrl($scope,$routeParams,mbsimple,Project,$resource){
-    $scope.project = Project.get({id:$routeParams.projectId});
-    $scope.mbsimple = mbsimple;
+function ProjectEditPropertiesCtrl($scope, $log, $modalInstance, Project, CurrentUser, project){
+    // new project creation form
+    $log.info("editing " + (project ? ('project ' + project.name) : ' new project'));
+    if(!project){
+        $scope.project = new Project();
+        $scope.project.name = "new project";
+
+    }else{
+        $log.info($scope.project);
+        $scope.project = project;
+    }
+    $scope.ok = function () {
+        if(!project){
+            $scope.project['owner'] = CurrentUser.get()._id.$oid;
+            $scope.project['users'] = [{'role':'manager', 'user':$scope.project['owner']}];
+        }
+        $scope.project.$save($modalInstance.close($scope.project));
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+}
+
+function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectData){
+    $scope.update = function(){
+        $log.info("querying project " + $routeParams.projectId + "...");
+        $scope.project = Project.get({id:$routeParams.projectId});
+        $log.info("querying data for project " + $routeParams.projectId + "...");
+        $scope.projectData = ProjectData.filter({'project':$routeParams.projectId});
+    }
+    var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
+                             '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
+                          '</div>';
+    $scope.projectDataGridOptions = {data:'projectData',
+                                     columnDefs: [{ field: 'name',
+                                                    displayName: 'Name',
+                                                    width: "*"},
+                                                  { field: 'description',
+                                                    displayName: 'Description',
+                                                    width: "*"},
+                                                 { field: 'tags',
+                                                     displayName: 'Tags',
+                                                     cellTemplate: tagCellTemplate,
+                                                     width: "*"},
+                                                 { field: 'data',
+                                                     displayName: 'Data',
+                                                     width: "*"
+                                                     }
+                                                 ]}
+
+    $scope.delete = function(data){
+       data.$delete($scope.update);
+    }
+
+    $scope.edit_dialog = function(data, project){
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/dataEdit.html',
+            controller: DataEditCtrl,
+            resolve: {
+                data: function(){ return data;},
+                project: function(){ return project;}          }
+        });
+        modalInstance.result.then(function (selectedItem) {
+            $scope.update();
+        });
+    }
+
+    $scope.update();
+}
+
+function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project){
+    // new project creation form
+    $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
+    $scope.project = project;
+    if(!data){
+        $scope.data = new ProjectData();
+        $scope.data['project'] = project._id.$oid;
+        $scope.data.name = "new data";
+
+    }else{
+        $log.info($scope.data);
+        $scope.data = data;
+    }
+    $scope.ok = function () {
+        $scope.data.tags = $scope.data.tags.split(' '); // transform tags into an array
+        $scope.data.$save($modalInstance.close($scope.data));
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
 }
 
 function DataCtrl() {

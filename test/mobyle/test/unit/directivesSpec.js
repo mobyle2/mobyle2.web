@@ -148,15 +148,18 @@ describe('directives', function () {
                 "children": [
                     {
                         "prompt": "Parameter a prompt",
-                        "name": "parameter a name"
+                        "name": "parameter a name",
+                        "type": {"_type": "StringType"}
                     },
                     {
                         "prompt": "Parameter b prompt",
-                        "name": "parameter b name"
+                        "name": "parameter b name",
+                        "type": {"_type": "StringType"}
                     },
                     {
                         "prompt": "Parameter c prompt",
-                        "name": "parameter c name"
+                        "name": "parameter c name",
+                        "type": {"_type": "StringType"}
                     }
                 ]
             }
