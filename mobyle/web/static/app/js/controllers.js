@@ -322,7 +322,12 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
                                                  { field: 'data',
                                                      displayName: 'Data',
                                                      width: "*"
-                                                     }
+                                                     },
+                                                 { field: '',
+                                                     cellTemplate: '<span><button tooltip="Edit data properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button>'+
+                                                                   '<button tooltip="Remove data" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
+                                                     width: '*'
+                                                 }
                                                  ]}
 
     $scope.delete = function(data){
@@ -331,7 +336,7 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
 
     $scope.edit_dialog = function(data, project){
         var modalInstance = $modal.open({
-            templateUrl: 'partials/dataEdit.html',
+            templateUrl: 'partials/dataEdit.html?' + new Date(),
             controller: DataEditCtrl,
             resolve: {
                 data: function(){ return data;},
@@ -353,13 +358,12 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data = new ProjectData();
         $scope.data['project'] = project._id.$oid;
         $scope.data.name = "new data";
-
     }else{
         $log.info($scope.data);
         $scope.data = data;
     }
     $scope.ok = function () {
-        $scope.data.tags = $scope.data.tags.split(' '); // transform tags into an array
+        //$scope.data.tags = $scope.data.tags.split(' '); // transform tags into an array
         $scope.data.$save($modalInstance.close($scope.data));
     };
     $scope.cancel = function () {
