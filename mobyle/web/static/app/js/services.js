@@ -53,7 +53,9 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
                             }
                         }
                     }else{
-                        requestObject[prefix]=data;
+                        if(data!=null){
+                            requestObject[prefix]=data;
+                        }
                     }
                 }
                 serialize(collectionName, data);
