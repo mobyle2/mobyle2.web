@@ -303,7 +303,8 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
         $log.info("querying project " + $routeParams.projectId + "...");
         $scope.project = Project.get({id:$routeParams.projectId});
         $log.info("querying data for project " + $routeParams.projectId + "...");
-        $scope.projectData = ProjectData.filter({'project':$routeParams.projectId});
+        $scope.projectData = ProjectData.list_by_project({'project_id':$routeParams.projectId});
+        console.log($scope.projectData);
     }
     var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
                              '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
