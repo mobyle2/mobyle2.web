@@ -610,6 +610,8 @@ def update_project_data(request):
     #project data properties
     if 'name' in request.params:
         my_dataset['name'] = request.params['name']
+    if 'tags' in request.params:
+        my_dataset['tags'] = request.params.getall('tags')
     if 'format_term' in request.params:
         my_dataset['data']['format_term'] = request.params['format_term']
     if 'data_term' in request.params:
