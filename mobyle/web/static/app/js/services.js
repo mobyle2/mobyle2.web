@@ -25,7 +25,7 @@ angular.module('mobyle.services').value('mbsimple', function(para) {
 });
 
 angular.module('mobyle.services').factory('mfResource', function ($resource) {
-    function MFResourceFactory(collectionName, paramDefaults) {
+    function MFResourceFactory(collectionName, paramDefaults, actions) {
         // default url template, used for everything *but* search
         var route = '/' + collectionName.toLowerCase() + 's/:id';
         // url template used for search/filter
@@ -86,7 +86,7 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
             isArray: true
         };
         var resource = $resource(route, paramDefaults || {},
-            {
+            $.extend({
              get: {
                   method:'GET',
                   transformResponse: function (data) {
@@ -102,7 +102,7 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
              },
              create: createAction,
              update: updateAction
-            }
+            }, actions)
         );
         // define save action to use create or update
         resource.prototype.$save = function() {
@@ -158,6 +158,7 @@ angular.module('mobyle.services').factory('Project', function (mfResource) {
                          'owner':'@owner',
                          'users':'@users',
                          'id':'@_id.$oid'}
+
     return mfResource('Project',defaultParams);
 });
 
@@ -167,8 +168,21 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
                          'description':'@description',
                          'project':'@project',
                          'tags':'@tags',
-                         'id':'@_id.$oid'}
-    return mfResource('ProjectData',paramDefaults);
+                         'id':'@_id.$oid',
+                         'value':'@value',
+                         'format_term': '@format_term',
+                         'data_term':'@data_term'}
+    return mfResource('ProjectData',paramDefaults, {
+        create: {
+            'method':'GET',
+            'url':'/api/projectdata'
+        },
+        list_by_project: {
+            'method':'GET',
+            'url':'/api/project/:project_id/data',
+            isArray: true
+        }
+    });
 });
 
 angular.module('mobyle.services').factory('CurrentProject', function(Project, $rootScope){
