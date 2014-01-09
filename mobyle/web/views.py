@@ -340,7 +340,7 @@ def auth_login(request):
     # - Mobyle account
     userid = authenticated_userid(request)
     if userid:
-        log.error("Someone is logged " + str(userid))
+        log.debug("Someone is logged " + str(userid))
         user = connection.User.find_one({'email': userid})
         return {'user': user['email'], 'status': 0, 'msg': '',
                 'admin': user['admin'],
