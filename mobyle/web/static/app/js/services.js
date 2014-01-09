@@ -174,8 +174,12 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
                          'data_term':'@data_term'}
     return mfResource('ProjectData',paramDefaults, {
         create: {
-            'method':'GET',
+            'method':'POST',
             'url':'/api/projectdata'
+        },
+        update: {
+            'method':'PUT',
+            'url':'/api/projectdata/:id'
         },
         list_by_project: {
             'method':'GET',
