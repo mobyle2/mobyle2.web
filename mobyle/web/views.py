@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pyramid.view import view_config
 from pyramid.security import remember, authenticated_userid, forget
-from pyramid.httpexceptions import HTTPFound, HTTPNotFound, HTTPForbidden
+from pyramid.httpexceptions import HTTPFound, HTTPNotFound, HTTPForbidden, HTTPClientError
 from pyramid.renderers import render_to_response
 from pyramid.response import Response
 from pyramid_mailer import get_mailer
@@ -11,6 +11,7 @@ from velruse import login_url
 import json
 from bson import json_util
 from bson.objectid import ObjectId
+from bson.errors import InvalidId
 import requests
 import bcrypt
 from mf.views import mf_filter, MF_READ
@@ -19,8 +20,10 @@ from mf.db_conn import DbConn
 from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import project
+from mobyle.common.data import RefData, ValueData, ListData, StructData
 from mobyle.common import service
 from mobyle.common import tokens
+from mobyle.common.objectmanager import ObjectManager, AccessMode
 from mobyle.common.mobyleError import MobyleError
 from mobyle.common.mobyleConfig import MobyleConfig
 
@@ -29,6 +32,8 @@ from mobyle.web.classification import BY_TOPIC, BY_OPERATION
 import urllib
 from urllib2 import URLError
 import urllib2
+
+import os.path
 
 import logging
 log = logging.getLogger(__name__)
@@ -513,4 +518,155 @@ def service_by_name_version_and_maybe_project(request):
     response = {'object': 'service', 'status': 0,
                 'service': obj, 'filter': mffilter}
     response = json.dumps(response, default=json_util.default)
+    return Response(body=response, content_type="application/json")
+
+
+@view_config(route_name='create_project_data', request_method='POST')
+def create_project_data(request):
+    '''Create data in a project
+    :param request: HTTP params
+               param keys:
+                   'name' file name
+                   'description' data description
+                   'tags' data tags
+                   'project' ID of the project it is included in
+                   'value' data value
+                           (stored in file or in the db)
+                   'format' file format term
+                   'type' data type term
+    :type request: IMultiDict
+    :return: json - Object entry in the database
+    '''
+    options = {}
+    #container project
+    try:
+        project_id = ObjectId(request.params['project'])
+    except KeyError, err:
+        raise HTTPClientError('missing project identifier')
+    except InvalidId, err:
+        raise HTTPClientError('invalid project identifier')
+    #project data properties
+    try:
+        data_name = request.params['name']
+    except KeyError, err:
+        raise HTTPClientError('missing name for data')
+    try:
+        file_contents = request.params['value']
+    except KeyError, err:
+        raise HTTPClientError('missing data value')
+    format_term = request.params.get('format_term')
+    data_term = request.params.get('data_term')
+    options['project'] = project_id
+    objectManager = ObjectManager()
+    my_dataset = objectManager.add(data_name, options, False)
+    my_path = my_dataset.get_file_path()
+    # Write a file to the dataset directory
+    data_file = os.path.join(my_path,
+                             data_name)
+    handle = open(data_file, 'w')
+    handle.write(file_contents)
+    handle.close()
+    my_data = RefData()
+    my_data['path'] = data_name
+    my_data['size'] = os.path.getsize(data_file)
+    my_data['format'] = format_term
+    my_data['type'] = data_term
+    my_dataset.schema(my_data)
+    my_dataset.status(ObjectManager.READY)
+    #save data
+    my_dataset.save_with_history([data_name], 'new file')
+    #generate response
+    response = my_dataset
+    response = json.dumps(response, default=json_util.default)
+    return Response(body=response, content_type="application/json")
+
+
+@view_config(route_name='update_project_data', request_method='PUT')
+def update_project_data(request):
+    '''Update data in a project
+    :param request: HTTP params
+               matchdict keys:
+                   'id' ProjectData identifier
+               param keys:
+                   'name' file name
+                   'description' data description
+                   'tags' data tags
+                   'value' data value
+                           (stored in file or in the db)
+                   'format' file format term
+                   'type' data type term
+    :type request: IMultiDict
+    :return: json - Object entry in the database
+    '''
+    options = {}
+    #identifier
+    try:
+        projectdata_id = ObjectId(request.matchdict['id'])
+    except KeyError, err:
+        raise HTTPClientError('missing ProjectData id')
+    except InvalidId, err:
+        raise HTTPClientError('invalid ProjectData id')
+    my_dataset = ObjectManager.get(projectdata_id)
+    #project data properties
+    if 'name' in request.params:
+        my_dataset['name'] = request.params['name']
+    if 'format_term' in request.params:
+        my_dataset['data']['format_term'] = request.params['format_term']
+    if 'data_term' in request.params:
+        my_dataset['data']['data_term'] = request.params['data_term']
+    if 'value' in request.params:
+        my_path = my_dataset.get_file_path()
+        # Write a file to the dataset directory
+        data_file = os.path.join(my_path,
+                                 my_dataset['name'])
+        handle = open(data_file, 'w')
+        handle.write(request.params['value'])
+        handle.close()
+        my_dataset['data']['size'] = os.path.getsize(data_file)
+        my_dataset.status(ObjectManager.READY)
+    #save data
+    my_dataset.save_with_history([my_dataset['name']], 'new file')
+    #generate response
+    response = my_dataset
+    response = json.dumps(response, default=json_util.default)
+    return Response(body=response, content_type="application/json")
+
+
+@view_config(route_name='list_project_data', request_method='GET')
+def list_project_data(request):
+    '''Get data in a project
+    :param request: HTTP params
+             keys: 'project' Project ID
+    :type request: IMultiDict
+    :return: json - dictionary for the data
+             keys: 'name' file name
+                   'description' data description
+                   'tags' data tags
+                   'project' ID of the project it is included in
+                   'contents' file contents
+                   'format' file format term
+                   'type' data type term
+    '''
+    try:
+        project_id = ObjectId(request.matchdict['project'])
+    except KeyError, err:
+        raise HTTPClientError('missing project data identifier')
+    project_data_cursor = connection.ProjectData.fetch({'project': project_id})
+    project_data_list = []
+    for project_data_doc in project_data_cursor:
+        file_path = ObjectManager.get(project_data_doc['_id']).get_file_path()
+        project_data_doc['file_path'] = \
+            os.path.join(file_path, project_data_doc['data']['path'])
+        try:
+            handle = open(project_data_doc['file_path'], 'r')
+            project_data_doc['value'] = handle.read()
+            handle.close()
+        except IOError, ioe:
+            log.error('file contents for "%s" (id "%s") at "%s" cannot be read'
+                      % (project_data_doc['name'],
+                         project_data_doc['_id'],
+                         project_data_doc['file_path']))
+            project_data_doc['error'] = 'contents cannot be accessed'
+        project_data_list.append(project_data_doc)
+    response = json.dumps(project_data_list, default=json_util.default)
     return Response(body=response, content_type="application/json")

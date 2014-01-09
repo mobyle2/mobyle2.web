@@ -78,6 +78,9 @@ def main(global_config, **settings):
     config.add_route('service_by_identifier', '/api/services/{identifier}')
     config.add_route('service_by_identifier_version',
         '/api/services/{identifier}/{service_version}')
+    config.add_route('create_project_data', '/api/projectdata')
+    config.add_route('update_project_data', '/api/projectdata/{id}')
+    config.add_route('list_project_data', '/api/project/{project}/data')
 
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
