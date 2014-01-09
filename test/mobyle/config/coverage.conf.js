@@ -5,6 +5,7 @@ module.exports = function(config) {
     frameworks: ["jasmine"],
 
     files: [
+      'lib/jquery-1.10.1.js',
       'lib/angular/angular.js',
       'lib/angular/angular-*.js',
       'js/**/*.js',
