@@ -320,8 +320,8 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
                                                      displayName: 'Tags',
                                                      cellTemplate: tagCellTemplate,
                                                      width: "*"},
-                                                 { field: 'data',
-                                                     displayName: 'Data',
+                                                 { field: 'value',
+                                                     displayName: 'Value',
                                                      width: "*"
                                                      },
                                                  { field: '',
