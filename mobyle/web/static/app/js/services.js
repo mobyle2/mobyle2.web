@@ -62,15 +62,21 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
                 return $.param(requestObject);
             }
         }
+        var transformResponse = function (data) {
+            var json_data = JSON.parse(data);
+            return json_data[json_data.object];
+        }
         var updateAction = {
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             'method':'PUT',
-            transformRequest: transformRequestFactory('')
+            transformRequest: transformRequestFactory(''),
+            transformResponse: transformResponse
         };
         var createAction = {
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             'method':'POST',
-            transformRequest: transformRequestFactory('')
+            transformRequest: transformRequestFactory(''),
+            transformResponse: transformResponse
         };
         var listAction = {
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
