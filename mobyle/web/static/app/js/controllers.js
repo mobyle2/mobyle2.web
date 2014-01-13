@@ -261,7 +261,7 @@ function ProjectsCtrl($scope, $log, $modal, Project) {
 
     $scope.edit_dialog = function(project){
         var modalInstance = $modal.open({
-            templateUrl: 'partials/projectEditProperties.html',
+            templateUrl: 'partials/projectEditPropertiesModal.html',
             controller: ProjectEditPropertiesCtrl,
             resolve: {
                 project: function(){ return project;}
@@ -325,17 +325,22 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
                                                      width: "*"
                                                      },
                                                  { field: '',
-                                                     cellTemplate: '<span><button tooltip="Edit data properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button>'+
-                                                         '<button tooltip="Remove data" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
+                                                     cellTemplate: '<span><button tooltip="Edit data properties" ng-click="editProjectData(row.entity)"><i class="icon-pencil"></i></button>'+
+                                                         '<button tooltip="Remove data" ng-click="deleteData(row.entity)" ><i class="icon-trash"></i></button></span>',
                                                      width: '*'
                                                  }
                                                  ]}
 
-    $scope.delete = function(data){
+    $scope.save = function(){
+        $scope.project.$save();
+        console.log($scope.project);
+    }
+
+    $scope.deleteData = function(data){
        data.$delete($scope.update);
     }
 
-    $scope.edit_dialog = function(data, project){
+    $scope.editProjectData = function(data, project){
         var modalInstance = $modal.open({
             templateUrl: 'partials/dataEdit.html',
             controller: DataEditCtrl,
