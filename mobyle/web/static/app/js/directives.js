@@ -45,6 +45,33 @@ angular.module('mobyle.directives').directive('toggle', function(){
   }
 });
 
+angular.module('mobyle.directives').directive('hiddable', function(){
+    return {
+        restrict: 'A',
+        link: function(scope, element, attr){
+            var childEls = element.children();
+            childEls.css('overflow','hidden');
+            element.css('position','relative');
+            var buttonEl = $('<button class="btn" style="width: 2em; position: absolute; top:0em; right: -2em; padding: 0;"><i class="icon-chevron-right"></i></button>');
+            element.append(buttonEl);
+            var showing = true;
+            var showingWidth;
+            buttonEl.click(function(){
+              var childEls = element.children();
+              childEls.css('overflow','hidden');
+              if(showing){
+                  showingWidth = element.css('width');
+                  element.animate({'width':'0px'});
+              }else{
+                  console.log(showingWidth);
+                  element.animate({'width':showingWidth});
+              }
+              showing = !showing;
+            })
+        }
+    }
+});
+
 angular.module('mobyle.directives').directive('mbinput', function(){
   return {
     restrict: 'E',
@@ -121,6 +148,36 @@ angular.module('mobyle.directives').directive("mbformpara", [function() {
   return {
     templateUrl: 'partials/mbformpara.html'
   };
+}]);
+
+angular.module('mobyle.directives').directive("servicesClassification", [function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {},
+        templateUrl: 'partials/classification.html',
+        controller: function($scope, Classification) {
+            $scope.load = function(query){
+                $scope.loading = true;
+                $scope.tree = null;
+                $scope.defaultToggleState = !query;
+                Classification.query({key:'topic',filter:query},function(classification){
+                    $scope.tree = classification;
+                    $scope.loading = false;
+                });
+            }
+            $scope.load();
+            $scope.$watch('query',function(newValue,oldValue){
+                if((!oldValue || oldValue.length<3) && (!newValue || newValue.length<3)){
+                    return;
+                }else if(!newValue || newValue.length<3){
+                    $scope.load(null);
+                }else{
+                    $scope.load(newValue);
+                }
+            });
+        }
+    };
 }]);
 
 angular.module('mobyle.directives').directive("tree", [function() {

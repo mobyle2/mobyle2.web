@@ -168,28 +168,6 @@ $scope.rpassword}, function() {
 
 }
 
-function ClassificationCtrl($scope,$routeParams,Classification) {
-    $scope.load = function(query){
-        $scope.loading = true;
-        $scope.tree = null;
-        $scope.defaultToggleState = !query;
-        Classification.query({key:$routeParams.key,filter:query},function(classification){
-            $scope.tree = classification;
-            $scope.loading = false;
-        });
-    }
-    $scope.load();
-    $scope.$watch('query',function(newValue,oldValue){
-        if((!oldValue || oldValue.length<3) && (!newValue || newValue.length<3)){
-            return;
-        }else if(!newValue || newValue.length<3){
-            $scope.load(null);
-        }else{
-            $scope.load(newValue);
-        }
-    });
-}
-
 function ServicesCtrl($scope,Service) {
     $scope.services = Service.query();
     $scope.listDisplay = 'list';
