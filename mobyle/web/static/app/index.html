@@ -39,11 +39,11 @@
             <li ng-hide="userLogged()"><a href="#/login">Login</a></li>
             <li class="dropdown" ng-show="userLogged()" ng-controller="ProjectsCtrl">
 
-                <a data-toggle="dropdown"><i class="icon-folder-open icon-white"></i> {{currentProject.name || "no
+                <a data-toggle="dropdown" title="click here to switch to another project"><i class="icon-folder-open icon-white"></i> {{currentProject.name || "no
                     project selected"}}</a>
                 <ul class="dropdown-menu" ng-repeat="p in projects">
                     <li ng-repeat="p in projects">
-                        <a href="#/projects/{{p._id.$oid}}" ng-click="setCurrentProjectId(p._id.$oid)"/>
+                        <a ng-click="setCurrentProjectId(p._id.$oid)"/>
                         <i class="icon-folder-open" ng-show="p._id.$oid==currentProject._id.$oid"></i>
                         <i class="icon-folder-close" ng-show="p._id.$oid!=currentProject._id.$oid"></i>
                         {{ p.name}}
