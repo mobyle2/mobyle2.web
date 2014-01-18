@@ -217,7 +217,7 @@ function ProjectsCtrl($scope, $log, $modal, Project) {
         columnDefs: [{ field: 'name',
             displayName: 'Name',
             width: "**",
-            cellTemplate: '<a href="#/projects/{{row.getProperty(\'_id\').$oid}}">{{row.getProperty(col.field)}}</a><i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'},
+            cellTemplate: '<a href="#/projects/{{row.getProperty(\'_id\').$oid}}">{{row.getProperty(col.field)}}</a>&nbsp;<i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'},
             { field: 'notebook',
               displayName: 'Notebook',
               width: "***"},
