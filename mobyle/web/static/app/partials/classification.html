@@ -1,6 +1,6 @@
 <div>
-    <input type="search" class="search-query input-medium" ng-model="query"
-           ng-disabled="loading">
+    <input type="search" ng-model="query"
+           ng-disabled="loading" style="width: 80%;">
     <ul class="nav">
         <li ng-repeat="tree in tree.sublevels">
             <recursive><span tree class="nav"/></recursive>

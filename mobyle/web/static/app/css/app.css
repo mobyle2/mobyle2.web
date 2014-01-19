@@ -110,3 +110,15 @@ a.toggle-false:before{
 a.service-link{
     color: darkslategrey;
 }
+
+.row div {
+    -webkit-transition: width 0.1s ease, margin 0.1s ease;
+    -moz-transition: width 0.1s ease, margin 0.1s ease;
+    -o-transition: width 0.1s ease, margin 0.1s ease;
+    transition: width 0.1s ease, margin 0.1s ease;
+}
+
+.span0 {
+    width: 0;
+    margin-left: 0;
+}

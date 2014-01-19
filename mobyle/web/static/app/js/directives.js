@@ -49,25 +49,21 @@ angular.module('mobyle.directives').directive('hiddable', function(){
     return {
         restrict: 'A',
         link: function(scope, element, attr){
-            var childEls = element.children();
-            childEls.css('overflow','hidden');
             element.css('position','relative');
-            var buttonEl = $('<button class="btn" style="width: 2em; position: absolute; top:0em; right: -2em; padding: 0;"><i class="icon-chevron-right"></i></button>');
+            element.css('border-right','1px solid #e5e5e5');
+            var nextEl = element.next();
+            var iEl = $('<i class="icon-chevron-left"></i>');
+            var buttonEl = $('<button class="btn" style="width: 2em; position: absolute; top:0em; right: -2em; padding: 0;"></button>');
             element.append(buttonEl);
-            var showing = true;
-            var showingWidth;
+            buttonEl.append(iEl);
+            var hiddableWidth;
             buttonEl.click(function(){
-              var childEls = element.children();
-              childEls.css('overflow','hidden');
-              if(showing){
-                  showingWidth = element.css('width');
-                  element.animate({'width':'0px'});
-              }else{
-                  console.log(showingWidth);
-                  element.animate({'width':showingWidth});
-              }
-              showing = !showing;
-            })
+              hiddableWidth = element.width();
+              element.children().css('overflow','hidden');
+              element.toggleClass('span2 span0');
+              nextEl.toggleClass('span10 span12');
+              iEl.toggleClass('icon-chevron-right icon-chevron-left');
+            });
         }
     }
 });
