@@ -246,7 +246,11 @@ function ProjectsCtrl($scope, $log, $modal, Project) {
             }
         });
         modalInstance.result.then(function (selectedItem) {
-            $scope.update();
+            if(project){
+                project = selectedItem;
+            }else{
+                $scope.projects.push(selectedItem);
+            }
         });
     }
 
@@ -311,7 +315,6 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
 
     $scope.save = function(){
         $scope.project.$save();
-        console.log($scope.project);
     }
 
     $scope.deleteData = function(data){
@@ -327,7 +330,11 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
                 project: function(){ return project;}          }
         });
         modalInstance.result.then(function (selectedItem) {
-            $scope.update();
+            if(data){
+                data = selectedItem;
+            }else{
+                $scope.projectData.push(selectedItem);
+            }
         });
     }
 
