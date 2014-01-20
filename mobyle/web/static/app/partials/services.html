@@ -1,3 +1,4 @@
+<!--
 <div class="span10 offset1">
     <h2>{{filteredServices.length}} Services</h2>
 
@@ -21,6 +22,21 @@
                 <span ui-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
                 <span ng-bind-html="s.descriptionHl || s.description"/>
             </div>
+        </div>
+    </div>
+</div>
+-->
+<div>
+    <div>
+        Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query"
+                              ng-model="query">
+    </div>
+    <div class="services">
+        <div ng-repeat="s in filteredServices = (services | kwSearch:query:['name','description','title']:true | orderBy:'name')" class="service">
+            <div class="title"><a href="#/services/{{s.public_name || s._id.$oid}}/{{s.version}}"
+                                  ng-bind-html="s.nameHl || s.name"/></a></div>
+            <span ui-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
+            <span ng-bind-html="s.descriptionHl || s.description"/>
         </div>
     </div>
 </div>

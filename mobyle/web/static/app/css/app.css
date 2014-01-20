@@ -122,3 +122,17 @@ a.service-link{
     width: 0;
     margin-left: 0;
 }
+
+.services div.service{
+    border: 1px solid #e5e5e5;
+    height: 5em;
+    width: 25ex;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0.5ex;
+    text-overflow: ellipsis;
+}
+
+.services div.service .title{
+    background-color: #e5e5e5;
+}
