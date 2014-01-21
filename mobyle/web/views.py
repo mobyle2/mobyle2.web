@@ -39,6 +39,15 @@ import logging
 log = logging.getLogger(__name__)
 
 
+@view_config(context=HTTPClientError, renderer='json')
+def http_client_error(exc, request):
+    """ specific json renderer for HTTPClientError """
+    request.response.status_int = 400
+    return {'title': exc.title,
+            'explanation': exc.explanation,
+            'detail': exc.detail}
+
+
 def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
     hashed = bcrypt.hashpw(user['hashed_password'], bcrypt.gensalt())
