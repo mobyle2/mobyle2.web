@@ -273,7 +273,11 @@ function ProjectEditPropertiesCtrl($scope, $log, $modalInstance, Project, Curren
             $scope.project['owner'] = CurrentUser.get()._id.$oid;
             $scope.project['users'] = [{'role':'manager', 'user':$scope.project['owner']}];
         }
-        $scope.project.$save($modalInstance.close($scope.project));
+        $scope.project.$save().then(function(){
+            $modalInstance.close($scope.project);
+        },function(test){
+            $log.error("ERROR=",$scope.project);
+        });;
     };
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
@@ -355,7 +359,11 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data = data;
     }
     $scope.ok = function () {
-        $scope.data.$save($modalInstance.close($scope.data));
+        $scope.data.$save().then(function(){
+            $modalInstance.close($scope.data);
+        },function(test){
+            $log.error("ERROR=",$scope.data);
+        });
     };
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
