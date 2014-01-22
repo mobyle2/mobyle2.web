@@ -81,7 +81,7 @@ angular.module('mobyle.directives').directive('mbinput', function(){
       // work in progress...
         switch (scope.para.type._type){
             case "StringType":
-                if(scope.para.type.options && scope.para.type.options.size>0){
+                if(scope.para.type.options && scope.para.type.options.length>0){
                     scope.select = true;
                     scope.options = [];
                     scope.para.type.options.forEach(function(item){
