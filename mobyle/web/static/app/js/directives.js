@@ -61,7 +61,7 @@ angular.module('mobyle.directives').directive('hiddable', function(){
               hiddableWidth = element.width();
               element.children().css('overflow','hidden');
               element.toggleClass('span2 span0');
-              nextEl.toggleClass('span10 span12');
+              nextEl.toggleClass('span10 span11');
               iEl.toggleClass('icon-chevron-right icon-chevron-left');
             });
         }
@@ -190,23 +190,3 @@ angular.module('mobyle.directives').directive("tree", [function() {
         }
     };
 }]);
-
-angular.module('mobyle.directives').directive('flashMessages', function() {
-    var directive = { restrict: 'E', replace: true };
-    directive.template =
-        '<div ng-repeat="m in messages" id="flash-messages">' +
-            '<div class="alert {{ m.level }}">' +
-            '<button class="close" data-dismiss="alert" type="button">×</button>' +
-            '{{ m.text }}' +
-            '</div>';
-    '</div>';
-
-    directive.controller = function($scope, $rootScope) {
-        $rootScope.$on('flash:message', function(_, messages, done) {
-            $scope.messages = messages;
-            done();
-        });
-    };
-
-    return directive;
-});

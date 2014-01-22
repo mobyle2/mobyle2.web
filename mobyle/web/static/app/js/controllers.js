@@ -173,13 +173,17 @@ function ServicesCtrl($scope,Service) {
     $scope.listDisplay = 'list';
 }
 
-function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,Service,$resource,flash){
+function ServiceDetailCtrl($scope,$window,$routeParams,mbsimple,service){
     var params = {public_name:$routeParams.name};
-    $scope.service = Service.get(params).$promise.catch(
+    $scope.service = service;
+/*
+    Service.get(params).$promise.catch(
         function(error){
-            flash([{ level: 'alert-block', text: 'service ' + $routeParams.name + ' not found!' }]);
+            $scope.alerts.push({type:'danger', msg:error})
+            //flash([{ level: 'alert-block', text: 'service ' + $routeParams.name + ' not found!' }]);
         }
     );
+*/
     $scope.mbsimple = mbsimple;
     $scope.show_advanced = mbsimple($scope.service.inputs);
 }
@@ -349,6 +353,7 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
     // new project creation form
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
     $scope.project = project;
+    $scope.alerts = [];
     if(!data){
         $scope.data = new ProjectData();
         $scope.data['project'] = project._id.$oid;
@@ -361,8 +366,8 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
     $scope.ok = function () {
         $scope.data.$save().then(function(){
             $modalInstance.close($scope.data);
-        },function(test){
-            $log.error("ERROR=",$scope.data);
+        },function(errorResponse){
+            $scope.alerts.push({type:'danger',msg: errorResponse.data.detail});
         });
     };
     $scope.cancel = function () {
@@ -371,4 +376,14 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
 }
 
 function DataCtrl() {
+}
+
+function mobyleCtrl($rootScope) {
+    $rootScope.alerts = [];
+    $rootScope.closeAlert = function(index) {
+        $rootScope.alerts.splice(index, 1);
+    };
+    $rootScope.$on("$routeChangeError", function(event, current, previous, rejection) {
+        $rootScope.alerts.push({type:'danger', msg: rejection || 'unknown navigation error'});
+    })
 }

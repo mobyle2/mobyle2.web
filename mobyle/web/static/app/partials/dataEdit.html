@@ -3,6 +3,7 @@
 </div>
 <form>
     <div class="modal-body">
+        <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
         <label>Name: <input name="name" ng-model="data.name" placeholder="data name" autofocus/></label>
         <label>Description: <input name="name" ng-model="data.description" placeholder="data description"/></label>
         <label>Tags: <input name="tags" ng-model="data.tags" ng-list/></label>

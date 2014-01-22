@@ -112,15 +112,15 @@ a.service-link{
 }
 
 .row div {
-    -webkit-transition: width 0.1s ease, margin 0.1s ease;
-    -moz-transition: width 0.1s ease, margin 0.1s ease;
-    -o-transition: width 0.1s ease, margin 0.1s ease;
-    transition: width 0.1s ease, margin 0.1s ease;
+    -webkit-transition: width 0.3s ease, margin 0.3s ease;
+    -moz-transition: width 0.3s ease, margin 0.3s ease;
+    -o-transition: width 0.3s ease, margin 0.3s ease;
+    transition: width 0.3s ease, margin 0.3s ease;
 }
 
-.span0 {
-    width: 0;
-    margin-left: 0;
+.row-fluid [class="span0"] {
+    width: 0px!important;
+    height: 0px!important;
 }
 
 .services div.service{
