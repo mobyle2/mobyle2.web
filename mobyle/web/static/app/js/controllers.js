@@ -354,6 +354,27 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
     $scope.project = project;
     $scope.alerts = [];
+    $scope.data_format_terms = {
+        'EDAM_data:1384': {
+          'name':'Sequence alignment (protein)',
+          'formats': {
+              'EDAM_format:2924':'Phylip format variant',
+              'EDAM_format:2923':'mega variant',
+              'EDAM_format:2922':'markx0 variant',
+              'EDAM_format:1984':'FASTA aln'
+          }
+        },
+        'EDAM_data:1383': {
+            'name':'Sequence alignment (nucleic acid)',
+            'formats': {
+                'EDAM_format:2554':'Phylip format variant',
+                'EDAM_format:2923':'mega variant',
+                'EDAM_format:2922':'markx0 variant',
+                'EDAM_format:1984':'FASTA aln'
+            }
+        }
+
+    }
     if(!data){
         $scope.data = new ProjectData();
         $scope.data['project'] = project._id.$oid;
