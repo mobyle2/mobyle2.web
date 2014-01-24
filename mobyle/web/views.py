@@ -26,6 +26,8 @@ from mobyle.common import tokens
 from mobyle.common.objectmanager import ObjectManager, AccessMode
 from mobyle.common.mobyleError import MobyleError
 from mobyle.common.mobyleConfig import MobyleConfig
+from mobyle.common.term import FormatTerm
+
 
 from mobyle.web.classification import BY_TOPIC, BY_OPERATION
 
@@ -38,7 +40,6 @@ import os.path
 import logging
 log = logging.getLogger(__name__)
 
-
 @view_config(context=HTTPClientError, renderer='json')
 def http_client_error(exc, request):
     """ specific json renderer for HTTPClientError """
@@ -46,7 +47,6 @@ def http_client_error(exc, request):
     return {'title': exc.title,
             'explanation': exc.explanation,
             'detail': exc.detail}
-
 
 def add_user(user):
     """adds a user to the database. Password will be hashed with bcrypt"""
@@ -686,3 +686,20 @@ def list_project_data(request):
             project_data_doc['error'] = 'no value defined for this data'
     response = json.dumps(project_data_list, default=json_util.default)
     return Response(body=response, content_type="application/json")
+
+
+@view_config(route_name='format_dataterms', request_method='GET',
+             renderer='json')
+def list_format_dataterms(request):
+    '''
+    Get dataterms represented by a format ID
+    !TODO: this method is only used for tests so far
+    '''
+    data_terms = []
+    for format_term_id in request.params.getall('format_term'):
+        format_term = connection.FormatTerm.fetch_one({'id': format_term_id})
+        if format_term is not None:
+            for data_term in format_term.represents_dataterms():
+                data_term['_id'] = None
+                data_terms.append(data_term)
+    return data_terms
