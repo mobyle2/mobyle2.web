@@ -576,7 +576,7 @@ def create_project_data(request):
     handle.write(file_contents)
     handle.close()
     my_data = RefData()
-    my_data['path'] = data_name
+    my_data['path'] = [data_name]
     my_data['size'] = os.path.getsize(data_file)
     my_data['format'] = format_term
     my_data['type'] = data_term
@@ -660,30 +660,32 @@ def list_project_data(request):
     '''
     try:
         project_id = ObjectId(request.matchdict['project'])
-    except KeyError, err:
+    except KeyError:
         raise HTTPClientError('missing project data identifier')
     project_data_cursor = connection.ProjectData.fetch({'project': project_id})
     project_data_list = []
-    for project_data_doc in project_data_cursor:
-        file_path = ObjectManager.get(project_data_doc['_id']).get_file_path()
-        if project_data_doc['data'] and 'path' in project_data_doc['data']:
-            project_data_doc['file_path'] = \
-                os.path.join(file_path, project_data_doc['data']['path'])
-            try:
-                handle = open(project_data_doc['file_path'], 'r')
-                project_data_doc['value'] = handle.read()
-                handle.close()
-            except IOError, ioe:
-                log.error('file for "%s" (id "%s") at "%s" cannot be read'
-                          % (project_data_doc['name'],
-                             project_data_doc['_id'],
-                             project_data_doc['file_path']))
-                project_data_doc['error'] = 'contents cannot be accessed'
-            project_data_list.append(project_data_doc)
-        elif project_data_doc['data'] and 'value' in project_data_doc['data']:
-            project_data_doc['value'] = project_data_doc['data']['value']
+    # list all project data
+    for doc in project_data_cursor:
+        if doc['data'] and 'path' in doc['data']:
+            file_path = ObjectManager.get(doc['_id']).get_file_path()
+            doc['value'] = ''
+            for file_name in doc['data']['path']:
+                doc['file_path'] = os.path.join(file_path, file_name)
+                try:
+                    handle = open(doc['file_path'], 'r')
+                    doc['value'] += handle.read()
+                    handle.close()
+                except IOError:
+                    log.error('file for "%s" (id "%s") at "%s" cannot be read'
+                              % (doc['name'],
+                                 doc['_id'],
+                                 doc['file_path']))
+                    doc['error'] = 'contents cannot be accessed'
+        elif doc['data'] and 'value' in doc['data']:
+            doc['value'] = doc['data']['value']
         else:
-            project_data_doc['error'] = 'no value defined for this data'
+            doc['error'] = 'no value defined for this data'
+        project_data_list.append(doc)
     response = json.dumps(project_data_list, default=json_util.default)
     return Response(body=response, content_type="application/json")
 
