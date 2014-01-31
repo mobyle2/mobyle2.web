@@ -13,8 +13,8 @@
                 <textarea class="span10"  ui-tinymce ng-model="project.notebook" style="height: 80vh"></textarea>
             </tab>
             <tab heading="Data" select="update()">
-                <button ng-click="update()" class="btn btn-default btn-lg"><i class="icon-refresh"></i></button>
-                <button ng-click="editProjectData(null, project)" class="btn btn-primary btn-lg"><i class="icon-plus"></i>
+                <button ng-click="update()" class="btn btn-default"><i class="icon-refresh"></i></button>
+                <button ng-click="addProjectData(null, project)" class="btn btn-primary"><i class="icon-upload"></i>
                 </button>
                 <div class="mb-grid" ng-grid="projectDataGridOptions"></div>
             </tab>

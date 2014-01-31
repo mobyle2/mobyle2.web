@@ -294,7 +294,6 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
         $scope.project = Project.get({id:$routeParams.projectId});
         $log.info("querying data for project " + $routeParams.projectId + "...");
         $scope.projectData = ProjectData.list_by_project({'project_id':$routeParams.projectId});
-        console.log($scope.projectData);
     }
     var tagCellTemplate = '<div class="ngCellText colt{{$index}}">'+
                              '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>'+
@@ -329,13 +328,32 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
        data.$delete($scope.update);
     }
 
+    $scope.addProjectData = function(data, project){
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/dataEdit.html',
+            controller: DataEditCtrl,
+            resolve: {
+                data: function(){ return data;},
+                project: function(){ return project;}
+            }
+        });
+        modalInstance.result.then(function (selectedItem) {
+            if(data){
+                data = selectedItem;
+            }else{
+                $scope.projectData.push(selectedItem);
+            }
+        });
+    }
+
     $scope.editProjectData = function(data, project){
         var modalInstance = $modal.open({
             templateUrl: 'partials/dataEdit.html',
             controller: DataEditCtrl,
             resolve: {
                 data: function(){ return data;},
-                project: function(){ return project;}          }
+                project: function(){ return project;}
+            }
         });
         modalInstance.result.then(function (selectedItem) {
             if(data){
@@ -354,27 +372,28 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
     $scope.project = project;
     $scope.alerts = [];
-    $scope.data_format_terms = {
-        'EDAM_data:1384': {
+    $scope.data_format_terms = [
+        {
+          'id': 'EDAM_data:1384',
           'name':'Sequence alignment (protein)',
-          'formats': {
-              'EDAM_format:2924':'Phylip format variant',
-              'EDAM_format:2923':'mega variant',
-              'EDAM_format:2922':'markx0 variant',
-              'EDAM_format:1984':'FASTA aln'
-          }
+          'format_terms': [
+              {'id':'EDAM_format:2924','name':'Phylip format variant'},
+              {'id':'EDAM_format:2923','name':'mega variant'},
+              {'id':'EDAM_format:2922','name':'markx0 variant'},
+              {'id':'EDAM_format:1984','name':'FASTA aln'}          ]
         },
-        'EDAM_data:1383': {
+        {
+            'id': 'EDAM_data:1383',
             'name':'Sequence alignment (nucleic acid)',
-            'formats': {
-                'EDAM_format:2554':'Phylip format variant',
-                'EDAM_format:2923':'mega variant',
-                'EDAM_format:2922':'markx0 variant',
-                'EDAM_format:1984':'FASTA aln'
-            }
+            'format_terms': [
+                {'id':'EDAM_format:2924','name':'Phylip format variant'},
+                {'id':'EDAM_format:2923','name':'mega variant'},
+                {'id':'EDAM_format:2922','name':'markx0 variant'},
+                {'id':'EDAM_format:1984','name':'FASTA aln'}
+            ]
         }
-
-    }
+    ];
+    $scope.currentDataTerm = null;
     if(!data){
         $scope.data = new ProjectData();
         $scope.data['project'] = project._id.$oid;
@@ -385,6 +404,7 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data = data;
     }
     $scope.ok = function () {
+        $scope.data.type.data_term = $scope.currentDataTerm.id;
         $scope.data.$save().then(function(){
             $modalInstance.close($scope.data);
         },function(errorResponse){
