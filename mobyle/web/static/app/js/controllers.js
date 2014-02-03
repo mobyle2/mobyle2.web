@@ -391,6 +391,14 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
                 {'id':'EDAM_format:2922','name':'markx0 variant'},
                 {'id':'EDAM_format:1984','name':'FASTA aln'}
             ]
+        },
+        {
+            'id': 'EDAM_data:2920',
+            'name': 'Sequence alignment (pair)',
+            'format_terms': [
+                {'id':'EDAM_format:2572','name':'BAM', 'binary':true},
+                {'id':'EDAM_format:2573','name':'SAM'}
+            ]
         }
     ];
     $scope.currentDataTerm = {};
