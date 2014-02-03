@@ -413,6 +413,10 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data = data;
     }
     $scope.ok = function () {
+        //var fd = new FormData();
+        console.log($scope.data.file);
+        //fd.append('file', $scope.data.file);
+        console.log(fd);
         $scope.data.type.data_term = $scope.currentDataTerm.id;
         $scope.data.$save().then(function(){
             $modalInstance.close($scope.data);
