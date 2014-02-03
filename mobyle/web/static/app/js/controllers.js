@@ -393,7 +393,7 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
             ]
         }
     ];
-    $scope.currentDataTerm = null;
+    $scope.currentDataTerm = {};
     if(!data){
         $scope.data = new ProjectData();
         $scope.data['project'] = project._id.$oid;
