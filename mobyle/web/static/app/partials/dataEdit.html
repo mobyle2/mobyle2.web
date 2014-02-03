@@ -13,8 +13,15 @@
                 Format:
                 <select name="format_term" ng-model="data.type.format_term" ng-options="format_term.id as format_term.name for format_term in currentDataTerm.format_terms" ng-disabled="!currentDataTerm"/>
             </label>
-            <label>Data:
+            <div class="btn-group">
+                <button type="button" class="btn" ng-model="mode" btn-radio="'paste'">Paste</button>
+                <button type="button" class="btn" ng-model="mode" btn-radio="'upload'">Upload</button>
+            </div>
+            <label ng-show="mode=='paste'">Paste your data here:
                 <textarea name="value" ng-model="data.value"/>
+            </label>
+            <label ng-show="mode=='upload'">Select a file to upload:
+                <input name="file" type="file" ng-model="data.file"/>
             </label>
         </div>
         <label>Name: <input name="name" ng-model="data.name" placeholder="data name" autofocus/></label>

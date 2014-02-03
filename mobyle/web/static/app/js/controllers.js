@@ -407,6 +407,7 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data['project'] = project._id.$oid;
         $scope.data.name = "new data";
         $scope.data.tags = [];
+        $scope.mode = 'paste';
     }else{
         $log.info($scope.data);
         $scope.data = data;
