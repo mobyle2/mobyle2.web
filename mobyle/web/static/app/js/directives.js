@@ -195,9 +195,10 @@ angular.module('mobyle.directives').directive("tinyfile", [function() {
     return {
         restrict: 'E',
         replace: true,
-        scope: {'model':'='},
+        require: 'ngModel',
+        scope: {'ngModel':'='},
         template: '<input type="file" />',
-        link: function(scope, element, attr) {
+        link: function($scope,element) {
             var loadFile = function(evt) {
                 var result = "";
                 var files = evt.target.files; // FileList object
@@ -212,7 +213,6 @@ angular.module('mobyle.directives').directive("tinyfile", [function() {
                         reader.onloadend = function(evt) {
                             if (evt.target.readyState == FileReader.DONE) { // DONE == 2
                                 result += evt.target.result;
-                                console.log(result) ;
                                 if(stop<fileSize-1){
                                     offset = offset + chunkSize;
                                     evt = null;
@@ -220,6 +220,11 @@ angular.module('mobyle.directives').directive("tinyfile", [function() {
                                     readBlob(file, offset);
                                 }else{
                                     //$('.progress-label').text('file loaded!');
+                                    $scope.$apply(
+                                        function(){
+                                            $scope.ngModel = result;
+                                        });
+                                    console.log($scope.ngModel);
                                 }
                             }
                         };

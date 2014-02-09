@@ -181,7 +181,8 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
     return mfResource('ProjectData',paramDefaults, {
         create: {
             'method':'POST',
-            'url':'/api/projectdata'
+            'url':'/api/projectdata',
+            'headers': {'Content-Type': undefined }
         },
         update: {
             'method':'PUT',

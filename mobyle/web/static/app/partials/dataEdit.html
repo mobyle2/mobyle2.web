@@ -21,7 +21,7 @@
                 <textarea name="value" ng-model="data.value"/>
             </label>
             <label ng-show="mode=='upload'">Select a file to upload:
-                <tinyfile name="file" model="data.file"/>
+                <tinyfile name="file" ng-model="data.value"/>
             </label>
         </div>
         <label>Name: <input name="name" ng-model="data.name" placeholder="data name" autofocus/></label>
