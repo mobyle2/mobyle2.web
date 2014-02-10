@@ -136,3 +136,9 @@ a.service-link{
 .services div.service .title{
     background-color: #e5e5e5;
 }
+
+fieldset[disabled], fieldset[disabled] input, fieldset[disabled] select, fieldset[disabled] textarea,
+fieldset[readonly], fieldset[readonly] input, fieldset[readonly] select, fieldset[readonly] textarea{
+    cursor: not-allowed;
+    background-color: #eee;
+}
