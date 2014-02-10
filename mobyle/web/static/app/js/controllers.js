@@ -325,7 +325,11 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
     }
 
     $scope.deleteData = function(data){
-       data.$delete($scope.update);
+       data.$delete($scope.update).then(function(){
+           //FIXME projectData list is not updated after $delete...
+       },function(errorResponse){
+           $scope.alerts.push({type:'danger',msg: errorResponse.data.detail});
+       });;
     }
 
     $scope.addProjectData = function(data, project){
