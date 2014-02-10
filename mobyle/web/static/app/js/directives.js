@@ -224,7 +224,6 @@ angular.module('mobyle.directives').directive("tinyfile", [function() {
                                         function(){
                                             $scope.ngModel = result;
                                         });
-                                    console.log($scope.ngModel);
                                 }
                             }
                         };
