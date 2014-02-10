@@ -24,7 +24,7 @@ angular.module('mobyle.services').value('mbsimple', function(para) {
   return simple(para);
 });
 
-angular.module('mobyle.services').factory('mfResource', function ($resource) {
+angular.module('mobyle.services').factory('mfResource', function ($resource, $http) {
     function MFResourceFactory(collectionName, paramDefaults, actions) {
         // default url template, used for everything *but* search
         var route = '/' + collectionName.toLowerCase() + 's/:id';
@@ -76,7 +76,8 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             'method':'POST',
             transformRequest: transformRequestFactory(''),
-            transformResponse: transformResponse
+            transformResponse: transformResponse,
+            params: {}
         };
         var listAction = {
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
@@ -102,10 +103,6 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
              },
              list: listAction,
              filter: filterAction,
-             delete: {
-                 method: 'DELETE',
-                 url: route
-             },
              create: createAction,
              update: updateAction
             }, actions)
@@ -119,6 +116,10 @@ angular.module('mobyle.services').factory('mfResource', function ($resource) {
                 return this.$update();
             }
         };
+        // define delete action that sends only the id of the object to be deleted
+        resource.prototype.$delete = function(){
+            return $http.delete('/' + collectionName.toLowerCase() + 's/' + this._id.$oid);
+        }
         return resource;
     }
     return MFResourceFactory;
