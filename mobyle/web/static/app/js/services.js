@@ -169,7 +169,7 @@ angular.module('mobyle.services').factory('Project', function (mfResource) {
     return mfResource('Project',defaultParams);
 });
 
-angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
+angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http) {
 
     var paramDefaults = {'name':'@name',
                          'description':'@description',
@@ -179,12 +179,7 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
                          'value':'@value',
                          'format_term': '@format_term',
                          'data_term':'@data_term'}
-    return mfResource('ProjectData',paramDefaults, {
-        create: {
-            'method':'POST',
-            'url':'/api/projectdata',
-            'headers': {'Content-Type': undefined }
-        },
+    var projectDataResource = mfResource('ProjectData',paramDefaults, {
         update: {
             'method':'PUT',
             'url':'/api/projectdata/:id'
@@ -195,6 +190,21 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource) {
             isArray: true
         }
     });
+    projectDataResource.prototype.$create = function(){
+        return $http.post('/api/projectdata', this, {
+            transformRequest: function(data, headersGetter){
+                // use FormData to allow file uploads
+                var fd = new FormData();
+                angular.forEach(data, function(value, key) {
+                    fd.append(key, value);
+                })
+                return fd;
+            },
+            headers: {'Content-Type': undefined}
+        });
+        //FIXME: current object is not updated with response from server
+    }
+    return projectDataResource;
 });
 
 angular.module('mobyle.services').factory('CurrentProject', function(Project, $rootScope){
