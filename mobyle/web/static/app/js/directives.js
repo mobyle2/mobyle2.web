@@ -191,7 +191,7 @@ angular.module('mobyle.directives').directive("tree", [function() {
     };
 }]);
 
-angular.module('mobyle.directives').directive("tinyfile", [function() {
+angular.module('mobyle.directives').directive("tinyTextFile", [function() {
     return {
         restrict: 'E',
         replace: true,
@@ -209,20 +209,18 @@ angular.module('mobyle.directives').directive("tinyfile", [function() {
                         var stop = offset+chunkSize-1;
                         if (stop>(fileSize-1)){stop = fileSize - 1};
                         var reader = new FileReader();
-                        // If we use onloadend, we need to check the readyState.
                         reader.onloadend = function(evt) {
                             if (evt.target.readyState == FileReader.DONE) { // DONE == 2
                                 result += evt.target.result;
                                 if(stop<fileSize-1){
                                     offset = offset + chunkSize;
                                     evt = null;
-                                    //$('.progress-label').text('loading ('+offset+'/'+fileSize+')...');
                                     readBlob(file, offset);
                                 }else{
-                                    //$('.progress-label').text('file loaded!');
                                     $scope.$apply(
                                         function(){
-                                            $scope.ngModel = result;
+                                            $scope.ngModel['value'] = result;
+                                            $scope.ngModel['name'] = file.name;
                                         });
                                 }
                             }
