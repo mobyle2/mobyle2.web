@@ -11,7 +11,7 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
     $scope.password = null;
     $scope.admin = false;
     $scope.currentProject = CurrentProject.get();
-    $scope.$on( 'CurrentProject.update', function( event, currentProject ) {
+    $scope.$on('CurrentProject.update', function (event, currentProject) {
         $scope.currentProject = currentProject;
     });
     $scope.setCurrentProjectId = function(currentProjectId){
@@ -309,16 +309,17 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
                                                      displayName: 'Tags',
                                                      cellTemplate: tagCellTemplate,
                                                      width: "*"},
+                                                  { field: 'data.type',
+                                                    displayName: 'Type',
+                                                    width: "*",
+                                                    cellTemplate: "<div>{{row.entity['data']['type']['data_terms']}} - {{row.entity['data']['type']['format_terms']}}</div>"},
                                                  { field: 'value',
                                                      displayName: 'Value',
-                                                     width: "*"
-                                                     },
+                                                     width: "*"},
                                                  { field: '',
                                                      cellTemplate: '<span><button tooltip="Edit data properties" ng-click="editProjectData(row.entity)"><i class="icon-pencil"></i></button>'+
                                                          '<button tooltip="Remove data" ng-click="deleteData(row.entity)" ><i class="icon-trash"></i></button></span>',
-                                                     width: '*'
-                                                 }
-                                                 ]}
+                                                     width: '*'}]}
 
     $scope.save = function(){
         $scope.project.$save();
