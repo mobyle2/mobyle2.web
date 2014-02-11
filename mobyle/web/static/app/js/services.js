@@ -169,7 +169,7 @@ angular.module('mobyle.services').factory('Project', function (mfResource) {
     return mfResource('Project',defaultParams);
 });
 
-angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http) {
+angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http, $parse) {
 
     var paramDefaults = {'name':'@name',
                          'description':'@description',
@@ -177,8 +177,8 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
                          'tags':'@tags',
                          'id':'@_id.$oid',
                          'value':'@value',
-                         'format_term': '@format_term',
-                         'data_term':'@data_term'}
+                         'format_term': '@type.format_term',
+                         'data_term':'@type.data_term'}
     var projectDataResource = mfResource('ProjectData',paramDefaults, {
         update: {
             'method':'PUT',
@@ -190,6 +190,7 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
             isArray: true
         }
     });
+    
     projectDataResource.prototype.$create = function(){
         // use a custom method for create action because
         // we need to use FormData to upload files
@@ -198,8 +199,12 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
             transformRequest: function(data, headersGetter){
                 // use FormData to allow file uploads
                 var fd = new FormData();
-                angular.forEach(data, function(value, key) {
-                    fd.append(key, value);
+                angular.forEach(paramDefaults, function(value, key) {
+                    var extractedParam = value &&
+                                     value.charAt &&
+                                     value.charAt(0) == '@' ?
+                                     $parse(value.substr(1))(data) : value;
+                    fd.append(key, extractedParam);
                 })
                 return fd;
             },
