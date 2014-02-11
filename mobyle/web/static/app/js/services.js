@@ -191,6 +191,9 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
         }
     });
     projectDataResource.prototype.$create = function(){
+        // use a custom method for create action because
+        // we need to use FormData to upload files
+        var item = this;
         return $http.post('/api/projectdata', this, {
             transformRequest: function(data, headersGetter){
                 // use FormData to allow file uploads
@@ -200,9 +203,14 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
                 })
                 return fd;
             },
+            transformResponse: function(data, header) {
+                var wrapped = new projectDataResource(angular.fromJson(data));
+                return wrapped;
+            },
             headers: {'Content-Type': undefined}
+        }).success(function(data, status) {
+            item._id = data._id;
         });
-        //FIXME: current object is not updated with response from server
     }
     return projectDataResource;
 });
