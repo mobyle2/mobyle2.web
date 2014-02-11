@@ -542,8 +542,8 @@ def create_project_data(request):
                    'project' ID of the project it is included in
                    'value' data value
                            (stored in file or in the db)
-                   'format_term' file format term
-                   'type_term' data type term
+                   'format_terms' file format term
+                   'data_terms' data type term
     :type request: IMultiDict
     :return: json - Object entry in the database
     '''
@@ -580,10 +580,10 @@ def create_project_data(request):
     my_data['path'] = [data_name]
     my_data['size'] = os.path.getsize(data_file)
     my_data['type'] = FormattedType()
-    if 'format_term' in request.params:
-        my_data['type']['format_terms'] = request.params['format_term']
-    if 'data_term' in request.params:
-        my_data['type']['data_terms'] = request.params['data_term']
+    if 'format_terms' in request.params:
+        my_data['type']['format_terms'] = request.params['format_terms']
+    if 'data_terms' in request.params:
+        my_data['type']['data_terms'] = request.params['data_terms']
     my_dataset.schema(my_data)
     my_dataset.status(ObjectManager.READY)
     #save data
