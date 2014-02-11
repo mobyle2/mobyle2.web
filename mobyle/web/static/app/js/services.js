@@ -177,8 +177,8 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
                          'tags':'@tags',
                          'id':'@_id.$oid',
                          'value':'@value',
-                         'format_term': '@type.format_term',
-                         'data_term':'@type.data_term'}
+                         'format_terms': '@data.type.format_terms',
+                         'data_terms':'@data.type.data_terms'}
     var projectDataResource = mfResource('ProjectData',paramDefaults, {
         update: {
             'method':'PUT',
@@ -199,6 +199,8 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
             transformRequest: function(data, headersGetter){
                 // use FormData to allow file uploads
                 var fd = new FormData();
+                // fill the properties to send from paramDefaults
+                // shamelessly stolen from angular-resource.js
                 angular.forEach(paramDefaults, function(value, key) {
                     var extractedParam = value &&
                                      value.charAt &&

@@ -413,12 +413,13 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data.name = "new data";
         $scope.data.tags = [];
         $scope.mode = 'paste';
+        $scope.data.data = {'type':{}};
     }else{
-        $log.info($scope.data);
         $scope.data = data;
     }
     $scope.ok = function () {
-        $scope.data.type.data_term = $scope.currentDataTerm.id;
+        $scope.data.data.type.data_terms = $scope.currentDataTerm.id;
+        console.log($scope.data);
         $scope.data.$save().then(function(){
             $modalInstance.close($scope.data);
         },function(errorResponse){
