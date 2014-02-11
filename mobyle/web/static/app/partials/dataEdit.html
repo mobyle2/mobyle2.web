@@ -7,11 +7,11 @@
         <div ng-if="!data._id.$oid">
             <label>
                 Data:
-                <select required name="currentDataTerm" ng-model="currentDataTerm" ng-options="data_term as data_term.name for data_term in data_format_terms"/>
+                <select required name="currentDataTerm" ng-model="$parent.currentDataTerm" ng-options="data_term as data_term.name for data_term in data_format_terms"/>
             </label>
             <label>
                 Format:
-                <select required name="format_term" ng-model="data.type.format_term" ng-options="format_term.id as format_term.name for format_term in currentDataTerm.format_terms" ng-disabled="!currentDataTerm.id"/>
+                <select required name="format_term" ng-model="data.type.format_term" ng-options="format_term.id as format_term.name for format_term in $parent.currentDataTerm.format_terms" ng-disabled="!$parent.currentDataTerm.id"/>
             </label>
             <fieldset style="width:95%; padding-left: 0; padding-right: 0; margin-left:0; margin-right:0;" ng-disabled="!currentDataTerm.id">
                 <div class="btn-group">
