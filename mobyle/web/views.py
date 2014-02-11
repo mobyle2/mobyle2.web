@@ -21,6 +21,7 @@ from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import project
 from mobyle.common.data import RefData, ValueData, ListData, StructData
+from mobyle.common.type import FormattedType
 from mobyle.common import service
 from mobyle.common import tokens
 from mobyle.common.objectmanager import ObjectManager, AccessMode
@@ -541,8 +542,8 @@ def create_project_data(request):
                    'project' ID of the project it is included in
                    'value' data value
                            (stored in file or in the db)
-                   'format' file format term
-                   'type' data type term
+                   'format_term' file format term
+                   'type_term' data type term
     :type request: IMultiDict
     :return: json - Object entry in the database
     '''
@@ -578,8 +579,11 @@ def create_project_data(request):
     my_data = RefData()
     my_data['path'] = [data_name]
     my_data['size'] = os.path.getsize(data_file)
-    my_data['format'] = format_term
-    my_data['type'] = data_term
+    my_data['type'] = FormattedType()
+    if 'format_term' in request.params:
+        my_data['type']['format_terms'] = request.params['format_term']
+    if 'data_term' in request.params:
+        my_data['type']['data_terms'] = request.params['data_term']
     my_dataset.schema(my_data)
     my_dataset.status(ObjectManager.READY)
     #save data
