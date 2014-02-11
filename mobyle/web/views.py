@@ -606,8 +606,6 @@ def update_project_data(request):
                    'tags' data tags
                    'value' data value
                            (stored in file or in the db)
-                   'format' file format term
-                   'type' data type term
     :type request: IMultiDict
     :return: json - Object entry in the database
     '''
@@ -625,10 +623,6 @@ def update_project_data(request):
         my_dataset['name'] = request.params['name']
     if 'tags' in request.params:
         my_dataset['tags'] = request.params.getall('tags')
-    if 'format_term' in request.params:
-        my_dataset['data']['format_term'] = request.params['format_term']
-    if 'data_term' in request.params:
-        my_dataset['data']['data_term'] = request.params['data_term']
     if 'value' in request.params:
         my_path = my_dataset.get_file_path()
         # Write a file to the dataset directory
