@@ -28,9 +28,7 @@ from mobyle.common.objectmanager import ObjectManager, AccessMode
 from mobyle.common.mobyleError import MobyleError
 from mobyle.common.mobyleConfig import MobyleConfig
 from mobyle.common.term import FormatTerm
-
-
-from mobyle.web.classification import BY_TOPIC, BY_OPERATION
+from mobyle.common.classification import Classification
 
 import urllib
 from urllib2 import URLError
@@ -487,7 +485,9 @@ def about(request):
 
 @view_config(route_name='services_by_topic')
 def services_by_topic(request):
-    tree_list = BY_TOPIC.get_classification(
+    classification = connection.Classification.fetch_one(
+        {'root_term': 'EDAM_topic:0003'})
+    tree_list = classification.get_classification(
                     filter=request.params.get('filter', None))
     objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
@@ -495,7 +495,9 @@ def services_by_topic(request):
 
 @view_config(route_name='services_by_operation')
 def services_by_operation(request):
-    tree_list = BY_OPERATION.get_classification(
+    classification = connection.Classification.fetch(
+        {'root_term': 'EDAM_topic:0004'})
+    tree_list = classification.get_classification(
                     filter=request.params.get('filter', None))
     objlist = json.dumps(tree_list, default=json_util.default)
     return Response(body=objlist, content_type="application/json")
