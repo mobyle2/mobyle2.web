@@ -1,0 +1,134 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="mobyle" ng-controller="mobyleCtrl" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mobyle2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/docs/assets/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/app.css -->
+    <link rel="stylesheet" href="styles/app.css">
+    <!-- endbuild -->
+</head>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-cloak>
+        <div class="navbar-inner">
+            <a class="brand" href="#">Mobyle2</a>
+            <ul class="nav">
+                <li>
+                    <a href="#/services" active-link="active">services</a>
+                </li>
+                <li>
+                    <a>banks and genomes</a>
+                </li>
+                <!--
+            <li><a href="#/dataterms" active-link="active">Data Terms</a></li>
+            <li><a href="#/formatterms" active-link="active">Format Terms</a></li>
+            -->
+            </ul>
+            <ul class="nav pull-right" ng-controller="LoginCtrl" id="loginnavbar" ng-init="alreadyLogged()">
+                <li ng-hide="userLogged()">
+                    <a href="#/login">Login</a>
+                </li>
+                <li class="dropdown" ng-show="userLogged()" ng-controller="ProjectsCtrl">
+
+                    <a data-toggle="dropdown" title="click here to switch to another project">
+                        <i class="icon-folder-open icon-white"></i>{{currentProject.name || "no project selected"}}</a>
+                    <ul class="dropdown-menu" ng-repeat="p in projects">
+                        <li ng-repeat="p in projects">
+                            <a ng-click="setCurrentProjectId(p._id.$oid)" />
+                            <i class="icon-folder-open" ng-show="p._id.$oid==currentProject._id.$oid"></i>
+                            <i class="icon-folder-close" ng-show="p._id.$oid!=currentProject._id.$oid"></i>
+                            {{ p.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#/projects" active-link="active">workspace</a>
+                </li>
+                <li class="dropdown" ng-show="userLogged()">
+                    <a href="#" data-toggle="dropdown">{{User}}</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#/my">Settings</a>
+                        </li>
+                        <li id="usernavbar">
+                            <a href="#/dashboard" ng-show="isAdmin()">Dashboard</a>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-show="userLogged()">
+                    <a href="#/logout" ng-click="signOut()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 40px;">
+        <div class="span12">
+            <div class="span10 offset1">
+                <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid" style="padding-top: 40px;">
+        <div class="span2" id="left-menu" hiddable>
+            <services-classification ng-cloack></services-classification>
+        </div>
+        <div class="span10">
+            <div id="main-view" ng-view ng-cloak></div>
+        </div>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/ng-grid/build/ng-grid.min.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+    <script src="bower_components/bootstrap/docs/assets/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="bower_components/angular-ui/build/angular-ui.js"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/services.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
+

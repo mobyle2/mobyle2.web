@@ -74,7 +74,7 @@ angular.module('mobyle.directives').directive('mbinput', function () {
         restrict: 'E',
         replace: true,
         transclude: true,
-        templateUrl: 'partials/mbinput.html',
+        templateUrl: 'views/mbinput.html',
         //template: '<input ng-show="itype" type="{{itype}}" name="{{para.name}}" value="" placeholder="{{para}}"/>',
         scope: {
             para: '='
@@ -160,7 +160,7 @@ angular.module('mobyle.directives').directive("recursive", function ($compile) {
 angular.module('mobyle.directives').directive("mbformpara", [
     function () {
         return {
-            templateUrl: 'partials/mbformpara.html'
+            templateUrl: 'views/mbformpara.html'
         };
 }]);
 
@@ -170,7 +170,7 @@ angular.module('mobyle.directives').directive("servicesClassification", [
             restrict: 'E',
             replace: true,
             scope: {},
-            templateUrl: 'partials/classification.html',
+            templateUrl: 'views/classification.html',
             controller: function ($scope, Classification) {
                 $scope.load = function (query) {
                     $scope.loading = true;
@@ -201,7 +201,7 @@ angular.module('mobyle.directives').directive("servicesClassification", [
 angular.module('mobyle.directives').directive("tree", [
     function () {
         return {
-            templateUrl: 'partials/tree.html',
+            templateUrl: 'views/tree.html',
             link: function (scope, element, attrs) {
                 scope.isService = function (tree) {
                     return tree.hasOwnProperty('version');

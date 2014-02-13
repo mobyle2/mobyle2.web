@@ -86,6 +86,7 @@ def main(global_config, **settings):
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
     config.add_static_view('static', 'mobyle.web:static')
+    config.add_static_view('app', '../../webapp/app')
     config.scan()
 
     Dashboard.set_connection(connection.connection)

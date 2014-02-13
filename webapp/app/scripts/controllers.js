@@ -255,7 +255,7 @@ function ProjectsCtrl($scope, $log, $modal, Project) {
 
     $scope.edit_dialog = function (project) {
         var modalInstance = $modal.open({
-            templateUrl: 'partials/projectEditPropertiesModal.html',
+            templateUrl: 'views/projectEditPropertiesModal.html',
             controller: ProjectEditPropertiesCtrl,
             resolve: {
                 project: function () {
@@ -373,7 +373,7 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
 
     $scope.addProjectData = function (data, project) {
         var modalInstance = $modal.open({
-            templateUrl: 'partials/dataEdit.html',
+            templateUrl: 'views/dataEdit.html',
             controller: DataEditCtrl,
             resolve: {
                 data: function () {
@@ -395,7 +395,7 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
 
     $scope.editProjectData = function (data, project) {
         var modalInstance = $modal.open({
-            templateUrl: 'partials/dataEdit.html',
+            templateUrl: 'views/dataEdit.html',
             controller: DataEditCtrl,
             resolve: {
                 data: function () {
