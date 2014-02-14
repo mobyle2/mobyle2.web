@@ -9,7 +9,7 @@ config(['$routeProvider',
             templateUrl: 'views/services.html',
             controller: ServicesCtrl
         });
-        $routeProvider.when('/services/:name/:version?', {
+        var serviceDetailRoute = {
             templateUrl: 'views/serviceDetail.html',
             controller: ServiceDetailCtrl,
             resolve: {
@@ -25,11 +25,9 @@ config(['$routeProvider',
                     return deferred.promise;
                 }
             }
-        });
-        $routeProvider.when('/projects/:project/services/:name/:version', {
-            templateUrl: 'views/serviceDetail.html',
-            controller: ServiceDetailCtrl
-        });
+        };
+        $routeProvider.when('/services/:name/:version?', serviceDetailRoute);
+        $routeProvider.when('/projects/:project/services/:name/:version?', serviceDetailRoute);
         $routeProvider.when('/projects', {
             templateUrl: 'views/projects.html',
             controller: ProjectsCtrl
