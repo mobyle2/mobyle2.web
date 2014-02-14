@@ -94,7 +94,7 @@ describe('directives', function () {
         var scope, mbinput, html, compile;
 
         // load the templates
-        beforeEach(module('partials/mbinput.html'));
+        beforeEach(module('views/mbinput.html'));
 
         beforeEach(inject(function($rootScope, $compile){
             scope = $rootScope.$new();
@@ -135,8 +135,8 @@ describe('directives', function () {
         var scope, mbformpara, html, compile;
 
         // load the templates
-        beforeEach(module('partials/mbinput.html'));
-        beforeEach(module('partials/mbformpara.html'));
+        beforeEach(module('views/mbinput.html'));
+        beforeEach(module('views/mbformpara.html'));
 
         beforeEach(inject(function($rootScope, $compile){
             scope = $rootScope.$new();

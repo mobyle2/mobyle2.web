@@ -1,56 +1,45 @@
-// Karma configuration
-// http://karma-runner.github.io/0.10/config/configuration-file.html
-
 module.exports = function(config) {
   config.set({
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
+    basePath: 'app',
 
-    // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ["jasmine"],
 
-    // list of files / patterns to load in the browser
     files: [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/bower_components/angular-cookies/angular-cookies.js',
-      'app/bower_components/angular-sanitize/angular-sanitize.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/scripts/*.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'bower_components/tinymce/tinymce.min.js',
+      'bower_components/jquery/jquery.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-resource/angular-resource.js',
+      'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/angular-route/angular-route.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',        
+      'bower_components/ng-grid/build/ng-grid.min.js',
+      'bower_components/angular-ui-tinymce/src/tinymce.js',
+      'bower_components/bootstrap/docs/assets/js/bootstrap.js',
+      'bower_components/angular-ui/build/angular-ui.js',
+      'scripts/*.js',
+      'views/*.html',
+      '../test/spec/*.js'
     ],
 
-    // list of files / patterns to exclude
-    exclude: [],
+    exclude: ['bower_components/angular-scenario/angular-scenario.js'],
 
-    // web server port
-    port: 8080,
+    preprocessors: {
+        // generate js files from html templates
+        'views/*.html': 'ng-html2js'
+    },
 
-    // level of logging
-    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    autoWatch: true,
 
+    browsers: ['PhantomJS'],
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    plugins: [
+        'karma-junit-reporter',
+        'karma-jasmine',
+        'karma-phantomjs-launcher',
+        'karma-ng-html2js-preprocessor'
+    ]
 
-
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Chrome'],
-
-
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
   });
 };
