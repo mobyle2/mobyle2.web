@@ -9,7 +9,7 @@ config(['$routeProvider',
             templateUrl: 'views/services.html',
             controller: ServicesCtrl
         });
-        $routeProvider.when('/services/:name/:version', {
+        $routeProvider.when('/services/:name/:version?', {
             templateUrl: 'views/serviceDetail.html',
             controller: ServiceDetailCtrl,
             resolve: {
