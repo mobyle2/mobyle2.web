@@ -29,6 +29,8 @@ before_script:
   - npm install --quiet -g karma
   - npm install --quiet -g karma-ng-html2js-preprocessor
   - cd webapp
+  - pwd
+  - ls Gruntfile.js
   - grunt karma
   - cd ..
 
