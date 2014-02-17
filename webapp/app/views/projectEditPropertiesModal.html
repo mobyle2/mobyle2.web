@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h3>{{project.name}}</h3>
+</div>
+<form>
+    <div class="modal-body">
+        <ng-include src="'views/projectEditProperties.html'"></ng-include>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
+        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

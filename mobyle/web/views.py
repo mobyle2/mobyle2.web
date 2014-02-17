@@ -204,8 +204,7 @@ def check_user_pw(username, password):
 
 @view_config(route_name='main')
 def main_page(request):
-    return HTTPFound(location=request.static_path(
-        "mobyle.web:static/app/index.html"))
+    return HTTPFound(location="app/")
 
 
 @view_config(context='velruse.AuthenticationComplete')
@@ -230,7 +229,7 @@ def login_complete_view(request):
     settings = request.registry.settings
 
     return HTTPFound(location=
-                     request.static_path("mobyle.web:static/app/index.html"),
+                     request.static_path("mobyle.web:app/index.html"),
                      headers=headers)
 
 
@@ -311,7 +310,7 @@ def auth_confirm_email(request):
         return HTTPForbidden()
 
     return HTTPFound(location=
-                     request.static_path("mobyle.web:static/app/index.html") +
+                     request.static_path("app/index.html") +
                      "#/login")
 
 
