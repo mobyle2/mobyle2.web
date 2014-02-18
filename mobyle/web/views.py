@@ -228,9 +228,7 @@ def login_complete_view(request):
     (userobj, newuser) = create_if_no_exists(username)
     settings = request.registry.settings
 
-    return HTTPFound(location=
-                     request.static_path("mobyle.web:app/index.html"),
-                     headers=headers)
+    return HTTPFound(location="app/", headers=headers)
 
 
 @view_config(route_name='onlyauthenticated', permission='viewauth')
@@ -309,8 +307,7 @@ def auth_confirm_email(request):
     if not newuser:
         return HTTPForbidden()
 
-    return HTTPFound(location=
-                     request.static_path("app/index.html") +
+    return HTTPFound(location="app/" +
                      "#/login")
 
 

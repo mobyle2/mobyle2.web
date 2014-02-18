@@ -10,7 +10,7 @@ import unittest
 from webob.multidict import MultiDict
 
 import mobyle.common.config
-cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'test.ini')))                                 
+cfg = mobyle.common.config.Config(file = os.path.normpath(os.path.join(os.path.dirname(__file__), 'test.ini')))
 
 from mobyle.common.connection import connection
 from mobyle.common.stats.stat import Statistic, HourlyStatistic, DailyStatistic, MonthlyStatistic
@@ -64,7 +64,7 @@ class LoginTest(unittest.TestCase):
 
 class ViewTests(unittest.TestCase):
 
-   
+
     def setUp(self):
         self.config = testing.setUp()
         self.config.include('pyramid_mailer.testing')
@@ -119,11 +119,12 @@ class ViewTests(unittest.TestCase):
 
     def test_main_page(self):
         from mobyle.web.views import main_page
-        self.config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
+        #self.config.add_static_view('static', 'mobyle.web:static', cache_max_age = 3600)
+        self.config.add_static_view('app', '../../webapp/app')
         request = testing.DummyRequest()
         info = main_page(request)
         self.assertEqual(info.code, 302)
-        self.assertEqual(info.location, '/static/app/index.html')
+        self.assertEqual(info.location, 'app/')
 
 
     def test_private_programs(self):
