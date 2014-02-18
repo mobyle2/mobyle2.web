@@ -438,8 +438,7 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
         $scope.data = data;
     }
     $scope.ok = function () {
-        $scope.data.data.type.data_terms = $scope.currentDataTerm.id;
-        console.log($scope.data);
+        $scope.data.data.type.data_terms = $scope.currentDataTerm.data_term_id;
         $scope.data.$save().then(function () {
             $modalInstance.close($scope.data);
         }, function (errorResponse) {
