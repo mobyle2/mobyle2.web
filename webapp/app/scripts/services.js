@@ -162,6 +162,32 @@ angular.module('mobyle.services').factory('FormatTerm', function (mfResource) {
     return mfResource('FormatTerm');
 });
 
+angular.module('mobyle.services').factory('ServiceTypeTerm', function (mfResource) {
+    var res = mfResource('ServiceTypeTerm');
+    return res;
+});
+
+angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (ServiceTypeTerm, FormatTerm) {
+    return {
+        list: function () {
+            var data = ServiceTypeTerm.query({})
+            data.$promise.then(function(resp){
+                angular.forEach(resp, function(dataFormatItem){
+                    dataFormatItem['format_terms'] = [];
+                    angular.forEach(dataFormatItem['format_term_ids'],
+                                    function(formatTermId){
+                                        var formatTerm = FormatTerm.get({'id': formatTermId});
+                                        dataFormatItem['format_terms'].push(formatTerm);
+                                    });
+                    delete dataFormatItem['format_term_ids'];
+                });
+                data = resp;
+            });
+            return data;
+        }
+    }
+});
+
 angular.module('mobyle.services').factory('User', function (mfResource) {
     return mfResource('User');
 });
