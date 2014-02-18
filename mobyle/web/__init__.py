@@ -118,13 +118,13 @@ def main(global_config, **settings):
 
     from mobyle.common.term import DataTerm, FormatTerm,\
         TopicTerm, OperationTerm
-    from mobyle.common.serviceDataFormatTerms import ServiceDataFormatTerm
+    from mobyle.common.service_terms import ServiceTypeTerm
     dconfig = Dashboard.get_config()
     dconfig['templates'] = 'mobyle.web:templates/dashboard.mako'
     dconfig['permission'] = 'isadmin'
     Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData,
         Package, Service, Program, Workflow, Widget, DataTerm, FormatTerm,
-        TopicTerm, OperationTerm, ServiceDataFormatTerm], config)
+        TopicTerm, OperationTerm, ServiceTypeTerm], config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])
 
