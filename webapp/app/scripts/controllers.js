@@ -418,71 +418,12 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
     $scope.update();
 }
 
-function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project) {
+function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project, ServiceTypeTermRegistry) {
     // new project creation form
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
     $scope.project = project;
     $scope.alerts = [];
-    $scope.data_format_terms = [
-        {
-            'id': 'EDAM_data:1384',
-            'name': 'Sequence alignment (protein)',
-            'format_terms': [
-                {
-                    'id': 'EDAM_format:2924',
-                    'name': 'Phylip format variant'
-                },
-                {
-                    'id': 'EDAM_format:2923',
-                    'name': 'mega variant'
-                },
-                {
-                    'id': 'EDAM_format:2922',
-                    'name': 'markx0 variant'
-                },
-                {
-                    'id': 'EDAM_format:1984',
-                    'name': 'FASTA aln'
-                }]
-        },
-        {
-            'id': 'EDAM_data:1383',
-            'name': 'Sequence alignment (nucleic acid)',
-            'format_terms': [
-                {
-                    'id': 'EDAM_format:2924',
-                    'name': 'Phylip format variant'
-                },
-                {
-                    'id': 'EDAM_format:2923',
-                    'name': 'mega variant'
-                },
-                {
-                    'id': 'EDAM_format:2922',
-                    'name': 'markx0 variant'
-                },
-                {
-                    'id': 'EDAM_format:1984',
-                    'name': 'FASTA aln'
-                }
-            ]
-        },
-        {
-            'id': 'EDAM_data:2920',
-            'name': 'Sequence alignment (pair)',
-            'format_terms': [
-                {
-                    'id': 'EDAM_format:2572',
-                    'name': 'BAM',
-                    'binary': true
-                },
-                {
-                    'id': 'EDAM_format:2573',
-                    'name': 'SAM'
-                }
-            ]
-        }
-    ];
+    $scope.data_format_terms = ServiceTypeTermRegistry.list();
     $scope.currentDataTerm = {};
     if (!data) {
         $scope.data = new ProjectData();
