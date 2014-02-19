@@ -423,7 +423,9 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
     $scope.project = project;
     $scope.alerts = [];
-    $scope.data_format_terms = ServiceTypeTermRegistry.list();
+    ServiceTypeTermRegistry.dataTerms().then(function(struct){
+        $scope.data_format_terms = struct;
+    });
     $scope.currentDataTerm = {};
     if (!data) {
         $scope.data = new ProjectData();

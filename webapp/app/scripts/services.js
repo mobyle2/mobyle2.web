@@ -167,23 +167,63 @@ angular.module('mobyle.services').factory('ServiceTypeTerm', function (mfResourc
     return res;
 });
 
-angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (ServiceTypeTerm, FormatTerm) {
+angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (ServiceTypeTerm, FormatTerm, $q) {
+    var dataTermsById = $q.defer();
+    var formatTermsById = $q.defer();
+    var termsById = $q.defer();
+    var dataTerms = $q.defer();
+    var formatTerms = $q.defer();
+    var terms = $q.defer();
+    var dataQuery = ServiceTypeTerm.query({});
+    dataQuery.$promise.then(function(resp){
+        var dataTermsByIdTmp = {};
+        var formatTermsByIdTmp = {};
+        var termsByIdTmp = {};
+        var dataTermsTmp = [];
+        var formatTermsTmp = [];
+        var termsTmp = [];
+        angular.forEach(resp, function(item){
+            dataTermsByIdTmp[item['data_term_id']] = item;
+            dataTermsTmp.push(item);
+            termsTmp.push(item);
+            item['format_terms'] = [];
+            angular.forEach(item['format_term_ids'],
+                            function(formatTermId){
+                                var formatTerm = FormatTerm.get({'id': formatTermId});
+                                formatTermsByIdTmp[formatTermId] = formatTerm;
+                                formatTermsTmp.push(formatTerm);
+                                termsTmp.push(formatTerm);
+                                item['format_terms'].push(formatTerm);
+                            });
+            delete item['format_term_ids'];
+        });
+        termsByIdTmp = dataTermsByIdTmp;
+        angular.extend(termsByIdTmp, formatTermsByIdTmp); 
+        dataTermsById.resolve(dataTermsByIdTmp);
+        formatTermsById.resolve(formatTermsByIdTmp);
+        termsById.resolve(termsByIdTmp);
+        dataTerms.resolve(dataTermsTmp);
+        formatTerms.resolve(formatTermsTmp);
+        terms = dataTerms.resolve(termsTmp);
+    });
     return {
-        list: function () {
-            var data = ServiceTypeTerm.query({})
-            data.$promise.then(function(resp){
-                angular.forEach(resp, function(dataFormatItem){
-                    dataFormatItem['format_terms'] = [];
-                    angular.forEach(dataFormatItem['format_term_ids'],
-                                    function(formatTermId){
-                                        var formatTerm = FormatTerm.get({'id': formatTermId});
-                                        dataFormatItem['format_terms'].push(formatTerm);
-                                    });
-                    delete dataFormatItem['format_term_ids'];
-                });
-                data = resp;
-            });
-            return data;
+        dataTermsById: function () {
+            return dataTermsById.promise;
+        },
+        formatTermsById: function() {
+            return formatTermsById.promise;
+        },
+        termsById: function(){
+            return termsById.promise;
+        },
+        dataTerms: function () {
+            return dataTerms.promise;
+        },
+        formatTerms: function() {
+            return formatTerms.promise;
+        },
+        terms: function(){
+            return terms.promise;
         }
     }
 });
