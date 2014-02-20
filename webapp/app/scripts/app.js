@@ -2,16 +2,16 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'ngSanitize', 'ngRoute', 'ui', 'ui.tinymce', 'ui.bootstrap', 'ngGrid']).
+angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'mobyle.controllers', 'ngSanitize', 'ngRoute', 'ui', 'ui.tinymce', 'ui.bootstrap', 'ngGrid']).
 config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.when('/services', {
             templateUrl: 'views/services.html',
-            controller: ServicesCtrl
+            controller: 'ServicesCtrl'
         });
         var serviceDetailRoute = {
             templateUrl: 'views/serviceDetail.html',
-            controller: ServiceDetailCtrl,
+            controller: 'ServiceDetailCtrl',
             resolve: {
                 service: function ($route, Service, $q) {
                     var deferred = $q.defer();
@@ -30,51 +30,51 @@ config(['$routeProvider',
         $routeProvider.when('/projects/:project/services/:name/:version?', serviceDetailRoute);
         $routeProvider.when('/projects', {
             templateUrl: 'views/projects.html',
-            controller: ProjectsCtrl
+            controller: 'ProjectsCtrl'
         });
         $routeProvider.when('/projects/:projectId', {
             templateUrl: 'views/projectDetail.html',
-            controller: ProjectDetailCtrl
+            controller: 'ProjectDetailCtrl'
         });
         $routeProvider.when('/dataterms', {
             templateUrl: 'views/terms.html',
-            controller: DataTermsCtrl
+            controller: 'DataTermsCtrl'
         });
         $routeProvider.when('/dataterms/:dataTermId', {
             templateUrl: 'views/termDetail.html',
-            controller: DataTermDetailCtrl
+            controller: 'DataTermDetailCtrl'
         });
         $routeProvider.when('/formatterms', {
             templateUrl: 'views/terms.html',
-            controller: FormatTermsCtrl
+            controller: 'FormatTermsCtrl'
         });
         $routeProvider.when('/formatterms/:formatTermId', {
             templateUrl: 'views/termDetail.html',
-            controller: FormatTermDetailCtrl
+            controller: 'FormatTermDetailCtrl'
         });
         $routeProvider.when('/data', {
             templateUrl: 'views/data.html',
-            controller: DataCtrl
+            controller: 'DataCtrl'
         });
         $routeProvider.when('/login', {
             templateUrl: 'views/login.html',
-            controller: LoginCtrl
+            controller: 'LoginCtrl'
         });
         $routeProvider.when('/logout', {
             templateUrl: 'views/login.html',
-            controller: LoginCtrl
+            controller: 'LoginCtrl'
         });
         $routeProvider.when('/my', {
             templateUrl: 'views/my.html',
-            controller: LoginCtrl
+            controller: 'LoginCtrl'
         });
         $routeProvider.when('/my/password_reset', {
             templateUrl: 'views/my_password_reset.html',
-            controller: LoginCtrl
+            controller: 'LoginCtrl'
         });
         $routeProvider.when('/dashboard', {
             templateUrl: 'views/my.html',
-            controller: LoginCtrl
+            controller: 'LoginCtrl'
         });
         $routeProvider.otherwise({
             redirectTo: '/services'

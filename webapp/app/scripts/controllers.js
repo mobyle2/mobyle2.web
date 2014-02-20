@@ -2,8 +2,10 @@
 
 /* Controllers */
 
+angular.module('mobyle.controllers', []);
 
-function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
+angular.module('mobyle.controllers').controller('LoginCtrl',
+    function(LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
     $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google'];
     //$scope.persona = Login.get('persona', {assertion:"XXX"});
     $scope.User = null;
@@ -164,14 +166,16 @@ function LoginCtrl(LoginManager, $routeParams, $scope, $location, Login, Logout,
         // create new account
     }
 
-}
+});
 
-function ServicesCtrl($scope, Service) {
+angular.module('mobyle.controllers').controller('ServicesCtrl',
+    function($scope, Service) {
     $scope.services = Service.query();
     $scope.listDisplay = 'list';
-}
+});
 
-function ServiceDetailCtrl($scope, $window, $routeParams, mbsimple, service) {
+angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
+    function($scope, $window, $routeParams, mbsimple, service) {
     var params = {
         public_name: $routeParams.name
     };
@@ -186,35 +190,40 @@ function ServiceDetailCtrl($scope, $window, $routeParams, mbsimple, service) {
 */
     $scope.mbsimple = mbsimple;
     $scope.show_advanced = mbsimple($scope.service.inputs);
-}
+});
 
-function DataTermsCtrl($scope, DataTerm) {
+angular.module('mobyle.controllers').controller('DataTermsCtrl',
+    function($scope, DataTerm) {
     $scope.terms = DataTerm.query();
     $scope.listDisplay = 'list';
     $scope.object = "dataterm";
-}
+});
 
-function DataTermDetailCtrl($scope, $routeParams, DataTerm, $resource) {
+angular.module('mobyle.controllers').controller('DataTermDetailCtrl',
+    function($scope, $routeParams, DataTerm, $resource) {
     $scope.term = DataTerm.get({
         id: $routeParams.dataTermId
     });
     $scope.object = "dataterm";
-}
+});
 
-function FormatTermsCtrl($scope, FormatTerm) {
+angular.module('mobyle.controllers').controller('FormatTermsCtrl',
+    function($scope, FormatTerm) {
     $scope.terms = FormatTerm.query();
     $scope.listDisplay = 'list';
     $scope.object = "formatterm";
-}
+});
 
-function FormatTermDetailCtrl($scope, $routeParams, FormatTerm, $resource) {
+angular.module('mobyle.controllers').controller('FormatTermDetailCtrl',
+    function($scope, $routeParams, FormatTerm, $resource) {
     $scope.term = FormatTerm.get({
         id: $routeParams.formatTermId
     });
     $scope.object = "formatterm";
-}
+});
 
-function ProjectsCtrl($scope, $log, $modal, Project) {
+angular.module('mobyle.controllers').controller('ProjectsCtrl',
+    function($scope, $log, $modal, Project) {
     $scope.update = function () {
         $log.info("querying list of projects...");
         $scope.projects = Project.query();
@@ -273,9 +282,10 @@ function ProjectsCtrl($scope, $log, $modal, Project) {
     }
 
     $scope.update();
-}
+});
 
-function ProjectEditPropertiesCtrl($scope, $log, $modalInstance, Project, CurrentUser, project) {
+angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
+    function($scope, $log, $modalInstance, Project, CurrentUser, project) {
     // new project creation form
     $log.info("editing " + (project ? ('project ' + project.name) : ' new project'));
     if (!project) {
@@ -303,9 +313,10 @@ function ProjectEditPropertiesCtrl($scope, $log, $modalInstance, Project, Curren
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
-}
+});
 
-function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectData) {
+angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
+    function($scope, $log, $modal, $routeParams, Project, ProjectData) {
     $scope.update = function () {
         $log.info("querying project " + $routeParams.projectId + "...");
         $scope.project = Project.get({
@@ -416,9 +427,10 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
     }
 
     $scope.update();
-}
+});
 
-function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project, ServiceTypeTermRegistry) {
+angular.module('mobyle.controllers').controller('DataEditCtrl',
+    function($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project, ServiceTypeTermRegistry) {
     // new project creation form
     $log.info("editing " + (data ? ('data ' + data.name) : (' new data for project ' + project)));
     $scope.project = project;
@@ -453,11 +465,13 @@ function DataEditCtrl($scope, $log, $modalInstance, ProjectData, CurrentUser, da
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
-}
+});
 
-function DataCtrl() {}
+angular.module('mobyle.controllers').controller('DataCtrl',
+    function() {});
 
-function mobyleCtrl($rootScope) {
+angular.module('mobyle.controllers').controller('mobyleCtrl',
+    function($rootScope) {
     $rootScope.alerts = [];
     $rootScope.closeAlert = function (index) {
         $rootScope.alerts.splice(index, 1);
@@ -468,4 +482,4 @@ function mobyleCtrl($rootScope) {
             msg: rejection || 'unknown navigation error'
         });
     })
-}
+});
