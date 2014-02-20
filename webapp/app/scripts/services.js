@@ -168,62 +168,71 @@ angular.module('mobyle.services').factory('ServiceTypeTerm', function (mfResourc
 });
 
 angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (ServiceTypeTerm, FormatTerm, $q) {
-    var dataTermsById = $q.defer();
-    var formatTermsById = $q.defer();
-    var termsById = $q.defer();
-    var dataTerms = $q.defer();
-    var formatTerms = $q.defer();
-    var terms = $q.defer();
+    // declare promises
+    var dataTermsByIdP = $q.defer();
+    var formatTermsByIdP = $q.defer();
+    var termsByIdP = $q.defer();
+    var dataTermsP = $q.defer();
+    var formatTermsP = $q.defer();
+    var termsP = $q.defer();
+    // call the server method
     var dataQuery = ServiceTypeTerm.query({});
+    // process the server response to cache the results
     dataQuery.$promise.then(function(resp){
-        var dataTermsByIdTmp = {};
-        var formatTermsByIdTmp = {};
-        var termsByIdTmp = {};
-        var dataTermsTmp = [];
-        var formatTermsTmp = [];
-        var termsTmp = [];
+        var dataTermsById = {};
+        var formatTermsById = {};
+        var termsById = {};
+        var dataTerms = [];
+        var formatTerms = [];
+        var terms = [];
         angular.forEach(resp, function(item){
-            dataTermsByIdTmp[item['data_term_id']] = item;
-            dataTermsTmp.push(item);
-            termsTmp.push(item);
+            dataTermsById[item['data_term_id']] = item;
+            dataTerms.push(item);
+            terms.push(item);
             item['format_terms'] = [];
             angular.forEach(item['format_term_ids'],
                             function(formatTermId){
                                 var formatTerm = FormatTerm.get({'id': formatTermId});
-                                formatTermsByIdTmp[formatTermId] = formatTerm;
-                                formatTermsTmp.push(formatTerm);
-                                termsTmp.push(formatTerm);
+                                formatTermsById[formatTermId] = formatTerm;
+                                formatTerms.push(formatTerm);
+                                terms.push(formatTerm);
                                 item['format_terms'].push(formatTerm);
                             });
             delete item['format_term_ids'];
         });
-        termsByIdTmp = dataTermsByIdTmp;
-        angular.extend(termsByIdTmp, formatTermsByIdTmp); 
-        dataTermsById.resolve(dataTermsByIdTmp);
-        formatTermsById.resolve(formatTermsByIdTmp);
-        termsById.resolve(termsByIdTmp);
-        dataTerms.resolve(dataTermsTmp);
-        formatTerms.resolve(formatTermsTmp);
-        terms = dataTerms.resolve(termsTmp);
+        termsById = dataTermsById;
+        angular.extend(termsById, formatTermsById); 
+        dataTermsByIdP.resolve(dataTermsById);
+        formatTermsByIdP.resolve(formatTermsById);
+        termsByIdP.resolve(termsById);
+        dataTermsP.resolve(dataTerms);
+        formatTermsP.resolve(formatTerms);
+        termsP = dataTerms.resolve(terms);
     });
     return {
         dataTermsById: function () {
-            return dataTermsById.promise;
+            // data terms in an object
+            return dataTermsByIdP.promise;
         },
         formatTermsById: function() {
-            return formatTermsById.promise;
+            // format terms in an object
+            return formatTermsByIdP.promise;
         },
         termsById: function(){
-            return termsById.promise;
+            // data and format terms in an object
+            return termsByIdP.promise;
         },
         dataTerms: function () {
-            return dataTerms.promise;
+            // data terms in a list
+            return dataTermsP.promise;
         },
         formatTerms: function() {
-            return formatTerms.promise;
+            // format terms in a list
+            return formatTermsP.promise;
         },
         terms: function(){
-            return terms.promise;
+            // data and format terms in a list
+            return termsP.promise;
         }
     }
 });
