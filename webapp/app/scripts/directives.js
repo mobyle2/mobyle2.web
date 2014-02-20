@@ -219,7 +219,7 @@ angular.module('mobyle.directives').directive('typeText', ['ServiceTypeTermRegis
         return {
         restrict: 'E',
         replace: true,
-        template: '<span>{{formatTermLabel}} ({{dataTermLabel}})</span>',
+        template: '<span>{{dataTermLabel}} <span ng-if="formatTermLabel">({{formatTermLabel}})</span></span>',
         scope: {
             type: '='
         },
