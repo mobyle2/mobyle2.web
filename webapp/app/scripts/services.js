@@ -207,7 +207,7 @@ angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (S
         termsByIdP.resolve(termsById);
         dataTermsP.resolve(dataTerms);
         formatTermsP.resolve(formatTerms);
-        termsP = dataTerms.resolve(terms);
+        termsP.resolve(terms);
     });
     return {
         dataTermsById: function () {
