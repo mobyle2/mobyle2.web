@@ -341,7 +341,7 @@ function ProjectDetailCtrl($scope, $log, $modal, $routeParams, Project, ProjectD
                 field: 'data.type',
                 displayName: 'Type',
                 width: "*",
-                cellTemplate: "<div>{{row.entity['data']['type']['data_terms']}} - {{row.entity['data']['type']['format_terms']}}</div>"
+                cellTemplate: '<div class="ngCellText colt{{$index}}"><type-text type="row.entity.data.type"></type-text></div>'
             },
             {
                 field: 'value',
