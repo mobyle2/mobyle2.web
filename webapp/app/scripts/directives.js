@@ -214,6 +214,27 @@ angular.module('mobyle.directives').directive("tree", [
         };
 }]);
 
+angular.module('mobyle.directives').directive('typeText', ['ServiceTypeTermRegistry',
+    function (ServiceTypeTermRegistry) {
+        return {
+        restrict: 'E',
+        replace: true,
+        template: '<span>{{formatTermLabel}} ({{dataTermLabel}})</span>',
+        scope: {
+            type: '='
+        },
+        link: function (scope, element, attrs) {
+            scope.dataTermLabel = "";
+            scope.formatTermLabel = "";
+            ServiceTypeTermRegistry.dataTermsById().then(function(dataTermsById){
+                scope.dataTermLabel = dataTermsById[scope.type.data_terms]["data_term_name"];
+            });
+            ServiceTypeTermRegistry.formatTermsById().then(function(formatTermsById){
+                scope.formatTermLabel = formatTermsById[scope.type.format_terms]["name"];                
+            });
+        }};
+}]);
+
 angular.module('mobyle.directives').directive("tinyTextFile", [
     function () {
         return {
