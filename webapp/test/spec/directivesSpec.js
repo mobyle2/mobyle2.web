@@ -11,7 +11,7 @@ describe('directives', function () {
         var scope;
         var toggle_off, toggle_on, toggle_undef;
 
-        beforeEach(inject(function($rootScope, $compile){
+        beforeEach(inject(function ($rootScope, $compile) {
             toggle_on = angular.element('<toggle text-when-on="when on" text-when-off="when off" toggle-state="on"></toggle>');
             toggle_off = angular.element('<toggle text-when-on="when on" text-when-off="when off" toggle-state="off"></toggle>');
             toggle_undef = angular.element('<toggle text-when-on="when on" text-when-off="when off"></toggle>');
@@ -58,7 +58,7 @@ describe('directives', function () {
 
         var scope, services_link, rootScope, location;
 
-        beforeEach(inject(function($rootScope, $compile, $location){
+        beforeEach(inject(function ($rootScope, $compile, $location) {
             location = $location;
             rootScope = $rootScope;
             scope = $rootScope.$new();
@@ -91,23 +91,33 @@ describe('directives', function () {
 
     describe('mbinput', function () {
 
-        var scope, mbinput, html, compile;
+        var scope, mbinput, html, compile, $httpBackend;
 
         // load the templates
         beforeEach(module('views/mbinput.html'));
 
-        beforeEach(inject(function($rootScope, $compile){
+        beforeEach(module('mobyle.services'));
+
+        beforeEach(inject(function ($injector, $rootScope, $compile) {
+            $httpBackend = $injector.get('$httpBackend');
+            // resource listing
+            var serviceTypeTermsResponse = [{
+                "format_term_ids": ["EDAM_format:2200", "EDAM_format:1996"],
+                "data_term_id": "EDAM_data:1384",
+                "data_term_name": "Sequence alignment (protein)"
+            }];
+            $httpBackend.when('GET', '/servicetypeterms').respond(JSON.stringify(serviceTypeTermsResponse));
             scope = $rootScope.$new();
             mbinput = angular.element('<mbinput para="mbformpara">');
             compile = $compile;
         }));
 
         it('should have the label equal to parameter name if no prompt is specified', function ($compile) {
+            $httpBackend.expectGET('/servicetypeterms');
             scope.mbformpara = {
                 "name": "infile",
                 "simple": true,
-                "type": {
-                }
+                "type": {}
             }
             html = compile(mbinput)(scope);
             scope.$digest();
@@ -119,8 +129,7 @@ describe('directives', function () {
                 "name": "infile",
                 "prompt": "input file",
                 "simple": true,
-                "type": {
-                }
+                "type": {}
             }
             html = compile(mbinput)(scope);
             scope.$digest();
@@ -132,13 +141,23 @@ describe('directives', function () {
 
     describe('mbformpara', function () {
 
-        var scope, mbformpara, html, compile;
+        var scope, mbformpara, html, compile, $httpBackend;
 
         // load the templates
         beforeEach(module('views/mbinput.html'));
         beforeEach(module('views/mbformpara.html'));
+        
+        beforeEach(module('mobyle.services'));
 
-        beforeEach(inject(function($rootScope, $compile){
+        beforeEach(inject(function ($injector, $rootScope, $compile) {
+            $httpBackend = $injector.get('$httpBackend');
+            // resource listing
+            var serviceTypeTermsResponse = [{
+                "format_term_ids": ["EDAM_format:2200", "EDAM_format:1996"],
+                "data_term_id": "EDAM_data:1384",
+                "data_term_name": "Sequence alignment (protein)"
+            }];
+            $httpBackend.when('GET', '/servicetypeterms').respond(JSON.stringify(serviceTypeTermsResponse));
             scope = $rootScope.$new();
             compile = $compile;
             mbformpara = angular.element('<span recursive mbformpara="mbformpara">');
@@ -149,20 +168,27 @@ describe('directives', function () {
                     {
                         "prompt": "Parameter a prompt",
                         "name": "parameter a name",
-                        "type": {"_type": "StringType"}
+                        "type": {
+                            "_type": "StringType"
+                        }
                     },
                     {
                         "prompt": "Parameter b prompt",
                         "name": "parameter b name",
-                        "type": {"_type": "StringType"}
+                        "type": {
+                            "_type": "StringType"
+                        }
                     },
                     {
                         "prompt": "Parameter c prompt",
                         "name": "parameter c name",
-                        "type": {"_type": "StringType"}
+                        "type": {
+                            "_type": "StringType"
+                        }
                     }
                 ]
             }
+            $httpBackend.expectGET('/servicetypeterms');
             html = compile(mbformpara)(scope);
             scope.$digest();
             html = html.children('div');
