@@ -265,7 +265,7 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
     $scope.edit_dialog = function (project) {
         var modalInstance = $modal.open({
             templateUrl: 'views/projectEditPropertiesModal.html',
-            controller: ProjectEditPropertiesCtrl,
+            controller: 'ProjectEditPropertiesCtrl',
             resolve: {
                 project: function () {
                     return project;
@@ -385,7 +385,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
     $scope.addProjectData = function (data, project) {
         var modalInstance = $modal.open({
             templateUrl: 'views/dataEdit.html',
-            controller: DataEditCtrl,
+            controller: 'DataEditCtrl',
             resolve: {
                 data: function () {
                     return data;
