@@ -256,6 +256,7 @@ angular.module('mobyle.services').factory('User', function (mfResource) {
 angular.module('mobyle.services').factory('Project', function (mfResource) {
     var defaultParams = {
         'name': '@name',
+        'description': '@description',
         'public': '@public',
         'owner': '@owner',
         'users': '@users',
