@@ -123,6 +123,18 @@ angular.module('mobyle.services').factory('mfResource', function ($resource, $ht
                 return this.$update();
             }
         };
+        // get creation date from objectid
+        resource.prototype.getCreationDate = function () {
+            if (this._id) {
+                var id = this._id.$oid;
+                var timehex = id.substring(0,8);
+                var secondsSinceEpoch = parseInt(timehex, 16);
+                var dt = new Date(secondsSinceEpoch*1000);
+                return dt;
+            }else{
+                return null;
+            }
+        };        
         // define delete action that sends only the id of the object to be deleted
         resource.prototype.$delete = function () {
             return $http.delete('/' + collectionName.toLowerCase() + 's/' + this._id.$oid);
