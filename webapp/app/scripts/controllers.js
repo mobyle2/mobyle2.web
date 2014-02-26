@@ -407,7 +407,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
     $scope.editProjectData = function (data, project) {
         var modalInstance = $modal.open({
             templateUrl: 'views/dataEdit.html',
-            controller: DataEditCtrl,
+            controller: 'DataEditCtrl',
             resolve: {
                 data: function () {
                     return data;
