@@ -232,28 +232,25 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
     $scope.projectGridOptions = {
         data: 'projects',
         enableRowSelection: false,
+        //rowTemplate: '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}">&nbsp;</div><div ng-cell></div></div>',
+        //headerRowTemplate: undefined,
         columnDefs: [{
                 field: 'name',
                 displayName: 'Name',
-                width: "**",
+                width: "*",
                 cellTemplate: '<a href="#/projects/{{row.getProperty(\'_id\').$oid}}">{{row.getProperty(col.field)}}</a>&nbsp;<i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'
             },
             {
-                field: 'notebook',
-                displayName: 'Notebook',
-                width: "***"
+                field: 'getCreationDate() | date: "MMM d, y H:mm"',
+                displayName: 'Creation date',
+                width: "*"
             },
             {
-                field: 'users',
-                cellTemplate: usersTemplate,
-                displayName: 'Access',
-                width: "***"
-            },
-            {
-                field: '',
-                cellTemplate: '<span><button tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button>' +
-                    '<button tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span>',
-                width: '*'
+                field: 'description',
+                displayName: 'Description',
+                width: "***",
+                cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><span ng-cell-text>{{row.getProperty(col.field)}} <button tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button> ' +
+                    '<button class="text-right" tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button> </span></div>'
             }
         ]
     }
