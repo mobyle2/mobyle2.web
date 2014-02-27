@@ -318,7 +318,7 @@ angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
     });
 
 angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
-    function ($scope, $log, $modal, $routeParams, Project, ProjectData) {
+    function ($scope, $log, $modal, $routeParams, Project, ProjectData, $templateCache) {
         $scope.update = function () {
             $log.info("querying project " + $routeParams.projectId + "...");
             $scope.project = Project.get({
@@ -329,9 +329,6 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
                 'project_id': $routeParams.projectId
             });
         }
-        var tagCellTemplate = '<div class="ngCellText colt{{$index}}">' +
-            '<span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>' +
-            '</div>';
         $scope.projectDataGridOptions = {
             data: 'projectData',
             enableRowSelection: false,
@@ -348,24 +345,24 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
                 {
                     field: 'tags',
                     displayName: 'Tags',
-                    cellTemplate: tagCellTemplate,
+                    cellTemplate: $templateCache.get('projectDataGrid_TagCell.html'),
                     width: "**"
             },
                 {
                     field: 'data.size',
                     displayName: 'Size',
-                    cellTemplate: '<div class="ngCellText colt{{$index}}">{{row.entity.data.size | humanSize}}</div>',
+                    cellTemplate: $templateCache.get('projectDataGrid_DataSizeCell.html'),
                     width: "*"
             },
                 {
                     field: 'data.type',
                     displayName: 'Type (format)',
                     width: "****",
-                    cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><span ng-cell-text><type-text type="row.entity.data.type"></typetext></span><span class="pull-right"><button class="btn-mini" tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button> <button class="btn-mini" tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button></span></div>'
+                    cellTemplate: $templateCache.get('projectDataGrid_DataTypeCell.html')
                 }
                     ]
         }
-
+        
         $scope.save = function () {
             $scope.project.$save();
         }
