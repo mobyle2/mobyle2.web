@@ -232,8 +232,6 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
         $scope.projectGridOptions = {
             data: 'projects',
             enableRowSelection: false,
-            //rowTemplate: '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}">&nbsp;</div><div ng-cell></div></div>',
-            //headerRowTemplate: undefined,
             columnDefs: [{
                     field: 'name',
                     displayName: 'Name',
