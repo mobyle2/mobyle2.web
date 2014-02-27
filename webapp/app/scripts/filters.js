@@ -48,3 +48,14 @@ filter('kwSearch', function () {
         return out;
     }
 });
+
+angular.module('mobyle.filters').filter('humanSize', function () {
+    // humanSize displays a size in bytes by converting
+    // into the most appropriate human-understandable unit
+    return function (bytes, index) {
+        if (bytes <= 0) return 0;
+        var s = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'];
+        var e = Math.floor(Math.log(bytes) / Math.log(1024));
+        return (bytes / Math.pow(1024, Math.floor(e))).toFixed(2) + " " + s[e];
+    }
+});
