@@ -223,12 +223,11 @@ angular.module('mobyle.controllers').controller('FormatTermDetailCtrl',
     });
 
 angular.module('mobyle.controllers').controller('ProjectsCtrl',
-    function ($scope, $log, $modal, Project) {
+    function ($scope, $log, $modal, Project, $templateCache) {
         $scope.update = function () {
             $log.info("querying list of projects...");
             $scope.projects = Project.query();
         }
-        var usersTemplate = '<div ng-repeat="access in row.getProperty(col.field)">{{access.user.$oid}} - {{access.role}}</div>';
         $scope.projectGridOptions = {
             data: 'projects',
             enableRowSelection: false,
@@ -236,7 +235,7 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
                     field: 'name',
                     displayName: 'Name',
                     width: "*",
-                    cellTemplate: '<a href="#/projects/{{row.getProperty(\'_id\').$oid}}">{{row.getProperty(col.field)}}</a>&nbsp;<i ng-show="row.getProperty(\'public\')" class="icon-globe"></i>'
+                    cellTemplate: $templateCache.get('projectsGrid_NameCell.html')
             },
                 {
                     field: 'getCreationDate() | date: "MMM d, y H:mm"',
@@ -247,8 +246,7 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
                     field: 'description',
                     displayName: 'Description',
                     width: "***",
-                    cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><span ng-cell-text>{{row.getProperty(col.field)}} <span class="pull-right"><button class="btn-mini" tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button> ' +
-                        '<button class="btn-mini" tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button> </span></span></div>'
+                    cellTemplate: $templateCache.get('projectsGrid_DescriptionCell.html')
             }
         ]
         }
