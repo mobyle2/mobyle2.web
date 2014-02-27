@@ -249,8 +249,8 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
                 field: 'description',
                 displayName: 'Description',
                 width: "***",
-                cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><span ng-cell-text>{{row.getProperty(col.field)}} <button tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button> ' +
-                    '<button class="text-right" tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button> </span></div>'
+                cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><span ng-cell-text>{{row.getProperty(col.field)}} <span class="pull-right"><button class="btn-mini" tooltip="Edit project properties" ng-click="edit_dialog(row.entity)"><i class="icon-pencil"></i></button> ' +
+                    '<button class="btn-mini" tooltip="Remove project" ng-click="delete(row.entity)" ><i class="icon-trash"></i></button> </span></span></div>'
             }
         ]
     }
