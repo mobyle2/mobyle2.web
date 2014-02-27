@@ -383,7 +383,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
                 type: 'danger',
                 msg: errorResponse.data.detail
             });
-        });;
+        });
     }
 
     $scope.addProjectData = function (data, project) {
