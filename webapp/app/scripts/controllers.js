@@ -334,6 +334,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
             '</div>';
         $scope.projectDataGridOptions = {
             data: 'projectData',
+            enableRowSelection: false,
             columnDefs: [{
                     field: 'name',
                     displayName: 'Name',
