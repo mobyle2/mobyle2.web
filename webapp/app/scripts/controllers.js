@@ -256,7 +256,14 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
     }
 
     $scope.delete = function (p) {
-        p.$delete($scope.update);
+        p.$delete().then(function () {
+            $scope.projects.splice($scope.projects.indexOf(p), 1);
+        }, function (errorResponse) {
+            $scope.alerts.push({
+                type: 'danger',
+                msg: errorResponse.data.detail
+            });
+        });;
     }
 
     $scope.edit_dialog = function (project) {
