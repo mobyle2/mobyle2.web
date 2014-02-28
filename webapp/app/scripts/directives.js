@@ -244,7 +244,7 @@ angular.module('mobyle.directives').directive("tinyTextFile", [
             scope: {
                 'ngModel': '='
             },
-            template: '<span><input type="file" /></span>',
+            template: '<span class="btn-file btn">Load file...<input type="file" /></span>',
             link: function ($scope, element) {
                 var loadFile = function (evt) {
                     var result = "";
@@ -281,7 +281,6 @@ angular.module('mobyle.directives').directive("tinyTextFile", [
                     }
                 }
                 element.children().change(function (evt) {
-                    console.log(evt.target);
                     loadFile(evt);
                 })
             }

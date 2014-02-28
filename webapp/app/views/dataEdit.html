@@ -6,30 +6,34 @@
     <div class="modal-body">
         <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
         <div>
-            <label>
-                Data:
-                <select required name="currentDataTerm" ng-model="$parent.currentDataTerm" ng-options="data_term as data_term.data_term_name for data_term in data_format_terms"/>
-            </label>
-            <label>
-                Format:
-                <select required name="format_term" ng-model="data.data.type.format_terms" ng-options="format_term.id as format_term.name for format_term in $parent.currentDataTerm.format_terms" ng-disabled="!$parent.currentDataTerm.data_term_id"/>
-            </label>
-            <fieldset style="width:95%; padding-left: 0; padding-right: 0; margin-left:0; margin-right:0;" ng-disabled="!currentDataTerm.data_term_id">
-                <div class="btn-group">
-                    <button type="button" class="btn" ng-model="mode" btn-radio="'paste'">Paste</button>
-                    <button type="button" class="btn" ng-model="mode" btn-radio="'upload'">Upload</button>
-                </div>
-                <label ng-show="mode=='paste'">
-                    <textarea name="value" ng-model="data.value" style="width:95%; padding-left: 0; padding-right: 0; margin-left:0; margin-right:0;" rows="5"/>
+            <select name="currentDataTerm" ng-model="$parent.currentDataTerm" ng-options="data_term as data_term.data_term_name for data_term in data_format_terms" class="input-xxlarge">
+                <option value="">(1) What kind of data would you like to store?</option>
+            </select>
+            <div class="form-inline" ng-show="$parent.currentDataTerm.data_term_id" >
+                <select name="format_term" ng-model="data.data.type.format_terms" ng-options="format_term.id as format_term.name for format_term in $parent.currentDataTerm.format_terms" ng-disabled="autoDetect" class="input-xlarge" ng-disabled="autoDetect">
+                    <option value="">(2) What is the format of your data?</option>
+                </select>
+                &nbsp;
+                <label>
+                    <input type="checkbox" ng-model="autoDetect" name="auto-detect" >
+                    Auto-detect format
                 </label>
-                <label ng-show="mode=='upload'">
-                    <tiny-text-file name="file" ng-model="data"/>
-                </label>
-            </fieldset>
+            </div>
+            <div style="position: relative;">
+                <p><tiny-text-file class="btn" style="position: absolute; top: 5px; right: 5px;" name="file" ng-model="data" ng-show="data.data.type.format_terms || autoDetect"></p>
+                <textarea name="value" ng-model="data.value" class="input-xxlarge" rows="5" ng-show="data.data.type.format_terms || autoDetect">
+                </textarea>
+            </div>
         </div>
-        <label>Name: <input name="name" ng-model="data.name" placeholder="data name" autofocus/></label>
-        <label>Description: <input name="name" ng-model="data.description" placeholder="data description"/></label>
-        <label>Tags: <input name="tags" ng-model="data.tags" ng-list/></label>
+        <label>Name:
+            <input name="name" ng-model="data.name" placeholder="data name" autofocus/>
+        </label>
+        <label>Description:
+            <input name="name" ng-model="data.description" placeholder="data description" />
+        </label>
+        <label>Tags:
+            <input name="tags" ng-model="data.tags" ng-list/>
+        </label>
     </div>
     <div class="modal-footer">
         <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
