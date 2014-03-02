@@ -270,6 +270,7 @@ angular.module('mobyle.directives').directive("tinyTextFile", [
                                             function () {
                                                 $scope.ngModel['value'] = result;
                                                 $scope.ngModel['name'] = file.name;
+                                                $scope.ngModel['data']['size'] = file.size;
                                             });
                                     }
                                 }
