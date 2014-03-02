@@ -344,7 +344,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
                     field: 'tags',
                     displayName: 'Tags',
                     cellTemplate: $templateCache.get('projectDataGrid_TagCell.html'),
-                    width: "**"
+                    width: "*"
             },
                 {
                     field: 'data.size',
@@ -355,7 +355,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
                 {
                     field: 'data.type',
                     displayName: 'Type (format)',
-                    width: "****",
+                    width: "*****",
                     cellTemplate: $templateCache.get('projectDataGrid_DataTypeCell.html')
                 }
                     ]
