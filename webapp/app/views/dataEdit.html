@@ -6,7 +6,7 @@
     <div class="modal-body">
         <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
         <div>
-            <select name="currentDataTerm" ng-model="$parent.currentDataTerm" ng-options="data_term as data_term.data_term_name for data_term in data_format_terms" class="input-xxlarge">
+            <select name="currentDataTerm" ng-model="$parent.currentDataTerm" ng-options="data_term as data_term.data_term_name for data_term in data_format_terms" class="input-xxlarge" ng-change="resetFormat()">
                 <option value="">(1) What kind of data would you like to store?</option>
             </select>
             <div class="form-inline" ng-show="$parent.currentDataTerm.data_term_id" >
