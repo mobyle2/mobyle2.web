@@ -52,10 +52,6 @@ config(['$routeProvider',
             templateUrl: 'views/termDetail.html',
             controller: 'FormatTermDetailCtrl'
         });
-        $routeProvider.when('/data', {
-            templateUrl: 'views/data.html',
-            controller: 'DataCtrl'
-        });
         $routeProvider.when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginCtrl'

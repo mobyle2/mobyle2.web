@@ -461,9 +461,6 @@ angular.module('mobyle.controllers').controller('DataEditCtrl',
         };
     });
 
-angular.module('mobyle.controllers').controller('DataCtrl',
-    function () {});
-
 angular.module('mobyle.controllers').controller('mobyleCtrl',
     function ($rootScope) {
         $rootScope.alerts = [];
