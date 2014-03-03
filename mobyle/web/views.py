@@ -549,21 +549,19 @@ def create_project_data(request):
     #container project
     try:
         project_id = ObjectId(request.params['project'])
-    except KeyError, err:
+    except KeyError:
         raise HTTPClientError('missing project identifier')
-    except InvalidId, err:
+    except InvalidId:
         raise HTTPClientError('invalid project identifier')
     #project data properties
     try:
         data_name = request.params['name']
-    except KeyError, err:
+    except KeyError:
         raise HTTPClientError('missing name for data')
     try:
         file_contents = request.params['value']
-    except KeyError, err:
+    except KeyError:
         raise HTTPClientError('missing data value')
-    format_term = request.params.get('format_term')
-    data_term = request.params.get('data_term')
     options['project'] = project_id
     objectManager = ObjectManager()
     my_dataset = objectManager.add(data_name, options, False)
@@ -578,6 +576,10 @@ def create_project_data(request):
     my_data['path'] = [data_name]
     my_data['size'] = os.path.getsize(data_file)
     my_data['type'] = FormattedType()
+    if 'description' in request.params:
+        my_data['description'] = request.params['description']
+    if 'tags' in request.params:
+        my_data['tags'] = request.params.getall('tags')
     if 'format_terms' in request.params:
         my_data['type']['format_terms'] = request.params['format_terms']
     if 'data_terms' in request.params:
@@ -607,18 +609,19 @@ def update_project_data(request):
     :type request: IMultiDict
     :return: json - Object entry in the database
     '''
-    options = {}
     #identifier
     try:
         projectdata_id = ObjectId(request.matchdict['id'])
-    except KeyError, err:
+    except KeyError:
         raise HTTPClientError('missing ProjectData id')
-    except InvalidId, err:
+    except InvalidId:
         raise HTTPClientError('invalid ProjectData id')
     my_dataset = ObjectManager.get(projectdata_id)
     #project data properties
     if 'name' in request.params:
         my_dataset['name'] = request.params['name']
+    if 'description' in request.params:
+        my_dataset['description'] = request.params['description']
     if 'tags' in request.params:
         my_dataset['tags'] = request.params.getall('tags')
     if 'value' in request.params:
