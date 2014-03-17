@@ -9,6 +9,7 @@ from pyramid.events import NewRequest, BeforeRender, NewResponse
 from pyramid.security import authenticated_userid
 from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy
+from pyramid.renderers import JSON
 import pyramid_beaker
 
 from mf.dashboard import Dashboard
@@ -16,7 +17,8 @@ import mf
 
 from gridfs import GridFS
 import pymongo
-
+from bson import json_util
+from mongokit import ObjectId
 
 def main(global_config, **settings):
     """
@@ -133,6 +135,11 @@ def main(global_config, **settings):
     config.add_route('statistics_usage', '/admin/stats/usage')
     config.add_route('statistics_usage_json', '/admin/stats/usage.json')
     config.add_route('statistics_user', '/admin/stats/user')
+
+    # automatically serialize bson ObjectId to Mongo extended JSON
+    json_renderer = JSON()
+    json_renderer.add_adapter(ObjectId, json_util.dumps)
+    config.add_renderer('json', json_renderer)
 
     return config.make_wsgi_app()
 
