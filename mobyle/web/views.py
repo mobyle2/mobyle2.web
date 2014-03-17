@@ -2,7 +2,7 @@
 from pyramid.view import view_config
 from pyramid.security import remember, authenticated_userid, forget
 from pyramid.httpexceptions import HTTPFound, HTTPNotFound, HTTPForbidden, HTTPClientError
-from pyramid.renderers import render_to_response
+from pyramid.renderers import JSON
 from pyramid.response import Response
 from pyramid_mailer import get_mailer
 from pyramid_mailer.message import Message
@@ -29,6 +29,7 @@ from mobyle.common.mobyleError import MobyleError
 from mobyle.common.mobyleConfig import MobyleConfig
 from mobyle.common.term import FormatTerm
 from mobyle.common.classification import Classification
+from mobyle.common.job import Status, ClJob, Job
 
 import urllib
 from urllib2 import URLError
@@ -92,7 +93,6 @@ def create_if_no_exists(email, password=None, encrypted=False):
         user['default_project'] = default_project['_id']
         user.save()
     return (user, newuser)
-
 
 def is_user_in_ldap(username, mob_config=MobyleConfig.get_current()):
     """
@@ -704,3 +704,47 @@ def list_format_dataterms(request):
                 data_term['_id'] = None
                 data_terms.append(data_term)
     return data_terms
+
+
+@view_config(route_name='create_project_job', request_method='GET',
+             renderer='json')
+def create_project_job(request):
+    '''Create job in a project
+    :param request: HTTP params
+               param keys: FIXME
+    :type request: IMultiDict
+    :return: json - Object entry in the database
+    '''
+    #container project
+    try:
+        project_id = ObjectId(request.params['project'])
+    except KeyError:
+        raise HTTPClientError('missing project identifier')
+    except InvalidId:
+        raise HTTPClientError('invalid project identifier')
+    #find requested service
+    mffilter = mf_filter('service', MF_READ, request)
+    if mffilter is None:
+        raise HTTPForbidden
+    if not('service' in request.params):
+        raise HTTPClientError('no service specified')
+    if 'service' in request.params:
+        # identifier can be an object id or a public name
+        try:
+            mffilter["_id"] = ObjectId(request.params['service'])
+        except:
+            mffilter["public_name"] = request.params['service']
+            if 'service_version' in request.params:
+                mffilter["version"] = request.params['service_version']
+    job_service = connection.Service.find_one(mffilter)
+    if job_service is None:
+        raise HTTPClientError('service %s not found' %
+                              request.params['service'])
+    #TODO: create ClJob or WorkflowJob according to the required service
+    job = connection.ClJob()
+    init_status = Status(Status.INIT)
+    job['status'] = init_status
+    job['project'] = project_id
+    job['service'] = job_service['public_name'] or job_service['_id']
+    job.save()
+    return job

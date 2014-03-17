@@ -84,6 +84,7 @@ def main(global_config, **settings):
     config.add_route('update_project_data', '/api/projectdata/{id}')
     config.add_route('list_project_data', '/api/project/{project}/data')
     config.add_route('format_dataterms', '/api/formatdataterms')
+    config.add_route('create_project_job', '/api/projectjobs')
 
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
@@ -126,7 +127,7 @@ def main(global_config, **settings):
     dconfig['permission'] = 'isadmin'
     Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData,
         Package, Service, Program, Workflow, Widget, DataTerm, FormatTerm,
-        TopicTerm, OperationTerm, ServiceTypeTerm], config)
+        TopicTerm, OperationTerm, ServiceTypeTerm, Job], config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])
 
