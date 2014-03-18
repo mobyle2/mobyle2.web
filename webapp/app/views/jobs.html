@@ -1,3 +1,7 @@
+<script type="text/ng-template" id="jobsGrid_NameCell.html">
+    <a href="#/jobs/{{row.getProperty('_id').$oid}}">{{row.getProperty(col.field)}}</a>
+</script>
+
 <div>
     <button ng-click="update()" class="btn btn-default">
         <i class="icon-refresh"></i>

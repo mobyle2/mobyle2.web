@@ -303,7 +303,8 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
             columnDefs: [{
                     field: '_id.$oid',                
                     displayName: 'name',
-                    width: "**"
+                    width: "**",
+                    cellTemplate: $templateCache.get('jobsGrid_NameCell.html')
             },
                 {
                     field: '_id.$oid',
