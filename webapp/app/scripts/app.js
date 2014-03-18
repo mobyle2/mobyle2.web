@@ -46,7 +46,7 @@ config(['$routeProvider',
             resolve: {
                 job: function ($route, Job, $q) {
                     var deferred = $q.defer();
-                    Job.get({_id: $route.current.params.jobId
+                    Job.get({id: $route.current.params.jobId
                     }, function (successData) {
                         deferred.resolve(successData);
                     }, function (errorData) {
