@@ -175,21 +175,26 @@ angular.module('mobyle.controllers').controller('ServicesCtrl',
     });
 
 angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
-    function ($scope, $window, $routeParams, mbsimple, service) {
+    function ($scope, $window, $routeParams, mbsimple, service, Job, CurrentProject) {
         var params = {
             public_name: $routeParams.name
         };
         $scope.service = service;
-        /*
-    Service.get(params).$promise.catch(
-        function(error){
-            $scope.alerts.push({type:'danger', msg:error})
-            //flash([{ level: 'alert-block', text: 'service ' + $routeParams.name + ' not found!' }]);
+        $scope.reset = function(){
+            $scope.job = new Job();
+            $scope.job.project = CurrentProject.get();
+            $scope.job.service = $scope.service;
+            $scope.job.inputs = {};
+            $scope.job.outputs = {};
         }
-    );
-*/
         $scope.mbsimple = mbsimple;
         $scope.show_advanced = mbsimple($scope.service.inputs);
+        $scope.submit = function(){
+            $scope.job.$save();
+            // after job submission, what should we do? reset the entire job? just the generated _id?
+            // navigate to job display?
+        }
+        $scope.reset();
     });
 
 angular.module('mobyle.controllers').controller('DataTermsCtrl',
