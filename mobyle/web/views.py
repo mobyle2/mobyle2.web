@@ -736,7 +736,7 @@ def create_project_job(request):
             mffilter["public_name"] = request.params['service']
             if 'service_version' in request.params:
                 mffilter["version"] = request.params['service_version']
-    job_service = connection.Service.find_one(mffilter)
+    job_service = connection.Service.fetch_one(mffilter)
     if job_service is None:
         raise HTTPClientError('service %s not found' %
                               request.params['service'])
