@@ -289,6 +289,43 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
         $scope.update();
     });
 
+angular.module('mobyle.controllers').controller('JobsCtrl',
+    function ($scope, $log, $modal, $routeParams, Job, CurrentProject, $templateCache) {
+        $scope.update = function () {
+            $log.info("querying jobs for project " + CurrentProject.get()._id.$oid + "...");
+            $scope.projectJobs = Job.list_by_project({
+                'project_id': CurrentProject.get()._id.$oid
+            });
+        }
+        $scope.projectDataGridOptions = {
+            data: 'projectJobs',
+            enableRowSelection: false,
+            columnDefs: [{
+                    field: '_id.$oid',                
+                    displayName: 'name',
+                    width: "**"
+            },
+                {
+                    field: '_id.$oid',
+                    displayName: 'ID',
+                    width: "**"
+            },
+                {
+                    field: 'getCreationDate() | date: "MMM d, y H:mm"',
+                    displayName: 'Creation date',
+                    width: "*"
+            },
+                {
+                    field: 'status',
+                    displayName: 'Status',
+                    width: "*"
+            }]
+        }
+        
+        $scope.update();
+    });
+
+
 angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
     function ($scope, $log, $modalInstance, Project, CurrentUser, project) {
         // new project creation form

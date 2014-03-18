@@ -36,6 +36,10 @@ config(['$routeProvider',
             templateUrl: 'views/projectDetail.html',
             controller: 'ProjectDetailCtrl'
         });
+        $routeProvider.when('/jobs', {
+            templateUrl: 'views/jobs.html',
+            controller: 'JobsCtrl'
+        });
         $routeProvider.when('/dataterms', {
             templateUrl: 'views/terms.html',
             controller: 'DataTermsCtrl'
