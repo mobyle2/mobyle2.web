@@ -274,7 +274,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         'project': '@project._id.$oid',
         'service': '@service._id.$oid'
     }
-    var jobResource = mfResource('ProjectData', paramDefaults, {
+    var jobResource = mfResource('Job', paramDefaults, {
         list_by_project: {
             'method': 'GET',
             'url': '/api/project/:project_id/jobs',
