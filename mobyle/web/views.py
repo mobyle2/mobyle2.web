@@ -706,7 +706,7 @@ def list_format_dataterms(request):
     return data_terms
 
 
-@view_config(route_name='create_project_job', request_method='GET',
+@view_config(route_name='create_project_job', request_method='POST',
              renderer='json')
 def create_project_job(request):
     '''Create job in a project
