@@ -40,6 +40,23 @@ config(['$routeProvider',
             templateUrl: 'views/jobs.html',
             controller: 'JobsCtrl'
         });
+        var jobDetailRoute = {
+            templateUrl: 'views/jobDetail.html',
+            controller: 'JobDetailCtrl',
+            resolve: {
+                job: function ($route, Job, $q) {
+                    var deferred = $q.defer();
+                    Job.get({_id: $route.current.params.jobId
+                    }, function (successData) {
+                        deferred.resolve(successData);
+                    }, function (errorData) {
+                        deferred.reject('job ' + $route.current.params.jobId + ' not found!');
+                    });
+                    return deferred.promise;
+                }
+            }
+        };
+        $routeProvider.when('/jobs/:jobId', jobDetailRoute);
         $routeProvider.when('/dataterms', {
             templateUrl: 'views/terms.html',
             controller: 'DataTermsCtrl'

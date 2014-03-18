@@ -326,6 +326,11 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
         $scope.update();
     });
 
+angular.module('mobyle.controllers').controller('JobDetailCtrl',
+    function ($scope, job) {
+        $scope.job = job;
+    });
+
 
 angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
     function ($scope, $log, $modalInstance, Project, CurrentUser, project) {
