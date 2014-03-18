@@ -275,6 +275,11 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         'service': '@service._id.$oid'
     }
     var jobResource = mfResource('ProjectData', paramDefaults, {
+        list_by_project: {
+            'method': 'GET',
+            'url': '/api/project/:project_id/jobs',
+            isArray: true
+        }
     });
 
     jobResource.prototype.$create = function () {
@@ -310,6 +315,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
             item._id = data._id;
         });
     }
+
     return jobResource;
 });
 
