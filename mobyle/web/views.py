@@ -746,5 +746,11 @@ def create_project_job(request):
     job['status'] = init_status
     job['project'] = project_id
     job['service'] = job_service['public_name'] or job_service['_id']
+    job['inputs'] = {}
+    # process job input parameters
+    for parameter in job_service['inputs'].parameters_list():
+        req_param_name = "input:%s" % parameter['name']
+        if req_param_name in request.params:
+            job['inputs'][parameter['name']] = request.params[req_param_name]
     job.save()
     return job
