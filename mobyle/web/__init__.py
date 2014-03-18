@@ -139,7 +139,10 @@ def main(global_config, **settings):
 
     # automatically serialize bson ObjectId to Mongo extended JSON
     json_renderer = JSON()
-    json_renderer.add_adapter(ObjectId, json_util.dumps)
+
+    def objectId_adapter(obj, request):
+        return json_util.default(obj)
+    json_renderer.add_adapter(ObjectId, objectId_adapter)
     config.add_renderer('json', json_renderer)
 
     return config.make_wsgi_app()
