@@ -688,6 +688,32 @@ def list_project_data(request):
     response = json.dumps(project_data_list, default=json_util.default)
     return Response(body=response, content_type="application/json")
 
+@view_config(route_name='list_project_jobs', request_method='GET',
+    renderer='json')
+def list_project_jobs(request):
+    '''Get data in a project
+    :param request: HTTP params
+             keys: 'project' Project ID
+    :type request: IMultiDict
+    :return: json - dictionary for the jobs
+             keys: 'name' file name
+                   'description' data description
+                   'tags' data tags
+                   'project' ID of the project it is included in
+                   'contents' file contents
+                   'format' file format term
+                   'type' data type term
+    '''
+    try:
+        project_id = ObjectId(request.matchdict['project'])
+    except KeyError:
+        raise HTTPClientError('missing project data identifier')
+    jobs_cursor = connection.Job.fetch({'project': project_id})
+    jobs_list = []
+    # list all project data
+    for doc in jobs_cursor:
+        jobs_list.append(doc)
+    return jobs_list
 
 @view_config(route_name='format_dataterms', request_method='GET',
              renderer='json')
