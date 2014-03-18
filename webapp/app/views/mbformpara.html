@@ -2,7 +2,7 @@
      ng-show="!mbformpara.ishidden && (show_advanced || mbsimple(mbformpara))">
     <ng-switch on="mbformpara.children">
         <div class="row-fluid" ng-switch-when="undefined">
-            <mbinput para="mbformpara">
+            <mbinput para="mbformpara" job="job">
         </div>
         <div class="accordion" ng-switch-default>
             <div class="accordion-group">

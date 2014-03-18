@@ -77,7 +77,8 @@ angular.module('mobyle.directives').directive('mbinput', function () {
         templateUrl: 'views/mbinput.html',
         //template: '<input ng-show="itype" type="{{itype}}" name="{{para.name}}" value="" placeholder="{{para}}"/>',
         scope: {
-            para: '='
+            para: '=',
+            job: '='
         },
         link: function (scope, element, attrs) {
             // switch the type of the input according to the parameter type...
