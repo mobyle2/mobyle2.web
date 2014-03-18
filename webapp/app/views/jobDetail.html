@@ -1,5 +1,25 @@
 <div class="row-fluid span11">
-    <form>
-        <h2>Job: {{job}} {{job._id.$oid}}</h2>
-    </form>
+    <h2>{{job.service}} ({{job.getCreationDate() | date: "MMM d, y H:mm"}})</h2>
+    <div class="accordion">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <h4 class="fieldset_title">
+                    <a data-toggle="collapse" data-target="#fieldset-contents-results">results</a>
+                </h4>
+            </div>
+            <div id="fieldset-contents-results" class="accordion-body collapse in">
+            </div>
+        </div>
+    </div>
+    <div class="accordion">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <h4 class="fieldset_title">
+                    <a data-toggle="collapse" data-target="#fieldset-contents-inputs">parameters</a>
+                </h4>
+            </div>
+            <div id="fieldset-contents-inputs" class="accordion-body collapse in">
+            </div>
+        </div>
+    </div>
 </div>
