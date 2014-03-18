@@ -266,6 +266,54 @@ angular.module('mobyle.services').factory('Project', function (mfResource) {
     return mfResource('Project', defaultParams);
 });
 
+angular.module('mobyle.services').factory('Job', function (mfResource, $http, $parse) {
+
+    var paramDefaults = {
+        'id': '@_id.$oid',
+        'status': '@status',
+        'project': '@project._id.$oid',
+        'service': '@service._id.$oid'
+    }
+    var jobResource = mfResource('ProjectData', paramDefaults, {
+    });
+
+    jobResource.prototype.$create = function () {
+        // use a custom method for create action because
+        // we need to use FormData to upload files
+        var item = this;
+        return $http.post('/api/projectjobs', this, {
+            transformRequest: function (data, headersGetter) {
+                // use FormData to allow file uploads
+                var fd = new FormData();
+                // job project container
+                fd.append('project', data.project._id.$oid);
+                // service
+                fd.append('service', data.service._id.$oid);
+                // job input parameters
+                angular.forEach(data.inputs, function (value, key) {
+                    var extractedParam = value &&
+                        value.charAt &&
+                        value.charAt(0) == '@' ?
+                        $parse(value.substr(1))(data) : value;
+                    fd.append('input:'+key, extractedParam);
+                })
+                return fd;
+            },
+            transformResponse: function (data, header) {
+                var wrapped = new jobResource(angular.fromJson(data));
+                return wrapped;
+            },
+            headers: {
+                'Content-Type': undefined
+            }
+        }).success(function (data, status) {
+            item._id = data._id;
+        });
+    }
+    return jobResource;
+});
+
+
 angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http, $parse) {
 
     var paramDefaults = {
