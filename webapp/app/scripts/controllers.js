@@ -175,7 +175,7 @@ angular.module('mobyle.controllers').controller('ServicesCtrl',
     });
 
 angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
-    function ($scope, $window, $routeParams, mbsimple, service, Job, CurrentProject) {
+    function ($scope, $window, $routeParams, $location, mbsimple, service, Job, CurrentProject) {
         var params = {
             public_name: $routeParams.name
         };
@@ -190,9 +190,13 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
         $scope.mbsimple = mbsimple;
         $scope.show_advanced = mbsimple($scope.service.inputs);
         $scope.submit = function(){
-            $scope.job.$save();
+            $scope.job.$save().then(function () {
+                $location.path('/jobs/'+$scope.job._id.$oid);
+            }, function (test) {
+            });
             // after job submission, what should we do? reset the entire job? just the generated _id?
             // navigate to job display?
+            
         }
         $scope.reset();
     });
