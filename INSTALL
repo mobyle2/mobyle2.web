@@ -65,8 +65,8 @@ edit and test it directly.
 7. Import data from Mobyle 1 and EDAM
 (XML files for Mobyle 1 can be found at ftp://ftp.pasteur.fr/pub/gensoft/projects/mobyle)
     python src/mobyle2.lib/scripts/imports/m1_services_import.py --config src/mobyle2.web/development.ini [path to Mobyle 1 XML files]
-(EDAM ontology, in OBO format, can be found at http://edamontology.org/EDAM.obo)   
-    python src/mobyle2.lib/scripts/imports/edam_import.py --config src/mobyle2.web/development.ini --edamfile [path to EDAM ontology OBO file] init
+(EDAM ontology, in OWL format, can be found at http://edamontology.org/EDAM.owl)   
+    python src/mobyle2.lib/scripts/imports/edam_import.py --config src/mobyle2.web/development.ini --edamfile [path to EDAM ontology owl file] init
 
 8. Connect to your mobyle2 server
 You're done! Go to:
