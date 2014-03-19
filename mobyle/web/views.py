@@ -567,8 +567,7 @@ def create_project_data(request):
     my_dataset = objectManager.add(data_name, options, False)
     my_path = my_dataset.get_file_path()
     # Write a file to the dataset directory
-    data_file = os.path.join(my_path,
-                             data_name)
+    data_file = os.path.join(my_path, data_name)
     handle = open(data_file, 'w')
     handle.write(file_contents)
     handle.close()
@@ -771,12 +770,9 @@ def create_project_job(request):
     init_status = Status(Status.INIT)
     job['status'] = init_status
     job['project'] = project_id
-    job['service'] = job_service['public_name'] or job_service['_id']
+    job['service'] = job_service
     job['inputs'] = {}
     # process job input parameters
-    for parameter in job_service['inputs'].parameters_list():
-        req_param_name = "input:%s" % parameter['name']
-        if req_param_name in request.params:
-            job['inputs'][parameter['name']] = request.params[req_param_name]
+    job.process_inputs(request.params)
     job.save()
     return job
