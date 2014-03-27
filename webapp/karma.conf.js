@@ -16,7 +16,7 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',        
       'bower_components/ng-grid/build/ng-grid.min.js',
       'bower_components/angular-ui-tinymce/src/tinymce.js',
-      'bower_components/bootstrap/docs/assets/js/bootstrap.js',
+      'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/angular-ui/build/angular-ui.js',
       'scripts/*.js',
       'views/*.html',
