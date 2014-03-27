@@ -1,13 +1,13 @@
-<form class="row-fluid span12" ui-if="service" ng-submit="submit()">
+<form class="row col-md-12" ui-if="service" ng-submit="submit()">
     <div class="col-md-9">
         <h2>{{service.title}} {{service.version}}</h2>
 
         <h3>{{service.description}}</h3>
     </div>
     <div class="btn-toolbar">
-        <button type="submit" class="btn btn-primary"><i class="icon-play icon-white"></i> run</button>
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-play glyphicon-white"></i> run</button>
     <span ng-show="mbsimple(service.inputs)">
-      <toggle class="col-md-2 btn" toggle-state="show_advanced" text-when-on="Only simple parameters"
+      <toggle class="btn" toggle-state="show_advanced" text-when-on="Only simple parameters"
               text-when-off="All parameters" class="btn" style="margin: 1em;"></toggle>
     </span>
     </div>

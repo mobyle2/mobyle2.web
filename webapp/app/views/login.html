@@ -11,7 +11,7 @@
         <div ng-repeat="login in logins">
             <div ng-switch="login">
                 <a href="#/login" class="btn btn-auth"
-                   ng-switch-when="native" ng-click="signIn('native')"><i class="icon-user"></i> Sign in with
+                   ng-switch-when="native" ng-click="signIn('native')"><i class="glyphicon glyphicon-user"></i> Sign in with
                     <b>Mobyle</b></a>
 
                 <form action="/login/facebook" method="post" ng-switch-when="facebook">
@@ -50,11 +50,11 @@
 
                 <div class="controls">
                     <div class="input-prepend">
-                        <span class="add-on"><i class="icon-user"></i></span>
+                        <span class="add-on"><i class="glyphicon glyphicon-user"></i></span>
                         <input type="text" id="login" placeholder="Identifier" ng-model="login"/>
                     </div>
                     <div class="input-prepend">
-                        <span class="add-on"><i class="icon-lock"></i></span>
+                        <span class="add-on"><i class="glyphicon glyphicon-lock"></i></span>
                         <input type="password" id="password" placeholder="Password" ng-model="password"/>
                         <button type="submit" class="btn btn-primary" ng-click="signIn('native')">Login</button>
                     </div>
@@ -72,7 +72,7 @@
 
             <div class="controls">
                 <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user"></i></span>
+                    <span class="add-on"><i class="glyphicon glyphicon-user"></i></span>
                     <input type="text" ng-model="rlogin" id="reset" placeholder="Email"/>
                 </div>
             </div>
@@ -88,20 +88,20 @@
 
             <div class="controls">
                 <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user"></i></span>
+                    <span class="add-on"><i class="glyphicon glyphicon-user"></i></span>
                     <input type="text" ng-model="rlogin" id="rlogin" placeholder="Email"/>
                 </div>
             </div>
 
             <div class="controls">
                 <div class="input-prepend">
-                    <span class="add-on"><i class="icon-lock"></i></span>
+                    <span class="add-on"><i class="glyphicon glyphicon-lock"></i></span>
                     <input type="password" ng-model="rpassword" id="rpassword" placeholder="Password"/>
                 </div>
             </div>
             <div class="controls">
                 <div class="input-prepend">
-                    <span class="add-on"><i class="icon-lock"></i></span>
+                    <span class="add-on"><i class="glyphicon glyphicon-lock"></i></span>
                     <input type="password" ng-model="rpassword2" id="rpassword2" placeholder="Confirm password"/>
                 </div>
             </div>
