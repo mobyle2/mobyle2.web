@@ -1,12 +1,18 @@
-<div ng-show="!para.hidden">
-    <label class="span6">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
-        <i ng-show="para.comment" class="icon-info-sign" data-html="true" data-content="{{para.comment}}"
+<div ng-show="!para.hidden" class="form-group">
+    <label class="control-label col-md-6">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
+        <i ng-show="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
            data-container="body"/>
     </label>
     <div class="alert-info" ui-if="untranslated">no layout defined for type {{para.type}}</div>
-    <input class="span6" type="{{itype}}" ui-if="itype" name="{{para.name}}" step="{{step}}"
-           value="{{para.type.default}}" ng-model="job['inputs'][para.name]"/>
-    <select class="span6" ui-if="select" name="{{para.name}}" step="{{step}}"
-            ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]"/>
-    <textarea class="span12" ui-if="textarea" name="{{para.name}}" ng-model="job['inputs'][para.name]">{{para.type.default}}</textarea>
+    <div class="col-md-6">
+        <input class="form-control" type="{{itype}}" ui-if="itype" name="{{para.name}}" step="{{step}}"
+               value="{{para.type.default}}" ng-model="job['inputs'][para.name]"/>
+    </div>
+    <div class="col-md-6">
+        <select class="form-control col-md-2" ui-if="select" name="{{para.name}}" step="{{step}}"
+                ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]"/>
+    </div>
+    <div class="col-md-12">
+        <textarea class="form-control col-md-2" ui-if="textarea" name="{{para.name}}" ng-model="job['inputs'][para.name]">{{para.type.default}}</textarea>
+    </div>
 </div>

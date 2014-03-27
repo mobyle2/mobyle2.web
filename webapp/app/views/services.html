@@ -1,5 +1,5 @@
 <!--
-<div class="span10 offset1">
+<div class="col-md-10 col-md-offset-1">
     <h2>{{filteredServices.length}} Services</h2>
 
     <div>
@@ -27,9 +27,12 @@
 </div>
 -->
 <div>
-    <div>
-        Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query"
+    <div class="row form-group">
+    <label class="control-label col-md-1">Simple search: </label>
+    <div class="col-md-2">
+        <input type="search" placeholder="search with 3 chars or more" class="form-control"
                               ng-model="query">
+    </div>
     </div>
     <div class="services">
         <div ng-repeat="s in filteredServices = (services | kwSearch:query:['name','description','title']:true | orderBy:'name')" class="service">

@@ -50,10 +50,6 @@
   padding: 0;
 }
 
-.fieldset_title {
-  margin-left: 0.5em;
-}
-
 .grid{
   column-count: auto;
   -webkit-column-count: auto;
@@ -118,7 +114,7 @@ a.service-link{
     transition: width 0.3s ease, margin 0.3s ease;
 }
 
-.row-fluid [class="span0"] {
+.row [class="col-md-0"] {
     width: 0px!important;
     height: 0px!important;
 }

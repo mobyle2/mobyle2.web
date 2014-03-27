@@ -1,5 +1,5 @@
 <form class="row-fluid span12" ui-if="service" ng-submit="submit()">
-    <div class="span9">
+    <div class="col-md-9">
         <h2>{{service.title}} {{service.version}}</h2>
 
         <h3>{{service.description}}</h3>
@@ -7,11 +7,11 @@
     <div class="btn-toolbar">
         <button type="submit" class="btn btn-primary"><i class="icon-play icon-white"></i> run</button>
     <span ng-show="mbsimple(service.inputs)">
-      <toggle class="span2 btn" toggle-state="show_advanced" text-when-on="Only simple parameters"
+      <toggle class="col-md-2 btn" toggle-state="show_advanced" text-when-on="Only simple parameters"
               text-when-off="All parameters" class="btn" style="margin: 1em;"></toggle>
     </span>
     </div>
-    <div class="span11" ng-repeat="(name, mbformpara) in service.inputs.children"><span recursive
+    <div class="col-md-11" ng-repeat="(name, mbformpara) in service.inputs.children"><span recursive
                                                                                         mbformpara="mbformpara"></span>
     </div>
 </form>

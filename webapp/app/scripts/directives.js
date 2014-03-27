@@ -53,7 +53,7 @@ angular.module('mobyle.directives').directive('hiddable', function () {
             element.css('position', 'relative');
             element.css('border-right', '1px solid #e5e5e5');
             var nextEl = element.next();
-            var iEl = $('<i class="icon-chevron-left"></i>');
+            var iEl = $('<i class="glyphicon glyphicon-chevron-left"></i>');
             var buttonEl = $('<button class="btn" style="width: 2em; position: absolute; top:0em; right: -2em; padding: 0;"></button>');
             element.append(buttonEl);
             buttonEl.append(iEl);
@@ -61,9 +61,9 @@ angular.module('mobyle.directives').directive('hiddable', function () {
             buttonEl.click(function () {
                 hiddableWidth = element.width();
                 element.children().css('overflow', 'hidden');
-                element.toggleClass('span2 span0');
-                nextEl.toggleClass('span10 span11');
-                iEl.toggleClass('icon-chevron-right icon-chevron-left');
+                element.toggleClass('col-md-2 col-md-0');
+                nextEl.toggleClass('col-md-10 col-md-11');
+                iEl.toggleClass('glyphicon glyphicon-chevron-right glyphicon glyphicon-chevron-left');
             });
         }
     }

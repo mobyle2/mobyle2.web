@@ -6,7 +6,7 @@
     Mobyle and used to communicate jobs results etc...
 </div>
 <div class="row" ng-controller="LoginCtrl" style="margin-top:10px;">
-    <div class="span3 offset1">
+    <div class="col-md-3 col-md-offset-1">
 
         <div ng-repeat="login in logins">
             <div ng-switch="login">
@@ -35,14 +35,14 @@
             </div>
         </div>
     </div>
-    <div class="span2" style="white-space: nowrap;">
+    <div class="col-md-2" style="white-space: nowrap;">
         <h2>
-            <i class="icon-chevron-left" style="vertical-align: middle;margin-right:10px"></i>
+            <i class="glyphicon glyphicon-chevron-left" style="vertical-align: middle;margin-right:10px"></i>
             Login
-            <i class="icon-chevron-right" style="vertical-align:middle;margin-left: 10px;"></i>
+            <i class="glyphicon glyphicon-chevron-right" style="vertical-align:middle;margin-left: 10px;"></i>
         </h2>
     </div>
-    <div class="span6">
+    <div class="col-md-6">
         <div class="alert" ng-show="msg">{{msg}}</div>
         <div class="login" ng-show="isProvider('native')">
             <form class="control-group" autocomplete="off">

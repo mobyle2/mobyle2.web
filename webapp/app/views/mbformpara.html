@@ -1,20 +1,20 @@
-<div id="{{mbformpara.name}}" class="row-fluid"
+<div id="{{mbformpara.name}}" class="row"
      ng-show="!mbformpara.ishidden && (show_advanced || mbsimple(mbformpara))">
     <ng-switch on="mbformpara.children">
-        <div class="row-fluid" ng-switch-when="undefined">
+        <div ng-switch-when="undefined">
             <mbinput para="mbformpara" job="job">
         </div>
-        <div class="accordion" ng-switch-default>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <h4 class="fieldset_title"><a data-toggle="collapse"
+        <div class="panel-group" ng-switch-default>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel_title"><a data-toggle="collapse"
                                                   data-target="#fieldset-contents-{{mbformpara.name}}">{{mbformpara.prompt
                         || mbformpara.name}}</a><h4>
                 </div>
-                <div id="fieldset-contents-{{mbformpara.name}}" class="accordion-body collapse in">
-                    <div class="accordion-inner">
+                <div id="fieldset-contents-{{mbformpara.name}}" class="panel-collapse collapse in">
+                    <div class="panel-body">
                         <div ng-repeat="(name, mbformpara) in mbformpara.children">
-                            <recursive><span class="offset1" mbformpara="mbformpara"></span></recursive>
+                            <recursive><span class="col-md-offset-1" mbformpara="mbformpara"></span></recursive>
                         </div>
                     </div>
                 </div>

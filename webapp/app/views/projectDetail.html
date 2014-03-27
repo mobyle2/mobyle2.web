@@ -17,23 +17,23 @@
                 </typetext>
         </span>
         <span class="pull-right">
-            <button class="btn-mini" title="Edit properties" ng-click="$parent.editProjectData(row.entity)">
-                <i class="icon-pencil"></i>
+            <button class="btn-xs" title="Edit properties" ng-click="$parent.editProjectData(row.entity)">
+                <i class="glyphicon glyphicon-pencil"></i>
             </button>
-            <button class="btn-mini" title="View">
-                <i class="icon-eye-open"></i>
+            <button class="btn-xs" title="View">
+                <i class="glyphicon glyphicon-eye-open"></i>
             </button>
-            <button class="btn-mini" title="Download">
-                <i class="icon-arrow-down"></i>
+            <button class="btn-xs" title="Download">
+                <i class="glyphicon glyphicon-arrow-down"></i>
             </button>
-            <button class="btn-mini" title="Compatible tools">
-                <i class="icon-wrench"></i>
+            <button class="btn-xs" title="Compatible tools">
+                <i class="glyphicon glyphicon-wrench"></i>
             </button>
-            <button class="btn-mini" title="Compatible viewers">
-                <i class="icon-picture"></i>
+            <button class="btn-xs" title="Compatible viewers">
+                <i class="glyphicon glyphicon-picture"></i>
             </button>
-            <button class="btn-mini" title="Remove" ng-click="deleteData(row.entity)">
-                <i class="icon-trash"></i>
+            <button class="btn-xs" title="Remove" ng-click="deleteData(row.entity)">
+                <i class="glyphicon glyphicon-trash"></i>
             </button>
         </span>
     </div>
@@ -51,10 +51,10 @@
                 <ng-include src="'views/projectEditProperties.html'"></ng-include>
             </tab>
             <tab heading="Notebook">
-                <textarea class="span10"  ui-tinymce ng-model="project.notebook" style="height: 80vh"></textarea>
+                <textarea class="col-md-10"  ui-tinymce ng-model="project.notebook" style="height: 80vh"></textarea>
             </tab>
             <tab heading="Data" select="update()">
-                <button ng-click="update()" class="btn btn-default"><i class="icon-refresh"></i></button>
+                <button ng-click="update()" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i></button>
                 <button ng-click="addProjectData(null, project)" class="btn btn-primary">New data</i>
                 </button>
                 <div class="mb-grid" ng-grid="projectDataGridOptions"></div>
