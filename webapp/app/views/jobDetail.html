@@ -8,6 +8,9 @@
                 </h4>
             </div>
             <div id="fieldset-contents-results" class="panel-body collapse in">
+                <div class="col-md-11" ng-repeat="(name, mbformpara) in job.service.outputs.children"><span recursive
+                                                                                                    mbformpara="mbformpara"></span>
+                </div>
             </div>
         </div>
     </div>
@@ -19,6 +22,9 @@
                 </h4>
             </div>
             <div id="fieldset-contents-inputs" class="panel-body collapse in">
+                <div class="col-md-11" ng-repeat="(name, mbformpara) in job.service.inputs.children"><span recursive
+                                                                                                    mbformpara="mbformpara"></span>
+                </div>
             </div>
         </div>
     </div>
