@@ -3,7 +3,7 @@ from pyramid.view import view_config
 from pyramid.security import remember, authenticated_userid, forget
 from pyramid.httpexceptions import HTTPFound, HTTPNotFound, HTTPForbidden, HTTPClientError
 from pyramid.renderers import JSON
-from pyramid.response import Response
+from pyramid.response import Response, FileResponse
 from pyramid_mailer import get_mailer
 from pyramid_mailer.message import Message
 
@@ -687,10 +687,30 @@ def list_project_data(request):
     response = json.dumps(project_data_list, default=json_util.default)
     return Response(body=response, content_type="application/json")
 
+
+@view_config(route_name='raw_project_data', renderer='json')
+def raw_project_data(request):
+    #identifier
+    try:
+        projectdata_id = ObjectId(request.matchdict['id'])
+    except KeyError:
+        raise HTTPClientError('missing ProjectData id')
+    except InvalidId:
+        raise HTTPClientError('invalid ProjectData id')
+    dataset = connection.ProjectData.find_one({"_id": projectdata_id})
+    # Get full path to the file
+    file_path = os.path.join(dataset.get_file_path(), dataset['data']['path'][0])
+    mime_type = "text/plain"
+    response = FileResponse(file_path,
+                            request=request,
+                            content_type=str(mime_type))
+    return response
+
+
 @view_config(route_name='list_project_jobs', request_method='GET',
     renderer='json')
 def list_project_jobs(request):
-    '''Get data in a project
+    '''Get jobs in a project
     :param request: HTTP params
              keys: 'project' Project ID
     :type request: IMultiDict
@@ -713,6 +733,24 @@ def list_project_jobs(request):
     for doc in jobs_cursor:
         jobs_list.append(doc)
     return jobs_list
+
+@view_config(route_name='get_project_job', request_method='GET',
+    renderer='json')
+def get_project_job(request):
+    '''Get a job
+    :param request: HTTP params
+             keys: 'job' Job ID
+    :type request: IMultiDict
+    :return: json - dictionary representing the job
+    '''
+    try:
+        job_id = ObjectId(request.matchdict['id'])
+    except KeyError:
+        raise HTTPClientError('missing job identifier')
+    job = connection.Job.fetch_one({'_id': job_id})
+    for name, value in job['inputs'].items():
+        job['inputs'][name] = job.get_input_value(name)
+    return job
 
 @view_config(route_name='format_dataterms', request_method='GET',
              renderer='json')

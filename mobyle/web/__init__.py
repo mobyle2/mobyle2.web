@@ -82,8 +82,10 @@ def main(global_config, **settings):
         '/api/services/{identifier}/{service_version}')
     config.add_route('create_project_data', '/api/projectdata')
     config.add_route('update_project_data', '/api/projectdata/{id}')
+    config.add_route('raw_project_data', '/api/projectdata/{id}/raw')
     config.add_route('list_project_data', '/api/project/{project}/data')
     config.add_route('list_project_jobs', '/api/project/{project}/jobs')
+    config.add_route('get_project_job', '/api/jobs/{id}')
     config.add_route('format_dataterms', '/api/formatdataterms')
     config.add_route('create_project_job', '/api/projectjobs')
 
