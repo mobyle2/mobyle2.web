@@ -165,6 +165,14 @@ angular.module('mobyle.directives').directive("mbformpara", [
         };
 }]);
 
+
+angular.module('mobyle.directives').directive("mbjobpara", [
+    function () {
+        return {
+            templateUrl: 'views/mbjobpara.html'
+        };
+}]);
+
 angular.module('mobyle.directives').directive("servicesClassification", [
     function () {
         return {

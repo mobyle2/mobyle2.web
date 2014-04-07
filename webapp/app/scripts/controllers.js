@@ -333,6 +333,7 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
 angular.module('mobyle.controllers').controller('JobDetailCtrl',
     function ($scope, job) {
         $scope.job = job;
+        $scope.show_advanced = true;
     });
 
 
