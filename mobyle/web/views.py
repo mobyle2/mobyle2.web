@@ -704,6 +704,10 @@ def raw_project_data(request):
     response = FileResponse(file_path,
                             request=request,
                             content_type=str(mime_type))
+    # download the file directly
+    if request.matchdict['disposition'] == 'dl':
+        response.content_disposition = 'attachment; filename="'\
+                                       + dataset['data']['path'][0] + '"'
     return response
 
 
