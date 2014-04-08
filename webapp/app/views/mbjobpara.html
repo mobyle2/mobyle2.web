@@ -1,4 +1,4 @@
-<div id="{{mbjobpara.name}}" class="row">
+<div id="{{mbjobpara.name}}" class="row" ng-show="mbset(mbjobpara, job.inputs)">
     <ng-switch on="mbjobpara.children">
         <div ng-switch-when="undefined" class="row">
             <iframe class="col-md-12 container well" ng-if="job.inputs[mbjobpara.name]" ng-src="{{'/api/projectdata/' + job.inputs[mbjobpara.name]['_id']['$oid'] +'/raw'}}"></iframe>

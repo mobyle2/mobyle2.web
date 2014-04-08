@@ -331,8 +331,9 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
     });
 
 angular.module('mobyle.controllers').controller('JobDetailCtrl',
-    function ($scope, job) {
+    function ($scope, job, mbset) {
         $scope.job = job;
+        $scope.mbset = mbset;
         $scope.show_advanced = true;
     });
 

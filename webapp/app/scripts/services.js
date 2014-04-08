@@ -16,12 +16,28 @@ angular.module('mobyle.services').value('mbsimple', function (para) {
             return false;
         }
         if (!para.children) {
-            return para.simple == true;
+            return para.simple === true;
         } else {
             return para.children.filter(simple).length > 0;
         }
     }
-    return simple(para);
+});
+
+angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
+    // detect if a parameter or a paragraph is "set"
+    // it is set if it has its value set to true
+    // or if one of its children has its value set to true
+    function set(para) {
+        if (!para) {
+            return false;
+        }
+        if (!para.children) {
+            return valuesMap[para.name];
+        } else {
+            return para.children.filter(set).length > 0;
+        }
+    }
+    return set(para);
 });
 
 angular.module('mobyle.services').factory('mfResource', function ($resource, $http) {
