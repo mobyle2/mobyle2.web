@@ -422,6 +422,9 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
             $window.open('/api/projectdata/' + data['_id']['$oid'] + '/raw');
         }
 
+        $scope.downloadData = function (data) {
+            $window.open('/api/projectdata/' + data['_id']['$oid'] + '/dl');
+        }
         
         $scope.deleteData = function (data) {
             data.$delete().then(function () {
