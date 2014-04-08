@@ -369,7 +369,7 @@ angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
     });
 
 angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
-    function ($scope, $log, $modal, $routeParams, Project, ProjectData, $templateCache) {
+    function ($scope, $log, $modal, $routeParams, $window, Project, ProjectData, $templateCache) {
         $scope.update = function () {
             $log.info("querying project " + $routeParams.projectId + "...");
             $scope.project = Project.get({
@@ -418,6 +418,11 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
             $scope.project.$save();
         }
 
+        $scope.viewData = function (data) {
+            $window.open('/api/projectdata/' + data['_id']['$oid'] + '/raw');
+        }
+
+        
         $scope.deleteData = function (data) {
             data.$delete().then(function () {
                 $scope.projectData.splice($scope.projectData.indexOf(data), 1);
