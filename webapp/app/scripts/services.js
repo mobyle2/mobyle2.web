@@ -27,6 +27,9 @@ angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
     // detect if a parameter or a paragraph is "set"
     // it is set if it has its value set to true
     // or if one of its children has its value set to true
+    if(!valuesMap){
+        return false;
+    }
     function set(para) {
         if (!para) {
             return false;
