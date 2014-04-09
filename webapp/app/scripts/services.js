@@ -21,6 +21,7 @@ angular.module('mobyle.services').value('mbsimple', function (para) {
             return para.children.filter(simple).length > 0;
         }
     }
+    return simple(para);
 });
 
 angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
