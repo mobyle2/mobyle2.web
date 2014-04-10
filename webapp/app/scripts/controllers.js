@@ -511,7 +511,7 @@ angular.module('mobyle.controllers').controller('DataEditCtrl',
             $scope.data.data.type.format_terms = null;
         }
         $scope.ok = function () {
-            $scope.data.data.type.data_terms = $scope.currentDataTerm.data_term_id;
+            $scope.data.data.type.data_terms = $scope.currentDataTerm.term_id;
             $scope.data.$save().then(function () {
                 $modalInstance.close($scope.data);
             }, function (errorResponse) {

@@ -233,13 +233,13 @@ angular.module('mobyle.directives').directive('typeText', ['ServiceTypeTermRegis
             type: '='
         },
         link: function (scope, element, attrs) {
-            scope.dataTermLabel = "";
+            scope.dataTermLabel = "eeee";
             scope.formatTermLabel = "";
             ServiceTypeTermRegistry.dataTermsById().then(function(dataTermsById){
-                scope.dataTermLabel = dataTermsById[scope.type.data_terms]["data_term_name"];
+                scope.dataTermLabel = dataTermsById[scope.type.data_terms].name;
             });
             ServiceTypeTermRegistry.formatTermsById().then(function(formatTermsById){
-                scope.formatTermLabel = formatTermsById[scope.type.format_terms]["name"];                
+                scope.formatTermLabel = formatTermsById[scope.type.format_terms].name;                
             });
         }};
 }]);
