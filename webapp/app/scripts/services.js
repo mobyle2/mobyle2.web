@@ -221,16 +221,6 @@ angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (S
             dataTermsById[item['data_term_id']] = item;
             dataTerms.push(item);
             terms.push(item);
-            item['format_terms'] = [];
-            angular.forEach(item['format_term_ids'],
-                            function(formatTermId){
-                                var formatTerm = FormatTerm.get({'id': formatTermId});
-                                formatTermsById[formatTermId] = formatTerm;
-                                formatTerms.push(formatTerm);
-                                terms.push(formatTerm);
-                                item['format_terms'].push(formatTerm);
-                            });
-            delete item['format_term_ids'];
         });
         termsById = dataTermsById;
         angular.extend(termsById, formatTermsById); 
