@@ -29,6 +29,8 @@ def main(global_config, **settings):
     from mobyle.common.config import Config
     mobyle_config = Config().config()
     # copy pyramid app:main settings to mobyle config (DB config, etc.)
+    for setting in global_config:
+        mobyle_config.set('app:main', setting, global_config[setting])
     for setting in settings:
         mobyle_config.set('app:main', setting, settings[setting])
     # then import connection
@@ -40,17 +42,17 @@ def main(global_config, **settings):
     from mobyle.web.security import groupFinder
     from mobyle.web.views import add_user
 
-    config = Configurator(root_factory=Root, settings=settings)
+    config = Configurator(root_factory=Root, settings=global_config)
     config.include(pyramid_beaker)
     config.include('pyramid_mailer')
     config.include("velruse.providers.openid")
-    config.add_openid_login(realm=settings['site_uri'])
+    config.add_openid_login(realm=global_config['site_uri'])
     config.include('velruse.providers.facebook')
     config.include('velruse.providers.google_oauth2')
     config.add_facebook_login_from_settings(prefix='velruse.facebook.')
     config.add_google_oauth2_login_from_settings(prefix='velruse.google.')
 
-    db_uri = settings['db_uri']
+    db_uri = global_config['db_uri']
     conn = pymongo.Connection(db_uri, safe=True)
     config.registry.settings['db_conn'] = conn
     db = conn[config.registry.settings['db_name']]
