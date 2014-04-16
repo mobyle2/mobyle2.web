@@ -233,7 +233,7 @@ angular.module('mobyle.directives').directive('typeText', ['ServiceTypeTermRegis
             type: '='
         },
         link: function (scope, element, attrs) {
-            scope.dataTermLabel = "eeee";
+            scope.dataTermLabel = "";
             scope.formatTermLabel = "";
             ServiceTypeTermRegistry.dataTermsById().then(function(dataTermsById){
                 scope.dataTermLabel = dataTermsById[scope.type.data_terms].name;
