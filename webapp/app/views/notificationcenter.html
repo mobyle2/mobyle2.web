@@ -11,6 +11,12 @@
             <form id="notif-msg-new">
             <div class="control-group">
             <div class="controls">
+            <label for="sendall">Send all (admin only)</label>
+            <input id="sendall" type="checkbox" ng-model="notification.sendall"></input>
+            </div>
+            </div>
+            <div class="control-group">
+            <div class="controls">
             <select ng-model="notification.project" ng-options="p.name for p in projects"></select>
             </div>
             </div>
@@ -40,7 +46,7 @@
             </div>
         </div>
         <div class="col-md-offset-1" ng-repeat="p in notifications | filter:{ read: false}">
-            <div class="notif-msg" ng-click="read(p)">{{p.message}}</div>
+            <div class="notif-msg" ng-click="read(p)"><i class="icon-trash"></i> {{p.message}}</div>
         </div>
         </div>
         <div ng-switch-when="archive">
@@ -55,7 +61,7 @@
             </div>
         </div>
         <div class="col-md-offset-1" ng-repeat="p in notifications | filter:{ read: true}">
-            <div class="notif-msg">{{p.message}}</div>
+            <div class="notif-msg row"><div class="col-md-8">{{p.message}}</div><div><span class="glyphicon glyphicon-remove" ng-click="delete(p)"></span></div></div>
         </div>
         </div>
     </div>

@@ -91,6 +91,10 @@ def main(global_config, **settings):
     config.add_route('format_dataterms', '/api/formatdataterms')
     config.add_route('create_project_job', '/api/projectjobs')
 
+    config.add_route('notifications_list', '/api/notifications/list')
+    config.add_route('notifications_delete', '/api/notifications/delete')
+
+
     #config.add_route('velruse_endpoint', '/loginendpoint')
     #config.add_route('logout', "/logout")
     config.add_static_view('static', 'mobyle.web:static')

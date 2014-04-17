@@ -9,11 +9,11 @@ angular.module('mobyle.controllers').controller('NotificationCtrl',
         $scope.notifications = [];
         $scope.listDisplay = 'list';
         $scope.object = "notification";
-
+/*
         $interval(function() {
             $scope.notifications = Notification.filter({read: false});
             }, 20000);
-
+*/
         $scope.read = function (notif) {
             notif.read = true;
             Notification.update(notif);
@@ -21,17 +21,15 @@ angular.module('mobyle.controllers').controller('NotificationCtrl',
     });
 
 angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
-    function ($scope, $interval, $routeParams, Notification, Project, $resource) {
+    function ($scope, $interval, $routeParams, Notification, NotificationList, Project, $resource) {
         $scope.notifications = Notification.query();
         $scope.listDisplay = 'list';
         $scope.object = "notification";
         $scope.show = 'unread';
         $scope.message = '';
-        $scope.notification = { 'project': '', 'message': '', 'type': 1, 'users': []};
+        $scope.notification = { 'sendall': false, 'project': null, 'message': '', 'type': 1};
 
         $scope.projects = Project.query();
-        $scope.project = $scope.projects[0];
-
 
         $scope.display  = function(type) {
                 $scope.show = type;
@@ -42,21 +40,18 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 
         $scope.send= function(notif) {
             var users = [];
-            if (notif.project._id!=null) {
+            console.log($scope.notification.sendall);
+            if (! $scope.notification.sendall) {
                 $scope.notification.type = 1;
-                var nbUsers = notif.project.users.length;
-                for(var i=0;i<nbUsers;i++) {
-                    users.push(notif.project.users[i].user.$oid);
-                }
             }
             else {
                 $scope.notification.type = 0
             }
-            $scope.notification.users = users
-            Notification.notify($scope.notification);
-            $scope.notification.message = "";
-            $scope.notification.users = [];
-
+            NotificationList.notify($scope.notification);
+            $scope.alerts.push({
+                    type: 'danger',
+                    msg: "message sent"
+            });
         }
 
         $scope.read = function (notif) {
@@ -73,7 +68,7 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
                     ids.push($scope.notifications[i]._id.$oid)
                 }
             }
-            Notification.read_list(ids);
+            NotificationList.read_list(ids);
         }
 
         $scope.delete_all = function(type) {
@@ -86,9 +81,10 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
             for(var i=0;i<notif_count;i++) {
                 if($scope.notifications[i].read == search_type) {
                     ids.push($scope.notifications[i]._id.$oid)
+
                 }
             }
-            Notification.delete_list(ids);
+            NotificationList.delete_list(ids);
         }
 
         $scope.delete = function (notif) {
@@ -101,11 +97,11 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
                 });
             });
         }
-        /*
+/*
         $interval(function() {
             $scope.notifications = Notification.query();
             }, 10000);
-        */
+*/
     });
 
 

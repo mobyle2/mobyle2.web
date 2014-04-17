@@ -503,6 +503,21 @@ angular.module('mobyle.services').factory('LoginManager', function ($rootScope) 
     };
 });
 
+angular.module('mobyle.services').factory('NotificationList', function (mfResource, $http) {
+    return {
+        read_list: function(id_list, callback) {
+            $http.put('/api/notifications/list', {'list': id_list, 'read': true}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        },
+        delete_list: function(id_list, callback) {
+            $http.post('/api/notifications/delete',{'list': id_list}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        },
+        notify: function(notification, callback) {
+            $http.post('/api/notifications/list', { 'project': notification.project._id.$oid, 'notification': notification}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        }
+    }
+});
+
+
 angular.module('mobyle.services').factory('Notification', function (mfResource, $http) {
     return mfResource('Notification',
         {
@@ -513,6 +528,7 @@ angular.module('mobyle.services').factory('Notification', function (mfResource, 
         'type': '@type'
         },
         {
+        /*
         read_list: {
             'method': 'PUT',
             'url': '/api/notifications/list'
@@ -525,6 +541,7 @@ angular.module('mobyle.services').factory('Notification', function (mfResource, 
             'method': 'POST',
             'url': '/api/notifications/send'
             }
+        */
         });
     /*
     return  {

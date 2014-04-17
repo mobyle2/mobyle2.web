@@ -41,6 +41,124 @@ import os.path
 import logging
 log = logging.getLogger(__name__)
 
+
+@view_config(route_name='notifications_list', renderer='json', request_method='PUT')
+def update_notification_list(request):
+    """
+    Update a list of notification
+
+    TODO: use pymongo for batch update
+    """
+
+    (params, empty) = request.params.items()[0]
+    params = json.loads(params)
+    ids = params['list']
+    total = 0
+    userid = authenticated_userid(request)
+    current_user = connection.User.find_one({'email': userid})
+    for nid in ids:
+        notif = connection.Notification.find_one({'_id': ObjectId(nid)})
+        if not notif:
+            continue
+        if str(notif['user']) == current_user['_id']:
+            for key in params:
+                if key != 'list':
+                    notif[key] = params[key]
+            total += 1
+            notif.save()
+    #res = connection.Notification.update({'_id': {'$in': ids}}, {'$set': notif}, {'upsert': False, 'multi': True})
+    return {"count" : total}
+
+
+@view_config(route_name='notifications_list', renderer='json', request_method='POST')
+def create_notification_list(request):
+    """
+    Create a list of notification
+    """
+
+    (params, empty) = request.params.items()[0]
+    params = json.loads(params)
+    total = 0
+    print str(params)
+
+    notif_project = None
+    if 'project' in params:
+        notif_project = params['project']
+    params = params['notification']
+
+    userid = authenticated_userid(request)
+    currentuser = connection.User.find_one({'email': userid})
+
+    if params['type'] == 1 and not notif_project:
+        raise HTTPForbidden()
+    if params['type'] == 0 and not currentuser['admin']:
+        raise HTTPForbidden()
+
+    if params['type'] == 0 and currentuser['admin']:
+        user_list = connection.User.find({})
+        for user in user_list:
+            notif = connection.Notification()
+            notif['type'] = params['type']
+            notif['message'] = params['message']
+            notif['user'] = user['_id']
+            notif.save()
+            if total == 0:
+                try:
+                    notif.notify()
+                except Exception as e:
+                    return {'error': str(e)}
+            total += 1
+        return {'count': total}
+
+    if params['type'] > 0:
+        found_project = connection.Project.find_one({'_id': ObjectId(notif_project)})
+        user_list = found_project['users']
+        allowed = False
+        err = ''
+        for user in user_list:
+            if currentuser['_id'] == user['user']:
+                allowed = True
+        if not allowed:
+            raise HTTPForbidden()
+        for user in user_list:
+            notif = connection.Notification()
+            notif['type'] = params['type']
+            notif['message'] = params['message']
+            notif['user'] = user['user']
+            notif.save()
+            try:
+                notif.notify()
+            except Exception as e:
+                err = str(e)
+            total += 1
+        return {'count': total, 'error': err}
+
+
+@view_config(route_name='notifications_delete', renderer='json', request_method='POST')
+def delete_notification_list(request):
+    """
+    Delete a list of notification
+
+    TODO: use pymongo for batch delete
+    """
+
+    (params, empty) = request.params.items()[0]
+    params = json.loads(params)
+    userid = authenticated_userid(request)
+    current_user = connection.User.find_one({'email': userid})
+
+    ids = params['list']
+    total = 0
+    for nid in ids:
+        notif = connection.Notification.find_one({'_id': ObjectId(nid)})
+        if not notif:
+            continue
+        if notif['user'] == current_user['_id']:
+            total += 1
+            notif.delete()
+    return {"count": total}
+
+
 @view_config(context=HTTPClientError, renderer='json')
 def http_client_error(exc, request):
     """ specific json renderer for HTTPClientError """
