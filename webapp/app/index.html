@@ -79,6 +79,16 @@
                         </li>
                     </ul>
                 </li>
+                <li class="dropdown" ng-show="userLogged()" ng-controller="NotificationCtrl">
+                    <a data-toggle="dropdown">{{notifications.length}} notifications</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/notificationcenter">Notification center</a></li>
+                        <li ng-repeat="p in notifications">
+                        <!-- ng-click="read(p)" -->
+                            <a ng-href="#/notificationcenter/{{p._id.$oid}}">{{ p.message}}</a>
+                        </li>
+                    </ul>
+                </li>
                 <li ng-show="userLogged()">
                     <a href="#/logout" ng-click="signOut()">Logout</a>
                 </li>

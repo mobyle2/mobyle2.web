@@ -104,6 +104,7 @@ def main(global_config, **settings):
     from mobyle.common.mobyleConfig import MobyleConfig
     from mobyle.common.job import Job
     from mobyle.common.project import Project, ProjectData
+    from mobyle.common.notifications import Notification
 
 
     # mf bindings configuration for Project
@@ -124,6 +125,9 @@ def main(global_config, **settings):
     # display owner's email in the dashboard
     project_renderer.set_display_field("name")
 
+    notification_renderer = Notification.get_renderer('user')
+    notification_renderer.set_reference(User)
+
     from mobyle.common.term import DataTerm, FormatTerm,\
         TopicTerm, OperationTerm
     from mobyle.common.service_terms import ServiceTypeTerm,\
@@ -133,7 +137,8 @@ def main(global_config, **settings):
     dconfig['permission'] = 'isadmin'
     Dashboard.add_dashboard([MobyleConfig, User, Project, ProjectData,
         Package, Service, Program, Workflow, Widget, DataTerm, FormatTerm,
-        TopicTerm, OperationTerm, ServiceTypeTerm, FormattedTypeTerm, Job],
+        TopicTerm, OperationTerm, ServiceTypeTerm, FormattedTypeTerm, Job,
+        Notification],
         config)
     for klass in [Service, Program, Workflow, Widget]:
         klass.set_display_fields(['name', 'version', 'title', 'description'])

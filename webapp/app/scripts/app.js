@@ -93,6 +93,10 @@ config(['$routeProvider',
             templateUrl: 'views/my.html',
             controller: 'LoginCtrl'
         });
+        $routeProvider.when('/notificationcenter', {
+            templateUrl: 'views/notificationcenter.html',
+            controller: 'NotificationCenterCtrl'
+        });
         $routeProvider.otherwise({
             redirectTo: '/services'
         });

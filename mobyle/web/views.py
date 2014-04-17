@@ -30,6 +30,7 @@ from mobyle.common.mobyleConfig import MobyleConfig
 from mobyle.common.term import FormatTerm
 from mobyle.common.classification import Classification
 from mobyle.common.job import Status, ClJob, Job
+from mobyle.common.notifications import Notification
 
 import urllib
 from urllib2 import URLError
@@ -332,6 +333,7 @@ def auth_update_password(request):
     user.save()
     log.debug("User " + token_object['user'] + " has reset its password")
     return {}
+
 
 
 @view_config(route_name="auth_login", renderer="json")
