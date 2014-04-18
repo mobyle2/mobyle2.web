@@ -4,6 +4,107 @@
 
 angular.module('mobyle.controllers', []);
 
+angular.module('mobyle.controllers').controller('NotificationCtrl',
+    function ($scope, $interval, Notification) {
+        $scope.notifications = [];
+        $scope.listDisplay = 'list';
+        $scope.object = "notification";
+/*
+        $interval(function() {
+            $scope.notifications = Notification.filter({read: false});
+            }, 20000);
+*/
+        $scope.read = function (notif) {
+            notif.read = true;
+            Notification.update(notif);
+        }
+    });
+
+angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
+    function ($scope, $interval, $routeParams, Notification, NotificationList, Project, $resource) {
+        $scope.notifications = Notification.query();
+        $scope.listDisplay = 'list';
+        $scope.object = "notification";
+        $scope.show = 'unread';
+        $scope.message = '';
+        $scope.notification = { 'sendall': false, 'project': null, 'message': '', 'type': 1};
+
+        $scope.projects = Project.query();
+
+        $scope.display  = function(type) {
+                $scope.show = type;
+            }
+        $scope.update = function () {
+            $scope.notifications = Notification.query();
+        }
+
+        $scope.send= function(notif) {
+            var users = [];
+            console.log($scope.notification.sendall);
+            if (! $scope.notification.sendall) {
+                $scope.notification.type = 1;
+            }
+            else {
+                $scope.notification.type = 0
+            }
+            NotificationList.notify($scope.notification);
+            $scope.alerts.push({
+                    type: 'danger',
+                    msg: "message sent"
+            });
+        }
+
+        $scope.read = function (notif) {
+            notif.read = true;
+            Notification.update(notif);
+            $scope.update();
+        }
+
+        $scope.mark_all_read = function() {
+            var ids = new Array();
+            var notif_count = $scope.notifications.length;
+            for(var i=0;i<notif_count;i++) {
+                if(! $scope.notifications[i].read) {
+                    ids.push($scope.notifications[i]._id.$oid)
+                }
+            }
+            NotificationList.read_list(ids);
+        }
+
+        $scope.delete_all = function(type) {
+            var ids = new Array();
+            var search_type = true;
+            if(type=='unread') {
+                search_type = false;
+            }
+            var notif_count = $scope.notifications.length;
+            for(var i=0;i<notif_count;i++) {
+                if($scope.notifications[i].read == search_type) {
+                    ids.push($scope.notifications[i]._id.$oid)
+
+                }
+            }
+            NotificationList.delete_list(ids);
+        }
+
+        $scope.delete = function (notif) {
+            notif.$delete().then(function () {
+                $scope.notifications.splice($scope.notifications.indexOf(notif), 1);
+            }, function (errorResponse) {
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: errorResponse.data.detail
+                });
+            });
+        }
+/*
+        $interval(function() {
+            $scope.notifications = Notification.query();
+            }, 10000);
+*/
+    });
+
+
 angular.module('mobyle.controllers').controller('LoginCtrl',
     function (LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
         $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google'];
@@ -196,7 +297,7 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
             });
             // after job submission, what should we do? reset the entire job? just the generated _id?
             // navigate to job display?
-            
+
         }
         $scope.reset();
     });
@@ -305,7 +406,7 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
             data: 'projectJobs',
             enableRowSelection: false,
             columnDefs: [{
-                    field: '_id.$oid',                
+                    field: '_id.$oid',
                     displayName: 'name',
                     width: "**",
                     cellTemplate: $templateCache.get('jobsGrid_NameCell.html')
@@ -326,7 +427,7 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
                     width: "*"
             }]
         }
-        
+
         $scope.update();
     });
 
@@ -414,7 +515,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
                 }
                     ]
         }
-        
+
         $scope.save = function () {
             $scope.project.$save();
         }
@@ -426,7 +527,7 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
         $scope.downloadData = function (data) {
             $window.open('/api/projectdata/' + data['_id']['$oid'] + '/dl');
         }
-        
+
         $scope.deleteData = function (data) {
             data.$delete().then(function () {
                 $scope.projectData.splice($scope.projectData.indexOf(data), 1);

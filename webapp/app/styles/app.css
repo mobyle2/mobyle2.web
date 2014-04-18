@@ -159,3 +159,44 @@ fieldset[readonly], fieldset[readonly] input, fieldset[readonly] select, fieldse
     cursor: inherit;
     display: block;
 }
+
+
+
+.notif-action button {
+    margin: 5px;
+}
+
+.notif-home {
+    height: 100%;
+}
+
+.notif-home>div {
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgrey;
+}
+
+#notif-right-panel {
+    height: 100%;
+}
+
+#notif-left-panel {
+    height: 100%;
+}
+
+.notif-msg {
+    padding: 5px;
+    min-height: 20px;
+    border-bottom-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+}
+
+.notif-menu-elt {
+    margin: 5px;
+    color: white;
+}
+
+#notif-msg-new>div {
+    margin: 10px;
+}

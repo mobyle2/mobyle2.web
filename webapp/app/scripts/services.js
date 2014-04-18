@@ -154,7 +154,7 @@ angular.module('mobyle.services').factory('mfResource', function ($resource, $ht
             }else{
                 return null;
             }
-        };        
+        };
         // define delete action that sends only the id of the object to be deleted
         resource.prototype.$delete = function () {
             return $http.delete('/' + collectionName.toLowerCase() + 's/' + this._id.$oid);
@@ -231,7 +231,7 @@ angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (S
                             });
         });
         termsById = dataTermsById;
-        angular.extend(termsById, formatTermsById); 
+        angular.extend(termsById, formatTermsById);
         dataTermsByIdP.resolve(dataTermsById);
         formatTermsByIdP.resolve(formatTermsById);
         termsByIdP.resolve(termsById);
@@ -292,7 +292,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         'project': '@project._id.$oid',
         'service': '@service._id.$oid'
     }
-    
+
     var jobResource = mfResource('Job', paramDefaults, {
         list_by_project: {
             'method': 'GET',
@@ -501,4 +501,65 @@ angular.module('mobyle.services').factory('LoginManager', function ($rootScope) 
             $rootScope.$broadcast('LoginManager.update', this.login);
         }
     };
+});
+
+angular.module('mobyle.services').factory('NotificationList', function (mfResource, $http) {
+    return {
+        read_list: function(id_list, callback) {
+            $http.put('/api/notifications/list', {'list': id_list, 'read': true}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        },
+        delete_list: function(id_list, callback) {
+            $http.post('/api/notifications/delete',{'list': id_list}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        },
+        notify: function(notification, callback) {
+            $http.post('/api/notifications/list', { 'project': notification.project._id.$oid, 'notification': notification}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        }
+    }
+});
+
+
+angular.module('mobyle.services').factory('Notification', function (mfResource, $http) {
+    return mfResource('Notification',
+        {
+        'id': '@_id.$oid',
+        'read': '@read',
+        'user': '@user',
+        'message': '@message',
+        'type': '@type'
+        },
+        {
+        /*
+        read_list: {
+            'method': 'PUT',
+            'url': '/api/notifications/list'
+        },
+        delete_list: {
+            'method': 'DELETE',
+            'url': '/api/notifications/list'
+        },
+        notify: {
+            'method': 'POST',
+            'url': '/api/notifications/send'
+            }
+        */
+        });
+    /*
+    return  {
+        unread: function(callback) {
+            $http.get('/api/notification/pending').success(callback);
+            },
+        read: function(id, callback) {
+            $http.put('/notifications/'+id, "Notification[read]=true", {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+            },
+        query: mfResource('Notification').query,
+        read_list: function(ids, callback) {
+            console.log("mark read list");
+            console.log(ids);
+            },
+        delete_list: function(ids, callback) {
+            console.log("delete list");
+            console.log(ids);
+            }
+    };
+    */
 });
