@@ -9,11 +9,11 @@ angular.module('mobyle.controllers').controller('NotificationCtrl',
         $scope.notifications = [];
         $scope.listDisplay = 'list';
         $scope.object = "notification";
-/*
+
         $interval(function() {
             $scope.notifications = Notification.filter({read: false});
-            }, 20000);
-*/
+            }, 10000);
+
         $scope.read = function (notif) {
             notif.read = true;
             Notification.update(notif);
@@ -97,11 +97,11 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
                 });
             });
         }
-/*
+
         $interval(function() {
             $scope.notifications = Notification.query();
-            }, 10000);
-*/
+            }, 20000);
+
     });
 
 
