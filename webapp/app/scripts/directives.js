@@ -320,10 +320,24 @@ angular.module('mobyle.directives').directive('typeText', ['ServiceTypeTermRegis
             scope.dataTermLabel = "";
             scope.formatTermLabel = "";
             ServiceTypeTermRegistry.dataTermsById().then(function(dataTermsById){
-                scope.dataTermLabel = dataTermsById[scope.type.data_terms].name;
+                var dataIds = $.makeArray(scope.type.data_terms);
+                scope.dataTermLabel = $.map(dataIds, function(dataId){
+                    if(dataTermsById[dataId]){
+                        return dataTermsById[dataId].name;
+                    }else{
+                        return dataId;
+                    }
+                }).join(", ");
             });
             ServiceTypeTermRegistry.formatTermsById().then(function(formatTermsById){
-                scope.formatTermLabel = formatTermsById[scope.type.format_terms].name;                
+                var formatIds = $.makeArray(scope.type.format_terms);
+                scope.formatTermLabel = $.map(formatIds, function(formatId){
+                    if(formatTermsById[formatId]){
+                        return formatTermsById[formatId].name;
+                    }else{
+                        return formatId;
+                    }
+                }).join(", ");
             });
         }};
 }]);
