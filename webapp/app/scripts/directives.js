@@ -123,6 +123,8 @@ angular.module('mobyle.directives').directive('mbinput', function () {
             default:
                 scope.untranslated = true;
             }
+            // initialize default value for the parameter in the model
+            scope.job['inputs'][scope.para.name] = scope.para.type.default;
             // compute if a precond applies for the display of this parameter
             scope.precondApplies = function(precond){
                 if(!precond){
