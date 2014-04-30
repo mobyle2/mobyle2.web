@@ -204,7 +204,6 @@ angular.module('mobyle.directives').directive('mbinput', function () {
                     }
                     return res;
                 });
-                console.log(scope.para.name, scope.precond, res);
                 return res;
             }
 
