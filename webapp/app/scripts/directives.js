@@ -125,8 +125,23 @@ angular.module('mobyle.directives').directive('mbinput', function () {
             }
             // initialize default value for the parameter in the model
             scope.job['inputs'][scope.para.name] = scope.para.type.default;
+            var infoEl = element.find('[data-content]');
+            infoEl.bind('mouseover', function () {
+                infoEl.popover('show');
+            });
+            infoEl.bind('mouseout', function () {
+                infoEl.popover('hide');
+            });
+        }
+    }
+});
+
+angular.module('mobyle.directives').directive('ifPrecond', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
             // compute if a precond applies for the display of this parameter
-            scope.precondApplies = function(precond){
+            var precondApplies = function(precond){
                 if(!precond){
                     return true;
                 }
@@ -174,7 +189,7 @@ angular.module('mobyle.directives').directive('mbinput', function () {
                                 case '$or':
                                     res = false;
                                     $.each(value,function(index, innerValue){
-                                        if(scope.precondApplies()){
+                                        if(precondApplies()){
                                             res = true;
                                             return false;
                                         }
@@ -183,7 +198,7 @@ angular.module('mobyle.directives').directive('mbinput', function () {
                                 case '$and':
                                     res = true;
                                     $.each(value,function(index, innerValue){
-                                        if(!scope.precondApplies()){
+                                        if(!precondApplies()){
                                             res = false;
                                             return false;
                                         }
@@ -208,17 +223,20 @@ angular.module('mobyle.directives').directive('mbinput', function () {
                 });
                 return res;
             }
-
-            var infoEl = element.find('[data-content]');
-            infoEl.bind('mouseover', function () {
-                infoEl.popover('show');
-            });
-            infoEl.bind('mouseout', function () {
-                infoEl.popover('hide');
-            });
+            var updateVisibility = function(precond){
+                if(precondApplies(precond)){
+                   element.show();
+                }else{
+                   element.hide();
+                }
+            }
+            scope.$watch('job.inputs', function(newInputs, oldInputs){
+                updateVisibility(scope.para.precond);
+            },true);
         }
     }
 });
+
 
 // recursive directive example
 // (from https://groups.google.com/forum/#!topic/angular/vswXTes_FtM)
