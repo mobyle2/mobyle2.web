@@ -140,7 +140,6 @@ angular.module('mobyle.directives').directive('ifPrecond', function () {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
-            var myPara = scope.para || scope.mbformpara;
             // compute if a precond applies for the display of this parameter
             var precondApplies = function(precond){
                 if(!precond){
@@ -232,7 +231,7 @@ angular.module('mobyle.directives').directive('ifPrecond', function () {
                 }
             }
             scope.$watch('job.inputs', function(newInputs, oldInputs){
-                updateVisibility(myPara.precond);
+                updateVisibility(scope.para.precond);
             },true);
         }
     }
@@ -262,9 +261,17 @@ angular.module('mobyle.directives').directive("recursive", function ($compile) {
     };
 });
 
-angular.module('mobyle.directives').directive("mbformpara", [
-    function () {
+angular.module('mobyle.directives').directive("mbformpara", ['mbsimple',
+    function (mbsimple) {
         return {
+            scope: {
+                para: '=',
+                job: '=',
+                showAdvanced: '='
+            },
+            link: function(scope){
+                scope.mbsimple = mbsimple
+            },
             templateUrl: 'views/mbformpara.html'
         };
 }]);
