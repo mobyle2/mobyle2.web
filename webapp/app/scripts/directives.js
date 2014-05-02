@@ -140,6 +140,7 @@ angular.module('mobyle.directives').directive('ifPrecond', function () {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
+            var myPara = scope.para || scope.mbformpara;
             // compute if a precond applies for the display of this parameter
             var precondApplies = function(precond){
                 if(!precond){
@@ -231,7 +232,7 @@ angular.module('mobyle.directives').directive('ifPrecond', function () {
                 }
             }
             scope.$watch('job.inputs', function(newInputs, oldInputs){
-                updateVisibility(scope.para.precond);
+                updateVisibility(myPara.precond);
             },true);
         }
     }

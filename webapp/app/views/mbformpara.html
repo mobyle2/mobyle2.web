@@ -1,5 +1,5 @@
 <div id="{{mbformpara.name}}" class="row"
-     ng-show="!mbformpara.ishidden && (show_advanced || mbsimple(mbformpara))">
+     ng-show="!mbformpara.ishidden && (show_advanced || mbsimple(mbformpara))" if-precond>
     <ng-switch on="mbformpara.children">
         <div ng-switch-when="undefined">
             <mbinput para="mbformpara" job="job">
