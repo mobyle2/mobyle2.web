@@ -108,24 +108,25 @@ describe('directives', function () {
             }];
             $httpBackend.when('GET', '/servicetypeterms').respond(JSON.stringify(serviceTypeTermsResponse));
             scope = $rootScope.$new();
-            mbinput = angular.element('<mbinput para="mbformpara">');
+            scope.job = {'inputs':[]};
+            mbinput = angular.element('<mbinput para="para" job="job">');
             compile = $compile;
         }));
 
         it('should have the label equal to parameter name if no prompt is specified', function ($compile) {
             $httpBackend.expectGET('/servicetypeterms');
-            scope.mbformpara = {
+            scope.para = {
                 "name": "infile",
                 "simple": true,
                 "type": {}
             }
             html = compile(mbinput)(scope);
             scope.$digest();
-            expect(html.find('label').text()).toContain(scope.mbformpara.name);
+            expect(html.find('label').text()).toContain(scope.para.name);
         });
 
         it('should have the label equal to parameter prompt if prompt is specified', function ($compile) {
-            scope.mbformpara = {
+            scope.para = {
                 "name": "infile",
                 "prompt": "input file",
                 "simple": true,
@@ -133,7 +134,7 @@ describe('directives', function () {
             }
             html = compile(mbinput)(scope);
             scope.$digest();
-            expect(html.find('label').text()).toContain(scope.mbformpara.prompt);
+            expect(html.find('label').text()).toContain(scope.para.prompt);
         });
 
 
@@ -160,8 +161,8 @@ describe('directives', function () {
             $httpBackend.when('GET', '/servicetypeterms').respond(JSON.stringify(serviceTypeTermsResponse));
             scope = $rootScope.$new();
             compile = $compile;
-            mbformpara = angular.element('<span recursive mbformpara="mbformpara">');
-            scope.mbformpara = {
+            mbformpara = angular.element('<span recursive mbformpara job="job" para="para" show-advanced="showAdvanced"></span>');
+            scope.para = {
                 "prompt": "Paragraph prompt",
                 "name": "paragraph name",
                 "children": [
@@ -188,6 +189,8 @@ describe('directives', function () {
                     }
                 ]
             }
+            scope.job = {'inputs':[]};
+            scope.showAdvanced = true;
             $httpBackend.expectGET('/servicetypeterms');
             html = compile(mbformpara)(scope);
             scope.$digest();
@@ -195,11 +198,11 @@ describe('directives', function () {
         }));
 
         it('should have the top id attribute equal to the paragraph name', function () {
-            expect(html.attr('id')).toEqual(scope.mbformpara.name);
+            expect(html.attr('id')).toEqual(scope.para.name);
         });
 
         it('should have the heading text equal to the paragraph prompt', function () {
-            expect(html.find('h4').find('a').text()).toEqual(scope.mbformpara.prompt);
+            expect(html.find('h4').find('a').text()).toEqual(scope.para.prompt);
         });
 
     });
