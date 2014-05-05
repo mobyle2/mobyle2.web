@@ -600,13 +600,13 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                         res = (values[key] <= value['$lte']);
                     }
                     if (value.hasOwnProperty('$in')) {
-                        res = $.inArray(values[key], value['$in']);
+                        res = $.inArray(values[key], value['$in'])!=-1;
                     }
                     if (value.hasOwnProperty('$ne')) {
                         res = (values[key] != value['$ne']);
                     }
                     if (value.hasOwnProperty('$nin')) {
-                        res = !$.inArray(values[key], value['$in']);
+                        res = $.inArray(values[key], value['$nin'])==-1;
                     }
                 }
             } else {
@@ -615,7 +615,7 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                 case '$or':
                     res = false;
                     $.each(value, function (index, innerValue) {
-                        if (evalBoolFactory()) {
+                        if (evalBoolFactory(innerValue)) {
                             res = true;
                             return false;
                         }
@@ -624,20 +624,19 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                 case '$and':
                     res = true;
                     $.each(value, function (index, innerValue) {
-                        if (!evalBoolFactory()) {
+                        if (!evalBoolFactory(innerValue)) {
                             res = false;
                             return false;
                         }
                     });
                     break;
                 case '$not':
-                    res = !scope.evalBoolFactory(value);
-                    return res;
+                    res = !evalBoolFactory(value);
                     break;
                 case '$nor':
                     res = true;
                     $.each(value, function (index, innerValue) {
-                        if (scope.evalBoolFactory()) {
+                        if (evalBoolFactory(innerValue)) {
                             res = false;
                             return false;
                         }
