@@ -138,93 +138,12 @@
         }
     });
 
-    angular.module('mobyle.directives').directive('ifPrecond', function () {
+    angular.module('mobyle.directives').directive('ifPrecond', ['evalBoolFactory', function (evalBoolFactory) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
                 // compute if a precond applies for the display of this parameter
-                var precondApplies = function (precond) {
-                    if (!precond) {
-                        return true;
-                    }
-                    var res = true;
-                    $.each(precond, function (key, value) {
-                        if (scope.job.inputs.hasOwnProperty(key)) {
-                            switch (typeof value) {
-                            case 'number':
-                            case 'string':
-                            case 'boolean':
-                            case 'undefined':
-                                if (scope.job.inputs[key] != value) {
-                                    res = false;
-                                } else {
-                                    res = true;
-                                }
-                                break;
-                            case 'object':
-                                // handle comparison operators
-                                if (value.hasOwnProperty('$gt')) {
-                                    res = (scope.job.inputs[key] > value['$gt']);
-                                }
-                                if (value.hasOwnProperty('$gte')) {
-                                    res = (scope.job.inputs[key] >= value['$gte']);
-                                }
-                                if (value.hasOwnProperty('$lt')) {
-                                    res = (scope.job.inputs[key] < value['$lt']);
-                                }
-                                if (value.hasOwnProperty('$lte')) {
-                                    res = (scope.job.inputs[key] <= value['$lte']);
-                                }
-                                if (value.hasOwnProperty('$in')) {
-                                    res = $.inArray(scope.job.inputs[key], value['$in']);
-                                }
-                                if (value.hasOwnProperty('$ne')) {
-                                    res = (scope.job.inputs[key] != value['$ne']);
-                                }
-                                if (value.hasOwnProperty('$nin')) {
-                                    res = !$.inArray(scope.job.inputs[key], value['$in']);
-                                }
-                            }
-                        } else {
-                            // handle logical operators
-                            switch (key) {
-                            case '$or':
-                                res = false;
-                                $.each(value, function (index, innerValue) {
-                                    if (precondApplies()) {
-                                        res = true;
-                                        return false;
-                                    }
-                                });
-                                break;
-                            case '$and':
-                                res = true;
-                                $.each(value, function (index, innerValue) {
-                                    if (!precondApplies()) {
-                                        res = false;
-                                        return false;
-                                    }
-                                });
-                                break;
-                            case '$not':
-                                res = !scope.precondApplies(value);
-                                return res;
-                                break;
-                            case '$nor':
-                                res = true;
-                                $.each(value, function (index, innerValue) {
-                                    if (scope.precondApplies()) {
-                                        res = false;
-                                        return false;
-                                    }
-                                });
-                                break;
-                            }
-                        }
-                        return res;
-                    });
-                    return res;
-                }
+                var precondApplies = evalBoolFactory(scope.job.inputs);
                 var updateVisibility = function (precond) {
                     if (precondApplies(precond)) {
                         element.show();
@@ -237,8 +156,7 @@
                 }, true);
             }
         }
-    });
-
+    }]);
 
     // recursive directive example
     // (from https://groups.google.com/forum/#!topic/angular/vswXTes_FtM)

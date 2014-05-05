@@ -563,3 +563,91 @@ angular.module('mobyle.services').factory('Notification', function (mfResource, 
     };
     */
 });
+
+angular.module('mobyle.services').value('evalBoolFactory', function (values) {
+    // computes a boolean expression comprised of a combination of
+    // comparison and logical operators over a set of values
+    var evalBoolFactory = function (expr) {
+        if (!expr) {
+            return true;
+        }
+        var res = true;
+        $.each(expr, function (key, value) {
+            if (values.hasOwnProperty(key)) {
+                switch (typeof value) {
+                case 'number':
+                case 'string':
+                case 'boolean':
+                case 'undefined':
+                    if (values[key] != value) {
+                        res = false;
+                    } else {
+                        res = true;
+                    }
+                    break;
+                case 'object':
+                    // handle comparison operators
+                    if (value.hasOwnProperty('$gt')) {
+                        res = (values[key] > value['$gt']);
+                    }
+                    if (value.hasOwnProperty('$gte')) {
+                        res = (values[key] >= value['$gte']);
+                    }
+                    if (value.hasOwnProperty('$lt')) {
+                        res = (values[key] < value['$lt']);
+                    }
+                    if (value.hasOwnProperty('$lte')) {
+                        res = (values[key] <= value['$lte']);
+                    }
+                    if (value.hasOwnProperty('$in')) {
+                        res = $.inArray(values[key], value['$in']);
+                    }
+                    if (value.hasOwnProperty('$ne')) {
+                        res = (values[key] != value['$ne']);
+                    }
+                    if (value.hasOwnProperty('$nin')) {
+                        res = !$.inArray(values[key], value['$in']);
+                    }
+                }
+            } else {
+                // handle logical operators
+                switch (key) {
+                case '$or':
+                    res = false;
+                    $.each(value, function (index, innerValue) {
+                        if (evalBoolFactory()) {
+                            res = true;
+                            return false;
+                        }
+                    });
+                    break;
+                case '$and':
+                    res = true;
+                    $.each(value, function (index, innerValue) {
+                        if (!evalBoolFactory()) {
+                            res = false;
+                            return false;
+                        }
+                    });
+                    break;
+                case '$not':
+                    res = !scope.evalBoolFactory(value);
+                    return res;
+                    break;
+                case '$nor':
+                    res = true;
+                    $.each(value, function (index, innerValue) {
+                        if (scope.evalBoolFactory()) {
+                            res = false;
+                            return false;
+                        }
+                    });
+                    break;
+                }
+            }
+            return res;
+        });
+        return res;
+    }
+    return evalBoolFactory;
+});
