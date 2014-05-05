@@ -27,7 +27,8 @@ module.exports = function(config) {
 
     preprocessors: {
         // generate js files from html templates
-        'views/*.html': 'ng-html2js'
+        'views/*.html': 'ng-html2js',
+        'scripts/*.js': 'coverage'
     },
 
     autoWatch: true,
@@ -40,8 +41,11 @@ module.exports = function(config) {
         'karma-phantomjs-launcher',
         'karma-firefox-launcher',
         'karma-chrome-launcher',
-        'karma-ng-html2js-preprocessor'
-    ]
+        'karma-ng-html2js-preprocessor',
+        'karma-coverage'
+    ],
+      
+    reporters: ['coverage']
 
   });
 };
