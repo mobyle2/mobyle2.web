@@ -38,6 +38,8 @@ module.exports = function(config) {
         'karma-junit-reporter',
         'karma-jasmine',
         'karma-phantomjs-launcher',
+        'karma-firefox-launcher',
+        'karma-chrome-launcher',
         'karma-ng-html2js-preprocessor'
     ]
 
