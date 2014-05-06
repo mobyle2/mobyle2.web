@@ -572,80 +572,87 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
             return true;
         }
         var res = true;
-        $.each(expr, function (key, value) {
-            if (values.hasOwnProperty(key)) {
-                switch (typeof value) {
-                case 'number':
-                case 'string':
-                case 'boolean':
-                case 'undefined':
-                    if (values[key] != value) {
-                        res = false;
-                    } else {
-                        res = true;
-                    }
-                    break;
-                case 'object':
-                    // handle comparison operators
-                    if (value.hasOwnProperty('#gt')) {
-                        res = (values[key] > value['#gt']);
-                    }
-                    if (value.hasOwnProperty('#gte')) {
-                        res = (values[key] >= value['#gte']);
-                    }
-                    if (value.hasOwnProperty('#lt')) {
-                        res = (values[key] < value['#lt']);
-                    }
-                    if (value.hasOwnProperty('#lte')) {
-                        res = (values[key] <= value['#lte']);
-                    }
-                    if (value.hasOwnProperty('#in')) {
-                        res = $.inArray(values[key], value['#in'])!=-1;
-                    }
-                    if (value.hasOwnProperty('#ne')) {
-                        res = (values[key] != value['#ne']);
-                    }
-                    if (value.hasOwnProperty('#nin')) {
-                        res = $.inArray(values[key], value['#nin'])==-1;
-                    }
-                }
-            } else {
-                // handle logical operators
-                switch (key) {
-                case '#or':
-                    res = false;
-                    $.each(value, function (index, innerValue) {
-                        if (evalBoolFactory(innerValue)) {
+        if(typeof expr == 'string'){
+            // expression is a variable name, test if it is truthy
+            res = Boolean(values[expr]);
+        }else{
+            $.each(expr, function (key, value) {
+                if (values.hasOwnProperty(key)) {
+                    switch (typeof value) {
+                    case 'number':
+                    case 'string':
+                    case 'boolean':
+                    case 'undefined':
+                        console.log(values[key],'!=', value);
+                        console.log(key, values);
+                        if (values[key] != value) {
+                            res = false;
+                        } else {
                             res = true;
-                            return false;
                         }
-                    });
-                    break;
-                case '#and':
-                    res = true;
-                    $.each(value, function (index, innerValue) {
-                        if (!evalBoolFactory(innerValue)) {
-                            res = false;
-                            return false;
+                        break;
+                    case 'object':
+                        // handle comparison operators
+                        if (value.hasOwnProperty('#gt')) {
+                            res = (values[key] > value['#gt']);
                         }
-                    });
-                    break;
-                case '#not':
-                    res = !evalBoolFactory(value);
-                    break;
-                case '#nor':
-                    res = true;
-                    $.each(value, function (index, innerValue) {
-                        if (evalBoolFactory(innerValue)) {
-                            res = false;
-                            return false;
+                        if (value.hasOwnProperty('#gte')) {
+                            res = (values[key] >= value['#gte']);
                         }
-                    });
-                    break;
+                        if (value.hasOwnProperty('#lt')) {
+                            res = (values[key] < value['#lt']);
+                        }
+                        if (value.hasOwnProperty('#lte')) {
+                            res = (values[key] <= value['#lte']);
+                        }
+                        if (value.hasOwnProperty('#in')) {
+                            res = $.inArray(values[key], value['#in'])!=-1;
+                        }
+                        if (value.hasOwnProperty('#ne')) {
+                            res = (values[key] != value['#ne']);
+                        }
+                        if (value.hasOwnProperty('#nin')) {
+                            res = $.inArray(values[key], value['#nin'])==-1;
+                        }
+                    }
+                } else {
+                    // handle logical operators
+                    switch (key) {
+                    case '#or':
+                        res = false;
+                        $.each(value, function (index, innerValue) {
+                            if (evalBoolFactory(innerValue)) {
+                                res = true;
+                                return false;
+                            }
+                        });
+                        break;
+                    case '#and':
+                        res = true;
+                        $.each(value, function (index, innerValue) {
+                            if (!evalBoolFactory(innerValue)) {
+                                res = false;
+                                return false;
+                            }
+                        });
+                        break;
+                    case '#not':
+                        res = !evalBoolFactory(value);
+                        break;
+                    case '#nor':
+                        res = true;
+                        $.each(value, function (index, innerValue) {
+                            if (evalBoolFactory(innerValue)) {
+                                res = false;
+                                return false;
+                            }
+                        });
+                        break;
+                    }
                 }
-            }
-            return res;
-        });
+                return res;
+            });
+        }
         return res;
     }
     return evalBoolFactory;
