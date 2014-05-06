@@ -587,32 +587,32 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                     break;
                 case 'object':
                     // handle comparison operators
-                    if (value.hasOwnProperty('$gt')) {
-                        res = (values[key] > value['$gt']);
+                    if (value.hasOwnProperty('#gt')) {
+                        res = (values[key] > value['#gt']);
                     }
-                    if (value.hasOwnProperty('$gte')) {
-                        res = (values[key] >= value['$gte']);
+                    if (value.hasOwnProperty('#gte')) {
+                        res = (values[key] >= value['#gte']);
                     }
-                    if (value.hasOwnProperty('$lt')) {
-                        res = (values[key] < value['$lt']);
+                    if (value.hasOwnProperty('#lt')) {
+                        res = (values[key] < value['#lt']);
                     }
-                    if (value.hasOwnProperty('$lte')) {
-                        res = (values[key] <= value['$lte']);
+                    if (value.hasOwnProperty('#lte')) {
+                        res = (values[key] <= value['#lte']);
                     }
-                    if (value.hasOwnProperty('$in')) {
-                        res = $.inArray(values[key], value['$in'])!=-1;
+                    if (value.hasOwnProperty('#in')) {
+                        res = $.inArray(values[key], value['#in'])!=-1;
                     }
-                    if (value.hasOwnProperty('$ne')) {
-                        res = (values[key] != value['$ne']);
+                    if (value.hasOwnProperty('#ne')) {
+                        res = (values[key] != value['#ne']);
                     }
-                    if (value.hasOwnProperty('$nin')) {
-                        res = $.inArray(values[key], value['$nin'])==-1;
+                    if (value.hasOwnProperty('#nin')) {
+                        res = $.inArray(values[key], value['#nin'])==-1;
                     }
                 }
             } else {
                 // handle logical operators
                 switch (key) {
-                case '$or':
+                case '#or':
                     res = false;
                     $.each(value, function (index, innerValue) {
                         if (evalBoolFactory(innerValue)) {
@@ -621,7 +621,7 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                         }
                     });
                     break;
-                case '$and':
+                case '#and':
                     res = true;
                     $.each(value, function (index, innerValue) {
                         if (!evalBoolFactory(innerValue)) {
@@ -630,10 +630,10 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                         }
                     });
                     break;
-                case '$not':
+                case '#not':
                     res = !evalBoolFactory(value);
                     break;
-                case '$nor':
+                case '#nor':
                     res = true;
                     $.each(value, function (index, innerValue) {
                         if (evalBoolFactory(innerValue)) {
