@@ -583,8 +583,6 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                     case 'string':
                     case 'boolean':
                     case 'undefined':
-                        console.log(values[key],'!=', value);
-                        console.log(key, values);
                         if (values[key] != value) {
                             res = false;
                         } else {
