@@ -3,17 +3,17 @@
         <i ng-show="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
            data-container="body"/>
     </label>
-    <div class="alert-info" ui-if="untranslated">no layout defined for type {{para.type}}</div>
+    <div class="alert-info" ng-if="untranslated">no layout defined for type {{para.type}}</div>
     <div class="col-md-6" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}">
         <input class="form-control" type="{{itype}}" ng-if="itype" step="{{step}}" name="mbinput" 
                value="{{para.type.default}}" ng-model="job['inputs'][para.name]"/>
     </div>
     <div class="col-md-6" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}">
         <select class="form-control col-md-2" ng-if="select" step="{{step}}" name="mbinput" 
-                ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]"/>
+                ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]" />
     </div>
     <div class="col-md-12" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}">
-        <textarea class="form-control col-md-2" ng-if="textarea" name="mbinput" ng-model="job['inputs'][para.name]" ng-required="para.mandatory">{{para.type.default}}</textarea>
+        <textarea class="form-control col-md-2" ng-if="textarea" name="mbinput" ng-model="job['inputs'][para.name]" ng-required="para.mandatory" >{{para.type.default}}</textarea>
     </div>
     <div class="col-md-12 has-error"  ng-show="innerForm.mbinput.$dirty && innerForm.mbinput.$error">
         <div ng-show="innerForm.mbinput.$error.required" class="help-block">this field is mandatory</div>

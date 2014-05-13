@@ -19,7 +19,7 @@
                    ng-bind-html="s.nameHl || s.name"/></a>
             </div>
             <div class="dd">
-                <span ui-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
+                <span ng-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
                 <span ng-bind-html="s.descriptionHl || s.description"/>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div ng-repeat="s in filteredServices = (services | kwSearch:query:['name','description','title']:true | orderBy:'name')" class="service">
             <div class="title"><a href="#/services/{{s.public_name || s._id.$oid}}/{{s.version}}"
                                   ng-bind-html="s.nameHl || s.name"/></a></div>
-            <span ui-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
+            <span ng-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
             <span ng-bind-html="s.descriptionHl || s.description"/>
         </div>
     </div>
