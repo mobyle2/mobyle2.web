@@ -6,18 +6,18 @@
     <div class="alert-info" ng-if="untranslated">no layout defined for type {{para.type}}</div>
     <div class="col-md-6" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}">
         <input class="form-control" type="{{itype}}" ng-if="itype" step="{{step}}" name="mbinput" 
-               value="{{para.type.default}}" ng-model="job['inputs'][para.name]"/>
+               value="{{para.type.default}}" ng-model="job['inputs'][para.name]" ui-validate="{test: 'ctrlFn($value)'}"/>
     </div>
     <div class="col-md-6" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}">
         <select class="form-control col-md-2" ng-if="select" step="{{step}}" name="mbinput" 
-                ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]" />
+                ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]" ui-validate="{test: 'ctrlFn($value)'}"/>
     </div>
     <div class="col-md-12" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}">
-        <textarea class="form-control col-md-2" ng-if="textarea" name="mbinput" ng-model="job['inputs'][para.name]" ng-required="para.mandatory" >{{para.type.default}}</textarea>
+        <textarea class="form-control col-md-2" ng-if="textarea" name="mbinput" ng-model="job['inputs'][para.name]" ng-required="para.mandatory" ui-validate="{test: 'ctrlFn($value)'}">{{para.type.default}}</textarea>
     </div>
     <div class="col-md-12 has-error"  ng-show="innerForm.mbinput.$dirty && innerForm.mbinput.$error">
         <div ng-show="innerForm.mbinput.$error.required" class="help-block">this field is mandatory</div>
         <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
-        <div ng-show="innerForm.mbinput.$error" class="help-block">{{innerForm.mbinput.$error}} {{job['inputs'][para.name]}}</div>
+        <div ng-show="innerForm.mbinput.$error.test" class="help-block">{{para.ctrl.message}}</div>
     </div>
 </ng-form>

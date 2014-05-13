@@ -70,7 +70,7 @@
         }
     });
 
-    angular.module('mobyle.directives').directive('mbinput', function () {
+    angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory', function (evalBoolFactory) {
         return {
             restrict: 'E',
             replace: true,
@@ -127,6 +127,18 @@
                 // initialize default value for the parameter in the model
                 scope.job['inputs'][scope.para.name] = scope.para.type.
                 default;
+                // custom validation functions
+                if(scope.para.ctrl){
+                    scope.ctrlFn = function($value){
+                        scope.job.inputs['value']=$value;
+                        scope.job.inputs[scope.para.name]=$value;
+                        return evalBoolFactory(scope.job.inputs, scope.para.name)(scope.para.ctrl.test);
+                    }
+                }else{
+                    scope.ctrlFn = function($value){
+                        return true;
+                    }
+                }
                 var infoEl = element.find('[data-content]');
                 infoEl.bind('mouseover', function () {
                     infoEl.popover('show');
@@ -136,7 +148,7 @@
                 });
             }
         }
-    });
+    }]);
 
     angular.module('mobyle.directives').directive('ifPrecond', ['evalBoolFactory', function (evalBoolFactory) {
         return {
