@@ -128,16 +128,27 @@
                 scope.job['inputs'][scope.para.name] = scope.para.type.
                 default;
                 // custom validation functions
+                scope.uiValidateString = "";
                 if(scope.para.ctrl){
-                    scope.ctrlFn = function($value){
-                        scope.job.inputs['value']=$value;
-                        scope.job.inputs[scope.para.name]=$value;
-                        return evalBoolFactory(scope.job.inputs, scope.para.name)(scope.para.ctrl.test);
-                    }
-                }else{
-                    scope.ctrlFn = function($value){
-                        return true;
-                    }
+                    scope.uiValidateObj = {};
+                    $.each(scope.para.ctrl, function(index, ctrlItem){
+                        scope['ctrls'+index] = {
+                            'test' : function($value){
+                                if ($value=='' && para.type.default !=''){
+                                    // whitespace is assumed to be default value
+                                    $value = para.type.default;
+                                }
+                                // manage 'value' key as the current parameter
+                                scope.job.inputs['value']=$value;
+                                scope.job.inputs[scope.para.name]=$value;
+                                console.log(scope.para.name, $value, ctrlItem.test, evalBoolFactory(scope.job.inputs, scope.para.name)(ctrlItem.test));
+                                return evalBoolFactory(scope.job.inputs, scope.para.name)(ctrlItem.test);
+                            },
+                            'message': ctrlItem.message
+                        }
+                        scope.uiValidateObj['ctrls'+index] = "ctrls"+index+".test($value)";
+                    });
+                    scope.uiValidateString = JSON.stringify(scope.uiValidateObj);
                 }
                 var infoEl = element.find('[data-content]');
                 infoEl.bind('mouseover', function () {
