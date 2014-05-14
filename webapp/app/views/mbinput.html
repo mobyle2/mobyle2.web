@@ -18,7 +18,6 @@
     <div class="col-md-12 has-error"  ng-show="innerForm.mbinput.$dirty && innerForm.mbinput.$error">
         <div ng-show="innerForm.mbinput.$error.required" class="help-block">this field is mandatory</div>
         <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
-        <div ng-show="innerForm.mbinput.$error.ctrls0" class="help-block">{{ctrls0.message}}</div>
-        <div ng-show="innerForm.mbinput.$error.ctrls1" class="help-block">{{ctrls1.message}}</div>
+        <div ng-repeat="ctrl in para.ctrl" ng-show="$parent.innerForm.mbinput.$error['ctrls'+$index]" class="help-block">{{$parent['ctrls'+$index].message}}</div>
     </div>
 </ng-form>
