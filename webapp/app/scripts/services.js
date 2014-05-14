@@ -592,16 +592,16 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                     case 'object':
                         // handle comparison operators
                         if (value.hasOwnProperty('#gt')) {
-                            res = (values[key] > value['#gt']);
+                            res = (Number(values[key]) > Number(value['#gt']));
                         }
                         if (value.hasOwnProperty('#gte')) {
-                            res = (values[key] >= value['#gte']);
+                            res = (Number(values[key]) >= Number(value['#gte']));
                         }
                         if (value.hasOwnProperty('#lt')) {
-                            res = (values[key] < value['#lt']);
+                            res = (Number(values[key]) < Number(value['#lt']));
                         }
                         if (value.hasOwnProperty('#lte')) {
-                            res = (values[key] <= value['#lte']);
+                            res = (Number(values[key]) <= Number(value['#lte']));
                         }
                         if (value.hasOwnProperty('#in')) {
                             res = $.inArray(values[key], value['#in'])!=-1;
