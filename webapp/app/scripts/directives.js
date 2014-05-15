@@ -134,14 +134,10 @@
                     $.each(scope.para.ctrl, function(index, ctrlItem){
                         scope['ctrls'+index] = {
                             'test' : function($value){
-                                if ($value=='' && scope.para.type.default !=''){
-                                    // whitespace is assumed to be default value
-                                    $value = scope.para.type.default;
-                                }
                                 // manage 'value' key as the current parameter
                                 scope.job.inputs['value']=$value;
                                 scope.job.inputs[scope.para.name]=$value;
-                                console.log(scope.para.name, $value, ctrlItem.test, evalBoolFactory(scope.job.inputs, scope.para.name)(ctrlItem.test));
+                                console.log(scope.para.name, $value, scope.para.type.default, evalBoolFactory(scope.job.inputs, scope.para.name)(ctrlItem.test));
                                 return evalBoolFactory(scope.job.inputs, scope.para.name)(ctrlItem.test);
                             },
                             'message': ctrlItem.message
@@ -372,3 +368,18 @@
 }]);
 
 }());
+
+angular.module('mobyle.directives').directive('input', function () {
+    return {
+        restrict: 'E',
+        require: 'ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            if (attrs.type.toLowerCase() !== 'number') {
+                return;
+            } //only augment number input!
+            ctrl.$formatters.push(function (value) {
+                return value ? parseFloat(value) : null;
+            });
+        }
+    };
+});
