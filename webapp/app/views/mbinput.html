@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-12" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-if="textarea" >
         <textarea class="form-control col-md-2" name="mbinput" ng-model="job['inputs'][para.name]" ng-required="para.mandatory" ui-validate="{{uiValidateString}}">{{para.type.default}}</textarea>
-    </div>{{ctrls0.message}}
+    </div>
     <div class="col-md-12 has-error"  ng-show="innerForm.mbinput.$dirty && innerForm.mbinput.$error">
         <div ng-show="innerForm.mbinput.$error.required" class="help-block">this field is mandatory</div>
         <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
