@@ -134,9 +134,9 @@
                     $.each(scope.para.ctrl, function(index, ctrlItem){
                         scope['ctrls'+index] = {
                             'test' : function($value){
-                                if ($value=='' && para.type.default !=''){
+                                if ($value=='' && scope.para.type.default !=''){
                                     // whitespace is assumed to be default value
-                                    $value = para.type.default;
+                                    $value = scope.para.type.default;
                                 }
                                 // manage 'value' key as the current parameter
                                 scope.job.inputs['value']=$value;
