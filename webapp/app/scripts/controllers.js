@@ -5,13 +5,16 @@
 angular.module('mobyle.controllers', []);
 
 angular.module('mobyle.controllers').controller('NotificationCtrl',
-    function ($scope, $interval, Notification) {
+    function ($scope, $interval, Notification, CurrentUser) {
         $scope.notifications = [];
         $scope.listDisplay = 'list';
         $scope.object = "notification";
 
         $interval(function() {
-            $scope.notifications = Notification.filter({read: false});
+            var user = CurrentUser.get();
+            if(user.email!=undefined) {
+                $scope.notifications = Notification.filter({read: false});
+            }
             }, 10000);
 
         $scope.read = function (notif) {
@@ -21,8 +24,14 @@ angular.module('mobyle.controllers').controller('NotificationCtrl',
     });
 
 angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
-    function ($scope, $interval, $routeParams, Notification, NotificationList, Project, $resource) {
-        $scope.notifications = Notification.query();
+    function ($scope, $interval, $routeParams, Notification, NotificationList,
+Project, CurrentUser, $resource) {
+        $scope.notifications = [];
+        $scope.user = CurrentUser.get();
+        if($scope.user.email!=undefined) {
+            $scope.notifications = Notification.query();
+        }
+
         $scope.listDisplay = 'list';
         $scope.object = "notification";
         $scope.show = 'unread';
@@ -40,7 +49,6 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 
         $scope.send= function(notif) {
             var users = [];
-            console.log($scope.notification.sendall);
             if (! $scope.notification.sendall) {
                 $scope.notification.type = 1;
             }
@@ -99,7 +107,10 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
         }
 
         $interval(function() {
-            $scope.notifications = Notification.query();
+            $scope.user = CurrentUser.get();
+            if($scope.user.email!=undefined) {
+                $scope.notifications = Notification.query();
+            }
             }, 20000);
 
     });

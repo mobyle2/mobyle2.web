@@ -10,7 +10,7 @@
             <h2>Write a message</h2>
             <form id="notif-msg-new">
             <div class="control-group">
-            <div class="controls">
+            <div class="controls" ng-show="user.admin">
             <label for="sendall">Send all (admin only)</label>
             <input id="sendall" type="checkbox" ng-model="notification.sendall"></input>
             </div>
