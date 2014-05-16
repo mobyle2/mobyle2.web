@@ -68,6 +68,10 @@ edit and test it directly.
 (EDAM ontology, in OWL format, can be found at http://edamontology.org/EDAM.owl)   
     python src/mobyle2.lib/scripts/imports/edam_import.py --config src/mobyle2.web/development.ini --edamfile [path to EDAM ontology owl file] init
 
+After services import, load classification. In src/mobyle2.lib/scripts/db:
+
+    python data_format_terms_update.py --config ../../../mobyle2.conf/mobyle.ini
+
 8. Connect to your mobyle2 server
 You're done! Go to:
 http://mobyle2:6543/
