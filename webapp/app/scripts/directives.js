@@ -375,7 +375,7 @@
 angular.module('mobyle.directives').directive('input', function () {
     return {
         restrict: 'E',
-        require: 'ngModel',
+        require: '?ngModel',
         link: function (scope, elem, attrs, ctrl) {
             if (attrs.type.toLowerCase() !== 'number') {
                 return;
