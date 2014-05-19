@@ -369,6 +369,9 @@
 
 }());
 
+// utility directive to format correctly values for "number" inputs
+// which are not correctly handled by AngularJS
+// source: http://jsfiddle.net/SanderElias/qb44R/
 angular.module('mobyle.directives').directive('input', function () {
     return {
         restrict: 'E',
