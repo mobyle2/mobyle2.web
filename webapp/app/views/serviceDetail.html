@@ -5,7 +5,7 @@
         <h3>{{service.description}}</h3>
     </div>
     <div class="btn-toolbar">
-        <button type="submit" ng-disabled="serviceForm.$invalid" class="btn btn-primary"><i class="glyphicon glyphicon-play glyphicon-white"></i> run</button>
+        <button type="submit" ng-disabled="serviceForm.$invalid || !job.project._id" class="btn btn-primary"><i class="glyphicon glyphicon-play glyphicon-white"></i> run</button>
     <span ng-show="mbsimple(service.inputs)">
       <toggle class="btn" toggle-state="showAdvanced" text-when-on="Only simple parameters"
               text-when-off="All parameters" class="btn" style="margin: 1em;"></toggle>
