@@ -212,6 +212,12 @@ describe('service', function() {
         it('should compute (a==true and b==true) = false', inject(function(mbsimple) {
             expect(evalFn({'#and':[{'a':true}, {'b':true}]})).toEqual(false);
         }));
+        it('should compute implicit and (a==true and b==true) = false', inject(function(mbsimple) {
+            expect(evalFn({'a':true, 'b':true})).toEqual(false);
+        }));
+        it('should compute implicit and (a==false and b==false) = false', inject(function(mbsimple) {
+            expect(evalFn({'a':false, 'b':false})).toEqual(false);
+        }));
         it('should compute (a==true or b==true) = true', inject(function(mbsimple) {
             expect(evalFn({'#or':[{'a':true}, {'b':true}]})).toEqual(true);
         }));
