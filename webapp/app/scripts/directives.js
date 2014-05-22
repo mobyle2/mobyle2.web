@@ -161,17 +161,21 @@
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
-                // compute if a precond applies for the display of this parameter
+                // compute if a precond applies for the display
+                // and to update the mandatory attribute of the para (if exists)
                 var precondApplies = evalBoolFactory(scope.job.inputs);
-                var updateVisibility = function (precond) {
-                    if (precondApplies(precond)) {
+                var mandatory = scope.para.mandatory;
+                var update = function (precond) {
+                    var applies = precondApplies(precond);
+                    if (applies) {
                         element.show();
                     } else {
                         element.hide();
                     }
+                    scope.para.mandatory = (mandatory && applies);
                 }
                 scope.$watch('job.inputs', function (newInputs, oldInputs) {
-                    updateVisibility(scope.para.precond);
+                    update(scope.para.precond);
                 }, true);
             }
         }
