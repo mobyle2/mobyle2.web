@@ -269,6 +269,15 @@ describe('service', function() {
         it('should compute (c != 1) = false', inject(function(mbsimple) {
             expect(evalFn({'c':{'#ne':1}})).toEqual(false);
         }));
+        it('should compute (c (!= 2 and > 0) = true', inject(function(mbsimple) {
+            expect(evalFn({'c': {'#ne': 2, '#gt': 0}})).toEqual(true);
+        }));
+        it('should compute (c (!= 1 and > 0) = false', inject(function(mbsimple) {
+            expect(evalFn({'c': {'#ne': 1, '#gt': 0}})).toEqual(false);
+        }));
+        it('should compute (c (!= 30 and > 2) = false', inject(function(mbsimple) {
+            expect(evalFn({'c': {'#ne': 30, '#gt': 2}})).toEqual(false);
+        }));
     });
 
 });

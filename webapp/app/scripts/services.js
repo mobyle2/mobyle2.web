@@ -591,27 +591,35 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                         break;
                     case 'object':
                         // handle comparison operators
-                        if (value.hasOwnProperty('#gt')) {
-                            res = (Number(values[key]) > Number(value['#gt']));
-                        }
-                        if (value.hasOwnProperty('#gte')) {
-                            res = (Number(values[key]) >= Number(value['#gte']));
-                        }
-                        if (value.hasOwnProperty('#lt')) {
-                            res = (Number(values[key]) < Number(value['#lt']));
-                        }
-                        if (value.hasOwnProperty('#lte')) {
-                            res = (Number(values[key]) <= Number(value['#lte']));
-                        }
-                        if (value.hasOwnProperty('#in')) {
-                            res = $.inArray(values[key], value['#in'])!=-1;
-                        }
-                        if (value.hasOwnProperty('#ne')) {
-                            res = (values[key] != value['#ne']);
-                        }
-                        if (value.hasOwnProperty('#nin')) {
-                            res = $.inArray(values[key], value['#nin'])==-1;
-                        }
+                        $.each(value, function(operator, operand){
+                            switch (operator) {
+                                case '#gt':
+                                    res = (Number(values[key]) > Number(operand));
+                                    break;
+                                case '#gte':
+                                    res = (Number(values[key]) >= Number(operand));
+                                    break;
+                                case '#lt':
+                                    res = (Number(values[key]) < Number(operand));
+                                    break;
+                                case '#lte':
+                                    res = (Number(values[key]) <= Number(operand));
+                                    break;
+                                case '#in':
+                                    res = $.inArray(values[key], operand)!=-1;
+                                    break;
+                                case '#nin':
+                                    res = $.inArray(values[key], operand)==-1;
+                                    break;
+                                case '#ne':
+                                    res = (values[key] != operand);
+                                    break;                                
+                            }
+                            if (!res){
+                                return false;
+                            }
+                        });
+                        break;
                     }
                 } else {
                     // handle logical operators
