@@ -187,6 +187,20 @@ angular.module('mobyle.services').factory('Service', function ($resource) {
             }
         }
     });
+    resource.prototype.inputsByName = function(){
+        var inputsByName = {};
+        var explore = function(para){
+            if(para.children){
+                angular.forEach(para.children, function(childPara, index){
+                    explore(childPara);
+                });
+            }else{
+                inputsByName[para.name]=para;
+            }
+        }
+        explore(this.inputs);
+        return inputsByName;
+    }
     return resource;
 });
 
@@ -321,15 +335,21 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                 fd.append('project', data.project._id.$oid);
                 // service
                 fd.append('service', data.service._id.$oid);
+                var inputsByName = data.service.inputsByName();
                 // job input parameters
                 angular.forEach(data.inputs, function (value, key) {
                     // if value==null then it is not set
                     if(value!=null){
-                        var extractedParam = (value &&
-                            value.charAt &&
-                            value.charAt(0) == '@') ?
-                            $parse(value.substr(1))(data) : value;
-                        fd.append('input:'+key, extractedParam);
+                        // if value == default value do not send the value
+                        if((inputsByName[key].type.default==null) ||
+                           (inputsByName[key].type.default &&
+                           value!=inputsByName[key].type.default)){
+                            var extractedParam = (value &&
+                                                  value.charAt &&
+                                                  value.charAt(0) == '@') ?
+                                $parse(value.substr(1))(data) : value;
+                            fd.append('input:'+key, extractedParam);
+                        }
                     }
                 })
                 return fd;
