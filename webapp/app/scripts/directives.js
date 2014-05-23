@@ -70,13 +70,60 @@
         }
     });
 
+    angular.module('mobyle.directives').directive('mboutput', [function () {
+        return {
+            restrict: 'E',
+            replace: true,
+            transclude: true,
+            templateUrl: 'views/mboutput.html',
+            scope: {
+                para: '=',
+                job: '='
+            },
+            link: function (scope, element, attrs) {
+                // switch the type of the input according to the parameter type...
+                // work in progress...
+                switch (scope.para.type._type) {
+                    case "StringType":
+                    case "FloatType":
+                    case "IntegerType":
+                    case "BooleanType":
+                        scope.displayType = "text";
+                        if (scope.para.type.options && scope.para.type.options.length > 0) {
+                            angular.forEach(scope.para.type.options, function(option, index){
+                                if(option.value==scope.job.inputs[scope.para.name].value){
+                                    scope.text = option.label;
+                                }
+                            });
+                        }else{
+                            scope.text = scope.job.inputs[scope.para.name].value;
+                        }
+                        break;
+                    case "FormattedType":
+                        //text formats
+                        scope.displayType = "file";
+                        break;
+                    default:
+                        scope.untranslated = true;
+                }
+                var infoEl = element.find('[data-content]');
+                infoEl.bind('mouseover', function () {
+                    infoEl.popover('show');
+                });
+                infoEl.bind('mouseout', function () {
+                    infoEl.popover('hide');
+                });
+            }
+        }
+    }]);
+
+    
     angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory', function (evalBoolFactory) {
         return {
             restrict: 'E',
             replace: true,
             transclude: true,
             templateUrl: 'views/mbinput.html',
-            //template: '<input ng-show="itype" type="{{itype}}" name="{{para.name}}" value="" placeholder="{{para}}"/>',
             scope: {
                 para: '=',
                 job: '='

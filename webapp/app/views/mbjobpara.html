@@ -1,7 +1,7 @@
 <div id="{{para.name}}" class="row" ng-if="mbset(para, job.inputs)">
     <ng-switch on="para.children">
-        <div ng-switch-when="undefined" class="row"  ng-if="job.inputs[para.name]['_id']">
-            <iframe class="col-md-12 container well" ng-if="job.inputs[para.name]" ng-src="{{'/api/projectdata/' + job.inputs[para.name]['_id']['$oid'] +'/raw'}}"></iframe>
+        <div ng-switch-when="undefined" class="row">
+            <mboutput para="para" job="job"></mboutput>
         </div>
         <div class="panel-group" ng-switch-default>
             <div class="panel panel-default">
