@@ -9,7 +9,7 @@
             </div>
             <div id="fieldset-contents-results" class="panel-body collapse in">
                 <div ng-if="mbset(job.service.outputs, job.outputs)" class="col-md-12" ng-repeat="(name, mbjobpara) in job.service.outputs.children">
-                    <span recursive mbjobpara="mbjobpara"></span>
+                    <span recursive mbjobpara para="mbjobpara" job="job"></span>
                 </div>
                 <div ng-if="!mbset(job.service.outputs, job.outputs)" class="col-md-12 bg-warning">
                     No results (yet...)
@@ -26,7 +26,7 @@
             </div>
             <div id="fieldset-contents-inputs" class="panel-body collapse in">
                 <div ng-if="mbset(job.service.inputs, job.inputs)" class="col-md-12" ng-repeat="(name, mbjobpara) in job.service.inputs.children">
-                    <span recursive mbjobpara="mbjobpara"></span>
+                    <span recursive mbjobpara para="mbjobpara" job="job"></span>
                 </div>
                 <div ng-if="!mbset(job.service.inputs, job.inputs)" class="col-md-12 bg-warning">
                     No parameters provided.

@@ -36,7 +36,11 @@ angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
             return false;
         }
         if (!para.children) {
-            return valuesMap[para.name];
+            if(valuesMap[para.name] && (valuesMap[para.name].data || valuesMap[para.name].value)){
+                return true;
+            }else{
+                return false;
+            }
         } else {
             return para.children.filter(set).length > 0;
         }

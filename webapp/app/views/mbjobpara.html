@@ -1,19 +1,19 @@
-<div id="{{mbjobpara.name}}" class="row" ng-if="mbset(mbjobpara, job.inputs)">
-    <ng-switch on="mbjobpara.children">
-        <div ng-switch-when="undefined" class="row">
-            <iframe class="col-md-12 container well" ng-if="job.inputs[mbjobpara.name]" ng-src="{{'/api/projectdata/' + job.inputs[mbjobpara.name]['_id']['$oid'] +'/raw'}}"></iframe>
+<div id="{{para.name}}" class="row" ng-if="mbset(para, job.inputs)">{{mbset(para, job.inputs)}}
+    <ng-switch on="para.children">
+        <div ng-switch-when="undefined" class="row"  ng-if="job.inputs[para.name]['_id']">
+            <iframe class="col-md-12 container well" ng-if="job.inputs[para.name]" ng-src="{{'/api/projectdata/' + job.inputs[para.name]['_id']['$oid'] +'/raw'}}"></iframe>
         </div>
         <div class="panel-group" ng-switch-default>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel_title"><a data-toggle="collapse"
-                                                  data-target="#fieldset-contents-{{mbjobpara.name}}">{{mbjobpara.prompt
-                        || mbjobpara.name}}</a><h4>
+                                                  data-target="#fieldset-contents-{{para.name}}">{{para.prompt
+                        || para.name}}</a><h4>
                 </div>
-                <div id="fieldset-contents-{{mbjobpara.name}}" class="panel-collapse collapse in">
+                <div id="fieldset-contents-{{para.name}}" class="panel-collapse collapse in">
                     <div class="panel-body">
-                        <div ng-repeat="(name, mbjobpara) in mbjobpara.children">
-                            <recursive><span class="col-md-offset-1" mbjobpara="mbjobpara"></span></recursive>
+                        <div ng-repeat="(name, para) in para.children">
+                            <recursive><span class="col-md-offset-1" mbjobpara para="para"  job="job"></span></recursive>
                         </div>
                     </div>
                 </div>

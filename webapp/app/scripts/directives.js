@@ -213,20 +213,26 @@
                     showAdvanced: '='
                 },
                 link: function (scope) {
-                    scope.mbsimple = mbsimple
+                    scope.mbsimple = mbsimple;
                 },
                 templateUrl: 'views/mbformpara.html'
             };
 }]);
 
 
-    angular.module('mobyle.directives').directive("mbjobpara", [
-
-    function () {
+    angular.module('mobyle.directives').directive("mbjobpara", ['mbset',
+        function (mbset) {
             return {
+                scope: {
+                    para: '=',
+                    job: '=',
+                },
+                link: function(scope){
+                    scope.mbset = mbset;
+                },
                 templateUrl: 'views/mbjobpara.html'
             };
-}]);
+        }]);
 
     angular.module('mobyle.directives').directive("servicesClassification", [
 
