@@ -323,11 +323,14 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                 fd.append('service', data.service._id.$oid);
                 // job input parameters
                 angular.forEach(data.inputs, function (value, key) {
-                    var extractedParam = value &&
-                        value.charAt &&
-                        value.charAt(0) == '@' ?
-                        $parse(value.substr(1))(data) : value;
-                    fd.append('input:'+key, extractedParam);
+                    // if value==null then it is not set
+                    if(value!=null){
+                        var extractedParam = (value &&
+                            value.charAt &&
+                            value.charAt(0) == '@') ?
+                            $parse(value.substr(1))(data) : value;
+                        fd.append('input:'+key, extractedParam);
+                    }
                 })
                 return fd;
             },
