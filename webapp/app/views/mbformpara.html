@@ -1,20 +1,21 @@
-<div id="{{mbformpara.name}}" class="row"
-     ng-show="!mbformpara.ishidden && (show_advanced || mbsimple(mbformpara))">
-    <ng-switch on="mbformpara.children">
+<div id="{{para.name}}" class="row"
+     ng-show="!para.ishidden && (showAdvanced || mbsimple(para))"
+     if-precond>
+    <ng-switch on="para.children">
         <div ng-switch-when="undefined">
-            <mbinput para="mbformpara" job="job">
+            <mbinput para="para" job="job">
         </div>
         <div class="panel-group" ng-switch-default>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel_title"><a data-toggle="collapse"
-                                                  data-target="#fieldset-contents-{{mbformpara.name}}">{{mbformpara.prompt
-                        || mbformpara.name}}</a><h4>
+                                                  data-target="#fieldset-contents-{{para.name}}">{{para.prompt
+                        || para.name}}</a><h4>
                 </div>
-                <div id="fieldset-contents-{{mbformpara.name}}" class="panel-collapse collapse in">
+                <div id="fieldset-contents-{{para.name}}" class="panel-collapse collapse in">
                     <div class="panel-body">
-                        <div ng-repeat="(name, mbformpara) in mbformpara.children">
-                            <recursive><span class="col-md-offset-1" mbformpara="mbformpara"></span></recursive>
+                        <div ng-repeat="(name, para) in para.children">
+                            <recursive><span class="col-md-offset-1" mbformpara para="para" job="job" show-advanced="showAdvanced"></span></recursive>
                         </div>
                     </div>
                 </div>

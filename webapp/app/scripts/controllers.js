@@ -300,7 +300,7 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
             $scope.job.outputs = {};
         }
         $scope.mbsimple = mbsimple;
-        $scope.show_advanced = mbsimple($scope.service.inputs);
+        $scope.showAdvanced = mbsimple($scope.service.inputs);
         $scope.submit = function(){
             $scope.job.$save().then(function () {
                 $location.path('/jobs/'+$scope.job._id.$oid);
@@ -446,7 +446,7 @@ angular.module('mobyle.controllers').controller('JobDetailCtrl',
     function ($scope, job, mbset) {
         $scope.job = job;
         $scope.mbset = mbset;
-        $scope.show_advanced = true;
+        $scope.showAdvanced = true;
     });
 
 

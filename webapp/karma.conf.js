@@ -17,7 +17,7 @@ module.exports = function(config) {
       'bower_components/ng-grid/build/ng-grid.min.js',
       'bower_components/angular-ui-tinymce/src/tinymce.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
-      'bower_components/angular-ui/build/angular-ui.js',
+      'bower_components/angular-ui-utils/ui-utils.js',
       'scripts/*.js',
       'views/*.html',
       '../test/spec/*.js'
@@ -38,7 +38,10 @@ module.exports = function(config) {
         'karma-junit-reporter',
         'karma-jasmine',
         'karma-phantomjs-launcher',
-        'karma-ng-html2js-preprocessor'
+        'karma-firefox-launcher',
+        'karma-chrome-launcher',
+        'karma-ng-html2js-preprocessor',
+        'karma-coverage'
     ]
 
   });

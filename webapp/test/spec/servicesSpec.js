@@ -182,5 +182,102 @@ describe('service', function() {
             $httpBackend.verifyNoOutstandingRequest();
         });
     });
+    
+    describe('evalBoolFactory', function() {
+        var values = {
+            'a':true,
+            'b':false,
+            'c':1,
+            'd':0
+            },
+            evalFn;
+        beforeEach(inject(function(evalBoolFactory) {
+            evalFn = evalBoolFactory(values);
+        }));
+        it('should compute a==true = true', inject(function(mbsimple) {
+            expect(evalFn({'a':true})).toEqual(true);
+        }));
+        it('should compute a==false = false', inject(function(mbsimple) {
+            expect(evalFn({'a':false})).toEqual(false);
+        }));
+        it('should compute b==false = true', inject(function(mbsimple) {
+            expect(evalFn({'b':false})).toEqual(true);
+        }));
+        it('should compute b==true = false', inject(function(mbsimple) {
+            expect(evalFn({'b':true})).toEqual(false);
+        }));
+        it('should compute (a==true and b==false) = true', inject(function(mbsimple) {
+            expect(evalFn({'#and':[{'a':true}, {'b':false}]})).toEqual(true);
+        }));
+        it('should compute (a==true and b==true) = false', inject(function(mbsimple) {
+            expect(evalFn({'#and':[{'a':true}, {'b':true}]})).toEqual(false);
+        }));
+        it('should compute implicit and (a==true and b==true) = false', inject(function(mbsimple) {
+            expect(evalFn({'a':true, 'b':true})).toEqual(false);
+        }));
+        it('should compute implicit and (a==false and b==false) = false', inject(function(mbsimple) {
+            expect(evalFn({'a':false, 'b':false})).toEqual(false);
+        }));
+        it('should compute (a==true or b==true) = true', inject(function(mbsimple) {
+            expect(evalFn({'#or':[{'a':true}, {'b':true}]})).toEqual(true);
+        }));
+        it('should compute !(a==false) = true', inject(function(mbsimple) {
+            expect(evalFn({'#not':{'a':false}})).toEqual(true);
+        }));
+        it('should compute !(a==true) = false', inject(function(mbsimple) {
+            expect(evalFn({'#not':{'a':true}})).toEqual(false);
+        }));
+        it('should compute (a==false nor b==true) = true', inject(function(mbsimple) {
+            expect(evalFn({'#nor':[{'a':false}, {'b':true}]})).toEqual(true);
+        }));
+        it('should compute (a==true nor b==true) = false', inject(function(mbsimple) {
+            expect(evalFn({'#nor':[{'a':true}, {'b':true}]})).toEqual(false);
+        }));
+        it('should compute (a==true nor b==false) = false', inject(function(mbsimple) {
+            expect(evalFn({'#nor':[{'a':true}, {'b':false}]})).toEqual(false);
+        }));
+        it('should compute (c==1) = true', inject(function(mbsimple) {
+            expect(evalFn({'c':1})).toEqual(true);
+        }));
+        it('should compute (c>=1) = true', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#gte':1}})).toEqual(true);
+        }));
+        it('should compute (c>1) = false', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#gt':1}})).toEqual(false);
+        }));
+        it('should compute (c<=1) = true', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#lte':1}})).toEqual(true);
+        }));
+        it('should compute (c<1) = false', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#lt':1}})).toEqual(false);
+        }));
+        it('should compute (c in [0, 1]) = true', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#in':[0, 1]}})).toEqual(true);
+        }));
+        it('should compute (c in [-1, 0]) = false', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#in':[-1, 0]}})).toEqual(false);
+        }));
+        it('should compute !(c in [0, 1]) = false', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#nin':[0, 1]}})).toEqual(false);
+        }));
+        it('should compute !(c in [-1, 0]) = true', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#nin':[-1, 0]}})).toEqual(true);
+        }));
+        it('should compute (c != 0) = true', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#ne':0}})).toEqual(true);
+        }));
+        it('should compute (c != 1) = false', inject(function(mbsimple) {
+            expect(evalFn({'c':{'#ne':1}})).toEqual(false);
+        }));
+        it('should compute (c (!= 2 and > 0) = true', inject(function(mbsimple) {
+            expect(evalFn({'c': {'#ne': 2, '#gt': 0}})).toEqual(true);
+        }));
+        it('should compute (c (!= 1 and > 0) = false', inject(function(mbsimple) {
+            expect(evalFn({'c': {'#ne': 1, '#gt': 0}})).toEqual(false);
+        }));
+        it('should compute (c (!= 30 and > 2) = false', inject(function(mbsimple) {
+            expect(evalFn({'c': {'#ne': 30, '#gt': 2}})).toEqual(false);
+        }));
+    });
 
 });

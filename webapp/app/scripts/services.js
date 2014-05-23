@@ -36,7 +36,11 @@ angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
             return false;
         }
         if (!para.children) {
-            return valuesMap[para.name];
+            if(valuesMap[para.name] && (valuesMap[para.name].data || valuesMap[para.name].value)){
+                return true;
+            }else{
+                return false;
+            }
         } else {
             return para.children.filter(set).length > 0;
         }
@@ -183,6 +187,20 @@ angular.module('mobyle.services').factory('Service', function ($resource) {
             }
         }
     });
+    resource.prototype.inputsByName = function(){
+        var inputsByName = {};
+        var explore = function(para){
+            if(para.children){
+                angular.forEach(para.children, function(childPara, index){
+                    explore(childPara);
+                });
+            }else{
+                inputsByName[para.name]=para;
+            }
+        }
+        explore(this.inputs);
+        return inputsByName;
+    }
     return resource;
 });
 
@@ -317,13 +335,22 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                 fd.append('project', data.project._id.$oid);
                 // service
                 fd.append('service', data.service._id.$oid);
+                var inputsByName = data.service.inputsByName();
                 // job input parameters
                 angular.forEach(data.inputs, function (value, key) {
-                    var extractedParam = value &&
-                        value.charAt &&
-                        value.charAt(0) == '@' ?
-                        $parse(value.substr(1))(data) : value;
-                    fd.append('input:'+key, extractedParam);
+                    // if value==null then it is not set
+                    if(value!=null){
+                        // if value == default value do not send the value
+                        if((inputsByName[key].type.default==null) ||
+                           (inputsByName[key].type.default &&
+                           value!=inputsByName[key].type.default)){
+                            var extractedParam = (value &&
+                                                  value.charAt &&
+                                                  value.charAt(0) == '@') ?
+                                $parse(value.substr(1))(data) : value;
+                            fd.append('input:'+key, extractedParam);
+                        }
+                    }
                 })
                 return fd;
             },
@@ -562,4 +589,104 @@ angular.module('mobyle.services').factory('Notification', function (mfResource, 
             }
     };
     */
+});
+
+angular.module('mobyle.services').value('evalBoolFactory', function (values) {
+    // computes a boolean expression comprised of a combination of
+    // comparison and logical operators over a set of values
+    var evalBoolFactory = function (expr) {
+        if (!expr) {
+            return true;
+        }
+        var res = true;
+        if(typeof expr == 'string'){
+            // expression is a variable name, test if it is truthy
+            res = Boolean(values[expr]);
+        }else{
+            $.each(expr, function (key, value) {
+                if (values.hasOwnProperty(key)) {
+                    switch (typeof value) {
+                    case 'number':
+                    case 'string':
+                    case 'boolean':
+                    case 'undefined':
+                        if (values[key] != value) {
+                            res = false;
+                        } else {
+                            res = true;
+                        }
+                        break;
+                    case 'object':
+                        // handle comparison operators
+                        $.each(value, function(operator, operand){
+                            switch (operator) {
+                                case '#gt':
+                                    res = (Number(values[key]) > Number(operand));
+                                    break;
+                                case '#gte':
+                                    res = (Number(values[key]) >= Number(operand));
+                                    break;
+                                case '#lt':
+                                    res = (Number(values[key]) < Number(operand));
+                                    break;
+                                case '#lte':
+                                    res = (Number(values[key]) <= Number(operand));
+                                    break;
+                                case '#in':
+                                    res = $.inArray(values[key], operand)!=-1;
+                                    break;
+                                case '#nin':
+                                    res = $.inArray(values[key], operand)==-1;
+                                    break;
+                                case '#ne':
+                                    res = (values[key] != operand);
+                                    break;                                
+                            }
+                            if (!res){
+                                return false;
+                            }
+                        });
+                        break;
+                    }
+                } else {
+                    // handle logical operators
+                    switch (key) {
+                    case '#or':
+                        res = false;
+                        $.each(value, function (index, innerValue) {
+                            if (evalBoolFactory(innerValue)) {
+                                res = true;
+                                return false;
+                            }
+                        });
+                        break;
+                    case '#and':
+                        res = true;
+                        $.each(value, function (index, innerValue) {
+                            if (!evalBoolFactory(innerValue)) {
+                                res = false;
+                                return false;
+                            }
+                        });
+                        break;
+                    case '#not':
+                        res = !evalBoolFactory(value);
+                        break;
+                    case '#nor':
+                        res = true;
+                        $.each(value, function (index, innerValue) {
+                            if (evalBoolFactory(innerValue)) {
+                                res = false;
+                                return false;
+                            }
+                        });
+                        break;
+                    }
+                }
+                return res;
+            });
+        }
+        return res;
+    }
+    return evalBoolFactory;
 });
