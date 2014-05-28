@@ -80,6 +80,18 @@
                         </li>
                     </ul>
                 </li>
+                <li ng-show="userLogged()">                    
+                    <a href="#/jobs">
+                        <i class="glyphicon glyphicon-tasks"></i>
+                        Jobs
+                    </a>
+                </li>
+                <li ng-show="userLogged()">                    
+                    <a href="#/data">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Data
+                    </a>
+                </li>
                 <li class="dropdown" ng-show="userLogged()">
                     <a data-toggle="dropdown">{{User}}</a>
                     <ul class="dropdown-menu">
