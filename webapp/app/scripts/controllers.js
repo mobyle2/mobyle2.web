@@ -597,6 +597,115 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
         $scope.update();
     });
 
+
+angular.module('mobyle.controllers').controller('DatasCtrl',
+    function ($scope, $log, $modal, $routeParams, $window, CurrentProject, ProjectData, $templateCache) {
+        $scope.project = CurrentProject.get();
+        $scope.update = function () {
+            $scope.projectData = ProjectData.list_by_project({
+                'project_id': $scope.project['_id']['$oid']
+            });
+        }
+        $scope.projectDataGridOptions = {
+            data: 'projectData',
+            enableRowSelection: false,
+            columnDefs: [{
+                    field: 'name',
+                    displayName: 'Name',
+                    width: "*"
+            },
+                {
+                    field: 'description',
+                    displayName: 'Description',
+                    width: "**"
+            },
+                {
+                    field: 'tags',
+                    displayName: 'Tags',
+                    cellTemplate: $templateCache.get('projectDataGrid_TagCell.html'),
+                    width: "*"
+            },
+                {
+                    field: 'data.size',
+                    displayName: 'Size',
+                    cellTemplate: $templateCache.get('projectDataGrid_DataSizeCell.html'),
+                    width: "*"
+            },
+                {
+                    field: 'data.type',
+                    displayName: 'Type (format)',
+                    width: "*****",
+                    cellTemplate: $templateCache.get('projectDataGrid_DataTypeCell.html')
+                }
+                    ]
+        }
+
+        $scope.viewData = function (data) {
+            $window.open('/api/projectdata/' + data['_id']['$oid'] + '/raw');
+        }
+
+        $scope.downloadData = function (data) {
+            $window.open('/api/projectdata/' + data['_id']['$oid'] + '/dl');
+        }
+
+        $scope.deleteData = function (data) {
+            data.$delete().then(function () {
+                $scope.projectData.splice($scope.projectData.indexOf(data), 1);
+            }, function (errorResponse) {
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: errorResponse.data.detail
+                });
+            });
+        }
+
+        $scope.addProjectData = function (data, project) {
+            var modalInstance = $modal.open({
+                templateUrl: 'views/dataEdit.html',
+                controller: 'DataEditCtrl',
+                resolve: {
+                    data: function () {
+                        return data;
+                    },
+                    project: function () {
+                        return project;
+                    }
+                }
+            });
+            modalInstance.result.then(function (selectedItem) {
+                if (data) {
+                    data = selectedItem;
+                } else {
+                    $scope.projectData.push(selectedItem);
+                }
+            });
+        }
+
+        $scope.editProjectData = function (data, project) {
+            var modalInstance = $modal.open({
+                templateUrl: 'views/dataEdit.html',
+                controller: 'DataEditCtrl',
+                resolve: {
+                    data: function () {
+                        return data;
+                    },
+                    project: function () {
+                        return project;
+                    }
+                }
+            });
+            modalInstance.result.then(function (selectedItem) {
+                if (data) {
+                    data = selectedItem;
+                } else {
+                    $scope.projectData.push(selectedItem);
+                }
+            });
+        }
+
+        $scope.update();
+    });
+
 angular.module('mobyle.controllers').controller('DataEditCtrl',
     function ($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project, ServiceTypeTermRegistry) {
         // new project creation form
