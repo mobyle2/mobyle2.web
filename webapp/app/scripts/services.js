@@ -365,6 +365,14 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
             item._id = data._id;
         });
     }
+    
+    jobResource.prototype.userName = function(){
+        if (this.name){
+            return this.name;
+        }else{
+            return this.service.public_name;
+        }
+    }
 
     return jobResource;
 });
