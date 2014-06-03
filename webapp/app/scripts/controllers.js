@@ -481,6 +481,7 @@ angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
         };
     });
 
+/*
 angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
     function ($scope, $log, $modal, $routeParams, $window, Project, ProjectData, $templateCache) {
         $scope.update = function () {
@@ -596,14 +597,16 @@ angular.module('mobyle.controllers').controller('ProjectDetailCtrl',
 
         $scope.update();
     });
-
+*/
 
 angular.module('mobyle.controllers').controller('DatasCtrl',
-    function ($scope, $log, $modal, $routeParams, $window, CurrentProject, ProjectData, $templateCache) {
+    function ($scope, $log, $modal, $routeParams, $window, CurrentProject, ProjectData, $templateCache) {        
         $scope.project = CurrentProject.get();
         $scope.update = function () {
-            $scope.projectData = ProjectData.list_by_project({
-                'project_id': $scope.project['_id']['$oid']
+            $scope.project.$promise.then(function(){
+                $scope.projectData = ProjectData.list_by_project({
+                    'project_id': $scope.project['_id']['$oid']
+                });
             });
         }
         $scope.projectDataGridOptions = {
@@ -704,6 +707,10 @@ angular.module('mobyle.controllers').controller('DatasCtrl',
         }
 
         $scope.update();
+        $scope.$on('CurrentProject.update', function (event, currentProject) {
+            $scope.project = currentProject;
+            $scope.update();
+        });
     });
 
 angular.module('mobyle.controllers').controller('DataEditCtrl',
