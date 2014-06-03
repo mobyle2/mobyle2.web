@@ -63,7 +63,7 @@
                 <li class="dropdown" ng-show="userLogged()" ng-controller="ProjectsCtrl">
 
                     <a data-toggle="dropdown" class="dropdown" title="click here to switch to another project">
-                        <i class="glyphicon glyphicon-folder-open"></i>{{"&nbsp;&nbsp;" +(currentProject.name || "no project selected")}}</a>
+                        <i class="glyphicon glyphicon-folder-open"></i>{{"&nbsp;&nbsp;" +(currentProject.name || "no project selected")}} <span class="caret"></span></a>
                     <ul class="dropdown-menu" ng-repeat="p in projects">
                         <li ng-repeat="p in projects">
                             <a ng-click="setCurrentProjectId(p._id.$oid)" />
@@ -92,21 +92,11 @@
                         Data
                     </a>
                 </li>
-                <li class="dropdown" ng-show="userLogged()">
-                    <a data-toggle="dropdown">{{User}}</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#/my">Settings</a>
-                        </li>
-                        <li id="usernavbar">
-                            <a href="#/dashboard" ng-show="isAdmin()">Dashboard</a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="dropdown" ng-show="userLogged()" ng-controller="NotificationCtrl">
                     <a data-toggle="dropdown">
                         <i class="glyphicon glyphicon-bell"></i>
                         {{notifications.length}}
+                        <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#/notificationcenter">Notification center</a></li>
@@ -116,11 +106,22 @@
                         </li>
                     </ul>
                 </li>
-                <li ng-show="userLogged()">                    
-                    <a href="#/logout" ng-click="signOut()">
-                        <i class="glyphicon glyphicon-log-out"></i>
-                        Logout
-                    </a>
+                <li class="dropdown" ng-show="userLogged()">
+                    <a data-toggle="dropdown">{{User}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#/my">Settings</a>
+                        </li>
+                        <li id="usernavbar">
+                            <a href="#/dashboard" ng-show="isAdmin()">Dashboard</a>
+                        </li>
+                        <li >
+                            <a href="#/logout" ng-click="signOut()">
+                                <i class="glyphicon glyphicon-log-out"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
