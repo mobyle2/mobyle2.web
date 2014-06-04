@@ -407,10 +407,12 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
 
 angular.module('mobyle.controllers').controller('JobsCtrl',
     function ($scope, $log, $modal, $routeParams, Job, CurrentProject, $templateCache) {
+        $scope.project = CurrentProject.get();
         $scope.update = function () {
-            $log.info("querying jobs for project " + CurrentProject.get()._id.$oid + "...");
-            $scope.projectJobs = Job.list_by_project({
-                'project_id': CurrentProject.get()._id.$oid
+            $scope.project.$promise.then(function(){
+                $scope.projectJobs = Job.list_by_project({
+                    'project_id': CurrentProject.get()._id.$oid
+                });
             });
         }
         $scope.projectDataGridOptions = {
@@ -440,6 +442,10 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
         }
 
         $scope.update();
+        $scope.$on('CurrentProject.update', function (event, currentProject) {
+            $scope.project = currentProject;
+            $scope.update();
+        });
     });
 
 angular.module('mobyle.controllers').controller('JobDetailCtrl',
