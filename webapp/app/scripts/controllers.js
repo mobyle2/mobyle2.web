@@ -437,10 +437,20 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
                 {
                     field: 'status',
                     displayName: 'Status',
-                    width: "*"
+                    width: "*",
+                    cellTemplate: $templateCache.get('jobsGrid_StatusCell.html')
             }]
         }
-
+        $scope.deleteJob = function (job) {
+            job.$delete().then(function () {
+                $scope.projectJobs.splice($scope.projectJobs.indexOf(job), 1);
+            }, function (errorResponse) {
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: errorResponse.data.detail
+                });
+            });
+        }
         $scope.update();
         $scope.$on('CurrentProject.update', function (event, currentProject) {
             $scope.project = currentProject;

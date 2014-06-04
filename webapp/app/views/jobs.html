@@ -2,6 +2,18 @@
     <a href="#/jobs/{{row.getProperty('_id').$oid}}">{{row.getProperty('userName()')}}</a>
 </script>
 
+<script type="text/ng-template" id="jobsGrid_StatusCell.html">
+    <div class="ngCellText" ng-class="col.colIndex()">
+        <span ng-cell-text>{{row.entity.status}}
+        </span>
+        <span class="pull-right">
+            <button class="btn-xs" title="Remove" ng-click="deleteJob(row.entity)">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+        </span>
+    </div>
+</script>s
+
 <div>
     <button ng-click="update()" class="btn btn-default">
         <i class="glyphicon glyphicon-refresh"></i>
