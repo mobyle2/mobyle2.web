@@ -200,3 +200,12 @@ fieldset[readonly], fieldset[readonly] input, fieldset[readonly] select, fieldse
 #notif-msg-new>div {
     margin: 10px;
 }
+
+#mobyle-left-menu .nav > li > a{
+    /*
+       avoid additional vertical space
+       for left menu items
+    */
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
