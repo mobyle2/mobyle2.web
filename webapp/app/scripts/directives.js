@@ -24,29 +24,6 @@
             };
         }]);
 
-    angular.module('mobyle.directives').directive('toggle', function () {
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                toggleState: '=',
-                textWhenOn: '@',
-                textWhenOff: '@'
-            },
-            template: '<input type="button" value="{{text}}" ng-click="toggle()"/>',
-            controller: function ($scope) {
-                $scope.toggle = function () {
-                    $scope.toggleState = !$scope.toggleState;
-                    $scope.updateText();
-                }
-                $scope.updateText = function () {
-                    $scope.text = $scope.toggleState ? $scope.textWhenOn : $scope.textWhenOff;
-                }
-                $scope.updateText();
-            }
-        }
-    });
-
     angular.module('mobyle.directives').directive('hiddable', function () {
         return {
             restrict: 'A',
