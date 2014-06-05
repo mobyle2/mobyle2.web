@@ -341,7 +341,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                 // job input parameters
                 angular.forEach(data.inputs, function (value, key) {
                     // if value==null then it is not set
-                    if(value!=null){
+                    if(value!=null && inputsByName[key]){
                         // if value == default value do not send the value
                         if((inputsByName[key].type.default==null) ||
                            (inputsByName[key].type.default &&
