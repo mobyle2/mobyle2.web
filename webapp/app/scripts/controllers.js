@@ -295,8 +295,7 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
             if(sourceJob){
                 $scope.service = sourceJob.service;
                 $scope.job = sourceJob;
-                console.log($scope.job.inputs);
-                // FIXME null values for job inputs
+                $scope.job.project = CurrentProject.get();
             }else{
                 $scope.service = service;
                 $scope.job = new Job();

@@ -379,7 +379,10 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         // get a new Job for replay functionality
         var job = {};
         angular.copy(this,job);
+        delete job['_id'];
         var newInputs = {};
+        // FIXME? that's a dirty way for handling custom object methods...
+        job.service.inputsByName = serviceInputsByName;
         angular.forEach(job.inputs, function (value, key) {
             // if value==null then it is not set
             if(value!=null && value.type){
