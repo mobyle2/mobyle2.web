@@ -20,6 +20,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/app.css -->
+    <link rel="stylesheet" href="styles/offcanvas.css">
     <link rel="stylesheet" href="styles/app.css">
     <!-- endbuild -->
 </head>
@@ -35,7 +36,7 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">Mobyle2</a>
             </div>
-            <div class="navbar-collapse">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#/services" active-link="active">
@@ -129,21 +130,26 @@
         </div>
     </header>
     <div class="container">
-        <div class="row" style="padding-top: 40px;">
-            <div class="col-md-12">
-                <div class="col-md-10 col-md-offset-1">
-                    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+      <div class="row row-offcanvas row-offcanvas-left">
+        <div id="mobyle-left-menu" class="col-xs-6 col-sm-3 sidebar-offcanvas" role="navigation">
+          <div class="well sidebar-nav">
+            <services-classification></services-classification>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-10 col-md-offset-1">
+                        <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+                    </div>
                 </div>
             </div>
+          <div id="main-view" ng-view></div>
         </div>
-        <div class="row" style="padding-top: 40px;">
-            <div id="mobyle-left-menu" class="col-md-2" id="left-menu" hiddable>
-                <services-classification></services-classification>
-            </div>
-            <div class="col-md-10">
-                <div id="main-view" ng-view></div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!--[if lt IE 9]>
@@ -169,6 +175,7 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/offcanvas.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
     <script src="scripts/directives.js"></script>
