@@ -23,6 +23,9 @@ config(['$routeProvider',
                         deferred.reject('service ' + $route.current.params.name + ' not found!');
                     });
                     return deferred.promise;
+                },
+                sourceJob: function(){
+                    return null;
                 }
             }
         };
@@ -61,6 +64,26 @@ config(['$routeProvider',
             }
         };
         $routeProvider.when('/jobs/:jobId', jobDetailRoute);
+        var jobReplayRoute = {
+            templateUrl: 'views/serviceDetail.html',
+            controller: 'ServiceDetailCtrl',
+            resolve: {
+                sourceJob: function ($route, Job, $q) {
+                    var deferred = $q.defer();
+                    Job.get({id: $route.current.params.jobId
+                    }, function (successData) {
+                        deferred.resolve(successData.getReplayJob());
+                    }, function (errorData) {
+                        deferred.reject('job ' + $route.current.params.jobId + ' not found!');
+                    });
+                    return deferred.promise;
+                },
+                service: function(){
+                    return null;
+                }
+            }
+        };
+        $routeProvider.when('/jobs/:jobId/replay', jobReplayRoute);
         $routeProvider.when('/dataterms', {
             templateUrl: 'views/terms.html',
             controller: 'DataTermsCtrl'

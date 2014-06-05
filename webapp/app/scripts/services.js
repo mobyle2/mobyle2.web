@@ -176,18 +176,7 @@ angular.module('mobyle.services').factory('Classification', function ($resource)
     });
 });
 
-angular.module('mobyle.services').factory('Service', function ($resource) {
-    var resource = $resource('/services/:id', {}, {
-        get: {
-            method: 'get',
-            url: '/api/services/:id/:public_name/:version',
-            transformResponse: function (data) {
-                var json_data = JSON.parse(data);
-                return json_data[json_data.object];
-            }
-        }
-    });
-    resource.prototype.inputsByName = function(){
+angular.module('mobyle.services').value('serviceInputsByName', function(){
         var inputsByName = {};
         var explore = function(para){
             if(para.children){
@@ -200,7 +189,20 @@ angular.module('mobyle.services').factory('Service', function ($resource) {
         }
         explore(this.inputs);
         return inputsByName;
-    }
+    });
+
+angular.module('mobyle.services').factory('Service', function ($resource, serviceInputsByName) {
+    var resource = $resource('/services/:id', {}, {
+        get: {
+            method: 'get',
+            url: '/api/services/:id/:public_name/:version',
+            transformResponse: function (data) {
+                var json_data = JSON.parse(data);
+                return json_data[json_data.object];
+            }
+        }
+    });
+    resource.prototype.inputsByName = serviceInputsByName;
     return resource;
 });
 
@@ -302,7 +304,7 @@ angular.module('mobyle.services').factory('Project', function (mfResource) {
     return mfResource('Project', defaultParams);
 });
 
-angular.module('mobyle.services').factory('Job', function (mfResource, $http, $parse) {
+angular.module('mobyle.services').factory('Job', function (mfResource, $http, $parse, Service, serviceInputsByName) {
 
     var paramDefaults = {
         'id': '@_id.$oid',
@@ -373,7 +375,38 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
             return this.service.public_name;
         }
     }
-
+    jobResource.prototype.getReplayJob = function(){
+        // get a new Job for replay functionality
+        var job = {};
+        angular.copy(this,job);
+        var newInputs = {};
+        angular.forEach(job.inputs, function (value, key) {
+            // if value==null then it is not set
+            if(value!=null && value.type){
+                // if value == default value do not send the value
+                if((value.type.default==null) ||
+                   (value.type.default &&
+                   value.value!=value.type.default)){
+                    //FIXME only handling data "by value" for now, not files
+                    switch (value.type._type) {
+                        case 'IntegerType':
+                            newInputs[key] = parseInt(value.value,10);
+                            break;
+                        case 'FloatType':
+                            newInputs[key] = parseFloat(value.value);
+                            break;
+                        default:
+                            newInputs[key] = value.value;
+                            break;
+                    }
+                    
+                }
+            }
+        });
+        job.inputs = newInputs;
+        return job;
+    }
+    
     return jobResource;
 });
 

@@ -287,20 +287,27 @@ angular.module('mobyle.controllers').controller('ServicesCtrl',
     });
 
 angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
-    function ($scope, $window, $routeParams, $location, mbsimple, service, Job, CurrentProject) {
+    function ($scope, $window, $routeParams, $location, mbsimple, service, sourceJob, Job, CurrentProject) {
         var params = {
             public_name: $routeParams.name
         };
-        $scope.service = service;
         $scope.reset = function(){
-            $scope.job = new Job();
-            $scope.job.project = CurrentProject.get();
-            $scope.job.service = $scope.service;
-            $scope.job.inputs = {};
-            $scope.job.outputs = {};
+            if(sourceJob){
+                $scope.service = sourceJob.service;
+                $scope.job = sourceJob;
+                console.log($scope.job.inputs);
+                // FIXME null values for job inputs
+            }else{
+                $scope.service = service;
+                $scope.job = new Job();
+                $scope.job.project = CurrentProject.get();
+                $scope.job.service = $scope.service;
+                $scope.job.inputs = {};
+                $scope.job.outputs = {};
+            }
+            $scope.showAdvanced = mbsimple($scope.service.inputs);
         }
         $scope.mbsimple = mbsimple;
-        $scope.showAdvanced = mbsimple($scope.service.inputs);
         $scope.submit = function(){
             $scope.job.$save().then(function () {
                 $location.path('/jobs/'+$scope.job._id.$oid);
@@ -308,7 +315,6 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
             });
             // after job submission, what should we do? reset the entire job? just the generated _id?
             // navigate to job display?
-
         }
         $scope.reset();
     });

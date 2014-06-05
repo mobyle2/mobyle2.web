@@ -149,8 +149,10 @@
                     scope.untranslated = true;
                 }
                 // initialize default value for the parameter in the model
-                scope.job['inputs'][scope.para.name] = scope.para.type.
-                default;
+                if(!scope.job['inputs'][scope.para.name]){
+                    scope.job['inputs'][scope.para.name] = scope.para.type.
+                    default;
+                }
                 // custom validation functions
                 scope.uiValidateString = "";
                 if(scope.para.ctrl){
