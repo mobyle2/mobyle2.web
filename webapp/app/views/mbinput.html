@@ -1,8 +1,14 @@
 <ng-form name="innerForm" ng-show="!para.hidden && !para.command" if-precond class="form-group">
+    
     <label class="control-label col-md-6">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
         <i ng-show="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
            data-container="body"/>
     </label>
+        
+    <button type="button" class="btn pull-right" title="load from data bookmarks">
+        <i class="glyphicon glyphicon-file"></i>
+    </button>
+
     <div class="alert-info" ng-if="untranslated">no layout defined for type {{para.type}}</div>
     <div class="col-md-6" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-if="itype" >
         <input class="form-control" type="{{itype}}" step="{{step}}" name="mbinput" 
