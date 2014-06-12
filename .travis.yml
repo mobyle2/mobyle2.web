@@ -26,10 +26,10 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - npm install -g grunt-cli
-  - cd webapp
+  - cd mobyle/web/webapp
   - npm install
   - grunt karma
-  - cd ..
+  - cd ../../..
 
 # command to run tests
 script: nosetests --with-coverage --cover-package=mobyle
