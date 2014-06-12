@@ -540,8 +540,14 @@ angular.module('mobyle.controllers').controller('DatasCtrl',
                 {
                     field: 'data.type',
                     displayName: 'Type (format)',
-                    width: "*****",
+                    width: "**",
                     cellTemplate: $templateCache.get('projectDataGrid_DataTypeCell.html')
+                },
+                {
+                    field: 'test',
+                    displayName: 'Actions',
+                    width: "**",
+                    cellTemplate: $templateCache.get('projectDataGrid_ActionsCell.html')
                 }
                     ]
         }

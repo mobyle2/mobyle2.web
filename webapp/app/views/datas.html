@@ -16,6 +16,11 @@
             <type-text type="row.entity.data.type">
                 </typetext>
         </span>
+    </div>
+</script>
+
+<script type="text/ng-template" id="projectDataGrid_ActionsCell.html">
+    <div class="ngCellText" ng-class="col.colIndex()">
         <span class="pull-right">
             <button class="btn-xs" title="Edit properties" ng-click="$parent.editProjectData(row.entity)">
                 <i class="glyphicon glyphicon-pencil"></i>
@@ -38,6 +43,7 @@
         </span>
     </div>
 </script>
+
 
 <div class="row-fluid span11">
     <form>
