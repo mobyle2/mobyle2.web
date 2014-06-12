@@ -1,69 +1,97 @@
 <div class="row notif-home" ng-controller="NotificationCenterCtrl">
-<div class="col-md-2" id="notif-left-panel">
-    <div class="notif-action"><button ng-click="display('write')" class="btn btn-info btn-large btn-block" type="button"><i class="icon-pencil"></i> Send message</a></button></div>
-    <div class="notif-action"><button ng-click="display('unread')" class="btn btn-info btn-large btn-block" type="button"><i class="icon-flag"></i> View unread</a></button></div>
-    <div class="notif-action"><button ng-click="display('archive')" class="btn btn-info btn-large btn-block" type="button"><i class="icon-briefcase"></i> Archives</a></button></div>
-</div>
-<div class="col-md-10" id="notif-right-panel">
-    <div ng-switch on="show">
-        <div ng-switch-when="write">
-            <h2>Write a message</h2>
-            <form id="notif-msg-new">
-            <div class="control-group">
-            <div class="controls" ng-show="user.admin">
-            <label for="sendall">Send all (admin only)</label>
-            <input id="sendall" type="checkbox" ng-model="notification.sendall"></input>
-            </div>
-            </div>
-            <div class="control-group">
-            <div class="controls">
-            <select ng-model="notification.project" ng-options="p.name for p in projects"></select>
-            </div>
-            </div>
-            <div class="control-group">
-            <div class="controls">
-            <textarea ng-model="notification.message" required="true"></textarea>
-            </div>
-            </div>
-            <div class="control-group">
-            <div class="controls">
-            <button type="button" class="btn btn-primary btn-large" ng-click="send(notification)">Send</button>
-            </div>
-            </div>
-            </fieldset>
-            </form>
+    <div class="col-md-2" id="notif-left-panel">
+        <div class="notif-action">
+            <button ng-click="display('write')" class="btn btn-info btn-large btn-block" type="button">
+                <i class="icon-pencil"></i>Send message</a>
+            </button>
         </div>
-        <div ng-switch-when="unread">
-        <div class="notif-menu">
-            <div class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><div class="notif-menu-elt" ng-click="update()">Refresh</div></li>
-                    <li><div class="notif-menu-elt" ng-click="mark_all_read()">Mark all read</div></li>
-                    <li><div class="notif-menu-elt" ng-click="delete_all('unread')">Delete all</div></li>
-                </ul>
-            </div>
-            </div>
+        <div class="notif-action">
+            <button ng-click="display('unread')" class="btn btn-info btn-large btn-block" type="button">
+                <i class="icon-flag"></i>View unread</a>
+            </button>
         </div>
-        <div class="col-md-offset-1" ng-repeat="p in notifications | filter:{ read: false}">
-            <div class="notif-msg" ng-click="read(p)"><i class="icon-trash"></i> {{p.message}}</div>
-        </div>
-        </div>
-        <div ng-switch-when="archive">
-        <div class="notif-menu">
-            <div class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><div class="notif-menu-elt" ng-click="update()">Refresh</div></li>
-                    <li><div class="notif-menu-elt" ng-click="delete_all('archive')">Delete all</div></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="col-md-offset-1" ng-repeat="p in notifications | filter:{ read: true}">
-            <div class="notif-msg row"><div class="col-md-8">{{p.message}}</div><div><span class="glyphicon glyphicon-remove" ng-click="delete(p)"></span></div></div>
-        </div>
+        <div class="notif-action">
+            <button ng-click="display('archive')" class="btn btn-info btn-large btn-block" type="button">
+                <i class="icon-briefcase"></i>Archives</a>
+            </button>
         </div>
     </div>
-</div>
+    <div class="col-md-10" id="notif-right-panel">
+        <div ng-switch on="show">
+            <div ng-switch-when="write">
+                <h2>Write a message</h2>
+                <form id="notif-msg-new">
+                    <div class="control-group">
+                        <div class="controls" ng-show="user.admin">
+                            <label for="sendall">Send all (admin only)</label>
+                            <input id="sendall" type="checkbox" ng-model="notification.sendall"></input>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <select ng-model="notification.project" ng-options="p.name for p in projects"></select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <textarea ng-model="notification.message" required="true"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="button" class="btn btn-primary btn-large" ng-click="send(notification)">Send</button>
+                        </div>
+                    </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div ng-switch-when="unread">
+                <div class="notif-menu">
+                    <div class="navbar navbar-inverse" role="navigation">
+                        <div class="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <div class="notif-menu-elt" ng-click="update()">Refresh</div>
+                                </li>
+                                <li>
+                                    <div class="notif-menu-elt" ng-click="mark_all_read()">Mark all read</div>
+                                </li>
+                                <li>
+                                    <div class="notif-menu-elt" ng-click="delete_all('unread')">Delete all</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1" ng-repeat="p in notifications | filter:{ read: false}">
+                    <div class="notif-msg" ng-click="read(p)">
+                        <i class="icon-trash"></i>{{p.message}}</div>
+                </div>
+            </div>
+            <div ng-switch-when="archive">
+                <div class="notif-menu">
+                    <div class="navbar navbar-inverse" role="navigation">
+                        <div class="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <div class="notif-menu-elt" ng-click="update()">Refresh</div>
+                                </li>
+                                <li>
+                                    <div class="notif-menu-elt" ng-click="delete_all('archive')">Delete all</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1" ng-repeat="p in notifications | filter:{ read: true}">
+                    <div class="notif-msg row">
+                        <div class="col-md-8">{{p.message}}</div>
+                        <div>
+                            <span class="glyphicon glyphicon-remove" ng-click="delete(p)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
