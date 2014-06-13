@@ -98,8 +98,8 @@
     }]);
 
 
-    angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory',
-    function (evalBoolFactory) {
+    angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory','$modal',
+    function (evalBoolFactory, $modal) {
             return {
                 restrict: 'E',
                 replace: true,
@@ -151,6 +151,33 @@
                         break;
                     default:
                         scope.untranslated = true;
+                    }
+                    if(scope.textarea){
+                        scope.selectBookmark = function(){
+                            var modalInstance = $modal.open({
+                                templateUrl: 'views/dataSelect.html',
+/*
+                                controller: 'DataEditCtrl',
+                                resolve: {
+                                    data: function () {
+                                        return data;
+                                    },
+                                    project: function () {
+                                        return project;
+                                    }
+                                }
+*/
+                            });
+                            modalInstance.result.then(function (selectedItem) {
+/*
+                                if (data) {
+                                    data = selectedItem;
+                                } else {
+                                    $scope.projectData.push(selectedItem);
+                                }
+*/
+                            });
+                        }
                     }
                     // initialize default value for the parameter in the model
                     if (!scope.job.inputs[scope.para.name]) {
