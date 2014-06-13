@@ -1,0 +1,28 @@
+<!--
+<div class="col-md-10 col-md-offset-1">
+    <h2>{{filteredServices.length}} Services</h2>
+
+    <div>
+        Simple search: <input type="search" placeholder="search with 3 chars or more" class="search-query"
+                              ng-model="query">
+
+        <div class="btn-group" data-toggle="buttons-radio">
+            <button type="button" class="btn" ng-model="listDisplay" btn-radio="'list'"><i
+                    class="glyphicon glyphicon-align-justify"></i></button>
+            <button type="button" class="btn" ng-model="listDisplay" btn-radio="'grid'"><i class="glyphicon glyphicon-th"></i></button>
+        </div>
+    </div>
+    <div class="services {{listDisplay}}">
+        <div ng-repeat="s in filteredServices = (services | kwSearch:query:['name','description','title']:true | orderBy:'name')">
+            <div class="dt">
+                <a href="#/services/{{s.public_name || s._id.$oid}}/{{s.version}}"
+                   ng-bind-html="s.nameHl || s.name"/></a>
+            </div>
+            <div class="dd">
+                <span ng-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title"/>: </span>
+                <span ng-bind-html="s.descriptionHl || s.description"/>
+            </div>
+        </div>
+    </div>
+</div>
+--><div><div class="row form-group"><label class="control-label col-md-1">Simple search:</label><div class="col-md-2"><input type="search" placeholder="search with 3 chars or more" class="form-control" ng-model="query"></div></div><div class="services"><div ng-repeat="s in filteredServices = (services | kwSearch:query:['name','description','title']:true | orderBy:'name')" class="service"><div class="title"><a href="#/services/{{s.public_name || s._id.$oid}}/{{s.version}}" ng-bind-html="s.nameHl || s.name"></div><span ng-if="s.title.toUpperCase()!=s.name.toUpperCase()"><span ng-bind-html="s.titleHl || s.title">:</span> <span ng-bind-html="s.descriptionHl || s.description"></div></div></div>

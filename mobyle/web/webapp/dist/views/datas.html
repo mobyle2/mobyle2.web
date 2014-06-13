@@ -1,0 +1,31 @@
+<script type="text/ng-template" id="projectDataGrid_TagCell.html"><div class="ngCellText colt{{$index}}">
+        <span class="label" ng-repeat="l in row.getProperty(col.field)">{{l}}</span>
+    </div></script><script type="text/ng-template" id="projectDataGrid_DataSizeCell.html"><div class="ngCellText colt{{$index}}">
+        {{row.entity.data.size | humanSize}}
+    </div></script><script type="text/ng-template" id="projectDataGrid_DataTypeCell.html"><div class="ngCellText" ng-class="col.colIndex()">
+        <span ng-cell-text>
+            <type-text type="row.entity.data.type">
+                </typetext>
+        </span>
+    </div></script><script type="text/ng-template" id="projectDataGrid_ActionsCell.html"><div class="ngCellText" ng-class="col.colIndex()">
+        <span class="pull-right">
+            <button class="btn-xs" title="Edit properties" ng-click="$parent.editProjectData(row.entity)">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </button>
+            <button class="btn-xs" title="View" ng-click="viewData(row.entity)">
+                <i class="glyphicon glyphicon-eye-open"></i>
+            </button>
+            <button class="btn-xs" title="Download" ng-click="downloadData(row.entity)">
+                <i class="glyphicon glyphicon-arrow-down"></i>
+            </button>
+            <button class="btn-xs" title="Compatible tools">
+                <i class="glyphicon glyphicon-wrench"></i>
+            </button>
+            <button class="btn-xs" title="Compatible viewers">
+                <i class="glyphicon glyphicon-picture"></i>
+            </button>
+            <button class="btn-xs" title="Remove" ng-click="deleteData(row.entity)">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+        </span>
+    </div></script><div class="row-fluid span11"><form><button ng-click="update()" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i></button> <button ng-click="addProjectData(null, project)" class="btn btn-primary">New data</button><div class="mb-grid" ng-grid="projectDataGridOptions"></div></form></div>
