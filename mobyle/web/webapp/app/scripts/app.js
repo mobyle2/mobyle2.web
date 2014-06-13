@@ -3,8 +3,8 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'mobyle.controllers', 'ngSanitize', 'ngRoute', 'ui.utils', 'ui.tinymce', 'ui.bootstrap', 'ngGrid']).
-config(['$routeProvider',
-    function ($routeProvider) {
+config(['$routeProvider','$logProvider',
+    function ($routeProvider, $log) {
         $routeProvider.when('/services', {
             templateUrl: 'views/services.html',
             controller: 'ServicesCtrl'
@@ -20,6 +20,7 @@ config(['$routeProvider',
                     }, function (successData) {
                         deferred.resolve(successData);
                     }, function (errorData) {
+                        $log.error('service ' + $route.current.params.name + ' not found!', errorData);
                         deferred.reject('service ' + $route.current.params.name + ' not found!');
                     });
                     return deferred.promise;
@@ -57,6 +58,7 @@ config(['$routeProvider',
                     }, function (successData) {
                         deferred.resolve(successData);
                     }, function (errorData) {
+                        $log.error('job ' + $route.current.params.jobId + ' not found!', errorData);
                         deferred.reject('job ' + $route.current.params.jobId + ' not found!');
                     });
                     return deferred.promise;
@@ -74,6 +76,7 @@ config(['$routeProvider',
                     }, function (successData) {
                         deferred.resolve(successData.getReplayJob());
                     }, function (errorData) {
+                        $log.error('job ' + $route.current.params.jobId + ' not found!', errorData);
                         deferred.reject('job ' + $route.current.params.jobId + ' not found!');
                     });
                     return deferred.promise;

@@ -6,18 +6,18 @@ function preg_quote(str) {
     // +   improved by: Ates Goral (http://magnetiq.com)
     // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
     // +   bugfixed by: Onno Marsman
-    // *     example 1: preg_quote("$40");
+    // *     example 1: preg_quote('$40');
     // *     returns 1: '\$40'
-    // *     example 2: preg_quote("*RRRING* Hello?");
+    // *     example 2: preg_quote('*RRRING* Hello?');
     // *     returns 2: '\*RRRING\* Hello\?'
-    // *     example 3: preg_quote("\\.+*?[^]$(){}=!<>|:");
+    // *     example 3: preg_quote('\\.+*?[^]$(){}=!<>|:');
     // *     returns 3: '\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:'
 
-    return (str + '').replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:])/g, "\\$1");
+    return (str + '').replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!<\>\|\:])/g, '\\$1');
 }
 
 function highlight(data, search) {
-    return data.replace(new RegExp("(" + preg_quote(search) + ")", 'gi'), "<b>$1</b>");
+    return data.replace(new RegExp('(' + preg_quote(search) + ')', 'gi'), '<b>$1</b>');
 }
 
 /* Filters */
@@ -28,7 +28,9 @@ filter('kwSearch', function () {
     // in the properties
     return function (s, q, f, case_insensitive) {
         // cancel search if query string is shorter than 3 chars. long
-        if (!q || q.length < 3) return s;
+        if (!q || q.length < 3) {
+            return s;
+        }
         var out = []; // array of matching services
         for (var i = 0; i < s.length; i++) {
             var o = angular.copy(s[i]);
@@ -40,22 +42,26 @@ filter('kwSearch', function () {
                     } else {
                         o[f[j] + 'Hl'] = highlight(o[f[j]], q);
                     }
-                    o['found'] = true;
+                    o.found = true;
                 }
             }
-            if (o['found']) out.push(o);
+            if (o.found) {
+                out.push(o);
+            }
         }
         return out;
-    }
+    };
 });
 
 angular.module('mobyle.filters').filter('humanSize', function () {
     // humanSize displays a size in bytes by converting
     // into the most appropriate human-understandable unit
-    return function (bytes, index) {
-        if (bytes <= 0) return 0;
+    return function (bytes) {
+        if (bytes <= 0) {
+            return 0;
+        }
         var s = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'];
         var e = Math.floor(Math.log(bytes) / Math.log(1024));
-        return (bytes / Math.pow(1024, Math.floor(e))).toFixed(2) + " " + s[e];
-    }
+        return (bytes / Math.pow(1024, Math.floor(e))).toFixed(2) + ' ' + s[e];
+    };
 });

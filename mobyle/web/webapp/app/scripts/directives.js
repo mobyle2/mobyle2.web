@@ -370,34 +370,35 @@
                         var result = '';
                         var files = evt.target.files; // FileList object
                         var chunkSize = 20000;
-                        for (var i = 0, f; f = files[i]; i++) {
-                            var fileSize = f.size;
-                            var readBlob = function (file, offset) {
-                                var stop = offset + chunkSize - 1;
-                                if (stop > (fileSize - 1)) {
-                                    stop = fileSize - 1;
-                                }
-                                var reader = new FileReader();
-                                reader.onloadend = function (evt) {
-                                    if (evt.target.readyState === FileReader.DONE) { // DONE == 2
-                                        result += evt.target.result;
-                                        if (stop < fileSize - 1) {
-                                            offset = offset + chunkSize;
-                                            evt = null;
-                                            readBlob(file, offset);
-                                        } else {
-                                            $scope.$apply(
-                                                function () {
-                                                    $scope.ngModel.value = result;
-                                                    $scope.ngModel.name = file.name;
-                                                    $scope.ngModel.data.size = file.size;
-                                                });
-                                        }
+                        var readBlob = function (file, offset) {
+                            var stop = offset + chunkSize - 1;
+                            if (stop > (fileSize - 1)) {
+                                stop = fileSize - 1;
+                            }
+                            var reader = new FileReader();
+                            reader.onloadend = function(evt){
+                                if (evt.target.readyState === FileReader.DONE) { // DONE == 2
+                                    result += evt.target.result;
+                                    if (stop < fileSize - 1) {
+                                        offset = offset + chunkSize;
+                                        evt = null;
+                                        readBlob(file, offset);
+                                    } else {
+                                        $scope.$apply(
+                                            function () {
+                                                $scope.ngModel.value = result;
+                                                $scope.ngModel.name = file.name;
+                                                $scope.ngModel.data.size = file.size;
+                                            });
                                     }
-                                };
-                                var blob = file.slice(offset, stop + 1);
-                                reader.readAsBinaryString(blob);
+                                }
                             };
+                            var blob = file.slice(offset, stop + 1);
+                            reader.readAsBinaryString(blob);
+                        };
+                        for (var i = 0, f; i === files.length; i++) {
+                            f = files[i];
+                            var fileSize = f.size;
                             readBlob(f, 0);
                         }
                     };

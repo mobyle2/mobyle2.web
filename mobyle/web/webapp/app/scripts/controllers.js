@@ -54,7 +54,7 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
             $scope.notifications = Notification.query();
         };
 
-        $scope.send = function (notif) {
+        $scope.send = function () {
             if (!$scope.notification.sendall) {
                 $scope.notification.type = 1;
             } else {
@@ -369,8 +369,7 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
                     width: '***',
                     cellTemplate: $templateCache.get('projectsGrid_DescriptionCell.html')
             }
-        ]
-        };
+        ]};
 
         $scope.delete = function (p) {
             p.$delete().then(function () {

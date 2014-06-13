@@ -1,3 +1,4 @@
+/*global $:false */
 'use strict';
 
 /* Services */
@@ -53,9 +54,9 @@ angular.module('mobyle.services').factory('mfResource', function ($resource, $ht
         // default url template, used for everything *but* search
         var route = '/' + collectionName.toLowerCase() + 's/:id';
         // url template used for search/filter
-        var filterUrl = '/' + collectionName.toLowerCase() + "s?";
+        var filterUrl = '/' + collectionName.toLowerCase() + 's?';
         for (var key in paramDefaults) {
-            filterUrl += "Search" + collectionName + "[" + key + "]=:" + key + "&";
+            filterUrl += 'Search' + collectionName + '[' + key + ']=:' + key + '&';
         }
         // custom function to build request body
         var transformRequestFactory = function () {
@@ -63,7 +64,7 @@ angular.module('mobyle.services').factory('mfResource', function ($resource, $ht
                 var requestObject = {};
                 var serialize = function (prefix, data) {
                     if (data instanceof Array) {
-                        $.each(data, function (index, value) {
+                        $.each(data, function (index) {
                             serialize(prefix + '[' + index + ']', data[index]);
                         });
                     } else if (data instanceof Object) {
@@ -77,19 +78,19 @@ angular.module('mobyle.services').factory('mfResource', function ($resource, $ht
                             }
                         }
                     } else {
-                        if (data != null) {
+                        if (data !== null) {
                             requestObject[prefix] = data;
                         }
                     }
-                }
+                };
                 serialize(collectionName, data);
                 return $.param(requestObject);
-            }
-        }
+            };
+        };
         var transformResponse = function (data) {
             var json_data = JSON.parse(data);
             return json_data[json_data.object];
-        }
+        };
         var updateAction = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -162,7 +163,7 @@ angular.module('mobyle.services').factory('mfResource', function ($resource, $ht
         // define delete action that sends only the id of the object to be deleted
         resource.prototype.$delete = function () {
             return $http.delete('/' + collectionName.toLowerCase() + 's/' + this._id.$oid);
-        }
+        };
         return resource;
     }
     return MFResourceFactory;
@@ -180,13 +181,13 @@ angular.module('mobyle.services').value('serviceInputsByName', function(){
         var inputsByName = {};
         var explore = function(para){
             if(para.children){
-                angular.forEach(para.children, function(childPara, index){
+                angular.forEach(para.children, function(childPara){
                     explore(childPara);
                 });
             }else{
                 inputsByName[para.name]=para;
             }
-        }
+        };
         explore(this.inputs);
         return inputsByName;
     });
@@ -238,10 +239,10 @@ angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (S
         var formatTerms = [];
         var terms = [];
         angular.forEach(resp, function(item){
-            dataTermsById[item['term_id']] = item;
+            dataTermsById[item.term_id] = item;
             dataTerms.push(item);
             terms.push(item);
-            angular.forEach(item['format_terms'],
+            angular.forEach(item.format_terms,
                             function(formatTerm){
                                 if(!formatTermsById[formatTerm.term_id]){
                                     formatTermsById[formatTerm.term_id] = formatTerm;
@@ -284,7 +285,7 @@ angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (S
             // data and format terms in a list
             return termsP.promise;
         }
-    }
+    };
 });
 
 angular.module('mobyle.services').factory('User', function (mfResource) {
@@ -299,7 +300,7 @@ angular.module('mobyle.services').factory('Project', function (mfResource) {
         'owner': '@owner',
         'users': '@users',
         'id': '@_id.$oid'
-    }
+    };
 
     return mfResource('Project', defaultParams);
 });
@@ -311,9 +312,9 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         'status': '@status',
         'project': '@project._id.$oid',
         'service': '@service._id.$oid'
-    }
+    };
 
-    var jobResource = mfResource('Job', paramDefaults, {
+    var JobResource = mfResource('Job', paramDefaults, {
         list_by_project: {
             'method': 'GET',
             'url': '/api/project/:project_id/jobs',
@@ -325,12 +326,12 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         }
     });
 
-    jobResource.prototype.$create = function () {
+    JobResource.prototype.$create = function () {
         // use a custom method for create action because
         // we need to use FormData to upload files
         var item = this;
         return $http.post('/api/projectjobs', this, {
-            transformRequest: function (data, headersGetter) {
+            transformRequest: function (data) {
                 // use FormData to allow file uploads
                 var fd = new FormData();
                 // job project container
@@ -341,55 +342,56 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                 // job input parameters
                 angular.forEach(data.inputs, function (value, key) {
                     // if value==null then it is not set
-                    if(value!=null && inputsByName[key]){
+                    if(value!==null && inputsByName[key]){
                         // if value == default value do not send the value
-                        if((inputsByName[key].type.default==null) ||
+                        if((inputsByName[key].type.default===null) ||
                            (inputsByName[key].type.default &&
-                           value!=inputsByName[key].type.default)){
+                           value!==inputsByName[key].type.default)){
                             var extractedParam = (value &&
                                                   value.charAt &&
-                                                  value.charAt(0) == '@') ?
+                                                  value.charAt(0) === '@') ?
                                 $parse(value.substr(1))(data) : value;
                             fd.append('input:'+key, extractedParam);
                         }
                     }
-                })
+                });
                 return fd;
             },
-            transformResponse: function (data, header) {
-                var wrapped = new jobResource(angular.fromJson(data));
+            transformResponse: function (data) {
+                var wrapped = new JobResource(angular.fromJson(data));
                 return wrapped;
             },
             headers: {
                 'Content-Type': undefined
             }
-        }).success(function (data, status) {
+        }).success(function (data) {
             item._id = data._id;
         });
-    }
+    };
     
-    jobResource.prototype.userName = function(){
+    JobResource.prototype.userName = function(){
         if (this.name){
             return this.name;
         }else{
             return this.service.public_name;
         }
-    }
-    jobResource.prototype.getReplayJob = function(){
+    };
+    
+    JobResource.prototype.getReplayJob = function(){
         // get a new Job for replay functionality
         var job = {};
         angular.copy(this,job);
-        delete job['_id'];
+        delete job._id;
         var newInputs = {};
         // FIXME? that's a dirty way for handling custom object methods...
         job.service.inputsByName = serviceInputsByName;
         angular.forEach(job.inputs, function (value, key) {
             // if value==null then it is not set
-            if(value!=null && value.type){
+            if(value!==null && value.type){
                 // if value == default value do not send the value
-                if((value.type.default==null) ||
+                if((value.type.default===null) ||
                    (value.type.default &&
-                   value.value!=value.type.default)){
+                   value.value!==value.type.default)){
                     //FIXME only handling data "by value" for now, not files
                     switch (value.type._type) {
                         case 'IntegerType':
@@ -408,9 +410,9 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         });
         job.inputs = newInputs;
         return job;
-    }
+    };
     
-    return jobResource;
+    return JobResource;
 });
 
 
@@ -425,8 +427,9 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
         'value': '@value',
         'format_terms': '@data.type.format_terms',
         'data_terms': '@data.type.data_terms'
-    }
-    var projectDataResource = mfResource('ProjectData', paramDefaults, {
+    };
+    
+    var ProjectDataResource = mfResource('ProjectData', paramDefaults, {
         update: {
             'method': 'PUT',
             'url': '/api/projectdata/:id'
@@ -438,12 +441,12 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
         }
     });
 
-    projectDataResource.prototype.$create = function () {
+    ProjectDataResource.prototype.$create = function () {
         // use a custom method for create action because
         // we need to use FormData to upload files
         var item = this;
         return $http.post('/api/projectdata', this, {
-            transformRequest: function (data, headersGetter) {
+            transformRequest: function (data) {
                 // use FormData to allow file uploads
                 var fd = new FormData();
                 // fill the properties to send from paramDefaults
@@ -451,24 +454,24 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
                 angular.forEach(paramDefaults, function (value, key) {
                     var extractedParam = value &&
                         value.charAt &&
-                        value.charAt(0) == '@' ?
+                        value.charAt(0) === '@' ?
                         $parse(value.substr(1))(data) : value;
                     fd.append(key, extractedParam);
-                })
+                });
                 return fd;
             },
-            transformResponse: function (data, header) {
-                var wrapped = new projectDataResource(angular.fromJson(data));
+            transformResponse: function (data) {
+                var wrapped = new ProjectDataResource(angular.fromJson(data));
                 return wrapped;
             },
             headers: {
                 'Content-Type': undefined
             }
-        }).success(function (data, status) {
+        }).success(function (data) {
             item._id = data._id;
         });
-    }
-    return projectDataResource;
+    };
+    return ProjectDataResource;
 });
 
 angular.module('mobyle.services').factory('CurrentProject', function (Project, $rootScope) {
@@ -487,33 +490,33 @@ angular.module('mobyle.services').factory('CurrentProject', function (Project, $
     return {
         setId: setId,
         get: get
-    }
+    };
 });
 
 angular.module('mobyle.services').factory('CurrentUser', function (User, LoginManager, $rootScope, $log) {
     var user = new User();
     var load = function (email) {
-        $log.info("load current user info for " + email);
+        $log.info('load current user info for ' + email);
         User.query({
                 'email': email
             },
             function (users) {
                 user = users[0];
                 $log.debug(users);
-                $log.info("current user loaded: " + user.email);
+                $log.info('current user loaded: ' + user.email);
             });
-    }
+    };
     $rootScope.$on('LoginManager.update', function (event, login) {
         load(login.email);
     });
     load(LoginManager.login.user);
     var get = function () {
-        $log.info("returning current user :" + user.email);
+        $log.info('returning current user :' + user.email);
         return user;
-    }
+    };
     return {
         'get': get
-    }
+    };
 });
 
 angular.module('mobyle.services').factory('Login', function ($resource) {
@@ -524,7 +527,7 @@ angular.module('mobyle.services').factory('Login', function ($resource) {
 });
 
 angular.module('mobyle.services').factory('Logout', function ($resource) {
-    function LogoutFactory(authName) {
+    function LogoutFactory() {
         return $resource('/auth/logout', {}, {});
     }
     return LogoutFactory;
@@ -576,20 +579,20 @@ angular.module('mobyle.services').factory('LoginManager', function ($rootScope) 
 
 angular.module('mobyle.services').factory('NotificationList', function (mfResource, $http) {
     return {
-        read_list: function(id_list, callback) {
+        read_list: function(id_list) {
             $http.put('/api/notifications/list', {'list': id_list, 'read': true}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
         },
-        delete_list: function(id_list, callback) {
+        delete_list: function(id_list) {
             $http.post('/api/notifications/delete',{'list': id_list}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
         },
-        notify: function(notification, callback) {
+        notify: function(notification) {
             $http.post('/api/notifications/list', { 'project': notification.project._id.$oid, 'notification': notification}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
         }
-    }
+    };
 });
 
 
-angular.module('mobyle.services').factory('Notification', function (mfResource, $http) {
+angular.module('mobyle.services').factory('Notification', function (mfResource) {
     return mfResource('Notification',
         {
         'id': '@_id.$oid',
@@ -643,7 +646,7 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
             return true;
         }
         var res = true;
-        if(typeof expr == 'string'){
+        if(typeof expr === 'string'){
             // expression is a variable name, test if it is truthy
             res = Boolean(values[expr]);
         }else{
@@ -654,7 +657,7 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                     case 'string':
                     case 'boolean':
                     case 'undefined':
-                        if (values[key] != value) {
+                        if (values[key] !== value) {
                             res = false;
                         } else {
                             res = true;
@@ -677,13 +680,13 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                                     res = (Number(values[key]) <= Number(operand));
                                     break;
                                 case '#in':
-                                    res = $.inArray(values[key], operand)!=-1;
+                                    res = $.inArray(values[key], operand)!==-1;
                                     break;
                                 case '#nin':
-                                    res = $.inArray(values[key], operand)==-1;
+                                    res = $.inArray(values[key], operand)===-1;
                                     break;
                                 case '#ne':
-                                    res = (values[key] != operand);
+                                    res = (values[key] !== operand);
                                     break;                                
                             }
                             if (!res){
@@ -731,6 +734,6 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
             });
         }
         return res;
-    }
+    };
     return evalBoolFactory;
 });
