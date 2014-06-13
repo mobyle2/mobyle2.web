@@ -54,9 +54,9 @@ describe('directives', function () {
             $httpBackend = $injector.get('$httpBackend');
             // resource listing
             var serviceTypeTermsResponse = [{
-                "format_term_ids": ["EDAM_format:2200", "EDAM_format:1996"],
-                "data_term_id": "EDAM_data:1384",
-                "data_term_name": "Sequence alignment (protein)"
+                'format_term_ids': ['EDAM_format:2200', 'EDAM_format:1996'],
+                'data_term_id': 'EDAM_data:1384',
+                'data_term_name': 'Sequence alignment (protein)'
             }];
             $httpBackend.when('GET', '/servicetypeterms').respond(JSON.stringify(serviceTypeTermsResponse));
             scope = $rootScope.$new();
@@ -65,25 +65,25 @@ describe('directives', function () {
             compile = $compile;
         }));
 
-        it('should have the label equal to parameter name if no prompt is specified', function ($compile) {
+        it('should have the label equal to parameter name if no prompt is specified', function () {
             $httpBackend.expectGET('/servicetypeterms');
             scope.para = {
-                "name": "infile",
-                "simple": true,
-                "type": {}
-            }
+                'name': 'infile',
+                'simple': true,
+                'type': {}
+            };
             html = compile(mbinput)(scope);
             scope.$digest();
             expect(html.find('label').text()).toContain(scope.para.name);
         });
 
-        it('should have the label equal to parameter prompt if prompt is specified', function ($compile) {
+        it('should have the label equal to parameter prompt if prompt is specified', function () {
             scope.para = {
-                "name": "infile",
-                "prompt": "input file",
-                "simple": true,
-                "type": {}
-            }
+                'name': 'infile',
+                'prompt': 'input file',
+                'simple': true,
+                'type': {}
+            };
             html = compile(mbinput)(scope);
             scope.$digest();
             expect(html.find('label').text()).toContain(scope.para.prompt);
@@ -106,41 +106,41 @@ describe('directives', function () {
             $httpBackend = $injector.get('$httpBackend');
             // resource listing
             var serviceTypeTermsResponse = [{
-                "format_term_ids": ["EDAM_format:2200", "EDAM_format:1996"],
-                "data_term_id": "EDAM_data:1384",
-                "data_term_name": "Sequence alignment (protein)"
+                'format_term_ids': ['EDAM_format:2200', 'EDAM_format:1996'],
+                'data_term_id': 'EDAM_data:1384',
+                'data_term_name': 'Sequence alignment (protein)'
             }];
             $httpBackend.when('GET', '/servicetypeterms').respond(JSON.stringify(serviceTypeTermsResponse));
             scope = $rootScope.$new();
             compile = $compile;
             mbformpara = angular.element('<span recursive mbformpara job="job" para="para" show-advanced="showAdvanced"></span>');
             scope.para = {
-                "prompt": "Paragraph prompt",
-                "name": "paragraph name",
-                "children": [
+                'prompt': 'Paragraph prompt',
+                'name': 'paragraph name',
+                'children': [
                     {
-                        "prompt": "Parameter a prompt",
-                        "name": "parameter a name",
-                        "type": {
-                            "_type": "StringType"
+                        'prompt': 'Parameter a prompt',
+                        'name': 'parameter a name',
+                        'type': {
+                            '_type': 'StringType'
                         }
                     },
                     {
-                        "prompt": "Parameter b prompt",
-                        "name": "parameter b name",
-                        "type": {
-                            "_type": "StringType"
+                        'prompt': 'Parameter b prompt',
+                        'name': 'parameter b name',
+                        'type': {
+                            '_type': 'StringType'
                         }
                     },
                     {
-                        "prompt": "Parameter c prompt",
-                        "name": "parameter c name",
-                        "type": {
-                            "_type": "StringType"
+                        'prompt': 'Parameter c prompt',
+                        'name': 'parameter c name',
+                        'type': {
+                            '_type': 'StringType'
                         }
                     }
                 ]
-            }
+            };
             scope.job = {'inputs':[]};
             scope.showAdvanced = true;
             $httpBackend.expectGET('/servicetypeterms');
