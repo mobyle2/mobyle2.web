@@ -165,7 +165,9 @@
                             });
                             modalInstance.result.then(function (selectedItem) {
                                 if (selectedItem) {
-                                    scope.textarea.value = selectedItem;
+                                    // FIXME should not load data like this obviously,
+                                    // but that's just to test controller communication.
+                                    scope.job.inputs[scope.para.name] = selectedItem[0]._id.$oid;
                                 }
                             });
                         }

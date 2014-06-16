@@ -666,9 +666,19 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
                 });
             });
         };
+        $scope.selectedRows = [];
         $scope.projectDataGridOptions = {
             data: 'projectData',
-            enableRowSelection: false,
+            enableRowSelection: true,
+            multiSelect: false,
+            // FIXME paging does not work
+            enablePaging: true,
+            pagingOptions: {
+                pageSizes: [10,25], 
+                pageSize: 25,
+                totalServerItems: 0,
+                currentPage: 1
+            },
             columnDefs: [{
                     field: 'name',
                     displayName: 'Name',
@@ -678,19 +688,12 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
                     field: 'description',
                     displayName: 'Description',
                     width: '**'
-            }]
+            }],
+            selectedItems:$scope.selectedRows
         };
         $scope.update();
         $scope.ok = function () {
-            $scope.data.data.type.data_terms = $scope.currentDataTerm.term_id;
-            $scope.data.$save().then(function () {
-                $modalInstance.close($scope.data);
-            }, function (errorResponse) {
-                $scope.alerts.push({
-                    type: 'danger',
-                    msg: errorResponse.data.detail
-                });
-            });
+            $modalInstance.close($scope.selectedRows);
         };
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
