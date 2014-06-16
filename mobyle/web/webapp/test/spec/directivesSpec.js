@@ -49,6 +49,8 @@ describe('directives', function () {
         beforeEach(module('views/mbinput.html'));
 
         beforeEach(module('mobyle.services'));
+        
+        beforeEach(module('ui.bootstrap'));
 
         beforeEach(inject(function ($injector, $rootScope, $compile) {
             $httpBackend = $injector.get('$httpBackend');
@@ -102,6 +104,8 @@ describe('directives', function () {
         
         beforeEach(module('mobyle.services'));
 
+        beforeEach(module('ui.bootstrap'));
+        
         beforeEach(inject(function ($injector, $rootScope, $compile) {
             $httpBackend = $injector.get('$httpBackend');
             // resource listing
