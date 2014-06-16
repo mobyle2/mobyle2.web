@@ -140,10 +140,10 @@
                         scope.options = [{
                             'label': 'yes',
                             'value': true
-            }, {
+                        }, {
                             'label': 'no',
                             'value': false
-            }];
+                    }];
                         break;
                     case 'FormattedType':
                         //text formats
@@ -156,26 +156,17 @@
                         scope.selectBookmark = function(){
                             var modalInstance = $modal.open({
                                 templateUrl: 'views/dataSelect.html',
-/*
-                                controller: 'DataEditCtrl',
+                                controller: 'DataSelectCtrl',
                                 resolve: {
-                                    data: function () {
-                                        return data;
-                                    },
-                                    project: function () {
-                                        return project;
+                                    para: function () {
+                                        return scope.para;
                                     }
                                 }
-*/
                             });
                             modalInstance.result.then(function (selectedItem) {
-/*
-                                if (data) {
-                                    data = selectedItem;
-                                } else {
-                                    $scope.projectData.push(selectedItem);
+                                if (selectedItem) {
+                                    scope.textarea.value = selectedItem;
                                 }
-*/
                             });
                         }
                     }

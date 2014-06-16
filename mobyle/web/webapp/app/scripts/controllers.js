@@ -655,6 +655,25 @@ angular.module('mobyle.controllers').controller('DataEditCtrl',
         };
     });
 
+angular.module('mobyle.controllers').controller('DataSelectCtrl',
+    function ($scope, $log, $modalInstance, ProjectData, para) {
+        $scope.para = para;
+        $scope.ok = function () {
+            $scope.data.data.type.data_terms = $scope.currentDataTerm.term_id;
+            $scope.data.$save().then(function () {
+                $modalInstance.close($scope.data);
+            }, function (errorResponse) {
+                $scope.alerts.push({
+                    type: 'danger',
+                    msg: errorResponse.data.detail
+                });
+            });
+        };
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    });
+
 angular.module('mobyle.controllers').controller('mobyleCtrl',
     function ($rootScope) {
         $rootScope.alerts = [];
