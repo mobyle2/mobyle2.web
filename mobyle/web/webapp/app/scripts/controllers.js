@@ -656,8 +656,31 @@ angular.module('mobyle.controllers').controller('DataEditCtrl',
     });
 
 angular.module('mobyle.controllers').controller('DataSelectCtrl',
-    function ($scope, $log, $modalInstance, ProjectData, para) {
+    function ($scope, $log, $modalInstance, ProjectData, para, CurrentProject) {
         $scope.para = para;
+        $scope.project = CurrentProject.get();
+        $scope.update = function () {
+            $scope.project.$promise.then(function () {
+                $scope.projectData = ProjectData.list_by_project({
+                    'project_id': $scope.project._id.$oid
+                });
+            });
+        };
+        $scope.projectDataGridOptions = {
+            data: 'projectData',
+            enableRowSelection: false,
+            columnDefs: [{
+                    field: 'name',
+                    displayName: 'Name',
+                    width: '*'
+            },
+                {
+                    field: 'description',
+                    displayName: 'Description',
+                    width: '**'
+            }]
+        };
+        $scope.update();
         $scope.ok = function () {
             $scope.data.data.type.data_terms = $scope.currentDataTerm.term_id;
             $scope.data.$save().then(function () {
