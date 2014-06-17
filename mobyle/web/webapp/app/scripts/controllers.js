@@ -659,26 +659,43 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
     function ($scope, $log, $modalInstance, ProjectData, para, CurrentProject) {
         $scope.para = para;
         $scope.project = CurrentProject.get();
-        $scope.update = function () {
-            $scope.project.$promise.then(function () {
-                $scope.projectData = ProjectData.list_by_project({
-                    'project_id': $scope.project._id.$oid
-                });
-            });
+        $scope.pagedProjectData = [];
+        $scope.setPagingData = function(data, pageSize, page){	
+            $scope.pagedProjectData = data.slice((page - 1) * pageSize, page * pageSize);
+            console.log($scope.projectData);
+            console.log($scope.pagedProjectData);
+            
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
         };
+        $scope.pagingOptions = {
+            pageSizes: [5, 10, 20],
+            pageSize: 5,
+            currentPage: 1
+        };  
+        $scope.project.$promise.then(function () {
+            $scope.projectData = ProjectData.list_by_project({
+                'project_id': $scope.project._id.$oid
+            });
+            $scope.projectData.$promise.then(function(){
+                $scope.setPagingData($scope.projectData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+            });
+            $scope.totalServerItems = $scope.projectData.length;
+        });
+        $scope.$watch('pagingOptions', function () {
+              $scope.setPagingData($scope.projectData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+        }, true);
         $scope.selectedRows = [];
         $scope.projectDataGridOptions = {
-            data: 'projectData',
+            data: 'pagedProjectData',
+            showFooter: true,
+            totalServerItems:'totalServerItems',
+            enablePaging: true,
+            pagingOptions: $scope.pagingOptions,
             enableRowSelection: true,
             multiSelect: false,
             // FIXME paging does not work
-            enablePaging: true,
-            pagingOptions: {
-                pageSizes: [10,25], 
-                pageSize: 25,
-                totalServerItems: 0,
-                currentPage: 1
-            },
             columnDefs: [{
                     field: 'name',
                     displayName: 'Name',
@@ -691,7 +708,6 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
             }],
             selectedItems:$scope.selectedRows
         };
-        $scope.update();
         $scope.ok = function () {
             $modalInstance.close($scope.selectedRows);
         };

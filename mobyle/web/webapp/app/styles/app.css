@@ -83,6 +83,10 @@
     height: 80vh;
 }
 
+.dataSelectGrid {
+height: 300px;
+}
+
 .mb-grid .label{
     margin-left: 2px;
 }
