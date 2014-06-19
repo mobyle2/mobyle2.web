@@ -295,6 +295,10 @@
                 scope: {},
                 templateUrl: 'views/classification.html',
                 controller: function ($scope, Classification) {
+                    var getServicesNumber = function(node){
+                        return node.services.length + node.sublevels.map(getServicesNumber).reduce(function(pv, cv) { return pv + cv; }, 0);
+                    }
+                    $scope.getServicesNumber = getServicesNumber;
                     $scope.load = function (query) {
                         $scope.loading = true;
                         $scope.tree = null;

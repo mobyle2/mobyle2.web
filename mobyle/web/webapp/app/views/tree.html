@@ -1,4 +1,4 @@
-<a ng-click="toggle()" class="toggle-{{toggleState==false}}">{{tree.name}}</a>
+<a ng-click="toggle()" class="toggle-{{toggleState==false}}">{{tree.name}}</a>  <sup class="text-muted">({{getServicesNumber(tree)}})</sup>
 <ul id="{{tree.id}}" class="nav" ng-show="toggleState==false">
     <li ng-repeat="tree in tree.sublevels">
         <recursive><span tree class="nav"/></recursive>
