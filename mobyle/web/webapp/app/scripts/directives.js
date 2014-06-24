@@ -1,4 +1,4 @@
-/*global $:false */
+/*global $:false, _:false */
 (function () {
     'use strict';
 
@@ -170,7 +170,7 @@
                                     scope.job.inputs[scope.para.name] = selectedItem[0]._id.$oid;
                                 }
                             });
-                        }
+                        };
                     }
                     // initialize default value for the parameter in the model
                     if (!scope.job.inputs[scope.para.name]) {
@@ -296,11 +296,18 @@
                 templateUrl: 'views/classification.html',
                 controller: function ($scope, Classification) {
                     var getServices = function(node){
-                        return node.services.map(function(service){return service.name}).concat(node.sublevels.map(function(n){return getServices(n)}).reduce(function(n1,n2){return n1.concat(n2)},[]));
-                    }
+                        return node.services.map(
+                            function(service){
+                                return service.name;
+                            }).concat(node.sublevels.map(function(n){
+                                return getServices(n);
+                            }).reduce(function(n1,n2){
+                                return n1.concat(n2);
+                            },[]));
+                    };
                     $scope.getServicesNumber = function(node){
                         return _.unique(getServices(node)).length;
-                    }
+                    };
                     $scope.load = function (query) {
                         $scope.loading = true;
                         $scope.tree = null;
