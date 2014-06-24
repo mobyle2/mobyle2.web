@@ -295,10 +295,12 @@
                 scope: {},
                 templateUrl: 'views/classification.html',
                 controller: function ($scope, Classification) {
-                    var getServicesNumber = function(node){
-                        return node.services.length + node.sublevels.map(getServicesNumber).reduce(function(pv, cv) { return pv + cv; }, 0);
+                    var getServices = function(node){
+                        return node.services.map(function(service){return service.name}).concat(node.sublevels.map(function(n){return getServices(n)}).reduce(function(n1,n2){return n1.concat(n2)},[]));
                     }
-                    $scope.getServicesNumber = getServicesNumber;
+                    $scope.getServicesNumber = function(node){
+                        return _.unique(getServices(node)).length;
+                    }
                     $scope.load = function (query) {
                         $scope.loading = true;
                         $scope.tree = null;
