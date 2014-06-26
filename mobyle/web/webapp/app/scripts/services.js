@@ -499,19 +499,20 @@ angular.module('mobyle.services').factory('CurrentUser', function (User, LoginMa
         $log.info('load current user info for ' + email);
         User.query({
                 'email': email
-            },
-            function (users) {
+            }).$promise.then(function (users) {
                 user = users[0];
-                $log.debug(users);
-                $log.info('current user loaded: ' + user.email);
+                if(user!==undefined){
+                    $log.info('current user loaded: ' + user.email);
+                }else{
+                    $log.info('no current user loaded');
+                }
             });
     };
     $rootScope.$on('LoginManager.update', function (event, login) {
-        load(login.email);
+        load(login.user);
     });
     load(LoginManager.login.user);
     var get = function () {
-        $log.info('returning current user :' + user.email);
         return user;
     };
     return {
