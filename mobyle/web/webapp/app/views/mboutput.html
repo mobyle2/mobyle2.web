@@ -1,10 +1,10 @@
 <div>
-    <label class="control-label col-md-6">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
+    <label class="control-label" ng-class="{'col-md-6': (displayType=='text'), 'col-md-12': (displayType=='file')}">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
         <i ng-if="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
            data-container="body"/>
     </label>
     <div class="alert-info" ng-if="untranslated">no layout defined for type {{para.type}}</div>
-    <div ng-if="displayType=='text'">
+    <div ng-if="displayType=='text'" class="col-md-12">
         {{text}}
     </div>
     <div ng-if="displayType=='file'">
