@@ -291,6 +291,7 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
             if (sourceJob) {
                 $scope.service = sourceJob.service;
                 $scope.job = sourceJob;
+                console.log($scope.job);
                 $scope.job.project = CurrentProject.get();
             } else {
                 $scope.service = service;
@@ -463,6 +464,7 @@ angular.module('mobyle.controllers').controller('JobDetailCtrl',
         $scope.mbset = mbset;
         $scope.showAdvanced = true;
     });
+
 
 
 angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',

@@ -392,7 +392,6 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                 if((value.type.default===null) ||
                    (value.type.default &&
                    value.value!==value.type.default)){
-                    //FIXME only handling data "by value" for now, not files
                     switch (value.type._type) {
                         case 'IntegerType':
                             newInputs[key] = parseInt(value.value,10);
@@ -406,6 +405,8 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                     }
                     
                 }
+            }else if(value!==null && value._id){
+                newInputs[key] = value._id;
             }
         });
         job.inputs = newInputs;

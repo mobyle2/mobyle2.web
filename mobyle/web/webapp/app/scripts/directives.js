@@ -107,7 +107,8 @@
                 templateUrl: 'views/mbinput.html',
                 scope: {
                     para: '=',
-                    job: '='
+                    job: '=',
+                    preload: '='
                 },
                 link: function (scope, element) {
                     // switch the type of the input according to the parameter type...
@@ -153,6 +154,11 @@
                         scope.untranslated = true;
                     }
                     if(scope.textarea){
+                        scope.loadData = function(id){
+                            ProjectData.raw(id).then(function (data) {
+                                    scope.job.inputs[scope.para.name] = data.data;
+                                });
+                        };
                         scope.selectBookmark = function(){
                             var modalInstance = $modal.open({
                                 templateUrl: 'views/dataSelect.html',
@@ -167,12 +173,13 @@
                                 if (selectedItem) {
                                     // FIXME should not load data like this obviously,
                                     // but that's just to test controller communication.
-                                    ProjectData.raw(selectedItem[0]._id).then(function (data) {
-                                            scope.job.inputs[scope.para.name] = data.data;
-                                        });
+                                    scope.loadData(selectedItem[0]._id);
                                 }
                             });
                         };
+                        if(scope.job.inputs[scope.para.name] && scope.job.inputs[scope.para.name].$oid){
+                            scope.loadData(scope.job.inputs[scope.para.name]);
+                        }
                     }
                     // initialize default value for the parameter in the model
                     if (!scope.job.inputs[scope.para.name]) {
