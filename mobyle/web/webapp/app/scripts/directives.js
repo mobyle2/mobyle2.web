@@ -358,7 +358,7 @@
             return {
                 restrict: 'E',
                 replace: true,
-                template: '<span>{{dataTermLabel}} <span ng-if="formatTermLabel">({{formatTermLabel}})</span></span>',
+                template: '<span class="text-muted" style="font-size: x-small;">{{dataTermLabel}} <span ng-if="formatTermLabel">({{formatTermLabel}})</span></span>',
                 scope: {
                     type: '='
                 },
