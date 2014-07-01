@@ -98,8 +98,8 @@
     }]);
 
 
-    angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory','$modal',
-    function (evalBoolFactory, $modal) {
+    angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory','$modal','ProjectData',
+    function (evalBoolFactory, $modal, ProjectData) {
             return {
                 restrict: 'E',
                 replace: true,
@@ -167,7 +167,9 @@
                                 if (selectedItem) {
                                     // FIXME should not load data like this obviously,
                                     // but that's just to test controller communication.
-                                    scope.job.inputs[scope.para.name] = selectedItem[0]._id.$oid;
+                                    ProjectData.raw(selectedItem[0]._id).then(function (data) {
+                                            scope.job.inputs[scope.para.name] = data.data;
+                                        });
                                 }
                             });
                         };

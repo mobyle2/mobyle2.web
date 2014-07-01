@@ -471,6 +471,12 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
             item._id = data._id;
         });
     };
+    
+    ProjectDataResource.raw = function (id) {
+        // retrieve the raw data for a given project Data
+        return $http.get('/api/projectdata/' + id.$oid + '/raw');
+    };
+    
     return ProjectDataResource;
 });
 
