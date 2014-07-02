@@ -213,3 +213,7 @@ fieldset[readonly], fieldset[readonly] input, fieldset[readonly] select, fieldse
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+[name="serviceForm"] .form-control{
+    font-family: monospace;
+}
