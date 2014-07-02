@@ -8,7 +8,7 @@
         <h2>
             <button type="submit" ng-disabled="serviceForm.$invalid || !job.project._id" class="btn btn-primary"><i class="glyphicon glyphicon-play glyphicon-white"></i> run</button>
             <span ng-show="mbsimple(service.inputs)">
-                <button type="button" class="btn" data-toggle="button" ng-click="showAdvanced=!showAdvanced">
+                <button type="button" class="btn" data-toggle="button" ng-click="showAdvanced=!showAdvanced" ng-attr-title="{{showAdvanced ? 'show only simple options' : 'show advanced options'}}">
                     <i class="glyphicon" ng-class="{'glyphicon-resize-small': showAdvanced, 'glyphicon-resize-full': !showAdvanced}"></i>
                 </button>
             </span>
