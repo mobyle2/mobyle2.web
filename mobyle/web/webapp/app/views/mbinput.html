@@ -2,9 +2,8 @@
 
     <!-- untranslated -->
     <div class="alert-info" ng-if="untranslated">no layout defined for type {{para.type}}</div>
-
     <!-- textarea option -->
-    <div class="panel panel-default" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-if="textarea">
+    <div class="panel panel-default" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-show="textarea">
         <div class="panel-heading">
             <h4>{{para.prompt || para.name}} 
             <i><type-text type="para.type"></i>
@@ -19,11 +18,17 @@
                 </button>
                 <textarea spellcheck="false" class="form-control col-md-2" name="mbinput" ng-model="job['inputs'][para.name]" ng-required="para.mandatory" ui-validate="{{uiValidateString}}">{{para.type.default}}</textarea>
             </div>
+            <!-- show error messages for textarea -->        
+            <div class="col-md-12 has-error"  ng-show="innerForm.mbinput.$dirty && innerForm.mbinput.$error">
+                <div ng-show="innerForm.mbinput.$error.required" class="help-block">this field is mandatory</div>
+                <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
+                <div ng-repeat="ctrl in para.ctrl" ng-show="$parent.innerForm.mbinput.$error['ctrls'+$index]" class="help-block">{{$parent['ctrls'+$index].message}}</div>
+            </div>
         </div>
     </div>
 
     <!-- other options -->        
-    <label class="control-label col-md-6" ng-if="!textarea">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
+    <label class="control-label col-md-6" ng-show="!textarea">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
         <i ng-show="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
            data-container="body"/>
     </label>
@@ -36,8 +41,8 @@
                 ng-options="opt.value as opt.label for opt in options" ng-model="job['inputs'][para.name]" ui-validate="{{uiValidateString}}"/>
     </div>
 
-    <!-- show error messages -->        
-    <div class="col-md-12 has-error"  ng-show="innerForm.mbinput.$dirty && innerForm.mbinput.$error">
+    <!-- show error messages for other options -->        
+    <div class="col-md-12 has-error"  ng-show="!textarea && innerForm.mbinput.$dirty && innerForm.mbinput.$error">
         <div ng-show="innerForm.mbinput.$error.required" class="help-block">this field is mandatory</div>
         <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
         <div ng-repeat="ctrl in para.ctrl" ng-show="$parent.innerForm.mbinput.$error['ctrls'+$index]" class="help-block">{{$parent['ctrls'+$index].message}}</div>
