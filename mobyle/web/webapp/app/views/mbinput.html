@@ -3,12 +3,11 @@
     <!-- untranslated -->
     <div class="alert-info" ng-if="untranslated">no layout defined for type {{para.type}}</div>
     <!-- textarea option -->
-    <div class="panel panel-default" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-show="textarea">
+    <div class="panel panel-default" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-if="textarea">
         <div class="panel-heading">
             <h4>{{para.prompt || para.name}} 
             <i><type-text type="para.type"></i>
-            <i ng-show="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
-                       data-container="body"/>
+            <i ng-click="toggleComment()" ng-if="para.comment" class="glyphicon glyphicon-info-sign text-info" title="Click here to see inline help"/>
             </h4>
         </div>
         <div class="panel-body">
@@ -24,13 +23,14 @@
                 <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
                 <div ng-repeat="ctrl in para.ctrl" ng-show="$parent.innerForm.mbinput.$error['ctrls'+$index]" class="help-block">{{$parent['ctrls'+$index].message}}</div>
             </div>
+            <!-- show comments for textarea -->        
+            <div class="col-md-10 col-md-offset-1 bg-info" ng-show="showComment">{{para.comment}}</div>
         </div>
     </div>
 
     <!-- other options -->        
-    <label class="control-label col-md-6" ng-show="!textarea">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
-        <i ng-show="para.comment" class="glyphicon glyphicon-info-sign" data-html="true" data-content="{{para.comment}}"
-           data-container="body"/>
+    <label class="control-label col-md-6" ng-if="!textarea">{{para.prompt || para.name}} <i><type-text type="para.type"></i>
+            <i ng-click="toggleComment()" ng-if="para.comment" class="glyphicon glyphicon-info-sign text-info" title="Click here to see inline help"/>
     </label>
     <div class="col-md-6" ng-class="{'has-error': innerForm.mbinput.$dirty && innerForm.mbinput.$invalid}" ng-if="itype" >
         <input class="form-control" type="{{itype}}" step="{{step}}" name="mbinput" 
@@ -47,5 +47,7 @@
         <div ng-show="innerForm.mbinput.$error.number" class="help-block">this field is numeric</div>
         <div ng-repeat="ctrl in para.ctrl" ng-show="$parent.innerForm.mbinput.$error['ctrls'+$index]" class="help-block">{{$parent['ctrls'+$index].message}}</div>
     </div>
+    <!-- show comments for other options -->        
+    <div class="col-md-10 col-md-offset-1 bg-info" ng-show="!textarea && showComment">{{para.comment}}</div>
         
 </ng-form>

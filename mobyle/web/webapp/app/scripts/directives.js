@@ -206,6 +206,11 @@
                         });
                         scope.uiValidateString = JSON.stringify(scope.uiValidateObj);
                     }
+                    // comments show/hide control
+                    scope.showComment = false;
+                    scope.toggleComment = function(){
+                        scope.showComment = !scope.showComment;
+                    };
                     var infoEl = element.find('[data-content]');
                     infoEl.bind('mouseover', function () {
                         infoEl.popover('show');
