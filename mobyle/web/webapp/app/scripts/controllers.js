@@ -291,7 +291,6 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
             if (sourceJob) {
                 $scope.service = sourceJob.service;
                 $scope.job = sourceJob;
-                console.log($scope.job);
                 $scope.job.project = CurrentProject.get();
             } else {
                 $scope.service = service;
@@ -664,9 +663,6 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
         $scope.pagedProjectData = [];
         $scope.setPagingData = function(data, pageSize, page){	
             $scope.pagedProjectData = data.slice((page - 1) * pageSize, page * pageSize);
-            console.log($scope.projectData);
-            console.log($scope.pagedProjectData);
-            
             if (!$scope.$$phase) {
                 $scope.$apply();
             }
