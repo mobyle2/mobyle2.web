@@ -417,7 +417,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
 });
 
 
-angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http, $parse) {
+angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http, $parse, $filter) {
 
     var paramDefaults = {
         'name': '@name',
@@ -442,6 +442,30 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
         }
     });
 
+    ProjectDataResource.listByProject = function(project, type){
+        // return the list of project data
+        // can be filtered using a potential target type
+        return ProjectDataResource.list_by_project({
+                'project_id': project._id.$oid
+            }).$promise.then(function(dataList){
+                if(type){
+                    // TODO: refactor filter function as a service
+                    // TODO: filter using formats (commented currently)
+                    // TODO: take the formats hierarchy into account
+                    dataList = $filter('filter')(dataList, function(dataItem){
+                            if (!(dataItem.data.type.data_terms===type.data_terms)
+                            //||  !(dataItem.data.type.format_terms===type.format_terms)
+                               ){
+                                return false;
+                            }else{
+                                return true;
+                            }                        
+                    });
+                }
+                return dataList;
+            });
+    };
+    
     ProjectDataResource.prototype.$create = function () {
         // use a custom method for create action because
         // we need to use FormData to upload files

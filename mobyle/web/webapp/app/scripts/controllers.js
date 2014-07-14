@@ -673,10 +673,8 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
             currentPage: 1
         };  
         $scope.project.$promise.then(function () {
-            $scope.projectData = ProjectData.list_by_project({
-                'project_id': $scope.project._id.$oid
-            });
-            $scope.projectData.$promise.then(function(){
+            ProjectData.listByProject($scope.project, para.type).then(function(dataList){
+                $scope.projectData = dataList;
                 $scope.setPagingData($scope.projectData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
             });
             $scope.totalServerItems = $scope.projectData.length;
