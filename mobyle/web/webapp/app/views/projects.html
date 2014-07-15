@@ -1,6 +1,6 @@
 <script type="text/ng-template" id="projectsGrid_NameCell.html">
-    <a href="#/projects/{{row.getProperty('_id').$oid}}">{{row.getProperty(col.field)}}</a>&nbsp;
-    <i ng-show="row.getProperty('public')" class="glyphicon glyphicon-globe"></i>
+    <b>{{row.getProperty(col.field)}}</b>&nbsp;
+    <i ng-show="row.getProperty('public')" class="glyphicon glyphicon-globe" title="this project is public"></i>
 </script>
 
 <script type="text/ng-template" id="projectsGrid_DescriptionCell.html">

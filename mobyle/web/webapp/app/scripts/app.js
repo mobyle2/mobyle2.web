@@ -40,10 +40,6 @@ config(['$routeProvider','$logProvider',
             templateUrl: 'views/datas.html',
             controller: 'DatasCtrl'
         });
-        $routeProvider.when('/projects/:projectId', {
-            templateUrl: 'views/projectDetail.html',
-            controller: 'ProjectDetailCtrl'
-        });
         $routeProvider.when('/jobs', {
             templateUrl: 'views/jobs.html',
             controller: 'JobsCtrl'
