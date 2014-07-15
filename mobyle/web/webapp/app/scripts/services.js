@@ -453,9 +453,9 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
                     // TODO: filter using formats (commented currently)
                     // TODO: take the formats hierarchy into account
                     dataList = $filter('filter')(dataList, function(dataItem){
-                            if (!(dataItem.data.type.data_terms===type.data_terms)
-                            //||  !(dataItem.data.type.format_terms===type.format_terms)
-                               ){
+                            if (dataItem.data.type.data_terms!==type.data_terms)
+                            //||  (dataItem.data.type.format_terms!==type.format_terms)
+                            {
                                 return false;
                             }else{
                                 return true;
