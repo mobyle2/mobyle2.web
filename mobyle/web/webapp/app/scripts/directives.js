@@ -325,6 +325,7 @@
                     $scope.load = function (query) {
                         $scope.loading = true;
                         $scope.tree = null;
+                        $scope.level = 0;
                         $scope.defaultToggleState = !query;
                         Classification.query({
                             key: 'topic',
@@ -357,7 +358,8 @@
                     scope.isService = function (tree) {
                         return tree.hasOwnProperty('version');
                     };
-                    scope.toggleState = scope.defaultToggleState;
+                    scope.level += 1;
+                    scope.toggleState = scope.defaultToggleState && (scope.level > 1);
                     scope.toggle = function () {
                         scope.toggleState = !scope.toggleState;
                     };
