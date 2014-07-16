@@ -5,6 +5,10 @@
 angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'mobyle.controllers', 'ngSanitize', 'ngRoute', 'ui.utils', 'ui.tinymce', 'ui.bootstrap', 'ngGrid']).
 config(['$routeProvider','$logProvider',
     function ($routeProvider, $log) {
+        $routeProvider.when('/welcome', {
+            templateUrl: 'views/welcome.html',
+            controller: 'WelcomeCtrl'
+        });
         $routeProvider.when('/services', {
             templateUrl: 'views/services.html',
             controller: 'ServicesCtrl'
@@ -124,6 +128,6 @@ config(['$routeProvider','$logProvider',
             controller: 'NotificationCenterCtrl'
         });
         $routeProvider.otherwise({
-            redirectTo: '/services'
+            redirectTo: '/welcome'
         });
   }]);

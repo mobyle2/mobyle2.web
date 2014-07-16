@@ -4,6 +4,9 @@
 
 angular.module('mobyle.controllers', []);
 
+angular.module('mobyle.controllers').controller('WelcomeCtrl',
+    function () {});
+
 angular.module('mobyle.controllers').controller('NotificationCtrl',
     function ($scope, $interval, Notification, CurrentUser) {
         $scope.notifications = [];
