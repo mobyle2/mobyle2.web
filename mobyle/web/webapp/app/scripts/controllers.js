@@ -712,9 +712,9 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
                         }
             ],
             selectedItems:$scope.selectedRows,
-            afterSelectionChange: function(data){
-                    // clicking on a row selects it
-                    $scope.ok();
+            afterSelectionChange: function(){
+                // clicking on a row selects it
+                $scope.ok();
             }
         };
         $scope.ok = function () {
