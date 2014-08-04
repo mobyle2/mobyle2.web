@@ -699,18 +699,21 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
             enableRowSelection: true,
             multiSelect: false,
             // FIXME paging does not work
-            columnDefs: [{
-                    field: 'name',
-                    displayName: 'Name',
-                    width: '*'
-            },
-            {
-                    field: 'description',
-                    displayName: 'Description',
-                    width: '**'
-            }],
+            columnDefs: [
+                        {
+                                field: 'name',
+                                displayName: 'Name',
+                                width: '*'
+                        },
+                        {
+                                field: 'description',
+                                displayName: 'Description',
+                                width: '**'
+                        }
+            ],
             selectedItems:$scope.selectedRows,
             afterSelectionChange: function(data){
+                    // clicking on a row selects it
                     $scope.ok();
             }
         };
