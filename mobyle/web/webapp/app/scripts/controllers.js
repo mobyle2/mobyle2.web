@@ -664,7 +664,11 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
         $scope.para = para;
         $scope.project = CurrentProject.get();
         $scope.pagedProjectData = [];
-        $scope.setPagingData = function(data, pageSize, page){	
+        $scope.totalServerItems = 0;
+        $scope.setPagingData = function(data, pageSize, page){
+            if (data===undefined){
+                return;
+            }
             $scope.pagedProjectData = data.slice((page - 1) * pageSize, page * pageSize);
             if (!$scope.$$phase) {
                 $scope.$apply();
@@ -679,8 +683,8 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
             ProjectData.listByProject($scope.project, para.type).then(function(dataList){
                 $scope.projectData = dataList;
                 $scope.setPagingData($scope.projectData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+                $scope.totalServerItems = $scope.projectData.length;
             });
-            $scope.totalServerItems = $scope.projectData.length;
         });
         $scope.$watch('pagingOptions', function () {
               $scope.setPagingData($scope.projectData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
