@@ -704,12 +704,15 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
                     displayName: 'Name',
                     width: '*'
             },
-                {
+            {
                     field: 'description',
                     displayName: 'Description',
                     width: '**'
             }],
-            selectedItems:$scope.selectedRows
+            selectedItems:$scope.selectedRows,
+            afterSelectionChange: function(data){
+                    $scope.ok();
+            }
         };
         $scope.ok = function () {
             $modalInstance.close($scope.selectedRows);
