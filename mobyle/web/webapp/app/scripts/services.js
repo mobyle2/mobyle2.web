@@ -505,19 +505,41 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
     return ProjectDataResource;
 });
 
-angular.module('mobyle.services').factory('CurrentProject', function (Project, $rootScope) {
+angular.module('mobyle.services').factory('CurrentProject', function (Project, LoginManager, $rootScope, $cookies) {
     var currentProject = {};
 
     function setId(currentProjectId) {
         currentProject = Project.get({
             id: currentProjectId
         });
+        $cookies.currentProjectId = currentProjectId;
         $rootScope.$broadcast('CurrentProject.update', currentProject);
     }
+
+    function reset() {
+        currentProject = null;
+        delete $cookies.currentProjectId;
+        delete $cookies.currentUserId;
+    }
+
+    $rootScope.$on('LoginManager.logout', function (event, login) {
+        reset();
+    });
+
+    $rootScope.$on('CurrentUser.update', function (event, user) {
+        // once a new user is loaded update the current project
+        if(!currentProject || $cookies.currentUserId!=user._id.$oid){
+            $cookies.currentUserId = user._id.$oid;
+            setId(user.default_project.$oid);
+        }
+    });
 
     function get() {
         return currentProject;
     }
+
+    setId($cookies.currentProjectId);
+
     return {
         setId: setId,
         get: get
@@ -525,27 +547,44 @@ angular.module('mobyle.services').factory('CurrentProject', function (Project, $
 });
 
 angular.module('mobyle.services').factory('CurrentUser', function (User, LoginManager, $rootScope, $log) {
-    var user = new User();
+    var user = null;
     var load = function (email) {
         $log.info('load current user info for ' + email);
         User.query({
                 'email': email
             }).$promise.then(function (users) {
-                user = users[0];
-                if(user!==undefined){
-                    $log.info('current user loaded: ' + user.email);
-                }else{
-                    $log.info('no current user loaded');
+                if(!user || users[0]._id.$oid!==user._id.$oid){
+                    user = users[0];
+                    $rootScope.$broadcast('CurrentUser.update', user);
+                    if(user!==undefined){
+                        $log.info('current user loaded: ' + user.email);
+                    }else{
+                        $log.info('no current user loaded');
+                    }
                 }
             });
     };
+
+    function reset() {
+        user = null;
+    }
+
+    $rootScope.$on('LoginManager.logout', function (event, login) {
+        reset();
+    });
+
     $rootScope.$on('LoginManager.update', function (event, login) {
         load(login.user);
     });
-    load(LoginManager.login.user);
+
+    if(LoginManager.login.user){
+        load(LoginManager.login.user);
+    }
+
     var get = function () {
         return user;
     };
+
     return {
         'get': get
     };
@@ -605,6 +644,9 @@ angular.module('mobyle.services').factory('LoginManager', function ($rootScope) 
             this.login.admin = admin;
             this.login.defaultProjectId = default_project;
             $rootScope.$broadcast('LoginManager.update', this.login);
+        },
+        logout: function(){
+            $rootScope.$broadcast('LoginManager.logout');
         }
     };
 });

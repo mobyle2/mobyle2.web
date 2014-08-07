@@ -15,7 +15,7 @@ angular.module('mobyle.controllers').controller('NotificationCtrl',
 
         $interval(function () {
             var user = CurrentUser.get();
-            if (user.email !== undefined) {
+            if (user && user.email !== undefined) {
                 $scope.notifications = Notification.filter({
                     read: false
                 });
@@ -33,7 +33,7 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
         Project, CurrentUser) {
         $scope.notifications = [];
         $scope.user = CurrentUser.get();
-        if ($scope.user.email !== undefined) {
+        if ($scope.user && $scope.user.email !== undefined) {
             $scope.notifications = Notification.query();
         }
 
@@ -115,7 +115,7 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 
         $interval(function () {
             $scope.user = CurrentUser.get();
-            if ($scope.user.email !== undefined) {
+            if ($scope.user && $scope.user.email !== undefined) {
                 $scope.notifications = Notification.query();
             }
         }, 20000);
@@ -126,7 +126,6 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 angular.module('mobyle.controllers').controller('LoginCtrl',
     function (LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
         $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google'];
-        //$scope.persona = Login.get('persona', {assertion:'XXX'});
         $scope.User = null;
         $scope.login = null;
         $scope.password = null;
@@ -151,7 +150,6 @@ angular.module('mobyle.controllers').controller('LoginCtrl',
                 });
                 $scope.rpassword = null;
                 $scope.provider = 'native';
-
             } else {
                 $scope.msg = 'Passwords are not identical';
             }
@@ -179,13 +177,10 @@ angular.module('mobyle.controllers').controller('LoginCtrl',
                 if ($scope.provider === 'register') {
                     $scope.provider = 'native';
                 }
-
                 $scope.password = null;
                 $scope.rpassword = null;
                 $scope.rpassword2 = null;
-
                 $scope.setUser(login.user);
-                CurrentProject.setId(login.defaultProjectId);
             } else {
                 $scope.User = null;
                 CurrentProject.setId(null);
@@ -260,6 +255,7 @@ angular.module('mobyle.controllers').controller('LoginCtrl',
             } else {
                 new Logout().get();
             }
+            LoginManager.logout();
             $scope.setUser(null);
             $scope.provider = null;
             $location.path('/login');
