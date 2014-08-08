@@ -522,13 +522,13 @@ angular.module('mobyle.services').factory('CurrentProject', function (Project, L
         delete $cookies.currentUserId;
     }
 
-    $rootScope.$on('LoginManager.logout', function (event, login) {
+    $rootScope.$on('LoginManager.logout', function () {
         reset();
     });
 
     $rootScope.$on('CurrentUser.update', function (event, user) {
         // once a new user is loaded update the current project
-        if(!currentProject || $cookies.currentUserId!=user._id.$oid){
+        if(!currentProject || $cookies.currentUserId!==user._id.$oid){
             $cookies.currentUserId = user._id.$oid;
             setId(user.default_project.$oid);
         }
@@ -569,7 +569,7 @@ angular.module('mobyle.services').factory('CurrentUser', function (User, LoginMa
         user = null;
     }
 
-    $rootScope.$on('LoginManager.logout', function (event, login) {
+    $rootScope.$on('LoginManager.logout', function () {
         reset();
     });
 
