@@ -29,7 +29,7 @@ from mobyle.common.mobyleError import MobyleError
 from mobyle.common.mobyleConfig import MobyleConfig
 from mobyle.common.term import FormatTerm
 from mobyle.common.classification import Classification
-from mobyle.common.job import Status, ClJob, Job
+from mobyle.common.job import Status, ProgramJob, Job
 from mobyle.common.notifications import Notification
 
 import urllib
@@ -927,8 +927,8 @@ def create_project_job(request):
     if job_service is None:
         raise HTTPClientError('service %s not found' %
                               request.params['service'])
-    #TODO: create ClJob or WorkflowJob according to the required service
-    job = connection.ClJob()
+    #TODO: create ProgramJob or WorkflowJob according to the required service
+    job = connection.ProgramJob()
     init_status = Status(Status.INIT)
     job['status'] = init_status
     job['project'] = project_id
