@@ -643,7 +643,7 @@ def service_by_name_version_and_maybe_project(request):
     if 'service_version' in request.matchdict:
         mffilter["version"] = request.matchdict['service_version']
     collection = DbConn.get_db('Service')
-    obj = collection.find_one(mffilter)
+    obj = collection.fetch_one(mffilter)
     if not obj:
         raise HTTPNotFound()
     response = {'object': 'service', 'status': 0,
