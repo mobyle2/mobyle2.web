@@ -55,9 +55,9 @@ def update_notification_list(request):
     ids = params['list']
     total = 0
     userid = authenticated_userid(request)
-    current_user = connection.User.find_one({'email': userid})
+    current_user = connection.User.fetch_one({'email': userid})
     for nid in ids:
-        notif = connection.Notification.find_one({'_id': ObjectId(nid)})
+        notif = connection.Notification.fetch_one({'_id': ObjectId(nid)})
         if not notif:
             continue
         if str(notif['user']) == current_user['_id']:
@@ -87,7 +87,7 @@ def create_notification_list(request):
     params = params['notification']
 
     userid = authenticated_userid(request)
-    currentuser = connection.User.find_one({'email': userid})
+    currentuser = connection.User.fetch_one({'email': userid})
 
     if params['type'] == 1 and not notif_project:
         raise HTTPForbidden()
@@ -95,7 +95,7 @@ def create_notification_list(request):
         raise HTTPForbidden()
 
     if params['type'] == 0 and currentuser['admin']:
-        user_list = connection.User.find({})
+        user_list = connection.User.fetch({})
         for user in user_list:
             notif = connection.Notification()
             notif['type'] = params['type']
@@ -111,7 +111,7 @@ def create_notification_list(request):
         return {'count': total}
 
     if params['type'] > 0:
-        found_project = connection.Project.find_one({'_id': ObjectId(notif_project)})
+        found_project = connection.Project.fetch_one({'_id': ObjectId(notif_project)})
         user_list = found_project['users']
         allowed = False
         err = ''
@@ -145,12 +145,12 @@ def delete_notification_list(request):
     (params, empty) = request.params.items()[0]
     params = json.loads(params)
     userid = authenticated_userid(request)
-    current_user = connection.User.find_one({'email': userid})
+    current_user = connection.User.fetch_one({'email': userid})
 
     ids = params['list']
     total = 0
     for nid in ids:
-        notif = connection.Notification.find_one({'_id': ObjectId(nid)})
+        notif = connection.Notification.fetch_one({'_id': ObjectId(nid)})
         if not notif:
             continue
         if notif['user'] == current_user['_id']:
@@ -187,7 +187,7 @@ def create_if_no_exists(email, password=None, encrypted=False):
     :type encrypted: bool
 
     """
-    user = connection.User.find_one({'email': email})
+    user = connection.User.fetch_one({'email': email})
     newuser = False
     if not user:
         newuser = True
@@ -311,7 +311,7 @@ def check_user_pw(username, password):
     """checks for plain password vs hashed password in database"""
     if not password or password == '':
         return None
-    user = connection.User.find_one({'email': username})
+    user = connection.User.fetch_one({'email': username})
     if not user:
         return False
     hashed = bcrypt.hashpw(password, user['hashed_password'])
@@ -384,7 +384,7 @@ def auth_reset_password(request):
     Generates a temporary token and send an email to
     the user.
     '''
-    user = connection.User.find_one({'email':
+    user = connection.User.fetch_one({'email':
                                      request.params.getone('username')})
     if not user:
         log.error("Reset requested for non existing user")
@@ -413,7 +413,7 @@ def auth_reset_password(request):
 @view_config(route_name="auth_confirm_email")
 def auth_confirm_email(request):
     token = request.params.getone('token')
-    token_object = connection.Token.find_one({'token': token})
+    token_object = connection.Token.fetch_one({'token': token})
     if token_object is None:
         return HTTPForbidden()
     if not token_object.check_validity():
@@ -437,12 +437,12 @@ def auth_update_password(request):
     '''
     token = request.params.getone('token')
     password = request.params.getone('password')
-    token_object = connection.Token.find_one({'token': token})
+    token_object = connection.Token.fetch_one({'token': token})
     if token_object is None:
         return HTTPForbidden()
     if not token_object.check_validity():
         return HTTPForbidden()
-    user = connection.User.find_one({'email': token_object['user']})
+    user = connection.User.fetch_one({'email': token_object['user']})
     if not user:
         return HTTPNotFound()
     # Update password
@@ -465,7 +465,7 @@ def auth_login(request):
     userid = authenticated_userid(request)
     if userid:
         log.debug("Someone is logged " + str(userid))
-        user = connection.User.find_one({'email': userid})
+        user = connection.User.fetch_one({'email': userid})
         return {'user': user['email'], 'status': 0, 'msg': '',
                 'admin': user['admin'],
                 'default_project': str(user['default_project'])
@@ -482,7 +482,7 @@ def auth_login(request):
         ruser = {}
         ruser['email'] = request.params.getone('username')
         mob_config = MobyleConfig.get_current()
-        userexists = connection.User.find_one(
+        userexists = connection.User.fetch_one(
                          {'email': request.params.getone('username')})
         if userexists:
             status = 1
@@ -576,7 +576,7 @@ def auth_login(request):
     if user:
         headers = remember(request, user)
         request.response.headerlist.extend(headers)
-        user_doc = connection.User.find_one({'email': user})
+        user_doc = connection.User.fetch_one({'email': user})
         if user_doc:
             default_project = user_doc.get('default_project')
     return {'user': user, 'status': status, 'msg': msg, 'admin': admin,
@@ -820,7 +820,7 @@ def raw_project_data(request):
         raise HTTPClientError('missing ProjectData id')
     except InvalidId:
         raise HTTPClientError('invalid ProjectData id')
-    dataset = connection.ProjectData.find_one({"_id": projectdata_id})
+    dataset = connection.ProjectData.fetch_one({"_id": projectdata_id})
     # Get full path to the file
     file_path = os.path.join(dataset.get_file_path(), dataset['data']['path'][0])
     mime_type = "text/plain"
