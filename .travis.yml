@@ -12,7 +12,8 @@ branches:
     - master
 # command to install dependencies with mobyle2.lib on develop
 install:
-  - "pip install paste pastedeploy pastescript py-bcrypt mongokit"
+  - "pip install git+https://github.com/mobyle2/mongokit.git#egg=mongokit"
+  - "pip install paste pastedeploy pastescript py-bcrypt"
   - "pip install 'pyparsing<2.0'"
   - "pip install pyramid pyramid_debugtoolbar waitress pyramid_beaker pymongo pyramid_mailer py-bcrypt pyScss webtest mf pygeoip pairtree gitpython==0.3.2.RC1 python-ldap"
   - "pip install git+https://github.com/bbangert/velruse.git"
