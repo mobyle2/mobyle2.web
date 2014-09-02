@@ -614,13 +614,13 @@ angular.module('mobyle.services').factory('PasswordResetRequest', function ($res
 });
 
 angular.module('mobyle.services').factory('PasswordReset', function ($resource) {
-    function PasswordResetQuestFactory(userToken, userNewPassword) {
+    function PasswordResetFactory(userToken, userNewPassword) {
         return $resource('/auth/password', {
             token: userToken,
             password: userNewPassword
         }, {});
     }
-    return PasswordResetQuestFactory;
+    return PasswordResetFactory;
 });
 
 /**
