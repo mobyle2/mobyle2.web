@@ -603,6 +603,9 @@ def about(request):
 def services_by_topic(request):
     classification = connection.Classification.fetch_one(
         {'root_term': 'EDAM_topic:0003'})
+    if classification is None:
+        log.error('services classification by topic is not defined')    
+        raise HTTPClientError('no topic classification defined')
     tree_list = classification.get_classification(
                     filter=request.params.get('filter', None))
     objlist = json.dumps(tree_list, default=json_util.default)
