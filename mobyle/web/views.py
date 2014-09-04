@@ -14,6 +14,7 @@ from bson.objectid import ObjectId
 from bson.errors import InvalidId
 import requests
 import bcrypt
+import formencode
 from mf.views import mf_filter, MF_READ
 from mf.db_conn import DbConn
 
@@ -932,12 +933,13 @@ def create_project_job(request):
                               request.params['service'])
     #TODO: create ProgramJob or WorkflowJob according to the required service
     job = connection.ProgramJob()
-    init_status = Status(Status.INIT)
+    init_status = Status(Status.TO_BE_BUILT)
     job['status'] = init_status
     job['project'] = project_id
     job['service'] = job_service
     job['inputs'] = {}
     # process job input parameters
-    job.process_inputs(request.params)
+    request = formencode.variabledecode.variable_decode(request.params, dict_char=':')
+    job.process_inputs(request['input'])
     job.save()
     return job
