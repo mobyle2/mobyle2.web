@@ -22,7 +22,8 @@ requires = [
     "pyScss",
     "mf>=0.1.24",
     "uuid",
-    "webtest"
+    "webtest",
+    "FormEncode"
     ]
 
 setup(name='mobyle.web',
