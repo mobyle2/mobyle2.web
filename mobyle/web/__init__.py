@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from hashlib import sha1
 from random import randint
+import datetime
 
 from pyramid.config import Configurator
 
@@ -153,12 +154,13 @@ def main(global_config, **settings):
     config.add_route('statistics_usage_json', '/admin/stats/usage.json')
     config.add_route('statistics_user', '/admin/stats/user')
 
-    # automatically serialize bson ObjectId to Mongo extended JSON
+    # automatically serialize bson ObjectId and datetime to Mongo extended JSON
     json_renderer = JSON()
-
-    def objectId_adapter(obj, request):
+    def pymongo_adapter(obj, request):
         return json_util.default(obj)
-    json_renderer.add_adapter(ObjectId, objectId_adapter)
+    json_renderer.add_adapter(ObjectId, pymongo_adapter)
+    json_renderer.add_adapter(datetime.datetime, pymongo_adapter)
+
     config.add_renderer('json', json_renderer)
 
     return config.make_wsgi_app()
