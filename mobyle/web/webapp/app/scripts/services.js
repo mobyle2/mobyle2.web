@@ -345,7 +345,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                     if(value!==null && inputsByName[key]){
                         // if value == default value do not send the value
                         if((inputsByName[key].type.default===null) ||
-                           (inputsByName[key].type.default &&
+                           (inputsByName[key].type.default!==null &&
                            value!==inputsByName[key].type.default)){
                             var extractedParam = (value &&
                                                   value.charAt &&
