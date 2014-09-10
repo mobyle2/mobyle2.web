@@ -13,7 +13,7 @@
                 <div id="fieldset-contents-{{para.name}}" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <div ng-repeat="(name, para) in para.children">
-                            <recursive><span class="col-md-offset-1" mbjobpara para="para"  job="job"></span></recursive>
+                            <recursive><span ng-if="mbset(para, job.inputs)" class="col-md-offset-1" mbjobpara para="para"  job="job"></span></recursive>
                         </div>
                     </div>
                 </div>
