@@ -390,7 +390,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
             if(value!==null && value.type){
                 // if value == default value do not send the value
                 if((value.type.default===null) ||
-                   (value.type.default &&
+                   (value.type.default!==null &&
                    value.value!==value.type.default)){
                     switch (value.type._type) {
                         case 'IntegerType':
@@ -398,6 +398,9 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                             break;
                         case 'FloatType':
                             newInputs[key] = parseFloat(value.value);
+                            break;
+                        case 'BooleanType':
+                            newInputs[key] = JSON.parse(value.value);
                             break;
                         default:
                             newInputs[key] = value.value;
