@@ -416,6 +416,7 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
         $scope.projectDataGridOptions = {
             data: 'projectJobs',
             enableRowSelection: false,
+            rowTemplate: $templateCache.get('jobsGrid_Row.html'),
             columnDefs: [{
                     field: '_id.$oid',
                     displayName: 'name',

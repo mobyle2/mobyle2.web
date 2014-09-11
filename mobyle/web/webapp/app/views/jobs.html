@@ -1,5 +1,16 @@
+<script type="text/ng-template" id="jobsGrid_Row.html">
+    <div style="height: 100%" ng-class="{'bg-success': row.entity.status=='finished', 'bg-danger': row.entity.status=='error'}"><div ng-style="{'cursor': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell ">
+        <div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }"> </div>                                  <div ng-cell></div>
+        </div>
+    </div>
+</script>
+
 <script type="text/ng-template" id="jobsGrid_NameCell.html">
-    <a href="#/jobs/{{row.getProperty('_id').$oid}}">{{row.getProperty('userName()')}}</a>
+    <div class="ngCellText" ng-class="col.colIndex()">
+        <a ng-class="{'text-success': row.entity.status=='finished', 'text-danger': row.entity.status=='error'}" href="#/jobs/{{row.getProperty('_id').$oid}}">
+            {{row.getProperty('userName()')}}
+        </a>
+    </div>
 </script>
 
 <script type="text/ng-template" id="jobsGrid_StatusCell.html">
