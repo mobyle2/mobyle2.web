@@ -25,6 +25,51 @@
             };
     }]);
 
+  /**
+   * @ngdoc directive
+   * @name statusCc
+   * @description
+   *
+   * The `statusCc` directive sets bootstrap class names to color the parent
+   * element's backgroung and text.
+   */
+    angular.module('mobyle.directives').directive('statusCc', [
+    function () {
+            return {
+                restrict: 'A',
+                scope: {
+                    job: '=statusCc',
+                    background: '=background',
+                    text: '=text',                    
+                },
+                link: function (scope, element) {
+                    var variant = '';
+                    switch(scope.job.status){
+                        case 'finished':
+                            variant = 'success';
+                            break;
+                        case 'error':
+                            variant = 'danger';
+                            break;
+                        case 'building':
+                            variant = 'info';
+                            break;
+                        case 'updating':
+                            variant = 'warning';
+                            break;
+                        default:
+                            variant = 'info';                            
+                    }
+                    if(scope.text===true){
+                        element.addClass('text-' + variant);
+                    }
+                    if(scope.background===true){
+                        element.addClass('bg-' + variant);
+                    }
+                }
+            };
+    }]);
+    
     angular.module('mobyle.directives').directive('hiddable', function () {
         return {
             restrict: 'A',

@@ -1,17 +1,12 @@
 <div class="row-fluid span11">
-    <div class="col-md-9">
-        <h2>{{job.userName()}} ({{job.getCreationDate() | date: "MMM d, y H:mm"}})</h2>
-    </div>
-    <div class="btn-toolbar">
-        <h2>
-            <a href="#/jobs/{{job._id.$oid}}/replay">
-                <button type="button" class="btn" title="replay {{job.service.public_name}} with same input values">
-                        <i class="glyphicon glyphicon-repeat"></i>
-                </button>
-            </a>
-        </h2>
-    </div>
-
+    <h1>{{job.userName()}} <small>({{job.getCreationDate() | date: "MMM d, y H:mm"}})</small>
+        <span status-cc="job" text="true" background="true" style="border-radius: 3px;" class="initialism">{{job.status}}</span>
+        <a href="#/jobs/{{job._id.$oid}}/replay" class="pull-right">
+            <button type="button" class="btn" title="replay {{job.service.public_name}} with same input values">
+                    <i class="glyphicon glyphicon-repeat"></i>
+            </button>
+        </a>
+    </h1>
     <div class="panel-group">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -42,6 +37,25 @@
                 </div>
                 <div ng-if="!mbset(job.service.inputs, job.inputs)" class="col-md-12 bg-warning">
                     No parameters provided.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group" ng-if="job._type === 'ProgramJob'">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="fieldset_title">
+                    <a data-toggle="collapse" data-target="#fieldset-contents-inputs">execution details</a>
+                </h4>
+            </div>
+            <div id="fieldset-contents-inputs" class="panel-body collapse in">
+                <div ng-if="job.cmd_line" class="col-md-12">
+                    <label class="control-label ng-binding col-md-12">Command line</label>
+                    <pre>{{job.cmd_line}}</pre>
+                </div>
+                <div ng-if="job.cmd_env" class="col-md-12">
+                    <label class="control-label ng-binding col-md-12">Environment</label>
+                    <pre>{{job.cmd_env}}</pre>
                 </div>
             </div>
         </div>
