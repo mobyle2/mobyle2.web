@@ -111,6 +111,14 @@ a.service-link{
     color: darkslategrey;
 }
 
+.service-tree-item{
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    display: block;
+}
+
 .row div {
     -webkit-transition: width 0.3s ease, margin 0.3s ease;
     -moz-transition: width 0.3s ease, margin 0.3s ease;

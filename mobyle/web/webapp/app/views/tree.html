@@ -1,10 +1,10 @@
 <ul id="{{tree.id}}" class="nav" ng-show="toggleState==false">
     <li ng-repeat="tree in tree.sublevels">
-        <span><a ng-click="toggle()" class="toggle-{{toggleState==false}}" title="{{tree.definition}}">{{tree.name}}</a> <span class="text-muted" style="font-size: x-small;">({{getServicesNumber(tree)}})</span></span>
+        <span class="service-tree-item"><a ng-click="toggle()" class="toggle-{{toggleState==false}}" title="{{tree.definition}}">{{tree.name}}</a> <span class="text-muted" style="font-size: x-small;">({{getServicesNumber(tree)}})</span></span>
         <recursive><span tree class="nav"/></recursive>
     </li>
     <li ng-repeat="service in tree.services">
-        <a class="service-link" href="#/services/{{service.public_name}}/{{service.version}}" title="{{service.description}}">{{service.name}}
+        <a class="service-tree-item service-link" href="#/services/{{service.public_name}}/{{service.version}}" title="{{service.description}}">{{service.name}}
             {{service.version}}</a>
     </li>
 </ul>
