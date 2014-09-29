@@ -695,7 +695,7 @@ def create_project_data(request):
     handle.write(file_contents)
     handle.close()
     my_data = RefData()
-    my_data['path'] = [data_name]
+    my_data['path'] = data_name
     my_data['size'] = os.path.getsize(data_file)
     my_data['type'] = FormattedType()
     if 'description' in request.params:
@@ -790,18 +790,17 @@ def list_project_data(request):
         if doc['data'] and 'path' in doc['data']:
             file_path = ObjectManager.get(doc['_id']).get_file_path()
             doc['value'] = ''
-            for file_name in doc['data']['path']:
-                doc['file_path'] = os.path.join(file_path, file_name)
-                try:
-                    handle = open(doc['file_path'], 'r')
-                    doc['value'] += handle.read()
-                    handle.close()
-                except IOError:
-                    log.error('file for "%s" (id "%s") at "%s" cannot be read'
-                              % (doc['name'],
-                                 doc['_id'],
-                                 doc['file_path']))
-                    doc['error'] = 'contents cannot be accessed'
+            doc['file_path'] = os.path.join(file_path, doc['data']['path'])
+            try:
+                handle = open(doc['file_path'], 'r')
+                doc['value'] += handle.read()
+                handle.close()
+            except IOError:
+                log.error('file for "%s" (id "%s") at "%s" cannot be read'
+                          % (doc['name'],
+                             doc['_id'],
+                             doc['file_path']))
+                doc['error'] = 'contents cannot be accessed'
         elif doc['data'] and 'value' in doc['data']:
             doc['value'] = doc['data']['value']
         else:
@@ -822,7 +821,7 @@ def raw_project_data(request):
         raise HTTPClientError('invalid ProjectData id')
     dataset = connection.ProjectData.fetch_one({"_id": projectdata_id})
     # Get full path to the file
-    file_path = os.path.join(dataset.get_file_path(), dataset['data']['path'][0])
+    file_path = os.path.join(dataset.get_file_path(), dataset['data']['path'])
     mime_type = "text/plain"
     response = FileResponse(file_path,
                             request=request,
@@ -830,7 +829,7 @@ def raw_project_data(request):
     # download the file directly
     if request.matchdict['disposition'] == 'dl':
         response.content_disposition = 'attachment; filename="'\
-                                       + dataset['data']['path'][0] + '"'
+                                       + dataset['data']['path'] + '"'
     return response
 
 
