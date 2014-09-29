@@ -26,7 +26,6 @@ from mobyle.common.type import FormattedType
 from mobyle.common import service
 from mobyle.common import tokens
 from mobyle.common.objectmanager import ObjectManager, AccessMode
-from mobyle.common.mobyleError import MobyleError
 from mobyle.common.mobyleConfig import MobyleConfig
 from mobyle.common.term import FormatTerm
 from mobyle.common.classification import Classification
