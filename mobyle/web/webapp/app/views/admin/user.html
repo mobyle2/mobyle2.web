@@ -1,0 +1,24 @@
+<div class="row" >
+
+<ng-include src="'views/admin/sidemenu.html'"></ng-include>
+
+<div class="col-sm-9">
+<script type="text/ng-template" id="userGrid_ActionsCell.html">
+    <div class="ngCellText" ng-class="col.colIndex()">
+        <span class="pull-right">
+            <button class="btn-xs" title="Remove" ng-click="deleteData(row.entity)">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+        </span>
+    </div>
+</script>
+
+  <div class="row-fluid span11">
+      <form>
+          <button ng-click="update()" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i></button>
+          <div class="dataSelectGrid" ng-grid="usersGridOptions"></div>
+      </form>
+  </div>
+
+</div>
+</div>

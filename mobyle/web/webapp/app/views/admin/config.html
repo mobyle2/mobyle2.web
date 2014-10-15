@@ -1,0 +1,175 @@
+<div class="row">
+
+<ng-include src="'views/admin/sidemenu.html'"></ng-include>
+
+<div class="col-sm-9">
+
+  <div class="navbar navbar-left col-sm-9">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a showtab="" href="#config_general">General</a></li>
+      <li><a showtab="" href="#config_data">Data</a></li>
+      <li><a showtab="" href="#config_communication">Communication</a></li>
+      <li><a showtab="" href="#config_authorization">Authentication/Authorization</a></li>
+    </ul>
+
+    <div class="tab-content">
+    <div id="config_general" class="tab-pane active">
+      <form class="form-horizontal" role="form">
+      <div class="panel panel-default">
+        <div class="panel-heading">Server</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2" for="url">Public URL</label>
+              <div class="col-sm-7">
+                <input ng-model="config.url" type="text" class="form-control" id="url" name="url" placeholder="http://localhost/">
+              </div>
+            </div>
+            <!--
+            <div class="form-group">
+              <label class="col-sm-2" for="rootdir">Installation directory</label>
+              <div class="col-sm-7">
+                <input ng-model="config.rootdir" type="text" class="form-control" id="rootdir" name="rootdir" placeholder="/usr/share/mobyle">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="datadir">Data directory</label>
+              <div class="col-sm-7">
+                <input ng-model="config.datadir" type="text" class="form-control" id="datadir" name="datadir" placeholder="/var/lib/mobyle">
+              </div>
+            </div>
+          -->
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Options</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-sm-2" for="options[apikey]">Allow API Key access</label>
+                <div class="col-sm-7">
+                  <input ng-model="config.options.apikey" type="checkbox" class="form-control" id="options[apikey]" name="options[apikey]" placeholder="Allow local file copy">
+                </div>
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div id="config_data" class="tab-pane">
+      <form class="form-horizontal" role="form">
+      <div class="panel panel-default">
+        <div class="panel-heading">Local</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2" for="data[local][allowed_copy]">Allow copy</label>
+              <div class="col-sm-7">
+                <input ng-model="config.data.local.allowed_copy" type="checkbox" class="form-control" id="data[local][allowed_copy]" name="data[local][allowed_copy]" placeholder="Allow local file copy">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Remote</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-sm-2" for="data[remote][allowed_protocols]">Allowed transfert protocols</label>
+                <div class="col-sm-7">
+                  <input ng-model="config.data.remote.allowed_protocols" type="text" class="form-control" id="data[remote][allowed_protocols]" name="data[remote][allowed_protocols]" placeholder="ftp,http">
+                </div>
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+
+    <div id="config_communication" class="tab-pane">
+      <form class="form-horizontal" role="form">
+      <div class="panel panel-default">
+        <div class="panel-heading">Mail</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2" for="mail[gateway]">SMTP Gateway</label>
+              <div class="col-sm-7">
+                <input ng-model="config.mail.gateway" type="text" class="form-control" id="mail[gateway]" name="mail[gateway]" placeholder="SMTP address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="mail[gateway]">List</label>
+              <div class="col-sm-7">
+                <input ng-model="config.mail.list" type="email" class="form-control" id="mail[list]" name="mail[list]" placeholder="Mailing list">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="mail[gateway]">Origin</label>
+              <div class="col-sm-7">
+                <input ng-model="config.mail.gateway" type="email" class="form-control" id="mail[origin]" name="mail[origin]" placeholder="From address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="mail[user]">SMTP User credential</label>
+              <div class="col-sm-7">
+                <input ng-model="config.mail.user" type="text" class="form-control" id="mail[user]" name="mail[user]" placeholder="SMTP user login">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="mail[password]">SMTP Password credential</label>
+              <div class="col-sm-7">
+                <input ng-model="config.mail.password" type="text" class="form-control" id="mail[password]" name="mail[password]" placeholder="SMTP user password">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="config_authorization" class="tab-pane">
+      <form class="form-horizontal" role="form">
+      <div class="panel panel-default">
+        <div class="panel-heading">LDAP</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2" for="auth[ldap][allow]">Allow LDAP authentication</label>
+              <div class="col-sm-7">
+              <input ng-model="config.auth.ldap.allow" type="checkbox" class="form-control" id="auth[ldap][allow]" name="auth[ldap][allow]" placeholder="use ldap">
+            </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="auth[ldap][dn]">DN</label>
+              <div class="col-sm-7">
+                <input ng-model="config.auth.ldap.dn" type="text" class="form-control" id="auth[ldap][dn]" name="auth[ldap][dn]" placeholder="ldap dn">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="auth[ldap][filter]">Filter</label>
+              <div class="col-sm-7">
+                <input ng-model="config.auth.ldap.filter" type="text" class="form-control" id="auth[ldap][filter]" name="auth[ldap][filter]" placeholder="ldap filter">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="auth[ldap][host]">Host</label>
+              <div class="col-sm-7">
+                <input ng-model="config.auth.ldap.host" type="text" class="form-control" id="auth[ldap][host]" name="auth[ldap][host]" placeholder="ldap host">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="auth[ldap][port]">Port</label>
+              <div class="col-sm-7">
+                <input ng-model="config.auth.ldap.port" type="text" class="form-control" id="auth[ldap][port]" name="auth[ldap][port]" placeholder="ldap port">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2" for="auth[ldap][filter]">Filter</label>
+              <div class="col-sm-7">
+                <input ng-model="config.auth.ldap.filter" type="text" class="form-control" id="auth[ldap][filter]" name="auth[ldap][filter]" placeholder="ldap filter">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    <button type="btn" class="btn btn-default" ng-click="config.$save();">Save</button>
+  </div>
+
+</div>
+</div>

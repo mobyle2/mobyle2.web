@@ -288,6 +288,13 @@ angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (S
     };
 });
 
+angular.module('mobyle.services').factory('MobyleConfig', function (mfResource) {
+    var paramDefaults = {
+      'id': '@_id.$oid',
+    };
+    return mfResource('MobyleConfig', paramDefaults);
+});
+
 angular.module('mobyle.services').factory('User', function (mfResource) {
     return mfResource('User');
 });
@@ -368,7 +375,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
             item._id = data._id;
         });
     };
-    
+
     JobResource.prototype.userName = function(){
         if (this.name){
             return this.name;
@@ -376,7 +383,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
             return this.service.public_name;
         }
     };
-    
+
     JobResource.prototype.getReplayJob = function(){
         // get a new Job for replay functionality
         var job = {};
@@ -406,7 +413,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
                             newInputs[key] = value.value;
                             break;
                     }
-                    
+
                 }
             }else if(value!==null && value._id){
                 newInputs[key] = value._id;
@@ -415,7 +422,7 @@ angular.module('mobyle.services').factory('Job', function (mfResource, $http, $p
         job.inputs = newInputs;
         return job;
     };
-    
+
     return JobResource;
 });
 
@@ -432,7 +439,7 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
         'format_terms': '@data.type.format_terms',
         'data_terms': '@data.type.data_terms'
     };
-    
+
     var ProjectDataResource = mfResource('ProjectData', paramDefaults, {
         update: {
             'method': 'PUT',
@@ -462,13 +469,13 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
                                 return false;
                             }else{
                                 return true;
-                            }                        
+                            }
                     });
                 }
                 return dataList;
             });
     };
-    
+
     ProjectDataResource.prototype.$create = function () {
         // use a custom method for create action because
         // we need to use FormData to upload files
@@ -499,12 +506,12 @@ angular.module('mobyle.services').factory('ProjectData', function (mfResource, $
             item._id = data._id;
         });
     };
-    
+
     ProjectDataResource.raw = function (id) {
         // retrieve the raw data for a given project Data
         return $http.get('/api/projectdata/' + id.$oid + '/raw');
     };
-    
+
     return ProjectDataResource;
 });
 
@@ -764,7 +771,7 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
                                     break;
                                 case '#ne':
                                     res = (values[key] !== operand);
-                                    break;                                
+                                    break;
                             }
                             if (!res){
                                 return false;

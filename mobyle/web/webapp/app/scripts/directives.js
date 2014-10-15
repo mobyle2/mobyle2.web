@@ -5,6 +5,18 @@
     /* Directives */
     angular.module('mobyle.directives', []);
 
+  angular.module('mobyle.directives').directive('showtab',
+  function () {
+      return {
+          link: function (scope, element, attrs) {
+              element.click(function(e) {
+                  e.preventDefault();
+                  $(element).tab('show');
+              });
+          }
+      };
+  });
+
     angular.module('mobyle.directives').directive('activeLink', ['$location',
     function (location) {
             return {
@@ -40,7 +52,7 @@
                 scope: {
                     job: '=statusCc',
                     background: '=background',
-                    text: '=text',                    
+                    text: '=text',
                 },
                 link: function (scope, element) {
                     var variant = '';
@@ -58,7 +70,7 @@
                             variant = 'warning';
                             break;
                         default:
-                            variant = 'info';                            
+                            variant = 'info';
                     }
                     if(scope.text===true){
                         element.addClass('text-' + variant);
@@ -69,7 +81,7 @@
                 }
             };
     }]);
-    
+
     angular.module('mobyle.directives').directive('hiddable', function () {
         return {
             restrict: 'A',

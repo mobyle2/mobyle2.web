@@ -127,6 +127,18 @@ config(['$routeProvider','$logProvider',
             templateUrl: 'views/notificationcenter.html',
             controller: 'NotificationCenterCtrl'
         });
+        $routeProvider.when('/admin', {
+            templateUrl: 'views/admin/admin.html',
+            controller: 'AdminCtrl'
+        });
+        $routeProvider.when('/admin/config', {
+            templateUrl: 'views/admin/config.html',
+            controller: 'AdminConfigCtrl'
+        });
+        $routeProvider.when('/admin/user', {
+            templateUrl: 'views/admin/user.html',
+            controller: 'AdminUserCtrl'
+        });
         $routeProvider.otherwise({
             redirectTo: '/welcome'
         });
