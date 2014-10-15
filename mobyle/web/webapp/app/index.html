@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="dropdown" ng-show="userLogged()" ng-controller="ProjectsCtrl">
-    
+
                         <a data-toggle="dropdown" class="dropdown" title="click here to switch to another project">
                             <i class="glyphicon glyphicon-folder-open"></i>{{"&nbsp;&nbsp;" +(currentProject.name || "no project selected")}} <span class="caret"></span></a>
                         <ul class="dropdown-menu" ng-repeat="p in projects">
@@ -82,13 +82,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li ng-show="userLogged()">                    
+                    <li ng-show="userLogged()">
                         <a href="#/jobs">
                             <i class="glyphicon glyphicon-tasks"></i>
                             Jobs
                         </a>
                     </li>
-                    <li ng-show="userLogged()">                    
+                    <li ng-show="userLogged()">
                         <a href="#/datas">
                             <i class="glyphicon glyphicon-file"></i>
                             Data
@@ -130,6 +130,8 @@
         </div>
     </header>
     <div class="container">
+      <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}} <button type="button" class="close" ng-click="closeAlert($index)" data-dismiss="alert" ><span aria-hidden="true">&times;</span></button></alert>
+
       <div id="main-view" ng-view></div>
 <!--
         <div class="row row-offcanvas row-offcanvas-left">
@@ -188,4 +190,3 @@
 </body>
 
 </html>
-
