@@ -296,7 +296,10 @@ angular.module('mobyle.services').factory('MobyleConfig', function (mfResource) 
 });
 
 angular.module('mobyle.services').factory('User', function (mfResource) {
-    return mfResource('User');
+    var paramDefaults = {
+      'id': '@_id.$oid',
+    };
+    return mfResource('User', paramDefaults);
 });
 
 angular.module('mobyle.services').factory('Project', function (mfResource) {

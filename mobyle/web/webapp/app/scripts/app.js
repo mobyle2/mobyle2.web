@@ -113,14 +113,10 @@ config(['$routeProvider','$logProvider',
         });
         $routeProvider.when('/my', {
             templateUrl: 'views/my.html',
-            controller: 'LoginCtrl'
+            controller: 'MyCtrl'
         });
         $routeProvider.when('/my/password_reset', {
             templateUrl: 'views/my_password_reset.html',
-            controller: 'LoginCtrl'
-        });
-        $routeProvider.when('/dashboard', {
-            templateUrl: 'views/my.html',
             controller: 'LoginCtrl'
         });
         $routeProvider.when('/notificationcenter', {
@@ -138,6 +134,14 @@ config(['$routeProvider','$logProvider',
         $routeProvider.when('/admin/user', {
             templateUrl: 'views/admin/user.html',
             controller: 'AdminUserCtrl'
+        });
+        $routeProvider.when('/admin/job', {
+            templateUrl: 'views/admin/job.html',
+            controller: 'AdminJobCtrl'
+        });
+        $routeProvider.when('/admin/service', {
+            templateUrl: 'views/admin/service.html',
+            controller: 'AdminServiceCtrl'
         });
         $routeProvider.otherwise({
             redirectTo: '/welcome'

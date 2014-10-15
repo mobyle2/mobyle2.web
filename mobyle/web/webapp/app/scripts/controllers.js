@@ -122,6 +122,10 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 
     });
 
+angular.module('mobyle.controllers').controller('MyCtrl',
+    function (LoginManager, $scope, $log, CurrentUser) {
+      $scope.user = CurrentUser.get();
+    });
 
 angular.module('mobyle.controllers').controller('LoginCtrl',
     function (LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
@@ -792,6 +796,16 @@ angular.module('mobyle.controllers').controller('AdminConfigCtrl',
 
       };
       $scope.update();
+    });
+
+angular.module('mobyle.controllers').controller('AdminJobCtrl',
+    function ($scope, $log, Job, $templateCache) {
+        $log.info("Not yet implemented");
+    });
+
+angular.module('mobyle.controllers').controller('AdminServiceCtrl',
+    function ($scope, $log, Service, $templateCache) {
+        $log.info("Not yet implemented");
     });
 
 angular.module('mobyle.controllers').controller('AdminUserCtrl',
