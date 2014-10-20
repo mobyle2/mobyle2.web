@@ -1,5 +1,33 @@
 /* app css stylesheet */
 
+.icon-5x {
+  font-size: 5em;
+}
+
+.icon-3x {
+  font-size: 3em;
+}
+
+.panel-green {
+  border-color: #5cb85c;
+}
+
+.panel-green .panel-heading {
+  background-color: #5cb85c;
+}
+
+.panel-orange {
+  border-color: orange;
+}
+
+.panel-orange .panel-heading {
+  background-color: orange;
+}
+
+.huge {
+  font-size:  30px;
+}
+
 .btn-auth {
   margin: 10px;
 }

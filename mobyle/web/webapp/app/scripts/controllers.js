@@ -122,6 +122,10 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 
     });
 
+angular.module('mobyle.controllers').controller('MyCtrl',
+    function (LoginManager, $scope, $log, CurrentUser) {
+      $scope.user = CurrentUser.get();
+    });
 
 angular.module('mobyle.controllers').controller('LoginCtrl',
     function (LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
@@ -675,7 +679,7 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
             pageSizes: [5, 10, 20],
             pageSize: 5,
             currentPage: 1
-        };  
+        };
         $scope.project.$promise.then(function () {
             ProjectData.listByProject($scope.project, para.type).then(function(dataList){
                 $scope.projectData = dataList;
@@ -734,4 +738,322 @@ angular.module('mobyle.controllers').controller('mobyleCtrl',
                 msg: rejection || 'unknown navigation error'
             });
         });
+    });
+
+
+angular.module('mobyle.controllers').controller('AdminCtrl',
+    function ($scope, $log, User, Job, LoginManager, MobyleConfig) {
+      $scope.$on('LoginManager.update', function (event, login) {
+          $scope.user = login.user;
+          $scope.admin = login.admin;
+      });
+      $scope.users = [];
+      $scope.update_users = function () {
+          $log.info('Admin: querying list of users...');
+          $scope.users = User.list();
+      };
+      $scope.update_users();
+      $scope.update_jobs = function () {
+          $log.info('Admin: querying list of jobs...');
+          var running = 0;
+          var pending = 0;
+          var jobs = Job.list();
+          for(var i=0;i<jobs.length;i++){
+            if(jobs.status === 'pending') {
+              pending += 1;
+            }
+            else if(jobs.status === 'running') {
+              running += 1;
+            }
+          }
+          $scope.jobs_pending = pending;
+          $scope.jobs_running = running;
+      };
+      $scope.update_jobs();
+
+      $scope.config = {};
+      $scope.update_config = function () {
+          $log.info('Admin: querying config...');
+          var config = MobyleConfig.filter({active: true});
+          config.$promise.then(function(resp){
+            $scope.config = resp[0];
+          });
+
+      };
+      $scope.update_config();
+
+    });
+
+angular.module('mobyle.controllers').controller('AdminConfigCtrl',
+    function ($scope, $log, MobyleConfig) {
+      $scope.config = {};
+      $scope.update = function () {
+          $log.info('Admin: querying config...');
+          var config = MobyleConfig.filter({active: true});
+          config.$promise.then(function(resp){
+            $scope.config = resp[0];
+          });
+
+      };
+      $scope.update();
+    });
+
+angular.module('mobyle.controllers').controller('AdminJobCtrl',
+    function ($scope, $log, Job, $templateCache) {
+      $scope.jobs = [];
+      $scope.pagedJobData = [];
+
+      $scope.setPagingData = function(data, pageSize, page){
+          if (data===undefined){
+              return;
+          }
+          $scope.pagedJobData = data.slice((page - 1) * pageSize, page * pageSize);
+          if (!$scope.$$phase) {
+              $scope.$apply();
+          }
+      };
+
+      $scope.update = function () {
+          $log.info('Admin: querying jobs...');
+          var jobs = Job.list();
+          jobs.$promise.then(function(resp){
+            $scope.jobs = resp;
+            $scope.totalservices = resp.length;
+            $scope.setPagingData($scope.jobs, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+          });
+
+      };
+
+      $scope.pagingOptions = {
+          pageSizes: [5, 10, 20],
+          pageSize: 10,
+          currentPage: 1
+      };
+
+      $scope.$watch('pagingOptions', function () {
+            $scope.setPagingData($scope.jobs, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+      }, true);
+
+      $scope.selectedRows = [];
+      $scope.jobsGridOptions = {
+          data: 'pagedJobData',
+          showFooter: true,
+          totalServerItems:'totalServerItems',
+          enablePaging: true,
+          pagingOptions: $scope.pagingOptions,
+          enableRowSelection: true,
+          multiSelect: false,
+          columnDefs: [{
+                  field: 'name',
+                  displayName: 'Name',
+                  width: '*'
+          },
+              {
+                  field: 'status',
+                  displayName: 'Status',
+                  width: '**'
+          },
+          {
+              field: 'owner',
+              displayName: 'Owner',
+              width: '**'
+          },
+          {
+              field: 'test',
+              displayName: 'Actions',
+              width: '**',
+              cellTemplate: $templateCache.get('jobGrid_ActionsCell.html')
+          }
+          ],
+          selectedItems:$scope.selectedRows,
+          afterSelectionChange: function(){
+              // clicking on a row selects it
+              //$scope.ok();
+          }
+      };
+
+
+      $scope.update();
+    });
+
+angular.module('mobyle.controllers').controller('AdminServiceCtrl',
+    function ($scope, $log, Service, $templateCache) {
+        $scope.services = [];
+        $scope.pagedServiceData = [];
+
+        $scope.setPagingData = function(data, pageSize, page){
+            if (data===undefined){
+                return;
+            }
+            $scope.pagedServiceData = data.slice((page - 1) * pageSize, page * pageSize);
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
+        };
+
+        $scope.update = function () {
+            $log.info('Admin: querying services...');
+            //var services = Service.list();
+            var services = Service.query();
+            services.$promise.then(function(resp){
+              $scope.services = resp;
+              $scope.totalservices = resp.length;
+              $scope.setPagingData($scope.services, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+            });
+
+        };
+
+        $scope.pagingOptions = {
+            pageSizes: [5, 10, 20],
+            pageSize: 10,
+            currentPage: 1
+        };
+
+        $scope.$watch('pagingOptions', function () {
+              $scope.setPagingData($scope.services, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+        }, true);
+
+        $scope.selectedRows = [];
+        $scope.servicesGridOptions = {
+            data: 'pagedServiceData',
+            showFooter: true,
+            totalServerItems:'totalServerItems',
+            enablePaging: true,
+            pagingOptions: $scope.pagingOptions,
+            enableRowSelection: true,
+            multiSelect: false,
+            columnDefs: [{
+                    field: 'name',
+                    displayName: 'Name',
+                    width: '*'
+            },
+                {
+                    field: 'version',
+                    displayName: 'Version',
+                    width: '**'
+            },
+            {
+                field: 'title',
+                displayName: 'Title',
+                width: '**'
+            },
+            {
+                field: 'description',
+                displayName: 'Description',
+                width: '**'
+            },
+            {
+                field: 'test',
+                displayName: 'Actions',
+                width: '**',
+                cellTemplate: $templateCache.get('serviceGrid_ActionsCell.html')
+            }
+            ],
+            selectedItems:$scope.selectedRows,
+            afterSelectionChange: function(){
+                // clicking on a row selects it
+                //$scope.ok();
+            }
+        };
+
+
+        $scope.update();
+    });
+
+angular.module('mobyle.controllers').controller('AdminUserCtrl',
+    function ($scope, $log, User, $templateCache) {
+      $scope.users = [];
+      $scope.pagedUserData = [];
+
+      $scope.setPagingData = function(data, pageSize, page){
+          if (data===undefined){
+              return;
+          }
+          $scope.pagedUserData = data.slice((page - 1) * pageSize, page * pageSize);
+          if (!$scope.$$phase) {
+              $scope.$apply();
+          }
+      };
+
+      $scope.update = function () {
+          $log.info('Admin: querying users...');
+          var users = User.list();
+          users.$promise.then(function(resp){
+            $scope.users = resp;
+            $scope.totalusers = resp.length;
+            $scope.setPagingData($scope.users, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+          });
+
+      };
+
+      $scope.pagingOptions = {
+          pageSizes: [5, 10, 20],
+          pageSize: 10,
+          currentPage: 1
+      };
+
+      $scope.$watch('pagingOptions', function () {
+            $scope.setPagingData($scope.users, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+      }, true);
+
+      $scope.selectedRows = [];
+      $scope.usersGridOptions = {
+          data: 'pagedUserData',
+          showFooter: true,
+          totalServerItems:'totalServerItems',
+          enablePaging: true,
+          pagingOptions: $scope.pagingOptions,
+          enableRowSelection: true,
+          multiSelect: false,
+          columnDefs: [{
+                  field: 'email',
+                  displayName: 'Email',
+                  width: '*'
+          },
+              {
+                  field: 'groups',
+                  displayName: 'Groups',
+                  width: '**'
+          },
+          {
+              field: 'test',
+              displayName: 'Actions',
+              width: '**',
+              cellTemplate: $templateCache.get('userGrid_ActionsCell.html')
+          }
+          ],
+          selectedItems:$scope.selectedRows,
+          afterSelectionChange: function(){
+              // clicking on a row selects it
+              //$scope.ok();
+          }
+      };
+
+      $scope.deleteData = function (data) {
+        if(data.admin) {
+          $scope.alerts.push({
+              type: 'danger',
+              msg: 'User is an admin cannot delete it'
+          });
+        }
+        else {
+          data.$delete().then(function () {
+              $scope.users.splice($scope.users.indexOf(data), 1);
+          }, function (errorResponse) {
+              $scope.alerts.push({
+                  type: 'danger',
+                  msg: errorResponse.data.detail
+              });
+          });
+        }
+      };
+
+
+      $scope.update();
+
+
+
     });
