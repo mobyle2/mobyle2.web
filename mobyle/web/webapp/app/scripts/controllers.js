@@ -800,12 +800,166 @@ angular.module('mobyle.controllers').controller('AdminConfigCtrl',
 
 angular.module('mobyle.controllers').controller('AdminJobCtrl',
     function ($scope, $log, Job, $templateCache) {
-        $log.info("Not yet implemented");
+      $scope.jobs = [];
+      $scope.pagedJobData = [];
+
+      $scope.setPagingData = function(data, pageSize, page){
+          if (data===undefined){
+              return;
+          }
+          $scope.pagedJobData = data.slice((page - 1) * pageSize, page * pageSize);
+          if (!$scope.$$phase) {
+              $scope.$apply();
+          }
+      };
+
+      $scope.update = function () {
+          $log.info('Admin: querying jobs...');
+          var jobs = Job.list();
+          jobs.$promise.then(function(resp){
+            $scope.jobs = resp;
+            $scope.totalservices = resp.length;
+            $scope.setPagingData($scope.jobs, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+          });
+
+      };
+
+      $scope.pagingOptions = {
+          pageSizes: [5, 10, 20],
+          pageSize: 10,
+          currentPage: 1
+      };
+
+      $scope.$watch('pagingOptions', function () {
+            $scope.setPagingData($scope.jobs, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+      }, true);
+
+      $scope.selectedRows = [];
+      $scope.jobsGridOptions = {
+          data: 'pagedJobData',
+          showFooter: true,
+          totalServerItems:'totalServerItems',
+          enablePaging: true,
+          pagingOptions: $scope.pagingOptions,
+          enableRowSelection: true,
+          multiSelect: false,
+          columnDefs: [{
+                  field: 'name',
+                  displayName: 'Name',
+                  width: '*'
+          },
+              {
+                  field: 'status',
+                  displayName: 'Status',
+                  width: '**'
+          },
+          {
+              field: 'owner',
+              displayName: 'Owner',
+              width: '**'
+          },
+          {
+              field: 'test',
+              displayName: 'Actions',
+              width: '**',
+              cellTemplate: $templateCache.get('jobGrid_ActionsCell.html')
+          }
+          ],
+          selectedItems:$scope.selectedRows,
+          afterSelectionChange: function(){
+              // clicking on a row selects it
+              //$scope.ok();
+          }
+      };
+
+
+      $scope.update();
     });
 
 angular.module('mobyle.controllers').controller('AdminServiceCtrl',
     function ($scope, $log, Service, $templateCache) {
-        $log.info("Not yet implemented");
+        $scope.services = [];
+        $scope.pagedServiceData = [];
+
+        $scope.setPagingData = function(data, pageSize, page){
+            if (data===undefined){
+                return;
+            }
+            $scope.pagedServiceData = data.slice((page - 1) * pageSize, page * pageSize);
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
+        };
+
+        $scope.update = function () {
+            $log.info('Admin: querying services...');
+            //var services = Service.list();
+            var services = Service.query();
+            services.$promise.then(function(resp){
+              $scope.services = resp;
+              $scope.totalservices = resp.length;
+              $scope.setPagingData($scope.services, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+            });
+
+        };
+
+        $scope.pagingOptions = {
+            pageSizes: [5, 10, 20],
+            pageSize: 10,
+            currentPage: 1
+        };
+
+        $scope.$watch('pagingOptions', function () {
+              $scope.setPagingData($scope.services, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+        }, true);
+
+        $scope.selectedRows = [];
+        $scope.servicesGridOptions = {
+            data: 'pagedServiceData',
+            showFooter: true,
+            totalServerItems:'totalServerItems',
+            enablePaging: true,
+            pagingOptions: $scope.pagingOptions,
+            enableRowSelection: true,
+            multiSelect: false,
+            columnDefs: [{
+                    field: 'name',
+                    displayName: 'Name',
+                    width: '*'
+            },
+                {
+                    field: 'version',
+                    displayName: 'Version',
+                    width: '**'
+            },
+            {
+                field: 'title',
+                displayName: 'Title',
+                width: '**'
+            },
+            {
+                field: 'description',
+                displayName: 'Description',
+                width: '**'
+            },
+            {
+                field: 'test',
+                displayName: 'Actions',
+                width: '**',
+                cellTemplate: $templateCache.get('serviceGrid_ActionsCell.html')
+            }
+            ],
+            selectedItems:$scope.selectedRows,
+            afterSelectionChange: function(){
+                // clicking on a row selects it
+                //$scope.ok();
+            }
+        };
+
+
+        $scope.update();
     });
 
 angular.module('mobyle.controllers').controller('AdminUserCtrl',
