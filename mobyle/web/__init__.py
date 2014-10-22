@@ -69,6 +69,7 @@ def main(global_config, **settings):
     config.add_subscriber(before_render, BeforeRender)
 
     config.add_route('main', '/')
+    config.add_route('is_authenticated','/is_authenticated')
     config.add_route('onlyauthenticated', '/onlyauthenticated')
     config.add_route('login', '/login')
     config.add_route('logout', '/logout')

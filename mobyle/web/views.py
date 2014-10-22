@@ -31,6 +31,7 @@ from mobyle.common.term import FormatTerm
 from mobyle.common.classification import Classification
 from mobyle.common.job import Status, ProgramJob, Job
 from mobyle.common.notifications import Notification
+from mobyle.common.config import Config
 
 import urllib
 from urllib2 import URLError
@@ -41,6 +42,19 @@ import os.path
 import logging
 log = logging.getLogger(__name__)
 
+@view_config(route_name='is_authenticated')
+def is_authenticated(request):
+
+  redirect_url = request.params.getone('redirect_url')
+  mobyle_config = Config.config()
+  mobyle_url = mobyle_config.get("app:main", "site_uri")
+  userid = authenticated_userid(request)
+  if userid:
+      log.debug("Someone is logged " + str(userid))
+      user = connection.User.fetch_one({'email': userid})
+      if user:
+        return HTTPFound(location=redirect_url+'?apikey='+user['apikey'])
+  return HTTPFound(location=mobyle_url+'/app/#/login')
 
 @view_config(route_name='notifications_list', renderer='json', request_method='PUT')
 def update_notification_list(request):
@@ -604,7 +618,7 @@ def services_by_topic(request):
     classification = connection.Classification.fetch_one(
         {'root_term': 'EDAM_topic:0003'})
     if classification is None:
-        log.error('services classification by topic is not defined')    
+        log.error('services classification by topic is not defined')
         raise HTTPClientError('no topic classification defined')
     tree_list = classification.get_classification(
                     filter=request.params.get('filter', None))
