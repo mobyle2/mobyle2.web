@@ -93,7 +93,6 @@ def create_notification_list(request):
     (params, empty) = request.params.items()[0]
     params = json.loads(params)
     total = 0
-    print str(params)
 
     notif_project = None
     if 'project' in params:
