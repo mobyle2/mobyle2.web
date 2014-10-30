@@ -21,6 +21,7 @@ from mf.db_conn import DbConn
 from mobyle.common.connection import connection
 from mobyle.common import users
 from mobyle.common import project
+from mobyle.common import service
 from mobyle.common.data import RefData, ValueData, ListData, StructData
 from mobyle.common.type import FormattedType
 from mobyle.common import service
@@ -655,8 +656,7 @@ def service_by_name_version_and_maybe_project(request):
             mffilter["public_name"] = request.matchdict['identifier']
     if 'service_version' in request.matchdict:
         mffilter["version"] = request.matchdict['service_version']
-    collection = DbConn.get_db('Service')
-    obj = collection.fetch_one(mffilter)
+    obj = connection.Service.fetch_one(mffilter)
     if not obj:
         raise HTTPNotFound()
     response = {'object': 'service', 'status': 0,
