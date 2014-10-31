@@ -524,7 +524,7 @@
             restrict: 'E',
             require: '?ngModel',
             link: function (scope, elem, attrs, ctrl) {
-                if (attrs.type.toLowerCase() !== 'number') {
+                if (attrs.type && attrs.type.toLowerCase() !== 'number') {
                     return;
                 } //only augment number input!
                 ctrl.$formatters.push(function (value) {
