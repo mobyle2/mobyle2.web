@@ -502,7 +502,7 @@
                             var blob = file.slice(offset, stop + 1);
                             reader.readAsBinaryString(blob);
                         };
-                        for (var i = 0, f; i === files.length; i++) {
+                        for (var i = 0, f; i < files.length; i++) {
                             f = files[i];
                             var fileSize = f.size;
                             readBlob(f, 0);
