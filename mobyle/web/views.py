@@ -712,13 +712,13 @@ def create_project_data(request):
     my_data['size'] = os.path.getsize(data_file)
     my_data['type'] = FormattedType()
     if 'description' in request.params:
-        my_data['description'] = request.params['description']
+        my_dataset['description'] = request.params['description']
     if 'tags' in request.params:
-        my_data['tags'] = request.params.getall('tags')
+        my_dataset['tags'] = request.params.getall('tags')
     if 'format_terms' in request.params:
-        my_data['type']['format_terms'] = request.params['format_terms']
+        my_data['type']['format_terms'] = [request.params['format_terms']]
     if 'data_terms' in request.params:
-        my_data['type']['data_terms'] = request.params['data_terms']
+        my_data['type']['data_terms'] = [request.params['data_terms']]
     my_dataset.schema(my_data)
     my_dataset.status(ObjectManager.READY)
     #save data
