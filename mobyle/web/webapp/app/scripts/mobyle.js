@@ -1,14 +1,157 @@
-/*global $:false */
+/*global $:false, _:false, angular:false */
+/*jslint browser: true, indent: 4, vars: true, nomen: true, es5: true */
 'use strict';
+
+// Declare app level module which depends on filters, and services
+angular.module('mobyle', ['mobyle.resources', 'ngSanitize', 'ngCookies', 'ngRoute', 'ui.utils', 'ui.tinymce', 'ui.bootstrap', 'ngGrid']).
+config(['$routeProvider','$logProvider',
+    function ($routeProvider, $log) {
+        $routeProvider.when('/welcome', {
+            templateUrl: 'views/welcome.html',
+            controller: 'WelcomeCtrl'
+        });
+        $routeProvider.when('/services', {
+            templateUrl: 'views/services.html',
+            controller: 'ServicesCtrl'
+        });
+        var serviceDetailRoute = {
+            templateUrl: 'views/serviceDetail.html',
+            controller: 'ServiceDetailCtrl',
+            resolve: {
+                service: function ($route, Service, $q) {
+                    var deferred = $q.defer();
+                    Service.get({
+                        public_name: $route.current.params.name
+                    }, function (successData) {
+                        deferred.resolve(successData);
+                    }, function (errorData) {
+                        $log.error('service ' + $route.current.params.name + ' not found!', errorData);
+                        deferred.reject('service ' + $route.current.params.name + ' not found!');
+                    });
+                    return deferred.promise;
+                },
+                sourceJob: function(){
+                    return null;
+                }
+            }
+        };
+        $routeProvider.when('/services/:name/:version?', serviceDetailRoute);
+        $routeProvider.when('/projects/:project/services/:name/:version?', serviceDetailRoute);
+        $routeProvider.when('/projects', {
+            templateUrl: 'views/projects.html',
+            controller: 'ProjectsCtrl'
+        });
+        $routeProvider.when('/datas', {
+            templateUrl: 'views/datas.html',
+            controller: 'DatasCtrl'
+        });
+        $routeProvider.when('/jobs', {
+            templateUrl: 'views/jobs.html',
+            controller: 'JobsCtrl'
+        });
+        var jobDetailRoute = {
+            templateUrl: 'views/jobDetail.html',
+            controller: 'JobDetailCtrl',
+            resolve: {
+                job: function ($route, Job, $q) {
+                    var deferred = $q.defer();
+                    Job.get({id: $route.current.params.jobId
+                    }, function (successData) {
+                        deferred.resolve(successData);
+                    }, function (errorData) {
+                        $log.error('job ' + $route.current.params.jobId + ' not found!', errorData);
+                        deferred.reject('job ' + $route.current.params.jobId + ' not found!');
+                    });
+                    return deferred.promise;
+                }
+            }
+        };
+        $routeProvider.when('/jobs/:jobId', jobDetailRoute);
+        var jobReplayRoute = {
+            templateUrl: 'views/serviceDetail.html',
+            controller: 'ServiceDetailCtrl',
+            resolve: {
+                sourceJob: function ($route, Job, $q) {
+                    var deferred = $q.defer();
+                    Job.get({id: $route.current.params.jobId
+                    }, function (successData) {
+                        deferred.resolve(successData.getReplayJob());
+                    }, function (errorData) {
+                        $log.error('job ' + $route.current.params.jobId + ' not found!', errorData);
+                        deferred.reject('job ' + $route.current.params.jobId + ' not found!');
+                    });
+                    return deferred.promise;
+                },
+                service: function(){
+                    return null;
+                }
+            }
+        };
+        $routeProvider.when('/jobs/:jobId/replay', jobReplayRoute);
+        $routeProvider.when('/dataterms', {
+            templateUrl: 'views/terms.html',
+            controller: 'DataTermsCtrl'
+        });
+        $routeProvider.when('/dataterms/:dataTermId', {
+            templateUrl: 'views/termDetail.html',
+            controller: 'DataTermDetailCtrl'
+        });
+        $routeProvider.when('/formatterms', {
+            templateUrl: 'views/terms.html',
+            controller: 'FormatTermsCtrl'
+        });
+        $routeProvider.when('/formatterms/:formatTermId', {
+            templateUrl: 'views/termDetail.html',
+            controller: 'FormatTermDetailCtrl'
+        });
+        $routeProvider.when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl'
+        });
+        $routeProvider.when('/logout', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl'
+        });
+        $routeProvider.when('/my', {
+            templateUrl: 'views/my.html',
+            controller: 'MyCtrl'
+        });
+        $routeProvider.when('/my/password_reset', {
+            templateUrl: 'views/my_password_reset.html',
+            controller: 'LoginCtrl'
+        });
+        $routeProvider.when('/notificationcenter', {
+            templateUrl: 'views/notificationcenter.html',
+            controller: 'NotificationCenterCtrl'
+        });
+        $routeProvider.when('/admin', {
+            templateUrl: 'views/admin/admin.html',
+            controller: 'AdminCtrl'
+        });
+        $routeProvider.when('/admin/config', {
+            templateUrl: 'views/admin/config.html',
+            controller: 'AdminConfigCtrl'
+        });
+        $routeProvider.when('/admin/user', {
+            templateUrl: 'views/admin/user.html',
+            controller: 'AdminUserCtrl'
+        });
+        $routeProvider.when('/admin/job', {
+            templateUrl: 'views/admin/job.html',
+            controller: 'AdminJobCtrl'
+        });
+        $routeProvider.when('/admin/service', {
+            templateUrl: 'views/admin/service.html',
+            controller: 'AdminServiceCtrl'
+        });
+        $routeProvider.otherwise({
+            redirectTo: '/welcome'
+        });
+  }]);
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('mobyle.services', ['ngResource']);
-
-angular.module('mobyle.services').value('mbsimple', function (para) {
+angular.module('mobyle').value('mbsimple', function (para) {
     // detect if a parameter or a paragraph is "simple"
     // it is simple if it has the "simple" property set to true
     // or if one of its children has the "simple" property set to true
@@ -25,7 +168,7 @@ angular.module('mobyle.services').value('mbsimple', function (para) {
     return simple(para);
 });
 
-angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
+angular.module('mobyle').value('mbset', function (para, valuesMap) {
     // detect if a parameter or a paragraph is "set"
     // it is set if it has its value set to true
     // or if one of its children has its value set to true
@@ -49,476 +192,7 @@ angular.module('mobyle.services').value('mbset', function (para, valuesMap) {
     return set(para);
 });
 
-angular.module('mobyle.services').factory('mfResource', function ($resource, $http) {
-    function MFResourceFactory(collectionName, paramDefaults, actions) {
-        // default url template, used for everything *but* search
-        var route = '/' + collectionName.toLowerCase() + 's/:id';
-        // url template used for search/filter
-        var filterUrl = '/' + collectionName.toLowerCase() + 's?';
-        for (var key in paramDefaults) {
-            filterUrl += 'Search' + collectionName + '[' + key + ']=:' + key + '&';
-        }
-        // custom function to build request body
-        var transformRequestFactory = function () {
-            return function (data) {
-                var requestObject = {};
-                var serialize = function (prefix, data) {
-                    if (data instanceof Array) {
-                        $.each(data, function (index) {
-                            serialize(prefix + '[' + index + ']', data[index]);
-                        });
-                    } else if (data instanceof Object) {
-                        if (data.$oid) {
-                            requestObject[prefix] = data.$oid;
-                        } else {
-                            for (var prop in data) {
-                                if (data.hasOwnProperty(prop)) {
-                                    serialize(prefix + '[' + prop + ']', data[prop]);
-                                }
-                            }
-                        }
-                    } else {
-                        if (data !== null) {
-                            requestObject[prefix] = data;
-                        }
-                    }
-                };
-                serialize(collectionName, data);
-                return $.param(requestObject);
-            };
-        };
-        var transformResponse = function (data) {
-            var json_data = JSON.parse(data);
-            return json_data[json_data.object];
-        };
-        var updateAction = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            'method': 'PUT',
-            transformRequest: transformRequestFactory(''),
-            transformResponse: transformResponse
-        };
-        var createAction = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            'method': 'POST',
-            transformRequest: transformRequestFactory(''),
-            transformResponse: transformResponse,
-            params: {}
-        };
-        var listAction = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            'method': 'GET',
-            transformRequest: transformRequestFactory(''),
-            isArray: true
-        };
-        var filterAction = {
-            url: filterUrl,
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            'method': 'GET',
-            transformRequest: transformRequestFactory('Search'),
-            isArray: true
-        };
-        var resource = $resource(route, paramDefaults || {},
-            $.extend({
-                get: {
-                    method: 'GET',
-                    transformResponse: function (data) {
-                        var json_data = JSON.parse(data);
-                        return json_data[json_data.object];
-                    }
-                },
-                list: listAction,
-                filter: filterAction,
-                create: createAction,
-                update: updateAction
-            }, actions)
-        );
-        // define save action to use create or update
-        resource.prototype.$save = function () {
-            if (!this._id) {
-                return this.$create();
-            } else {
-                return this.$update();
-            }
-        };
-        // get creation date from objectid
-        resource.prototype.getCreationDate = function () {
-            if (this._id) {
-                var id = this._id.$oid;
-                var timehex = id.substring(0,8);
-                var secondsSinceEpoch = parseInt(timehex, 16);
-                var dt = new Date(secondsSinceEpoch*1000);
-                return dt;
-            }else{
-                return null;
-            }
-        };
-        // define delete action that sends only the id of the object to be deleted
-        resource.prototype.$delete = function () {
-            return $http.delete('/' + collectionName.toLowerCase() + 's/' + this._id.$oid);
-        };
-        return resource;
-    }
-    return MFResourceFactory;
-});
-
-angular.module('mobyle.services').factory('Classification', function ($resource) {
-    return $resource('/services/by_:key', {}, {
-        query: {
-            isArray: false
-        }
-    });
-});
-
-angular.module('mobyle.services').value('serviceInputsByName', function(){
-        var inputsByName = {};
-        var explore = function(para){
-            if(para.children){
-                angular.forEach(para.children, function(childPara){
-                    explore(childPara);
-                });
-            }else{
-                inputsByName[para.name]=para;
-            }
-        };
-        explore(this.inputs);
-        return inputsByName;
-    });
-
-angular.module('mobyle.services').factory('Service', function ($resource, serviceInputsByName) {
-    var resource = $resource('/services/:id', {}, {
-        get: {
-            method: 'get',
-            url: '/api/services/:id/:public_name/:version',
-            transformResponse: function (data) {
-                var json_data = JSON.parse(data);
-                return json_data[json_data.object];
-            }
-        }
-    });
-    resource.prototype.inputsByName = serviceInputsByName;
-    return resource;
-});
-
-angular.module('mobyle.services').factory('DataTerm', function (mfResource) {
-    return mfResource('DataTerm');
-});
-
-angular.module('mobyle.services').factory('FormatTerm', function (mfResource) {
-    return mfResource('FormatTerm');
-});
-
-angular.module('mobyle.services').factory('ServiceTypeTerm', function (mfResource) {
-    var res = mfResource('ServiceTypeTerm');
-    return res;
-});
-
-angular.module('mobyle.services').factory('ServiceTypeTermRegistry', function (ServiceTypeTerm, FormatTerm, $q) {
-    // declare promises
-    var dataTermsByIdP = $q.defer();
-    var formatTermsByIdP = $q.defer();
-    var termsByIdP = $q.defer();
-    var dataTermsP = $q.defer();
-    var formatTermsP = $q.defer();
-    var termsP = $q.defer();
-    // call the server method
-    var dataQuery = ServiceTypeTerm.query({});
-    // process the server response to cache the results
-    dataQuery.$promise.then(function(resp){
-        var dataTermsById = {};
-        var formatTermsById = {};
-        var termsById = {};
-        var dataTerms = [];
-        var formatTerms = [];
-        var terms = [];
-        angular.forEach(resp, function(item){
-            dataTermsById[item.term_id] = item;
-            dataTerms.push(item);
-            terms.push(item);
-            angular.forEach(item.format_terms,
-                            function(formatTerm){
-                                if(!formatTermsById[formatTerm.term_id]){
-                                    formatTermsById[formatTerm.term_id] = formatTerm;
-                                    formatTerms.push(formatTerm);
-                                    terms.push(formatTerm);
-                                }
-                            });
-        });
-        termsById = dataTermsById;
-        angular.extend(termsById, formatTermsById);
-        dataTermsByIdP.resolve(dataTermsById);
-        formatTermsByIdP.resolve(formatTermsById);
-        termsByIdP.resolve(termsById);
-        dataTermsP.resolve(dataTerms);
-        formatTermsP.resolve(formatTerms);
-        termsP.resolve(terms);
-    });
-    return {
-        dataTermsById: function () {
-            // data terms in an object
-            return dataTermsByIdP.promise;
-        },
-        formatTermsById: function() {
-            // format terms in an object
-            return formatTermsByIdP.promise;
-        },
-        termsById: function(){
-            // data and format terms in an object
-            return termsByIdP.promise;
-        },
-        dataTerms: function () {
-            // data terms in a list
-            return dataTermsP.promise;
-        },
-        formatTerms: function() {
-            // format terms in a list
-            return formatTermsP.promise;
-        },
-        terms: function(){
-            // data and format terms in a list
-            return termsP.promise;
-        }
-    };
-});
-
-angular.module('mobyle.services').factory('MobyleConfig', function (mfResource) {
-    var paramDefaults = {
-      'id': '@_id.$oid',
-    };
-    return mfResource('MobyleConfig', paramDefaults);
-});
-
-angular.module('mobyle.services').factory('User', function (mfResource) {
-    var paramDefaults = {
-      'id': '@_id.$oid',
-    };
-    return mfResource('User', paramDefaults);
-});
-
-angular.module('mobyle.services').factory('Project', function (mfResource) {
-    var defaultParams = {
-        'name': '@name',
-        'description': '@description',
-        'public': '@public',
-        'owner': '@owner',
-        'users': '@users',
-        'id': '@_id.$oid'
-    };
-
-    return mfResource('Project', defaultParams);
-});
-
-angular.module('mobyle.services').factory('Job', function (mfResource, $http, $parse, Service, serviceInputsByName) {
-
-    var paramDefaults = {
-        'id': '@_id.$oid',
-        'status': '@status',
-        'project': '@project._id.$oid',
-        'service': '@service._id.$oid'
-    };
-
-    var JobResource = mfResource('Job', paramDefaults, {
-        list_by_project: {
-            'method': 'GET',
-            'url': '/api/project/:project_id/jobs',
-            isArray: true
-        },
-        get: {
-            method: 'get',
-            url: '/api/jobs/:id'
-        }
-    });
-
-    JobResource.prototype.$create = function () {
-        // use a custom method for create action because
-        // we need to use FormData to upload files
-        var item = this;
-        return $http.post('/api/projectjobs', this, {
-            transformRequest: function (data) {
-                // use FormData to allow file uploads
-                var fd = new FormData();
-                // job project container
-                fd.append('project', data.project._id.$oid);
-                // service
-                fd.append('service', data.service._id.$oid);
-                var inputsByName = data.service.inputsByName();
-                // job input parameters
-                angular.forEach(data.inputs, function (value, key) {
-                    // if value==null then it is not set
-                    if(value!==null && inputsByName[key]){
-                        // if value == default value do not send the value
-                        if((inputsByName[key].type.default===null) ||
-                           (inputsByName[key].type.default!==null &&
-                           value!==inputsByName[key].type.default)){
-                            var extractedParam = (value &&
-                                                  value.charAt &&
-                                                  value.charAt(0) === '@') ?
-                                $parse(value.substr(1))(data) : value;
-                            fd.append('input:'+key, extractedParam);
-                        }
-                    }
-                });
-                return fd;
-            },
-            transformResponse: function (data) {
-                var wrapped = new JobResource(angular.fromJson(data));
-                return wrapped;
-            },
-            headers: {
-                'Content-Type': undefined
-            }
-        }).success(function (data) {
-            item._id = data._id;
-        });
-    };
-
-    JobResource.prototype.userName = function(){
-        if (this.name){
-            return this.name;
-        }else{
-            return this.service.public_name;
-        }
-    };
-
-    JobResource.prototype.getReplayJob = function(){
-        // get a new Job for replay functionality
-        var job = {};
-        angular.copy(this,job);
-        delete job._id;
-        var newInputs = {};
-        // FIXME? that's a dirty way for handling custom object methods...
-        job.service.inputsByName = serviceInputsByName;
-        angular.forEach(job.inputs, function (value, key) {
-            // if value==null then it is not set
-            if(value!==null && value.type){
-                // if value == default value do not send the value
-                if((value.type.default===null) ||
-                   (value.type.default!==null &&
-                   value.value!==value.type.default)){
-                    switch (value.type._type) {
-                        case 'IntegerType':
-                            newInputs[key] = parseInt(value.value,10);
-                            break;
-                        case 'FloatType':
-                            newInputs[key] = parseFloat(value.value);
-                            break;
-                        case 'BooleanType':
-                            newInputs[key] = JSON.parse(value.value);
-                            break;
-                        default:
-                            newInputs[key] = value.value;
-                            break;
-                    }
-
-                }
-            }else if(value!==null && value._id){
-                newInputs[key] = value._id;
-            }
-        });
-        job.inputs = newInputs;
-        return job;
-    };
-
-    return JobResource;
-});
-
-
-angular.module('mobyle.services').factory('ProjectData', function (mfResource, $http, $parse, $filter) {
-
-    var paramDefaults = {
-        'name': '@name',
-        'description': '@description',
-        'project': '@project',
-        'tags': '@tags',
-        'id': '@_id.$oid',
-        'value': '@value',
-        'format_terms': '@data.type.format_terms',
-        'data_terms': '@data.type.data_terms'
-    };
-
-    var ProjectDataResource = mfResource('ProjectData', paramDefaults, {
-        update: {
-            'method': 'PUT',
-            'url': '/api/projectdata/:id'
-        },
-        list_by_project: {
-            'method': 'GET',
-            'url': '/api/project/:project_id/data',
-            isArray: true
-        }
-    });
-
-    ProjectDataResource.listByProject = function(project, type){
-        // return the list of project data
-        // can be filtered using a potential target type
-        return ProjectDataResource.list_by_project({
-                'project_id': project._id.$oid
-            }).$promise.then(function(dataList){
-                if(type){
-                    // TODO: refactor filter function as a service
-                    // TODO: filter using formats (commented currently)
-                    // TODO: take the formats hierarchy into account
-                    dataList = $filter('filter')(dataList, function(dataItem){
-                            if (dataItem.data.type.data_terms!==type.data_terms)
-                            //||  (dataItem.data.type.format_terms!==type.format_terms)
-                            {
-                                return false;
-                            }else{
-                                return true;
-                            }
-                    });
-                }
-                return dataList;
-            });
-    };
-
-    ProjectDataResource.prototype.$create = function () {
-        // use a custom method for create action because
-        // we need to use FormData to upload files
-        var item = this;
-        return $http.post('/api/projectdata', this, {
-            transformRequest: function (data) {
-                // use FormData to allow file uploads
-                var fd = new FormData();
-                // fill the properties to send from paramDefaults
-                // shamelessly stolen from angular-resource.js
-                angular.forEach(paramDefaults, function (value, key) {
-                    var extractedParam = value &&
-                        value.charAt &&
-                        value.charAt(0) === '@' ?
-                        $parse(value.substr(1))(data) : value;
-                    fd.append(key, extractedParam);
-                });
-                return fd;
-            },
-            transformResponse: function (data) {
-                var wrapped = new ProjectDataResource(angular.fromJson(data));
-                return wrapped;
-            },
-            headers: {
-                'Content-Type': undefined
-            }
-        }).success(function (data) {
-            item._id = data._id;
-        });
-    };
-
-    ProjectDataResource.raw = function (id) {
-        // retrieve the raw data for a given project Data
-        return $http.get('/api/projectdata/' + id.$oid + '/raw');
-    };
-
-    return ProjectDataResource;
-});
-
-angular.module('mobyle.services').factory('CurrentProject', function (Project, LoginManager, $rootScope, $cookies) {
+angular.module('mobyle').factory('CurrentProject', function (Project, LoginManager, $rootScope, $cookies) {
     var currentProject = {};
 
     function setId(currentProjectId) {
@@ -559,7 +233,7 @@ angular.module('mobyle.services').factory('CurrentProject', function (Project, L
     };
 });
 
-angular.module('mobyle.services').factory('CurrentUser', function (User, LoginManager, $rootScope, $log) {
+angular.module('mobyle').factory('CurrentUser', function (User, LoginManager, $rootScope, $log) {
     var user = null;
     var load = function (email) {
         $log.info('load current user info for ' + email);
@@ -603,44 +277,11 @@ angular.module('mobyle.services').factory('CurrentUser', function (User, LoginMa
     };
 });
 
-angular.module('mobyle.services').factory('Login', function ($resource) {
-    function LoginFactory(authName) {
-        return $resource('/auth/login/' + authName, {}, {});
-    }
-    return LoginFactory;
-});
-
-angular.module('mobyle.services').factory('Logout', function ($resource) {
-    function LogoutFactory() {
-        return $resource('/auth/logout', {}, {});
-    }
-    return LogoutFactory;
-});
-
-angular.module('mobyle.services').factory('PasswordResetRequest', function ($resource) {
-    function PasswordResetQuestFactory(authName) {
-        return $resource('/auth/password/reset', {
-            username: authName
-        }, {});
-    }
-    return PasswordResetQuestFactory;
-});
-
-angular.module('mobyle.services').factory('PasswordReset', function ($resource) {
-    function PasswordResetFactory(userToken, userNewPassword) {
-        return $resource('/auth/password', {
-            token: userToken,
-            password: userNewPassword
-        }, {});
-    }
-    return PasswordResetFactory;
-});
-
 /**
  *   Login controller is used at multiple places (global + login page).
  *   USe this service to store login process elements and notify controllers on update
  */
-angular.module('mobyle.services').factory('LoginManager', function ($rootScope) {
+angular.module('mobyle').factory('LoginManager', function ($rootScope) {
 
     return {
         login: {
@@ -664,68 +305,7 @@ angular.module('mobyle.services').factory('LoginManager', function ($rootScope) 
     };
 });
 
-angular.module('mobyle.services').factory('NotificationList', function (mfResource, $http) {
-    return {
-        read_list: function(id_list) {
-            $http.put('/api/notifications/list', {'list': id_list, 'read': true}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
-        },
-        delete_list: function(id_list) {
-            $http.post('/api/notifications/delete',{'list': id_list}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
-        },
-        notify: function(notification) {
-            $http.post('/api/notifications/list', { 'project': notification.project._id.$oid, 'notification': notification}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
-        }
-    };
-});
-
-
-angular.module('mobyle.services').factory('Notification', function (mfResource) {
-    return mfResource('Notification',
-        {
-        'id': '@_id.$oid',
-        'read': '@read',
-        'user': '@user',
-        'message': '@message',
-        'type': '@type'
-        },
-        {
-        /*
-        read_list: {
-            'method': 'PUT',
-            'url': '/api/notifications/list'
-        },
-        delete_list: {
-            'method': 'DELETE',
-            'url': '/api/notifications/list'
-        },
-        notify: {
-            'method': 'POST',
-            'url': '/api/notifications/send'
-            }
-        */
-        });
-    /*
-    return  {
-        unread: function(callback) {
-            $http.get('/api/notification/pending').success(callback);
-            },
-        read: function(id, callback) {
-            $http.put('/notifications/'+id, "Notification[read]=true", {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
-            },
-        query: mfResource('Notification').query,
-        read_list: function(ids, callback) {
-            console.log("mark read list");
-            console.log(ids);
-            },
-        delete_list: function(ids, callback) {
-            console.log("delete list");
-            console.log(ids);
-            }
-    };
-    */
-});
-
-angular.module('mobyle.services').value('evalBoolFactory', function (values) {
+angular.module('mobyle').value('evalBoolFactory', function (values) {
     // computes a boolean expression comprised of a combination of
     // comparison and logical operators over a set of values
     var evalBoolFactory = function (expr) {
@@ -824,7 +404,6 @@ angular.module('mobyle.services').value('evalBoolFactory', function (values) {
     };
     return evalBoolFactory;
 });
-'use strict';
 
 function preg_quote(str) {
     // http://kevin.vanzonneveld.net
@@ -847,7 +426,7 @@ function highlight(data, search) {
 }
 
 /* Filters */
-angular.module('mobyle.filters', []).
+angular.module('mobyle').
 filter('kwSearch', function () {
     // kwSearch searches for a query string (q)
     // in each service description of an array (s)
@@ -879,7 +458,7 @@ filter('kwSearch', function () {
     };
 });
 
-angular.module('mobyle.filters').filter('humanSize', function () {
+angular.module('mobyle').filter('humanSize', function () {
     // humanSize displays a size in bytes by converting
     // into the most appropriate human-understandable unit
     return function (bytes) {
@@ -890,14 +469,9 @@ angular.module('mobyle.filters').filter('humanSize', function () {
         var e = Math.floor(Math.log(bytes) / Math.log(1024));
         return (bytes / Math.pow(1024, Math.floor(e))).toFixed(2) + ' ' + s[e];
     };
-});/*global $:false, _:false */
-(function () {
-    'use strict';
+});
 
-    /* Directives */
-    angular.module('mobyle.directives', []);
-
-  angular.module('mobyle.directives').directive('showtab',
+  angular.module('mobyle').directive('showtab',
   function () {
       return {
           link: function (scope, element, attrs) {
@@ -909,7 +483,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
       };
   });
 
-    angular.module('mobyle.directives').directive('activeLink', ['$location',
+    angular.module('mobyle').directive('activeLink', ['$location',
     function (location) {
             return {
                 restrict: 'A',
@@ -937,7 +511,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
    * The `statusCc` directive sets bootstrap class names to color the parent
    * element's backgroung and text.
    */
-    angular.module('mobyle.directives').directive('statusCc', [
+    angular.module('mobyle').directive('statusCc', [
     function () {
             return {
                 restrict: 'A',
@@ -974,7 +548,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
             };
     }]);
 
-    angular.module('mobyle.directives').directive('hiddable', function () {
+    angular.module('mobyle').directive('hiddable', function () {
         return {
             restrict: 'A',
             link: function (scope, element) {
@@ -997,7 +571,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
         };
     });
 
-    angular.module('mobyle.directives').directive('mboutput', [
+    angular.module('mobyle').directive('mboutput', [
 
     function () {
             return {
@@ -1047,7 +621,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
     }]);
 
 
-    angular.module('mobyle.directives').directive('mbinput', ['evalBoolFactory','$modal','ProjectData',
+    angular.module('mobyle').directive('mbinput', ['evalBoolFactory','$modal','ProjectData',
     function (evalBoolFactory, $modal, ProjectData) {
             return {
                 restrict: 'E',
@@ -1171,7 +745,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
             };
     }]);
 
-    angular.module('mobyle.directives').directive('ifPrecond', ['evalBoolFactory',
+    angular.module('mobyle').directive('ifPrecond', ['evalBoolFactory',
     function (evalBoolFactory) {
             return {
                 restrict: 'A',
@@ -1198,7 +772,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
 
     // recursive directive example
     // (from https://groups.google.com/forum/#!topic/angular/vswXTes_FtM)
-    angular.module('mobyle.directives').directive('recursive', function ($compile) {
+    angular.module('mobyle').directive('recursive', function ($compile) {
         return {
             restrict: 'E',
             priority: 100000,
@@ -1219,7 +793,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
         };
     });
 
-    angular.module('mobyle.directives').directive('mbformpara', ['mbsimple',
+    angular.module('mobyle').directive('mbformpara', ['mbsimple',
     function (mbsimple) {
             return {
                 scope: {
@@ -1235,7 +809,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
     }]);
 
 
-    angular.module('mobyle.directives').directive('mbjobpara', ['mbset',
+    angular.module('mobyle').directive('mbjobpara', ['mbset',
     function (mbset) {
             return {
                 scope: {
@@ -1249,7 +823,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
             };
     }]);
 
-    angular.module('mobyle.directives').directive('servicesClassification', [
+    angular.module('mobyle').directive('servicesClassification', [
 
     function () {
             return {
@@ -1298,7 +872,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
             };
     }]);
 
-    angular.module('mobyle.directives').directive('tree', [
+    angular.module('mobyle').directive('tree', [
 
         function () {
             return {
@@ -1316,7 +890,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
             };
     }]);
 
-    angular.module('mobyle.directives').directive('typeText', ['ServiceTypeTermRegistry',
+    angular.module('mobyle').directive('typeText', ['ServiceTypeTermRegistry',
     function (ServiceTypeTermRegistry) {
             return {
                 restrict: 'E',
@@ -1352,7 +926,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
             };
     }]);
 
-    angular.module('mobyle.directives').directive('tinyTextFile', [
+    angular.module('mobyle').directive('tinyTextFile', [
 
     function () {
             return {
@@ -1411,7 +985,7 @@ angular.module('mobyle.filters').filter('humanSize', function () {
     // utility directive to format correctly values for "number" inputs
     // which are not correctly handled by AngularJS
     // source: http://jsfiddle.net/SanderElias/qb44R/
-    angular.module('mobyle.directives').directive('input', function () {
+    angular.module('mobyle').directive('input', function () {
         return {
             restrict: 'E',
             require: '?ngModel',
@@ -1426,17 +1000,10 @@ angular.module('mobyle.filters').filter('humanSize', function () {
         };
     });
 
-}());
-'use strict';
-
-/* Controllers */
-
-angular.module('mobyle.controllers', []);
-
-angular.module('mobyle.controllers').controller('WelcomeCtrl',
+angular.module('mobyle').controller('WelcomeCtrl',
     function () {});
 
-angular.module('mobyle.controllers').controller('NotificationCtrl',
+angular.module('mobyle').controller('NotificationCtrl',
     function ($scope, $interval, Notification, CurrentUser) {
         $scope.notifications = [];
         $scope.listDisplay = 'list';
@@ -1457,7 +1024,7 @@ angular.module('mobyle.controllers').controller('NotificationCtrl',
         };
     });
 
-angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
+angular.module('mobyle').controller('NotificationCenterCtrl',
     function ($scope, $interval, $routeParams, Notification, NotificationList,
         Project, CurrentUser) {
         $scope.notifications = [];
@@ -1551,12 +1118,12 @@ angular.module('mobyle.controllers').controller('NotificationCenterCtrl',
 
     });
 
-angular.module('mobyle.controllers').controller('MyCtrl',
+angular.module('mobyle').controller('MyCtrl',
     function (LoginManager, $scope, $log, CurrentUser) {
       $scope.user = CurrentUser.get();
     });
 
-angular.module('mobyle.controllers').controller('LoginCtrl',
+angular.module('mobyle').controller('LoginCtrl',
     function (LoginManager, $routeParams, $scope, $location, Login, Logout, PasswordResetRequest, PasswordReset, Project, CurrentProject) {
         $scope.logins = ['native', 'facebook', 'openid', 'twitter', 'github', 'persona', 'google'];
         $scope.User = null;
@@ -1711,13 +1278,13 @@ angular.module('mobyle.controllers').controller('LoginCtrl',
 
     });
 
-angular.module('mobyle.controllers').controller('ServicesCtrl',
+angular.module('mobyle').controller('ServicesCtrl',
     function ($scope, Service) {
         $scope.services = Service.query();
         $scope.listDisplay = 'list';
     });
 
-angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
+angular.module('mobyle').controller('ServiceDetailCtrl',
     function ($scope, $window, $routeParams, $location, mbsimple, service, sourceJob, Job, CurrentProject) {
         $scope.reset = function () {
             if (sourceJob) {
@@ -1745,14 +1312,14 @@ angular.module('mobyle.controllers').controller('ServiceDetailCtrl',
         $scope.reset();
     });
 
-angular.module('mobyle.controllers').controller('DataTermsCtrl',
+angular.module('mobyle').controller('DataTermsCtrl',
     function ($scope, DataTerm) {
         $scope.terms = DataTerm.query();
         $scope.listDisplay = 'list';
         $scope.object = 'dataterm';
     });
 
-angular.module('mobyle.controllers').controller('DataTermDetailCtrl',
+angular.module('mobyle').controller('DataTermDetailCtrl',
     function ($scope, $routeParams, DataTerm) {
         $scope.term = DataTerm.get({
             id: $routeParams.dataTermId
@@ -1760,14 +1327,14 @@ angular.module('mobyle.controllers').controller('DataTermDetailCtrl',
         $scope.object = 'dataterm';
     });
 
-angular.module('mobyle.controllers').controller('FormatTermsCtrl',
+angular.module('mobyle').controller('FormatTermsCtrl',
     function ($scope, FormatTerm) {
         $scope.terms = FormatTerm.query();
         $scope.listDisplay = 'list';
         $scope.object = 'formatterm';
     });
 
-angular.module('mobyle.controllers').controller('FormatTermDetailCtrl',
+angular.module('mobyle').controller('FormatTermDetailCtrl',
     function ($scope, $routeParams, FormatTerm) {
         $scope.term = FormatTerm.get({
             id: $routeParams.formatTermId
@@ -1775,7 +1342,7 @@ angular.module('mobyle.controllers').controller('FormatTermDetailCtrl',
         $scope.object = 'formatterm';
     });
 
-angular.module('mobyle.controllers').controller('ProjectsCtrl',
+angular.module('mobyle').controller('ProjectsCtrl',
     function ($scope, $log, $modal, Project, $templateCache) {
         $scope.update = function () {
             $log.info('querying list of projects...');
@@ -1836,7 +1403,7 @@ angular.module('mobyle.controllers').controller('ProjectsCtrl',
         $scope.update();
     });
 
-angular.module('mobyle.controllers').controller('JobsCtrl',
+angular.module('mobyle').controller('JobsCtrl',
     function ($scope, $log, $modal, $routeParams, Job, CurrentProject, $templateCache) {
         $scope.project = CurrentProject.get();
         $scope.update = function () {
@@ -1890,7 +1457,7 @@ angular.module('mobyle.controllers').controller('JobsCtrl',
         });
     });
 
-angular.module('mobyle.controllers').controller('JobDetailCtrl',
+angular.module('mobyle').controller('JobDetailCtrl',
     function ($scope, job, mbset) {
         $scope.job = job;
         $scope.mbset = mbset;
@@ -1899,7 +1466,7 @@ angular.module('mobyle.controllers').controller('JobDetailCtrl',
 
 
 
-angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
+angular.module('mobyle').controller('ProjectEditPropertiesCtrl',
     function ($scope, $log, $modalInstance, Project, CurrentUser, project) {
         // new project creation form
         $log.info('editing ' + (project ? ('project ' + project.name) : ' new project'));
@@ -1928,7 +1495,7 @@ angular.module('mobyle.controllers').controller('ProjectEditPropertiesCtrl',
         };
     });
 
-angular.module('mobyle.controllers').controller('DatasCtrl',
+angular.module('mobyle').controller('DatasCtrl',
     function ($scope, $log, $modal, $routeParams, $window, CurrentProject, ProjectData, $templateCache) {
         $scope.project = CurrentProject.get();
         $scope.update = function () {
@@ -2048,7 +1615,7 @@ angular.module('mobyle.controllers').controller('DatasCtrl',
         });
     });
 
-angular.module('mobyle.controllers').controller('DataEditCtrl',
+angular.module('mobyle').controller('DataEditCtrl',
     function ($scope, $log, $modalInstance, ProjectData, CurrentUser, data, project, ServiceTypeTermRegistry) {
         // new project creation form
         $log.info('editing ' + (data ? ('data ' + data.name) : (' new data for project ' + project)));
@@ -2089,7 +1656,7 @@ angular.module('mobyle.controllers').controller('DataEditCtrl',
         };
     });
 
-angular.module('mobyle.controllers').controller('DataSelectCtrl',
+angular.module('mobyle').controller('DataSelectCtrl',
     function ($scope, $log, $modalInstance, ProjectData, para, CurrentProject) {
         $scope.para = para;
         $scope.project = CurrentProject.get();
@@ -2155,7 +1722,7 @@ angular.module('mobyle.controllers').controller('DataSelectCtrl',
         };
     });
 
-angular.module('mobyle.controllers').controller('mobyleCtrl',
+angular.module('mobyle').controller('mobyleCtrl',
     function ($rootScope) {
         $rootScope.alerts = [];
         $rootScope.closeAlert = function (index) {
@@ -2170,7 +1737,7 @@ angular.module('mobyle.controllers').controller('mobyleCtrl',
     });
 
 
-angular.module('mobyle.controllers').controller('AdminCtrl',
+angular.module('mobyle').controller('AdminCtrl',
     function ($scope, $log, User, Job, LoginManager, MobyleConfig) {
       $scope.$on('LoginManager.update', function (event, login) {
           $scope.user = login.user;
@@ -2213,7 +1780,7 @@ angular.module('mobyle.controllers').controller('AdminCtrl',
 
     });
 
-angular.module('mobyle.controllers').controller('AdminConfigCtrl',
+angular.module('mobyle').controller('AdminConfigCtrl',
     function ($scope, $log, MobyleConfig) {
       $scope.config = {};
       $scope.update = function () {
@@ -2227,7 +1794,7 @@ angular.module('mobyle.controllers').controller('AdminConfigCtrl',
       $scope.update();
     });
 
-angular.module('mobyle.controllers').controller('AdminJobCtrl',
+angular.module('mobyle').controller('AdminJobCtrl',
     function ($scope, $log, Job, $templateCache) {
       $scope.jobs = [];
       $scope.pagedJobData = [];
@@ -2306,7 +1873,7 @@ angular.module('mobyle.controllers').controller('AdminJobCtrl',
       $scope.update();
     });
 
-angular.module('mobyle.controllers').controller('AdminServiceCtrl',
+angular.module('mobyle').controller('AdminServiceCtrl',
     function ($scope, $log, Service, $templateCache) {
         $scope.services = [];
         $scope.pagedServiceData = [];
@@ -2391,7 +1958,7 @@ angular.module('mobyle.controllers').controller('AdminServiceCtrl',
         $scope.update();
     });
 
-angular.module('mobyle.controllers').controller('AdminUserCtrl',
+angular.module('mobyle').controller('AdminUserCtrl',
     function ($scope, $log, User, $templateCache) {
       $scope.users = [];
       $scope.pagedUserData = [];
@@ -2486,152 +2053,3 @@ angular.module('mobyle.controllers').controller('AdminUserCtrl',
 
 
     });
-'use strict';
-
-
-// Declare app level module which depends on filters, and services
-angular.module('mobyle', ['mobyle.filters', 'mobyle.services', 'mobyle.directives', 'mobyle.controllers', 'ngSanitize', 'ngCookies', 'ngRoute', 'ui.utils', 'ui.tinymce', 'ui.bootstrap', 'ngGrid']).
-config(['$routeProvider','$logProvider',
-    function ($routeProvider, $log) {
-        $routeProvider.when('/welcome', {
-            templateUrl: 'views/welcome.html',
-            controller: 'WelcomeCtrl'
-        });
-        $routeProvider.when('/services', {
-            templateUrl: 'views/services.html',
-            controller: 'ServicesCtrl'
-        });
-        var serviceDetailRoute = {
-            templateUrl: 'views/serviceDetail.html',
-            controller: 'ServiceDetailCtrl',
-            resolve: {
-                service: function ($route, Service, $q) {
-                    var deferred = $q.defer();
-                    Service.get({
-                        public_name: $route.current.params.name
-                    }, function (successData) {
-                        deferred.resolve(successData);
-                    }, function (errorData) {
-                        $log.error('service ' + $route.current.params.name + ' not found!', errorData);
-                        deferred.reject('service ' + $route.current.params.name + ' not found!');
-                    });
-                    return deferred.promise;
-                },
-                sourceJob: function(){
-                    return null;
-                }
-            }
-        };
-        $routeProvider.when('/services/:name/:version?', serviceDetailRoute);
-        $routeProvider.when('/projects/:project/services/:name/:version?', serviceDetailRoute);
-        $routeProvider.when('/projects', {
-            templateUrl: 'views/projects.html',
-            controller: 'ProjectsCtrl'
-        });
-        $routeProvider.when('/datas', {
-            templateUrl: 'views/datas.html',
-            controller: 'DatasCtrl'
-        });
-        $routeProvider.when('/jobs', {
-            templateUrl: 'views/jobs.html',
-            controller: 'JobsCtrl'
-        });
-        var jobDetailRoute = {
-            templateUrl: 'views/jobDetail.html',
-            controller: 'JobDetailCtrl',
-            resolve: {
-                job: function ($route, Job, $q) {
-                    var deferred = $q.defer();
-                    Job.get({id: $route.current.params.jobId
-                    }, function (successData) {
-                        deferred.resolve(successData);
-                    }, function (errorData) {
-                        $log.error('job ' + $route.current.params.jobId + ' not found!', errorData);
-                        deferred.reject('job ' + $route.current.params.jobId + ' not found!');
-                    });
-                    return deferred.promise;
-                }
-            }
-        };
-        $routeProvider.when('/jobs/:jobId', jobDetailRoute);
-        var jobReplayRoute = {
-            templateUrl: 'views/serviceDetail.html',
-            controller: 'ServiceDetailCtrl',
-            resolve: {
-                sourceJob: function ($route, Job, $q) {
-                    var deferred = $q.defer();
-                    Job.get({id: $route.current.params.jobId
-                    }, function (successData) {
-                        deferred.resolve(successData.getReplayJob());
-                    }, function (errorData) {
-                        $log.error('job ' + $route.current.params.jobId + ' not found!', errorData);
-                        deferred.reject('job ' + $route.current.params.jobId + ' not found!');
-                    });
-                    return deferred.promise;
-                },
-                service: function(){
-                    return null;
-                }
-            }
-        };
-        $routeProvider.when('/jobs/:jobId/replay', jobReplayRoute);
-        $routeProvider.when('/dataterms', {
-            templateUrl: 'views/terms.html',
-            controller: 'DataTermsCtrl'
-        });
-        $routeProvider.when('/dataterms/:dataTermId', {
-            templateUrl: 'views/termDetail.html',
-            controller: 'DataTermDetailCtrl'
-        });
-        $routeProvider.when('/formatterms', {
-            templateUrl: 'views/terms.html',
-            controller: 'FormatTermsCtrl'
-        });
-        $routeProvider.when('/formatterms/:formatTermId', {
-            templateUrl: 'views/termDetail.html',
-            controller: 'FormatTermDetailCtrl'
-        });
-        $routeProvider.when('/login', {
-            templateUrl: 'views/login.html',
-            controller: 'LoginCtrl'
-        });
-        $routeProvider.when('/logout', {
-            templateUrl: 'views/login.html',
-            controller: 'LoginCtrl'
-        });
-        $routeProvider.when('/my', {
-            templateUrl: 'views/my.html',
-            controller: 'MyCtrl'
-        });
-        $routeProvider.when('/my/password_reset', {
-            templateUrl: 'views/my_password_reset.html',
-            controller: 'LoginCtrl'
-        });
-        $routeProvider.when('/notificationcenter', {
-            templateUrl: 'views/notificationcenter.html',
-            controller: 'NotificationCenterCtrl'
-        });
-        $routeProvider.when('/admin', {
-            templateUrl: 'views/admin/admin.html',
-            controller: 'AdminCtrl'
-        });
-        $routeProvider.when('/admin/config', {
-            templateUrl: 'views/admin/config.html',
-            controller: 'AdminConfigCtrl'
-        });
-        $routeProvider.when('/admin/user', {
-            templateUrl: 'views/admin/user.html',
-            controller: 'AdminUserCtrl'
-        });
-        $routeProvider.when('/admin/job', {
-            templateUrl: 'views/admin/job.html',
-            controller: 'AdminJobCtrl'
-        });
-        $routeProvider.when('/admin/service', {
-            templateUrl: 'views/admin/service.html',
-            controller: 'AdminServiceCtrl'
-        });
-        $routeProvider.otherwise({
-            redirectTo: '/welcome'
-        });
-  }]);

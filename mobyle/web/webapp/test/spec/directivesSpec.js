@@ -4,7 +4,7 @@
 
 describe('directives', function () {
 
-    beforeEach(module('mobyle.directives'));
+    beforeEach(module('mobyle'));
 
     describe('activeLink', function () {
 
@@ -48,7 +48,7 @@ describe('directives', function () {
         // load the templates
         beforeEach(module('views/mbinput.html'));
 
-        beforeEach(module('mobyle.services'));
+        beforeEach(module('mobyle.resources'));
         
         beforeEach(module('ui.bootstrap'));
 
@@ -102,7 +102,7 @@ describe('directives', function () {
         beforeEach(module('views/mbinput.html'));
         beforeEach(module('views/mbformpara.html'));
         
-        beforeEach(module('mobyle.services'));
+        beforeEach(module('mobyle.resources'));
 
         beforeEach(module('ui.bootstrap'));
         
