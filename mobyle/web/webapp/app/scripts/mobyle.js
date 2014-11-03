@@ -1754,16 +1754,18 @@ angular.module('mobyle').controller('AdminCtrl',
           var running = 0;
           var pending = 0;
           var jobs = Job.list();
-          for(var i=0;i<jobs.length;i++){
-            if(jobs.status === 'pending') {
-              pending += 1;
-            }
-            else if(jobs.status === 'running') {
-              running += 1;
-            }
-          }
-          $scope.jobs_pending = pending;
-          $scope.jobs_running = running;
+          jobs.$promise.then(function(jobs){
+              for(var i=0;i<jobs.length;i++){
+                if(jobs[i].isPending()) {
+                  pending += 1;
+                }
+                else if(jobs[i].isRunning()) {
+                  running += 1;
+                }
+              }
+              $scope.jobs_pending = pending;
+              $scope.jobs_running = running;
+          });
       };
       $scope.update_jobs();
 
