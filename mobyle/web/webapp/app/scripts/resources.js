@@ -244,6 +244,20 @@
             }
         };
 
+        var pendingStatusCodes = ['to be built', 'building', 'to be submitted', 'pending'];
+        
+        var runningStatusCodes = ['submitted', 'updating', 'running', 'hold'];
+        
+        JobResource.prototype.isPending = function () {
+            //TODO define the "pending" condition and the different status that are included
+            return pendingStatusCodes.indexOf(this.status)>-1;
+        };        
+
+        JobResource.prototype.isRunning = function () {
+            //TODO define the "running" condition and the different status that are included
+            return runningStatusCodes.indexOf(this.status)>-1;
+        };
+        
         JobResource.prototype.getReplayJob = function () {
             // get a new Job for replay functionality
             var job = {};
