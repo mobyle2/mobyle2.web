@@ -521,29 +521,46 @@ angular.module('mobyle').filter('humanSize', function () {
                     text: '=text',
                 },
                 link: function (scope, element) {
+                    // contains the class variant corresponding
+                    // to the status
                     var variant = '';
-                    switch(scope.job.status){
-                        case 'finished':
-                            variant = 'success';
-                            break;
-                        case 'error':
-                            variant = 'danger';
-                            break;
-                        case 'building':
-                            variant = 'info';
-                            break;
-                        case 'updating':
-                            variant = 'warning';
-                            break;
-                        default:
-                            variant = 'info';
+                    function updateClass(){
+                        // update the "status" classes based
+                        // on the status code of the job
+                        // remove previous classes
+                        if(scope.text===true){
+                            element.removeClass('text-' + variant);
+                        }
+                        if(scope.background===true){
+                            element.removeClass('bg-' + variant);
+                        }
+                        // chooose new classes based on status
+                        switch(scope.job.status){
+                            case 'finished':
+                                variant = 'success';
+                                break;
+                            case 'error':
+                                variant = 'danger';
+                                break;
+                            case 'building':
+                                variant = 'info';
+                                break;
+                            case 'updating':
+                                variant = 'warning';
+                                break;
+                            default:
+                                variant = 'info';
+                        }
+                        // add new classes
+                        if(scope.text===true){
+                            element.addClass('text-' + variant);
+                        }
+                        if(scope.background===true){
+                            element.addClass('bg-' + variant);
+                        }
                     }
-                    if(scope.text===true){
-                        element.addClass('text-' + variant);
-                    }
-                    if(scope.background===true){
-                        element.addClass('bg-' + variant);
-                    }
+                    updateClass(scope);
+                    scope.$watch('job.status', updateClass);
                 }
             };
     }]);
