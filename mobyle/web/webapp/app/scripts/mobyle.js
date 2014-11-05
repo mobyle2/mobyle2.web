@@ -1434,6 +1434,7 @@ angular.module('mobyle').controller('JobsCtrl',
             data: 'projectJobs',
             enableRowSelection: false,
             rowTemplate: $templateCache.get('jobsGrid_Row.html'),
+            sortInfo: {fields:['getCreationDate()'], directions:['desc']},
             columnDefs: [{
                     field: '_id.$oid',
                     displayName: 'name',
