@@ -1446,9 +1446,10 @@ angular.module('mobyle').controller('JobsCtrl',
                     width: '**'
             },
                 {
-                    field: 'getCreationDate() | date: "MMM d, y H:mm"',
+                    field: 'getCreationDate()',
                     displayName: 'Creation date',
-                    width: '*'
+                    width: '*',
+                    cellTemplate: $templateCache.get('jobsGrid_DateCell.html')
             },
                 {
                     field: 'status',

@@ -14,6 +14,13 @@
     </div>
 </script>
 
+<script type="text/ng-template" id="jobsGrid_DateCell.html">
+    <div class="ngCellText" ng-class="col.colIndex()">
+        {{row.getProperty('getCreationDate()') | date: "MMM d, y H:mm"}}
+    </div>
+</script>
+
+
 <script type="text/ng-template" id="jobsGrid_StatusCell.html">
     <div class="ngCellText" ng-class="col.colIndex()">
         <span ng-cell-text>{{row.entity.status}}
