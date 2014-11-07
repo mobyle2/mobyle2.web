@@ -1482,7 +1482,9 @@ angular.module('mobyle').controller('JobDetailCtrl',
         $scope.mbset = mbset;
         $scope.showAdvanced = true;
         $scope.reload = function(){
-            $scope.job = $scope.job.reload();
+            job = $scope.job.reload().$promise.then(function(newJob){
+                $scope.job = newJob;
+            });
         }
     });
 

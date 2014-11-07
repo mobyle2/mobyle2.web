@@ -251,22 +251,30 @@
             }
         };
 
-        var pendingStatusCodes = ['to be built', 'building', 'to be submitted', 'pending'];
+        var preparingStatusCodes = ['to be built', 'building', 'to be submitted', 'submitting'];
         
-        var runningStatusCodes = ['submitted', 'updating', 'running', 'hold'];
+        var runningStatusCodes = ['submitted', 'updating', 'running', 'pending'];
 
-        var finishedStatusCodes = ['submitted', 'updating', 'running', 'hold'];
+        var pausedStatusCodes = ['pause', 'hold'];
+
+        var finishedStatusCodes = ['finished', 'error', 'killed'];
         
-        JobResource.prototype.isPending = function () {
-            //TODO define the "pending" condition and the different status that are included
-            return pendingStatusCodes.indexOf(this.status)>-1;
+        JobResource.prototype.isPreparing = function () {
+            return preparingStatusCodes.indexOf(this.status)>-1;
         };        
 
         JobResource.prototype.isRunning = function () {
-            //TODO define the "running" condition and the different status that are included
             return runningStatusCodes.indexOf(this.status)>-1;
         };
-        
+
+        JobResource.prototype.isPaused = function () {
+            return pausedStatusCodes.indexOf(this.status)>-1;
+        };
+
+        JobResource.prototype.isFinished = function () {
+            return finishedStatusCodes.indexOf(this.status)>-1;
+        };
+
         JobResource.prototype.getReplayJob = function () {
             // get a new Job for replay functionality
             var job = {};

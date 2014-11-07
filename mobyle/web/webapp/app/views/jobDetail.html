@@ -1,21 +1,39 @@
 <div class="row-fluid span11">
-    <h1>{{job.userName()}} <small>({{job.getCreationDate() | date: "MMM d, y H:mm"}})</small>
-        <span status-cc="job" text="true" background="true" style="border-radius: 3px;" class="initialism">{{job.status}}</span>
+    <h1 status-cc="job" text="true">{{job.userName()}} <small>({{job.getCreationDate() | date: "MMM d, y H:mm"}})</small>
         <div class="btn-group pull-right">
-          <button type="button" class="btn btn-default" ng-click="reload()"><i class="glyphicon glyphicon-refresh"></i> Update</button>
+          <button ng-if="!job.isFinished()" type="button" class="btn btn-default" ng-click="reload()"><i class="glyphicon glyphicon-refresh"></i> Update</button>
+          <button ng-if="job.isFinished()" type="button" class="btn btn-default" ng-click="reload()" title="Download the job data"><a href="#"><i class="glyphicon glyphicon-download-alt text-muted"></i> Download</a></button>
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li title="Pause the job execution"><a href="#"><i class="glyphicon glyphicon-pause"></i> Pause</a></li>
-            <li title="Stop the job execution"><a href="#"><i class="glyphicon glyphicon-stop"></i> Stop</a></li>
-            <li title="Download the job data"><a href="#"><i class="glyphicon glyphicon-download-alt"></i> Download</a></li>
+            <li ng-if="job.isRunning()" title="Pause the job execution"><a href="#"><i class="glyphicon glyphicon-pause text-muted"></i> Pause</a></li>
+            <li ng-if="job.isRunning()" title="Stop the job execution"><a href="#"><i class="glyphicon glyphicon-stop text-muted"></i> Stop</a></li>
+            <li ng-if="job.isPaused()" title="Resume the job execution"><a href="#"><i class="glyphicon glyphicon-play text-muted"></i> Resume</a></li>
             <li title="Run again with the same parameters"><a href="#/jobs/{{job._id.$oid}}/replay"><i class="glyphicon glyphicon-repeat"></i> Replay job</a></li>
+            <li title="Remove this job"><a href="#"><i class="glyphicon glyphicon-trash text-muted"></i> Remove</a></li>
           </ul>
         </div>
     </h1>
-    <div class="panel-group">
+    <div class="panel panel-default" ng-if="job.status!='finished'">
+        <div class="panel-body" status-cc="job" background="true" >
+            <p ng-if="job.isPreparing()">
+                Your job is currently being prepared for execution.
+            </p>
+            <p ng-if="job.isRunning()">
+                Your job is currently running, please wait for the results.
+            </p>
+            <p ng-if="job.isPaused()">
+                Your job is currently paused.
+            </p>
+            <p ng-if="job.status=='error'">
+                An error occured which prevented the execution of this job:
+                <strong>{{job.error.message || "Unknown error"}}</strong>
+            </p>
+        </div>
+    </div>
+    <div class="panel-group" ng-if="mbset(job.service.outputs, job.outputs)">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="fieldset_title">
@@ -23,11 +41,8 @@
                 </h4>
             </div>
             <div id="fieldset-contents-results" class="panel-body collapse in">
-                <div ng-if="mbset(job.service.outputs, job.outputs)" class="col-md-12" ng-repeat="(name, mbjobpara) in job.service.outputs.children">
+                <div class="col-md-12" ng-repeat="(name, mbjobpara) in job.service.outputs.children">
                     <span recursive mbjobpara para="mbjobpara" job="job"></span>
-                </div>
-                <div ng-if="!mbset(job.service.outputs, job.outputs)" class="col-md-12 bg-warning">
-                    No results (yet...)
                 </div>
             </div>
         </div>
@@ -53,10 +68,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="fieldset_title">
-                    <a data-toggle="collapse" data-target="#fieldset-contents-inputs">execution details</a>
+                    <a data-toggle="collapse" data-target="#fieldset-contents-execution">execution details</a>
                 </h4>
             </div>
-            <div id="fieldset-contents-inputs" class="panel-body collapse in">
+            <div id="fieldset-contents-execution" class="panel-body collapse in">
                 <div ng-if="job.cmd_line" class="col-md-12">
                     <label class="control-label ng-binding col-md-12">Command line</label>
                     <pre>{{job.cmd_line}}</pre>
