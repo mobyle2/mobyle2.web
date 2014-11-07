@@ -12,7 +12,7 @@
             <li ng-if="job.isRunning()" title="Stop the job execution"><a href="#"><i class="glyphicon glyphicon-stop text-muted"></i> Stop</a></li>
             <li ng-if="job.isPaused()" title="Resume the job execution"><a href="#"><i class="glyphicon glyphicon-play text-muted"></i> Resume</a></li>
             <li title="Run again with the same parameters"><a href="#/jobs/{{job._id.$oid}}/replay"><i class="glyphicon glyphicon-repeat"></i> Replay job</a></li>
-            <li title="Remove this job"><a href="#"><i class="glyphicon glyphicon-trash text-muted"></i> Remove</a></li>
+            <li title="Remove this job"><a ng-click="delete()"><i class="glyphicon glyphicon-trash text-muted"></i> Remove</a></li>
           </ul>
         </div>
     </h1>

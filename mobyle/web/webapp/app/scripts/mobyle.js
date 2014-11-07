@@ -1477,7 +1477,7 @@ angular.module('mobyle').controller('JobsCtrl',
     });
 
 angular.module('mobyle').controller('JobDetailCtrl',
-    function ($scope, job, mbset, $route) {
+    function ($scope, job, mbset, $route, $location) {
         $scope.job = job;
         $scope.mbset = mbset;
         $scope.showAdvanced = true;
@@ -1485,7 +1485,13 @@ angular.module('mobyle').controller('JobDetailCtrl',
             job = $scope.job.reload().$promise.then(function(newJob){
                 $scope.job = newJob;
             });
-        }
+        };
+        $scope.delete = function(){
+            $scope.job.$delete().then(function () {
+                // go back to jobs list after deleting a job
+                $location.path('/jobs');
+            });
+        };
     });
 
 
