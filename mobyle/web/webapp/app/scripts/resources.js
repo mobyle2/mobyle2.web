@@ -103,6 +103,13 @@
                     return this.$update();
                 }
             };
+            
+            resource.prototype.reload = function(){
+                if (this._id){
+                    return resource.get({'id':this._id.$oid});
+                }
+            };
+            
             // get creation date from objectid
             resource.prototype.getCreationDate = function () {
                 if (this._id) {
@@ -247,6 +254,8 @@
         var pendingStatusCodes = ['to be built', 'building', 'to be submitted', 'pending'];
         
         var runningStatusCodes = ['submitted', 'updating', 'running', 'hold'];
+
+        var finishedStatusCodes = ['submitted', 'updating', 'running', 'hold'];
         
         JobResource.prototype.isPending = function () {
             //TODO define the "pending" condition and the different status that are included

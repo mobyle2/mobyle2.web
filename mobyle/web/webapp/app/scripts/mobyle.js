@@ -1477,10 +1477,13 @@ angular.module('mobyle').controller('JobsCtrl',
     });
 
 angular.module('mobyle').controller('JobDetailCtrl',
-    function ($scope, job, mbset) {
+    function ($scope, job, mbset, $route) {
         $scope.job = job;
         $scope.mbset = mbset;
         $scope.showAdvanced = true;
+        $scope.reload = function(){
+            $scope.job = $scope.job.reload();
+        }
     });
 
 

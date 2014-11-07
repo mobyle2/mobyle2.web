@@ -1,11 +1,19 @@
 <div class="row-fluid span11">
     <h1>{{job.userName()}} <small>({{job.getCreationDate() | date: "MMM d, y H:mm"}})</small>
         <span status-cc="job" text="true" background="true" style="border-radius: 3px;" class="initialism">{{job.status}}</span>
-        <a href="#/jobs/{{job._id.$oid}}/replay" class="pull-right">
-            <button type="button" class="btn" title="replay {{job.service.public_name}} with same input values">
-                    <i class="glyphicon glyphicon-repeat"></i>
-            </button>
-        </a>
+        <div class="btn-group pull-right">
+          <button type="button" class="btn btn-default" ng-click="reload()"><i class="glyphicon glyphicon-refresh"></i> Update</button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li title="Pause the job execution"><a href="#"><i class="glyphicon glyphicon-pause"></i> Pause</a></li>
+            <li title="Stop the job execution"><a href="#"><i class="glyphicon glyphicon-stop"></i> Stop</a></li>
+            <li title="Download the job data"><a href="#"><i class="glyphicon glyphicon-download-alt"></i> Download</a></li>
+            <li title="Run again with the same parameters"><a href="#/jobs/{{job._id.$oid}}/replay"><i class="glyphicon glyphicon-repeat"></i> Replay job</a></li>
+          </ul>
+        </div>
     </h1>
     <div class="panel-group">
         <div class="panel panel-default">
