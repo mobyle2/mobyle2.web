@@ -447,8 +447,8 @@
                     // TODO: filter using formats (commented currently)
                     // TODO: take the formats hierarchy into account
                     dataList = $filter('filter')(dataList, function (dataItem) {
-                        if (dataItem.data.type.data_terms !== type.data_terms)
-                        //||  (dataItem.data.type.format_terms!==type.format_terms)
+                        if (_.intersection(dataItem.data.type.data_terms, type.data_terms).length==0)
+                        //||  (_.intersection(dataItem.data.type.format_terms, type.format_terms).length==0)
                             {
                                 return false;
                             } else {
