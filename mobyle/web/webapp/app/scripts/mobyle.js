@@ -975,7 +975,7 @@ angular.module('mobyle').filter('humanSize', function () {
                                     } else {
                                         $scope.$apply(
                                             function () {
-                                                if(!_.has($scope.ngModel,'value')){
+                                                if(!$scope.ngModel || !_.has($scope.ngModel,'value')){
                                                     $scope.ngModel = result;
                                                 }else{
                                                     $scope.ngModel.value = result;
