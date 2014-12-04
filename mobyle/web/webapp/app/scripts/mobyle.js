@@ -975,9 +975,13 @@ angular.module('mobyle').filter('humanSize', function () {
                                     } else {
                                         $scope.$apply(
                                             function () {
-                                                $scope.ngModel.value = result;
-                                                $scope.ngModel.name = file.name;
-                                                $scope.ngModel.data.size = file.size;
+                                                if(!_.has($scope.ngModel,'value')){
+                                                    $scope.ngModel = result;
+                                                }else{
+                                                    $scope.ngModel.value = result;
+                                                    $scope.ngModel.name = file.name;
+                                                    $scope.ngModel.data.size = file.size;
+                                                }
                                             });
                                     }
                                 }
