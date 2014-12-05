@@ -1,5 +1,5 @@
 /*global $:false, _:false, angular:false */
-/*jslint browser: true, indent: 4, vars: true, nomen: true, es5: true */
+/*jslint browser: true, indent: 4, vars: true, nomen: true */
 'use strict';
 
 // Declare app level module which depends on filters, and services
@@ -474,7 +474,7 @@ angular.module('mobyle').filter('humanSize', function () {
   angular.module('mobyle').directive('showtab',
   function () {
       return {
-          link: function (scope, element, attrs) {
+          link: function (scope, element) {
               element.click(function(e) {
                   e.preventDefault();
                   $(element).tab('show');

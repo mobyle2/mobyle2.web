@@ -1,5 +1,5 @@
 /*global $:false, _:false, angular:false, FormData */
-/*jslint browser: true, indent: 4, vars: true, nomen: true, es5: true */
+/*jslint browser: true, indent: 4, vars: true, nomen: true */
 (function () {
     'use strict';
 
@@ -8,8 +8,7 @@
             // default url template, used for everything *but* search
             var route = '/' + collectionName.toLowerCase() + 's/:id',
                 // url template used for search/filter
-                filterUrl = '/' + collectionName.toLowerCase() + 's?',
-                key;
+                filterUrl = '/' + collectionName.toLowerCase() + 's?';
             angular.forEach(paramDefaults, function (value, key) {
                 filterUrl += 'Search' + collectionName + '[' + key + ']=:' + key + '&';
             });
@@ -447,7 +446,7 @@
                     // TODO: filter using formats (commented currently)
                     // TODO: take the formats hierarchy into account
                     dataList = $filter('filter')(dataList, function (dataItem) {
-                        if (_.intersection(dataItem.data.type.data_terms, type.data_terms).length==0)
+                        if (_.intersection(dataItem.data.type.data_terms, type.data_terms).length===0)
                         //||  (_.intersection(dataItem.data.type.format_terms, type.format_terms).length==0)
                             {
                                 return false;
