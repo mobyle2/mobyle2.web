@@ -1665,6 +1665,7 @@ angular.module('mobyle').controller('DataEditCtrl',
             $scope.data.name = 'new data';
             $scope.data.tags = [];
             $scope.mode = 'paste';
+            $scope.data.value = '';
             $scope.data.data = {
                 'type': {}
             };
