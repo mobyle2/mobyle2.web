@@ -180,7 +180,7 @@ angular.module('mobyle').value('mbset', function (para, valuesMap) {
             return false;
         }
         if (!para.children) {
-            if(valuesMap[para.name] && (valuesMap[para.name].data || valuesMap[para.name].value)){
+            if(valuesMap[para.name] && (valuesMap[para.name].data || valuesMap[para.name].value || valuesMap[para.name].path)){
                 return true;
             }else{
                 return false;

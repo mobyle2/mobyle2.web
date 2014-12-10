@@ -8,6 +8,7 @@
         {{text}}
     </div>
     <div ng-if="displayType=='file'">
+        <iframe class="col-md-12 container well" ng-if="job.outputs[para.name]" ng-src="{{'/api/jobdata/' + job['_id']['$oid'] + '/' + para.name +'/raw'}}"></iframe>
         <iframe class="col-md-12 container well" ng-if="job.inputs[para.name]" ng-src="{{'/api/projectdata/' + job.inputs[para.name]['_id']['$oid'] +'/raw'}}"></iframe>
     </div>
-</ng-form>
+</div>
