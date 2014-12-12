@@ -1320,7 +1320,7 @@ angular.module('mobyle').controller('ServiceDetailCtrl',
                 $scope.job.inputs = {};
                 $scope.job.outputs = {};
             }
-            $scope.showAdvanced = mbsimple($scope.service.inputs);
+            $scope.showAdvanced = !mbsimple($scope.service.inputs);
         };
         $scope.mbsimple = mbsimple;
         $scope.submit = function () {
