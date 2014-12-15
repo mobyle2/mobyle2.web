@@ -1,5 +1,5 @@
 /*global $:false, _:false, angular:false */
-/*jslint browser: true, indent: 4, vars: true, nomen: true, es5: true */
+/*jslint browser: true, indent: 4, vars: true, nomen: true */
 'use strict';
 
 // Declare app level module which depends on filters, and services
@@ -180,7 +180,7 @@ angular.module('mobyle').value('mbset', function (para, valuesMap) {
             return false;
         }
         if (!para.children) {
-            if(valuesMap[para.name] && (valuesMap[para.name].data || valuesMap[para.name].value)){
+            if(valuesMap[para.name] && (valuesMap[para.name].data || valuesMap[para.name].value || valuesMap[para.name].path)){
                 return true;
             }else{
                 return false;
@@ -474,7 +474,7 @@ angular.module('mobyle').filter('humanSize', function () {
   angular.module('mobyle').directive('showtab',
   function () {
       return {
-          link: function (scope, element, attrs) {
+          link: function (scope, element) {
               element.click(function(e) {
                   e.preventDefault();
                   $(element).tab('show');
@@ -975,9 +975,13 @@ angular.module('mobyle').filter('humanSize', function () {
                                     } else {
                                         $scope.$apply(
                                             function () {
-                                                $scope.ngModel.value = result;
-                                                $scope.ngModel.name = file.name;
-                                                $scope.ngModel.data.size = file.size;
+                                                if(!$scope.ngModel || !_.has($scope.ngModel,'value')){
+                                                    $scope.ngModel = result;
+                                                }else{
+                                                    $scope.ngModel.value = result;
+                                                    $scope.ngModel.name = file.name;
+                                                    $scope.ngModel.data.size = file.size;
+                                                }
                                             });
                                     }
                                 }
@@ -1316,7 +1320,7 @@ angular.module('mobyle').controller('ServiceDetailCtrl',
                 $scope.job.inputs = {};
                 $scope.job.outputs = {};
             }
-            $scope.showAdvanced = mbsimple($scope.service.inputs);
+            $scope.showAdvanced = !mbsimple($scope.service.inputs);
         };
         $scope.mbsimple = mbsimple;
         $scope.submit = function () {
@@ -1662,6 +1666,7 @@ angular.module('mobyle').controller('DataEditCtrl',
             $scope.data.name = 'new data';
             $scope.data.tags = [];
             $scope.mode = 'paste';
+            $scope.data.value = '';
             $scope.data.data = {
                 'type': {}
             };

@@ -845,6 +845,33 @@ def raw_project_data(request):
                                        + dataset['data']['path'] + '"'
     return response
 
+@view_config(route_name='raw_job_data', renderer='json')
+def raw_job_data(request):
+    #job identifier
+    try:
+        job_id = ObjectId(request.matchdict['id'])
+    except KeyError:
+        raise HTTPClientError('missing Job id')
+    except InvalidId:
+        raise HTTPClientError('invalid Job id')
+    #parameter name (assuming there is only one corresponding RefData...)
+    try:
+        parameter_name = request.matchdict['parameter']
+    except KeyError:
+        raise HTTPClientError('missing Parameter name')
+    job = connection.Job.fetch_one({'_id': job_id})
+    data = job['inputs'].get(parameter_name) or job['outputs'].get(parameter_name)
+    # Get full path to the file
+    file_path = os.path.join(job.dir, data['path'])
+    mime_type = "text/plain"
+    response = FileResponse(file_path,
+                            request=request,
+                            content_type=str(mime_type))
+    # download the file directly
+    if request.matchdict['disposition'] == 'dl':
+        response.content_disposition = 'attachment; filename="'\
+                                       + data['path'] + '"'
+    return response
 
 @view_config(route_name='list_project_jobs', request_method='GET',
     renderer='json')
