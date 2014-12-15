@@ -1486,6 +1486,7 @@ angular.module('mobyle').controller('JobDetailCtrl',
                 $scope.job = newJob;
             });
         };
+        $scope.isEmpty = _.isEmpty;
         $scope.delete = function(){
             $scope.job.$delete().then(function () {
                 // go back to jobs list after deleting a job

@@ -76,7 +76,7 @@
                     <label class="control-label ng-binding col-md-12">Command line</label>
                     <pre>{{job.cmd_line}}</pre>
                 </div>
-                <div ng-if="job.cmd_env" class="col-md-12">
+                <div ng-if="!isEmpty(job.cmd_env)" class="col-md-12">
                     <label class="control-label ng-binding col-md-12">Environment</label>
                     <pre>{{job.cmd_env}}</pre>
                 </div>
