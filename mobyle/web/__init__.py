@@ -132,6 +132,9 @@ def main(global_config, **settings):
     # display owner's email in the dashboard
     project_renderer.set_display_field("name")
 
+    user_default_project_renderer = User.get_renderer("default_project")
+    user_default_project_renderer.set_reference(Project)
+
     notification_renderer = Notification.get_renderer('user')
     notification_renderer.set_reference(User)
 
