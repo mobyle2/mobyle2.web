@@ -234,14 +234,14 @@ angular.module('mobyle').factory('CurrentProject', function (Project, LoginManag
 });
 
 angular.module('mobyle').factory('CurrentUser', function (User, LoginManager, $rootScope, $log) {
-    var user = null;
+    var user = {};
     var load = function (email) {
         $log.info('load current user info for ' + email);
         User.query({
                 'email': email
             }).$promise.then(function (users) {
-                if(!user || users[0]._id.$oid!==user._id.$oid){
-                    user = users[0];
+                if(!user._id || users[0]._id.$oid!==user._id.$oid){
+                    angular.copy(users[0], user);
                     $rootScope.$broadcast('CurrentUser.update', user);
                     if(user!==undefined){
                         $log.info('current user loaded: ' + user.email);
