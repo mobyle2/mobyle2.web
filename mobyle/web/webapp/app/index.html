@@ -105,7 +105,13 @@
                             <li><a href="#/notificationcenter">Notification center</a></li>
                             <li ng-repeat="p in notifications">
                             <!-- ng-click="read(p)" -->
-                                <a ng-href="#/notificationcenter/{{p._id.$oid}}">{{ p.message}}</a>
+                                <a ng-href="#/notificationcenter/{{p._id.$oid}}">
+                                  <div ng-if="p.ref">
+                                    <a ng-if="p.type==2" ng-href="#/jobs/{{p.ref.$oid}}">View job</a>
+                                  </div>
+                                  <hr/>
+                                  {{ p.message}}
+                                </a>
                             </li>
                         </ul>
                     </li>
