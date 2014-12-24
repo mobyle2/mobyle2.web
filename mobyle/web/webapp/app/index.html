@@ -107,10 +107,8 @@
                             <!-- ng-click="read(p)" -->
                                 <a ng-href="#/notificationcenter/{{p._id.$oid}}">
                                   <div ng-if="p.ref">
-                                    <a ng-if="p.type==2" ng-href="#/jobs/{{p.ref.$oid}}">View job</a>
+                                    <a ng-if="p.type==2" ng-href="#/jobs/{{p.ref.$oid}}">{{ p.message || "view job " + p.ref.$oid }}</a>
                                   </div>
-                                  <hr/>
-                                  {{ p.message}}
                                 </a>
                             </li>
                         </ul>
