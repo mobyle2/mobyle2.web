@@ -41,28 +41,26 @@ This option has no effect in recent relases, so it won't hurt to use it in any c
     $cd mobyle2
     $. bin/activate
 
-3. Install velruse
 
-    $pip install velruse
-
-4. Install mobyle2
+3. Install mobyle2
     $pip install -e git+https://github.com/mobyle2/mf-pyramid.git#egg=mf
     $pip install -e git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle2.lib
     $pip install -r src/mobyle2.lib/requirements.txt
+     $pip install -e git+https://github.com/mobyle2/mobyle2.conf.git@develop#egg=mobyle2.conf
     $pip install -e git+https://github.com/mobyle2/mobyle2.web.git@develop#egg=mobyle2.web
 Option '-e' will install mobyle2 in **edit mode** in the 'src/mobyle.web' folder
 and create automatically a mobyle.web.pth path configuration file, so that you can
 edit and test it directly.
 
-5. Start the server
+4. Start the server
     $pserve --reload src/mobyle2.web/development.ini
 
 
-6. Initialize the database
+5. Initialize the database
 
-    python src/mobyle2.lib/scripts/db/seed.py  --config src/mobyle2.web/development.ini
+    python src/mobyle2.lib/scripts/db/seed.py  --config src/mobyle2.conf/mobyle.ini
 
-7. Import data from Mobyle 1 and EDAM
+6. Import data from Mobyle 1 and EDAM
 (XML files for Mobyle 1 can be found at ftp://ftp.pasteur.fr/pub/gensoft/projects/mobyle)
     python src/mobyle2.lib/scripts/imports/m1_services_import.py --config src/mobyle2.web/development.ini [path to Mobyle 1 XML files]
 (EDAM ontology, in OWL format, can be found at http://edamontology.org/EDAM.owl)   
@@ -72,7 +70,7 @@ After services import, load classification. In src/mobyle2.lib/scripts/db:
 
     python data_format_terms_update.py --config ../../../mobyle2.conf/mobyle.ini
 
-8. Connect to your mobyle2 server
+7. Connect to your mobyle2 server
 You're done! Go to:
 http://mobyle2:6543/
 
