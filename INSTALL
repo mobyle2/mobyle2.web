@@ -69,11 +69,7 @@ You can either:
 (XML files for Mobyle 1 can be found at ftp://ftp.pasteur.fr/pub/gensoft/projects/mobyle)
     python src/mobyle2.lib/import/mob_m1_services_import --config src/mobyle2.conf/mobyle.ini [path to Mobyle 1 XML files] -init -public
 
-7. After services import, update classification and data/format indexes. In src/mobyle2.lib/scripts/db:
-    python src/mobyle2.lib/scripts/db/mob_classification_update --config src/mobyle2.conf/mobyle.ini
-    python src/mobyle2.lib/scripts/db/mob_data_format_terms_update --config src/mobyle2.conf/mobyle.ini
-
-8. Start and connect to your mobyle2 server
+7. Start and connect to your mobyle2 server
 
     $pserve --reload src/mobyle2.web/development.ini
 
