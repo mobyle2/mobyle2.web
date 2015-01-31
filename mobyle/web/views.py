@@ -976,6 +976,9 @@ def create_project_job(request):
     job['project'] = project_id
     job['service'] = job_service
     job['inputs'] = {}
+    user_email = authenticated_userid(request)
+    user = connection.User.fetch_one({'email': user_email})
+    job['user'] = user['_id']
     # process job input parameters
     request = formencode.variabledecode.variable_decode(request.params, dict_char=':')
     job.process_inputs(request['input'])

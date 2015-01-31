@@ -1046,7 +1046,7 @@ angular.module('mobyle').controller('NotificationCtrl',
     });
 
 angular.module('mobyle').controller('NotificationCenterCtrl',
-    function ($scope, $interval, $routeParams, Notification, NotificationList,
+    function ($scope, $interval, $routeParams, Notification, NotificationsList,
         Project, CurrentUser) {
         $scope.notifications = [];
         $scope.user = CurrentUser.get();
@@ -1080,7 +1080,7 @@ angular.module('mobyle').controller('NotificationCenterCtrl',
             } else {
                 $scope.notification.type = 0;
             }
-            NotificationList.notify($scope.notification);
+            NotificationsList.notify($scope.notification);
             $scope.alerts.push({
                 type: 'danger',
                 msg: 'message sent'
@@ -1101,7 +1101,7 @@ angular.module('mobyle').controller('NotificationCenterCtrl',
                     ids.push($scope.notifications[i]._id.$oid);
                 }
             }
-            NotificationList.read_list(ids);
+            NotificationsList.read_list(ids);
         };
 
         $scope.delete_all = function (type) {
@@ -1116,7 +1116,7 @@ angular.module('mobyle').controller('NotificationCenterCtrl',
                     ids.push($scope.notifications[i]._id.$oid);
                 }
             }
-            NotificationList.delete_list(ids);
+            NotificationsList.delete_list(ids);
         };
 
         $scope.delete = function (notif) {
