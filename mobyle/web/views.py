@@ -15,7 +15,7 @@ from bson.errors import InvalidId
 import requests
 import bcrypt
 import formencode
-from mf.views import mf_filter, MF_READ
+from mfpyramid.views import mf_filter, MF_READ
 from mf.db_conn import DbConn
 
 from mobyle.common.connection import connection

@@ -13,7 +13,7 @@ from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid.renderers import JSON
 import pyramid_beaker
 
-from mf.dashboard import Dashboard
+from mfpyramid.dashboard import Dashboard
 import mf
 
 from gridfs import GridFS
