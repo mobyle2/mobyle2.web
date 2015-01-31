@@ -14,5 +14,7 @@ pairtree
 gitpython==0.3.2.RC1 
 python-ldap
 git+https://github.com/bbangert/velruse.git
+# install mf here because recursive seems to download it from pypi
+git+https://github.com/mobyle2/mf.git#egg=mf
 git+https://github.com/mobyle2/mf-pyramid.git#egg=mfpyramid
 git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib
