@@ -9,7 +9,6 @@ waitress
 pyramid_beaker 
 #pymongo 
 pyramid_mailer 
-py-bcrypt 
 pyScss 
 webtest 
 pygeoip 
