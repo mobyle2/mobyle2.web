@@ -1,4 +1,3 @@
-#git+https://github.com/mobyle2/mongokit.git#egg=mongokit
 paste
 pastedeploy
 pastescript
@@ -7,7 +6,6 @@ pyramid
 pyramid_debugtoolbar 
 waitress 
 pyramid_beaker 
-#pymongo 
 pyramid_mailer 
 pyScss 
 webtest 
@@ -16,6 +14,5 @@ pairtree
 gitpython==0.3.2.RC1 
 python-ldap
 git+https://github.com/bbangert/velruse.git
-#git+https://github.com/mobyle2/mf.git#egg=mf
 git+https://github.com/mobyle2/mf-pyramid.git#egg=mfpyramid
 git+https://github.com/mobyle2/mobyle2.lib.git@develop#egg=mobyle.lib
